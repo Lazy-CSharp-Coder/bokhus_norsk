@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react";
-import LoginForm from "@/components/register/LoginForm";
 import "./Register.module.css";
 import { RegisterForm } from "@/components/register/RegisterForm";
 import { UserData } from "@/components/register/registerSchema";
@@ -42,15 +41,10 @@ export default function Register()
   return (
 
       <main className="registerPage flex">
-      { screen == "Login" &&
-       <LoginForm onSuccess={onSuccess} handleForgotPassword={handleForgotPassword}/>
-      }
-      { screen == "Register Data" &&
+
+   
         <RegisterForm onSuccess={onSuccess} data={defaultData}/>
-      }
-      { screen == "Forgot Password" &&
-      <p>Forgot Password form </p>
-       }
+    
 
 
       </main>
