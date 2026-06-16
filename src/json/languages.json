@@ -1,0 +1,126 @@
+[
+    {
+        "language": "English",
+        "sanityTag": "ENG",
+        "iconUrl": "/icons/english.png",
+        "menuItemsHeader": [
+            {
+                "name": "HOME",
+                "pageLink": "/"
+            },
+            {
+                "name": "AUTHORS",
+                "pageLink": "/Authors"
+            },
+            {
+                "name": "SERIES",
+                "pageLink": "/Series"
+            },
+            {
+                "name": "REGISTER",
+                "pageLink": "/Register"
+            },
+            {
+                "name": "WHERE TO BUY",
+                "pageLink": "/WhereToBuy"
+            },
+            {
+                "name": "ABOUT",
+                "pageLink": "/About"
+            }
+        ],
+        "heroPage": {
+            "quotesHeading": [
+                {
+                    "start": "Stories with ",
+                    "end": "Roots"
+                },
+                {
+                    "start": "Books with a ",
+                    "end": "Future"
+                }
+            ],
+            "descriptionBokhus": [
+                "BokHus is a home for powerful storytelling, historical fiction, local heritage, children's books, and renewed literary voices.",
+                "We publish books shaped by memory, place, language, and human experience - from the fjords of Norway to readers around the world."
+            ],
+            "quotesBottom": [
+                "Norwegian stories.",
+                "International readers.",
+                "Timeless voices."
+            ]
+        },
+        "bookArticle": {
+            "by": "by",
+            "book": "Book",
+            "ofThe": "of the",
+            "series": "Seires",
+            "availabilityTable" : ["e-book", "paperback", "hardcover"],
+            "released": "RELEASED ORIGINALLY IN",
+            "synopsis": "Book Description / Synopsis :",
+            "recommended": "Anbefalt for"
+        }
+    },
+    {
+        "language": "Norwegian",
+        "sanityTag": "NO",
+        "iconUrl": "/icons/norway.png",
+        "menuItemsHeader": [
+            {
+                "name": "HJEM",
+                "pageLink": "/"
+            },
+            {
+                "name": "FORFATTERE",
+                "pageLink": "/Authors"
+            },
+            {
+                "name": "SERIER",
+                "pageLink": "/Series"
+            },
+            {
+                "name": "REGISTERING",
+                "pageLink": "/Register"
+            },
+            {
+                "name": "KJØP",
+                "pageLink": "/WhereToBuy"
+            },
+            {
+                "name": "OM",
+                "pageLink": "/About"
+            }
+        ],
+        "heroPage": {
+            "quotesHeading": [
+                {
+                    "start": "Historier med ",
+                    "end": "Røtter"
+                },
+                {
+                    "start": "Bøker for ",
+                    "end": "Fremtiden"
+                }
+            ],
+            "descriptionBokhus": [
+                "BokHus er et hjem for kraftfull historiefortelling, historisk fiksjon, lokal kulturarv, barnebøker og fornyede litterære stemmer.",
+                "Vi utgir bøker formet av minner, sted, språk og menneskelig erfaring – fra fjordene i Norge til lesere over hele verden."
+            ],
+            "quotesBottom": [
+                "Norske historier.",
+                "Internasjonale lesere.",
+                "Tidløse stemmer."
+            ]
+        },
+        "bookArticle": {
+            "by": "av",
+            "book": "bok",
+            "ofThe": "i serien",
+            "series": " ",
+            "availabilityTable" : ["e-bok", "paperback", "hardback"],
+            "released": "UTGITT FØRSTE GANG I",
+            "synopsis": "Beskrivelse av boken :",
+            "recommended": "Anbefalt for"
+        }
+    }
+]

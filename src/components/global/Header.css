@@ -1,0 +1,101 @@
+@import "./HamburgerMenu.css";
+
+:root {
+  --headerFontFamily: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  background-color: rgba(20, 20, 20, 0.7);
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  /* gap: 5rem; */
+  /* border: 1px solid rgba(20, 20, 20, 1); */
+  position: sticky;
+  height: 8rem;
+  min-height: 8rem;
+  max-height: 8rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.4s ease-in;
+  font-family: var(--headerFontFamily);
+  padding: 0 2rem;
+}
+
+.logoMenuWrapper {
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.headerIcon {
+  position: relative;
+  display: inline-block;
+  height: 5.8rem;
+  aspect-ratio: 1 /1;
+}
+
+.menuItemsContainer {
+  flex-direction: row;
+  gap: 2.6rem;
+  align-items: center;
+}
+
+.headerMenuItem {
+
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--myWhiteColor);
+  transition: color 0.3s ease-in;
+
+
+
+}
+
+.desktopMode {
+
+  display: flex;
+}
+
+.desktopModeBlock {
+  display: block;
+}
+
+.mobileMode {
+  display: none;
+}
+
+
+
+.headerMenuItem:hover {
+  color: rgb(98, 159, 255);
+}
+
+@media (max-width: 1023px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+  }
+
+  .desktopMode,
+  .desktopModeBlock {
+    display: none;
+  }
+
+  .mobileMode {
+    display: block;
+    margin-top: 0.2rem;
+
+  }
+}

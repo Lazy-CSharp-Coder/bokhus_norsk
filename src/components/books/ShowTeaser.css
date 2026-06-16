@@ -1,0 +1,35 @@
+.teaserDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content : center;
+    text-align: center;
+    width: 100%;
+    max-height: 100%;
+    height:100%;
+    margin-left: 4vw;
+    position: absolute;
+    left:0;
+    top:0;
+    padding-bottom: 5rem;
+}   
+
+.teaserText {
+    /* margin-top: 18%; */
+    font-size:2.6em;
+    /* text-align: center; */
+    color: lightyellow;
+   
+    opacity: 0;
+    animation-name: teaserAnim;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes teaserAnim {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0;}
+}

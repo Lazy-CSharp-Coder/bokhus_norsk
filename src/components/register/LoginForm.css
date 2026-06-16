@@ -1,0 +1,94 @@
+.loginSection 
+{
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+    width: fit-content;
+    /* background-color: white;    */
+    font-family: var(--robotoFont);
+    font-size: 1rem;
+  background-color: #f0f4f8;
+    color: black;
+    padding: 2rem;
+    border: 2px solid black;
+
+}
+
+.loginHeadingText {
+    font-size: 1.2rem;
+    /* font-family: var(--roboto); */
+    
+}
+
+.loginForm {
+    flex-direction:column;
+    padding: 2rem 4rem;
+    gap: 1rem;
+      background-color: #f0f4f8;
+}
+
+.emailInputDiv, .passwordInputDiv {
+     font-family: inherit;
+    font-size: 1.1rem;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.emailInput, .passwordInput {
+    padding: 0.3rem;
+    width: 18rem;
+    color: black;
+    font-size: 1.1rem;
+    background-color: white;
+    /* font-family: var(--roboto); */
+}
+
+.errorMsg {
+  
+
+   background-color : var(--bokhusRootsColor);
+    border: 1px solid black;
+  color: white;;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.registerDiv {
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.registerButton {
+      background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: green;
+
+    cursor: pointer;
+    padding:0;
+    margin: 0;
+}
+
+.forgotPasswordButton {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: blue;
+    margin-top: 0.4rem;
+    cursor: pointer;
+}
+
+.submitButton {
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: black;
+    background-color: var(--bokhusFutureColor);
+}

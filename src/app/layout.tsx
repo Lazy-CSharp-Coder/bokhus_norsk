@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Header } from "@/components/global/Header";
 import "./globals.css";
+import { StateProvider } from "@/globalStates";
+import { Libre_Baskerville, Roboto } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const libreBaskerville = Libre_Baskerville({
+  variable: "--libreFont",
   subsets: ["latin"],
+
+
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const roboto = Roboto({
+  variable: "--robotoFont",
+  subsets: ["latin"]
 });
 
 export const metadata: Metadata = {
@@ -21,10 +25,17 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)
+{
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en"  data-smooth-scolling="smooth">
+      <body className={`${libreBaskerville.variable} ${roboto.variable}`}>
+
+        {/* <StateProvider> */}
+          <Header />
+          {children}
+        {/* </StateProvider> */}
+      </body>
     </html>
   );
 }

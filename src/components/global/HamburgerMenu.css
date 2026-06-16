@@ -1,0 +1,17 @@
+
+.burgerSpan {
+    z-index: 20;
+}
+
+.menuItemsHamburgerDiv {
+    position: fixed;
+ flex-direction: column;
+    align-items: left;
+    gap: 0.5rem;
+    top: 6rem;
+    right: 0rem;
+    padding : 1rem 2rem;
+    /* border : 1px solid white; */
+    background-color: rgba(20, 20, 20, 0.8);
+}
+

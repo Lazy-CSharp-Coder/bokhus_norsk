@@ -1,0 +1,43 @@
+import { client } from '@/sanity/lib/client';
+import { defineQuery } from 'next-sanity';
+
+// 1. Definer spørringene med parametere ($)
+const USER_QUERY = defineQuery(`*[_type == "author" && slug.current == $slug][0]{
+  _id,
+  name
+}`);
+
+const POSTS_BY_AUTHOR_QUERY = defineQuery(`*[_type == "post" && author._ref == $authorId]{
+  _id,
+  title
+}`);
+
+interface Author { _id: string; name: string; }
+interface Post { _id: string; title: string; }
+
+export default async function Page({ params }: { params: { slug: string } }) {
+  // FETCH 1: Hent forfatteren basert på slug fra URL
+  const author = await client.fetch<Author>(USER_QUERY, { 
+    slug: params.slug 
+  });
+
+  // Håndter tilfelle der forfatteren ikke finnes før vi går videre
+  if (!author) return <div>Forfatter ikke funnet</div>;
+
+  // FETCH 2: Hent poster som "inkluderer" denne forfatterens ID
+  // Her bruker vi author._id fra den første fetchen som parameter
+  const posts = await client.fetch<Post[]>(POSTS_BY_AUTHOR_QUERY, { 
+    authorId: author._id 
+  });
+
+  return (
+    <main>
+      <h1>Innlegg skrevet av {author.name}</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post._id}>{post.title}</li>
+        ))}
+      </ul>
+    </main>
+  );
+}

@@ -1,0 +1,162 @@
+  
+
+@media (min-width:3072px) and (max-width:3839px) {
+    html {
+        font-size: 140%;
+    }
+
+ 
+}
+@media (min-width:3072px) {
+
+    html {
+        font-size: 212%;
+    }
+
+    .seriesPage {
+        background-color: aquamarine;
+    }
+
+}
+
+@media (min-width: 2845px) and (max-width: 3071px) {
+    html {
+        font-size: 122%;
+    }
+   .seriesPage {
+    background: yellow;
+   }
+}
+
+
+@media(min-width: 2560px) and (max-width:2846px) {
+    html {
+        font-size: 100%;
+    }
+
+    .seriesPage {
+        background-color: rgb(176, 109, 27);
+            /* background: red; */
+    }
+
+}
+
+@media (min-width: 2327px) and (max-width: 2559px) {
+    html {
+        font-size: 110%;
+        
+    }
+    .authorsPage  {
+        /* background: lightblue; */
+    }
+}
+
+@media (min-width: 1920px) and (max-width: 2326px) {
+
+    html {
+        font-size: 88%;
+
+    }
+    .authorsPage {
+        /* background: red; */
+    }
+}
+
+
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    html {
+        font-size: 85%;
+
+    }
+
+    .authorsPage {
+        /* background: blue; */
+    }
+
+}
+
+@media (min-width: 1240px) and (max-width: 1439px) {
+    html {
+        font-size: 75%;
+    }
+    
+
+}
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+    html {
+        font-size: 60%;
+    }
+    
+    /* .authorDescriptionList {
+        width:90%;
+    } */
+  
+
+}
+
+/* Tablet and mobile devices */
+
+@media (max-width: 1023px) {
+
+    html {
+        font-size: 100%;
+    }
+
+    .authorImage {
+        width: 45vw;
+    }
+    .authorArticle {
+        flex-direction: column;
+  
+        
+    }
+    .authorDescriptionList {
+        align-items: center;
+    }
+
+  .seriesCardList {
+        flex-direction: column;
+        align-items: center;
+        gap:1rem;
+        flex-wrap: nowrap;
+    }
+
+    .seriesCard {
+        width: 95%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .seriesCardImageDiv {
+        width: 40vw;
+    }
+    .smallAuthorCard {
+        width: 40%;
+    }
+
+}
+
+@media (max-width: 590px) {
+
+    html {
+        font-size: 10%;
+    }
+
+  
+}
+
+@media (max-width: 600px){
+
+    html {
+        font-size: 90%;
+
+    }
+}
+
+@media (max-width: 480px) {}
+
+@media (max-width:410px) {}
+
+@media (max-width: 380px) {}

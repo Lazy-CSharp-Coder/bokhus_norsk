@@ -1,0 +1,75 @@
+[
+    {
+        "uid" : "#SL#EASTENDLASS",
+        "imageUrl" : "/images/sigrid/eastEndLass/SerieVaterland.png",
+        "authorUids": ["#Sigrid#Lunde" ],
+        "seriesName": "East End Lass",
+        "seriesFact" : "A tale back in time from Norway that spans sixteen volumes",
+        "seriesTeaser" :"A rich and moving historical journey begins…",
+        "description": [
+           "Its a historical coming-of-age drama set in 1910s Vaterland, Kristiania in Norway", 
+           "This series reflects the realities of early 20th-century life with emotional honesty and care.",
+         "This is a sweeping sixteen-book saga tracing Marie’s life from childhood to adulthood, from dusty backrooms to elegant halls, and from silence to strength.",
+"If you love character-driven historical fiction filled with heart, courage, and vivid storytelling, Marie’s story will stay with you long after the final page.",
+"Themes include family secrets, resilience in the face of hardship, and the quiet power of a young girl determined to find her place in the world.",
+"The Norwegian author Sigrid Lunde is the celebrated pen name behind Jordmoren (The Midwife), a 66-volume bestseller that captivated readers across the Nordic world. With East End Lass, her unforgettable storytelling is now available in English for the first time."
+
+        ],
+        "bookUids": [
+            "#sigrideel#01",
+            "#sigrideel#02",
+            "#sigrideel#03",
+            "#sigrideel#04",
+            "#sigrideel#05",
+            "#sigrideel#06",
+            "#sigrideel#07",
+            "#sigrideel#08",
+            "#sigrideel#09",
+            "#sigrideel#10",
+            "#sigrideel#11",
+            "#sigrideel#12",
+            "#sigrideel#13",
+            "#sigrideel#14",
+            "#sigrideel#15"
+        ],
+        "ageGroup" : "15 years and up"
+    },
+       {
+        "uid" : "#SL#PLACEHOLDER",
+        "imageUrl" : "/images/sigrid/eastEndLass/SerieVaterland.png",
+        "authorUids": ["#Sigrid#Lunde" ],
+        "seriesName": "Placeholder Series",
+        "seriesFact" : "A tale back in time from Norway that spans sixteen volumes",
+        "seriesTeaser" :"A rich and moving historical journey begins…",
+        "description": [
+           "Its a historical coming-of-age drama set in 1910s Vaterland, Kristiania in Norway", 
+           "This series reflects the realities of early 20th-century life with emotional honesty and care.",
+         "This is a sweeping sixteen-book saga tracing Marie’s life from childhood to adulthood, from dusty backrooms to elegant halls, and from silence to strength.",
+"If you love character-driven historical fiction filled with heart, courage, and vivid storytelling, Marie’s story will stay with you long after the final page.",
+"Themes include family secrets, resilience in the face of hardship, and the quiet power of a young girl determined to find her place in the world.",
+"The Norwegian author Sigrid Lunde is the celebrated pen name behind Jordmoren (The Midwife), a 66-volume bestseller that captivated readers across the Nordic world. With East End Lass, her unforgettable storytelling is now available in English for the first time."
+
+        ],
+        "bookUids": [
+            "#sigrid#01",
+            "#sigrid#02",
+            "#sigrid#03",
+            "#sigrid#04",
+            "#sigrid#05",
+            "#sigrid#06",
+            "#sigrid#07",
+            "#sigrid#08",
+            "#sigrid#09",
+            "#sigrid#10",
+            "#sigrid#11",
+            "#sigrid#12",
+            "#sigrid#13",
+            "#sigrid#14",
+            "#sigrid#15"
+        ],
+        "ageGroup" : "15 years and up"
+    }
+]
+
+
+

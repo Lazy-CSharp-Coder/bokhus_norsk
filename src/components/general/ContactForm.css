@@ -1,0 +1,112 @@
+:root {
+    --contactTextSize: 1.1rem;
+}
+
+.contactPage {
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 2.5rem;
+    width:45%;
+    padding: 4rem 0;
+
+    color: white;
+    font-family: var(--robotoFont);
+}
+
+.contactUsArticle {
+    flex-direction: column;
+    align-items: left;
+     gap: 1rem;
+    width: 100%;
+    
+    font-family: var(--robotoFont);
+    padding: 2.5rem 4rem;
+    background-color: #f0f4f8;
+    border: 2px solid black;
+    padding-bottom: 3rem;
+    color: black;
+
+}
+
+.contactUsHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    gap: 0.2rem;
+    
+    font-size: 1.5rem;
+    
+    font-weight: normal;
+    color: black;
+    /* padding: 1rem 0; */
+    /* padding-right: 0.5rem; */
+    /* border-bottom: 1px solid black; */
+    text-align: left;
+    font-weight: 500;
+}
+
+.contactUsText {
+    font-size: 1rem;
+    font-size: var(--contactTextSize);
+    color: black;
+    padding: 2rem 0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+line-height: 1.4;
+}
+
+.contactUsForm {
+    margin-top: 0.5rem;
+ flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    width: 100%;
+    height: fit-content;
+    font-size: var(--contactTextSize);
+
+}
+
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    /* align-items: center; */
+    width: 100%;
+
+    color: black;
+
+}
+
+
+input,
+textarea {
+    background-color: white;
+    font-family: var(--robotoFont);
+    color: black;
+    font-size: var(--regFontSize);
+    padding: 0.2rem 0.2rem;
+}
+
+
+.submitButton {
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: black;
+    background-color: var(--bokhusFutureColor);
+}
+
+
+.bokhusComWrapper {
+    justify-content:center;
+    padding-top: 1.2rem;
+        border-top: 1px solid black;
+
+    /* margin-right: 0.5rem; */
+}

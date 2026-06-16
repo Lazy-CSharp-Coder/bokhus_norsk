@@ -1,0 +1,41 @@
+[
+    {
+        "uid": "#Sigrid#Lunde",
+        "profileUrl": "/images/sigrid/profileSigrid.jpg",
+        "name": "Sigrid Lunde",
+        "subTitle" : "Norwegian Author",
+        "description": [
+            "Sigrid Lunde is the name behind some of Norway's most beloved serial novels, known for richly detailed storytelling and emotionally powerful narratives. ",
+            "Her work reaches readers through the author Sverre Årnes, who brings her stories to life and onto the market. ",
+            "Best known for The Midwife (Jordmoren) series, Norway's first major long-running serial with 66 titles, Lunde's books have captivated audiences with their historical depth, strong female characters, and heartfelt drama.",
+                "Her stories have also reached international readers, with Jordmoren published in Polish under the title Akuzerka."
+        ],
+        "bestSellerIntro": "Bestselling author of",
+        "bestSellerList": [
+            "Midwife"
+        ]
+    },
+        {
+        "uid": "#Sverre#Arnes",
+        "profileUrl": "/images/sverre/profilSverre.png",
+        "name": "Sverre Årnes",
+        "subTitle" : "Norwegian Author",
+        "description": [
+            "Sverre Årnes (b. 1949) is a prolific Norwegian author and screenwriter with over 220 published books, including serial novels, short stories, and comic scripts.",
+            "He is best known for the Storset saga, especially the long-running series Jordmoren (66 books), written under the pseudonym Sigrid Lunde. Årnes has also written the series Blodsbånd, Vaterlandsjenta, and COBRA, and contributed to comics like The Phantom, Agent 007, and Olsenbanden.",
+            "His work spans multiple genres including romance, action, and historical fiction, and he has received awards for both writing and filmmaking.",
+            "Originally from Surnadal, he has lived in the Philippines, Gran Canaria, and Cebu, continuing his writing career internationally."
+        ],
+        "bestSellerIntro": "Bestselling author of",
+        "bestSellerList": [
+            "Storset saga", "Midwife", "Vaterlandsjenta", "COBRA"
+        ]
+    }
+]
+
+
+
+
+
+
+

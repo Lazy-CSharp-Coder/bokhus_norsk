@@ -1,4 +1,4 @@
-.page {
+/* .page {
   --background: #fafafa;
   --foreground: #fff;
 
@@ -10,8 +10,7 @@
   --button-secondary-border: #ebebeb;
 
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
   font-family: var(--font-geist-sans);
@@ -20,7 +19,7 @@
 
 .main {
   display: flex;
-  flex: 1;
+  min-height: 100vh;
   width: 100%;
   max-width: 800px;
   flex-direction: column;
@@ -94,7 +93,7 @@ a.secondary {
   border-color: var(--button-secondary-border);
 }
 
-/* Enable hover only on non-touch devices */
+Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);

@@ -1,0 +1,281 @@
+[
+    {
+        "uid": "#sigrideel#01",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E01WebOfDestiny.png",
+        "bookInSeries": 1,
+        "releaseYear": 2003,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "WEB OF DESTINY",
+        "subTitle": "The streets may shape a child's beginning, but they do not decide her destiny.",
+        "description": [
+            "A man seizes her wrist in a dark courtyard in Kristiania. His eyes are cold, and Marie Charlotte Jensen suddenly realizes how fragile life can be.",
+            "Born out of wedlock, Marie grows up unwanted in the harsh backstreets of Vaterland, passed from orphanage to a brutal foster home. Yet she clings to one stubborn hope that somewhere her father lives, and that one day he will find her.",
+            "But the city is dangerous. The violent Valdemar Moen and the unpredictable Didrik Dal pull her into a web of threats and secrets, while unexpected allies painter Hans Gabriel Linden and the charming Bjørn enter her life.",
+            "In a city ruled by class and hidden truths, Marie must fight to survive.",
+            "But who is she really, and what will happen when the truth finally emerges ?"
+        ],
+        "suitedFor": "Where the Crowdad Sings",
+        "buyLink": "https://www.amazon.com/Web-destiny-Coming-Age-Historically-ebook/dp/B0FDCS4WPM"
+    },
+    {
+        "uid": "#sigrideel#02",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E02NakedImage.png",
+        "releaseYear": 2003,
+        "bookInSeries": 2,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "NAKED IMAGE",
+        "subTitle": "Winter does not ask who is strong and who is weak.",
+        "description": [
+            "Her heart stops when she sees the man waiting on the corner. Coat collar raised, eyes burning with hate. If he finds her alone, Marie Charlotte knows he may finish what he started.",
+            "After fleeing the brutality of Vaterland, Marie believes she has found fragile safety in the studio of painter Hans Gabriel Linden. To him she is no longer just a poor, unwanted girl, but someone worth seeing and worth painting.",
+            "Yet Kristiania is unforgiving. Old enemies return, rumors spread, and soon Marie is accused of theft and deceit. Her fragile new life begins to crumble.",
+            "Will she escape the fate others have chosen for her - or be dragged back into the shadows she fought to leave ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#03",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E03SilkAndSuspicion.png",
+        "releaseYear": 2003,
+        "bookInSeries": 3,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "SILK AND SUSPICION",
+        "subTitle": " Where wealth hides dangerous truths.",
+        "description": [
+            "Someone is watching her.",
+            "Across the street, a pair of eyes follows Marie Charlotte wherever she goes. The past she tried to escape is drawing closer again.",
+            "In the studio of painter Hans Gabriel Linden, Marie has finally found a fragile place in the world. For the first time, she is seen as more than a poor girl from Vaterland—she becomes a muse, admired instead of pitied.",
+            "But Kristiania is a city of whispers and hidden motives. Old enemies still lurk in the shadows, and dangerous secrets are beginning to surface.",
+            "As trust turns into suspicion, Marie must ask herself one terrifying question : Who is truly her friend - and who has been waiting all along to destroy her ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#04",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E04CrushedAndCrowned.png",
+        "releaseYear": 2003,
+        "bookInSeries": 4,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "CRUSHED AND CROWNED",
+        "subTitle": "A quiet door, a difficult choice, and a life beginning to change.",
+        "description": [
+            "A single sentence shatters everything Marie Charlotte believed about love.",
+            "When the young man she trusted most suddenly rejects her in the street, Marie's world collapses. Now living as Marie Charlotte Løwenkron, she should finally belong among Kristiania’s wealthy families. Yet behind the polished doors of her new home, jealousy and rivalry grow stronger each day.",
+            "Her stepsisters watch her closely, ready to ruin her reputation. Rumors sprea, and one mistake could send her crashing back to the poverty she escaped.",
+            "At the center stands the passionate and unpredictable Rasmus - both irresistible and dangerous.",
+            "In a world ruled by pride and power, Marie must ask herself one question : Will she be crushed - or rise stronger than anyone expected ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#05",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E05NoWayBack.png",
+        "releaseYear": 2003,
+        "bookInSeries": 5,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "NO WAY BACK",
+        "subTitle": "Winter does not ask who is strong and who is weak.",
+        "description": [
+            "The door slams behind her—and Marie Charlotte realizes there is no way back.",
+            "The fragile life she fought to build among the wealthy Løwenkron family is beginning to crumble. Suspicion and jealousy surround her, and every mistake is watched by those waiting for her to fall.",
+            "At the same time, her relationship with the passionate and unpredictable Rasmus becomes a battlefield of love, pride, and anger. Neither of them can see clearly where the truth lies.",
+            "Meanwhile, whispers spread through Kristiania, and shadows from Marie's past begin to stir again.",
+            "But Marie is no longer the frightened girl from Vaterland. If there truly is no way back, how far is she willing to go to protect the life she fought so hard to claim ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#06",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E06PointofNoReturn.png",
+        "releaseYear": 2003,
+        "bookInSeries": 6,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "POINT OF NO RETURN",
+        "subTitle": " Where wealth hides dangerous truths.",
+        "description": [
+            "The letter arrives too late.",
+            "By the time Marie Charlotte reads the words that could have changed everything, the damage is already done. A misunderstanding has set events in motion that neither pride nor love can easily undo.",
+            "In Kristiania's elegant drawing rooms, rumors spread quickly. Those who envy Marie's place in the Løwenkron family are eager to see her fall, and the fragile trust between her and Rasmus begins to break apart.",
+            "Meanwhile, memories from the harsh streets of Vaterland return to haunt her.",
+            "Marie has fought too hard to lose everything now. But when the truth finally emerges, one question remains: Will love save her future - or has fate already decided her fall ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#07",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E07RunawaySoul.png",
+        "releaseYear": 2003,
+        "bookInSeries": 7,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "RUNAWAY SOUL",
+        "subTitle": "A quiet door, a difficult choice, and a life beginning to change.",
+        "description": [
+            "A single sentence shatters everything Marie Charlotte believed about love.",
+            "When the young man she trusted most suddenly rejects her in the street, Marie’s world collapses. Now living as Marie Charlotte Løwenkron, she should finally belong among Kristiania’s wealthy families. Yet behind the polished doors of her new home, jealousy and rivalry grow stronger each day.",
+            "Her stepsisters watch her closely, ready to ruin her reputation. Rumors spread, and one mistake could send her crashing back to the poverty she escaped.",
+            "At the center stands the passionate and unpredictable Rasmus - both irresistible and dangerous.",
+            "In a world ruled by pride and power, Marie must ask herself one question: Will she be crushed - or rise stronger than anyone expected ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#08",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E08TheUnseenWound.png",
+        "releaseYear": 2003,
+        "bookInSeries": 8,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "THE UNSEEN WOUND",
+        "subTitle": "A quiet door, a difficult choice, and a life beginning to change.",
+        "description": [
+            "A scream echoes through the dark corridor—and Marie Charlotte knows something terrible has happened.",
+            "In a single violent moment, the fragile peace she fought to build shatters again. Someone close to her is hurt, and secrets long buried begin to surface.",
+            "Among Kristiania’s wealthy families, suspicion grows. Rumors spread, rivalries sharpen, and hidden motives slowly come into the light.",
+            "At the same time, Marie’s relationship with Rasmus becomes more complicated, torn between passion, pride, and jealousy. Enemies from the past are moving once more.",
+            "But as the truth behind the tragedy begins to unfold, Marie must face a chilling question: Was it truly an accident - or has someone been planning her downfall all along ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#09",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E09Unbowed.png",
+        "releaseYear": 2003,
+        "bookInSeries": 9,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "UNBOWED",
+        "subTitle": "A quiet door, a difficult choice, and a life beginning to change.",
+        "description": [
+            "A knock in the middle of the night changes everything.",
+            "Marie Charlotte wakes with a terrible sense that something is wrong. Soon she learns that the conflicts within the Løwenkron family are growing into a storm no one can control.",
+            "Life in Kristiania's elegant circles suddenly feels fragile. Old rivalries turn into open hostility, and people she once trusted begin to reveal their true faces. Her bond with Rasmus is tested more than ever as pride, jealousy, and outside pressure threaten to tear them apart.",
+            "Meanwhile, shadows from Marie’s past still follow her. But when the final truth finally emerges, one question remains: Will it bring the freedom she hoped for - or destroy everything she fought to build ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    },
+    {
+        "uid": "#sigrideel#10",
+        "availability": [
+            "e-book",
+            "paperback",
+            "hardcover"
+        ],
+        "languages": [
+            "norwegian",
+            "english"
+        ],
+        "imageUrl": "/images/sigrid/eastEndLass/E10TheDoctorsSecret.png",
+        "releaseYear": 2003,
+        "bookInSeries": 10,
+        "authorUids": [
+            "#Sigrid#Lunde"
+        ],
+        "bookTitle": "THE DOCTOR'S SECRET",
+        "subTitle": "A quiet door, a difficult choice, and a life beginning to change.",
+        "description": [
+            "A single sentence shatters everything Marie Charlotte believed about love.",
+            "When the young man she trusted most suddenly rejects her in the street, Marie's world collapses. Now living as Marie Charlotte Løwenkron, she should finally belong among Kristiania’s wealthy families. Yet behind the polished doors of her new home, jealousy and rivalry grow stronger each day.",
+            "Her stepsisters watch her closely, ready to ruin her reputation. Rumors spread, and one mistake could send her crashing back to the poverty she escaped.",
+            "At the center stands the passionate and unpredictable Rasmus - both irresistible and dangerous.",
+            "In a world ruled by pride and power, Marie must ask herself one question: Will she be crushed - or rise stronger than anyone expected ?"
+        ],
+        "buyLink": "https://www.amazon.com/Naked-Image-Kristiania-Coming-Age-ebook/dp/B0FJ6222H8/ref=sr_1_3?crid=F4ECI3KJ4N3Y&dib=eyJ2IjoiMSJ9.-bTOrm99ygcF_dAkGSxVF8mFQ7EPKoLb_w_Q051rcGv4EH8FYEf8pAhYbxteWOJcU4OncM6BVk5Nv5yVl3tLTNAsE_nCACJ3A7SUgywI23QeQ5LyXsodnqaFS8hOAG4k7VfWB5u6OUhgeVozLIQB2g.x7v9hgr4S7dnwfiD6kv6ljtMMDEhJ8yDPd4sTBecJ1w&dib_tag=se&keywords=East+End+Lass&qid=1772905030&s=digital-text&sprefix=east+end+lass%2Cdigital-text%2C219&sr=1-3-catcorr"
+    }
+]

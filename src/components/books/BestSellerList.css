@@ -1,0 +1,25 @@
+
+.bestSellerList {
+    list-style: none;
+    /* margin-top: 0.45rem; */
+    display: flex;
+    flex-direction: row;
+    gap: 0.42rem;
+    /* font-size: 1.05rem; */
+    /* font-family: "Roboto", sans-serif; */
+
+}
+
+.bestSellerText {
+    /* color: #d0a653;   */
+    font-style: italic;
+    /* font-weight: 500; */
+
+
+}
+
+.bestSellerSeparator {
+
+    font-style: normal;
+    font-weight: 500;
+}

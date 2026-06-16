@@ -1,0 +1,79 @@
+.authorsPage {
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 5rem;
+    /* min-height: 100%; */
+    height: fit-content;
+    font-family: var(--robotoFont);
+
+
+}
+
+.bokhusAuthorsHeadingWrapper {
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+    gap: 1rem;
+    padding: 2rem 0;
+
+}
+
+.authorsPageRepresentedText {
+    font-size: 3rem;
+
+}
+
+.bokhusText {
+    color: var(--bokhusFutureColor);
+}
+
+.authorsPageText {
+
+    font-size: 2rem;
+}
+
+.linkAuthor {
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    background-color: rgba(221, 221, 221, 0.5);
+}
+
+.linkList {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    width: 74%;
+    gap: 6rem;
+    margin-bottom: 6rem;
+}
+
+.clickText {
+    color: var(--bokhusRootsColor);
+    font-size: 1.2rem;
+    /* font-style : italic; */
+}
+.authorCardClickText {
+    color: var(--myWhiteColor);
+}
+
+.backgroundImageAuthorsPage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    filter: blur(5px) brightness(45%);
+    z-index: -1;
+
+}
