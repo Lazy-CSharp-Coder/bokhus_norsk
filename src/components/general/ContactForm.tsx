@@ -1,7 +1,6 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { ContactInfo, contactSchema } from "./contactSchema";
-import ReCAPTCHA from "react-google-recaptcha";
 import { BokHusCom } from "../global/BokHusCom";
 
 const emptyForm: ContactInfo =
