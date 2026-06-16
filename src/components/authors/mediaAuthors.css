@@ -13,31 +13,20 @@
         font-size: 212%;
     }
 
-    .seriesPage {
-        background-color: aquamarine;
-    }
-
 }
 
 @media (min-width: 2845px) and (max-width: 3071px) {
     html {
         font-size: 122%;
     }
-   .seriesPage {
-    background: yellow;
-   }
+
+
 }
-
-
 @media(min-width: 2560px) and (max-width:2846px) {
     html {
         font-size: 100%;
     }
 
-    .seriesPage {
-        background-color: rgb(176, 109, 27);
-            /* background: red; */
-    }
 
 }
 

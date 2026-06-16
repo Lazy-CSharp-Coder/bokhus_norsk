@@ -12,7 +12,7 @@ display: flex;
     padding-bottom: clamp(1rem, 5cqh, 5rem);
      padding-top: clamp(1rem, 5cqh, 2rem);
     /* padding-top: 1%; */
-    /* flex-grow: 1; */
+    flex-grow: 1;
 
 
 }
