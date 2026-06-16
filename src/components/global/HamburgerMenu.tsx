@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { HeaderProps } from "@/types/headertypes";
+import type { HeaderProps } from "@/types/types"
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ export function HamburgerMenu({ menuItems }: HeaderProps)
             {menuState!= "hiding" &&
                 <div onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
 
-                    {menuItems.map((item, index) =>
+                    {menuItems?.map((item, index) =>
 
                         <Link key={item.name + index} className="headerMenuItem" href={item.pageLink}>{item.name}</Link>)
                     }
