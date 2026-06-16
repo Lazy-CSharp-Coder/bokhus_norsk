@@ -28,7 +28,7 @@ export default function RootLayout({
 }>)
 {
   return (
-    <html lang="en"  data-smooth-scolling="smooth">
+    <html lang="en">
       <body className={`${libreBaskerville.variable} ${roboto.variable}`}>
 
         {/* <StateProvider> */}
