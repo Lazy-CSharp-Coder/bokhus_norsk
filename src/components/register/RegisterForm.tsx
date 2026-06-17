@@ -14,7 +14,6 @@ interface RegisterFormProps
 
 }
 
-
 export function RegisterForm({ data, onSuccess }: RegisterFormProps)
 {
     // const [isPending, startTransition] = useTransition();
