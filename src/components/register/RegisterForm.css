@@ -85,7 +85,7 @@
     width: 100%;
 }
 
-.languagesList {
+.multipleChoicesList {
     flex-direction: column;
     gap: 0.5rem;
     width: max-content;
@@ -95,7 +95,7 @@
     color: black;
 }
 
-.languagesDiv {
+.multipleChoicesDiv {
     position: relative;
     display: flex;
     align-items: top;

@@ -114,9 +114,9 @@ export function RegisterForm({ data, onSuccess }: RegisterFormProps)
                                 {errors.country && <p className="errorRegisterForm">{errors.country.message}</p>}
 
                             </div>
-                            <div className="languagesDiv">
+                            <div className="multipleChoicesDiv">
                                 <label className="languagesText">What languages do you prefer ?</label>
-                                <ul className="languagesList flex">
+                                <ul className="multipleChoicesList flex">
                                     {languageOptions.map((item) => (
                                         <li key={item} className="languagePreferredDiv">
                                             <input type="checkbox" id={item} value={item} {...register("preferredLanguage")} />
@@ -126,9 +126,9 @@ export function RegisterForm({ data, onSuccess }: RegisterFormProps)
                                     {errors.preferredLanguage && <p className="errorRegisterForm">{errors.preferredLanguage.message}</p>}
                                 </ul>
                             </div>
-                            <div className="languagesDiv">
+                            <div className="multipleChoicesDiv">
                                 <label className="languagesText">What genres are you interested in ?</label>
-                                <ul className="languagesList flex">
+                                <ul className="multipleChoicesList flex">
                                     {genreOptions.map((item) => (
                                         <li key={item} className="languagePreferredDiv">
                                             <input type="checkbox" id={item} value={item} {...register("genresInterestedIn")} />
