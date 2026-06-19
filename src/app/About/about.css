@@ -53,7 +53,7 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
 .aboutHeading {
     font-size: 2rem;
     color: white;
-    border-bottom: 1px solid white;
+
     padding: 1rem 0;
 }
 
@@ -74,7 +74,6 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
     justify-content:center;
     padding-top: 1.4rem;
 
-        border-top: 1px solid white;
 
     /* margin-right: 0.5rem; */
 }

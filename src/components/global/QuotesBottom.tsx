@@ -2,7 +2,7 @@ import languagesJson from "@/json/languages.json";
 import type { LanguageText } from "@/types/languagetypes";
 import type { QuoteBottomProps } from "@/types/types";
 
-export function QuotesBottom({ fontSize, fontFamily }: QuoteBottomProps)
+export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
 {
     const colorCodes: string[] =
         [
@@ -16,10 +16,10 @@ export function QuotesBottom({ fontSize, fontFamily }: QuoteBottomProps)
     const waitForDescription = 800;
 
     return (
-        <div className="quotesDivBottom flex" style={{fontFamily: fontFamily ? fontFamily : "" }}>
+        <div className="quotesDivBottom flex" style={{fontFamily: fontFamily ? fontFamily : ""}}>
             {
                 heroPage.quotesBottom.map((item, index) =>
-                    <h3 key={index + "#HP#HERO_QUOTES#ABOUT"} className="quotesTextBottom fadeInAnimQuotes" style={{ color: colorCodes[index], animationDelay: `${(index * animIncQuotesBottom) + waitForDescription}ms`,  fontSize: fontSize  }}>{item}</h3>)
+                    <h3 key={index + "#HP#HERO_QUOTES#ABOUT"} className="quotesTextBottom fadeInAnimQuotes" style={{ color: colorCodes[index], animationDelay: noAnim ? "0" :  `${(index * animIncQuotesBottom) + waitForDescription}ms`, animationIterationCount : noAnim ? "0" : "1" ,  fontSize: fontSize  }}>{item}</h3>)
 
             }
 
