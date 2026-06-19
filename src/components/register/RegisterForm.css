@@ -8,7 +8,7 @@
     justify-content: center;
 
     gap: 2.5rem;
-    width: 56%;
+    width: fit-content;
     padding: 4rem 0;
 
     color: black;
@@ -81,11 +81,24 @@
 .registerTextArea {
     align-items: top;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
     width: 100%;
 }
 
 .multipleChoicesList {
+    flex-direction: column;
+
+    width: max-content;
+    justify-content: top;
+    align-items: stretch;
+    gap: 1rem;
+    color: black;
+    background-color: purple;
+   
+}
+
+
+.multipleChoicesARCList {
     flex-direction: column;
     gap: 0.5rem;
     width: max-content;
@@ -93,6 +106,9 @@
     align-items: stretch;
     gap: 1rem;
     color: black;
+    /* background-color: purple; */
+    margin-left: 1rem;
+   
 }
 
 .multipleChoicesDiv {
@@ -104,6 +120,19 @@
     gap: 0.7rem;
     padding: 1rem 0;
 
+}
+
+
+.multipleChoicesARCDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    /* background-color: aquamarine; */
 }
 
 .errorRegisterForm {
@@ -182,7 +211,7 @@ input[type="checkbox"] {
     flex-direction: column;
     width: max-content;
     /* padding: 2rem 4rem; */
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
     /* background-color: lightgray; */
     padding-bottom: 1rem;
@@ -194,7 +223,7 @@ fieldset {
 
 .arcForm {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
     padding: 1.5rem 0;
   
     font-size: var(--regFontSize);

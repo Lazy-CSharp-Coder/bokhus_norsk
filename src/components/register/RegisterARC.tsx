@@ -23,9 +23,9 @@ export function RegisterARC()
         <article key={"#ARCTeam#"} className="arcArticle flex fadeInFromBelowAnim">
             <h2 className="registerARC">ADVANCED READERS TEAM QUESTIONS</h2>
             <fieldset className="arcForm flex">
-                <div className="languagesDiv">
+              <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">What languages do you prefer for your ARC copy  ?</label>
-                    <ul className="languagesList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {languageOptions.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="radio" id={item} value={item} {...register("arc.languageArcCopy")} />
@@ -39,9 +39,9 @@ export function RegisterARC()
                     </ul>
                 </div>
 
-                <div className="languagesDiv">
+             <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">What format do you prefer for ARC copy ?</label>
-                    <ul className="languagesList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {formatOptions.map((item) => (
 
                             <li key={item} className="languagePreferredDiv">
@@ -61,9 +61,9 @@ export function RegisterARC()
                     <textarea className="registerTextArea" rows={4} {...register("arc.why")} placeholder="tell us why" />
 
                 </div>
-                <div className="languagesDiv">
+                <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">How long does it usually take you to read a book ?</label>
-                    <ul className="languagesList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {howLongOptions.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="radio" id={item} value={item} {...register("arc.howLong")} />
@@ -73,9 +73,9 @@ export function RegisterARC()
                         {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}
                     </ul>
                 </div>
-                <div className="languagesDiv">
+             <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">Are you comfortable with giving an honest review ?</label>
-                    <ul className="languagesList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {comfortableOptions.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="radio" id={"#pref#" + item} value={item} {...register("arc.comfortable")} />
@@ -85,9 +85,9 @@ export function RegisterARC()
                         {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}
                     </ul>
                 </div>
-                <div className="languagesDiv">
+    <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">Where do you post reviews  ? </label>
-                    <ul className="languagesList flex">
+ <ul className="multipleChoicesARCList flex">
                         {reviewSitesDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="checkbox" id={`#reviewSites#${item}`} value={item} {...register("arc.reviewSites")} />
@@ -97,9 +97,9 @@ export function RegisterARC()
                         {errors.arc?.reviewSites && <p className="errorRegisterForm">{errors.arc.reviewSites.message}</p>}
                     </ul>
                 </div>
-                <div className="languagesDiv">
+                <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">What do you notice when you read books  ?</label>
-                    <ul className="languagesList flex">
+                 <ul className="multipleChoicesARCList flex">
                         {noticeDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="checkbox" id={`#notice#${item}`} value={item} {...register("arc.notice")} />
