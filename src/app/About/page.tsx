@@ -33,7 +33,7 @@ export default function About()
             <BackgroundImage className="aboutBackground" src="/images/backgrounds/authorBackground2.png" />
             <section className="aboutSection flex fadeInAnim">
                 <h2 className="aboutHeading fadeInAnim" style={{ animationDelay: "0.6s" }}>{aboutUs.aboutHeading.toUpperCase()}</h2>
-                <ExpandingLine lineSize={1} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
+                <ExpandingLine lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
                 <div className="aboutTextDiv flex fadeInAnim" style={{ animationDelay: "0.8s" }}>
                     {aboutUs.aboutText.map((item, index) =>
                         <p key={index + "#About#"} className="aboutText" style={{ animationDelay: `${index * animInc}ms` }}>{item}</p>
@@ -41,7 +41,7 @@ export default function About()
                     )}
                     <QuotesBottom fontSize="1.5rem" />
                 </div>
-                <ExpandingLine lineSize={1} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
+                <ExpandingLine lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
 
                 <div className="bokhusComWrapper fadeInAnim" style={{ animationDelay: "0.6s" }}>
                     <BokHusCom fontSize="1.45rem" />
