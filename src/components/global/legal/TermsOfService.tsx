@@ -1,7 +1,7 @@
 export function TermsOfUse()
 {
     return (
-        <section className="termsOfUseSection">
+        <section className="termsOfUseSection fadeInFromLeftAnim">
             <h2 className="legalHeadingTop">
                 Terms of Use
             </h2>
