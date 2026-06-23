@@ -4,15 +4,13 @@
 display: flex;
     flex-direction: column;
     align-items: left;
-    justify-content:space-around;
+    justify-content: space-around;
     background-color: transparent;
     height: 100%;
-    min-height: 100%;
     min-width: 100%;
-    padding-bottom: clamp(1rem, 5cqh, 5rem);
-     padding-top: clamp(1rem, 5cqh, 2rem);
+   
     /* padding-top: 1%; */
-    flex-grow: 1;
+
 
 
 }

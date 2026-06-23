@@ -41,6 +41,16 @@ export interface About {
 export interface QuoteBottomProps
 {
     fontSize: string,
-    fontFamily?: string;
+    fontFamily?: string,
+    noAnim? : boolean
 }
 
+export interface ExpandingLineProps 
+{
+    width? : string,
+    lineSize : number, 
+    lineType? : string,
+    color? : string,
+    animationDelay? : string,
+    animationDuration? : string, 
+}
