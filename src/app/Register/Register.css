@@ -3,10 +3,10 @@ display: flex;
 justify-content: flex-start;
 
 min-height: 100vh;
- background: #031211;
+ /* background: #031211;
 background: -moz-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
 background: -webkit-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
-background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%); 
+background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  */
 
 }
 

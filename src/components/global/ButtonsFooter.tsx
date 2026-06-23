@@ -8,7 +8,7 @@ export function TermsButton()
 
     return (<button className="termsButton" onClick={() => setShowTerms((prev) => !prev)}>
 
-        Terms of service
+     TERMS OF SERVICE
     </button>
 
 
@@ -19,11 +19,11 @@ export function TermsButton()
 
 export function PrivacyButton()
 {
-    const [showTerms, setShowTerms] = useState<boolean>(false);
+    const [showPrivacy, setShowPrivacy] = useState<boolean>(false);
 
-    return (<button className="termsButton" onClick={() => setShowTerms((prev) => !prev)}>
+    return (<button className="privacyButton" onClick={() => setShowPrivacy((prev) => !prev)}>
 
-        Privacy Policy
+        PRIVACY POLICY
     </button>
 
 
@@ -35,11 +35,11 @@ export function PrivacyButton()
 
 export function AffiliateButton()
 {
-    const [showTerms, setShowTerms] = useState<boolean>(false);
+    const [showAffiliate, setShowAffiliate] = useState<boolean>(false);
 
-    return (<button className="termsButton" onClick={() => setShowTerms((prev) => !prev)}>
-
-        Affiliate of Amazon
+    return (<button className="affiliateButton" onClick={() => setShowAffiliate((prev) => !prev)}>
+       AFFILLIATE OF AMAZON
+       
     </button>
 
 
@@ -47,3 +47,24 @@ export function AffiliateButton()
 
 }
 
+export interface FooterInfo
+{
+    heading: string,
+    text: string[];
+}
+
+export function DisplayInfo({ heading, text }: FooterInfo)
+{
+    return (
+        <div className="footerInfoDiv">
+            <h3 className="footerInfoHeading">{heading} </h3>
+            <div className="footerInfoTextDiv fadeInFromBelowAnim">
+                {text.map((item, index) =>
+                    <p className="footerInfoParagraph">{item}</p>)
+
+                }
+
+            </div>
+        </div>
+    );
+}

@@ -4,6 +4,8 @@ import type { HeaderProps } from "@/types/types";
 import { HamburgerMenu } from "./HamburgerMenu";
 import languagesJson from "@/json/languages.json";
 import { LanguageText } from "@/types/languagetypes";
+import { BokHus } from "@/app/BoKHus";
+import { BokHusCom } from "./BokHusCom";
 
 export function Header({ background, menuItems }: HeaderProps)
 {
