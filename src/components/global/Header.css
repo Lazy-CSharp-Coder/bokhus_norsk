@@ -38,7 +38,7 @@ header {
 .headerIcon {
   position: relative;
   display: inline-block;
-  height: 4rem;
+  height: 4.5rem;
   aspect-ratio: 1 /1;
 }
 
@@ -50,7 +50,7 @@ header {
 
 .headerMenuItem {
 
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   /* letter-spacing: 0.4px; */
   color: var(--myWhiteColor);

@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export function TermsButton()
 {
-    const [showTerms, setShowTerms] = useState<boolean>(false);
+    // const [showTerms, setShowTerms] = useState<boolean>(false);
 
-    return (<button className="termsButton" onClick={() => setShowTerms((prev) => !prev)}>
+    return (<Link className="termsLink" href="/Terms">TERMS OF USE </Link>
 
-     TERMS OF SERVICE
-    </button>
+    
 
 
     );
@@ -45,26 +45,4 @@ export function AffiliateButton()
 
     );
 
-}
-
-export interface FooterInfo
-{
-    heading: string,
-    text: string[];
-}
-
-export function DisplayInfo({ heading, text }: FooterInfo)
-{
-    return (
-        <div className="footerInfoDiv">
-            <h3 className="footerInfoHeading">{heading} </h3>
-            <div className="footerInfoTextDiv fadeInFromBelowAnim">
-                {text.map((item, index) =>
-                    <p className="footerInfoParagraph">{item}</p>)
-
-                }
-
-            </div>
-        </div>
-    );
 }

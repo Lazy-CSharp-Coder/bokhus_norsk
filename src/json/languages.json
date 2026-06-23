@@ -24,10 +24,19 @@
                 "name": "WHERE TO BUY",
                 "pageLink": "/WhereToBuy"
             },
+                           {
+                "name": "WORK WITH US",
+                "pageLink": "/Contact"
+            },
             {
                 "name": "ABOUT",
                 "pageLink": "/About"
+            },
+               {
+                "name": "CONTACT US",
+                "pageLink": "/Contact"
             }
+   
         ],
         "heroPage": {
             "quotesHeading": [
