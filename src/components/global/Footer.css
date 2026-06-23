@@ -28,6 +28,7 @@ footer{
     width: 4.5rem;
     aspect-ratio: 1/1 ;
     filter: invert();
+    position: relative;
 }
 
 .logoFooterImg {
