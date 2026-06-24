@@ -54,3 +54,8 @@
     background-color: black;
     color: white;
 }
+
+.legalContactLink {
+    color: lightblue;
+    text-decoration: underline;
+}
