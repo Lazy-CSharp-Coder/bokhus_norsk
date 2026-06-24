@@ -3,7 +3,7 @@ import Link from "next/link";
 export function TermsOfUse()
 {
     return (
-        <section className="termsOfUseSection fadeInAnim">
+        <section className="legalSection fadeInAnim">
             <h2 className="legalHeadingTop">
                 Terms of Use
             </h2>
