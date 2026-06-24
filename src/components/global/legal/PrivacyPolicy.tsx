@@ -28,7 +28,7 @@ policy.     </p>
                   Data Controller
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">BThe data controller responsible for processing personal data on
+                    <p className="legalText">The data controller responsible for processing personal data on
 BokHus.com is:
 BokHus</p>
                     <ul className="legalList">
