@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-export function TermsOfUse()
+export function PrivacyPolicy()
 {
     return (
         <section className="legalSection fadeInAnim">
             <h2 className="legalHeadingTop">
-              Privacy Policy
+                Privacy Policy
             </h2>
             <article className="legalArticle">
                 <h3 className="legalHeading">
@@ -14,228 +14,308 @@ export function TermsOfUse()
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">This Privacy Policy explains how BokHus.com collects, uses, and
-protects personal information in accordance with the EU General Data
-Protection Regulation (GDPR) and relevant Norwegian privacy laws.</p>
+                        protects personal information in accordance with the EU General Data
+                        Protection Regulation (GDPR) and relevant Norwegian privacy laws.</p>
                     <p className="legalText">   By using BokHus.com, you agree to the practices described in this
-policy.     </p>
-          
+                        policy.     </p>
+
                 </div>
             </article>
             <article className="legalArticle">
 
                 <h3 className="legalHeading">
 
-                  Data Controller
+                    Data Controller
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">The data controller responsible for processing personal data on
-BokHus.com is:
-BokHus</p>
+                    <p className="legalText">The data controller responsible for processing personal data on BokHus.com is: </p>
+                    <p>Hushald AS
+
+                       </p>
+                    <p>Vestre Vadmyra 35
+                    </p> <p>5172 LODDEFJORD</p><p>Norway</p>
+                </div>
+
+            </article>
+
+            <article className="legalArticle">
+                <h3 className="legalHeading">Personal Data We Collect</h3>
+
+                <div className="textDiv">
+                    <p className="legalText">Information you provide. </p>
+                    <p> When you interact with the website you may provide: </p>
+
+
                     <ul className="legalList">
 
-                        <li> book presentations</li>
-                        <li> articles and historical content</li>
-                        <li>digital downloads</li>
+                        <li>name</li>
+                        <li> email address</li>
+                        <li>messages sent through contact forms</li>
                         <li>newsletters</li>
-                        <li> links to booksellers or third-party platforms</li>
-                        <li>author information and related media</li>
+                        <li> newsletter subscriptions</li>
+                        <li> author or contributor information</li>
                     </ul>
-                    <p className="legalText">BokHus may update or change services at any time without prior
-                        notice.</p>
+                    <p> Automatically collected information :</p>
 
-
-                </div>
-            </article>
-
-            <article className="legalArticle"> <h3 className="legalHeading">Intellectual Property
-            </h3>
-                <div className="textDiv">
-                    <p className="legalText">All content on BokHus.com, including but not limited to :</p>
+                    <p>When you visit BokHus.com, we may collect:</p>
                     <ul className="legalList">
 
-                        <li> text</li>
-                        <li> images</li>
-                        <li>book covers</li>
-                        <li>graphics</li>
-                        <li>logos</li>
-                        <li>layout and design</li>
-                        <li>downloadable materials</li>
+                        <li>IP address</li>
+                        <li> browser type</li>
+                        <li>device information</li>
+                        <li>pages visited</li>
+                        <li>  time spent on the website </li>
+                        <li> referral source</li>
                     </ul>
-                    <p className="legalText">is protected by copyright and intellectual property laws.
-                        Unless otherwise stated, the rights belong to BokHus or the
-                        respective authors and creators.</p>
-                    <p className="legalText">You may not : </p>
+                    <p>This information is collected through cookies and analytics tools.</p>
+                </div>
+
+            </article>
+
+
+
+            <article>
+                <h3 className="legalHeading">Purpose of Data Processing</h3>
+
+                <div className="textDiv">
+                    <p className="legalText">We process personal data for the following purposes:</p>
+
+
+
                     <ul className="legalList">
 
-                        <li> reproduce</li>
-                        <li> distribute</li>
-                        <li>publish</li>
-                        <li>modify</li>
-                        <li>sell</li>
-                        <li>or reuse content</li>
-
+                        <li>responding to inquiries and messages</li>
+                        <li> managing newsletter subscriptions</li>
+                        <li>improving website functionality and performance</li>
+                        <li>analyzing website traffic</li>
+                        <li> maintaining website security</li>
+                        <li> managing author or contributor relationships</li>
                     </ul>
-                    <p className="legalText">  without written permission.</p>
-                    <p className="legalText">Short quotations for reviews or academic purposes are permitted
-                        when the source is clearly credited. </p>
                 </div>
             </article>
+
+
+
+
+
+
             <article className="legalArticle">
-                <h3 className="legalHeading">User Conduct</h3>
-
-                <div className="textDiv">
-                    <p className="legalText">     When using BokHus.com you agree not to:</p>
-                    <ul className="legalList">
-
-                        <li>violate any laws or regulations</li>
-                        <li> attempt to hack or disrupt the website</li>
-                        <li>upload malicious software</li>
-                        <li> misuse forms or contact systems</li>
-                        <li>impersonate another person or organisation</li>
-
-                    </ul>
-                    <p className="legalText">    We reserve the right to block access to users who violate these
-                        rules.</p>
-                </div>
-
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Third-Party Links
-
+                <h3 className="legalHeading">Legal Basis for Processing
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">
-                        BokHus.com may contain links to third-party websites such as:
+                    <p className="legalText">Under GDPR, our legal basis for processing personal data may
+                        include:</p>
+                    <p>Consent</p>
+                    <p>When you voluntarily subscribe to newsletters or submit forms.</p>
+                    <p>Legitimate interest</p>
+                    <p>To improve website performance, security, and user experience.</p>
+                    <p>Contractual necessity</p>
+                    <p>When working with authors, contributors, or partners.</p>
+</div>
+</article>
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">Cookies and Analytics</h3>
 
-                    </p>
-                    <ul className="legalList">
+                        <div className="textDiv">
+                            <p className="legalText">  BokHus.com may use cookies and similar technologies to:</p>
+                            <ul className="legalList">
 
-                        <li>online bookstores</li>
-                        <li>  publishing platforms</li>
-                        <li>social media services</li>
-
-
-                    </ul>
-                    <p className="legalText">
-                        BokHus is not responsible for the content, policies, or practices of
-                        external websites.
-                        Users access third-party services at their own risk.
-                    </p>
-                </div>
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Digital Content and Downloads
-
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        If BokHus offers downloadable content such as:
-                    </p>
-                    <ul className="legalList">
-
-                        <li>eBook</li>
-                        <li>  sample chapters</li>
-                        <li>articles</li>
-                        <li>research material</li>
-
-                    </ul>
-                    <p className="legalText">
-                        These are provided for personal, non-commercial use only unless
-
-                        otherwise specified.
-                        Redistribution or resale is not permitted without written consent.
-
-                    </p>
-                </div>
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Disclaimer
-
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        The information on BokHus.com is provided for informational
-                        and literary purposes only.
-                       
-                    </p>
-                    <p className="legalText">
-                         While we strive for accuracy, BokHus makes no guarantees
-                        regarding :
-                    </p>
-                    <ul className="legalList">
-
-                        <li> completeness</li>
-                        <li>  accuracy</li>
-                        <li> availability</li>
-                        <li>uninterrupted service</li>
-
-                    </ul>
-                    <p className="legalText">
-                        Use of the website is at your own risk.
-
-                    </p>
-                </div>
-            </article>
+                                <li>remember user preferences</li>
+                                <li> analyze website usage</li>
+                                <li>improve performance</li>
 
 
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Privacy
+                            </ul>
+                            <p className="legalText">  Examples may include:</p>
+                            <ul className="legalList">
 
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        Your use of BokHus.com is also governed by our Privacy Policy,
-                        which explains how personal information may be collected and used.
-                    </p>
+                                <li>Google Analytics</li>
+                                <li> website performance cookies</li>
+                                <li>session cookies</li>
 
-                </div>
-            </article>
 
-            <article className="legalArticle">
-                <h3 className="legalHeading">
+                            </ul>
+            
+                            <p>Users can disable cookies through browser settings.</p>
+                            <p>
+                                A separate Cookie Policy may provide further details.
+                            </p>
+                        </div>
 
-                    Changes to Terms
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        BokHus may update these Terms of Use at any time.
-                        Updated versions will be published on this page with a revised date.
-                    </p>
-                    <p className="legalText">
-                        Continued use of the website after changes constitutes acceptance
-                        of the updated terms.
-                    </p>
-                </div>
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
+                    </article>
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">
+                      Data Sharing
 
-                    Governing Law
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        These Terms shall be governed by the laws of Norway.
-                    </p>
-                    <p className="legalText">
-                        Any disputes arising from the use of BokHus.com shall be subject
-                        to the jurisdiction of Norwegian courts.
-                    </p>
-                </div>
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Contact
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        For questions regarding these Terms, please contact BokHus. You can use the "Contact Us" form to do this by clicking this <Link className="legalContactLink" href="/Contact">link</Link>.
-                    </p>
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+                             We do not sell personal data.
+                            </p>
+                            <p className="legalText">
+                                Personal data may be shared with trusted service providers that
+support the website, such as:
+                            </p>
+                            <ul className="legalList">
 
-                </div>
-            </article>
-        </section >);
-}
+                                <li>website hosting providers</li>
+                                <li>   analytics services</li>
+                                <li>email newsletter platforms</li>
+
+
+                            </ul>
+                            <p className="legalText">
+                      These providers process data only on our behalf and according to
+GDPR requirements.
+                            </p>
+                        </div>
+                    </article>
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">
+                       Data Storage and Security
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+                        We implement reasonable technical and organizational measures to protect personal data, including:
+                            </p>
+                            <ul className="legalList">
+
+                                <li>secure hosting</li>
+                                <li> encrypted connections (HTTPS)</li>
+                                <li>limited access to personal information</li>
+             
+
+                            </ul>
+                            <p className="legalText">
+                            Personal data is stored only for as long as necessary to fulfill the
+purposes described in this policy.
+                            </p>
+                        </div>
+                    </article>
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">
+                          Your Rights Under GDPR
+
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+                             Users located in the European Economic Area have the following
+rights:
+                            </p>
+                            <p className="legalText">
+                            You may request:
+                            </p>
+                            <ul className="legalList">
+
+                                <li> access to your personal data</li>
+                                <li>correction of inaccurate data</li>
+                                <li> deletion of your data (&quot;right to be forgotten&quot;)</li>
+                                <li> restriction of processinge</li>
+                                    <li>data portability</li>
+                                        <li>withdrawal of consent at any time</li>
+
+                            </ul>
+                            <p className="legalText">
+                         Requests may be sent to the contact email listed above.
+You also have the right to lodge a complaint with the Norwegian Data Protection Authority (Datatilsynet).
+
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">
+                        International Data Transfers
+
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+                          If personal data is processed outside the European Economic Area,
+BokHus ensures that appropriate safeguards are in place, such as:
+                            </p>
+                         
+                            <ul className="legalList">
+
+                                <li> EU Standard Contractual Clauses</li>
+                                <li>GDPR-compliant service providers</li>
+                         
+
+                            </ul>
+
+                        </div>
+                    </article>
+
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">
+
+                         Data Retention
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+                              Personal data is retained only as long as necessary for the purpose
+it was collected, unless longer retention is required by law.
+                            </p>
+                            <p className="legalText">
+                             Typical retention periods may include:
+                            </p>
+     
+                            <ul className="legalList">
+
+                                <li> contact messages: up to 12 months</li>
+                                <li>newsletter data: until unsubscribe</li>
+                         
+     <li>analytics data: according to provider policies</li>
+                            </ul>
+
+
+
+
+                        </div>
+                    </article>
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">
+Children&#39;s Privacy
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+              BokHus.com is not intended for children under 16 years of age.
+We do not knowingly collect personal data from children.
+If such data is discovered, it will be deleted as soon as possible.
+                            </p>
+             
+                        </div>
+                    </article>
+
+
+      <article className="legalArticle">
+                        <h3 className="legalHeading">
+ Changes to This Policy
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+    We may update this Privacy Policy from time to time.
+The updated version will be published on this page with a revised
+date.
+                            </p>
+             
+                        </div>
+                    </article>
+
+
+
+
+
+                    <article className="legalArticle">
+                        <h3 className="legalHeading">
+                            Contact
+                        </h3>
+                        <div className="textDiv">
+                            <p className="legalText">
+                                For questions regarding these Privacy Policy or the handling of personal data, please contact BokHus. You can use the "Contact Us" form to do this by clicking this <Link className="legalContactLink" href="/Contact">link</Link>.
+                            </p>
+
+                        </div>
+                    </article>
+                </section >);
+};
