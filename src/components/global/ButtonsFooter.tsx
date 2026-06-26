@@ -21,7 +21,7 @@ export function PrivacyButton()
 {
     const [showPrivacy, setShowPrivacy] = useState<boolean>(false);
 
-    return (<Link className="termsLink" href="/Privacy">Privacy Policy </Link>
+    return (<Link className="termsLink" href="/Privacy">PRIVACY POLICY </Link>
 
     );
 
@@ -31,7 +31,7 @@ export function CookieButton()
 {
     const [showPrivacy, setShowPrivacy] = useState<boolean>(false);
 
-    return (<Link className="termsLink" href="/Cookies">Cookies </Link>
+    return (<Link className="termsLink" href="/Cookies">COOKIE POLICY </Link>
 
     );
 

@@ -14,6 +14,25 @@
     border-bottom: 1px solid white;
 }
 
+.legalTextSmallHeading {
+    font-weight: bold;
+    font-size: 1.1rem;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid white;
+    width: fit-content;
+
+    padding-bottom: 3px;
+
+}
+
+.updateHeading {
+        font-weight: bold;
+    font-size: 1.1rem;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid white;
+    width: fit-content;
+}
+
 .legactText {
     font-size: 1rem;
 }

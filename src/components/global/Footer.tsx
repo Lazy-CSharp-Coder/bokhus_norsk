@@ -1,4 +1,4 @@
-import { AffiliateButton, PrivacyButton, TermsButton } from "./ButtonsFooter";
+import { AffiliateButton, CookieButton, PrivacyButton, TermsButton } from "./ButtonsFooter";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import Link from "next/link";
@@ -16,6 +16,7 @@ export function Footer()
 
                     <TermsButton />
                     <PrivacyButton />
+                    <CookieButton/>
                     <AffiliateButton />
                 </div>
             </div>

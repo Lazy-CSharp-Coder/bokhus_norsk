@@ -37,7 +37,7 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
     width:100%;
     height: 100%;
     /* padding: rem 0rem; */
-    margin-left: 12rem;
+    padding-left: 12rem;
   padding-bottom: 4rem;
      color: rgba(221, 221, 221, 1);
     font-family: var(--robotoFont);

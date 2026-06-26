@@ -7,11 +7,12 @@ export function PrivacyPolicy()
             <h2 className="legalHeadingTop">
                 Privacy Policy
             </h2>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
+              <h3 className="updateHeading">
 
                     Last updated: 06/24/2026
                 </h3>
+            <article className="legalArticle">
+              
                 <div className="textDiv">
                     <p className="legalText">This Privacy Policy explains how BokHus.com collects, uses, and
                         protects personal information in accordance with the EU General Data
@@ -29,11 +30,11 @@ export function PrivacyPolicy()
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">The data controller responsible for processing personal data on BokHus.com is: </p>
-                    <p>Hushald AS
+                    <p className="legalText">Hushald AS
 
                        </p>
-                    <p>Vestre Vadmyra 35
-                    </p> <p>5172 LODDEFJORD</p><p>Norway</p>
+                    <p className="legalText">Vestre Vadmyra 35
+                    </p> <p className="legalText">5172 LODDEFJORD</p><p className="legalText">Norway</p>
                 </div>
 
             </article>
@@ -42,8 +43,8 @@ export function PrivacyPolicy()
                 <h3 className="legalHeading">Personal Data We Collect</h3>
 
                 <div className="textDiv">
-                    <p className="legalText">Information you provide. </p>
-                    <p> When you interact with the website you may provide: </p>
+                    <p className="legalTextSmallHeading">Information you provide </p>
+                    <p className="legalText"> When you interact with the website you may provide: </p>
 
 
                     <ul className="legalList">
@@ -55,9 +56,9 @@ export function PrivacyPolicy()
                         <li> newsletter subscriptions</li>
                         <li> author or contributor information</li>
                     </ul>
-                    <p> Automatically collected information :</p>
+                    <p className="legalTextSmallHeading"> Automatically collected information</p>
 
-                    <p>When you visit BokHus.com, we may collect:</p>
+                    <p className="legalText">When you visit BokHus.com, we may collect:</p>
                     <ul className="legalList">
 
                         <li>IP address</li>
@@ -67,14 +68,14 @@ export function PrivacyPolicy()
                         <li>  time spent on the website </li>
                         <li> referral source</li>
                     </ul>
-                    <p>This information is collected through cookies and analytics tools.</p>
+                    <p className="legalText">This information is collected through cookies and analytics tools.</p>
                 </div>
 
             </article>
 
 
 
-            <article>
+            <article className="legalArticle">
                 <h3 className="legalHeading">Purpose of Data Processing</h3>
 
                 <div className="textDiv">
@@ -105,12 +106,12 @@ export function PrivacyPolicy()
                 <div className="textDiv">
                     <p className="legalText">Under GDPR, our legal basis for processing personal data may
                         include:</p>
-                    <p>Consent</p>
-                    <p>When you voluntarily subscribe to newsletters or submit forms.</p>
-                    <p>Legitimate interest</p>
-                    <p>To improve website performance, security, and user experience.</p>
-                    <p>Contractual necessity</p>
-                    <p>When working with authors, contributors, or partners.</p>
+                    <p className="legalText">Consent</p>
+                    <p className="legalText">When you voluntarily subscribe to newsletters or submit forms.</p>
+                    <p className="legalText">Legitimate interest</p>
+                    <p className="legalText">To improve website performance, security, and user experience.</p>
+                    <p className="legalText">Contractual necessity</p>
+                    <p className="legalText">When working with authors, contributors, or partners.</p>
 </div>
 </article>
                     <article className="legalArticle">
@@ -136,8 +137,8 @@ export function PrivacyPolicy()
 
                             </ul>
             
-                            <p>Users can disable cookies through browser settings.</p>
-                            <p>
+                            <p className="legalText">Users can disable cookies through browser settings.</p>
+                            <p className="legalText">
                                 A separate Cookie Policy may provide further details.
                             </p>
                         </div>
