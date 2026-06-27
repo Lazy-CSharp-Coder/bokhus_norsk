@@ -14,7 +14,7 @@
 
   background-image: var(--defaultBackgroundImage);
   background-size: cover;
-  position: fixed;
+    position: fixed;
   background-repeat: no-repeat;
   /* filter: blur(5px) brightness(58%); */
   z-index: -1;
@@ -26,20 +26,29 @@
 .contactPage {
 
     display: flex;
-    flex-direction: row;
-    justify-self: center;
+    flex-direction:row;
+    justify-self: space-around;
+flex:1;
+    align-items: center;
+    width: 100%;
 
-
-    width: 40%;
     color: white;
     font-family: var(--robotoFont);
+
+
 }
 
-.contactUsArticle {
+
+/* .contactUsSection 
+{ flex-direction: column;
+    width: 30%;
+} */
+
+.contactUsSection{
     flex-direction: column;
-    align-items: left;
+    align-items:flex-start;
     gap: 1rem;
-    width:100%;
+    width:30%;
 height: fit-content;
     font-family: var(--robotoFont);
     padding: 2.5rem 4rem;
@@ -54,7 +63,7 @@ height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: left;
-    width: 100%;
+    width: fit-content;
     gap: 0.2rem;
 
     font-size: 1.5rem;

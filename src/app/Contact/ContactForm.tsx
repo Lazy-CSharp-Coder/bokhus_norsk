@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
-import { ContactInfo, contactSchema } from "./contactSchema";
-import { BokHusCom } from "../global/BokHusCom";
+import { ContactInfo, contactSchema } from "../../components/general/contactSchema";
+import { BokHusCom } from "../../components/global/BokHusCom";
 
 const emptyForm: ContactInfo =
 {
@@ -23,50 +23,50 @@ export function ContactUs()
 
     return (
         <section className="contactUsSection flex">
-            <article className="contactUsArticle flex">
+            {/* <article className="contactUsArticle flex"> */}
                 <h2 className="contactUsHeading flex">
-                    Contact Us 
+                    Contact Us
                 </h2>
                 <p className="contactUsText">
                     If you have someting you wanna tell us about this page or questions about future releases, please feel free to do so here. Just leave you e-mail address and we will get back to you as soon as possible.
                 </p>
-         
-            <form className="contactUsForm flex">
 
-                <div className="inputDiv">
-                    <label>Your email address : </label>
-                    <input className="registerInput" type="email" {...register("email")} placeholder="e-mail address" />
-                    {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
+                <form className="contactUsForm flex">
+
+                    <div className="inputDiv">
+                        <label>Your email address : </label>
+                        <input className="registerInput" type="email" {...register("email")} placeholder="e-mail address" />
+                        {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
 
 
+                    </div>
+
+                    <div className="inputDiv">
+                        <label>Subject : </label>
+                        <input className="registerInput" type="email" {...register("email")} placeholder="subject" />
+                        {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
+
+
+                    </div>
+
+
+                    <div className="inputDiv">
+                        <label>Your comment : </label>
+                        <textarea className="registerInput" {...register("email")} placeholder="what is it about ?" rows={10} />
+                        {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
+
+
+                    </div>
+
+                    <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
+
+
+                </form>
+                <div className="bokhusComWrapper flex">
+                    <BokHusCom fontSize="1.1rem" />
                 </div>
 
-                <div className="inputDiv">
-                    <label>Subject : </label>
-                    <input className="registerInput" type="email" {...register("email")} placeholder="subject" />
-                    {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
-
-
-                </div>
-
-
-                <div className="inputDiv">
-                    <label>Your comment : </label>
-                    <textarea className="registerInput" {...register("email")} placeholder="what is it about ?" rows={10}/>
-                    {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
-
-
-                </div>
-
-                <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
-
-
-            </form>
-            <div className="bokhusComWrapper flex">
- <BokHusCom fontSize="1.1rem"/>
-            </div>
-           
-   </article>
+            {/* </article> */}
 
         </section>
     );

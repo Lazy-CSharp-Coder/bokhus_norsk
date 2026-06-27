@@ -1,4 +1,4 @@
-import { ContactUs } from "@/components/general/ContactForm";
+import { ContactUs } from "@/app/Contact/ContactForm";
 import "./About.module.css";
 import aboutJson from "@/json/about.json";
 import type { LanguageText } from "@/types/languagetypes";
