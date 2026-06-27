@@ -1,0 +1,66 @@
+
+
+@import "./ButtonsFooter.css";
+@import "./legal/legal.css";
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   gap: 2rem;
+  min-height: 6rem;
+  max-height: 6rem;
+    padding: 0.8rem 2rem;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.7);
+
+}
+
+
+.logoTermsWrapper {
+    display: flex;
+    flex-direction: row;
+    gap:2.5rem;
+}
+
+.logoFooterWrapper {
+
+    width: 4.5rem;
+    aspect-ratio: 1/1 ;
+    filter: invert();
+    position: relative;
+}
+
+.logoFooterImg {
+    object-fit: contain;
+}
+
+
+
+.termsGroup {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    justify-items: center;
+    column-gap: 2rem;
+
+}
+
+.contactUsLink 
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+
+.socialMediaGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-right: 1rem;
+    justify-content: left;
+    align-items: center;
+
+}
+

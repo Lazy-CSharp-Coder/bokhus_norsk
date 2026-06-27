@@ -45,7 +45,7 @@ export default function Register()
    
         <RegisterForm onSuccess={onSuccess} data={defaultData}/>
     
-
+      
 
       </main>
 

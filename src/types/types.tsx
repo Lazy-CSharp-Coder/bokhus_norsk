@@ -6,7 +6,7 @@ type AnimTypes = "No Animation"| "RotateIn" | "FadeIn" | "ScaleIn";
 export interface BackgroundImageProps 
 {
     className : string,
-    src : string,
+    src? : string,
     animType?: AnimTypes,
     animDuration? : string,
     animDelay? : string

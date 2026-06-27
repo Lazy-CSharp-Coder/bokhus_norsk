@@ -16,9 +16,9 @@ export default function Home()
     ];
 
   const animInc = 0;
-  const animIncQuotesBottom = 1700;
+
   const waitForMain = 300;
-  const waitForDescription = 800;
+
 
   const { languageNumber, heroPage } = useLanguageChosen();
 

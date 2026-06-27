@@ -3,6 +3,7 @@ import { Header } from "@/components/global/Header";
 import "./globals.css";
 import { StateProvider } from "@/globalStates";
 import { Libre_Baskerville, Roboto } from "next/font/google";
+import { Footer } from "@/components/global/Footer";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--libreFont",
@@ -34,6 +35,7 @@ export default function RootLayout({
         {/* <StateProvider> */}
           <Header />
           {children}
+          <Footer/>
         {/* </StateProvider> */}
       </body>
     </html>

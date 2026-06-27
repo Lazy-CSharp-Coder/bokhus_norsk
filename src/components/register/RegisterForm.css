@@ -1,3 +1,6 @@
+
+@import "./submit.css";
+
 :root {
     --regFontSize: 1.1rem;
 }
@@ -8,7 +11,7 @@
     justify-content: center;
 
     gap: 2.5rem;
-    width: 60%;
+    width: 35%;
     padding: 4rem 0;
 
     color: black;
@@ -90,7 +93,7 @@
 
     width: max-content;
     justify-content: top;
-    align-items: stretch;
+    align-items:left;
     gap: 1rem;
     color: black;
   
@@ -103,7 +106,7 @@
     gap: 0.5rem;
     width: max-content;
     justify-content: top;
-    align-items: stretch;
+    align-items: left;
     gap: 1rem;
     color: black;
     /* background-color: purple; */

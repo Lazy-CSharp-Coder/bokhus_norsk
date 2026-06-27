@@ -1,0 +1,25 @@
+.termsLink, .privacyButton, .affiliateButton {
+    border: none;
+    color:var(--myWhiteColor);
+    font-family : var(--robotoFont);
+    font-size: 1rem;
+    transition: all 0.5 ease-in-out;
+    background-color: transparent;
+    text-decoration: none;
+    height: fit-content;
+
+}
+
+
+
+.footerInfoHeading {
+    font-size: 1.8rem;
+    color: white;
+
+}
+
+.termsButton:hover, .privacyButton:hover, .affiliateButton:hover {
+
+    color: white;
+    scale: 1.05;
+}

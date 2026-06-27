@@ -1,5 +1,9 @@
 
 @import "./BokHus.css";
+
+body {
+    background: black;
+}
 .heroPage {
 display: flex;
     flex-direction: column;
@@ -7,6 +11,7 @@ display: flex;
     justify-content: space-around;
     background-color: transparent;
     height: 100%;
+    flex-grow: 1;
     min-width: 100%;
    
     /* padding-top: 1%; */
