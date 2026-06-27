@@ -28,7 +28,7 @@ export function ContactUs()
                     Contact Us
                 </h2>
                 <p className="contactUsText">
-                    If you have someting you wanna tell us about this page or questions about future releases, please feel free to do so here. Just leave you e-mail address and we will get back to you as soon as possible.
+                  If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
                 </p>
 
                 <form className="contactUsForm flex">

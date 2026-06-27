@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-export function PrivacyPolicy()
+export function CookiePolicy()
 {
     return (
         <section className="legalSection fadeInAnim">
             <h2 className="legalHeadingTop">
-                Privacy Policy
+                Cookie Policy
             </h2>
             <h3 className="updateHeading">
 
@@ -14,11 +14,8 @@ export function PrivacyPolicy()
             <article className="legalArticle">
 
                 <div className="textDiv">
-                    <p className="legalText">This Privacy Policy explains how BokHus.com collects, uses, and
-                        protects personal information in accordance with the EU General Data
-                        Protection Regulation (GDPR) and relevant Norwegian privacy laws.</p>
-                    <p className="legalText">   By using BokHus.com, you agree to the practices described in this
-                        policy.     </p>
+                    <p className="legalText">This Cookie Policy explains how BokHus.com uses cookies and similar technologies in accordance with the EU ePrivacy Directive and the General Data Protection Regulation (GDPR).</p>
+                    <p className="legalText"> By using BokHus.com, you consent to the use of cookies as described in this policy.   </p>
 
                 </div>
             </article>
@@ -26,294 +23,175 @@ export function PrivacyPolicy()
 
                 <h3 className="legalHeading">
 
-                    Data Controller
+                    What Are Cookies
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">The data controller responsible for processing personal data on BokHus.com is: </p>
-                    <p className="legalText">Hushald AS
+                    <p className="legalText">Cookies are small text files stored on your device when you visit a website.: </p>
+                    <p className="legalText">They help websites : </p>
 
-                    </p>
-                    <p className="legalText">Vestre Vadmyra 35
-                    </p> <p className="legalText">5172 LODDEFJORD</p><p className="legalText">Norway</p>
-                </div>
-
-            </article>
-
-            <article className="legalArticle">
-                <h3 className="legalHeading">Personal Data We Collect</h3>
-
-                <div className="textDiv">
-                    <p className="legalTextSmallHeading">Information you provide </p>
-                    <p className="legalText"> When you interact with the website you may provide: </p>
-
-
-                    <ul className="legalList">
-
-                        <li>name</li>
-                        <li> email address</li>
-                        <li>messages sent through contact forms</li>
-                        <li>newsletters</li>
-                        <li> newsletter subscriptions</li>
-                        <li> author or contributor information</li>
-                    </ul>
-                    <p className="legalTextSmallHeading"> Automatically collected information</p>
-
-                    <p className="legalText">When you visit BokHus.com, we may collect:</p>
-                    <ul className="legalList">
-
-                        <li>IP address</li>
-                        <li> browser type</li>
-                        <li>device information</li>
-                        <li>pages visited</li>
-                        <li>  time spent on the website </li>
-                        <li> referral source</li>
-                    </ul>
-                    <p className="legalText">This information is collected through cookies and analytics tools.</p>
-                </div>
-
-            </article>
-
-
-
-            <article className="legalArticle">
-                <h3 className="legalHeading">Purpose of Data Processing</h3>
-
-                <div className="textDiv">
-                    <p className="legalText">We process personal data for the following purposes:</p>
-
-
-
-                    <ul className="legalList">
-
-                        <li>responding to inquiries and messages</li>
-                        <li> managing newsletter subscriptions</li>
-                        <li>improving website functionality and performance</li>
-                        <li>analyzing website traffic</li>
-                        <li> maintaining website security</li>
-                        <li> managing author or contributor relationships</li>
-                    </ul>
-                </div>
-            </article>
-
-
-
-
-
-
-            <article className="legalArticle">
-                <h3 className="legalHeading">Legal Basis for Processing
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">Under GDPR, our legal basis for processing personal data may
-                        include:</p>
-                    <p className="legalText">Consent</p>
-                    <p className="legalText">When you voluntarily subscribe to newsletters or submit forms.</p>
-                    <p className="legalText">Legitimate interest</p>
-                    <p className="legalText">To improve website performance, security, and user experience.</p>
-                    <p className="legalText">Contractual necessity</p>
-                    <p className="legalText">When working with authors, contributors, or partners.</p>
-                </div>
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">Cookies and Analytics</h3>
-
-                <div className="textDiv">
-                    <p className="legalText">  BokHus.com may use cookies and similar technologies to:</p>
                     <ul className="legalList">
 
                         <li>remember user preferences</li>
-                        <li> analyze website usage</li>
-                        <li>improve performance</li>
-
+                        <li> improve performance</li>
+                        <li>analyze website traffic</li>
+                        <li>newsletters</li>
+                        <li> enhance user experience</li>
 
                     </ul>
-                    <p className="legalText">  Examples may include:</p>
+                    <p className="legalText">Cookies may be temporary (session cookies) or stored for longer periods (persistent cookies).</p>
+
+                </div>
+
+            </article>
+
+            <article className="legalArticle">
+                <h3 className="legalHeading">Types of Cookies We Use</h3>
+
+                <div className="textDiv">
+                    <p className="legalTextSmallHeading">Essential Cookies </p>
+                    <p className="legalText">These cookies are necessary for the website to function properly.
+                        They may include:</p>
+
+
+                    <ul className="legalList">
+
+                        <li>security cookies</li>
+                        <li> session management</li>
+                        <li>login or form functionality</li>
+
+                    </ul>
+                    <p className="legalText">These cookies cannot be disabled because the website would not work properly without them.</p>
+                    <p className="legalTextSmallHeading"> Analytics Cookies</p>
+
+                    <p className="legalText">These cookies help us understand how visitors use the website.
+                        They collect information such as:</p>
+                    <ul className="legalList">
+
+                        <li>pages visited</li>
+                        <li> time spent on pages</li>
+                        <li>navigation patterns</li>
+                        <li>general geographic region</li>
+
+                    </ul>
+                    <p className="legalText">Examples may include:</p>
                     <ul className="legalList">
 
                         <li>Google Analytics</li>
-                        <li> website performance cookies</li>
-                        <li>session cookies</li>
+                        <li>privacy-friendly analytics tools</li>
 
 
                     </ul>
+                    <p className="legalText">The information collected is typically anonymized and used only for statistical purposes.</p>
 
-                    <p className="legalText">Users can disable cookies through browser settings.</p>
-                    <p className="legalText">
-                        A separate Cookie Policy may provide further details.
-                    </p>
-                </div>
+                         <p className="legalTextSmallHeading"> Functional Cookies</p>
 
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Data Sharing
-
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        We do not sell personal data.
-                    </p>
-                    <p className="legalText">
-                        Personal data may be shared with trusted service providers that
-                        support the website, such as:
-                    </p>
+                    <p className="legalText">Functional cookies allow the website to remember user preferences, such as::</p>
                     <ul className="legalList">
 
-                        <li>website hosting providers</li>
-                        <li>   analytics services</li>
-                        <li>email newsletter platforms</li>
-
-
+                        <li>language settings</li>
+                        <li> display preferences</li>
+                        <li>saved options</li>
+                
                     </ul>
-                    <p className="legalText">
-                        These providers process data only on our behalf and according to
-                        GDPR requirements.
-                    </p>
+                    <p className="legalText">These improve the user experience but are not strictly necessary.</p>
+                 
                 </div>
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Data Storage and Security
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        We implement reasonable technical and organizational measures to protect personal data, including:
-                    </p>
-                    <ul className="legalList">
 
-                        <li>secure hosting</li>
-                        <li> encrypted connections (HTTPS)</li>
-                        <li>limited access to personal information</li>
-
-
-                    </ul>
-                    <p className="legalText">
-                        Personal data is stored only for as long as necessary to fulfill the
-                        purposes described in this policy.
-                    </p>
-                </div>
-            </article>
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Your Rights Under GDPR
-
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        Users located in the European Economic Area have the following
-                        rights:
-                    </p>
-                    <p className="legalText">
-                        You may request:
-                    </p>
-                    <ul className="legalList">
-
-                        <li> access to your personal data</li>
-                        <li>correction of inaccurate data</li>
-                        <li> deletion of your data (&quot;right to be forgotten&quot;)</li>
-                        <li> restriction of processinge</li>
-                        <li>data portability</li>
-                        <li>withdrawal of consent at any time</li>
-
-                    </ul>
-                    <p className="legalText">
-                        Requests may be sent to the contact email listed above.
-                        You also have the right to lodge a complaint with the Norwegian Data Protection Authority (Datatilsynet).
-
-                    </p>
-                </div>
             </article>
 
 
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    International Data Transfers
 
-                </h3>
+            <article className="legalArticle">
+                <h3 className="legalHeading">Third-Party Cookies</h3>
+
                 <div className="textDiv">
-                    <p className="legalText">
-                        If personal data is processed outside the European Economic Area,
-                        BokHus ensures that appropriate safeguards are in place, such as:
-                    </p>
+                    <p className="legalText">Some cookies may be set by third-party services integrated into the website, including:</p>
+
+
 
                     <ul className="legalList">
 
-                        <li> EU Standard Contractual Clauses</li>
-                        <li>GDPR-compliant service providers</li>
-
-
+                        <li>analytics provider</li>
+                        <li>embedded media</li>
+                        <li>social media platforms</li>
+              
                     </ul>
-
+                    These providers may process data according to their own privacy policies.
                 </div>
             </article>
 
-            <article className="legalArticle">
-                <h3 className="legalHeading">
 
-                    Data Retention
+
+
+
+
+            <article className="legalArticle">
+                <h3 className="legalHeading">Managing Cookies
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">
-                        Personal data is retained only as long as necessary for the purpose
-                        it was collected, unless longer retention is required by law.
-                    </p>
-                    <p className="legalText">
-                        Typical retention periods may include:
-                    </p>
-
+                    <p className="legalText">You can manage or disable cookies through your browser settings.
+Most browsers allow you to:</p>
+                
                     <ul className="legalList">
 
-                        <li> contact messages: up to 12 months</li>
-                        <li>newsletter data: until unsubscribe</li>
+                        <li>block cookies</li>
+                        <li>delete stored cookies</li>
+                        <li>receive warnings before cookies are stored</li>
+              
+                    </ul>                  <p className="legalText">Instructions are usually available in your browser’s help section.
+Please note that disabling cookies may affect the functionality of the website.</p>
+                </div>
+            </article>
+            <article className="legalArticle">
+                <h3 className="legalHeading">Cookie Consent</h3>
 
-                        <li>analytics data: according to provider policies</li>
+                <div className="textDiv">
+                    <p className="legalText">  When you first visit BokHus.com, you may see a cookie consent banner that allows you to:</p>
+                    <ul className="legalList">
+
+                        <li>accept all cookies</li>
+                        <li> reject non-essential cookies</li>
+                        <li>customize cookie preferences</li>
+
+
                     </ul>
+                  
 
+                    <p className="legalText">Your preferences can be changed at any time.</p>
+   
+                </div>
 
+            </article>
+            <article className="legalArticle">
+                <h3 className="legalHeading">
+           Data Protection
 
-
+                </h3>
+                <div className="textDiv">
+                    <p className="legalText">
+               Cookies that process personal data are handled in accordance with our Privacy Policy and applicable data protection laws.
+                    </p>
+        
                 </div>
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
-                    Children&#39;s Privacy
+     Updates to This Cookie Policy
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">
-                        BokHus.com is not intended for children under 16 years of age.
-                        We do not knowingly collect personal data from children.
-                        If such data is discovered, it will be deleted as soon as possible.
-                    </p>
-
+                    <p className="legalText">We may update this Cookie Policy to reflect changes in legal requirements or website functionality.
+Updated versions will be published on this page with a revised date.     </p>
+                
                 </div>
             </article>
-
-
-            <article className="legalArticle">
-                <h3 className="legalHeading">
-                    Changes to This Policy
-                </h3>
-                <div className="textDiv">
-                    <p className="legalText">
-                        We may update this Privacy Policy from time to time.
-                        The updated version will be published on this page with a revised
-                        date.
-                    </p>
-
-                </div>
-            </article>
-
-
-
-
-
+      
             <article className="legalArticle">
                 <h3 className="legalHeading">
                     Contact
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        For questions regarding these Privacy Policy or the handling of personal data, please contact BokHus. You can use the "Contact Us" form to do this by clicking this <Link className="legalContactLink" href="/Contact">link</Link>.
+                        For questions about our use of cookies, please contact BokHus. You can use the "Contact Us" form to do this by clicking this <Link className="legalContactLink" href="/Contact">link</Link>.
                     </p>
 
                 </div>
