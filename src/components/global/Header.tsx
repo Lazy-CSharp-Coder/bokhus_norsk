@@ -16,13 +16,11 @@ export function Header()
     return (
 
         <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }}>
-            <div className="headerIcon fadeInAnim">
-
-            </div>
-            <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
-                <div className="headerIcon fadeInAnim">
+  <div className="headerIcon fadeInAnim">
                     <Image src="/icons/logotest.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                 </div>
+            <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
+              
                 <span className="mobileMode">  <HamburgerMenu menuItems={menuItemsHeader} /></span>
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItemsHeader.map((item, index) =>
@@ -34,10 +32,10 @@ export function Header()
             <div className="clerkButtons">
                 <Show when="signed-out">
                     <SignInButton>
-                        <button className="signInButton">Sign In</button>
+                        <button className="signInButton">Sign In </button>
                     </SignInButton>
                     <SignUpButton>
-                        <button className="signUpButton">Sign Up</button>
+                        <button className="signUpButton">Sign</button>
                     </SignUpButton>
                 </Show>
                 <Show when="signed-in">
@@ -47,15 +45,16 @@ export function Header()
                         appearance={{
                             elements: {
                                 userButtonAvatarBox: {
-                                    width: "2rem", height: "2rem",
-                                    // border: "1px solid rgb(221, 221, 221)",
-                                    // padding: "0.4rem",       
+                                    width: "2.7rem", height: "2.7rem",
+                                    border: "3px solid var(--bokhusRootsColor)",
+                                    padding: "8px",       
                                     backgroundColor: "transparent", /* Optional background color inside the border */
                                     borderRadius: "50%"
                                 }
                             }
                         }}
-                    />     <ProfileButton/>
+                    />     
+                    <ProfileButton/>
 
                     </div>
 
