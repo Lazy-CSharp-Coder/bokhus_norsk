@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
-import { BokHusCom } from "../global/BokHusCom";
+import { BokHusCom } from "../../components/global/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 import { ResolverOptions, ResolverResult } from 'react-hook-form';
 import { submitUserData } from "./submitToSanity";
@@ -10,15 +10,15 @@ import { submitUserData } from "./submitToSanity";
 interface RegisterFormProps 
 {
     data?: UserData,
-    onSuccess: () => void;
 
 }
 
-export function RegisterForm({ data, onSuccess }: RegisterFormProps)
+export function RegisterForm({ data }: RegisterFormProps)
 {
     // const [isPending, startTransition] = useTransition();
 
     const defaultData: UserData = {
+        
         email: "",
         country: "",
         preferredLanguage: ["English"],
@@ -58,11 +58,11 @@ export function RegisterForm({ data, onSuccess }: RegisterFormProps)
 
     );
 
-  // options: ResolverOptions<TFieldValues>
-    const resolver = async (values : UserData, context : Record<string, UserData>, options : ResolverOptions<UserData>) =>
+    // options: ResolverOptions<TFieldValues>
+    const resolver = async (values: UserData, context: Record<string, UserData>, options: ResolverOptions<UserData>) =>
     {
         return zodResolver(registerSchema)(normalize(values), context, options);
-    }
+    };
     const methods = useForm<UserData>(
         {
             resolver: resolver,
@@ -90,7 +90,7 @@ export function RegisterForm({ data, onSuccess }: RegisterFormProps)
     const isJoiningOurTeam = watch("arcInterest", false);
 
     return (
-        <main className="registerPage">
+        <section className="registerSection">
             <article className="generalInfoArticle flex fadeInFromBelowAnim">
                 <h2 className="registerHeading">YOUR PROFILE</h2>
                 <FormProvider {...methods}>
@@ -182,6 +182,6 @@ export function RegisterForm({ data, onSuccess }: RegisterFormProps)
             </article>
 
 
-        </main>
+        </section>
     );
 }

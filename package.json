@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@clerk/nextjs": "^7.5.9",
     "@hookform/resolvers": "^5.4.0",
     "convert-number-to-words": "^1.0.3",
     "next": "^16.2.9",

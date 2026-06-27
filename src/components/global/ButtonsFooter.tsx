@@ -10,8 +10,6 @@ export function TermsButton()
     return (<Link className="termsLink" href="/Terms">TERMS OF USE </Link>
 
     
-
-
     );
 
 }

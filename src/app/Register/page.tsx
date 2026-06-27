@@ -1,53 +1,41 @@
-"use client"
-import { useState } from "react";
+
+
 import "./Register.module.css";
-import { RegisterForm } from "@/components/register/RegisterForm";
-import { UserData } from "@/components/register/registerSchema";
+import { RegisterForm } from "@/app/Register/RegisterForm";
+import { UserData } from "@/app/Register/registerSchema";
+import { auth, currentUser } from "@clerk/nextjs/server";
 
-type AuthScreen = "Login" | "Forgot Password" | "Register Data"
-
-const defaultData : UserData =
+const defaultData: UserData =
 {
-    email : "",
-    country : "",
-    preferredLanguage : [ "English" ],
-    genresInterestedIn : ["Historical novels"],
-    linkProfilePage : "",
-    newsLetter : true,
-    arcInterest : false, 
+  email: "",
+  country: "",
+  preferredLanguage: ["English"],
+  genresInterestedIn: ["Historical novels"],
+  linkProfilePage: "",
+  newsLetter: true,
+  arcInterest: false,
 
 
-}
+};
 
 
-export default function Register() 
+export default async function Register() 
 {
-    const[screen, setScreen] = useState<AuthScreen>("Register Data")
+  const { isAuthenticated } = await auth();
 
-      const onSuccess = () =>
-    {
-      console.log("handle successs");
-      setScreen("Register Data");
+  if (!isAuthenticated)
+    return (<div className="signInToProceedDiv">Sign in the view this page</div>);
 
-    }
-
-    const handleForgotPassword = () =>
-    {
-       console.log ("handle forgot password")
-       setScreen("Forgot Password");
-    }
-
+  const user = await currentUser();
 
   return (
 
-      <main className="registerPage flex">
+    <main className="registerPage flex">
 
-   
-        <RegisterForm onSuccess={onSuccess} data={defaultData}/>
-    
-      
+      <RegisterForm data={defaultData} />
 
-      </main>
+
+    </main>
 
 
   );

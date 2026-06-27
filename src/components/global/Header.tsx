@@ -4,10 +4,10 @@ import type { HeaderProps } from "@/types/types";
 import { HamburgerMenu } from "./HamburgerMenu";
 import languagesJson from "@/json/languages.json";
 import { LanguageText } from "@/types/languagetypes";
-import { BokHus } from "@/app/BoKHus";
-import { BokHusCom } from "./BokHusCom";
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { ProfileButton } from "./ProfileButton";
 
-export function Header({ background, menuItems }: HeaderProps)
+export function Header()
 {
     const languageArray: LanguageText[] = languagesJson;
 
@@ -15,13 +15,15 @@ export function Header({ background, menuItems }: HeaderProps)
 
     return (
 
-        <header className="flex" style={{ background: background ? background : "", animationDuration: "0.2s" }}>
+        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }}>
+            <div className="headerIcon fadeInAnim">
 
+            </div>
             <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
                 <div className="headerIcon fadeInAnim">
                     <Image src="/icons/logotest.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                 </div>
-                <span className="mobileMode">  <HamburgerMenu menuItems={menuItems} /></span>
+                <span className="mobileMode">  <HamburgerMenu menuItems={menuItemsHeader} /></span>
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItemsHeader.map((item, index) =>
 
@@ -29,7 +31,37 @@ export function Header({ background, menuItems }: HeaderProps)
                     }
                 </div>
             </div>
+            <div className="clerkButtons">
+                <Show when="signed-out">
+                    <SignInButton>
+                        <button className="signInButton">Sign In</button>
+                    </SignInButton>
+                    <SignUpButton>
+                        <button className="signUpButton">Sign Up</button>
+                    </SignUpButton>
+                </Show>
+                <Show when="signed-in">
+                    <div className="userButtonDiv">
+                   
+                    <UserButton
+                        appearance={{
+                            elements: {
+                                userButtonAvatarBox: {
+                                    width: "2rem", height: "2rem",
+                                    // border: "1px solid rgb(221, 221, 221)",
+                                    // padding: "0.4rem",       
+                                    backgroundColor: "transparent", /* Optional background color inside the border */
+                                    borderRadius: "50%"
+                                }
+                            }
+                        }}
+                    />     <ProfileButton/>
 
+                    </div>
+
+                </Show>
+
+            </div>
         </header>
     );
 
