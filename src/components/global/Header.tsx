@@ -30,12 +30,13 @@ export function Header()
                 </div>
             </div>
             <div className="clerkButtons">
+
                 <Show when="signed-out">
                     <SignInButton>
                         <button className="signInButton">Sign In </button>
                     </SignInButton>
                     <SignUpButton>
-                        <button className="signUpButton">Sign</button>
+                        <button className="signUpButton">Sign Up</button>
                     </SignUpButton>
                 </Show>
                 <Show when="signed-in">

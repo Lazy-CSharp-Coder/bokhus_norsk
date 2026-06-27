@@ -39,7 +39,7 @@
 .headerIcon {
   position: relative;
   display: inline-block;
-  height: 4.5rem;
+  height: 4.7rem;
   aspect-ratio: 1 /1;
 }
 
@@ -111,10 +111,11 @@
   justify-content: center;
   align-items: center; */
   font-size: 1rem;
-  padding: 0.4rem 2rem;
+  
+  padding: 0.4rem 1.5rem;
 background-color: transparent;
-  border: 1px solid var(--myWhiteColor);
-  font-family : var(--headerFontFamily);
+  border: 2px solid var(--bokhusRootsColor);
+  /* font-family : var(--headerFontFamily); */
   color: var(--bokhusFutureColor)
 }
 .profileButton {
