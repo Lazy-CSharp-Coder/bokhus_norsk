@@ -6,7 +6,7 @@ import { BokHusCom } from "../../components/global/BokHusCom";
 import { sendContactForm } from "./actions";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
+
 
 export function ContactUs()
 {
@@ -86,11 +86,11 @@ export function ContactUs()
 
 
                 </div>
-                {/* <div className="inputDiv">
+                <div className="inputDiv">
 
-                    <ReCAPTCHA ref={recaptchaRef} sitekey={sitekey} onChange={handleCaptchaChange} />
+                    <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} />
                     {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message} </p>}
-                </div> */}
+                </div>
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
                <p>{serverMessage}</p>
 
