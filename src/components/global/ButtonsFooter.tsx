@@ -10,8 +10,6 @@ export function TermsButton()
     return (<Link className="termsLink" href="/Terms">TERMS OF USE </Link>
 
     
-
-
     );
 
 }
@@ -21,7 +19,7 @@ export function PrivacyButton()
 {
     const [showPrivacy, setShowPrivacy] = useState<boolean>(false);
 
-    return (<Link className="termsLink" href="/Privacy">PRIVACY POLICY </Link>
+    return (<Link className="privacyLink" href="/Privacy">PRIVACY POLICY </Link>
 
     );
 
@@ -31,7 +29,7 @@ export function CookieButton()
 {
     const [showPrivacy, setShowPrivacy] = useState<boolean>(false);
 
-    return (<Link className="termsLink" href="/Cookies">COOKIE POLICY </Link>
+    return (<Link className="cookieLink" href="/Cookies">COOKIE POLICY </Link>
 
     );
 
@@ -43,7 +41,7 @@ export function AffiliateButton()
 {
     const [showAffiliate, setShowAffiliate] = useState<boolean>(false);
 
-    return (<button className="affiliateButton" onClick={() => setShowAffiliate((prev) => !prev)}>
+    return (<button className="affiliateLink" onClick={() => setShowAffiliate((prev) => !prev)}>
        AFFILLIATE OF AMAZON
        
     </button>

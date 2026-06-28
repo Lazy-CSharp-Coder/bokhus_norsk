@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/global/Header";
 import "./globals.css";
-import { StateProvider } from "@/globalStates";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Libre_Baskerville, Roboto } from "next/font/google";
 import { Footer } from "@/components/global/Footer";
 
@@ -32,11 +32,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${libreBaskerville.variable} ${roboto.variable}`}>
 
-        {/* <StateProvider> */}
+        <ClerkProvider>
           <Header />
           {children}
           <Footer/>
-        {/* </StateProvider> */}
+        </ClerkProvider>
       </body>
     </html>
   );

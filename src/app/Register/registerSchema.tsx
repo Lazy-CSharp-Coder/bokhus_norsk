@@ -1,5 +1,13 @@
 import { z } from "zod";
-import { emailSchema } from "./loginSchema";
+
+export const BrandedClerkUserId = z.string() 
+  .regex(/^user_[a-zA-Z0-9]{24}$/)
+  .brand<'ClerkUserId'>();
+
+export const emailSchema = z
+    .email({ message: "Please enter a valid e-mail adress" })
+    .toLowerCase()
+    .trim();
 
 
 export type UserData = z.infer<typeof registerSchema>;
@@ -55,7 +63,9 @@ export const arcSchema = z.object(
 
 export const registerSchema = z.object(
     {
+        // userId : BrandedClerkUserId, 
         email: emailSchema,
+
         country: z.string().optional(),
         preferredLanguage: z.array(preferredLanguageDef)
             .min(1, { message: "You have to chooce at least one of the options" }),

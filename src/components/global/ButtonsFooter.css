@@ -1,9 +1,9 @@
-.termsLink, .privacyButton, .affiliateButton {
+.termsLink, .privacyLink, .affiliateLink, .cookieLink {
     border: none;
     color:var(--myWhiteColor);
     font-family : var(--robotoFont);
     font-size: 1rem;
-    transition: all 0.5 ease-in-out;
+    transition: all 0.4s ease-in;
     background-color: transparent;
     text-decoration: none;
     height: fit-content;
@@ -18,8 +18,8 @@
 
 }
 
-.termsButton:hover, .privacyButton:hover, .affiliateButton:hover {
+.termsLink:hover, .privacyLink:hover, .affiliateLink:hover, .cookieLink:hover{
 
     color: white;
-    scale: 1.05;
+    scale: 1.02;
 }

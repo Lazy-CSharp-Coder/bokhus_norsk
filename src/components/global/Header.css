@@ -4,14 +4,15 @@
   --headerFontFamily: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-header {
+.headerBokHus {
   display: flex;
   background-color: rgba(20, 20, 20, 0.7);
 
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 5%;
   /* gap: 5rem; */
   /* border: 1px solid rgba(20, 20, 20, 1); */
   position: sticky;
@@ -24,7 +25,7 @@ header {
   z-index: 100;
   transition: all 0.4s ease-in;
   font-family: var(--headerFontFamily);
-  padding: 0 2rem;
+
 }
 
 .logoMenuWrapper {
@@ -38,7 +39,7 @@ header {
 .headerIcon {
   position: relative;
   display: inline-block;
-  height: 4.5rem;
+  height: 4.7rem;
   aspect-ratio: 1 /1;
 }
 
@@ -55,9 +56,6 @@ header {
   /* letter-spacing: 0.4px; */
   color: var(--myWhiteColor);
   transition: color 0.3s ease-in;
-
-
-
 }
 
 .desktopMode {
@@ -76,7 +74,7 @@ header {
 
 
 .headerMenuItem:hover {
-  color: rgb(98, 159, 255);
+  color:  var(--bokhusFutureColor);
 }
 
 @media (max-width: 1023px) {
@@ -98,4 +96,51 @@ header {
     margin-top: 0.2rem;
 
   }
+}
+
+/* clerk button div and classes  */
+
+.clerkButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.signInButton, .signUpButton {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  font-size: 1rem;
+  padding: 0.4rem 1.5rem;
+background-color: transparent;
+  border: 2px solid var(--bokhusRootsColor);
+  border-radius: 2px;
+  /* font-family : var(--headerFontFamily); */
+  color: var(--bokhusFutureColor);
+  cursor: pointer;
+}
+
+.signInButton:hover, .signUpButton:hover {
+
+}
+
+.profileButton {
+  border: none;
+  color: var(--myWhiteColor);
+  background-color: transparent;
+  font-family: var(--headerFontFamily);
+
+  border: 3px solid var(--bokhusRootsColor);
+  border-radius: 50%;
+  padding:8px;
+ cursor: pointer;
+}
+
+.userButtonDiv {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  font-size: 1rem;
+  
+
 }

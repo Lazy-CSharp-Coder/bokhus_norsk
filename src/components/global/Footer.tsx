@@ -24,9 +24,9 @@ export function Footer()
 
             <div className="socialMediaGroup">
 
-                <Link className="contactUsLink" href="/Contact"><IoMailOutline size="1.8rem" /></Link>
-                <FaInstagram size={"1.7rem"} />
-                <FaFacebook size={"1.7rem"} />
+                <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="1.8rem" /></Link>
+                <FaInstagram className="instagramIcon" size={"1.7rem"} />
+                <FaFacebook className="facebookIcon" size={"1.7rem"} />
             </div>
         </footer>
     );
