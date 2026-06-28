@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ContactInfo, ServerResponse } from "./contactSchema";
 import { BokHusCom } from "../../components/global/BokHusCom";
 import { sendContactForm } from "./actions";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const emptyForm: ContactInfo =
 {
@@ -12,66 +13,82 @@ const emptyForm: ContactInfo =
     comment: "",
 
 };
-
+ const sitekey = process.env.RECAPTCHA_SITE_KEY as string;
 
 export function ContactUs()
 {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<ContactInfo>();
-    const [ serverState, setServerState] = useState<ServerResponse | null>(null);
-
+    const [serverState, setServerState] = useState<ServerResponse | null>(null);
+    const [chaptaToken, setChaptaToken] = useState<string | null>(null);
+   
     const onSubmit = async (data: ContactInfo) =>
     {
+        if (!chaptaToken) 
+        {
+            alert("Please verify that you are not a robot");
+            return;
+        }
+
+
         setServerState(null);
         const response = await sendContactForm(data);
         setServerState(response);
-        if(response.success) console.log("should be sendt");
+        if (response.success) console.log("should be sendt");
         else console.log(response.message);
+    };
+
+
+    const handleCaptchaChange = (token: string | null) => 
+    {
+        setChaptaToken(token);
+        console.log("Token successfully stored in state:", token);
     };
 
     return (
         <section className="contactUsSection flex">
             {/* <article className="contactUsArticle flex"> */}
-                <h2 className="contactUsHeading flex">
-                    Contact Us
-                </h2>
-                <p className="contactUsText">
-                  If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
-                </p>
+            <h2 className="contactUsHeading flex">
+                Contact Us
+            </h2>
+            <p className="contactUsText">
+                If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
+            </p>
 
-                <form className="contactUsForm flex" onSubmit={handleSubmit(onSubmit)}>
+            <form className="contactUsForm flex" onSubmit={handleSubmit(onSubmit)}>
 
-                    <div className="inputDiv">
-                        <label>Your email address : </label>
-                        <input className="registerInput" type="email" {...register("email")} placeholder="e-mail address" />
-                        {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
-
-
-                    </div>
-
-                    <div className="inputDiv">
-                        <label>Subject : </label>
-                        <input className="registerInput" type="text" {...register("subject")} placeholder="subject" />
-                        {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
+                <div className="inputDiv">
+                    <label>Your email address : </label>
+                    <input className="registerInput" type="email" {...register("email")} placeholder="e-mail address" />
+                    {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
 
 
-                    </div>
-
-
-                    <div className="inputDiv">
-                        <label>Your comment : </label>
-                        <textarea className="registerInput" {...register("comment")} placeholder="what is it about ?" rows={10} />
-                        {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
-
-
-                    </div>
-
-                    <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
-
-
-                </form>
-                <div className="bokhusComWrapper flex">
-                    <BokHusCom fontSize="1.1rem" />
                 </div>
+
+                <div className="inputDiv">
+                    <label>Subject : </label>
+                    <input className="registerInput" type="text" {...register("subject")} placeholder="subject" />
+                    {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
+
+
+                </div>
+
+
+                <div className="inputDiv">
+                    <label>Your comment : </label>
+                    <textarea className="registerInput" {...register("comment")} placeholder="what is it about ?" rows={10} />
+                    {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
+
+
+                </div>
+
+                <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
+
+                <ReCAPTCHA sitekey={sitekey} onChange={handleCaptchaChange} />
+            </form>
+
+            <div className="bokhusComWrapper flex">
+                <BokHusCom fontSize="1.1rem" />
+            </div>
 
             {/* </article> */}
 
