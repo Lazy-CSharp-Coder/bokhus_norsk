@@ -22,7 +22,7 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
     try {
         const { error } = await resend.emails.send({
             from : "Constact Form <onboarding@resend.dev>",
-            to: [process.env.CONTACT_RECEIVER_EMAIL as string],
+            to: process.env.CONTACT_RECEIVER_EMAIL as string,
             replyTo: email, 
             subject : `[Contact Form] ${subject}`,
             html : `<p>${comment}</p>`

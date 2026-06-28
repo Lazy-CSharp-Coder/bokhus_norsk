@@ -24,6 +24,8 @@ export function ContactUs()
         setServerState(null);
         const response = await sendContactForm(data);
         setServerState(response);
+        if(response.success) console.log("should be sendt");
+        else console.log(response.message);
     };
 
     return (
@@ -36,7 +38,7 @@ export function ContactUs()
                   If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
                 </p>
 
-                <form className="contactUsForm flex">
+                <form className="contactUsForm flex" onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="inputDiv">
                         <label>Your email address : </label>
@@ -48,7 +50,7 @@ export function ContactUs()
 
                     <div className="inputDiv">
                         <label>Subject : </label>
-                        <input className="registerInput" type="text" {...register("email")} placeholder="subject" />
+                        <input className="registerInput" type="text" {...register("subject")} placeholder="subject" />
                         {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
 
 
@@ -57,7 +59,7 @@ export function ContactUs()
 
                     <div className="inputDiv">
                         <label>Your comment : </label>
-                        <textarea className="registerInput" {...register("email")} placeholder="what is it about ?" rows={10} />
+                        <textarea className="registerInput" {...register("comment")} placeholder="what is it about ?" rows={10} />
                         {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
 
 
