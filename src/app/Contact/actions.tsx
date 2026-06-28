@@ -4,7 +4,6 @@ import { Resend } from "resend";
 import { ContactInfo, contactSchema, ServerResponse } from "./contactSchema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const toEmailAddress : string = process.env.CONTACT_RECEIVER_EMAIL as string;
 
 export async function sendContactForm(data : ContactInfo ) : Promise<ServerResponse>
 {
@@ -23,7 +22,7 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
     try {
         const { error } = await resend.emails.send({
             from : "Constact Form <onboarding@resend.dev>",
-            to: [toEmailAddress],
+            to: [process.env.CONTACT_RECEIVER_EMAIL as string],
             replyTo: email, 
             subject : `[Contact Form] ${subject}`,
             html : `<p>${comment}</p>`
