@@ -83,7 +83,7 @@ export function ContactUs()
 
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
 
-                <ReCAPTCHA sitekey={sitekey} onChange={handleCaptchaChange} />
+                {/* <ReCAPTCHA sitekey={sitekey} onChange={handleCaptchaChange} /> */}
             </form>
 
             <div className="bokhusComWrapper flex">
