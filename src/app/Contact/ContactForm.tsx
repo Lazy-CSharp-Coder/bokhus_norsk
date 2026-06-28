@@ -6,8 +6,7 @@ import { BokHusCom } from "../../components/global/BokHusCom";
 import { sendContactForm } from "./actions";
 import ReCAPTCHA from "react-google-recaptcha";
 
-
-const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
+const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
 export function ContactUs()
 {
@@ -58,7 +57,7 @@ export function ContactUs()
                 Contact Us
             </h2>
             <p className="contactUsText">
-                If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
+               If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
             </p>
 
             <form className="contactUsForm flex" onSubmit={handleSubmit(onSubmit)}>
@@ -87,11 +86,11 @@ export function ContactUs()
 
 
                 </div>
-                <div className="inputDiv">
+                {/* <div className="inputDiv">
 
                     <ReCAPTCHA ref={recaptchaRef} sitekey={sitekey} onChange={handleCaptchaChange} />
                     {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message} </p>}
-                </div>
+                </div> */}
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
                <p>{serverMessage}</p>
 

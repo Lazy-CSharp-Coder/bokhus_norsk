@@ -1,43 +1,18 @@
 "use server";
 
 import { Resend } from "resend";
-import { ContactInfo, contactSchema, ServerResponse } from "./contactSchema";
+import { ContactInfo, contactSchema, ServerResponse, serverFormSchema } from "./contactSchema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const key = process.env.NEXT_SECRET_RECAPTCHA_KEY;
+
 
 // refine -> zod takes care of recaptcha verification (if I'm right)
 
-const serverFormSchema = contactSchema.refine(
-
-    async(data) =>
-    {
-        try 
-        {
-            const response = await fetch(
-                "https://google.com",
-                {
-                    method: "POST",
-                    headers : { "Content-Type": "application/x-www-form-urlencoded"},
-                    body: `secret=${key}&response=${data.recaptchaToken}`
-                }
-            );
-            const resData = await response.json();
-            return resData.success;
-        }
-        catch{
-            return false;
-        }
-    },
-    { message : "reCAPTCHA verification failed. Please try again.",
-        path : ["recaptchaToken"]   // error shows in right field
-    }
-)
 
 export async function sendContactForm(data : ContactInfo ) : Promise<ServerResponse>
 {
  
-    const validateFields = contactSchema.safeParse(data);
+    const validateFields = serverFormSchema.safeParse(data);
 
     if(!validateFields.success)
     {
