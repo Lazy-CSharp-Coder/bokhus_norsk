@@ -7,7 +7,7 @@ import { sendContactForm } from "./actions";
 import ReCAPTCHA from "react-google-recaptcha";
 
 
-const sitekey = process.env.RECAPTCHA_SITE_KEY as string;
+const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
 
 export function ContactUs()
 {
@@ -95,7 +95,7 @@ export function ContactUs()
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
                <p>{serverMessage}</p>
 
-               
+
             </form>
 
             <div className="bokhusComWrapper flex">
