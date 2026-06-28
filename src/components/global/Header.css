@@ -74,7 +74,7 @@
 
 
 .headerMenuItem:hover {
-  color: rgb(98, 159, 255);
+  color:  var(--bokhusFutureColor);
 }
 
 @media (max-width: 1023px) {
@@ -111,13 +111,19 @@
   justify-content: center;
   align-items: center; */
   font-size: 1rem;
-  
   padding: 0.4rem 1.5rem;
 background-color: transparent;
   border: 2px solid var(--bokhusRootsColor);
+  border-radius: 2px;
   /* font-family : var(--headerFontFamily); */
-  color: var(--bokhusFutureColor)
+  color: var(--bokhusFutureColor);
+  cursor: pointer;
 }
+
+.signInButton:hover, .signUpButton:hover {
+
+}
+
 .profileButton {
   border: none;
   color: var(--myWhiteColor);
@@ -127,7 +133,7 @@ background-color: transparent;
   border: 3px solid var(--bokhusRootsColor);
   border-radius: 50%;
   padding:8px;
-
+ cursor: pointer;
 }
 
 .userButtonDiv {

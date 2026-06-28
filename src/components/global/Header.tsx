@@ -17,7 +17,8 @@ export function Header()
 
         <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }}>
   <div className="headerIcon fadeInAnim">
-                    <Image src="/icons/logotest.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+              
+                    <Image src="/icons/logotest.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager"/>
                 </div>
             <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
               
@@ -36,7 +37,9 @@ export function Header()
                         <button className="signInButton">Sign In </button>
                     </SignInButton>
                     <SignUpButton>
-                        <button className="signUpButton">Sign Up</button>
+                        <button className="signUpButton">
+                            
+                            <span className="signUpFront">Sign Up</span></button>
                     </SignUpButton>
                 </Show>
                 <Show when="signed-in">

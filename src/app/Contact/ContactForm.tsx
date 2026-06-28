@@ -1,7 +1,9 @@
 "use client";
 import { useForm } from "react-hook-form";
-import { ContactInfo, contactSchema } from "../../components/general/contactSchema";
+import { useState } from "react";
+import { ContactInfo, ServerResponse } from "./contactSchema";
 import { BokHusCom } from "../../components/global/BokHusCom";
+import { sendContactForm } from "./actions";
 
 const emptyForm: ContactInfo =
 {
@@ -15,10 +17,13 @@ const emptyForm: ContactInfo =
 export function ContactUs()
 {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<ContactInfo>();
+    const [ serverState, setServerState] = useState<ServerResponse | null>(null);
 
     const onSubmit = async (data: ContactInfo) =>
     {
-        console.log("its supposed to happen here");
+        setServerState(null);
+        const response = await sendContactForm(data);
+        setServerState(response);
     };
 
     return (
