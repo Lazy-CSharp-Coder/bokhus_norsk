@@ -112,6 +112,12 @@ box-shadow: 10px 10px 23px 3px #000000;
 
 }
 
+.recaptchaDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* background-color: #f9f9f9; */
+}
 
 input,
 textarea {
@@ -126,12 +132,18 @@ textarea {
 
 
 .submitButton {
-    margin: 1rem 0;
+    margin-top: 1rem;
     width: 100%;
     font-size: 1rem;
     padding: 0.5rem;
     color: black;
     background-color: var(--bokhusFutureColor);
+}
+
+.serverMessageText {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 

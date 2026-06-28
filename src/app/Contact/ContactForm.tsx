@@ -6,19 +6,16 @@ import { BokHusCom } from "../../components/global/BokHusCom";
 import { sendContactForm } from "./actions";
 import ReCAPTCHA from "react-google-recaptcha";
 
-
-
 export function ContactUs()
 {
-    const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<ContactInfo>();
+    const { register, handleSubmit, setValue, reset, clearErrors, formState: { errors, isSubmitting } } = useForm<ContactInfo>();
     const [serverState, setServerState] = useState<ServerResponse | null>(null);
-    const [serverMessage, setServerMessage] = useState<string>("")
-    const [chaptaToken, setChaptaToken] = useState<string | null>(null);
+    const [serverMessage, setServerMessage] = useState<string>("nomessage")
     const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const onSubmit = async (data: ContactInfo) =>
     {
-        if (!chaptaToken) 
+        if (!data.recaptchaToken) 
         {
             alert("Please verify that you are not a robot");
             return;
@@ -31,7 +28,7 @@ export function ContactUs()
         {
 
             reset();
-            setServerMessage("Your request has been sendt to Bokhus")
+            setServerMessage("Your comment has been sendt to Bokhus.")
             console.log("should be sendt");
         }
         else
@@ -43,10 +40,11 @@ export function ContactUs()
     };
 
 
-    const handleCaptchaChange = (token: string | null) => 
+    const handleCaptchaChange = (token: string|null) => 
     {
-        setChaptaToken(token);
-        console.log("Token successfully stored in state:", token);
+        setValue("recaptchaToken", token || ``, { shouldValidate: true});
+        clearErrors("recaptchaToken");
+        console.log("Token successfully stored in zod schema:", token);
     };
 
 
@@ -86,13 +84,13 @@ export function ContactUs()
 
 
                 </div>
-                <div className="inputDiv">
+                <div className="recaptchaDiv">
 
                     <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} />
                     {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message} </p>}
                 </div>
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
-               <p>{serverMessage}</p>
+               <p className="serverMessageText" style={{opacity: serverMessage=="nomessage" ? "0" : "1"}}>{serverMessage}</p>
 
 
             </form>

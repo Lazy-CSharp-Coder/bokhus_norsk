@@ -3,11 +3,11 @@ import { z } from "zod";
 export const BrandedClerkUserId = z.string() 
   .regex(/^user_[a-zA-Z0-9]{24}$/)
   .brand<'ClerkUserId'>();
-
-export const emailSchema = z
+const emailSchema = z
     .email({ message: "Please enter a valid e-mail adress" })
     .toLowerCase()
     .trim();
+
 
 
 export type UserData = z.infer<typeof registerSchema>;
