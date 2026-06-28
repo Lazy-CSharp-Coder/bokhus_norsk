@@ -48,7 +48,7 @@ export function ContactUs()
 
                     <div className="inputDiv">
                         <label>Subject : </label>
-                        <input className="registerInput" type="email" {...register("email")} placeholder="subject" />
+                        <input className="registerInput" type="text" {...register("email")} placeholder="subject" />
                         {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
 
 
