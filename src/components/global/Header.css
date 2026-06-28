@@ -2,11 +2,12 @@
 
 :root {
   --headerFontFamily: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --commonBackgroundColor : rgba(20,20, 20, 0.8)
 }
 
 .headerBokHus {
   display: flex;
-  background-color: rgba(20, 20, 20, 0.7);
+  background-color:var(--commonBackgroundColor);
 
   flex-direction: row;
   justify-content: center;
