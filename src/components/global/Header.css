@@ -2,7 +2,7 @@
 
 :root {
   --headerFontFamily: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --commonBackgroundColor : rgba(20,20, 20, 0.8)
+
 }
 
 .headerBokHus {
@@ -104,25 +104,37 @@
 .clerkButtons {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
+
 .signInButton, .signUpButton {
-  /* display: flex;
+   display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center; 
   font-size: 1rem;
+  font-weight: 500;
   padding: 0.4rem 1.5rem;
-background-color: transparent;
+background-color: rgb(20, 20, 20);
   border: 2px solid var(--bokhusRootsColor);
-  border-radius: 2px;
+  border-radius: 1px;
+  /* font-family: sans-serif; */
+  position: relative;
   /* font-family : var(--headerFontFamily); */
   color: var(--bokhusFutureColor);
   cursor: pointer;
+
+  box-shadow: 2px 2px 0 var(--bokhusRootsColor);
 }
 
 .signInButton:hover, .signUpButton:hover {
 
+}
+
+.signInButton:active, .signUpButton:active {
+
+  transform: translateY(2px);
+    box-shadow: 0px 0px 0 var(--bokhusRootsColor);
 }
 
 .profileButton {
@@ -144,4 +156,43 @@ background-color: transparent;
   font-size: 1rem;
   
 
+}
+
+
+/* forslag button gemini */
+/* Button.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  padding: 40px;
+}
+
+.button3d {
+  background-color: #121212;
+  color: #7dd3fc; /* Lys blå tekst */
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 12px 32px;
+  border: 1px solid #b45309; /* Den oransje/brune rammen */
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  
+  /* 3D-effekt: Legger til en skygge i samme farge som rammen for å gi dybde */
+  box-shadow: 0px 6px 0 #b45309;
+  
+  /* Myk overgang når knappen slippes opp igjen */
+  transition: all 0.1s ease;
+}
+
+/* Hva som skjer når man klikker (holder inne) knappen */
+.button3d:active {
+  /* Flytter knappen ned 4 piksler */
+  transform: translateY(4px);
+  
+  /* Reduserer skyggen tilsvarende, slik at den ser trykket ut */
+  box-shadow: 0 2px 0 #b45309;
 }
