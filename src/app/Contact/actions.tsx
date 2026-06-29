@@ -66,7 +66,7 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
             replyTo: email, 
             subject : `Contact Form : ${subject}`,
             html : `<p>${email} has send the following message from your english web page.</p>
-            <p>Subject is : ${subject}. </p>
+            <p>Subject is : ${subject}. </p> <br>
             <p>${comment}</p>`
         });
         if(error)
