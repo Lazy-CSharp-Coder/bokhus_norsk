@@ -65,7 +65,9 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
             to: process.env.CONTACT_RECEIVER_EMAIL as string,
             replyTo: email, 
             subject : `[Contact Form] ${subject}`,
-            html : `<p>${comment}</p>`
+            html : `<p>${email} has send the following message from your english page.</p>
+            <p>Subject is : ${subject}. </p>
+            <p>${comment}</p>`
         });
         if(error)
         {
