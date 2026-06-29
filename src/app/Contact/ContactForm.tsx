@@ -52,7 +52,7 @@ export function ContactUs()
 
 
     return (
-        <section className="contactUsSection flex">
+        <section className="contactUsSection flex fadeInFromLeftAnim" style={{animationDelay : "0.8s"}}>
             {/* <article className="contactUsArticle flex"> */}
             <h2 className="contactUsHeading flex">
                 Contact Us
