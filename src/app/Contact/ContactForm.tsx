@@ -7,7 +7,11 @@ import { sendContactForm } from "./actions";
 import ReCAPTCHA from "react-google-recaptcha";
 import { IoMailOutline } from "react-icons/io5";
 import { FaUserCheck } from "react-icons/fa6";
-import { MdOutlineInsertComment, MdOutlineSubject  } from "react-icons/md";
+import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
+
+
+//  added for importing recaptcha to fix turbopack fault
+
 
 export function ContactUs()
 {
@@ -52,7 +56,7 @@ export function ContactUs()
 
 
     return (
-        <section className="contactUsSection flex fadeInFromLeftAnim" style={{animationDelay : "0.8s"}}>
+        <section className="contactUsSection flex fadeInFromLeftAnim" style={{ animationDelay: "0.8s" }}>
             {/* <article className="contactUsArticle flex"> */}
             <h2 className="contactUsHeading flex">
                 Contact Us
@@ -65,7 +69,7 @@ export function ContactUs()
 
                 <div className="inputDiv">
                     <label>Your email address : </label>
-                    <IoMailOutline size="1.95rem" className="inputIcon"/>
+                    <IoMailOutline size="1.95rem" className="inputIcon" />
                     <input className="registerInput" type="email" {...register("email")} />
                     {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
 
@@ -74,8 +78,8 @@ export function ContactUs()
 
                 <div className="inputDiv">
                     <label>Subject : </label>
-                      <MdOutlineSubject className="inputIcon" size="2rem"/>
-                    <input className="registerInput" type="text" {...register("subject")}  />
+                    <MdOutlineSubject className="inputIcon" size="2rem" />
+                    <input className="registerInput" type="text" {...register("subject")} />
                     {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
 
 
@@ -84,23 +88,23 @@ export function ContactUs()
 
                 <div className="inputDiv">
                     <label>Your comment : </label>
-                    <MdOutlineInsertComment className="inputIcon" size="1.95rem"/>
-                    <textarea className="registerInput" {...register("comment")}  rows={10} />
+                    <MdOutlineInsertComment className="inputIcon" size="1.95rem" />
+                    <textarea className="registerInput" {...register("comment")} rows={10} />
                     {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
 
 
                 </div>
                 <div className="recaptchaWrapper">
-                   <FaUserCheck className="inputIconRecaptcha" size="1.9rem"/>    
-                <div className="recaptchaDiv">
-    
-                    <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark"/>
-                    {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message} </p>}
-                </div>
+                    <FaUserCheck className="inputIconRecaptcha" size="1.9rem" />
+                    <div className="recaptchaDiv">
+
+                        <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" />
+                        {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message} </p>}
+                    </div>
                 </div>
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
                 {serverMessage != "nomessage" &&
-                <p className="serverMessageText" style={{ opacity: serverMessage == "nomessage" ? "0" : "1" }}>{serverMessage}</p> }
+                    <p className="serverMessageText" style={{ opacity: serverMessage == "nomessage" ? "0" : "1" }}>{serverMessage}</p>}
 
 
             </form>
