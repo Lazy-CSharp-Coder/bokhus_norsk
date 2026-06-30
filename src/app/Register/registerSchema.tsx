@@ -1,11 +1,11 @@
 import { z } from "zod";
 
-export type BrandedClerkUserId = string & { readonly __brand: 'BrandedClerkUserId' };
+export type BrandedClerkUserId = string & { readonly __brand: 'BrandedClerkUserId'; };
 
-export const clerkUserId = z.string() 
-  .regex(/^user_[a-zA-Z0-9]{24}$/)
-  .min(1, "User Id cannot be empty")
-  .brand<BrandedClerkUserId>();
+export const clerkUserId = z.string()
+    .regex(/^user_[a-zA-Z0-9_]+$/)
+    .min(1, "User Id cannot be empty")
+    .brand<BrandedClerkUserId>();
 
 const emailSchema = z
     .email({ message: "Please enter a valid e-mail adress" })
@@ -25,6 +25,8 @@ export const rulesSchema = z.object({
 
 });
 
+
+
 const preferredLanguageDef = z.enum(["English", "Norwegian", "German"]);
 const preferredArc = z.enum(["English", "Norwegian", "German"], { error: "You have to select one language" });
 
@@ -39,8 +41,18 @@ export const noticeDef = [
 const reviewSitesEnum = z.enum(reviewSitesDef);
 const noticeEnum = z.enum(noticeDef);
 
-const reviewSitesSchema = z.array(reviewSitesEnum).min(1, { message: "You have to chooce at least one of the options" });
-const noticeSchema = z.array(noticeEnum).min(1, { message: "You have to chooce at least one of the options" });
+const reviewSitesSchema = z.preprocess(
+    (val) => (val == null || val == false) ? [] : val,
+    z.array(reviewSitesEnum).min(1, { message: "You have to chooce at least one of the options" }
+
+
+    ));
+
+const noticeSchema = z.preprocess(
+    (val) => (val == null || val == false ? [] : val),
+    z.array(noticeEnum).min(1, { message: "You have to chooce at least one of the options" }
+
+    ));
 
 export const arcSchema = z.object(
     {
@@ -49,16 +61,8 @@ export const arcSchema = z.object(
         why: z.string(),
         howLong: z.enum(["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"], { error: () => "You have to choose one of the alternatives" }),
         comfortable: z.enum(["Yes", "No", "Not sure"], { error: () => "You have to choose one of the alternatives" }),
-        reviewSites:
-        // z.preprocess(
-        //     (value) => (value === false || value == null ? [] : value),
-            reviewSitesSchema
-        ,
-        notice: 
-        // z.preprocess(
-        //     (value) => (value === false || value == null ? [] : value),
-            noticeSchema
-        ,
+        reviewSites: reviewSitesSchema,
+        notice: noticeSchema,
         rules: rulesSchema,
 
     }
@@ -66,7 +70,7 @@ export const arcSchema = z.object(
 
 export const registerSchema = z.object(
     {
-        userId :  clerkUserId, 
+        userId: clerkUserId,
         email: emailSchema,
         country: z.string().optional(),
         preferredLanguage: z.array(preferredLanguageDef)
