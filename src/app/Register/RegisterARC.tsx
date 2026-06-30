@@ -1,5 +1,5 @@
 "use client";
-import { arcSchema, registerSchema, ARCData, reviewSitesDef, noticeDef } from "./registerSchema";
+import { arcSchema,  ARCData, reviewSitesDef, noticeDef, languageOptions } from "./registerSchema";
 import { useFormContext } from "react-hook-form";
 
 interface ARCFormProps
@@ -12,8 +12,6 @@ export function RegisterARC()
 {
     const { register, formState: { errors } } = useFormContext<{ arc: ARCData; }>();
 
-
-    const languageOptions = registerSchema.shape.preferredLanguage.element.options;
 
     const formatOptions = arcSchema.shape.format.options;
     const howLongOptions = arcSchema.shape.howLong.options;

@@ -5,24 +5,33 @@ import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
 import { BokHusCom } from "../../components/global/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
-import { ResolverOptions, ResolverResult } from 'react-hook-form';
-import { submitUserData } from "./submitToSanity"
+import { submitUserData } from "./submitToSanity";
+
+// react icons
+
+import { IoMailOutline, IoEarthSharp } from "react-icons/io5";
+import { LuLetterText } from "react-icons/lu";
+import { LiaSwatchbookSolid } from "react-icons/lia";
+import { TbWorldWww } from "react-icons/tb";
+import { GiNewspaper } from "react-icons/gi";
+import { FaBookOpenReader } from "react-icons/fa6";
+import { languageOptions } from "./registerSchema";
 
 type RegisterFormInput = z.input<typeof registerSchema>;
 
 interface RegisterFormProps 
 {
-    data?: RegisterFormInput
+    data?: RegisterFormInput;
 
 }
 
 export function RegisterForm({ data }: RegisterFormProps)
 {
-      const methods = useForm<RegisterFormInput, object, UserData>(
+    const methods = useForm<RegisterFormInput, object, UserData>(
         {
             resolver: zodResolver(registerSchema),
             defaultValues: data
-                }
+        }
     );
 
     const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = methods;
@@ -37,9 +46,8 @@ export function RegisterForm({ data }: RegisterFormProps)
 
         }
         else alert(`Error : ${result.error}`);
-    };
-
-    const languageOptions = registerSchema.shape.preferredLanguage.element.options;
+    }
+    
     const genreOptions = registerSchema.shape.genresInterestedIn.element.options;
 
     const isJoiningOurTeam = watch("arcInterest", false);
@@ -47,14 +55,20 @@ export function RegisterForm({ data }: RegisterFormProps)
     return (
         <section className="registerSection">
             <article className="generalInfoArticle flex fadeInFromBelowAnim">
-                <h2 className="registerHeading">YOUR PROFILE</h2>
+                <div className="headingLogoTextWrapper flex">
+                    <h2 className="registerHeading">YOUR PROFILE </h2>
+                    <BokHusCom fontSize="1.2rem" />
+
+                </div>
+
                 <FormProvider {...methods}>
                     <form onSubmit={handleSubmit(onSubmit)} className="registerForm flex">
 
                         <div className="regUpperHalfWrapper flex">
 
                             <div className="registerDiv">
-                                <label>Email to receive mail from Bokhus : </label>
+                                <IoMailOutline size="1.95rem" className="inputRegIcon" />
+                                <label>Email address to receive mail from us : </label>
                                 <input className="registerInput" type="email" {...register("email")} placeholder="e-mail address" />
                                 {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
 
@@ -63,7 +77,7 @@ export function RegisterForm({ data }: RegisterFormProps)
 
 
                             <div className="registerDiv">
-
+                                <IoEarthSharp className="inputRegIcon" size="1.9rem" />
                                 <label>Which country are you from (optional) : </label>
                                 <input className="registerInput" type="text" {...register("country")} placeholder="country" />
                                 {errors.country && <p className="errorRegisterForm">{errors.country.message}</p>}
@@ -72,9 +86,10 @@ export function RegisterForm({ data }: RegisterFormProps)
                             <div className="multipleChoicesDiv">
                                 <label className="languagesText">What languages do you prefer ?</label>
                                 <ul className="multipleChoicesList flex">
+                                    <LuLetterText className="inputRegListIcon" size="2rem" />
                                     {languageOptions.map((item) => (
                                         <li key={item} className="languagePreferredDiv">
-                                            <input type="checkbox" id={item} value={item} {...register("preferredLanguage")} />
+                                            <input type="radio" id={item} value={item} {...register("preferredLanguage")} />
                                             <label htmlFor={item}>{item}</label>
                                         </li>
                                     ))}
@@ -83,7 +98,9 @@ export function RegisterForm({ data }: RegisterFormProps)
                             </div>
                             <div className="multipleChoicesDiv">
                                 <label className="languagesText">What genres are you interested in ?</label>
+
                                 <ul className="multipleChoicesList flex">
+                                    <LiaSwatchbookSolid className="inputRegListIcon" size="2.1rem" />
                                     {genreOptions.map((item) => (
                                         <li key={item} className="languagePreferredDiv">
                                             <input type="checkbox" id={item} value={item} {...register("genresInterestedIn")} />
@@ -94,7 +111,7 @@ export function RegisterForm({ data }: RegisterFormProps)
                                 </ul>
                             </div>
                             <div className="registerDiv">
-
+                                <TbWorldWww className="inputRegIcon" size="1.85rem" />
                                 <label>Do you have a profile page (optional) : </label>
                                 <input className="registerInput" type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
                                 {errors.linkProfilePage && <p className="errorRegisterForm">{errors.linkProfilePage.message}</p>}
@@ -102,18 +119,22 @@ export function RegisterForm({ data }: RegisterFormProps)
                             </div>
                         </div>
                         <div className="newsLetterArcOptionsWrapper flex">
-                            <div className="registerDiv">
-
-                                <label>Do you wanna receive newsletters from us ? </label>
-                                <input className="registerInput" type="checkbox" {...register("newsLetter")} placeholder="country" />
+                            <div className="oneLineDiv">
+                                <GiNewspaper className="inputRegSingleIcon" size="1.9rem" />
+                              <div className="labelInputWrapperOneLineFirst flex">
+                                   <label>Do you wanna receive newsletters from us ? </label>
+                                <input className="registerInput" type="checkbox" {...register("newsLetter")}  />
+                              </div>
                                 {errors.newsLetter && <p className="errorRegisterForm">{errors.newsLetter.message}</p>}
 
                             </div>
 
-                            <div className="registerDiv">
-
-                                <label>Are you intereted in joining or Advanced Readers Team ? </label>
-                                <input className="registerInput" type="checkbox" {...register("arcInterest")} placeholder="country" />
+                            <div className="oneLineDiv">
+                                <FaBookOpenReader className="inputRegSingleIcon" size="1.8rem" />
+                                <div className="labelInputWrapperOneLineSecond flex">
+                                    <label>Are you intereted in joining or Advanced Readers Team ? </label>
+                                <input className="registerInput" type="checkbox" {...register("arcInterest")}  />
+                                </div>
                                 {errors.arcInterest && <p className="errorRegisterForm">{errors.arcInterest.message}</p>}
 
                             </div>

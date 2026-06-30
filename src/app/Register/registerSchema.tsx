@@ -26,8 +26,8 @@ export const rulesSchema = z.object({
 });
 
 
-
-const preferredLanguageDef = z.enum(["English", "Norwegian", "German"]);
+export const languageOptions: string[] = ["English", "Norwegian", "German"];
+const preferredLanguageDef =  z.enum(["English", "Norwegian", "German", ""], { error: "You have to select one language" }).refine((val) => val !== "", { message: "You have to select one language"});
 const preferredArc = z.enum(["English", "Norwegian", "German"], { error: "You have to select one language" });
 
 export const reviewSitesDef = [
@@ -73,8 +73,8 @@ export const registerSchema = z.object(
         userId: clerkUserId,
         email: emailSchema,
         country: z.string().optional(),
-        preferredLanguage: z.array(preferredLanguageDef)
-            .min(1, { message: "You have to chooce at least one of the options" }),
+        preferredLanguage: preferredLanguageDef,
+                
         genresInterestedIn: z.array(z.enum(["Historical novels", "Childrens books", "Young adult books", "Self-help books"]))
             .min(1, { error: () => "You have to choose atleast one of the alternatives" }),
         linkProfilePage: z.url({ message: "Invalid URL" }).or(z.literal("")).optional(),

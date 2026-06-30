@@ -3,18 +3,23 @@
 
 :root {
     --regFontSize: 1.1rem;
+    --regBackground : rgb(20, 20, 20);
+    --inputBackground : rgb(34, 34, 34);
+    --borderIconColor : rgb(125, 88, 33);
+    --borderReg : 1px solid var(--borderIconColor);
+    --borderRadiusReg : 5px;
 }
 
 .registerSection {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    background-color: var(--regBackground);
     gap: 2.5rem;
     width: 35%;
     padding: 4rem 0;
 
-    color: black;
+    color: var(--myWhiteColor);
     font-family: var(--robotoFont);
 
 
@@ -28,22 +33,28 @@
     height: fit-content;
     font-family: var(--robotoFont);
     padding: 2rem 4rem;
-    background-color: #f0f4f8;
+    /* background-color: #f0f4f8; */
     border: 2px solid black;
     padding-bottom: 3rem;
 
 }
 
-
+.headingLogoTextWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+  border-bottom: 1px solid var(--borderIconColor);
+}
 
 .registerHeading,
 .registerARC,
 .arcRulesHeading {
     font-size: 1.4rem;
     font-weight: normal;
-    color: black;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid black;
+    /* padding: 1.5rem 0; */
+  
     text-align: left;
     font-weight: 500;
 }
@@ -54,7 +65,7 @@
     align-items: start;
     width: 100%;
     font-size: var(--regFontSize);
-
+    color: var(--myWhiteColor);
 
 }
 
@@ -68,18 +79,96 @@
 .registerDiv,
 .registerTextArea {
     display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
-
-    color: black;
+    gap: 1rem;
+ align-items: flex-start;
+    position: relative;
+   
 
 }
 
-.registerDiv {
+
+.registerInput, .registerInputSingleCheck {
+    background-color: var(--myWhiteColor);
+    font-family: var(--robotoFont);
+    color: var(--myWhiteColor);
+  width: 100%;
+    font-size: var(--regFontSize);
+    padding: 1rem 1rem;
+border : 1px solid  rgb(125, 88, 33);
+    border-radius: 5px;
+    /* background-color: lightgrey; */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
+
+}
+
+.registerInputSingleCheck {
+
+}
+
+
+.inputRegIcon, .inputRegListIcon, .inputRegSingleIcon {
+    position: absolute;
+     right: 0.8rem;
+
+
+  pointer-events: none;
+  color: rgb(125, 88, 33)
+  /* color: rgb(150, 150, 150); */
+}
+
+.inputRegIcon {
+     top: 2.9rem;
+}
+
+.inputRegListIcon {
+    top: 4rem;
+}
+
+.inputRegSingleIcon {
+    top: 0.5rem;
+}
+
+.oneLineDiv {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+     padding: 1rem 1rem;
+     padding-right: 4rem;
+     width: 100%;
+    background-color: var(--inputBackground);
+    border : var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+
+    justify-content: space-between;   
     position: relative;
 }
+
+.labelInputWrapperOneLineFirst {
+    gap: 8rem;
+    align-items: center;
+}
+
+.labelInputWrapperOneLineSecond {
+    gap: 2rem;
+    align-items: center;
+}
+
+.newsLetterArcOptionsWrapper {
+    flex-direction: column;
+   
+    /* border-bottom: 1px solid black; */
+    gap: 1rem;
+    width: 100%;
+  
+
+    /* border: 1px solid black; */
+}
+
 
 .registerTextArea {
     align-items: top;
@@ -95,7 +184,12 @@
     justify-content: top;
     align-items:left;
     gap: 1rem;
-    color: black;
+    color : var(--myWhiteColor);
+    background-color: var(--inputBackground);
+    padding: 1.5rem 2rem;
+     border: var(--borderReg);
+      border-radius: var(--borderRadiusReg);
+     width: 100%;
   
    
 }
@@ -108,7 +202,8 @@
     justify-content: top;
     align-items: left;
     gap: 1rem;
-    color: black;
+    color : var(--myWhiteColor);
+  
     /* background-color: purple; */
     margin-left: 1rem;
    
@@ -117,11 +212,15 @@
 .multipleChoicesDiv {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: top;
-    justify-content: space-between;
+    
     width: 100%;
-    gap: 0.7rem;
+    gap: 1rem;
     padding: 1rem 0;
+        color : var(--myWhiteColor);
+     
+  
 
 }
 
@@ -143,13 +242,12 @@
     left: 105%; 
     top: 50%;
     text-wrap: nowrap;
-    /* transform: translateY(-50%);
-    color: #ff4d4f; */
-    color: blue;
+    color:white;
     padding: 0.5rem 1rem;
     /* background-color:rgb(20,20, 20); */
-    background-color: darkgrey;
-    border : 1px solid darkgoldenrod;
+    background-color: var(--inputBackground);
+    border : 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
     -webkit-box-shadow: 5px 5px 15px 5px #000000; 
 box-shadow: 5px 5px 15px 5px #000000;
     
@@ -157,13 +255,13 @@ box-shadow: 5px 5px 15px 5px #000000;
 
 .languagesText {
     width: max-content;
-    color: black;
+    color:var(--myWhiteColor);
 }
 
-.languagePreferredDiv,
+/* .languagePreferredDiv,
 .registerInput {
     width: 15rem;
-}
+} */
 
 .languagePreferredDiv {
     display: flex;
@@ -172,7 +270,7 @@ box-shadow: 5px 5px 15px 5px #000000;
 
     align-items: center;
     justify-content: left;
-    color: black;
+    color: var(--myWhiteColor);
 }
 
 /* input,
@@ -185,29 +283,13 @@ textarea {
 } */
 
 input[type="checkbox"] {
-    accent-color: black;
+    accent-color: var(--inputBackground);
     /* Replace with your desired color name, hex, or rgb */
-
-
-    border: 1px solid black;
-
+    border: 1px solid var(--borderIconColor);
     width: 1rem;
     height: 1rem;
 
 
-}
-
-.newsLetterArcOptionsWrapper {
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    border-top: 1px solid black;
-    /* border-bottom: 1px solid black; */
-    gap: 1rem;
-    width: 100%;
-    padding-right: 2rem;
-
-    /* border: 1px solid black; */
 }
 
 .arcArticle {
@@ -245,6 +327,7 @@ fieldset {
     /* background-color: red; */
 
 }
+
 
 .rulesDiv {
     position: relative;
