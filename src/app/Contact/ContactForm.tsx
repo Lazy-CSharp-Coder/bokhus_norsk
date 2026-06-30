@@ -24,7 +24,7 @@ export function ContactUs()
 
     const onSubmit = async (data: ContactInfo) =>
     {
-        
+
         if (!data.recaptchaToken) 
         {
             alert("Please verify that you are not a robot");
@@ -38,8 +38,10 @@ export function ContactUs()
         {
 
             reset();
-            setServerMessage("Your comment has been sendt to Bokhus.");
+            setServerMessage("Your message has been sendt to Bokhus");
+            setTimeout(() => { setServerMessage("nomessage"); },3000);
             console.log("should be sendt");
+            recaptchaRef.current?.reset();
         }
         else
         {
@@ -59,13 +61,8 @@ export function ContactUs()
 
 
     return (
-        <>
-        <Script 
-       src="https://www.google.com/recaptcha/api.js?render=explicit" 
-       strategy="afterInteractive" 
-  
-/>
-     
+
+
         <section className="contactUsSection flex fadeInFromLeftAnim" style={{ animationDelay: "0.8s" }}>
             {/* <article className="contactUsArticle flex"> */}
             <h2 className="contactUsHeading flex">
@@ -106,23 +103,24 @@ export function ContactUs()
                 </div>
                 <div className="recaptchaWrapper">
                     <FaUserCheck className="inputIconRecaptcha" size="1.9rem" />
-               <GoogleReCAPTCHA ref={(el) =>{ recaptchaRef.current = el}} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark"  />
-                        {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message}  </p>}
-                    
+                    <GoogleReCAPTCHA ref={(el) => { recaptchaRef.current = el; }} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" />
+                    {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message}  </p>}
+
                 </div>
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
-                {serverMessage != "nomessage" &&
-                    <p className="serverMessageText" style={{ opacity: serverMessage == "nomessage" ? "0" : "1" }}>{serverMessage}</p>}
+            
 
 
             </form>
-
-            <div className="bokhusComWrapper flex">
-                <BokHusCom fontSize="1.1rem" />
+        
+                              <div className="bokhusComWrapper flex">
+                                { serverMessage != "nomessage" ?
+                <div className="serverMessageDiv scaleInAnim">{serverMessage}</div> :
+                <span className="scaleInAnim"><BokHusCom fontSize="1.2rem" />  </span>}
             </div>
 
             {/* </article> */}
 
-        </section>   </>
+        </section>
     );
 }

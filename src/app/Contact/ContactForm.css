@@ -60,6 +60,7 @@ height: fit-content;
 /* -webkit-box-shadow: 10px 10px 23px 3px #000000; 
 box-shadow: 10px 10px 23px 3px #000000; */
 
+
 }
 
 .contactUsHeading {
@@ -197,10 +198,20 @@ background-color: rgb(20, 20, 20);
 }
 
 
-.serverMessageText {
+.serverMessageDiv {
+
     display: flex;
-    width: 100%;
     justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* padding: 2.1rem 4rem; */
+    color: var(--myWhiteColor);
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 1.2rem;
+     background-color:rgb(20, 20, 20);
+     
 }
 
 
