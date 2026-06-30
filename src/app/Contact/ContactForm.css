@@ -149,9 +149,7 @@ box-shadow: 10px 10px 23px 3px #000000; */
   border : 1px solid  rgb(125, 88, 33);
 
 }
-
-input,
-textarea {
+.contactInput {
     background-color: var(--myWhiteColor);
     font-family: var(--robotoFont);
     color: var(--myWhiteColor);
@@ -178,14 +176,14 @@ border : 1px solid  rgb(125, 88, 33);
 } 
 
 .submitButtonSuggestion {
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center; 
   font-size: 1rem;
   width: 100%;
   font-weight: 500;
   padding: 0.5rem 1.5rem;
-background-color: rgb(20, 20, 20);
+  background-color: rgb(20, 20, 20);
   border: 2px solid var(--bokhusRootsColor);
   border-radius: 1px;
   /* font-family: sans-serif; */
@@ -209,13 +207,12 @@ background-color: rgb(20, 20, 20);
     bottom: 0px;
     left: 0px;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
      background-color:rgb(20, 20, 20);
      
 }
 
-
-.bokhusComWrapper {
+.bokhusComWrapperContact {
     justify-content: center;
     margin-top: 1rem;
     padding-top: 1.2rem;

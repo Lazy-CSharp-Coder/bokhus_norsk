@@ -39,7 +39,7 @@ export function ContactUs()
 
             reset();
             setServerMessage("Your message has been sendt to Bokhus");
-            setTimeout(() => { setServerMessage("nomessage"); },3000);
+            setTimeout(() => { setServerMessage("nomessage"); },4000);
             console.log("should be sendt");
             recaptchaRef.current?.reset();
         }
@@ -56,7 +56,7 @@ export function ContactUs()
     {
         setValue("recaptchaToken", token || ``, { shouldValidate: false });
         clearErrors("recaptchaToken");
-        console.log("Token successfully stored in zod schema:", token);
+   
     };
 
 
@@ -77,7 +77,7 @@ export function ContactUs()
                 <div className="inputDiv">
                     <label>Your email address : </label>
                     <IoMailOutline size="1.95rem" className="inputIcon" />
-                    <input className="registerInput" type="email" {...register("email")} />
+                    <input className="contactInput" type="email" {...register("email")} />
                     {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
 
 
@@ -86,7 +86,7 @@ export function ContactUs()
                 <div className="inputDiv">
                     <label>Subject : </label>
                     <MdOutlineSubject className="inputIcon" size="2rem" />
-                    <input className="registerInput" type="text" {...register("subject")} />
+                    <input className="contactInput" type="text" {...register("subject")} />
                     {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
 
 
@@ -96,7 +96,7 @@ export function ContactUs()
                 <div className="inputDiv">
                     <label>Your comment : </label>
                     <MdOutlineInsertComment className="inputIcon" size="1.95rem" />
-                    <textarea className="registerInput" {...register("comment")} rows={10} />
+                    <textarea className="contactInput" {...register("comment")} rows={10} />
                     {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
 
 
@@ -113,7 +113,7 @@ export function ContactUs()
 
             </form>
         
-                              <div className="bokhusComWrapper flex">
+                              <div className="bokhusComWrapperContact flex">
                                 { serverMessage != "nomessage" ?
                 <div className="serverMessageDiv scaleInAnim">{serverMessage}</div> :
                 <span className="scaleInAnim"><BokHusCom fontSize="1.2rem" />  </span>}

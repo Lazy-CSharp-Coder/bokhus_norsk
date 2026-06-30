@@ -1,73 +1,28 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod/v4-mini";
 import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
 import { BokHusCom } from "../../components/global/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 import { ResolverOptions, ResolverResult } from 'react-hook-form';
-import { submitUserData } from "./submitToSanity";
+import { submitUserData } from "./submitToSanity"
+
+type RegisterFormInput = z.input<typeof registerSchema>;
 
 interface RegisterFormProps 
 {
-    data?: UserData,
+    data?: RegisterFormInput
 
 }
 
 export function RegisterForm({ data }: RegisterFormProps)
 {
-    // const [isPending, startTransition] = useTransition();
-
-    const defaultData: UserData = {
-        
-        email: "",
-        country: "",
-        preferredLanguage: ["English"],
-        genresInterestedIn: ["Historical novels"],
-        linkProfilePage: "",
-        newsLetter: true,
-        arcInterest: false,
-        arc: {
-            languageArcCopy: "English",
-            format: "pdf",
-            why: "",
-            howLong: "Within a week",
-            comfortable: "Yes",
-            reviewSites: [],
-            notice: [],
-            rules: {
-                notShare: false,
-                honestReview: false,
-                above18: false,
-                reminder: false,
-                contactFutureARC: false,
-            },
-        },
-    };
-
-    const normalize = (values: UserData) => (
+      const methods = useForm<RegisterFormInput, object, UserData>(
         {
-            ...values,
-            arc: values.arc ? {
-                ...values.arc,
-                reviewSites: Array.isArray(values.arc.reviewSites) ? values.arc.reviewSites : [],
-                notice: Array.isArray(values.arc.notice) ? values.arc.notice : [],
-            }
-                :
-                values.arc
-        }
-
-    );
-
-    // options: ResolverOptions<TFieldValues>
-    const resolver = async (values: UserData, context: Record<string, UserData>, options: ResolverOptions<UserData>) =>
-    {
-        return zodResolver(registerSchema)(normalize(values), context, options);
-    };
-    const methods = useForm<UserData>(
-        {
-            resolver: resolver,
-            defaultValues: data ? data : defaultData
-        }
+            resolver: zodResolver(registerSchema),
+            defaultValues: data
+                }
     );
 
     const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = methods;
