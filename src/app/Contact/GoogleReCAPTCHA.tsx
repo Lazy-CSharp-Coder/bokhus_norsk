@@ -1,3 +1,5 @@
+"use client";
+
 import { ComponentProps, ComponentType, Ref } from "react";
 import dynamic from "next/dynamic";
 import "./GoogleReCAPTCHA.module.css";

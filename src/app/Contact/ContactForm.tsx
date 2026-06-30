@@ -9,6 +9,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { FaUserCheck } from "react-icons/fa6";
 import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 import { GoogleReCAPTCHA } from "./GoogleReCAPTCHA";
+import Script from "next/script";
 
 
 //  added for importing recaptcha to fix turbopack fault
@@ -23,6 +24,7 @@ export function ContactUs()
 
     const onSubmit = async (data: ContactInfo) =>
     {
+        
         if (!data.recaptchaToken) 
         {
             alert("Please verify that you are not a robot");
@@ -50,13 +52,20 @@ export function ContactUs()
 
     const handleCaptchaChange = (token: string | null) => 
     {
-        setValue("recaptchaToken", token || ``, { shouldValidate: true });
+        setValue("recaptchaToken", token || ``, { shouldValidate: false });
         clearErrors("recaptchaToken");
         console.log("Token successfully stored in zod schema:", token);
     };
 
 
     return (
+        <>
+        <Script 
+       src="https://www.google.com/recaptcha/api.js?render=explicit" 
+       strategy="afterInteractive" 
+  
+/>
+     
         <section className="contactUsSection flex fadeInFromLeftAnim" style={{ animationDelay: "0.8s" }}>
             {/* <article className="contactUsArticle flex"> */}
             <h2 className="contactUsHeading flex">
@@ -97,8 +106,8 @@ export function ContactUs()
                 </div>
                 <div className="recaptchaWrapper">
                     <FaUserCheck className="inputIconRecaptcha" size="1.9rem" />
-               <GoogleReCAPTCHA ref={(el) =>{ recaptchaRef.current = el}} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" />
-                        {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message} </p>}
+               <GoogleReCAPTCHA ref={(el) =>{ recaptchaRef.current = el}} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark"  />
+                        {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message}  </p>}
                     
                 </div>
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
@@ -114,6 +123,6 @@ export function ContactUs()
 
             {/* </article> */}
 
-        </section>
+        </section>   </>
     );
 }
