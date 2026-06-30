@@ -1,13 +1,16 @@
 import { z } from "zod";
 
-export const BrandedClerkUserId = z.string() 
+export type BrandedClerkUserId = string & { readonly __brand: 'BrandedClerkUserId' };
+
+export const clerkUserId = z.string() 
   .regex(/^user_[a-zA-Z0-9]{24}$/)
-  .brand<'ClerkUserId'>();
+  .min(1, "User Id cannot be empty")
+  .brand<BrandedClerkUserId>();
+
 const emailSchema = z
     .email({ message: "Please enter a valid e-mail adress" })
     .toLowerCase()
     .trim();
-
 
 
 export type UserData = z.infer<typeof registerSchema>;
@@ -63,7 +66,7 @@ export const arcSchema = z.object(
 
 export const registerSchema = z.object(
     {
-        userId : BrandedClerkUserId, 
+        userId :  clerkUserId, 
         email: emailSchema,
         country: z.string().optional(),
         preferredLanguage: z.array(preferredLanguageDef)

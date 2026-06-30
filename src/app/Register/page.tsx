@@ -1,4 +1,4 @@
-
+"user server";
 
 import "./Register.module.css";
 import { RegisterForm } from "@/app/Register/RegisterForm";
@@ -21,7 +21,7 @@ const defaultData: UserData =
 
 export default async function Register() 
 {
-  const { isAuthenticated } = await auth();
+  const { isAuthenticated, userId} = await auth();
 
   if (!isAuthenticated)
     return (<div className="signInToProceedDiv">Sign in the view this page</div>);

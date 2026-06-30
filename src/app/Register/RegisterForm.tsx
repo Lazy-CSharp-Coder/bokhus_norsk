@@ -5,7 +5,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { BokHusCom } from "../../components/global/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 import { ResolverOptions, ResolverResult } from 'react-hook-form';
-import { submitUserData } from "./submitToSanity";
+import { submitUserData } from "./submitToSanity"
 
 interface RegisterFormProps 
 {
