@@ -149,9 +149,7 @@ box-shadow: 10px 10px 23px 3px #000000; */
   border : 1px solid  rgb(125, 88, 33);
 
 }
-
-input,
-textarea {
+.contactInput {
     background-color: var(--myWhiteColor);
     font-family: var(--robotoFont);
     color: var(--myWhiteColor);
@@ -214,7 +212,7 @@ border : 1px solid  rgb(125, 88, 33);
      
 }
 
-.bokhusComWrapper {
+.bokhusComWrapperContact {
     justify-content: center;
     margin-top: 1rem;
     padding-top: 1.2rem;
