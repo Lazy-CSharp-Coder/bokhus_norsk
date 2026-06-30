@@ -18,23 +18,6 @@ interface RegisterFormProps
 
 export function RegisterForm({ data }: RegisterFormProps)
 {
-    // const [isPending, startTransition] = useTransition();
-
-    // const normalize = (values: UserData) => (
-    //     {
-    //         ...values,
-    //         arc: values.arc ? {
-    //             ...values.arc,
-    //             reviewSites: Array.isArray(values.arc.reviewSites) ? values.arc.reviewSites : [],
-    //             notice: Array.isArray(values.arc.notice) ? values.arc.notice : [],
-    //         }
-    //             :
-    //             values.arc
-    //     }
-
-    // );
-
-    // options: ResolverOptions<TFieldValues>
       const methods = useForm<RegisterFormInput, object, UserData>(
         {
             resolver: zodResolver(registerSchema),

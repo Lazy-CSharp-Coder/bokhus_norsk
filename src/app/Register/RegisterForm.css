@@ -175,14 +175,14 @@ box-shadow: 5px 5px 15px 5px #000000;
     color: black;
 }
 
-input,
+/* input,
 textarea {
     background-color: white;
     font-family: var(--robotoFont);
     color: black;
     font-size: var(--regFontSize);
     padding: 0.2rem 0.2rem;
-}
+} */
 
 input[type="checkbox"] {
     accent-color: black;

@@ -5,6 +5,7 @@ import { RegisterForm } from "@/app/Register/RegisterForm";
 import { BrandedClerkUserId, clerkUserId, UserData } from "@/app/Register/registerSchema";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
+import { SignIn } from "./SignIn";
 // const defaultData: UserData =
 // {
 //   email: "",
@@ -24,7 +25,7 @@ export default async function Register()
   const { isAuthenticated, userId } = await auth();
 
   if (!isAuthenticated)
-    return (<div className="signInToProceedDiv">Sign in the view this page</div>);
+    return (<SignIn/>);
 
   const user = await currentUser();
   if (!user)
