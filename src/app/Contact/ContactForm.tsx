@@ -8,6 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { IoMailOutline } from "react-icons/io5";
 import { FaUserCheck } from "react-icons/fa6";
 import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
+import { GoogleReCAPTCHA } from "./GoogleReCAPTCHA";
 
 
 //  added for importing recaptcha to fix turbopack fault
@@ -96,11 +97,9 @@ export function ContactUs()
                 </div>
                 <div className="recaptchaWrapper">
                     <FaUserCheck className="inputIconRecaptcha" size="1.9rem" />
-                    <div className="recaptchaDiv">
-
-                        <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" />
+               <GoogleReCAPTCHA ref={(el) =>{ recaptchaRef.current = el}} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" />
                         {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message} </p>}
-                    </div>
+                    
                 </div>
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
                 {serverMessage != "nomessage" &&
