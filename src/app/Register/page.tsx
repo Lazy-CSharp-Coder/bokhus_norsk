@@ -35,9 +35,9 @@ export default async function Register()
 
   const USER_QUERY = `*[_type == "User" && userId == $userIdFromClerk]`;
   const userData: UserData[] = await client.fetch<UserData[]>(USER_QUERY, { userIdFromClerk: userId });
-  const dataToSend :  UserData = 
-  userData[0] ? userData[0] : 
-  {
+  const dataToSend: UserData =
+    userData[0] ? userData[0] :
+      {
         userId: clerkUserId.parse(userId),
         email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
         country: "",
@@ -49,16 +49,16 @@ export default async function Register()
         arc: undefined
 
       };
-  
-  
-    return (
-
-      <main className="registerPage flex">
-
-        <RegisterForm data={dataToSend} />
-
-     </main>
 
 
-    );
-  };
+  return (
+
+    <main className="registerPage flex">
+
+      <RegisterForm data={dataToSend} />
+
+    </main>
+
+
+  );
+};

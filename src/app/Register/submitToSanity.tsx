@@ -13,12 +13,13 @@ export async function submitUserData(rawData: UserData)
         return { success: false, error: "Invaild fields submitted" };
     }
 
-    const { email, country, preferredLanguage, genresInterestedIn, linkProfilePage, newsLetter, arcInterest, arc } = rawData;
+    const {userId,  email, country, preferredLanguage, genresInterestedIn, linkProfilePage, newsLetter, arcInterest, arc } = rawData;
     try
     {
         await sanityWriteClient.create(
             {
                 _type: "User",
+                userId, 
                 email,
                 country,
                 preferredLanguage,
