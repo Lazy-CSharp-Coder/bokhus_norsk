@@ -16,7 +16,7 @@
   background-size: cover;
     position: fixed;
   background-repeat: no-repeat;
-  filter: blur(2px) brightness(98%);
+  filter: blur(3px) brightness(88%);
   z-index: -1;
 
 
@@ -50,14 +50,16 @@
     width:30%;
 height: fit-content;
     font-family: var(--robotoFont);
-    padding: 2.5rem 4rem;
-    background-color: rgba(241, 245, 248, 0.8);
-
-    border: 2px solid black;
+    padding: 2.5rem 4rem;;
+    background-color: rgb(20, 20, 20);
+/* background-color: rgb(34, 34, 34); */
+     border : 1px solid  rgb(125, 88, 33);
+    border-radius: 5px;
     padding-bottom: 3rem;
-    color: black;
--webkit-box-shadow: 10px 10px 23px 3px #000000; 
-box-shadow: 10px 10px 23px 3px #000000;
+    color: var(--myWhiteColor);
+/* -webkit-box-shadow: 10px 10px 23px 3px #000000; 
+box-shadow: 10px 10px 23px 3px #000000; */
+
 
 }
 
@@ -71,7 +73,7 @@ box-shadow: 10px 10px 23px 3px #000000;
     font-size: 1.5rem;
 
     font-weight: normal;
-    color: black;
+
     /* padding: 1rem 0; */
     /* padding-right: 0.5rem; */
     /* border-bottom: 1px solid black; */
@@ -82,17 +84,17 @@ box-shadow: 10px 10px 23px 3px #000000;
 .contactUsText {
     font-size: 1rem;
     font-size: var(--contactTextSize);
-    color: black;
-    padding: 2rem 0;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+
+  padding: 1rem 0;
+    border-bottom: 1px solid  rgb(125, 88, 33);
+    border-top: 1px solid  rgb(125, 88, 33);
     line-height: 1.4;
 }
 
 .contactUsForm {
     margin-top: 0.5rem;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     align-items: start;
     width: 100%;
     height: fit-content;
@@ -107,52 +109,119 @@ box-shadow: 10px 10px 23px 3px #000000;
     gap: 0.7rem;
     /* align-items: center; */
     width: 100%;
+    position: relative;
 
-    color: black;
 
 }
 
-.recaptchaDiv {
+.inputIcon {
+    position: absolute;
+     right: 0.8rem;
+     top: 2.7rem;
+
+  pointer-events: none;
+  color: rgb(125, 88, 33)
+  /* color: rgb(150, 150, 150); */
+}
+
+
+.inputIconRecaptcha {
+    position: absolute;
+     right: 0.8rem;
+     top: 1.2rem;
+
+  pointer-events: none;
+  color: rgb(125, 88, 33)
+  /* color: rgb(150, 150, 150); */
+}
+
+.recaptchaWrapper {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     width: 100%;
-    /* background-color: #f9f9f9; */
+   /* background-color: rgb(34, 34, 34); */
+ /* background-color: rgb(230,230,230); */
+ background-color:rgb(34, 34, 34);
+ padding: 0.2rem 1rem;
+ padding-bottom: 0;
+ border-radius: 5px;
+   position: relative;
+  border : 1px solid  rgb(125, 88, 33);
+
 }
 
 input,
 textarea {
-    background-color: white;
+    background-color: var(--myWhiteColor);
     font-family: var(--robotoFont);
-    color: black;
+    color: var(--myWhiteColor);
   width: 100%;
     font-size: var(--regFontSize);
-    padding: 0.2rem 0.2rem;
-    border: 1px solid black;
+    padding: 1rem 1rem;
+border : 1px solid  rgb(125, 88, 33);
+    border-radius: 5px;
+    /* background-color: lightgrey; */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
+
 }
 
 
-.submitButton {
-    margin-top: 1rem;
+ .submitButton {
+
     width: 100%;
     font-size: 1rem;
     padding: 0.5rem;
     color: black;
     background-color: var(--bokhusFutureColor);
+    border-color: var(--myWhiteColor);
+} 
+
+.submitButtonSuggestion {
+   display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-size: 1rem;
+  width: 100%;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+background-color: rgb(20, 20, 20);
+  border: 2px solid var(--bokhusRootsColor);
+  border-radius: 1px;
+  /* font-family: sans-serif; */
+  position: relative;
+  /* font-family : var(--headerFontFamily); */
+  color: var(--bokhusFutureColor);
+  cursor: pointer;
+
+  box-shadow: 2px 2px 0 var(--bokhusRootsColor);
 }
 
-.serverMessageText {
+
+.serverMessageDiv {
+
     display: flex;
-    width: 100%;
     justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* padding: 2.1rem 4rem; */
+    color: var(--myWhiteColor);
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 1.2rem;
+     background-color:rgb(20, 20, 20);
+     
 }
 
 
 .bokhusComWrapper {
     justify-content: center;
+    margin-top: 1rem;
     padding-top: 1.2rem;
     width: 100%;
-    border-top: 1px solid black;
+    border-top: 1px solid  rgb(125, 88, 33);
 
-    /* margin-right: 0.5rem; */
+    /* margin-  right: 0.5rem; */
 }
 

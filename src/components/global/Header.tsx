@@ -34,12 +34,16 @@ export function Header()
 
                 <Show when="signed-out">
                     <SignInButton>
-                        <button className="signInButton">Sign In </button>
+       
+                          <button className="signInButton">Sign In </button>
+              
                     </SignInButton>
                     <SignUpButton>
-                        <button className="signUpButton">
+                   
+                         <button className="signUpButton">
                             
-                            <span className="signUpFront">Sign Up</span></button>
+                            Sign Up</button>
+               
                     </SignUpButton>
                 </Show>
                 <Show when="signed-in">
