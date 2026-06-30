@@ -39,7 +39,7 @@ export function ContactUs()
 
             reset();
             setServerMessage("Your message has been sendt to Bokhus");
-            setTimeout(() => { setServerMessage("nomessage"); },3000);
+            setTimeout(() => { setServerMessage("nomessage"); },4000);
             console.log("should be sendt");
             recaptchaRef.current?.reset();
         }
