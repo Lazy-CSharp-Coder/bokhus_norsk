@@ -122,8 +122,9 @@ export function RegisterForm({ data }: RegisterFormProps)
                             <div className="oneLineDiv">
                                 <GiNewspaper className="inputRegSingleIcon" size="1.9rem" />
                               <div className="labelInputWrapperOneLineFirst flex">
+                                    <input className="registerInput" type="checkbox" {...register("newsLetter")}  />
                                    <label>Do you wanna receive newsletters from us ? </label>
-                                <input className="registerInput" type="checkbox" {...register("newsLetter")}  />
+                            
                               </div>
                                 {errors.newsLetter && <p className="errorRegisterForm">{errors.newsLetter.message}</p>}
 
@@ -132,8 +133,9 @@ export function RegisterForm({ data }: RegisterFormProps)
                             <div className="oneLineDiv">
                                 <FaBookOpenReader className="inputRegSingleIcon" size="1.8rem" />
                                 <div className="labelInputWrapperOneLineSecond flex">
+                                       <input className="registerInput" type="checkbox" {...register("arcInterest")}  />
                                     <label>Are you intereted in joining or Advanced Readers Team ? </label>
-                                <input className="registerInput" type="checkbox" {...register("arcInterest")}  />
+                             
                                 </div>
                                 {errors.arcInterest && <p className="errorRegisterForm">{errors.arcInterest.message}</p>}
 
