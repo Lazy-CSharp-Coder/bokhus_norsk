@@ -117,7 +117,7 @@ export function RegisterARC()
                  <div className="arcHeadingIconWrapper flex">
                        <h2 className="arcRulesHeading">ARC RULES AND OPTIONS</h2>
                
-                <LuScrollText className="teamIcon" size="2.1rem"/>
+                <LuScrollText className="teamIcon reverseHorizontally" size="2.1rem"/>
             </div>
              
                 <div className="rulesWrapper">

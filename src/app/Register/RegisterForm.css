@@ -240,6 +240,9 @@
     /* border: 1px solid black; */
 }
 
+.reverseHorizontally {
+    transform: scaleX(-1);
+}
 
 .registerTextAreaInput {
 
@@ -409,7 +412,7 @@ fieldset {
     flex-direction: column;
     width: 100%;
     padding-bottom: 0.5rem;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black;æ */
     /* border-bottom: 1px solid black; */
     gap: 3rem;
     font-size: var(--regFontSize);
