@@ -65,7 +65,7 @@ export default async function GeneralSeriePage({ searchParams }: PageProps)
    return (
       <>
          <ScrollToTop />
-         <BackgroundImage className="backgroundImageSeries" src={urlFor(serie.backgroundImageSeries, 1920)} />
+         <BackgroundImage className="backgroundImageSeries" src={urlFor(serie.imageSeriesBackground, 1920)} />
          <main className="seriesPage">
             {(serie && authors) &&
                <div className="presentationReviewHrefWrapper">
