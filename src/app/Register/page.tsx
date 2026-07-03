@@ -59,8 +59,10 @@ export default async function Register()
       
        <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.png" />
       <RegisterForm data={dataToSend} />
+      { !userData[0] &&
+      <div className="noExistingUserFoundDiv">No user registered with your credentials found in our database.</div>
 
-    </main>
+      }</main>
 
 
   );

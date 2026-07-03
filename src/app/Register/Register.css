@@ -38,3 +38,9 @@
         padding-left: 12%;
     
 }
+
+.noExistingUserFoundDiv {
+  position: fixed;
+  top: 10%;
+  left : 10%;
+}
