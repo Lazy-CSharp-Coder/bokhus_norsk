@@ -6,7 +6,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { BokHusCom } from "../../components/global/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 import { submitUserData } from "./submitToSanity";
-
+import Image from "next/image";
 // react icons
 
 import { IoMailOutline, IoEarthSharp } from "react-icons/io5";
@@ -57,7 +57,9 @@ export function RegisterForm({ data }: RegisterFormProps)
             <article className="generalInfoArticle flex fadeInFromBelowAnim">
                 <div className="headingLogoTextWrapper flex">
                     <h2 className="registerHeading">YOUR PROFILE </h2>
-                    <BokHusCom fontSize="1.2rem" />
+             <div className="logoRegWrapper">
+                                 <Image className="logoRegImg" src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                             </div>
 
                 </div>
 

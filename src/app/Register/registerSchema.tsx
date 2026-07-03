@@ -56,7 +56,7 @@ const noticeSchema = z.preprocess(
 
 export const arcSchema = z.object(
     {
-        languageArcCopy: preferredArc,
+        // languageArcCopy: preferredArc,
         format: z.enum(["pdf", "ePub"], { error: () => "You have to choose one of the alternatives" }),
         why: z.string(),
         howLong: z.enum(["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"], { error: () => "You have to choose one of the alternatives" }),

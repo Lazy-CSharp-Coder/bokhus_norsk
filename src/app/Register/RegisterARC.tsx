@@ -1,7 +1,10 @@
 "use client";
-import { arcSchema,  ARCData, reviewSitesDef, noticeDef, languageOptions } from "./registerSchema";
+import { arcSchema, ARCData, reviewSitesDef, noticeDef, languageOptions } from "./registerSchema";
 import { useFormContext } from "react-hook-form";
-
+import { FaRegClock } from "react-icons/fa";
+import { FaQuestion } from "react-icons/fa6";
+import { TbUserQuestion } from "react-icons/tb";
+import { BsFileEarmarkPost } from "react-icons/bs";
 interface ARCFormProps
 {
     arcData: ARCData,
@@ -21,23 +24,9 @@ export function RegisterARC()
         <article key={"#ARCTeam#"} className="arcArticle flex fadeInFromBelowAnim">
             <h2 className="registerARC">ADVANCED READERS TEAM QUESTIONS</h2>
             <fieldset className="arcForm flex">
-              <div className="multipleChoicesARCDiv flex">
-                    <label className="languagesText">What languages do you prefer for your ARC copy  ?</label>
-                    <ul className="multipleChoicesARCList flex">
-                        {languageOptions.map((item) => (
-                            <li key={item} className="languagePreferredDiv">
-                                <input type="radio" id={item} value={item} {...register("arc.languageArcCopy")} />
-                                <label htmlFor={item}>{item}</label>
-
-                            </li>
 
 
-                        ))}
-                        {errors.arc?.languageArcCopy && <p className="errorRegisterForm">{errors.arc.languageArcCopy.message}</p>}
-                    </ul>
-                </div>
-
-             <div className="multipleChoicesARCDiv flex">
+                <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">What format do you prefer for ARC copy ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {formatOptions.map((item) => (
@@ -54,12 +43,13 @@ export function RegisterARC()
                     </ul>
                 </div>
                 <div className="registerTextArea">
-
+                    <FaQuestion className="inputRegIcon" size="1.7rem" />
                     <label>Why do you wanna join the Advanced Readers Team ? </label>
-                    <textarea className="registerTextArea" rows={4} {...register("arc.why")} placeholder="tell us why" />
+                    <textarea className="registerTextAreaInput" rows={4} {...register("arc.why")} placeholder="tell us why" />
 
                 </div>
                 <div className="multipleChoicesARCDiv flex">
+                    <FaRegClock size="1.8rem" className="inputRegListARCIcon" />
                     <label className="languagesText">How long does it usually take you to read a book ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {howLongOptions.map((item) => (
@@ -71,7 +61,8 @@ export function RegisterARC()
                         {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}
                     </ul>
                 </div>
-             <div className="multipleChoicesARCDiv flex">
+                <div className="multipleChoicesARCDiv flex">
+                        <TbUserQuestion size="1.9rem" className="inputRegListARCIcon" />
                     <label className="languagesText">Are you comfortable with giving an honest review ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {comfortableOptions.map((item) => (
@@ -83,9 +74,10 @@ export function RegisterARC()
                         {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}
                     </ul>
                 </div>
-    <div className="multipleChoicesARCDiv flex">
+                <div className="multipleChoicesARCDiv flex">
+                      <BsFileEarmarkPost size="1.8rem" className="inputRegListARCIcon" />
                     <label className="languagesText">Where do you post reviews  ? </label>
- <ul className="multipleChoicesARCList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {reviewSitesDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="checkbox" id={`#reviewSites#${item}`} value={item} {...register("arc.reviewSites")} />
@@ -97,7 +89,7 @@ export function RegisterARC()
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <label className="languagesText">What do you notice when you read books  ?</label>
-                 <ul className="multipleChoicesARCList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {noticeDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="checkbox" id={`#notice#${item}`} value={item} {...register("arc.notice")} />
@@ -164,7 +156,7 @@ export function RegisterARC()
                         </div>
                     </div>
                 </div>
-            
+
             </fieldset>
 
         </article>

@@ -30,7 +30,7 @@ export async function submitUserData(rawData: UserData)
                 ...(arc && {
                     arc: {
                         _type: 'object',
-                        languageArcCopy: arc.languageArcCopy,
+                        // languageArcCopy: arc.languageArcCopy,
                         format: arc.format,
                         why: arc.why,
                         howLong: arc.howLong,

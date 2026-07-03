@@ -1,13 +1,12 @@
-
 @import "./submit.css";
 
 :root {
     --regFontSize: 1.1rem;
-    --regBackground : rgb(20, 20, 20);
-    --inputBackground : rgb(34, 34, 34);
-    --borderIconColor : rgb(125, 88, 33);
-    --borderReg : 1px solid var(--borderIconColor);
-    --borderRadiusReg : 5px;
+    --regBackground: rgb(20, 20, 20);
+    --inputBackground: rgb(34, 34, 34);
+    --borderIconColor: rgb(125, 88, 33);
+    --borderReg: 1px solid var(--borderIconColor);
+    --borderRadiusReg: 5px;
 }
 
 .registerSection {
@@ -17,18 +16,19 @@
     background-color: var(--regBackground);
     gap: 2.5rem;
     width: 35%;
-    padding: 4rem 0;
+    margin: 4rem 0;
 
     color: var(--myWhiteColor);
     font-family: var(--robotoFont);
-
+    border: 1px solid rgb(125, 88, 33);
+    border-radius: 5px;
 
 }
 
 .generalInfoArticle {
     flex-direction: column;
     align-items: left;
-     gap: 1rem;
+    gap: 1rem;
     width: 100%;
     height: fit-content;
     font-family: var(--robotoFont);
@@ -44,8 +44,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem 0;
-  border-bottom: 1px solid var(--borderIconColor);
+    padding: 0.2rem 0.2rem;
+    border-bottom: 1px solid var(--borderIconColor);
 }
 
 .registerHeading,
@@ -54,10 +54,25 @@
     font-size: 1.4rem;
     font-weight: normal;
     /* padding: 1.5rem 0; */
-  
+
     text-align: left;
     font-weight: 500;
 }
+
+
+
+.logoRegWrapper {
+
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    filter: invert();
+    position: relative;
+}
+
+.logoRegImg {
+    object-fit: contain;
+}
+
 
 .registerForm {
     flex-direction: column;
@@ -84,21 +99,22 @@
     align-items: center;
     width: 100%;
     gap: 1rem;
- align-items: flex-start;
+    align-items: flex-start;
     position: relative;
-   
+
 
 }
 
 
-.registerInput, .registerInputSingleCheck {
-    background-color: var(--myWhiteColor);
+.registerInput,
+.registerInputSingleCheck {
+
     font-family: var(--robotoFont);
     color: var(--myWhiteColor);
-  width: 100%;
+    width: 100%;
     font-size: var(--regFontSize);
     padding: 1rem 1rem;
-border : 1px solid  rgb(125, 88, 33);
+    border: 1px solid rgb(125, 88, 33);
     border-radius: 5px;
     /* background-color: lightgrey; */
     /* background-color: rgb(230,230,230); */
@@ -106,50 +122,58 @@ border : 1px solid  rgb(125, 88, 33);
 
 }
 
-.registerInputSingleCheck {
-
-}
+.registerInputSingleCheck {}
 
 
-.inputRegIcon, .inputRegListIcon, .inputRegSingleIcon {
+.inputRegIcon,
+.inputRegListIcon,
+.inputRegSingleIcon, 
+.inputRegListARCIcon {
     position: absolute;
-     right: 0.8rem;
+    right: 0.8rem;
 
 
-  pointer-events: none;
-  color: rgb(125, 88, 33)
-  /* color: rgb(150, 150, 150); */
+    pointer-events: none;
+    color: rgb(125, 88, 33)
+        /* color: rgb(150, 150, 150); */
 }
 
 .inputRegIcon {
-     top: 2.9rem;
+    top: 3rem;
 }
 
-.inputRegListIcon {
-    top: 4rem;
+.inputRegListARCIcon {
+    top: 4.5rem;
+    /* right: 0.8rem; */
 }
 
 .inputRegSingleIcon {
     top: 0.5rem;
 }
 
+.inputRegListIcon {
+    top: 4rem;
+}
+
+
 .oneLineDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
-     padding: 1rem 1.5rem;
-     padding-right: 4rem;
-     width: 100%;
+    padding: 1rem 1.5rem;
+    padding-right: 4rem;
+    width: 100%;
     background-color: var(--inputBackground);
-    border : var(--borderReg);
+    border: var(--borderReg);
     border-radius: var(--borderRadiusReg);
 
-    justify-content: space-between;   
+    justify-content: space-between;
     position: relative;
 }
 
 .labelInputWrapperOneLineFirst {
-    gap: 1rem;;
+    gap: 1rem;
+    ;
     align-items: center;
 }
 
@@ -160,53 +184,59 @@ border : 1px solid  rgb(125, 88, 33);
 
 .newsLetterArcOptionsWrapper {
     flex-direction: column;
-   
+
     /* border-bottom: 1px solid black; */
     gap: 1rem;
     width: 100%;
-  
+
 
     /* border: 1px solid black; */
 }
 
 
-.registerTextArea {
-    align-items: top;
-    flex-direction: column;
-    gap: 1.2rem;
+.registerTextAreaInput {
+
+    font-family: var(--robotoFont);
+    color: var(--myWhiteColor);
     width: 100%;
+    font-size: var(--regFontSize);
+    padding: 1rem 1rem;
+    border: 1px solid rgb(125, 88, 33);
+    border-radius: 5px;
+    /* background-color: lightgrey; */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
 }
 
 .multipleChoicesList {
     flex-direction: column;
-
-    width: max-content;
-    justify-content: top;
-    align-items:left;
-    gap: 1rem;
-    color : var(--myWhiteColor);
-    background-color: var(--inputBackground);
-    padding: 1.5rem 1.5rem;
-     border: var(--borderReg);
-      border-radius: var(--borderRadiusReg);
-     width: 100%;
-  
-   
-}
-
-
-.multipleChoicesARCList {
-    flex-direction: column;
-    gap: 0.5rem;
     width: max-content;
     justify-content: top;
     align-items: left;
     gap: 1rem;
-    color : var(--myWhiteColor);
-  
-    /* background-color: purple; */
-    margin-left: 1rem;
-   
+    color: var(--myWhiteColor);
+    background-color: var(--inputBackground);
+    padding: 1.5rem 1.5rem;
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+    width: 100%;
+}
+
+
+.multipleChoicesARCList {
+
+    flex-direction: column;
+    width: max-content;
+    justify-content: top;
+    align-items: left;
+    gap: 1rem;
+    color: var(--myWhiteColor);
+    background-color: var(--inputBackground);
+    padding: 1.5rem 1.5rem;
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+    width: 100%;
+
 }
 
 .multipleChoicesDiv {
@@ -214,13 +244,13 @@ border : 1px solid  rgb(125, 88, 33);
     display: flex;
     flex-direction: column;
     align-items: top;
-    
+
     width: 100%;
     gap: 1rem;
     padding: 1rem 0;
-        color : var(--myWhiteColor);
-     
-  
+    color: var(--myWhiteColor);
+
+
 
 }
 
@@ -238,24 +268,24 @@ border : 1px solid  rgb(125, 88, 33);
 }
 
 .errorRegisterForm {
-    position : absolute;
-    left: 105%; 
+    position: absolute;
+    left: 105%;
     top: 50%;
     text-wrap: nowrap;
-    color:white;
+    color: white;
     padding: 0.5rem 1rem;
     /* background-color:rgb(20,20, 20); */
     background-color: var(--inputBackground);
-    border : 1px solid var(--borderIconColor);
+    border: 1px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
-    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-box-shadow: 5px 5px 15px 5px #000000;
-    
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+
 }
 
 .languagesText {
     width: max-content;
-    color:var(--myWhiteColor);
+    color: var(--myWhiteColor);
 }
 
 /* .languagePreferredDiv,
@@ -310,7 +340,7 @@ fieldset {
     flex-direction: column;
     gap: 1.2rem;
     padding: 1.5rem 0;
-  
+
     font-size: var(--regFontSize);
     width: 100%;
 

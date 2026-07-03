@@ -138,7 +138,7 @@ background-color: rgb(20, 20, 20);
 }
 
 .profileButton {
-  border: none;at
+  border: none;
   color: var(--myWhiteColor);
   background-color: transparent;
   font-family: var(--headerFontFamily);
