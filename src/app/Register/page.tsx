@@ -42,7 +42,7 @@ export default async function Register()
         userId: clerkUserId.parse(userId),
         email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
         country: "",
-        preferredLanguage: ["English"],
+        preferredLanguage: "English",
         genresInterestedIn: ["Historical novels"],
         linkProfilePage: "",
         newsLetter: true,

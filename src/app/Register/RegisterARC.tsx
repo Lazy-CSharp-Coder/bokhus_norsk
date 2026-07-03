@@ -5,6 +5,7 @@ import { FaRegClock } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa6";
 import { TbUserQuestion } from "react-icons/tb";
 import { BsFileEarmarkPost } from "react-icons/bs";
+import { AiOutlineTeam } from "react-icons/ai";
 interface ARCFormProps
 {
     arcData: ARCData,
@@ -104,35 +105,31 @@ export function RegisterARC()
                 <h2 className="arcRulesHeading">ARC RULES AND OPTIONS</h2>
                 <div className="rulesWrapper">
                     <div className="rulesDiv">
-                        <span className="rulesText">       Do you understand that you should not distribute your ARC copy ?</span>
-
+                 
                         <div className="labelInputRulesDiv flex">
-                            <input id={"ruleNotShae"} type="checkbox" {...register("arc.rules.notShare")} />
-                            <label htmlFor="ruleNotShare"></label>
+                            <input id={"ruleNotShare"} type="checkbox" {...register("arc.rules.notShare")} />
+                            <label className="rulesLabel" htmlFor="ruleNotShare">Do you understand that you should not distribute your ARC copy ?</label>
 
                         </div>
                         {errors.arc?.rules?.notShare && <p className="errorRegisterForm">{errors.arc.rules.notShare.message}</p>}
 
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Do you understand that the review should be honest, not bought or pressured ?</span>
-                        <div className="labelInputRulesDiv flex">
-                            <input id={"ruleNotShae"} type="checkbox" {...register("arc.rules.honestReview")} />
-                            <label htmlFor="ruleNotShare"></label>
+               
+                            <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
+                            <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
 
 
-                        </div>
+                   
                         {errors.arc?.rules?.honestReview && <p className="errorRegisterForm">{errors.arc.rules.honestReview.message}</p>}
 
 
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Are you above 18 years old, in case book contains adult content ?</span>
+                     
                         <div className="labelInputRulesDiv flex">
-                            <input id={"ruleNotShae"} type="checkbox" {...register("arc.rules.above18")} />
-                            <label htmlFor="ruleNotShare"></label>
+                            <input id={"rule18"} type="checkbox" {...register("arc.rules.above18")} />
+                            <label className="rulesLabel" htmlFor="rule18"> Are you above 18 years old, in case book contains adult content ?</label>
 
 
                         </div>
@@ -140,19 +137,17 @@ export function RegisterARC()
 
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Is it ok be reminded about posting a review when release date approaches ?</span>
+             
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleReminder"} type="checkbox" {...register("arc.rules.reminder")} />
-                            <label htmlFor="ruleReminder"></label>
+                            <label className="rulesLabel" htmlFor="ruleReminder">    Is it ok be reminded about posting a review when release date approaches ?</label>
                         </div>
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Do you want to be contacted about future ARC copies ?</span>
+                 
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleContactFutureARC"} type="checkbox" {...register("arc.rules.contactFutureARC")} />
-                            <label htmlFor="ruleContactFutureARC"></label>
+                            <label className="rulesLabel" htmlFor="ruleContactFutureARC">  Do you want to be contacted about future ARC copies ?</label>
                         </div>
                     </div>
                 </div>

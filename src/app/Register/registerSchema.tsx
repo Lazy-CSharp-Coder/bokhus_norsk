@@ -35,7 +35,7 @@ export const reviewSitesDef = [
 ] as const;
 
 export const noticeDef = [
-    "Language", "Flow", "Characters", "Plot", "historical accuracy", "Mood", "Pace", "Storyline"
+    "Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"
 ] as const;
 
 const reviewSitesEnum = z.enum(reviewSitesDef);
