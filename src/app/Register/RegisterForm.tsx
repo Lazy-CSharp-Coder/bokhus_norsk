@@ -56,10 +56,8 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
         else alert(`Error : ${result.error}`);
     };
 
-
     const userEmail = getValues("email");
     const isJoiningOurTeam = watch("arcInterest", false);
-
 
     return (
         <section className="registerSection">
@@ -73,12 +71,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                 </div>
             </div>
 
-
-
-
-
             <article className="generalInfoArticle flex fadeInFromBelowAnim" style={{ animationDelay: "0.5s" }}>
-
 
                 <div className="headingLogoTextWrapper flex">
                     <h2 className="registerHeading">YOUR PROFILE </h2>
@@ -88,14 +81,10 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                 </div>
 
-
                 <FormProvider {...methods}>
                     <form onSubmit={handleSubmit(onSubmit)} className="registerForm flex">
 
                         <div className="regUpperHalfWrapper flex">
-
-
-
 
                             <div className="registerDiv">
                                 <IoEarthSharp className="inputRegIcon" size="1.9rem" />
