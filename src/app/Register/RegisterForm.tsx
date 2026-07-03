@@ -8,7 +8,7 @@ import { RegisterARC } from "./RegisterARC";
 import { submitUserData } from "./submitToSanity";
 import Image from "next/image";
 // react icons
-
+import { generesDef } from "./registerSchema";
 import { IoMailOutline, IoEarthSharp } from "react-icons/io5";
 import { LuLetterText } from "react-icons/lu";
 import { LiaSwatchbookSolid } from "react-icons/lia";
@@ -52,7 +52,7 @@ export function RegisterForm({ data }: RegisterFormProps)
         else alert(`Error : ${result.error}`);
     };
 
-    const genreOptions = registerSchema.shape.genresInterestedIn.element.options;
+
     const userEmail = getValues("email");
     const isJoiningOurTeam = watch("arcInterest", false);
 
@@ -115,7 +115,7 @@ export function RegisterForm({ data }: RegisterFormProps)
 
                                 <ul className="multipleChoicesList flex">
                                     <LiaSwatchbookSolid className="inputRegListIcon" size="2.1rem" />
-                                    {genreOptions.map((item) => (
+                                    {generesDef.map((item) => (
                                         <li key={item} className="languagePreferredDiv">
                                             <input type="checkbox" id={item} value={item} {...register("genresInterestedIn")} />
                                             <label htmlFor={item}>{item}</label>

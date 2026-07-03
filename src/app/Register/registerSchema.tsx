@@ -38,6 +38,10 @@ export const noticeDef = [
     "Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"
 ] as const;
 
+export const generesDef = [
+    "Historical novels", "Childrens books", "Young adult books", "Self-help books"
+] as const;
+
 const reviewSitesEnum = z.enum(reviewSitesDef);
 const noticeEnum = z.enum(noticeDef);
 
@@ -75,7 +79,7 @@ export const registerSchema = z.object(
         country: z.string().optional(),
         preferredLanguage: preferredLanguageDef,
                 
-        genresInterestedIn: z.array(z.enum(["Historical novels", "Childrens books", "Young adult books", "Self-help books"]))
+        genresInterestedIn: z.array(z.enum(generesDef))
             .min(1, { error: () => "You have to choose atleast one of the alternatives" }),
         linkProfilePage: z.url({ message: "Invalid URL" }).or(z.literal("")).optional(),
         newsLetter: z.boolean(),
