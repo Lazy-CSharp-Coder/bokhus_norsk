@@ -15,21 +15,24 @@ export async function submitUserData(rawData: UserData)
     }
 
     
-    const query = `*[type == User && userId == userId][0]._id`;
+    const query = `*[_type == "User" && userId == $userId][0]._id`;
     const existingId = await sanityWriteClient.fetch<string | null>(query, { userId : rawData.userId});
-    console.log("Existing id is : " + existingId);
-    const documentPayLoad = 
-    {
-        _type : "User",
-       ...rawData
-  
-    }
+
     try {
-        if(existingId) await sanityWriteClient.createOrReplace({
-            _id : existingId, 
-            ...documentPayLoad
-        })
-        else await sanityWriteClient.create(documentPayLoad);
+        if(existingId) {
+            // Update existing document - don't include _type as it's immutable
+            await sanityWriteClient.patch(existingId).set({
+                ...rawData,
+                _updatedAt: new Date().toISOString()
+            }).commit();
+        } else {
+            // Create new document
+            await sanityWriteClient.create({
+                _type: "User",
+                ...rawData,
+                _createdAt: new Date().toISOString()
+            });
+        }
         return( { success : true })
     }
 
