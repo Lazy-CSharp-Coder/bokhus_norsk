@@ -57,7 +57,7 @@ export default async function Register()
 
     <main className="registerPage flex">
       
-       <BackgroundImage className="contactBackground" src="/images/backgrounds/contact.png" />
+       <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.png" />
       <RegisterForm data={dataToSend} />
 
     </main>
