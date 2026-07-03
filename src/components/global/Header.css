@@ -145,7 +145,7 @@ background-color: rgb(20, 20, 20);
 
   border: 3px solid var(--bokhusRootsColor);
   border-radius: 50%;
-  padding:8px;
+  padding:0.5rem;
  cursor: pointer;
 }
 
@@ -160,6 +160,8 @@ background-color: rgb(20, 20, 20);
 
 
 /* forslag button gemini */
+
+
 /* Button.module.css */
 .container {
   display: flex;

@@ -15,6 +15,10 @@ import { LiaSwatchbookSolid } from "react-icons/lia";
 import { TbWorldWww } from "react-icons/tb";
 import { GiNewspaper } from "react-icons/gi";
 import { FaBookOpenReader } from "react-icons/fa6";
+import { FaRegUser } from "react-icons/fa";
+import { FaUserLarge } from "react-icons/fa6";
+import { CiUser } from "react-icons/ci";
+
 import { languageOptions } from "./registerSchema";
 
 type RegisterFormInput = z.input<typeof registerSchema>;
@@ -34,7 +38,7 @@ export function RegisterForm({ data }: RegisterFormProps)
         }
     );
 
-    const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = methods;
+    const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting } } = methods;
 
     const onSubmit = async (data: UserData) =>
     {
@@ -46,36 +50,44 @@ export function RegisterForm({ data }: RegisterFormProps)
 
         }
         else alert(`Error : ${result.error}`);
-    }
-    
-    const genreOptions = registerSchema.shape.genresInterestedIn.element.options;
+    };
 
+    const genreOptions = registerSchema.shape.genresInterestedIn.element.options;
+    const userEmail = getValues("email");
     const isJoiningOurTeam = watch("arcInterest", false);
+
 
     return (
         <section className="registerSection">
-            <article className="generalInfoArticle flex fadeInFromBelowAnim">
-                <div className="headingLogoTextWrapper flex">
-                    <h2 className="registerHeading">YOUR PROFILE </h2>
-             <div className="logoRegWrapper">
-                                 <Image className="logoRegImg" src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
-                             </div>
+                  <div className="userEmailDiv fadeInAnim">
+
+                    <div className="mailIconAdressWrapper flex">
+                        <FaUserLarge size="3rem" className="userIcon" />
+
+                        <p className="userEmailText">{userEmail}</p>
+                    </div>
+
+                    {/* <IoMailOutline size="2.2rem" className="userEmailIcon" />' */}
 
                 </div>
+            <article className="generalInfoArticle flex fadeInFromBelowAnim" style={{animationDelay: "0.5s"}}>
+
+          
+                <div className="headingLogoTextWrapper flex">
+                    <h2 className="registerHeading">YOUR PROFILE </h2>
+                    <div className="logoRegWrapper">
+                        <Image className="logoRegImg" src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                    </div>
+
+                </div>
+
 
                 <FormProvider {...methods}>
                     <form onSubmit={handleSubmit(onSubmit)} className="registerForm flex">
 
                         <div className="regUpperHalfWrapper flex">
 
-                            <div className="registerDiv">
-                                <IoMailOutline size="1.95rem" className="inputRegIcon" />
-                                <label>Email address to receive mail from us : </label>
-                                <input className="registerInput" type="email" {...register("email")} placeholder="e-mail address" />
-                                {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
 
-
-                            </div>
 
 
                             <div className="registerDiv">
@@ -123,11 +135,11 @@ export function RegisterForm({ data }: RegisterFormProps)
                         <div className="newsLetterArcOptionsWrapper flex">
                             <div className="oneLineDiv">
                                 <GiNewspaper className="inputRegSingleIcon" size="1.9rem" />
-                              <div className="labelInputWrapperOneLineFirst flex">
-                                    <input className="registerInput" type="checkbox" {...register("newsLetter")}  />
-                                   <label>Do you wanna receive newsletters from us ? </label>
-                            
-                              </div>
+                                <div className="labelInputWrapperOneLineFirst flex">
+                                    <input className="registerInput" type="checkbox" {...register("newsLetter")} />
+                                    <label>Do you wanna receive newsletters from us ? </label>
+
+                                </div>
                                 {errors.newsLetter && <p className="errorRegisterForm">{errors.newsLetter.message}</p>}
 
                             </div>
@@ -135,9 +147,9 @@ export function RegisterForm({ data }: RegisterFormProps)
                             <div className="oneLineDiv">
                                 <FaBookOpenReader className="inputRegSingleIcon" size="1.8rem" />
                                 <div className="labelInputWrapperOneLineSecond flex">
-                                       <input className="registerInput" type="checkbox" {...register("arcInterest")}  />
+                                    <input className="registerInput" type="checkbox" {...register("arcInterest")} />
                                     <label>Are you intereted in joining or Advanced Readers Team ? </label>
-                             
+
                                 </div>
                                 {errors.arcInterest && <p className="errorRegisterForm">{errors.arcInterest.message}</p>}
 

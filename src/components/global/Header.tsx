@@ -54,8 +54,8 @@ export function Header()
                             elements: {
                                 userButtonAvatarBox: {
                                     width: "2.7rem", height: "2.7rem",
-                                    border: "3px solid var(--bokhusRootsColor)",
-                                    padding: "8px",       
+                                    // border: "1px solid var(--bokhusRootsColor)",
+                                    padding: "0rem",       
                                     backgroundColor: "transparent", /* Optional background color inside the border */
                                     borderRadius: "50%"
                                 }
