@@ -63,6 +63,14 @@ box-shadow: 10px 10px 23px 3px #000000; */
 
 }
 
+.logoHeadingWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: 100%;
+}
+
 .contactUsHeading {
     display: flex;
     flex-direction: column;
@@ -80,6 +88,20 @@ box-shadow: 10px 10px 23px 3px #000000; */
     text-align: left;
     font-weight: 500;
 }
+
+
+.logoRegWrapper {
+
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    filter: invert();
+    position: relative;
+}
+
+.logoRegImg {
+    object-fit: contain;
+}
+
 
 .contactUsText {
     font-size: 1rem;
@@ -220,5 +242,21 @@ border : 1px solid  rgb(125, 88, 33);
     border-top: 1px solid  rgb(125, 88, 33);
 
     /* margin-  right: 0.5rem; */
+}
+
+.errorRegisterForm {
+    position : absolute;
+    left: 105%; 
+    top: 50%;
+    text-wrap: nowrap;
+    color:white;
+    padding: 0.5rem 1rem;
+    /* background-color:rgb(20,20, 20); */
+    background-color: var(--inputBackground);
+    border : 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
+    
 }
 

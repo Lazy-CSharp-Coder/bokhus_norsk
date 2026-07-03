@@ -32,6 +32,7 @@ export interface Series
     commonId? : string,
     seriesName: string,
     imageSeries: SanityImageSource,
+   imageSeriesBackground : SanityImageSource,
     // imageUrl?: string,
     authorUids: SanityReference[],
     languageID: string, 

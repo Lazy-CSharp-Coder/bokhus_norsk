@@ -97,6 +97,8 @@
     margin-top: 0.2rem;
 
   }
+
+  
 }
 
 /* clerk button div and classes  */
@@ -116,7 +118,7 @@
   font-weight: 500;
   padding: 0.4rem 1.5rem;
 background-color: rgb(20, 20, 20);
-  border: 2px solid var(--bokhusRootsColor);
+  border: 2px outset var(--bokhusRootsColor);
   border-radius: 1px;
   /* font-family: sans-serif; */
   position: relative;
@@ -124,7 +126,6 @@ background-color: rgb(20, 20, 20);
   color: var(--bokhusFutureColor);
   cursor: pointer;
 
-  box-shadow: 2px 2px 0 var(--bokhusRootsColor);
 }
 
 .signInButton:hover, .signUpButton:hover {
@@ -133,8 +134,7 @@ background-color: rgb(20, 20, 20);
 
 .signInButton:active, .signUpButton:active {
 
-  transform: translateY(2px);
-    box-shadow: 0px 0px 0 var(--bokhusRootsColor);
+ border: 2px inset rgb(20, 20, 20);
 }
 
 .profileButton {
@@ -145,7 +145,7 @@ background-color: rgb(20, 20, 20);
 
   border: 3px solid var(--bokhusRootsColor);
   border-radius: 50%;
-  padding:8px;
+  padding:0.5rem;
  cursor: pointer;
 }
 
@@ -160,6 +160,8 @@ background-color: rgb(20, 20, 20);
 
 
 /* forslag button gemini */
+
+
 /* Button.module.css */
 .container {
   display: flex;

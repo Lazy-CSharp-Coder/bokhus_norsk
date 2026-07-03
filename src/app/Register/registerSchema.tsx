@@ -26,8 +26,8 @@ export const rulesSchema = z.object({
 });
 
 
-
-const preferredLanguageDef = z.enum(["English", "Norwegian", "German"]);
+export const languageOptions: string[] = ["English", "Norwegian", "German"];
+const preferredLanguageDef =  z.enum(["English", "Norwegian", "German", ""], { error: "You have to select one language" }).refine((val) => val !== "", { message: "You have to select one language"});
 const preferredArc = z.enum(["English", "Norwegian", "German"], { error: "You have to select one language" });
 
 export const reviewSitesDef = [
@@ -35,7 +35,11 @@ export const reviewSitesDef = [
 ] as const;
 
 export const noticeDef = [
-    "Language", "Flow", "Characters", "Plot", "historical accuracy", "Mood", "Pace", "Storyline"
+    "Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"
+] as const;
+
+export const genresDef = [
+    "Historical novels", "Childrens books", "Young adult books", "Self-help books"
 ] as const;
 
 const reviewSitesEnum = z.enum(reviewSitesDef);
@@ -56,7 +60,7 @@ const noticeSchema = z.preprocess(
 
 export const arcSchema = z.object(
     {
-        languageArcCopy: preferredArc,
+        // languageArcCopy: preferredArc,
         format: z.enum(["pdf", "ePub"], { error: () => "You have to choose one of the alternatives" }),
         why: z.string(),
         howLong: z.enum(["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"], { error: () => "You have to choose one of the alternatives" }),
@@ -73,9 +77,9 @@ export const registerSchema = z.object(
         userId: clerkUserId,
         email: emailSchema,
         country: z.string().optional(),
-        preferredLanguage: z.array(preferredLanguageDef)
-            .min(1, { message: "You have to chooce at least one of the options" }),
-        genresInterestedIn: z.array(z.enum(["Historical novels", "Childrens books", "Young adult books", "Self-help books"]))
+        preferredLanguage: preferredLanguageDef,
+              
+        genresInterestedIn: z.array(z.enum(genresDef))
             .min(1, { error: () => "You have to choose atleast one of the alternatives" }),
         linkProfilePage: z.url({ message: "Invalid URL" }).or(z.literal("")).optional(),
         newsLetter: z.boolean(),

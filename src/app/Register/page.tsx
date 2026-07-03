@@ -6,6 +6,7 @@ import { BrandedClerkUserId, clerkUserId, UserData } from "@/app/Register/regist
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
 import { SignIn } from "./SignIn";
+import { BackgroundImage } from "@/components/global/BackgroundImage";
 // const defaultData: UserData =
 // {
 //   email: "",
@@ -25,7 +26,7 @@ export default async function Register()
   const { isAuthenticated, userId } = await auth();
 
   if (!isAuthenticated)
-    return (<SignIn/>);
+    return (<SignIn />);
 
   const user = await currentUser();
   if (!user)
@@ -42,8 +43,8 @@ export default async function Register()
         userId: clerkUserId.parse(userId),
         email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
         country: "",
-        preferredLanguage: ["English"],
-        genresInterestedIn: ["Historical novels"],
+        preferredLanguage: "English",
+        genresInterestedIn: [],
         linkProfilePage: "",
         newsLetter: true,
         arcInterest: false,
@@ -56,9 +57,9 @@ export default async function Register()
 
     <main className="registerPage flex">
 
-      <RegisterForm data={dataToSend} />
-
-    </main>
+      <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.png" />
+      <RegisterForm data={dataToSend} isNewUser={!userData[0] ? true: false}/>
+      </main>
 
 
   );

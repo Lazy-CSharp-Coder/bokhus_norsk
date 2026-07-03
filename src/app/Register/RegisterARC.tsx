@@ -1,6 +1,16 @@
 "use client";
-import { arcSchema, registerSchema, ARCData, reviewSitesDef, noticeDef } from "./registerSchema";
+import { arcSchema, ARCData, reviewSitesDef, noticeDef, languageOptions } from "./registerSchema";
 import { useFormContext } from "react-hook-form";
+import { FaRegClock } from "react-icons/fa";
+import { FaQuestion } from "react-icons/fa6";
+import { TbUserQuestion } from "react-icons/tb";
+import { BsFileEarmarkPost } from "react-icons/bs";
+import { AiOutlineTeam } from "react-icons/ai";
+import { MdOutlineChecklist } from "react-icons/md";
+import { TbEyeEdit } from "react-icons/tb";
+import { FaRegCopy } from "react-icons/fa";
+import { FcRules } from "react-icons/fc";
+import { LuScrollText } from "react-icons/lu";
 
 interface ARCFormProps
 {
@@ -13,33 +23,22 @@ export function RegisterARC()
     const { register, formState: { errors } } = useFormContext<{ arc: ARCData; }>();
 
 
-    const languageOptions = registerSchema.shape.preferredLanguage.element.options;
-
     const formatOptions = arcSchema.shape.format.options;
     const howLongOptions = arcSchema.shape.howLong.options;
     const comfortableOptions = arcSchema.shape.comfortable.options;
 
     return (
         <article key={"#ARCTeam#"} className="arcArticle flex fadeInFromBelowAnim">
-            <h2 className="registerARC">ADVANCED READERS TEAM QUESTIONS</h2>
+            <div className="arcHeadingIconWrapper flex">
+                   <h2 className="registerARC">ADVANCED READERS TEAM QUESTIONS</h2>
+                <AiOutlineTeam className="teamIcon" size="2.5rem"/>
+            </div>
+         
             <fieldset className="arcForm flex">
-              <div className="multipleChoicesARCDiv flex">
-                    <label className="languagesText">What languages do you prefer for your ARC copy  ?</label>
-                    <ul className="multipleChoicesARCList flex">
-                        {languageOptions.map((item) => (
-                            <li key={item} className="languagePreferredDiv">
-                                <input type="radio" id={item} value={item} {...register("arc.languageArcCopy")} />
-                                <label htmlFor={item}>{item}</label>
-
-                            </li>
 
 
-                        ))}
-                        {errors.arc?.languageArcCopy && <p className="errorRegisterForm">{errors.arc.languageArcCopy.message}</p>}
-                    </ul>
-                </div>
-
-             <div className="multipleChoicesARCDiv flex">
+                <div className="multipleChoicesARCDiv flex">
+                        <FaRegCopy className="inputRegListARCIcon" size="1.7rem" />
                     <label className="languagesText">What format do you prefer for ARC copy ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {formatOptions.map((item) => (
@@ -56,12 +55,13 @@ export function RegisterARC()
                     </ul>
                 </div>
                 <div className="registerTextArea">
-
+                    <FaQuestion className="inputRegIcon" size="1.6rem" />
                     <label>Why do you wanna join the Advanced Readers Team ? </label>
-                    <textarea className="registerTextArea" rows={4} {...register("arc.why")} placeholder="tell us why" />
+                    <textarea className="registerTextAreaInput" rows={4} {...register("arc.why")} placeholder="tell us why" />
 
                 </div>
                 <div className="multipleChoicesARCDiv flex">
+                    <FaRegClock size="1.8rem" className="inputRegListARCIcon" />
                     <label className="languagesText">How long does it usually take you to read a book ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {howLongOptions.map((item) => (
@@ -73,7 +73,8 @@ export function RegisterARC()
                         {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}
                     </ul>
                 </div>
-             <div className="multipleChoicesARCDiv flex">
+                <div className="multipleChoicesARCDiv flex">
+                        <TbUserQuestion size="1.9rem" className="inputRegListARCIcon" />
                     <label className="languagesText">Are you comfortable with giving an honest review ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {comfortableOptions.map((item) => (
@@ -85,9 +86,10 @@ export function RegisterARC()
                         {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}
                     </ul>
                 </div>
-    <div className="multipleChoicesARCDiv flex">
+                <div className="multipleChoicesARCDiv flex">
+                      <BsFileEarmarkPost size="1.8rem" className="inputRegListARCIcon" />
                     <label className="languagesText">Where do you post reviews  ? </label>
- <ul className="multipleChoicesARCList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {reviewSitesDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="checkbox" id={`#reviewSites#${item}`} value={item} {...register("arc.reviewSites")} />
@@ -98,8 +100,9 @@ export function RegisterARC()
                     </ul>
                 </div>
                 <div className="multipleChoicesARCDiv flex">
+                    <TbEyeEdit size="2rem" className="inputRegListARCIcon" />
                     <label className="languagesText">What do you notice when you read books  ?</label>
-                 <ul className="multipleChoicesARCList flex">
+                    <ul className="multipleChoicesARCList flex">
                         {noticeDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
                                 <input type="checkbox" id={`#notice#${item}`} value={item} {...register("arc.notice")} />
@@ -111,38 +114,40 @@ export function RegisterARC()
                 </div>
             </fieldset>
             <fieldset className="arcRulesForm flex">
-                <h2 className="arcRulesHeading">ARC RULES AND OPTIONS</h2>
+                 <div className="arcHeadingIconWrapper flex">
+                       <h2 className="arcRulesHeading">ARC RULES AND OPTIONS</h2>
+               
+                <LuScrollText className="teamIcon reverseHorizontally" size="2.1rem"/>
+            </div>
+             
                 <div className="rulesWrapper">
+                               <MdOutlineChecklist size="2rem" className="inputRegRulesIcon" />
                     <div className="rulesDiv">
-                        <span className="rulesText">       Do you understand that you should not distribute your ARC copy ?</span>
-
+                 
                         <div className="labelInputRulesDiv flex">
-                            <input id={"ruleNotShae"} type="checkbox" {...register("arc.rules.notShare")} />
-                            <label htmlFor="ruleNotShare"></label>
+                            <input id={"ruleNotShare"} type="checkbox" {...register("arc.rules.notShare")} />
+                            <label className="rulesLabel" htmlFor="ruleNotShare">Do you understand that you should not distribute your ARC copy ?</label>
 
                         </div>
                         {errors.arc?.rules?.notShare && <p className="errorRegisterForm">{errors.arc.rules.notShare.message}</p>}
 
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Do you understand that the review should be honest, not bought or pressured ?</span>
-                        <div className="labelInputRulesDiv flex">
-                            <input id={"ruleNotShae"} type="checkbox" {...register("arc.rules.honestReview")} />
-                            <label htmlFor="ruleNotShare"></label>
+               
+                            <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
+                            <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
 
 
-                        </div>
+                   
                         {errors.arc?.rules?.honestReview && <p className="errorRegisterForm">{errors.arc.rules.honestReview.message}</p>}
 
 
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Are you above 18 years old, in case book contains adult content ?</span>
+                     
                         <div className="labelInputRulesDiv flex">
-                            <input id={"ruleNotShae"} type="checkbox" {...register("arc.rules.above18")} />
-                            <label htmlFor="ruleNotShare"></label>
+                            <input id={"rule18"} type="checkbox" {...register("arc.rules.above18")} />
+                            <label className="rulesLabel" htmlFor="rule18"> Are you above 18 years old, in case book contains adult content ?</label>
 
 
                         </div>
@@ -150,23 +155,21 @@ export function RegisterARC()
 
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Is it ok be reminded about posting a review when release date approaches ?</span>
+      
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleReminder"} type="checkbox" {...register("arc.rules.reminder")} />
-                            <label htmlFor="ruleReminder"></label>
+                            <label className="rulesLabel" htmlFor="ruleReminder">    Is it ok be reminded about posting a review when release date approaches ?</label>
                         </div>
                     </div>
                     <div className="rulesDiv">
-                        <span className="rulesText">
-                            Do you want to be contacted about future ARC copies ?</span>
+                 
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleContactFutureARC"} type="checkbox" {...register("arc.rules.contactFutureARC")} />
-                            <label htmlFor="ruleContactFutureARC"></label>
+                            <label className="rulesLabel" htmlFor="ruleContactFutureARC">  Do you want to be contacted about future ARC copies ?</label>
                         </div>
                     </div>
                 </div>
-            
+
             </fieldset>
 
         </article>
