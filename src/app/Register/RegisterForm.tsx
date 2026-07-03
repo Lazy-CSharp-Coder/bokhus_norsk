@@ -8,7 +8,7 @@ import { RegisterARC } from "./RegisterARC";
 import { submitUserData } from "./submitToSanity";
 import Image from "next/image";
 // react icons
-import { generesDef } from "./registerSchema";
+import { genresDef } from "./registerSchema";
 import { IoMailOutline, IoEarthSharp } from "react-icons/io5";
 import { LuLetterText } from "react-icons/lu";
 import { LiaSwatchbookSolid } from "react-icons/lia";
@@ -115,7 +115,7 @@ export function RegisterForm({ data }: RegisterFormProps)
 
                                 <ul className="multipleChoicesList flex">
                                     <LiaSwatchbookSolid className="inputRegListIcon" size="2.1rem" />
-                                    {generesDef.map((item) => (
+                                    {genresDef.map((item) => (
                                         <li key={item} className="languagePreferredDiv">
                                             <input type="checkbox" id={item} value={item} {...register("genresInterestedIn")} />
                                             <label htmlFor={item}>{item}</label>
