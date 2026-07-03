@@ -79,6 +79,7 @@ export async function submitUserData(rawData: UserData)
     catch (error)
     {
         console.error("Sanity error : ", error);
-        return { success: false, error: "Could not store data in Sanity database" };
+        
+        return { success: false, error: "Could not store data in Sanity database : " + error };
     }
 }
