@@ -43,7 +43,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+
     padding: 0.2rem 0.2rem;
     border-bottom: 1px solid var(--borderIconColor);
 }
@@ -51,7 +51,7 @@
 .registerHeading,
 .registerARC,
 .arcRulesHeading {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: normal;
     /* padding: 1.5rem 0; */
 
@@ -128,7 +128,7 @@
 .inputRegIcon,
 .inputRegListIcon,
 .inputRegSingleIcon, 
-.inputRegListARCIcon {
+.inputRegListARCIcon,.inputRegRulesIcon {
     position: absolute;
     right: 0.8rem;
 
@@ -154,7 +154,9 @@
 .inputRegListIcon {
     top: 4rem;
 }
-
+.inputRegRulesIcon {
+    top: 1rem;
+}
 
 .oneLineDiv {
     display: flex;
@@ -173,7 +175,7 @@
 
 .labelInputWrapperOneLineFirst {
     gap: 1rem;
-    ;
+    
     align-items: center;
 }
 
@@ -349,6 +351,15 @@ fieldset {
 
 }
 
+.arcHeadingIconWrapper {
+    justify-content: space-between;
+    align-items: center;
+
+    
+    padding: 1.2rem 0.2rem;
+    border-bottom: 1px solid var(--borderIconColor);
+}
+
 .arcRulesForm {
     flex-direction: column;
     width: 100%;
@@ -370,13 +381,13 @@ fieldset {
     align-items: left;
     width: 100%;
     padding: 1.5rem 1.5rem;
-    padding-right: 4rem;
+
 
     background-color: var(--inputBackground);
     border: var(--borderReg);
     border-radius: var(--borderRadiusReg);
+    position: relative;
 
-    justify-content: space-between;
 }
 
 .rulesDiv {

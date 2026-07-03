@@ -6,6 +6,7 @@ import { FaQuestion } from "react-icons/fa6";
 import { TbUserQuestion } from "react-icons/tb";
 import { BsFileEarmarkPost } from "react-icons/bs";
 import { AiOutlineTeam } from "react-icons/ai";
+import { MdOutlineChecklist } from "react-icons/md";
 interface ARCFormProps
 {
     arcData: ARCData,
@@ -23,7 +24,11 @@ export function RegisterARC()
 
     return (
         <article key={"#ARCTeam#"} className="arcArticle flex fadeInFromBelowAnim">
-            <h2 className="registerARC">ADVANCED READERS TEAM QUESTIONS</h2>
+            <div className="arcHeadingIconWrapper flex">
+                   <h2 className="registerARC">ADVANCED READERS TEAM QUESTIONS</h2>
+                <AiOutlineTeam className="teamIcon" size="2.5rem"/>
+            </div>
+         
             <fieldset className="arcForm flex">
 
 
@@ -104,6 +109,7 @@ export function RegisterARC()
             <fieldset className="arcRulesForm flex">
                 <h2 className="arcRulesHeading">ARC RULES AND OPTIONS</h2>
                 <div className="rulesWrapper">
+                               <MdOutlineChecklist size="2rem" className="inputRegRulesIcon" />
                     <div className="rulesDiv">
                  
                         <div className="labelInputRulesDiv flex">
@@ -137,7 +143,7 @@ export function RegisterARC()
 
                     </div>
                     <div className="rulesDiv">
-             
+      
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleReminder"} type="checkbox" {...register("arc.rules.reminder")} />
                             <label className="rulesLabel" htmlFor="ruleReminder">    Is it ok be reminded about posting a review when release date approaches ?</label>
