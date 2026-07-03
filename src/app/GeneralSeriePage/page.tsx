@@ -7,6 +7,7 @@ import { client } from "@/sanity/client";
 // css module import
 import "./GeneralSeriePage.module.css";
 import type { PageProps } from "@/types/types";
+import { urlFor } from "@/lib/urlFor";
 
 
 
@@ -64,7 +65,7 @@ export default async function GeneralSeriePage({ searchParams }: PageProps)
    return (
       <>
          <ScrollToTop />
-         <BackgroundImage className="backgroundImageSeries" src={"/images/backgrounds/bgVaterland2.png"} />
+         <BackgroundImage className="backgroundImageSeries" src={urlFor(serie.backgroundImageSeries, 1920)} />
          <main className="seriesPage">
             {(serie && authors) &&
                <div className="presentationReviewHrefWrapper">
