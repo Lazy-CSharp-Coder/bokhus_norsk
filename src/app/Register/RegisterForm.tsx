@@ -76,7 +76,7 @@ export function RegisterForm({ data }: RegisterFormProps)
                 <div className="headingLogoTextWrapper flex">
                     <h2 className="registerHeading">YOUR PROFILE </h2>
                     <div className="logoRegWrapper">
-                        <Image className="logoRegImg" src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                        <Image className="logoRegImg scaleInAnim" style={{animationDelay:"1.3s"}} src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                     </div>
 
                 </div>
