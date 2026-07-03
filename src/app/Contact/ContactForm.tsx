@@ -9,7 +9,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { FaUserCheck } from "react-icons/fa6";
 import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 import { GoogleReCAPTCHA } from "./GoogleReCAPTCHA";
-import Script from "next/script";
+import Image from "next/image";
 
 
 //  added for importing recaptcha to fix turbopack fault
@@ -65,9 +65,15 @@ export function ContactUs()
 
         <section className="contactUsSection flex fadeInFromLeftAnim" style={{ animationDelay: "0.8s" }}>
             {/* <article className="contactUsArticle flex"> */}
-            <h2 className="contactUsHeading flex">
+         <div className="logoHeadingWrapper flex">
+               <h2 className="contactUsHeading flex">
                 Contact Us
             </h2>
+             <div className="logoRegWrapper">
+                                    <Image className="logoRegImg rotateInYAnim" style={{animationDelay:"1.3s"}} src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                                </div>
+            
+         </div>
             <p className="contactUsText">
                 If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
             </p>
@@ -96,7 +102,7 @@ export function ContactUs()
                 <div className="inputDiv">
                     <label>Your comment : </label>
                     <MdOutlineInsertComment className="inputIcon" size="1.95rem" />
-                    <textarea className="contactInput" {...register("comment")} rows={10} />
+                    <textarea className="contactInput" {...register("comment")} rows={7} />
                     {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
 
 

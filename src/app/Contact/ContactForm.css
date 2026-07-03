@@ -63,6 +63,14 @@ box-shadow: 10px 10px 23px 3px #000000; */
 
 }
 
+.logoHeadingWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: 100%;
+}
+
 .contactUsHeading {
     display: flex;
     flex-direction: column;
@@ -80,6 +88,20 @@ box-shadow: 10px 10px 23px 3px #000000; */
     text-align: left;
     font-weight: 500;
 }
+
+
+.logoRegWrapper {
+
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    filter: invert();
+    position: relative;
+}
+
+.logoRegImg {
+    object-fit: contain;
+}
+
 
 .contactUsText {
     font-size: 1rem;
