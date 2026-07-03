@@ -51,7 +51,7 @@
 height: fit-content;
     font-family: var(--robotoFont);
     padding: 2.5rem 4rem;;
-    background-color: rgb(20, 20, 20);
+    background-color: rgba(20, 20, 20, 0.8);
 /* background-color: rgb(34, 34, 34); */
      border : 1px solid  rgb(125, 88, 33);
     border-radius: 5px;
@@ -186,17 +186,19 @@ border : 1px solid  rgb(125, 88, 33);
 
 }
 
-
- .submitButton {
-
+.submitButton {
+    margin: 1rem 0;
     width: 100%;
     font-size: 1rem;
     padding: 0.5rem;
-    color: black;
-    background-color: var(--bokhusFutureColor);
-    border-color: var(--myWhiteColor);
-} 
+    color: var(--myWhiteColor);
+    border: 2px outset var(--borderIconColor);
+    background-color: var(--inputBackground);
+}
 
+.submitButton:active{
+    border: 2px inset var(--borderIconColor);
+}
 .submitButtonSuggestion {
   display: flex;
   justify-content: center;

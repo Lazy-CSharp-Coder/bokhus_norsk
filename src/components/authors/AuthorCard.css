@@ -1,7 +1,7 @@
 
 :root {
     --regFontSize: 1.1rem;
-    --regBackground: rgba(20, 20, 20, 0.9);
+    --regBackground: rgba(20, 20, 20, 0.8);
     --inputBackground: rgb(34, 34, 34);
     --borderIconColor: rgb(125, 88, 33);
     --borderReg: 1px solid var(--borderIconColor);
@@ -19,7 +19,7 @@ width: 100%;
     gap: 3rem;
     font-family: var(--robotoFont);
     /* background-color: rgba(221, 221, 221, 0.6); */
-background-color:rgb(34, 34, 34, 0.8);
+background-color:var(--regBackground);
     border: 2px solid var(--borderIconColor);
     border-radius: 5px;
     border-radius: 2px;
