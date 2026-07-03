@@ -68,8 +68,8 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                 <div className="mailIconAdressWrapper flex">
                     <FaUserLarge size="3rem" className="userIcon" />
-                    {displayNewUserInfo ? <p className="noUserFoundText"><span className="scaleInAnim" style={{animationDelay:"1s", animationFillMode: "backwards"}}>No user registered with your credentials.</span> <span className="scaleInAnim" style={{animationDelay: "2.5s"}} onAnimationEnd={() => setDisplayNewUserInfo(false)}>Please enter profile information.  </span> </p> :
-                        <p className="userEmailText scaleInAnim" style={{animationDuration: "2s"}}>{userEmail}</p>}
+                    {displayNewUserInfo ? <p className="noUserFoundText" onAnimationEnd={() => setDisplayNewUserInfo(false)}>No user registered with your credentials <span>  </span> </p> :
+                        <p key={displayNewUserInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{animationDuration: "2s"}}>{userEmail}</p>}
                 </div>
             </div>
 

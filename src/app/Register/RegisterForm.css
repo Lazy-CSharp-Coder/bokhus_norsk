@@ -128,11 +128,11 @@
 
 .noUserFoundText {
 
- /* animation-name: scaleIn;
- animation-duration: 2s;
+ animation-name: slideInAndOut;
+ animation-duration: 3.8s;
  animation-timing-function: ease-in-out;
  animation-fill-mode: backwards;
- animation-delay: 1s; */
+ animation-delay: 1s;
 
 }
 
