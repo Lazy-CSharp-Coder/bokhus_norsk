@@ -6,6 +6,7 @@ import { BrandedClerkUserId, clerkUserId, UserData } from "@/app/Register/regist
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
 import { SignIn } from "./SignIn";
+import { BackgroundImage } from "@/components/global/BackgroundImage";
 // const defaultData: UserData =
 // {
 //   email: "",
@@ -55,7 +56,8 @@ export default async function Register()
   return (
 
     <main className="registerPage flex">
-
+      
+       <BackgroundImage className="contactBackground" src="/images/backgrounds/contact.png" />
       <RegisterForm data={dataToSend} />
 
     </main>
