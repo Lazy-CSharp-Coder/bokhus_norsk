@@ -33,17 +33,12 @@ export function Header()
             <div className="clerkButtons">
 
                 <Show when="signed-out">
-                    <SignInButton>
-       
+                    <SignInButton mode="modal" fallbackRedirectUrl="/Register">
                           <button className="signInButton">Sign In </button>
-              
                     </SignInButton>
-                    <SignUpButton>
-                   
+                    <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
                          <button className="signUpButton">
-                            
                             Sign Up</button>
-               
                     </SignUpButton>
                 </Show>
                 <Show when="signed-in">
