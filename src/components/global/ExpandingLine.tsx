@@ -6,7 +6,7 @@ export function ExpandingLine({ width, lineSize, lineType, color, animationDelay
     const borderString : string =  `${lineSize}px ${lineType ? lineType : "solid"} ${color ? color : ""}`
 
     return(
-        <div className="expandingLineDiv" style={{borderTop : borderString, width: width ? width : "", animationDuration : animationDuration ? animationDuration : "", animationDelay : animationDelay ? animationDelay : ""}}>
+        <div className="expandingLineDiv" style={{borderTop : borderString, width: width ? width : "100%", animationDuration : animationDuration ? animationDuration : "1s", animationDelay : animationDelay ? animationDelay : "0s"}}>
 
         </div>
 
