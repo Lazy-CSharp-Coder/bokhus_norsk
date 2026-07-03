@@ -7,6 +7,11 @@ import { TbUserQuestion } from "react-icons/tb";
 import { BsFileEarmarkPost } from "react-icons/bs";
 import { AiOutlineTeam } from "react-icons/ai";
 import { MdOutlineChecklist } from "react-icons/md";
+import { TbEyeEdit } from "react-icons/tb";
+import { FaRegCopy } from "react-icons/fa";
+import { FcRules } from "react-icons/fc";
+import { LuScrollText } from "react-icons/lu";
+
 interface ARCFormProps
 {
     arcData: ARCData,
@@ -33,6 +38,7 @@ export function RegisterARC()
 
 
                 <div className="multipleChoicesARCDiv flex">
+                        <FaRegCopy className="inputRegListARCIcon" size="1.7rem" />
                     <label className="languagesText">What format do you prefer for ARC copy ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {formatOptions.map((item) => (
@@ -49,7 +55,7 @@ export function RegisterARC()
                     </ul>
                 </div>
                 <div className="registerTextArea">
-                    <FaQuestion className="inputRegIcon" size="1.7rem" />
+                    <FaQuestion className="inputRegIcon" size="1.6rem" />
                     <label>Why do you wanna join the Advanced Readers Team ? </label>
                     <textarea className="registerTextAreaInput" rows={4} {...register("arc.why")} placeholder="tell us why" />
 
@@ -94,6 +100,7 @@ export function RegisterARC()
                     </ul>
                 </div>
                 <div className="multipleChoicesARCDiv flex">
+                    <TbEyeEdit size="2rem" className="inputRegListARCIcon" />
                     <label className="languagesText">What do you notice when you read books  ?</label>
                     <ul className="multipleChoicesARCList flex">
                         {noticeDef.map((item) => (
@@ -107,7 +114,12 @@ export function RegisterARC()
                 </div>
             </fieldset>
             <fieldset className="arcRulesForm flex">
-                <h2 className="arcRulesHeading">ARC RULES AND OPTIONS</h2>
+                 <div className="arcHeadingIconWrapper flex">
+                       <h2 className="arcRulesHeading">ARC RULES AND OPTIONS</h2>
+               
+                <LuScrollText className="teamIcon" size="2.1rem"/>
+            </div>
+             
                 <div className="rulesWrapper">
                                <MdOutlineChecklist size="2rem" className="inputRegRulesIcon" />
                     <div className="rulesDiv">

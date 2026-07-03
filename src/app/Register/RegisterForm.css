@@ -356,7 +356,7 @@ fieldset {
     align-items: center;
 
     
-    padding: 1.2rem 0.2rem;
+    padding: 1.2rem 0.5rem;
     border-bottom: 1px solid var(--borderIconColor);
 }
 
@@ -366,7 +366,7 @@ fieldset {
     padding-bottom: 0.5rem;
     border-top: 1px solid black;
     /* border-bottom: 1px solid black; */
-    gap: 2rem;
+    gap: 3rem;
     font-size: var(--regFontSize);
     /* background-color: red; */
 
