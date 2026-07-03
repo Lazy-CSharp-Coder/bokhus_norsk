@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod/v4-mini";
 import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
+import { useState } from "react";
 import { BokHusCom } from "../../components/global/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 import { submitUserData } from "./submitToSanity";
@@ -25,12 +26,14 @@ type RegisterFormInput = z.input<typeof registerSchema>;
 
 interface RegisterFormProps 
 {
-    data?: RegisterFormInput;
+    data?: RegisterFormInput,
+    isNewUser: boolean;
 
 }
 
-export function RegisterForm({ data }: RegisterFormProps)
+export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 {
+
     const methods = useForm<RegisterFormInput, object, UserData>(
         {
             resolver: zodResolver(registerSchema),
@@ -39,6 +42,7 @@ export function RegisterForm({ data }: RegisterFormProps)
     );
 
     const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting } } = methods;
+    const [displayNewUserInfo, setDisplayNewUserInfo] = useState<boolean>(isNewUser);
 
     const onSubmit = async (data: UserData) =>
     {
@@ -59,24 +63,27 @@ export function RegisterForm({ data }: RegisterFormProps)
 
     return (
         <section className="registerSection">
-                  <div className="userEmailDiv fadeInAnim">
 
-                    <div className="mailIconAdressWrapper flex">
-                        <FaUserLarge size="3rem" className="userIcon" />
+            <div className="userEmailDiv fadeInAnim">
 
-                        <p className="userEmailText">{userEmail}</p>
-                    </div>
-
-                    {/* <IoMailOutline size="2.2rem" className="userEmailIcon" />' */}
-
+                <div className="mailIconAdressWrapper flex">
+                    <FaUserLarge size="3rem" className="userIcon" />
+                    {displayNewUserInfo ? <p className="noUserFoundText"><span className="scaleInAnim" style={{animationDelay:"1s", animationFillMode: "backwards"}}>No user registered with your credentials.</span> <span className="scaleInAnim" style={{animationDelay: "2.5s"}} onAnimationEnd={() => setDisplayNewUserInfo(false)}>Please enter profile information.  </span> </p> :
+                        <p className="userEmailText scaleInAnim" style={{animationDuration: "2s"}}>{userEmail}</p>}
                 </div>
-            <article className="generalInfoArticle flex fadeInFromBelowAnim" style={{animationDelay: "0.5s"}}>
+            </div>
 
-          
+
+
+
+
+            <article className="generalInfoArticle flex fadeInFromBelowAnim" style={{ animationDelay: "0.5s" }}>
+
+
                 <div className="headingLogoTextWrapper flex">
                     <h2 className="registerHeading">YOUR PROFILE </h2>
                     <div className="logoRegWrapper">
-                        <Image className="logoRegImg rotateInYAnim" style={{animationDelay:"1.3s"}} src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                        <Image className="logoRegImg rotateInYAnim" style={{ animationDelay: "1.3s" }} src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                     </div>
 
                 </div>

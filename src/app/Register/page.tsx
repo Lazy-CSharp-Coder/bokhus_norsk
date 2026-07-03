@@ -26,7 +26,7 @@ export default async function Register()
   const { isAuthenticated, userId } = await auth();
 
   if (!isAuthenticated)
-    return (<SignIn/>);
+    return (<SignIn />);
 
   const user = await currentUser();
   if (!user)
@@ -44,7 +44,7 @@ export default async function Register()
         email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
         country: "",
         preferredLanguage: "English",
-        genresInterestedIn: ["Historical novels"],
+        genresInterestedIn: [],
         linkProfilePage: "",
         newsLetter: true,
         arcInterest: false,
@@ -56,13 +56,10 @@ export default async function Register()
   return (
 
     <main className="registerPage flex">
-      
-       <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.png" />
-      <RegisterForm data={dataToSend} />
-      { !userData[0] &&
-      <div className="noExistingUserFoundDiv">No user registered with your credentials found in our database.</div>
 
-      }</main>
+      <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.png" />
+      <RegisterForm data={dataToSend} isNewUser={!userData[0] ? true: false}/>
+      </main>
 
 
   );
