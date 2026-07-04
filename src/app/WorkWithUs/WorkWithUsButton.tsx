@@ -1,16 +1,18 @@
 "use client";
 
+import { WorkWithUs } from "./page";
+
 interface WorkWithUsButtonProps 
 {
-    theme : string,
-    handleClick : (theme : string) => void
+    subject : WorkWithUs,
+    handleClick : (theme : WorkWithUs) => void
 }
 
-export function WorkWithUsButton({theme, handleClick} : WorkWithUsButtonProps)
+export function WorkWithUsButton({subject, handleClick} : WorkWithUsButtonProps)
 {
     return(
-        <button className="workWithUsButton" onClick={() => handleClick(theme)}>
-            {theme}
+        <button className="workWithUsButton" onClick={() => handleClick(subject)}>
+            {subject.theme}
         </button>
     )
 }

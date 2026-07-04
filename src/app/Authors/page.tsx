@@ -36,7 +36,7 @@ export default async function Authors()
                 <div className="bokhusAuthorsHeadingWrapper flex">
 
                                   
-                <div className="headingLineWrappr">
+                <div className="headingLineWrapper">
                         <h2 className="authorsPageRepresentedText fadeInAnim">Meet the <span className="voicesText">voices</span> behind our books</h2>
                     <ExpandingLine lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s"/>
                 </div>
