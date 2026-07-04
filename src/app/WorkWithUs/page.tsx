@@ -44,7 +44,7 @@ export default function WorkWithUsPage()
                     We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you. 
 
                 </p>
-                <p className="workWithUsIntroText">Here is a list of what Bokhus can help you with :</p>
+                <p className="workWithUsIntroText">Here is a list of what we can help you with :</p>
             
             </div>
             <section className="workWithUsSection flex">
