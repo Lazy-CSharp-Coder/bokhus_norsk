@@ -5,14 +5,15 @@ import { SeriesInfoProps } from "@/types/booktypes";
 import { ExitTeaserInfo } from "./ExitTeaserInfo";
 import { useIntroState } from "@/globalStates";
 import { HiOutlineArrowSmallLeft } from "react-icons/hi2";
+import { is } from "zod/locales";
 
 export function SeriesInfoArticle({ seriesName, authors, bestSellerIntro, bestSellerList}: SeriesInfoProps)
 {
-    const { hasIntroBeenPlayed, isDescriptionShowing, setIsDescriptionShowing } = useIntroState();
+    const { isDescriptionShowing, setIsDescriptionShowing } = useIntroState();
     return (
-        <article key={"01" + hasIntroBeenPlayed} className="seriesInfoArticle flex fadeInAnim" onClick={()=> setIsDescriptionShowing(true)}>
+        <article key={"01" + "Description" + isDescriptionShowing} className="seriesInfoArticle flex fadeInAnim">
 
-            <div className="headingAndAuthorInfoDiv grid">
+            <div className="headingAndAuthorInfoDiv grid"  onClick={()=> setIsDescriptionShowing(true)}>
                 <div className="seriesNameArrowWrapper flex">                <h2 className="seriesName">{seriesName}</h2>
                  { !isDescriptionShowing && <HiOutlineArrowSmallLeft className="arrowToDescription scaleInAnim" /> }
                 </div>
