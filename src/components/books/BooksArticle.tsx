@@ -21,7 +21,7 @@ export function BooksArticle({ authors, series, bookList }: BooksArticleProps)
     {
         // setIntroBeenPlayed("played");
         setBookToShow(item);
-        setIsDescriptionShowing(false);
+        if(isDescriptionShowing) setIsDescriptionShowing(false);
     };
 
     const { bookArticle, sanityTag } = useLanguageChosen();

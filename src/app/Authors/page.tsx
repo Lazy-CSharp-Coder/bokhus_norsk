@@ -17,9 +17,7 @@ export default async function Authors()
 
     const AUTOHRS_QUERY = `*[_type == "Author"]`;
     const authors: Author[] = await client.fetch<Author[]>(AUTOHRS_QUERY);
-    authors.forEach((item) => console.log("Name : " + item.name));
-    console.log(urlFor(authors[0].profileImage, 800));
-    console.log(authors);
+
     // const authors = authorsFromServer;  // this works, but shows no image
     const setRouteToGo = (author: Author) =>
     {
@@ -44,7 +42,7 @@ export default async function Authors()
                 </div>
                     <p className="authorsPageText fadeInAnim">BokHus represents authors with a strong sense of story, place and history. From historical fiction and folklore to educational stories and local heritage, our writers create books that invite readers into worlds they can return to.
 </p>
-                    <p className="clickText">(Click on <span className="authorCardClickText">Author Card</span> to explore available books and series)</p>
+                    <p className="clickText scaleInAnim" style={{animationDelay: "2s"}}>(Click on <span className="authorCardClickText">Author Card</span> to explore available books and series)</p>
                 </div>
 
                 {authors.length > 0 ?

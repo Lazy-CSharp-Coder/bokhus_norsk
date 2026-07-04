@@ -1,3 +1,12 @@
+:root {
+    --regFontSize: 1.1rem;
+    --regBackground: rgba(20, 20, 20, 0.8);
+    --inputBackground: rgb(34, 34, 34);
+    --inputBackgroundOpacity: rgb(34,34, 34, 0.8);
+    --borderIconColor: rgb(125, 88, 33);
+    --borderReg: 1px solid var(--borderIconColor);
+    --borderRadiusReg: 5px;
+}
 
 .seriesCardList {
     flex-direction: row;
@@ -14,9 +23,10 @@
     /* justify-content: stretch; */
     width: 47%;
     height: fit-content;
-    padding: 1.1rem 1.2rem;
-    background-color: rgba(221, 221, 221, 0.2);
-    border: 1px solid black;
+    padding: 1.8rem 1.8rem;
+    background-color: var(--regBackground);
+    border: 1px solid var(--borderIconColor);
+    border-radius: 5px;
     font-family: var(--libreFont);
     -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
@@ -27,9 +37,9 @@
     min-width: 25%;
     height:80%;
     aspect-ratio: 3/2;
-    border: 1px solid rgba(221, 221, 221, 0.8);
-    border: 1px solid black;
-    padding: 1rem 1rem;
+    border: 1px solid rgba(221, 221, 221, 0.7);
+    /* border: 1px solid var(--myWhiteColor); */
+    /* padding: 2rem 2rem; */
 }
 
 .seriesCardImage {
@@ -65,6 +75,11 @@
     justify-content: flex-start;
     gap: 0.5rem;
     cursor: pointer;
+}
+
+.goToArrowWrapper:hover {
+    color: white;
+    scale: 1.01;
 }
 
 .seriesText {
