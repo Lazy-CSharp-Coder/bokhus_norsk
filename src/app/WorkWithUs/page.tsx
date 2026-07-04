@@ -6,6 +6,7 @@ import { WorkWithUsTheme } from "./WorkWithUsTheme";
 // import { is } from "zod/locales";
 import "./WorkWithUs.module.css";
 import { ExpandingLine } from "@/components/global/ExpandingLine";
+import { BackgroundImage } from "@/components/global/BackgroundImage";
 
 
 export interface WorkWithUs
@@ -27,6 +28,7 @@ export default function WorkWithUsPage()
 
     return (
         <main className="workWithUsPage">
+            <BackgroundImage src="/images/backgrounds/workWithUsBackground.png" className="workWithUsBackground"/>
             <div className="workWithUsHeadingIntroWrapper">
                 <div className="headingLineWrapper">
                     <h3 className="workWithUsHeading fadeInAnim"> Work with Bokhus </h3>
