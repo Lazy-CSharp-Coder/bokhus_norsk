@@ -2,26 +2,26 @@
     --regFontSize: 1.1rem;
     --regBackground: rgba(20, 20, 20, 0.9);
     --inputBackground: rgb(34, 34, 34);
-      --inputBackgroundOpacity: rgb(34,34, 34, 0.8);
+    --inputBackgroundOpacity: rgb(34, 34, 34, 0.8);
     --borderIconColor: rgb(125, 88, 33);
     --borderReg: 1px solid var(--borderIconColor);
     --borderRadiusReg: 5px;
 }
 
 .workWithUsBackground {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-
-  background-image: var(--defaultBackgroundImage);
-  background-size: cover;
     position: fixed;
-  background-repeat: no-repeat;
-  filter: blur(5px) brightness(58%);
-  z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    filter: blur(5px) brightness(58%);
+    z-index: -1;
 
 
 }
@@ -29,10 +29,10 @@
 .workWithUsPage {
     display: flex;
     flex-direction: column;
-height:100%;
+    height: 100%;
     align-items: center;
-   width: 100%;
-   font-family: var(--robotoFont);
+    width: 100%;
+    font-family: var(--robotoFont);
     color: var(--myWhiteColor);
 }
 
@@ -48,7 +48,7 @@ height:100%;
 }
 
 .workWithUsHeading {
-    color:white;
+    color: white;
     font-size: 2.5rem;
     padding: 1rem 0;
 
@@ -58,18 +58,20 @@ height:100%;
     line-height: 1.4;
     font-size: 1.4rem;
 
-    color: var(--myWhiteColor);;
- 
-} 
+    color: var(--myWhiteColor);
+    ;
+
+}
 
 .workWithUsSection {
     padding: 5rem 0;
     flex-direction: row;
     width: 50%;
     justify-content: flex-start;
-    align-items:top;
+    align-items: top;
     height: fit-content;
 }
+
 .workList {
     display: flex;
     flex-direction: column;
@@ -91,7 +93,7 @@ height:100%;
 .workWithUsThemeArticle {
     display: flex;
     flex-direction: column;
-    flex:2;
+    flex: 2;
     padding: 4rem 6rem;
     gap: 2rem;
     background-color: var(--regBackground);
@@ -116,7 +118,7 @@ height:100%;
 }
 
 .iconWorkWithUs {
-    color:var(--myWhiteColor);
+    color: var(--myWhiteColor);
 }
 
 .themeList {
@@ -124,7 +126,6 @@ height:100%;
     flex-direction: column;
     gap: 1rem;
     list-style-type: disc;
-    padding-left:2rem;
+    padding-left: 2rem;
     font-size: 1.2rem;
-} 
-
+}
