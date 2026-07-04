@@ -496,7 +496,7 @@ fieldset {
 .bokhusComWrapper {
     justify-content: center;
     padding-top: 1.2rem;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--borderIconColor);
 
     /* margin-right: 0.5rem; */
 }
