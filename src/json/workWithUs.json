@@ -20,7 +20,7 @@
             "Print & eBook publishing",
             "Audiobook publishing"
         ],
-        "iconNumber": 1
+        "iconNumber": 2
     },
     {
         "theme": "Design",
@@ -31,7 +31,7 @@
             "Image restoration",
             "Maps & diagrams"
         ],
-        "iconNumber": 1
+        "iconNumber": 3
     },
     {
         "theme": "Translation",
@@ -41,14 +41,14 @@
             "British English",
             "Localization"
         ],
-        "iconNumber": 1
+        "iconNumber": 4
     },
     {
         "theme": "Social media",
         "list": [
             "Book launch planning"
         ],
-        "iconNumber": 1
+        "iconNumber": 5
     },
     {
         "theme": "AI Services",
@@ -58,7 +58,7 @@
             "Character development",
             "Book planning"
         ],
-        "iconNumber": 1
+        "iconNumber": 6
     },
     {
         "theme": "Research assistance",
@@ -66,7 +66,7 @@
             "Marketing content",
             "Historical Publications"
         ],
-        "iconNumber": 1
+        "iconNumber": 7
     },
     {
         "theme": "OCR correction",
@@ -82,7 +82,7 @@
             "AI prompts",
             "Author resources"
         ],
-        "iconNumber": 1
+        "iconNumber": 8
     },
     {
         "theme": "Courses",
@@ -93,7 +93,7 @@
             "Amazon publishing",
             "Book marketing"
         ],
-        "iconNumber": 1
+        "iconNumber": 9
     },
     {
         "theme": "Consulting",
@@ -113,6 +113,6 @@
             "Progress tracking",
             "Client portal"
         ],
-        "iconNumber": 1
+        "iconNumber": 10
     }
 ]
