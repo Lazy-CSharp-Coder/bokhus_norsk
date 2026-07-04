@@ -102,7 +102,7 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
             </div>
             <ul className="themeList">
                 {list.map((item, index) =>
-                    <li className="themeListItem">{item}</li>
+                    <li key={"themeList" + index}className="themeListItem">{item}</li>
                 )}
 
             </ul>
