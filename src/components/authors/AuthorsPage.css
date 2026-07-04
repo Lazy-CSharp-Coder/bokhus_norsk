@@ -30,6 +30,10 @@
 
 }
 
+.voicesText {
+    /* color :white; */
+}
+
 .bokhusText {
     color: var(--bokhusFutureColor);
 }
@@ -60,13 +64,14 @@
 
 .clickText {
     color: var(--myWhiteColor);
-    font-size: 1.2rem;
-    flex-direction: column;
-    align-items: center;
+    font-size: 1.1rem;
+  
     /* font-style : italic; */
 }
 .authorCardClickText {
-    color: var(--bokhusRootsColor);
+    color: white;
+    padding-bottom: 0.1rem;
+    /* border-bottom: 1px solid var(--bokhusRootsColor); */
 }
 
 .backgroundImageAuthorsPage {
