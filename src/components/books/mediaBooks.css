@@ -59,6 +59,10 @@
         font-size:90%;
 
     }
+       
+    :root {
+        --marginBookList: 10.8vw;
+    }
 
     .seriesPage {
         /* background-color: rgb(168, 147, 132); */
@@ -73,7 +77,7 @@
     html {
         font-size: 140%;
     }
-
+ 
     .seriesPage {
         /* background-color: blueviolet; */
     }
