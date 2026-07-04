@@ -39,11 +39,14 @@ export default function WorkWithUsPage()
                     BokHus works with writers, editors, translators, illustrators, local historians and creative partners who care about strong stories and well-crafted books.
                 </p>
                 <p className="workWithUsIntroText">
-                    We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you.
+                    We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you. 
 
                 </p>
+                <p className="workWithUsIntroText">Here is a list of what Bokhus can help you with :</p>
+            
             </div>
             <section className="workWithUsSection flex">
+               
                 <ul className="workList">
                     {workWithUsArray.map((item, index) =>
                         <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} /> </li>
@@ -51,11 +54,11 @@ export default function WorkWithUsPage()
                     )}
 
                 </ul>
-                {
-                    isDisplayingTheme != null &&
-                    <WorkWithUsTheme subject={isDisplayingTheme} />
 
-                }</section>
+                <div style={{opacity: isDisplayingTheme != null ? "1" : "0", flex : "2", width: "100%", height: "auto"}}>
+                    {isDisplayingTheme &&  <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} />}
+                </div>
+                </section>
 
 
         </main>
