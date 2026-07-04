@@ -1,0 +1,118 @@
+[
+    {
+        "theme": "Writing & Editing",
+        "list": [
+            "Manus review",
+            "Structural editing",
+            "Copy editing",
+            "Proofreading",
+            "Writing coaching",
+            "AI writing assistance"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "Publishing",
+        "list": [
+            "Self-publishing support",
+            "Traditional publishing guidance",
+            "ISBN assistance",
+            "Print & eBook publishing",
+            "Audiobook publishing"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "Design",
+        "list": [
+            "Book cover design",
+            "Interior layout",
+            "Illustrations",
+            "Image restoration",
+            "Maps & diagrams"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "Translation",
+        "list": [
+            "Norwegian ↔ English",
+            "American English",
+            "British English",
+            "Localization"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "Social media",
+        "list": [
+            "Book launch planning"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "AI Services",
+        "list": [
+            "AI for authors",
+            "Plot development",
+            "Character development",
+            "Book planning"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "Research assistance",
+        "list": [
+            "Marketing content",
+            "Historical Publications"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "OCR correction",
+        "list": [
+            "Modern language adaptation",
+            "Historical editing",
+            "Source verification",
+            "Archive restoration",
+            "Digital Products",
+            "Templates",
+            "Checklists",
+            "Writing tools",
+            "AI prompts",
+            "Author resources"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "Courses",
+        "list": [
+            "How to write a book",
+            "Self-publishing",
+            "AI for writers",
+            "Amazon publishing",
+            "Book marketing"
+        ],
+        "iconNumber": 1
+    },
+    {
+        "theme": "Consulting",
+        "list": [
+            "Author coaching",
+            "Publisher consulting",
+            "Writing strategy",
+            "Publishing strategy",
+            "Future Features",
+            "Author dashboard",
+            "Manuscript upload",
+            "Project management",
+            "Manuscript upload",
+            "Project management",
+            "AI manuscript analysis",
+            "Collaboration tools",
+            "Progress tracking",
+            "Client portal"
+        ],
+        "iconNumber": 1
+    }
+]
