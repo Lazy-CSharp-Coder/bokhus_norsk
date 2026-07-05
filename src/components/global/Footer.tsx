@@ -4,6 +4,7 @@ import { IoMailOutline } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
 import { BokHusCom } from "./BokHusCom";
+import { LogoBPWebDev } from "./LogoBPWebDev";
 export function Footer()
 {
     return (
@@ -27,6 +28,7 @@ export function Footer()
                 <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="1.8rem" /></Link>
                 <FaInstagram className="instagramIcon" size={"1.7rem"} />
                 <FaFacebook className="facebookIcon" size={"1.7rem"} />
+                <LogoBPWebDev/>
             </div>
         </footer>
     );

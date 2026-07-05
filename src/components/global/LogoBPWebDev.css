@@ -1,0 +1,12 @@
+.logoBPWrapper {
+    position: relative;
+    width: 128px;
+    aspect-ratio: 1/1 ;
+    border: 5px solid gray;
+    border-radius: 50%;
+
+}
+.logoBPImg {
+    object-fit: contain;
+    /* border-radius: 50%; */
+}
