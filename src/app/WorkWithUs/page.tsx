@@ -7,6 +7,7 @@ import { WorkWithUsTheme } from "./WorkWithUsTheme";
 import "./WorkWithUs.module.css";
 import { ExpandingLine } from "@/components/global/ExpandingLine";
 import { BackgroundImage } from "@/components/global/BackgroundImage";
+import Link from "next/link";
 
 
 export interface WorkWithUs
@@ -25,15 +26,17 @@ export default function WorkWithUsPage()
 
     const workWithUsArray: WorkWithUs[] = worWithUsJson;
     const [isDisplayingTheme, setDisplayingTheme] = useState<WorkWithUs | null>(null);
+    const animDelay = 200;
+    const waitForMainAnim = 600;
 
     return (
         <main className="workWithUsPage">
-            <BackgroundImage src="/images/backgrounds/workWithUsBackground.png" className="workWithUsBackground" />
-            <section className="workWithUsSection">
-                <article className="workWithUsTextArticle">
+            <BackgroundImage src="/images/backgrounds/workWithUsBackground.jpg" className="workWithUsBackground" />
+            <section className="workWithUsSection flex">
+                <article className="workWithUsTextArticle fadeInAnim" style={{animationDelay: "0.5s"}}>
                     <div className="headingLineWrapper">
-                        <h3 className="workWithUsHeading fadeInAnim"> Work with Bokhus </h3>
-                        <ExpandingLine lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.5s" />
+                        <h3 className="workWithUsHeading"> Work with Bokhus </h3>
+                        <ExpandingLine key={"WorkLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                     </div>
 
 
@@ -45,14 +48,14 @@ export default function WorkWithUsPage()
                         We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you.
 
                     </p>
-                    <p className="workWithUsIntroText">Here is a list of what we can help you with :</p>
+                    <p className="workWithUsIntroText fadeInAnim" >Here is a list of what we can help you with :</p>
 
                 </article>
                 <article className="workWithUsListArticle flex">
 
                     <ul className="workList">
                         {workWithUsArray.map((item, index) =>
-                            <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} /> </li>
+                            <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} anmiationDelay={`${animDelay*index+waitForMainAnim}ms`}/> </li>
 
                         )}
 
@@ -62,7 +65,7 @@ export default function WorkWithUsPage()
                         {isDisplayingTheme && <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} />}
                     </div>
                 </article>
-
+      <p className="workWithUsIntroText fadeInAnim" style={{animationDelay: "2.8s"}} >If your are interested in working with us, click <Link href="/Contact" className="linkContact">here</Link> to fill out contact information.</p>
             </section>
         </main>
     );

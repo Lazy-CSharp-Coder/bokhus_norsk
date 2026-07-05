@@ -12,12 +12,12 @@ export function LoginClerk()
 
             <Show when="signed-out">
                 <SignInButton mode="modal" fallbackRedirectUrl={path}>
-                    <button className="signInButton">Sign In </button>
+                    <button className="signInButton">Sign In</button>
                 </SignInButton>
-                <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
+                {/* <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
                     <button className="signUpButton">
                         Sign Up</button>
-                </SignUpButton>
+                </SignUpButton> */}
             </Show>
             <Show when="signed-in">
                 <div className="userButtonDiv">
@@ -26,7 +26,7 @@ export function LoginClerk()
                         appearance={{
                             elements: {
                                 userButtonAvatarBox: {
-                                    width: "2.7rem", height: "2.7rem",
+                                    width: "2.6rem", height: "2.6rem",
                                     // border: "1px solid var(--bokhusRootsColor)",
                                     padding: "0rem",
                                     backgroundColor: "transparent", /* Optional background color inside the border */

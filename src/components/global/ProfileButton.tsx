@@ -5,7 +5,7 @@ export function ProfileButton()
     return(
         <button className="profileButton">
             <Link href="/Register">
-            <FaUserLarge size="1.2rem" color="var(--bokhusFutureColor)"/></Link>
+            <FaUserLarge size="1.09rem" color="var(--bokhusFutureColor)"/></Link>
         </button>
     )
 }
