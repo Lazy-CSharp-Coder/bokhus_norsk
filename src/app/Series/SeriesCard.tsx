@@ -1,21 +1,23 @@
+import { ByAuthor } from "@/components/books/ByAuthor";
 import { urlFor } from "@/lib/urlFor";
-import { Series } from "@/types/booktypes";
+import type { Series, Author } from "@/types/booktypes";
 import Image from "next/image";
-
-interface SeriesCardProps {
-    serie : Series,
-    animationDelay? : string
-}
+import { client } from "@/sanity/client";
 
 
-export function SeriesCard({serie, animationDelay} : SeriesCardProps)
+export async function SeriesCard({serie, animationDelay} : SeriesCardProps)
 {
+    
+
     return(
         <div className="seriesCard">
             <div className="seriesCardImgWrap">
-                <Image src={urlFor(serie.imageSeries, 400)} alt="seire image" fill={true} />
+                <Image src={urlFor(imageSeries, 400)} alt="seire image" fill={true} />
             </div>
-            <p className=""
+            <h3 className="seriesCardName">{seriesName} </h3>
+            <ByAuthor authors={authorsStrArray}/>
+            <p className="seriesFact">{seriesFact} </p>
+            <p className="seriesTeaser"> {seriesTeaser} </p>
 
         </div>
     )

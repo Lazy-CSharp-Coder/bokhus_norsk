@@ -8,8 +8,9 @@ import { SeriesPageList } from "./SeriesPageList";
 export default async function Series() 
 {
   const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
-
+   const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
   const series = await client.fetch<Series[]>(SERIES_QUERY);
+
   if (!series) return (<h2>No series found in database</h2>);
 
   return (

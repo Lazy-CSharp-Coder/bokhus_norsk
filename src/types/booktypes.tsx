@@ -31,6 +31,7 @@ export interface Series
     _id: string, // generateed by Sanity 
     commonId? : string,
     seriesName: string,
+    genre : string [],
     imageSeries: SanityImageSource,
    imageSeriesBackground : SanityImageSource,
     // imageUrl?: string,
