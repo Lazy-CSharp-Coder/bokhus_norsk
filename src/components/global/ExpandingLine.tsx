@@ -1,5 +1,5 @@
 import type { ExpandingLineProps } from "@/types/types";
-
+import "./ExpandingLine.module.css";
 
 export function ExpandingLine({ width, lineSize, lineType, color, animationDelay , animationDuration} : ExpandingLineProps)
 {

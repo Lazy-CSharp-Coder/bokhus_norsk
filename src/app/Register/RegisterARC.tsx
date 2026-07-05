@@ -9,7 +9,7 @@ import { AiOutlineTeam } from "react-icons/ai";
 import { MdOutlineChecklist } from "react-icons/md";
 import { TbEyeEdit } from "react-icons/tb";
 import { FaRegCopy } from "react-icons/fa";
-import { FcRules } from "react-icons/fc";
+
 import { LuScrollText } from "react-icons/lu";
 
 interface ARCFormProps

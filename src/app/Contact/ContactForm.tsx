@@ -63,7 +63,7 @@ export function ContactUs()
     return (
 
 
-        <section className="contactUsSection flex fadeInFromLeftAnim" style={{ animationDelay: "0.8s" }}>
+        <section className="contactUsSection flex fadeInFromBelowAnim" style={{ animationDelay: "0.8s" }}>
             {/* <article className="contactUsArticle flex"> */}
          <div className="logoHeadingWrapper flex">
                <h2 className="contactUsHeading flex">

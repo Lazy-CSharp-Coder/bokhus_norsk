@@ -142,59 +142,19 @@ background-color: rgb(20, 20, 20);
   color: var(--myWhiteColor);
   background-color: transparent;
   font-family: var(--headerFontFamily);
-
-  border: 3px solid var(--bokhusRootsColor);
+  
+  border: 2px solid var(--bokhusRootsColor);
   border-radius: 50%;
-  padding:0.5rem;
+  padding:0.6rem;
  cursor: pointer;
 }
 
 .userButtonDiv {
   display: flex;
-  gap: 1.6rem;
+  gap: 1.7rem;
   align-items: center;
   font-size: 1rem;
   
 
 }
 
-
-/* forslag button gemini */
-
-
-/* Button.module.css */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #121212;
-  padding: 40px;
-}
-
-.button3d {
-  background-color: #121212;
-  color: #7dd3fc; /* Lys blå tekst */
-  font-family: sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 12px 32px;
-  border: 1px solid #b45309; /* Den oransje/brune rammen */
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  
-  /* 3D-effekt: Legger til en skygge i samme farge som rammen for å gi dybde */
-  box-shadow: 0px 6px 0 #b45309;
-  
-  /* Myk overgang når knappen slippes opp igjen */
-  transition: all 0.1s ease;
-}
-
-/* Hva som skjer når man klikker (holder inne) knappen */
-.button3d:active {
-  /* Flytter knappen ned 4 piksler */
-  transform: translateY(4px);
-  
-  /* Reduserer skyggen tilsvarende, slik at den ser trykket ut */
-  box-shadow: 0 2px 0 #b45309;
-}
