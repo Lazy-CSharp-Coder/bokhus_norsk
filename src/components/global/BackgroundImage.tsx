@@ -1,4 +1,5 @@
 import type { BackgroundImageProps } from "../../types/types";
+import "./BackgroundImage.module.css";
 
 export function BackgroundImage({ className, src, animType, animDuration, animDelay }: BackgroundImageProps)
 {
