@@ -3,6 +3,7 @@ import { client } from "@/sanity/client";
 import "./Series.module.css";
 import { ExpandingLine } from "@/components/global/ExpandingLine";
 import { BackgroundImage } from "@/components/global/BackgroundImage";
+import { SeriesPageList } from "./SeriesPageList";
 
 export default async function Series() 
 {
@@ -36,25 +37,12 @@ export default async function Series()
         </div>
 
           </article>
-
+        <SeriesPageList seriesArray={series}/>
         </section>
 
-        <article className="seriesPageListArticle">
+    
 
-
-          <ul className="seriesList">
-
-            {series.map((item, index) =>
-              <li key={`${item.seriesName + index}`} >{item.seriesName}</li>)}
-
-
-          </ul>
-
-        </article>
-
-
-
-
+      
 
 
       </main>
