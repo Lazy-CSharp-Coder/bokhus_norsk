@@ -95,7 +95,7 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
     const size = reactIconsArray[subject.iconNumber].size;
     const { theme, list, iconNumber } = subject;
     return (
-        <section className="workWithUsThemeArticle fadeInFromLeftAnim">
+        <div className="workWithUsThemeDiv fadeInFromLeftAnim">
             <div className="themeIconWrapper">
                 <h3 className="themeHeading">{theme}</h3>
                 <IconToUse size={size} className="iconWorkWithUs"/>
@@ -106,7 +106,7 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
                 )}
 
             </ul>
-        </section>
+        </div>
 
     );
 }

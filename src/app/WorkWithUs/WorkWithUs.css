@@ -36,8 +36,12 @@
     color: var(--myWhiteColor);
 }
 
-.workWithUsHeadingIntroWrapper {
-    width: 48%;
+.workWithUsSection {
+    width: 50%;
+}
+
+.workWithUsTextArticle {
+    width: 100%;
     gap: 1rem;
     margin-top: 2rem;
     display: flex;
@@ -63,10 +67,10 @@
 
 }
 
-.workWithUsSection {
+.workWithUsListArticle {
     padding: 5rem 0;
     flex-direction: row;
-    width: 48%;
+    width: 100%;
     justify-content: space-between;
     align-items: top;
     height: fit-content;
@@ -90,7 +94,7 @@
     border-radius: var(--borderRadiusReg);
 }
 
-.workWithUsThemeArticle {
+.workWithUsThemeDiv {
     display: flex;
     flex-direction: column;
     flex: 2;

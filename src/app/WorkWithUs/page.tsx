@@ -28,41 +28,42 @@ export default function WorkWithUsPage()
 
     return (
         <main className="workWithUsPage">
-            <BackgroundImage src="/images/backgrounds/workWithUsBackground.png" className="workWithUsBackground"/>
-            <div className="workWithUsHeadingIntroWrapper">
-                <div className="headingLineWrapper">
-                    <h3 className="workWithUsHeading fadeInAnim"> Work with Bokhus </h3>
-                    <ExpandingLine lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.5s" />
-                </div>
+            <BackgroundImage src="/images/backgrounds/workWithUsBackground.png" className="workWithUsBackground" />
+            <section className="workWithUsSection">
+                <article className="workWithUsTextArticle">
+                    <div className="headingLineWrapper">
+                        <h3 className="workWithUsHeading fadeInAnim"> Work with Bokhus </h3>
+                        <ExpandingLine lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.5s" />
+                    </div>
 
 
-                <p className="workWithUsIntroText">
+                    <p className="workWithUsIntroText">
 
-                    BokHus works with writers, editors, translators, illustrators, local historians and creative partners who care about strong stories and well-crafted books.
-                </p>
-                <p className="workWithUsIntroText">
-                    We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you. 
+                        BokHus works with writers, editors, translators, illustrators, local historians and creative partners who care about strong stories and well-crafted books.
+                    </p>
+                    <p className="workWithUsIntroText">
+                        We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you.
 
-                </p>
-                <p className="workWithUsIntroText">Here is a list of what we can help you with :</p>
-            
-            </div>
-            <section className="workWithUsSection flex">
-               
-                <ul className="workList">
-                    {workWithUsArray.map((item, index) =>
-                        <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} /> </li>
+                    </p>
+                    <p className="workWithUsIntroText">Here is a list of what we can help you with :</p>
 
-                    )}
+                </article>
+                <article className="workWithUsListArticle flex">
 
-                </ul>
+                    <ul className="workList">
+                        {workWithUsArray.map((item, index) =>
+                            <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} /> </li>
 
-                <div style={{opacity: isDisplayingTheme != null ? "1" : "0", flex : "2", width: "100%", height: "auto"}}>
-                    {isDisplayingTheme &&  <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} />}
-                </div>
-                </section>
+                        )}
 
+                    </ul>
 
+                    <div style={{ opacity: isDisplayingTheme != null ? "1" : "0", flex: "2", width: "100%", height: "auto" }}>
+                        {isDisplayingTheme && <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} />}
+                    </div>
+                </article>
+
+            </section>
         </main>
     );
 }
