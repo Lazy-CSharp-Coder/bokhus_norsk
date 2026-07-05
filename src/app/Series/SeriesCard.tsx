@@ -22,9 +22,11 @@ export function SeriesCard({ seriesSelected, authors, imageUrl, routeToGo, anima
             </div>
 
             <div className="linkTextWrapper flex">
-                <div className="linkInfoWrapper flex">  
-                    <Link className="seriesText" href={routeToGo}>{seriesName}</Link>
+                <div className="seriesInfoWrapper flex">  
+                  <div className="seriesHeadingAuthorWrapper flex">
+                      <h3 className="seriesHeading">{seriesName}</h3>
                     <ByAuthor authors={authors}/>
+                  </div>
                 <span className="smallCardSeriesFact">{seriesFact}</span>
                 </div>
                         
