@@ -2,6 +2,7 @@ import type { Series } from "@/types/booktypes";
 import { client } from "@/sanity/client";
 import "./Series.module.css";
 import { ExpandingLine } from "@/components/global/ExpandingLine";
+import { BackgroundImage } from "@/components/global/BackgroundImage";
 
 export default async function Series() 
 {
@@ -12,8 +13,9 @@ export default async function Series()
 
   return (
     <>
-
+          <BackgroundImage className="seriesPageBackgroundImage" src={"/images/backgrounds/authorBackground1.png"}/>
       <main className="completeSeriesPage flex">
+        
         <section className="seriesPageSection">
           <article className="seriesPageDescriptionArticle">
             <div className="seriesPageHeadingLineWrapper">

@@ -40,7 +40,8 @@ export default function WorkWithUsPage()
                     </div>
 
 
-                    <p className="workWithUsIntroText">
+                   <div className="workWithUsTextDiv">
+ <p className="workWithUsIntroText">
 
                         BokHus works with writers, editors, translators, illustrators, local historians and creative partners who care about strong stories and well-crafted books.
                     </p>
@@ -49,6 +50,8 @@ export default function WorkWithUsPage()
 
                     </p>
                     <p className="workWithUsIntroText fadeInAnim" >Here is a list of what we can help you with :</p>
+
+                   </div>
 
                 </article>
                 <article className="workWithUsListArticle flex">
