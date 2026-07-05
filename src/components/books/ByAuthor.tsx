@@ -1,4 +1,4 @@
-
+import "./ByAuthor.module.css";
 export function ByAuthor({ authors }: { authors: string[]; })
 {
     console.log("lengde array : " + authors.length);

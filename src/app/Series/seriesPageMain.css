@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: left;
-    gap: 1.2rem;
+    gap: 2.2rem;
     width: 50%;
 }
 
@@ -72,5 +72,10 @@
 .seriesList {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    padding: 4rem 2rem;
+    list-style: none;
 
 }
+

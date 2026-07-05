@@ -1,24 +1,36 @@
-import { ByAuthor } from "@/components/books/ByAuthor";
-import { urlFor } from "@/lib/urlFor";
-import type { Series, Author } from "@/types/booktypes";
+"use client";
+
+import { SeriesCardProps } from "@/types/booktypes";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { IoArrowForward } from "react-icons/io5";
+import { MdArrowForwardIos } from "react-icons/md";
 import Image from "next/image";
-import { client } from "@/sanity/client";
+import { ByAuthor } from "@/components/books/ByAuthor";
 
 
-export async function SeriesCard({serie, animationDelay} : SeriesCardProps)
+
+export function SeriesCard({ seriesSelected, authors, imageUrl, routeToGo, animationDelay }: SeriesCardProps)
 {
-    
-
-    return(
-        <div className="seriesCard">
-            <div className="seriesCardImgWrap">
-                <Image src={urlFor(imageSeries, 400)} alt="seire image" fill={true} />
+    const router = useRouter();
+    const imageSrc = imageUrl.length == 0 ? "/images/placeholderSeriesCard.png" : imageUrl;
+    const { seriesName, seriesFact } = seriesSelected;
+    return (
+        <div className="seriesCard flex fadeInFromBelowAnim" onClick={() => router.push(routeToGo)} style={{ animationDelay: `${animationDelay}ms` }}>
+               <div className="seriesCardImageDiv">
+                <Image className="seriesCardImage" src={imageSrc} alt="Series Card Image" fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
             </div>
-            <h3 className="seriesCardName">{seriesName} </h3>
-            <ByAuthor authors={authorsStrArray}/>
-            <p className="seriesFact">{seriesFact} </p>
-            <p className="seriesTeaser"> {seriesTeaser} </p>
 
+            <div className="linkTextWrapper flex">
+                <div className="linkInfoWrapper flex">  
+                    <Link className="seriesText" href={routeToGo}>{seriesName}</Link>
+                    <ByAuthor authors={authors}/>
+                <span className="smallCardSeriesFact">{seriesFact}</span>
+                </div>
+                        
+                    <MdArrowForwardIos  size={"1.6rem"} />
+   
+            </div>
         </div>
-    )
+    );
 }
