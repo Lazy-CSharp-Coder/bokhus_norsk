@@ -22,7 +22,8 @@ export default async function Series()
               <ExpandingLine key={"AuthorLine"} lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s" />
             </div>
 
-            <p className="seriesPageText">
+        <div className="seriesPageTextDiv">
+              <p className="seriesPageText">
 
               Many BokHus books are built as series, giving readers a world to return to. Characters, places and historical themes can grow from book to book, whether the stories are rooted in fiction, folklore, local history or cultural memory.
             </p>   <p className="seriesPageText">
@@ -30,6 +31,7 @@ export default async function Series()
 
               Here you can explore current and upcoming BokHus series.
             </p>
+        </div>
 
           </article>
 

@@ -34,7 +34,8 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    background-color: red;
+    gap: 1.5rem;
+    /* background-color: red; */
 }
 
 .seriesPageHeading {
