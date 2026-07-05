@@ -15,7 +15,7 @@ export default async function Authors()
     const animDelayInc: number = 300;
     const waitForMain : number = 800;
 
-    const AUTOHRS_QUERY = `*[_type == "Author"]`;
+    const AUTOHRS_QUERY = `*[_type == "Author"] | order(name asc)`;
     const authors: Author[] = await client.fetch<Author[]>(AUTOHRS_QUERY);
 
     // const authors = authorsFromServer;  // this works, but shows no image
