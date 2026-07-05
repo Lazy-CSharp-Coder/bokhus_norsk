@@ -24,11 +24,17 @@ export function Footer()
 
 
             <div className="socialMediaGroup">
-
+    <span className="logoBPText">SOCIAL MEDIA
+                 </span>
                 <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="1.8rem" /></Link>
                 <FaInstagram className="instagramIcon" size={"1.7rem"} />
                 <FaFacebook className="facebookIcon" size={"1.7rem"} />
-                <LogoBPWebDev/>
+                <div className="logoBPTextDiv">
+                    <span className="logoBPText">WEBPAGE
+                 </span>
+                     <LogoBPWebDev/>
+                </div>
+            
             </div>
         </footer>
     );

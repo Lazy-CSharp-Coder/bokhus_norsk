@@ -12,6 +12,7 @@ footer{
   max-height: 6rem;
     padding: 0.8rem 2rem;
     width: 100%;
+        font-family : var(--robotoFont);
   background-color:var(--commonBackgroundColor);
 
 }
@@ -35,6 +36,19 @@ footer{
     object-fit: contain;
 }
 
+.logoBPTextDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    padding-left: 1rem;
+
+}
+
+.logoBPText {
+    color: var(--myWhiteColor);
+    font-size: 0.7rem;
+}
 
 
 .termsGroup {
