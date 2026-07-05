@@ -1,0 +1,53 @@
+.completeSeriesPage {
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+}
+
+.seriesPageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1.2rem;
+    width: 50%;
+}
+
+.seriesPageDescriptionArticle {
+        width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: var(--libreFont);
+}
+
+.seriesPageHeadingLineWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+
+}
+
+.seriesPageHeading {
+    font-size: 2.5rem;
+    color: var(--myWhiteColor);
+    padding-bottom: 1rem;
+    
+     
+     
+}
+
+.seriesPageText {
+      line-height: 1.4;
+    font-size: 1.5rem;
+
+}
+
+.seriesList {
+    display: flex;
+    flex-direction: column;
+
+}

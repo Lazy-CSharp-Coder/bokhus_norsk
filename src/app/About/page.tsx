@@ -1,4 +1,3 @@
-import { ContactUs } from "@/app/Contact/ContactForm";
 import "./About.module.css";
 import aboutJson from "@/json/about.json";
 import type { LanguageText } from "@/types/languagetypes";
@@ -43,7 +42,7 @@ export default function About()
                 </div>
                 <ExpandingLine key={"AboutLine2"} lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
 
-                <div className="bokhusComWrapper fadeInAnim" style={{ animationDelay: "0.6s" }}>
+                <div className="bokhusComWrapperAbout fadeInAnim" style={{ animationDelay: "0.6s" }}>
                     <BokHusCom fontSize="1.45rem" />
                 </div>
             </section>

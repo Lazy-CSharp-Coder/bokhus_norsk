@@ -37,7 +37,7 @@ export default async function Authors()
 
                                   
                 <div className="headingLineWrapper">
-                        <h2 className="authorsPageRepresentedText fadeInAnim">Meet the <span className="voicesText">voices</span> behind our books</h2>
+                        <h2 className="authorsPageHeading fadeInAnim">Meet the <span className="voicesText">voices</span> behind our books</h2>
                     <ExpandingLine key={"AuthorLine"} lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s"/>
                 </div>
                     <p className="authorsPageText fadeInAnim">BokHus represents authors with a strong sense of story, place and history. From historical fiction and folklore to educational stories and local heritage, our writers create books that invite readers into worlds they can return to.
