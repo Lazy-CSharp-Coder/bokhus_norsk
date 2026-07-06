@@ -86,7 +86,8 @@
     justify-content: space-around;
     align-items: top;
   
-     height: fit-content;;
+     height: fit-content;
+     margin-bottom: 1rem;
 }
 
 .workList {
@@ -94,9 +95,9 @@
     flex-direction: column;
     align-items: left;
     list-style: none;
-    gap: 1.2rem;
+    gap: 1.25rem;
     flex: 1;
-       padding-bottom: 4rem;
+       /* padding-bottom: 3rem; */
     height: fit-content;
 }
 
@@ -112,14 +113,14 @@
     display: flex;
     flex-direction: column;
     flex: 2;
-    padding: 3rem 5rem;
+    padding: 2.5rem 4.75rem;
     gap: 2rem;
     background-color: var(--regBackground);
     font-family: var(--robotoFont);
     border: 2px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
     height: fit-content;
-    margin-bottom: 1rem;
+  
 }
 
 .themeIconWrapper {
