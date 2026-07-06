@@ -7,6 +7,8 @@ import { IoArrowForward } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
 import Image from "next/image";
 import { ByAuthor } from "@/components/books/ByAuthor";
+import { GiBookmarklet } from "react-icons/gi";
+import { GiOpenBook } from "react-icons/gi";
 
 
 
@@ -25,7 +27,10 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
                 <div className="seriesCardLargeHeadingAuthorWrapper flex">
                     <h3 className="seriesCardLargeHeading">{seriesName}</h3>
                     <ByAuthor authors={authors} />
+             <div className="seriesCardLargeIconFactWrapper flex">
+                       <GiOpenBook size="1.7rem" className="seriesCardLargeBookIcon"/>
 <span className="seriesCardLargeFact">{seriesFact}</span>
+             </div>
                 </div>
              
                 
