@@ -17,22 +17,24 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
     const { seriesName, seriesFact } = seriesSelected;
     return (
         <div className="seriesCardLarge flex fadeInFromBelowAnim" onClick={() => router.push(routeToGo)} style={{ animationDelay: `${animationDelay}ms` }}>
-               <div className="seriesCardLargeImageDiv">
+            <div className="seriesCardLargeImageDiv">
                 <Image className="seriesCardLargeImage" src={imageSrc} alt="Series Card Image" fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
             </div>
 
-            <div className="linkTextWrapper flex">
-                <div className="seriesCardLargeInfoWrapper flex">  
-                  <div className="seriesHeadingAuthorWrapper flex">
-                      <h3 className="seriesHeading">{seriesName}</h3>
-                    <ByAuthor authors={authors}/>
-                  </div>
-                <span className="seriesCardFact">{seriesFact}</span>
-                <span className="seriesCardTeaser">{seriesSelected.seriesTeaser}</span>
+            <div className="seriesCardLargeInfoWrapper flex">
+                <div className="seriesCardLargeHeadingAuthorWrapper flex">
+                    <h3 className="seriesCardLargeHeading">{seriesName}</h3>
+                    <ByAuthor authors={authors} />
+<span className="seriesCardLargeFact">{seriesFact}</span>
                 </div>
-                        
-                    <MdArrowForwardIos  size={"1.6rem"} />
-   
+             
+                
+                   <div className="seriesCardLargeTeaserArrowWrapper flex">
+                    <span className="seriesCardLargeTeaser">{seriesSelected.seriesTeaser}</span>
+                    <MdArrowForwardIos size={"1.6rem"} className="seriesCardLargeArrowIcon" />
+                </div>
+
+
             </div>
         </div>
     );

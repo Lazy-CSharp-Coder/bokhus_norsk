@@ -1,6 +1,6 @@
 
 import { getSeriesCardPropsArray } from "./getSeriesCardPropsArray";
-import { SeriesCardLarge } from "./SeriesCard";
+import { SeriesCardLarge } from "./SeriesCardLarge";
 
 import type { SeriesCardProps } from "@/types/booktypes";
 import { SeriesPageListProps } from "./SeriesPageTypes";

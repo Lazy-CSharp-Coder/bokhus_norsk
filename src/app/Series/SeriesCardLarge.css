@@ -16,6 +16,7 @@
     width: 100%;
 height:20rem;
     padding: 2.4rem 2.4rem;
+    gap: 1rem;
     background-color: var(--regBackground);
     border: 1px solid var(--borderIconColor);
     border-radius: 5px;
@@ -50,15 +51,57 @@ height:20rem;
     
 }
 
-.linkTextWrapper {
+.seriesCardLargeTeaserArrowWrapper {
     flex-direction: row;
-    align-items: stretch;
+    width: 100%;
     justify-content: space-between;
-    padding: 0 1.5rem;
-    height: 100%;
-    width:100%;
-    /* background: rebeccapurple; */
+    align-items: center;
+    color: var(---borderIconColor);
+    /* background-color: red; */
+    font-size: 1.5rem;
+  
+    /* background-color: var(--inputBackground); */
 }
+
+.seriesCardLargeTeaser {
+    color: var(--bokhusRootsColor);
+
+}
+
+.seriesCardLargeArrowIcon {
+    color: var(--borderIconColor);
+}
+
+.seriesCardLargeHeadingAuthorWrapper {
+    flex-direction: column;
+    gap:0.5rem;
+    font-size: 1.5rem;
+}
+
+.seriesCardLargeHeading {
+
+    font-size:2.4rem;
+    color: white;
+    background: transparent;
+
+
+}
+
+.seriesCardLargeFact {
+    font-size: 1.2rem;
+    padding-top: 0.3rem;
+    /* background-color: red; */
+    color: var(--myWhiteColor);
+    /* margin-top: 0.2rem; */
+}
+
+
+
+.seriesCard:hover .arrowHTML {
+    animation: moveArrow 2s ease-in-out 0s infinite normal forwards;
+
+}
+
 
 .goToArrowWrapper {
     flex-direction: row;
@@ -71,39 +114,6 @@ height:20rem;
 .goToArrowWrapper:hover {
     color: white;
     scale: 1.01;
-}
-
-.seriesHeadingAuthorWrapper {
-    flex-direction: column;
-    gap:0.5rem;
-}
-
-.seriesHeading {
-
-    font-size:2.3rem;
-    color: var(--myWhiteColor);
-    background: transparent;
-
-
-}
-
-.seriesCardFact {
-    font-size: 0.9rem;
-    padding-top: 0.3rem;
-    /* background-color: red; */
-    color: var(--myWhiteColor);
-    margin-top: 0.2rem;
-}
-
-.seriesGoTo {
-
-
-    padding-right: 0.5rem;
-}
-
-.seriesCard:hover .arrowHTML {
-    animation: moveArrow 2s ease-in-out 0s infinite normal forwards;
-
 }
 
 @keyframes moveArrow {
