@@ -9,8 +9,16 @@ import Image from "next/image";
 import { ByAuthor } from "@/components/books/ByAuthor";
 import { GiBookmarklet } from "react-icons/gi";
 import { GiOpenBook } from "react-icons/gi";
+import { GiBookCover } from "react-icons/gi";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
 
+interface Category 
+{
+    name : string,
+    icon : Icon
+}
 
 export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, animationDelay }: SeriesCardProps)
 {
@@ -27,16 +35,16 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
                 <div className="seriesCardLargeHeadingAuthorWrapper flex">
                     <h3 className="seriesCardLargeHeading">{seriesName}</h3>
                     <ByAuthor authors={authors} />
-             <div className="seriesCardLargeIconFactWrapper flex">
-                       <GiOpenBook size="1.7rem" className="seriesCardLargeBookIcon"/>
-<span className="seriesCardLargeFact">{seriesFact}</span>
-             </div>
+                    <div className="seriesCardLargeIconFactWrapper flex">
+                        <GiBookCover size="1.7rem" className="seriesCardLargeBookIcon" />
+                        <span className="seriesCardLargeFact">{seriesFact}</span>
+                    </div>
                 </div>
-             
-                
-                   <div className="seriesCardLargeTeaserArrowWrapper flex">
+
+
+                <div className="seriesCardLargeTeaserArrowWrapper flex">
                     <span className="seriesCardLargeTeaser">{seriesSelected.seriesTeaser}</span>
-                    <MdArrowForwardIos size={"1.6rem"} className="seriesCardLargeArrowIcon" />
+                    <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" />
                 </div>
 
 
