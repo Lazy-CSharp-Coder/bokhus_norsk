@@ -22,12 +22,12 @@ footer{
 .logoTermsWrapper {
     display: flex;
     flex-direction: row;
-    gap:2.5rem;
+    gap:2rem;
 }
 
 .logoFooterWrapper {
 
-    width: 5rem;
+    width: 5.3rem;
     aspect-ratio: 1/1 ;
     filter: invert();
     position: relative;
