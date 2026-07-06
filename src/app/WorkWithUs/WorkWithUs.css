@@ -107,6 +107,13 @@
     background-color: var(--regBackground);
     border: 2px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
+    color: white;
+    transform: all 0.3 ease-in;
+}
+
+.workWithUsButton:focus
+{
+    border: 2px solid rgb(171, 133, 76);
 }
 
 .workWithUsThemeDiv {
