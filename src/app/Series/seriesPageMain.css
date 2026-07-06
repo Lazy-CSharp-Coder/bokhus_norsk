@@ -72,9 +72,9 @@
 .seriesList {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
     width: 100%;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     list-style: none;
 
 }
