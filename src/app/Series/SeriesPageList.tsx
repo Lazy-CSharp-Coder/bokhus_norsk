@@ -1,6 +1,6 @@
 
 import { getSeriesCardPropsArray } from "./getSeriesCardPropsArray";
-import { SeriesCard } from "./SeriesCard";
+import { SeriesCardLarge } from "./SeriesCard";
 
 import type { SeriesCardProps } from "@/types/booktypes";
 import { SeriesPageListProps } from "./SeriesPageTypes";
@@ -14,7 +14,7 @@ export async function SeriesPageList({ seriesArray }: SeriesPageListProps)
             <ul className="seriesList">
                 {seriesToDisplay.map((item, index) => (
                     <li key={`${item.seriesSelected.seriesName + index}`}>
-                        <SeriesCard {...item} animationDelay={index*animDelay}/>
+                        <SeriesCardLarge {...item} animationDelay={index*animDelay} />
                     </li>
                 ))}
             </ul>

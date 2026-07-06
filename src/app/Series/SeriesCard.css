@@ -9,7 +9,7 @@
 }
 
 
-.seriesCard {
+.seriesCardLarge {
     flex-direction: row;
     align-items: center;
     /* justify-content: stretch; */
@@ -24,7 +24,7 @@ height:20rem;
     box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
 }
 
-.seriesCardImageDiv {
+.seriesCardLargeImageDiv {
         position: relative;
     /* min-width: 18rem; */
     min-height:100%;
@@ -35,11 +35,11 @@ height:20rem;
     /* padding: 2rem 2rem; */
 }
 
-.seriesCardImage {
+.seriesCardLargeImage {
     object-fit: contain;
 }
 
-.seriesInfoWrapper {
+.seriesCardLargeInfoWrapper {
     padding: 1rem;
     flex-direction: column;
     justify-content: space-between;
@@ -87,7 +87,7 @@ height:20rem;
 
 }
 
-.smallCardSeriesFact {
+.seriesCardFact {
     font-size: 0.9rem;
     padding-top: 0.3rem;
     /* background-color: red; */
