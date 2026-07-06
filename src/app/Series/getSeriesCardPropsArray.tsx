@@ -12,9 +12,7 @@ export async function getSeriesCardPropsArray( seriesArray : Series[]): Promise<
         seriesArray.map(async (item) =>
         {
             const authorsIds: string[] = item.authorUids ? item.authorUids.map((authorRef) => authorRef._ref) : [];
-            const authors: Author[] = authorsIds.length > 0
-                ? await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds })
-                : [];
+            const authors: Author[] = authorsIds.length > 0 ? await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds }) : [];
 
             if (authors.length < 1)
             {
