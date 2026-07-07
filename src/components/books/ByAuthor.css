@@ -1,5 +1,5 @@
 .authorNameText {
-    color: lightblue;
+    color: var(--bokhusFutureColor);
     /* font-size: 1.4rem; */
 }
 
