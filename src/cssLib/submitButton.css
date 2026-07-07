@@ -4,7 +4,7 @@
     font-size: 1rem;
     padding: 0.5rem;
     color: var(--myWhiteColor);
-    border: 2px outset var(--borderIconColor);
+    /* border: 2px outset var(--myWhiteColor); */
     background-color: var(--borderIconColor);
 }
 

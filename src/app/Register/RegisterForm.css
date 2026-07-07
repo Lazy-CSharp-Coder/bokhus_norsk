@@ -491,18 +491,3 @@ fieldset {
 
     /* margin-right: 0.5rem; */
 }
-
-
-.submitButton {
-    margin: 1rem 0;
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.5rem;
-    color: var(--myWhiteColor);
-    border: 2px outset var(--borderIconColor);
-    background-color: var(--inputBackground);
-}
-
-.submitButton:active{
-    border: 2px inset var(--borderIconColor);
-}
