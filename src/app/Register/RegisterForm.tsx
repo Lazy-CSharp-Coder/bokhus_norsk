@@ -10,7 +10,7 @@ import { submitUserData } from "./submitToSanity";
 import Image from "next/image";
 // react icons
 import { genresDef } from "./registerSchema";
-
+import {  IoEarthSharp } from "react-icons/io5";
 import { LuLetterText } from "react-icons/lu";
 import { LiaSwatchbookSolid } from "react-icons/lia";
 import { TbWorldWww } from "react-icons/tb";
