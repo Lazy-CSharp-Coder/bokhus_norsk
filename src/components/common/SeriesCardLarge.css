@@ -8,7 +8,6 @@
     --borderRadiusReg: 5px;
 }
 
-
 .seriesCardLarge {
     flex-direction: row;
     align-items: center;
@@ -29,10 +28,10 @@
 
 .seriesCardLargeImageDiv {
     position: relative;
-    /* height: 100%; */
-    width: 100%;
+    height: 100%;
+    /* width: 100%; */
     /* min-height: 100%; */
-flex: 1;
+    flex: 1;
     aspect-ratio: 3/2;
     border: 1px solid rgba(221, 221, 221, 0.7);
     border-radius: 2px;
@@ -49,45 +48,11 @@ flex: 1;
 
     flex-direction: column;
     justify-content: space-evenly;
-    flex:2;
+    flex: 2;
     width: 100%;
     height: 100%;
 
 
-}
-
-.seriesCardLargeTeaserBlurbWrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0 0.5rem;
-    gap: 1rem;
-    color: var(---borderIconColor);
-    /* background-color: red; */
-    font-size: 1rem;
-    margin-top: 1rem;
-    /* background-color: var(--inputBackground); */
-}
-
-.seriesCardLargeTeaser {
-    color: var(--bokhusRootsColor);
-    font-size: 0.9rem;
-  
-    font-weight: 500;
-
-}
-
-.seriesCardLargeBlurb {
-    font-family: var(--robotoFont);
-    font-size: 0.9rem;
-    color: var(--myWhiteColor);
-    text-align: left;
-    font-style: italic;
-    line-height: 1.4;
-    /* padding: 0.5rem 1rem; */
-    /* background-color: var(--inputBackground); */
 }
 
 .seriesCardLargeArrowIcon {
@@ -127,13 +92,48 @@ flex: 1;
 }
 
 .seriesCardLargeFact {
-    font-size: 1rem;
+    font-size: 1.08rem;
     padding-top: 0.3rem;
     font-weight: 200;
 
     /* background-color: red; */
     color: var(--myWhiteColor);
     /* margin-top: 0.2rem; */
+}
+
+
+.seriesCardLargeTeaserBlurbWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 0.5rem;
+    gap: 1rem;
+    color: var(---borderIconColor);
+    /* background-color: red; */
+    font-size: 1rem;
+    margin-top: 1rem;
+    /* background-color: var(--inputBackground); */
+}
+
+.seriesCardLargeTeaser {
+    color: var(--bokhusRootsColor);
+    font-size: 1.05rem;
+
+    font-weight: 500;
+
+}
+
+.seriesCardLargeBlurb {
+    font-family: var(--robotoFont);
+    font-size: 1rem;
+    color: var(--myWhiteColor);
+    text-align: left;
+    font-style: italic;
+    line-height: 1.4;
+    /* padding: 0.5rem 1rem; */
+    /* background-color: var(--inputBackground); */
 }
 
 .seriesCardLargeArrowIcon {
@@ -143,11 +143,6 @@ flex: 1;
     opacity: 0.1;
     right: 2%;
     transform: translateY(-50%)
-}
-
-.seriesCard:hover .arrowHTML {
-    animation: moveArrow 2s ease-in-out 0s infinite normal forwards;
-
 }
 
 /* 

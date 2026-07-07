@@ -32,6 +32,7 @@
     height: 100%;
     align-items:center;
     width: 100%;
+        margin-top: 2rem;
     font-family: var(--robotoFont);
     color: var(--myWhiteColor);
 }
@@ -46,7 +47,7 @@
 .workWithUsTextArticle {
     width: 100%;
     gap: 2rem;
-    margin-top: 2rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
