@@ -23,42 +23,42 @@ export function Footer()
                 </div>
             </div>
 
-         <div className="footerEndDiv">
-            <div className="contactUsDiv">
-                <span className="logoText">CONTACT</span>
-         <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="2rem" /></Link>
+            <div className="footerEndDiv">
+                <div className="contactUsDiv">
+                    <span className="logoText">CONTACT</span>
+                    <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="2rem" /></Link>
+
+                </div>
+                <div className="socialMediaDiv">
+                    <span className="logoText">SOCIAL MEDIA BOKHUS </span>
+                    <div className="socialMediaGroup">
+
+                        <FaInstagram className="instagramIcon" size={"1.8rem"} />
+                        <FaFacebook className="facebookIcon" size={"1.7rem"} /></div>
+
+
+                </div>
+                <div className="pageCreditsDiv">
+
+                    <Link className="iconCreditDiv" href="/Credits">
+                        <span className="logoText">CREDITS
+                        </span>
+                        <IoIosInformationCircleOutline size="2.09rem" className="iconCreditIcon" />
+
+                    </Link>
+
+
+                    <div className="logoBPDiv">
+                        <span className="logoText">WEBPAGE BY
+                        </span>
+                        <LogoBPWebDev />
+                    </div>
+
+
+                </div>
+
 
             </div>
-               <div className="socialMediaDiv">
-                <span className="logoText">SOCIAL MEDIA BOKHUS </span>
-                <div className="socialMediaGroup">
-           
-                    <FaInstagram className="instagramIcon" size={"1.8rem"} />
-                    <FaFacebook className="facebookIcon" size={"1.7rem"} /></div>
-
-
-            </div>
-            <div className="pageCreditsDiv">
-
-<div className="iconCreditDiv">
-                <span className="logoText">CREDITS
-                </span>
-                <IoIosInformationCircleOutline size="2.09rem" className="iconCreditIcon" />
-
-            </div>
-
-
-            <div className="logoBPDiv">
-                <span className="logoText">WEBPAGE BY
-                </span>
-                <LogoBPWebDev />
-            </div>
-
-
-            </div>
-            
-
-         </div>
 
         </footer>
     );
