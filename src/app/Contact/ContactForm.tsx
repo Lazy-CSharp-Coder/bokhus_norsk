@@ -116,7 +116,7 @@ export function ContactUs()
                     {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message}  </p>}
 
                 </div>
-                <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
+                <button className="submitButton" type="submit" disabled={isSubmitting} ><span>{isSubmitting ? "Submitting data" : "Submit"}</span></button>
 
 
 
