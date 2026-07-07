@@ -1,7 +1,7 @@
-import { BackgroundImage } from "@/components/global/BackgroundImage";
+import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { SeriesSection } from "@/components/books/SeriesSection";
 import type { Series, Book, Author } from "@/types/booktypes";
-import { ScrollToTop } from "@/components/general/ScrollToTop";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { client } from "@/sanity/client";
 
 // css module import
@@ -30,7 +30,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    const BOOK_QUERY = `*[_type == "Book" && _id in $bookUids[]._ref] | order(bookInSeries asc)`;
 
 
-    const series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
+   const series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
    const serie = series[0];
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
 

@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import { useState, useRef } from "react";
 import { ContactInfo, ServerResponse } from "./contactSchema";
-import { BokHusCom } from "../../components/global/BokHusCom";
+import { BokHusCom } from "../../components/common/BokHusCom";
 import { sendContactForm } from "./actions";
 
 import ReCAPTCHA from "react-google-recaptcha";
@@ -42,7 +42,7 @@ export function ContactUs()
 
             reset();
             setServerMessage("Your message has been sendt to Bokhus");
-            setTimeout(() => { setServerMessage("nomessage"); },4000);
+            setTimeout(() => { setServerMessage("nomessage"); }, 4000);
             console.log("should be sendt");
             recaptchaRef.current?.reset();
         }
@@ -59,7 +59,7 @@ export function ContactUs()
     {
         setValue("recaptchaToken", token || ``, { shouldValidate: false });
         clearErrors("recaptchaToken");
-   
+
     };
 
 
@@ -68,15 +68,15 @@ export function ContactUs()
 
         <section className="contactUsSection flex fadeInFromBelowAnim" style={{ animationDelay: "0.8s" }}>
             {/* <article className="contactUsArticle flex"> */}
-         <div className="logoHeadingWrapper flex">
-               <h2 className="contactUsHeading flex">
-                Contact Us
-            </h2>
-             <div className="logoRegWrapper">
-                                    <Image className="logoRegImg rotateInYAnim" style={{animationDelay:"1.3s"}} src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
-                                </div>
-            
-         </div>
+            <div className="logoHeadingWrapper flex">
+                <h2 className="contactUsHeading flex">
+                    Contact Us
+                </h2>
+                <div className="logoRegWrapper">
+                    <Image className="logoRegImg rotateInYAnim" style={{ animationDelay: "1.3s" }} src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                </div>
+
+            </div>
             <p className="contactUsText">
                 If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
             </p>
@@ -117,15 +117,15 @@ export function ContactUs()
 
                 </div>
                 <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
-            
+
 
 
             </form>
-        
-                              <div className="bokhusComWrapperContact flex">
-                                { serverMessage != "nomessage" ?
-                <div className="serverMessageDiv scaleInAnim">{serverMessage}</div> :
-                <span className="scaleInAnim"><BokHusCom fontSize="1.2rem" />  </span>}
+
+            <div className="bokhusComWrapperContact flex">
+                {serverMessage != "nomessage" ?
+                    <div className="serverMessageDiv scaleInAnim">{serverMessage}</div> :
+                    <span className="scaleInAnim"><BokHusCom fontSize="1.2rem" />  </span>}
             </div>
 
             {/* </article> */}

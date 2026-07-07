@@ -4,13 +4,13 @@ import { z } from "zod/v4-mini";
 import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
 import { useState } from "react";
-import { BokHusCom } from "../../components/global/BokHusCom";
+import { BokHusCom } from "../../components/common/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 import { submitUserData } from "./submitToSanity";
 import Image from "next/image";
 // react icons
 import { genresDef } from "./registerSchema";
-import {  IoEarthSharp } from "react-icons/io5";
+import { IoEarthSharp } from "react-icons/io5";
 import { LuLetterText } from "react-icons/lu";
 import { LiaSwatchbookSolid } from "react-icons/lia";
 import { TbWorldWww } from "react-icons/tb";
@@ -66,7 +66,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                 <div className="mailIconAdressWrapper flex">
                     <FaUserLarge size="3rem" className="userIcon" />
                     {displayNewUserInfo ? <p className="noUserFoundText" onAnimationEnd={() => setDisplayNewUserInfo(false)}>No user registered with your credentials <span>  </span> </p> :
-                        <p key={displayNewUserInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{animationDuration: "2s"}}>{userEmail}</p>}
+                        <p key={displayNewUserInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>}
                 </div>
             </div>
 

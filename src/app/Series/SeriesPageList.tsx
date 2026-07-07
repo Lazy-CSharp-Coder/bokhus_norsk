@@ -1,29 +1,29 @@
 
 import { getSeriesCardPropsArray } from "./getSeriesCardPropsArray";
-import { SeriesCardLarge } from "./SeriesCardLarge";
+import { SeriesCardLarge } from "../../components/common/SeriesCardLarge";
 
 import type { SeriesCardProps, Series } from "@/types/booktypes";
 import { SeriesPageListProps } from "./SeriesPageTypes";
 
-export function setRouteToGo(serie : Series) 
+export function setRouteToGo(serie: Series) 
 {
     const params = new URLSearchParams();
-        console.log("uid from sanity is  " + serie._id);
-        params.set("message", serie._id);
-        return (`/DynamicSeriePage?${params.toString()}`);
+    console.log("uid from sanity is  " + serie._id);
+    params.set("message", serie._id);
+    return (`/DynamicSeriePage?${params.toString()}`);
 }
 
 
 export async function SeriesPageList({ seriesArray }: SeriesPageListProps)
 {
-    const seriesToDisplay : SeriesCardProps[] = await getSeriesCardPropsArray(seriesArray);
+    const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesArray);
     const animDelay = 200;
     return (
         <article className="seriesPageListArticle">
             <ul className="seriesList">
                 {seriesToDisplay.map((item, index) => (
                     <li key={`${item.seriesSelected.seriesName + index}`}>
-                        <SeriesCardLarge {...item} animationDelay={index*animDelay} />
+                        <SeriesCardLarge {...item} animationDelay={index * animDelay} />
                     </li>
                 ))}
             </ul>

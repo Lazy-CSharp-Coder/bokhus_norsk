@@ -1,4 +1,4 @@
-import { TermsOfUse } from "@/components/global/legal/TermsOfUse";
+import { TermsOfUse } from "./TermsOfUse"
 
 
 export default function Terms()

@@ -1,6 +1,7 @@
 import languagesJson from "@/json/languages.json";
 import type { LanguageText } from "@/types/languagetypes";
 import type { QuoteBottomProps } from "@/types/types";
+import "./QuotesBottom.module.css";
 
 export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
 {

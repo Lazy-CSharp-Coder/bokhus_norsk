@@ -2,11 +2,11 @@ import "./About.module.css";
 import aboutJson from "@/json/about.json";
 import type { LanguageText } from "@/types/languagetypes";
 import languagesJson from "@/json/languages.json";
-import { BackgroundImage } from "@/components/global/BackgroundImage";
+import { BackgroundImage } from "@/components/common/BackgroundImage";
 import type { About } from "@/types/types";
-import { BokHusCom } from "@/components/global/BokHusCom";
-import { QuotesBottom } from "@/components/global/QuotesBottom";
-import { ExpandingLine } from "@/components/global/ExpandingLine";
+import { BokHusCom } from "@/components/common/BokHusCom";
+import { QuotesBottom } from "@/components/common/QuotesBottom";
+import { ExpandingLine } from "@/components/common/ExpandingLine";
 
 
 export default function About()

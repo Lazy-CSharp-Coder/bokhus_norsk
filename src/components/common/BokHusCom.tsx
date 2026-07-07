@@ -1,4 +1,4 @@
-export interface BokHusComProps 
+interface BokHusComProps 
 {
     fontFamily? : string,
     fontSize?: string

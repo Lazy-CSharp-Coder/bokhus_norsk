@@ -5,8 +5,8 @@ import { useState } from "react";
 import { WorkWithUsTheme } from "./WorkWithUsTheme";
 // import { is } from "zod/locales";
 import "./WorkWithUs.module.css";
-import { ExpandingLine } from "@/components/global/ExpandingLine";
-import { BackgroundImage } from "@/components/global/BackgroundImage";
+import { ExpandingLine } from "@/components/common/ExpandingLine";
+import { BackgroundImage } from "@/components/common/BackgroundImage";
 import Link from "next/link";
 
 

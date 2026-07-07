@@ -1,7 +1,7 @@
 import { AmazonAffilate} from "./AmazonAffiliate";
 import "./Afilliate.module..css"
 
-export default function AffiliatePage()
+export default function Affiliate()
 {
 
     return(

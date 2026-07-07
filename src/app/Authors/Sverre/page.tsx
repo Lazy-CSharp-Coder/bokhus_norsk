@@ -1,4 +1,4 @@
-import { BackgroundImage } from "@/components/global/BackgroundImage";
+import { BackgroundImage } from "@/components/common/BackgroundImage";
 import AuthorSection from "@/components/authors/AuthorSection";
 
 export default function SverresPage()

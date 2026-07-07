@@ -4,6 +4,7 @@ import { HamburgerMenu } from "./HamburgerMenu";
 import languagesJson from "@/json/languages.json";
 import { LanguageText } from "@/types/languagetypes";
 import { LoginClerk } from "./LoginClerk";
+import "./Header.module.css";
 
 export function Header()
 {

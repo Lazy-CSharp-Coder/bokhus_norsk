@@ -4,8 +4,9 @@ import { IoMailOutline } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
 import { IoIosInformationCircleOutline } from "react-icons/io";
-import { BokHusCom } from "./BokHusCom";
 import { LogoBPWebDev } from "./LogoBPWebDev";
+import "./Footer.module.css";
+
 export function Footer()
 {
     return (

@@ -1,8 +1,8 @@
-import { CookiePolicy } from "@/components/global/legal/Cookie"
+import { CookiePolicy } from "@/app/Cookies/Cookie"
 import "./cookies.module.css";
 
 
-export default function Terms()
+export default function Cookie()
 {
     return(
         <main className="legalDocsMain">

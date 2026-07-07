@@ -3,16 +3,13 @@
 import { SeriesCardProps } from "@/types/booktypes";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { IoArrowForward } from "react-icons/io5";
-import { MdArrowForwardIos } from "react-icons/md";
 import Image from "next/image";
 import { ByAuthor } from "@/components/books/ByAuthor";
-import { GiBookmarklet } from "react-icons/gi";
-import { GiOpenBook } from "react-icons/gi";
-import { GiBookCover } from "react-icons/gi";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
-import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
+import { GiBookCover } from "react-icons/gi";
+import "./SeriesCardLarge.css";
+
+import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
 interface Category 
 {
