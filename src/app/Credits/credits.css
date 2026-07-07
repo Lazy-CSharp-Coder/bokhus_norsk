@@ -1,9 +1,9 @@
 
 .creditLink {
 
-    color:bisque
+    color:var(--bokhusRootsColor);
 }
 
 .creditLicence {
-    color: lightblue;
+    color: var(--bokhusFutureColor);
 }
