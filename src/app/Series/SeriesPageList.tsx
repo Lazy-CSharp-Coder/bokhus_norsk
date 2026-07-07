@@ -2,7 +2,7 @@
 import { getSeriesCardPropsArray } from "./getSeriesCardPropsArray";
 import { SeriesCardLarge } from "../../components/common/SeriesCardLarge";
 
-import type { SeriesCardProps, Series } from "@/types/booktypes";
+import type { SeriesCardProps } from "@/types/booktypes";
 import { SeriesPageListProps } from "./SeriesPageTypes";
 
 export async function SeriesPageList({ seriesArray }: SeriesPageListProps)

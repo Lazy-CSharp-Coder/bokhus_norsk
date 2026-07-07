@@ -1,11 +1,13 @@
 import { SeriesHeadingProps } from "@/types/booktypes";
 import "./AuthorSeriesHeading.module.css";
+import { BokHusCom } from "@/components/common/BokHusCom";
 
 export function AuthorSeriesHeading({authorName, animationDelay} : SeriesHeadingProps)
 {
     return(
-    <div className="seriesHeadingDiv fadeInFromBelowAnim" style={{animationDelay :`${animationDelay}ms`, animationDuration: "0.6s"}}>
-         <h3 className="seriesHeading">Series from <span className="authorSeriesSectionText">{authorName}</span> available from <span className="bookHouseText">BokHus.com</span></h3>
+    <div className="authorSeriesHeadingDiv fadeInFromBelowAnim" style={{animationDelay :`${animationDelay}ms`, animationDuration: "0.6s"}}>
+         <h3 className="authorSeriesHeading">Series from <span className="authorSeriesSectionText">{authorName}</span> available from </h3><
+        BokHusCom/>
              
     </div>);
 }

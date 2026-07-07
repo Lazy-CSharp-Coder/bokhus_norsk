@@ -1,7 +1,7 @@
 import type { PageProps } from "@/types/types";
 import type { Author } from "@/types/booktypes";
 import { client } from "@/sanity/client";
-import AuthorSection from "@/components/authors/AuthorSection";
+import AuthorSection from "@/app/DynamicAuthorPage/components/AuthorSection";
 import "./DynamicAuthorPage.module.css";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 

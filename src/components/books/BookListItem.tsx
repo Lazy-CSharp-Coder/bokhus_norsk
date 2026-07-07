@@ -3,7 +3,7 @@
 import type { BookListItemProps } from "@/types/booktypes";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { urlFor } from "@/lib/urlFor";
+import { urlFor } from "@/functions/urlFor";
 
 export function BookListItem({ item, handleClick }: BookListItemProps)
 {

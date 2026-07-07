@@ -1,14 +1,14 @@
 
 import type { Author } from "@/types/booktypes";
-import { AuthorCard } from "@/components/authors/AuthorCard";
+import { AuthorCard } from "@/app/Authors/components/AuthorCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { client } from "@/sanity/client";
 import Link from "next/link";
 // css specific import for this page
 import "./Authors.module.css";
-import { urlFor } from "@/lib/urlFor";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
+import "./Authors.module.css";
 
 export default async function Authors()
 {
@@ -31,12 +31,12 @@ export default async function Authors()
 
     return (
         <>
-            <BackgroundImage className="backgroundImageAuthorsPage" src={"/images/backgrounds/authorBackground1.png"} />
+            <BackgroundImage className="authorsBackgroundImage" src={"/images/backgrounds/authorBackground1.png"} />
             <main className="authorsPage flex">
-                <div className="bokhusAuthorsHeadingWrapper flex">
+                <div className="authorsHeadingWrapper flex">
 
 
-                    <div className="headingLineWrapper">
+                    <div className="authorHeadingLineWrapper">
                         <h2 className="authorsPageHeading fadeInAnim">Meet the <span className="voicesText">voices</span> behind our books</h2>
                         <ExpandingLine key={"AuthorLine"} lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s" />
                     </div>
@@ -56,7 +56,7 @@ export default async function Authors()
                     </ul> : <p>No authors found or accesible from server</p>
                 }
 
-
+<BokHusCom/>
             </main>
 
         </>

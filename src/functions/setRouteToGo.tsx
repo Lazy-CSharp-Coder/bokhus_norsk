@@ -5,12 +5,13 @@ const autohrPageDef = "/DynamicAuthorPage";
 
 type RouteType = Author | Series;
 
-export const setRouteToGo = (routeToMake : RouteType) =>
-    {
-        const params = new URLSearchParams();
-        params.set("message", routeToMake._id);
-      
+export const setRouteToGo = (routeToMake: RouteType) =>
+{
+    const params = new URLSearchParams();
+    params.set("message", routeToMake._id);
+    const def = "seriesName" in routeToMake ? seriesPageDef : autohrPageDef;
 
-    };
+    return (`def/?${params.toString()}`);
+};
 
 

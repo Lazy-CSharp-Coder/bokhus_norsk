@@ -1,11 +1,11 @@
 import type { Series, Author, SeriesCardProps } from "@/types/booktypes";
 import { client } from "@/sanity/client";
-import { urlFor } from "@/lib/urlFor";
-import { setRouteToGo } from "@/components/authors/AuthorSection";
+import { urlFor } from "@/functions/urlFor";
+import { setRouteToGo } from "@/functions/setRouteToGo";
 
 const AUTHORS_QUERY = `*[_type == "Author" && _id in $authorsIds]`;
 
-export async function getSeriesCardPropsArray( seriesArray : Series[]): Promise<SeriesCardProps[]>
+export async function getSeriesCardPropsArray(seriesArray: Series[]): Promise<SeriesCardProps[]>
 {
     return Promise.all(
 
@@ -20,11 +20,11 @@ export async function getSeriesCardPropsArray( seriesArray : Series[]): Promise<
             }
             return {
                 authors: authors.map((author) => author.name),
-                seriesSelected : item,
-                imageUrl : urlFor(item.imageSeries, 800),
-                routeToGo : setRouteToGo(item)
+                seriesSelected: item,
+                imageUrl: urlFor(item.imageSeries, 800),
+                routeToGo: setRouteToGo(item)
 
-    
+
             };
 
         })

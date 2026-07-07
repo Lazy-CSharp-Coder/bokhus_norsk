@@ -7,7 +7,7 @@ import { client } from "@/sanity/client";
 // css module import
 import "./DymanicSeriePage.module.css";
 import type { PageProps } from "@/types/types";
-import { urlFor } from "@/lib/urlFor";
+import { urlFor } from "@/functions/urlFor";
 
 
 

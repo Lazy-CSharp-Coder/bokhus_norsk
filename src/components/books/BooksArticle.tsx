@@ -5,7 +5,7 @@ import { BookList } from "./BookList";
 import { BookCard, BookCardSizer } from "./BookCard";
 import { DescriptionSeries } from "./DescriptionSeries";
 import { useIntroState } from "@/globalStates";
-import { urlFor } from "@/lib/urlFor";
+import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
 import { ReviewScrollButton } from "../general/ReviewScrollButton";
 import { ReviewArticle } from "./ReviewArticle";
@@ -21,12 +21,12 @@ export function BooksArticle({ authors, series, bookList }: BooksArticleProps)
     {
         // setIntroBeenPlayed("played");
         setBookToShow(item);
-        if(isDescriptionShowing) setIsDescriptionShowing(false);
+        if (isDescriptionShowing) setIsDescriptionShowing(false);
     };
 
     const { bookArticle, sanityTag } = useLanguageChosen();
     const bookForSizing: Book = bookList[0];
-    console.log("Sanity tag for language is  : "+ sanityTag);
+    console.log("Sanity tag for language is  : " + sanityTag);
 
 
     return (
@@ -49,10 +49,10 @@ export function BooksArticle({ authors, series, bookList }: BooksArticleProps)
                                 <DescriptionSeries seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
                         }
                     </div>
-                </article> 
-                {!isDescriptionShowing && bookToShow && <ReviewScrollButton/> }
+                </article>
+                {!isDescriptionShowing && bookToShow && <ReviewScrollButton />}
             </div>
-            {bookToShow && !isDescriptionShowing && <ReviewArticle bookId={bookToShow._id} bookName={bookToShow.bookTitle} /> }
+            {bookToShow && !isDescriptionShowing && <ReviewArticle bookId={bookToShow._id} bookName={bookToShow.bookTitle} />}
         </section>
 
     );

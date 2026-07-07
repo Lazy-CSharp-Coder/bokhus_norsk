@@ -7,6 +7,6 @@ interface BokHusComProps
 export function BokHusCom({fontFamily, fontSize} : BokHusComProps)
 {
     return(
-        <p style={{fontFamily :fontFamily ? fontFamily : "", fontSize : fontSize ? fontSize : "1rem"}}><span style={{color: "var(--bokhusRootsColor)" }}>Bok</span><span style={{color: "var(--bokhusFutureColor)" }}>Hus</span>.com</p>
+        <span style={{fontFamily :fontFamily ? fontFamily : "", fontSize : fontSize ? fontSize : ""}}><span style={{color: "var(--bokhusRootsColor)" }}>Bok</span><span style={{color: "var(--bokhusFutureColor)" }}>Hus</span>.com</span>
     )
 }

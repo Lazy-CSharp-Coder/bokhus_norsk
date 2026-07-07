@@ -2,7 +2,7 @@ import type { BookCardProps } from "@/types/booktypes";
 import { numberToWords } from "convert-number-to-words";
 import Image from "next/image";
 import { AvailableIn } from "./AvailableIn";
-import { urlFor } from "@/lib/urlFor";
+import { urlFor } from "@/functions/urlFor";
 import { BookInSeriesText } from "./BookInSeriesText";
 
 export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, animationName, bookArticleText, saintyTagLanguage }: BookCardProps)
@@ -34,7 +34,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                     <p className="releaseInfo">{released} <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">{synopsis}</p>
                 </div>
-      <div className="descriptionSubWrapper flex">
+                <div className="descriptionSubWrapper flex">
 
                     {subTitle &&
                         <h4 className={`subTitle`}>{`${subTitle}`}</h4>
