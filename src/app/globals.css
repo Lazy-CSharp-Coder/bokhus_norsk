@@ -11,8 +11,6 @@
 :root {
   --background: black;
   --foreground: rgb(221, 221, 221);
-  --openSans: "Open Sans";
-  --alternateFontFamily: "Oxygen", sans-serif;
 
   --myWhiteColor: rgba(221, 221, 221, 1);
   --bokhusRootsColor: rgb(178, 126, 29);
