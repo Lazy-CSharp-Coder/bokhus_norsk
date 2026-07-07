@@ -2,11 +2,11 @@ import type { PageProps } from "@/types/types";
 import type { Author } from "@/types/booktypes";
 import { client } from "@/sanity/client";
 import AuthorSection from "@/components/authors/AuthorSection";
-import "./GeneralAuthorPage.module.css";
+import "./DynamicAuthorPage.module.css";
 import { BackgroundImage } from "@/components/global/BackgroundImage";
 
 
-export default async function GeneralAuthorPage({ searchParams }: PageProps)
+export default async function DynamicAuthorPage({ searchParams }: PageProps)
 {
 
     const params = await searchParams;

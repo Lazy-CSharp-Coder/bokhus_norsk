@@ -5,7 +5,7 @@ import { ScrollToTop } from "@/components/general/ScrollToTop";
 import { client } from "@/sanity/client";
 
 // css module import
-import "./GeneralSeriePage.module.css";
+import "./DymanicSeriePage.module.css";
 import type { PageProps } from "@/types/types";
 import { urlFor } from "@/lib/urlFor";
 
@@ -13,7 +13,7 @@ import { urlFor } from "@/lib/urlFor";
 
 // ******************
 
-export default async function GeneralSeriePage({ searchParams }: PageProps)
+export default async function DynamicSeriePage({ searchParams }: PageProps)
 {
    // const eastEndLassUid = "#SL#EASTENDLASS";
    // const authorUids = ["#Sigrid#Lunde"];
