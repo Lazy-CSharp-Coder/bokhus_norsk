@@ -1,0 +1,6 @@
+.logoBPImgStandard {
+    width: 1.9rem;
+    aspect-ratio: 1/1;
+    border: 2px solid rgb(57, 55, 55);
+    border-radius: 50%;
+}

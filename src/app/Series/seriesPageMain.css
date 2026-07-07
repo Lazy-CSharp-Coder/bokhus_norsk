@@ -1,0 +1,81 @@
+.seriesPageBackgroundImage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    filter: blur(5px) brightness(45%);
+    z-index: -1;
+
+}
+
+.completeSeriesPage {
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+}
+
+.seriesPageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 2.2rem;
+    width: 50%;
+}
+
+.seriesPageDescriptionArticle {
+        width: 100%;
+    gap: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--libreFont);
+       
+}
+
+.seriesPageHeadingLineWrapper {
+
+
+}
+
+.seriesPageTextDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+    /* background-color: red; */
+}
+
+.seriesPageHeading {
+    font-size: 2.5rem;
+    color: var(--myWhiteColor);
+    padding-bottom: 1rem;
+    
+     
+     
+}
+
+.seriesPageText {
+      line-height: 1.4;
+    font-size: 1.5rem;
+
+
+}
+
+.seriesList {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    padding: 2rem 2rem;
+    list-style: none;
+
+}
+

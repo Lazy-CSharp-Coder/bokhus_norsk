@@ -31,31 +31,34 @@ export default function WorkWithUsPage()
 
     return (
         <main className="workWithUsPage">
-            <BackgroundImage src="/images/backgrounds/workWithUsBackground.jpg" className="workWithUsBackground" />
+            <BackgroundImage src="/images/backgrounds/workWithUsBackground.png" className="workWithUsBackground" />
             <section className="workWithUsSection flex">
-                <article className="workWithUsTextArticle fadeInAnim" style={{animationDelay: "0.5s"}}>
+                <article className="workWithUsTextArticle fadeInAnim" style={{ animationDelay: "0.5s" }}>
                     <div className="headingLineWrapper">
                         <h3 className="workWithUsHeading"> Work with Bokhus </h3>
                         <ExpandingLine key={"WorkLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                     </div>
 
 
-                    <p className="workWithUsIntroText">
+                    <div className="workWithUsTextDiv">
+                        <p className="workWithUsIntroText">
 
-                        BokHus works with writers, editors, translators, illustrators, local historians and creative partners who care about strong stories and well-crafted books.
-                    </p>
-                    <p className="workWithUsIntroText">
-                        We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you.
+                            BokHus works with writers, editors, translators, illustrators, local historians and creative partners who care about strong stories and well-crafted books.
+                        </p>
+                        <p className="workWithUsIntroText">
+                            We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you.
 
-                    </p>
-                    <p className="workWithUsIntroText fadeInAnim" >Here is a list of what we can help you with :</p>
+                        </p>
+                        <p className="workWithUsIntroText fadeInAnim" >Here is a list of what we can help you with :</p>
+
+                    </div>
 
                 </article>
                 <article className="workWithUsListArticle flex">
 
                     <ul className="workList">
                         {workWithUsArray.map((item, index) =>
-                            <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} anmiationDelay={`${animDelay*index+waitForMainAnim}ms`}/> </li>
+                            <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} anmiationDelay={`${animDelay * index + waitForMainAnim}ms`} /> </li>
 
                         )}
 
@@ -65,7 +68,7 @@ export default function WorkWithUsPage()
                         {isDisplayingTheme && <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} />}
                     </div>
                 </article>
-      <p className="workWithUsIntroText fadeInAnim" style={{animationDelay: "2.8s"}} >If your are interested in working with us, click <Link href="/Contact" className="linkContact">here</Link> to fill out contact information.</p>
+                <p className="workWithUsIntroText fadeInAnim" style={{ animationDelay: "2.8s" }} >If your are interested in working with us, click <Link href="/Contact" className="linkContact">here</Link> to fill out contact information.</p>
             </section>
         </main>
     );

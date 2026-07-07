@@ -3,7 +3,9 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 import { BokHusCom } from "./BokHusCom";
+import { LogoBPWebDev } from "./LogoBPWebDev";
 export function Footer()
 {
     return (
@@ -16,18 +18,48 @@ export function Footer()
 
                     <TermsButton />
                     <PrivacyButton />
-                    <CookieButton/>
+                    <CookieButton />
                     <AffiliateButton />
                 </div>
             </div>
 
+         <div className="footerEndDiv">
+            <div className="contactUsDiv">
+                <span className="logoText">CONTACT</span>
+         <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="2rem" /></Link>
 
-            <div className="socialMediaGroup">
-
-                <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="1.8rem" /></Link>
-                <FaInstagram className="instagramIcon" size={"1.7rem"} />
-                <FaFacebook className="facebookIcon" size={"1.7rem"} />
             </div>
+               <div className="socialMediaDiv">
+                <span className="logoText">SOCIAL MEDIA BOKHUS </span>
+                <div className="socialMediaGroup">
+           
+                    <FaInstagram className="instagramIcon" size={"1.8rem"} />
+                    <FaFacebook className="facebookIcon" size={"1.7rem"} /></div>
+
+
+            </div>
+            <div className="pageCreditsDiv">
+
+<div className="iconCreditDiv">
+                <span className="logoText">CREDITS
+                </span>
+                <IoIosInformationCircleOutline size="2.09rem" className="iconCreditIcon" />
+
+            </div>
+
+
+            <div className="logoBPDiv">
+                <span className="logoText">WEBPAGE BY
+                </span>
+                <LogoBPWebDev />
+            </div>
+
+
+            </div>
+            
+
+         </div>
+
         </footer>
     );
 }

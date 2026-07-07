@@ -8,6 +8,14 @@ import { SanityReference } from "next-sanity";
 import { get } from "http";
 export const language = "English";
 
+export function setRouteToGo(serie : Series) 
+{
+    const params = new URLSearchParams();
+        console.log("uid from sanity is  " + serie._id);
+        params.set("message", serie._id);
+        return (`/GeneralSeriePage?${params.toString()}`);
+}
+
 export default async function AuthorSection({ author }: { author: Author; })
 {
     // set a placeholder if not found 
@@ -19,14 +27,14 @@ export default async function AuthorSection({ author }: { author: Author; })
     const animInc: number = 200;
     const animWaitForMain: number = 300;
 
-    const setRouteToGo = (serie: Series) =>
-    {
-        const params = new URLSearchParams();
-        console.log("uid from sanity is  " + serie._id);
-        params.set("message", serie._id);
-        return (`/GeneralSeriePage?${params.toString()}`);
+    // const setRouteToGo = (serie: Series) =>
+    // {
+    //     const params = new URLSearchParams();
+    //     console.log("uid from sanity is  " + serie._id);
+    //     params.set("message", serie._id);
+    //     return (`/GeneralSeriePage?${params.toString()}`);
 
-    };
+    // };
 
     const getAuthorsForSeries = async (serie : Series): Promise<string[]>  =>
     {
