@@ -52,21 +52,34 @@
 
 }
 
-.seriesCardLargeTeaserArrowWrapper {
-    flex-direction: row;
+.seriesCardLargeTeaserBlurbWrapper {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0 0.5rem;
+    gap: 1rem;
     color: var(---borderIconColor);
     /* background-color: red; */
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     /* background-color: var(--inputBackground); */
 }
 
 .seriesCardLargeTeaser {
     color: var(--bokhusRootsColor);
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 500;
 
+}
+
+.seriesCardLargeBlurb {
+    font-family: var(--robotoFont);
+    font-size: 0.9rem;
+color: var(--myWhiteColor);
+text-align: center;
 }
 
 .seriesCardLargeArrowIcon {

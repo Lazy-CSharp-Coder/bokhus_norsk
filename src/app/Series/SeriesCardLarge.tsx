@@ -42,13 +42,14 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
                 </div>
 
 
-                <div className="seriesCardLargeTeaserArrowWrapper flex">
+                <div className="seriesCardLargeTeaserBlurbWrapper flex">
+                    
                     <span className="seriesCardLargeTeaser">{seriesSelected.seriesTeaser}</span>
-                    <span className="seriesCardLargeBlurb">{seriesSelected.seriesBlurb} </span>
-                    <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" />
+                    <span className="seriesCardLargeBlurb">"{seriesSelected.seriesBlurb}"</span>
+             
                 </div>
 
-
+       <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" />
             </div>
         </div>
     );
