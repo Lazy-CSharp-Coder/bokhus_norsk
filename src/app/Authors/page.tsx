@@ -56,9 +56,7 @@ export default async function Authors()
                     </ul> : <p>No authors found or accesible from server</p>
                 }
 
-          <div className="bokhusComWrapperAuthors fadeInAnim" style={{ animationDelay: "0.6s" }}>
-                    <BokHusCom fontSize="1.45rem" />
-                </div>
+ 
             </main>
 
         </>
