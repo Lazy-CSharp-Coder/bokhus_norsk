@@ -41,7 +41,7 @@ export function Footer()
             <div className="pageCreditsDiv">
 
 <div className="iconCreditDiv">
-                <span className="logoText">ICONS BY
+                <span className="logoText">CREDITS
                 </span>
                 <IoIosInformationCircleOutline size="2.09rem" className="iconCreditIcon" />
 

@@ -16,8 +16,8 @@ import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
 interface Category 
 {
-    name : string,
-    icon : Icon
+    name: string,
+    icon: Icon;
 }
 
 export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, animationDelay }: SeriesCardProps)
@@ -39,17 +39,18 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
                         <GiBookCover size="1.7rem" className="seriesCardLargeBookIcon" />
                         <span className="seriesCardLargeFact">{seriesFact}</span>
                     </div>
-                </div>
 
+                </div>
 
                 <div className="seriesCardLargeTeaserBlurbWrapper flex">
-                    
+
                     <span className="seriesCardLargeTeaser">{seriesSelected.seriesTeaser}</span>
-                    <span className="seriesCardLargeBlurb">"{seriesSelected.seriesBlurb}"</span>
-             
+                    <span className="seriesCardLargeBlurb">{seriesSelected.seriesBlurb}</span>
+
                 </div>
 
-       <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" />
+
+                {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
             </div>
         </div>
     );

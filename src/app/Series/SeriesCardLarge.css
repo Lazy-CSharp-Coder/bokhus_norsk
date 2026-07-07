@@ -16,20 +16,22 @@
     /* justify-content: stretch; */
     width: 100%;
     height: 20rem;
-    padding: 2.4rem 2.4rem;
-    gap: 1rem;
+    padding: 2rem 2rem;
+    gap: 1.8rem;
     background-color: var(--regBackground);
     border: 1px solid var(--borderIconColor);
     border-radius: 5px;
     font-family: var(--libreFont);
     -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
+    overflow: auto;
 }
 
 .seriesCardLargeImageDiv {
     position: relative;
     /* min-width: 18rem; */
-    min-height: 100%;
+    /* min-height: 100%; */
+    width: 60%;
     aspect-ratio: 3/2;
     border: 1px solid rgba(221, 221, 221, 0.7);
     border-radius: 2px;
@@ -42,10 +44,11 @@
 }
 
 .seriesCardLargeInfoWrapper {
-    padding: 1rem;
+    padding: 0.8rem 0;
+
     flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: space-evenly;
+
     width: 100%;
     height: 100%;
 
@@ -63,14 +66,14 @@
     color: var(---borderIconColor);
     /* background-color: red; */
     font-size: 1rem;
-
+    margin-top: 1rem;
     /* background-color: var(--inputBackground); */
 }
 
 .seriesCardLargeTeaser {
     color: var(--bokhusRootsColor);
     font-size: 0.9rem;
-    font-style: italic;
+  
     font-weight: 500;
 
 }
@@ -78,8 +81,12 @@
 .seriesCardLargeBlurb {
     font-family: var(--robotoFont);
     font-size: 0.9rem;
-color: var(--myWhiteColor);
-text-align: center;
+    color: var(--myWhiteColor);
+    text-align: left;
+    font-style: italic;
+    line-height: 1.4;
+    /* padding: 0.5rem 1rem; */
+    /* background-color: var(--inputBackground); */
 }
 
 .seriesCardLargeArrowIcon {
@@ -117,6 +124,7 @@ text-align: center;
 
 
 }
+
 .seriesCardLargeFact {
     font-size: 1rem;
     padding-top: 0.3rem;
@@ -129,7 +137,7 @@ text-align: center;
 
 .seriesCardLargeArrowIcon {
     position: absolute;
-    top:50%;
+    top: 50%;
     color: var(--myWhiteColor);
     opacity: 0.1;
     right: 2%;
@@ -140,6 +148,7 @@ text-align: center;
     animation: moveArrow 2s ease-in-out 0s infinite normal forwards;
 
 }
+
 /* 
 
 .goToArrowWrapper {
