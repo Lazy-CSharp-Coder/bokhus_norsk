@@ -1,0 +1,13 @@
+.submitButton {
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: var(--myWhiteColor);
+    border: 2px outset var(--borderIconColor);
+    background-color: var(--borderIconColor);
+}
+
+.submitButton:active{
+    border: 2px inset var(--borderIconColor);
+}

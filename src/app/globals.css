@@ -3,10 +3,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap'); */
 
 @import "./../cssLib/Animations.css";
+@import "./../cssLib/submitButton.css";
 @import "./mediaQueries.css";
-
-
-
 
 
 
@@ -17,10 +15,15 @@
   --alternateFontFamily: "Oxygen", sans-serif;
 
   --myWhiteColor: rgba(221, 221, 221, 1);
- --bokhusRootsColor : rgb(178, 126, 29);
- --bokhusFutureColor: lightskyblue;
-   --commonBackgroundColor : rgba(20,20, 20, 0.8)
-
+  --bokhusRootsColor: rgb(178, 126, 29);
+  --bokhusFutureColor: lightskyblue;
+  --commonBackgroundColor: rgba(20, 20, 20, 0.8);
+  --regFontSize: 1.1rem;
+  --regBackground: rgba(20, 20, 20, 0.9);
+  --inputBackground: rgb(34, 34, 34);
+  --borderIconColor: rgb(125, 88, 33);
+  --borderReg: 1px solid var(--borderIconColor);
+  --borderRadiusReg: 5px;
 }
 
 * {
@@ -32,7 +35,7 @@
 
 html {
   max-width: 100vw;
-  width:100vw;
+  width: 100vw;
   scroll-behavior: smooth;
 
 
@@ -48,12 +51,12 @@ body {
   /* justify-content: flex-start; */
 
   width: 100vw;
- /* justify-content: center; */
+  /* justify-content: center; */
   min-height: 100vh;
   height: 100%;
   margin: 0;
   top: 0;
-  left :0;
+  left: 0;
 
 
 
@@ -115,6 +118,7 @@ a {
     color-scheme: dark;
   }
 }
+
 /* 
 @media (max-width: 1920px)
 {
