@@ -40,6 +40,7 @@ export interface Series
     dialektNO ? : string, 
     seriesFact: string,
     seriesTeaser: string,
+    seriesBlurb : string,
     description: string[],
     ageGroup?: string,
     bookUids: string[];

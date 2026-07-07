@@ -44,6 +44,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
 
                 <div className="seriesCardLargeTeaserArrowWrapper flex">
                     <span className="seriesCardLargeTeaser">{seriesSelected.seriesTeaser}</span>
+                    <span className="seriesCardLargeBlurb">{seriesSelected.seriesBlurb} </span>
                     <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" />
                 </div>
 
