@@ -41,10 +41,10 @@ export function Credits()
 
                         <li><strong>Material Design Icons</strong>  (md) by <Link href="https://google.com/" className="creditLink">Google Material Design Icons</Link> under <Link href="https://github.com/google/material-design-icons/blob/master/LICENSE" className="creditLicence">Apache License 2.0</Link>  </li>
 
-                        <li><strong>Icon8 Line Awesome</strong>  (Lia) by <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLink">Icons8</Link> under <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLicence">MIT Licence</Link>  </li>
+                        <li><strong>Icon8 Line Awesome</strong>  (la) by <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLink">Icons8</Link> under <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLicence">MIT Licence</Link>  </li>
 
 
-                        <li>Logo for <strong>BP - WebDev</strong> made by Avantella</li>
+                        <li>Logo for <strong>BP Web Development</strong> (BP WebDev) made by Avantella</li>
                     </ul>
 
 
