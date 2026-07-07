@@ -24,7 +24,7 @@ export default async function Authors()
         const params = new URLSearchParams();
         console.log("uid from sanity is  " + author._id);
         params.set("message", author._id);
-        return (`/GeneralAuthorPage?${params.toString()}`);
+        return (`/DynamicAuthorPage?${params.toString()}`);
 
     };
 

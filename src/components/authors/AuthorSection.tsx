@@ -13,7 +13,7 @@ export function setRouteToGo(serie : Series)
     const params = new URLSearchParams();
         console.log("uid from sanity is  " + serie._id);
         params.set("message", serie._id);
-        return (`/GeneralSeriePage?${params.toString()}`);
+        return (`/DynamicSeriePage?${params.toString()}`);
 }
 
 export default async function AuthorSection({ author }: { author: Author; })
