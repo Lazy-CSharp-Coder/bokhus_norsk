@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./credits.module.css";
 
 export function Credits()
 {
@@ -14,7 +15,7 @@ export function Credits()
                 </h3> */}
                 <div className="textDiv">
                     <p className="legalText">
-                        Bokhus will like to say thanks and credit the following people for some of the visual elements, icons and images, on this web-page.
+                        Bokhus will like to say thanks and credit the following people/companies for some of the visual elements, icons and images, on this web-page.
 
                     </p>          <p className="legalText">
                         The time and effort spendt by these creators are well appreciated !
@@ -32,12 +33,17 @@ export function Credits()
 
                     <ul className="legalList">
 
-                        <li> book presentations</li>
-                        <li> articles and historical content</li>
-                        <li>digital downloads</li>
-                        <li>newsletters</li>
-                        <li> links to booksellers or third-party platforms</li>
-                        <li>Logo for <strong>BP WebDev</strong> made by Avantella</li>
+                        <li><strong>Font Awesome 5 Icons</strong> (Fa) by <Link href="https://creativecommons.org/" className="creditLink">Creative Commons</Link> under <Link href="https://creativecommons.org/licenses/by/4.0/" className="creditLicence">CC BY 4.0 Licence</Link>  </li>
+                        
+                              
+                        <li><strong>Io Icons</strong> (Io) by <Link href="https://creativecommons.org/" className="creditLink">Ionic Icons</Link> under <Link href="https://github.com/ionic-team/ionicons/blob/master/LICENSE"  className="creditLicence">MIT Licence</Link>  </li>
+                          
+                        
+                        <li><strong>Material Design Icons</strong>  (Md) by <Link href="https://google.com/" className="creditLink">Google Material Design Icons</Link> under <Link href="https://github.com/google/material-design-icons/blob/master/LICENSE" className="creditLicence">Apache License 2.0</Link>  </li>
+                        
+                
+              
+                           <li>Logo for <strong>BP - WebDev</strong> made by Avantella</li>
                     </ul>
 
 

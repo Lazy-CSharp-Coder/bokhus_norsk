@@ -10,15 +10,14 @@ import { submitUserData } from "./submitToSanity";
 import Image from "next/image";
 // react icons
 import { genresDef } from "./registerSchema";
-import { IoMailOutline, IoEarthSharp } from "react-icons/io5";
+
 import { LuLetterText } from "react-icons/lu";
 import { LiaSwatchbookSolid } from "react-icons/lia";
 import { TbWorldWww } from "react-icons/tb";
 import { GiNewspaper } from "react-icons/gi";
 import { FaBookOpenReader } from "react-icons/fa6";
-import { FaRegUser } from "react-icons/fa";
 import { FaUserLarge } from "react-icons/fa6";
-import { CiUser } from "react-icons/ci";
+
 
 import { languageOptions } from "./registerSchema";
 
