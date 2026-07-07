@@ -11,7 +11,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { FaUserCheck } from "react-icons/fa6";
 import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 
-import { GoogleReCAPTCHA } from "./GoogleReCAPTCHA";
+import { GoogleReCAPTCHA } from "../../components/common/GoogleReCAPTCHA";
 import Image from "next/image";
 
 

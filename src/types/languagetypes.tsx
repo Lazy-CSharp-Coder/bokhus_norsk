@@ -12,9 +12,6 @@ export interface HeroPageText
     quotesBottom : string[]
 }
 
-
-
-
 export interface LanguageText
 {
     language: string,

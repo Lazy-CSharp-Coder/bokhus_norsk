@@ -5,15 +5,6 @@ import { SeriesCardLarge } from "../../components/common/SeriesCardLarge";
 import type { SeriesCardProps, Series } from "@/types/booktypes";
 import { SeriesPageListProps } from "./SeriesPageTypes";
 
-export function setRouteToGo(serie: Series) 
-{
-    const params = new URLSearchParams();
-    console.log("uid from sanity is  " + serie._id);
-    params.set("message", serie._id);
-    return (`/DynamicSeriePage?${params.toString()}`);
-}
-
-
 export async function SeriesPageList({ seriesArray }: SeriesPageListProps)
 {
     const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesArray);

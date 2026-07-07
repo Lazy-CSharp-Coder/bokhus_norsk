@@ -1,20 +1,10 @@
 import type { Author, Series, SeriesCardProps } from "@/types/booktypes";
 import { AuthorCard } from "./AuthorCard";
 import { SeriesCard } from "./SeriesCard";
-import { SeriesHeading } from "./SeriesHeading";
+import { AuthorSeriesHeading } from "../../app/DynamicAuthorPage/components/AuthorSeriesHeading";
 import { client } from "@/sanity/client";
 import { urlFor } from "@/lib/urlFor";
-import { SanityReference } from "next-sanity";
-import { get } from "http";
-export const language = "English";
 
-export function setRouteToGo(serie : Series) 
-{
-    const params = new URLSearchParams();
-        console.log("uid from sanity is  " + serie._id);
-        params.set("message", serie._id);
-        return (`/DynamicSeriePage?${params.toString()}`);
-}
 
 export default async function AuthorSection({ author }: { author: Author; })
 {
@@ -56,7 +46,7 @@ export default async function AuthorSection({ author }: { author: Author; })
 
             <section className="authorSection flex">
                 <AuthorCard _id={_id} profileImage={profileImage} name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre}/>
-                <SeriesHeading authorName={name} animationDelay={200} />
+                <AuthorSeriesHeading authorName={name} animationDelay={200} />
 
                 <ul className="seriesCardList flex">
                     {seriesAuthor.length > 0 &&

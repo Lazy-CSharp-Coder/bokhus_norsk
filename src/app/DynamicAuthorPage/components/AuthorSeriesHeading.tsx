@@ -1,6 +1,7 @@
 import { SeriesHeadingProps } from "@/types/booktypes";
+import "./AuthorSeriesHeading.module.css";
 
-export function SeriesHeading({authorName, animationDelay} : SeriesHeadingProps)
+export function AuthorSeriesHeading({authorName, animationDelay} : SeriesHeadingProps)
 {
     return(
     <div className="seriesHeadingDiv fadeInFromBelowAnim" style={{animationDelay :`${animationDelay}ms`, animationDuration: "0.6s"}}>
