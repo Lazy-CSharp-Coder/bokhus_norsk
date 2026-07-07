@@ -1,4 +1,5 @@
 import type { BestSellerListProps } from "@/types/booktypes";
+import "./BestSellerList.module.css";
 
 export function BestSellerList({ bestSellerIntro, bestSellerList }: BestSellerListProps)
 {

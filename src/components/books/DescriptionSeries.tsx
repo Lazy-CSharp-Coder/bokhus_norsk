@@ -1,5 +1,5 @@
 import { BackgroundImage } from "../common/BackgroundImage";
-import { ByAuthor } from "./ByAuthor";
+import { ByAuthor } from "../common/ByAuthor";
 import { DescriptionSeriesProps } from "@/types/booktypes";
 import { RecommendedFor } from "./RecommendeFor";
 import Image from "next/image";

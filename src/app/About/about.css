@@ -1,14 +1,3 @@
-body {
-display: flex;
-justify-content:top;
-align-items: left;
-height: 100vh;
- /* background: #031211;
-background: -moz-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
-background: -webkit-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
-background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  */
-
-}
 
 .aboutBackground {
     position: fixed;
@@ -38,14 +27,14 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
     height: 100%;
     /* padding: rem 0rem; */
     padding-left: 12rem;
-  padding-bottom: 4rem;
+
      color: rgba(221, 221, 221, 1);
     font-family: var(--robotoFont);
 }
 
 .aboutSection {
     flex-direction: column;
-    width: 40%;
+    width: 43%;
     align-items: left;
     gap: 1rem;
 }
@@ -54,7 +43,7 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
     font-size: 2rem;
     color: white;
 
-    padding: 1rem 0;
+    padding-bottom: 1rem;
 }
 
 .aboutTextDiv {
@@ -64,7 +53,7 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
 }
 
 .aboutText {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     padding: 0;
     margin: 0;
     line-height: 1.3;
@@ -72,7 +61,7 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
 
 .bokhusComWrapperAbout {
     justify-content:center;
-    padding-top: 1.4rem;
+    padding-top: 1.2rem;
 
 
     /* margin-right: 0.5rem; */
