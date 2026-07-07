@@ -38,12 +38,12 @@ export default function About()
                         <p key={index + "#About#"} className="aboutText" style={{ animationDelay: `${index * animInc}ms` }}>{item}</p>
 
                     )}
-                    <QuotesBottom fontSize="1.5rem" />
+                    <QuotesBottom fontSize="1.35rem" />
                 </div>
                 <ExpandingLine key={"AboutLine2"} lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
 
                 <div className="bokhusComWrapperAbout fadeInAnim" style={{ animationDelay: "0.6s" }}>
-                    <BokHusCom fontSize="1.45rem" />
+                    <BokHusCom fontSize="1.2rem" />
                 </div>
             </section>
 

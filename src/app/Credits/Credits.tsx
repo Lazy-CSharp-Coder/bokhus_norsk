@@ -44,7 +44,7 @@ export function Credits()
                         <li><strong>Icon8 Line Awesome</strong>  (la) by <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLink">Icons8</Link> under <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLicence">MIT Licence</Link>  </li>
 
 
-                        <li>Logo for <strong>BP Web Development</strong> (BP WebDev) made by Avantella</li>
+                        <li>Logo for <strong>BP Web Development</strong> (WebDev) made by Avantella</li>
                     </ul>
 
 
@@ -58,7 +58,7 @@ export function Credits()
 
                     <ul className="legalList">
 
-                        <li> text</li>
+                        <li> Fouintain pen image by Aaron Burden at Unsplash https://unsplash.com/photos/fountain-pen-on-black-lined-paper-y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink</li>
                         <li> images</li>
                         <li>book covers</li>
                         <li>graphics</li>

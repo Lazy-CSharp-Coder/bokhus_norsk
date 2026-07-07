@@ -1,6 +1,5 @@
 import type { Author, Series } from "@/types/booktypes";
 import { AuthorCard } from "../../Authors/components/AuthorCard";
-import { SeriesCard } from "../../../components/authors/SeriesCard";
 import { AuthorSeriesHeading } from "./AuthorSeriesHeading";
 import { client } from "@/sanity/client";
 import { urlFor } from "@/functions/urlFor";
@@ -20,28 +19,6 @@ export default async function AuthorSection({ author }: { author: Author; })
     const animInc: number = 200;
     const animWaitForMain: number = 300;
 
-    // const setRouteToGo = (serie: Series) =>
-    // {
-    //     const params = new URLSearchParams();
-    //     console.log("uid from sanity is  " + serie._id);
-    //     params.set("message", serie._id);
-    //     return (`/GeneralSeriePage?${params.toString()}`);
-
-    // };
-
-    const getAuthorsForSeries = async (serie: Series): Promise<string[]> =>
-    {
-        const uids: string[] = serie.authorUids.map((item) => item._ref);
-        const AUTHORS_QUERY = `*[_type == "Author" && _id in &authorUids]`;
-        const authorObjects: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsUids: uids });
-        if (!authorObjects)
-        {
-            console.error("could not find authors for series");
-            return [];
-        }
-        const authorsStrings: string[] = authorObjects.map((item) => item._id);
-        return authorsStrings;
-    };
     const array: string[] = [author.name];
     const animDelayInc: number = 200;
     return (

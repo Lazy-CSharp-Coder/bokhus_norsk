@@ -5,7 +5,7 @@ import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { client } from "@/sanity/client";
 
 // css module import
-import "./DymanicSeriePage.module.css";
+import "./DynamicSeriePage.module.css";
 import type { PageProps } from "@/types/types";
 import { urlFor } from "@/functions/urlFor";
 

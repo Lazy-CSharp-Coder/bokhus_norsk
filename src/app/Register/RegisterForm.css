@@ -1,14 +1,5 @@
 @import "./submit.css";
 
-:root {
-    --regFontSize: 1.1rem;
-    --regBackground: rgba(20, 20, 20, 0.9);
-    --inputBackground: rgb(34, 34, 34);
-    --borderIconColor: rgb(125, 88, 33);
-    --borderReg: 1px solid var(--borderIconColor);
-    --borderRadiusReg: 5px;
-}
-
 .registerSection {
     display: flex;
     flex-direction: column;
@@ -499,19 +490,4 @@ fieldset {
     border-top: 1px solid var(--borderIconColor);
 
     /* margin-right: 0.5rem; */
-}
-
-
-.submitButton {
-    margin: 1rem 0;
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.5rem;
-    color: var(--myWhiteColor);
-    border: 2px outset var(--borderIconColor);
-    background-color: var(--inputBackground);
-}
-
-.submitButton:active{
-    border: 2px inset var(--borderIconColor);
 }
