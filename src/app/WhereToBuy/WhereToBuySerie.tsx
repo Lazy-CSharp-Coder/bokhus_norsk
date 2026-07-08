@@ -47,13 +47,11 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
   // }, [seriesListState]);
 
-  const handleLinkClick = (url :string | undefined) =>
+  const handleLinkClick = (url: string | undefined) =>
   {
-    if(url != undefined) window.open(url, '_blank', 'noopener,noreferrer');
-    else console.log("No buy link url defined for book.")
-
-
-  }
+    if (url != undefined) window.open(url, '_blank', 'noopener,noreferrer');
+    else console.log("No buy link url defined for book.");
+  };
 
   const getBookNumberInString = (numberInSeries: number): string =>
   {
@@ -74,7 +72,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
           </div>
 
         </div>
-     
+
         <span key={seriesListState} className="fadeInAnim" onClick={handleHeaderClick} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
           <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
 
@@ -96,10 +94,10 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
 
-   <div className="buyAvailableDiv">
-   
+            <div className="buyAvailableDiv">
 
-        </div>
+
+            </div>
           </li>
 
         )}
