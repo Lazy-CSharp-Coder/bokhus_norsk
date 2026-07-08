@@ -8,6 +8,7 @@
     margin-top: 4rem;
     margin-bottom: 5.5rem;
 
+
 }
 
 .whereToBuySection {
@@ -101,5 +102,5 @@ color: var(--borderIconColor)
 .buySeriesList {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 1rem;
 }

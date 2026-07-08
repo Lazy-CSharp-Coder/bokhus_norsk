@@ -16,3 +16,5 @@ export interface SeriesPageListProps
 {
     seriesArray: Series[];
 }
+
+

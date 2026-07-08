@@ -2,20 +2,32 @@ import { client } from "@/sanity/client";
 import { Series } from "@/types/booktypes";
 import { WhereToBuySerie } from "./WhereToBuySerie";
 import { TbExternalLink } from "react-icons/tb";
-import { LuShoppingCart } from "react-icons/lu";
 import "./WhereToBuy.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
-import { BokHusCom } from "@/components/common/BokHusCom";
 
+import type { WhereToBuySeriesProps } from "./WhereToBuyTypes";
+import { getWhereToBuyPropsArray } from "./getWhereToBuyPropsArray";
 export default async function WhereToBuy() 
 {
 
   const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
-  const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
+
+  // fecth all Series
   const series = await client.fetch<Series[]>(SERIES_QUERY);
 
   if (!series) return (<h2 className="entiresNotFoundText">No series found in database</h2>);
+
+  const buyArray: WhereToBuySeriesProps[] = await getWhereToBuyPropsArray(series);
+  if (buyArray.length < 0) return (
+    <div className="entriesNotFoundText">
+      No entires found
+    </div>
+
+  );
+
+  const animInc = 200;
+
   return (
     <>
 
@@ -62,8 +74,10 @@ export default async function WhereToBuy()
 
           <ul className="buySeriesList">
             {
-              series.map((item) =>
-                <WhereToBuySerie key={item._id + "WhereToBuy"} serieSelected={item} />
+              buyArray.map((item, index) =>
+                <WhereToBuySerie key={index + "WhereToBuySerieComponent"} serieSelected={item.serieSelected} 
+                  authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={`${animInc*index}ms`} />
+           
               )
             }
           </ul>

@@ -18,24 +18,35 @@
 
 }
 
+.whereToBuyIconInfoWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.7rem;
+
+}
+
 .whereToBuySerieHeadingDiv {
     display: flex;
     flex-direction: row;
-    gap: 1.7rem;
+    justify-content: space-between;
+    /* gap: 1.7rem; */
     align-items: center;
     font-size: 1rem;
     color: var(--myWhiteColor);
     padding: 1rem 1.5rem;
+    padding-right: 3rem;
     width: 100%;
     background-color: var(--regBackground);
     border: 1px solid var(--borderIconColor);
     border-radius: 5px;
+    
 }
 
 
 .buyHeadingSerie {
     font-size: 1.4rem;
-
+    width: fit-content;
 
 }
 
@@ -45,6 +56,17 @@
     gap: 0.1rem;
 }
 
+.buyBooksIcon {
+    color: rgb(99, 98, 98);
+}
+
+.buyOpenCloseArrow {
+     color: rgb(190, 190, 190);
+
+}
+.buyOpenCloseArrowSpan {
+
+}
 
 /* classes for list item and children */
 
@@ -76,9 +98,6 @@
     object-fit: contain;
 }
 
-.buyBooksIcon {
-    color: rgb(99, 98, 98);
-}
 
 .buyListBookInfo {
     display: flex;
