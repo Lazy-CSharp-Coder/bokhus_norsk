@@ -28,6 +28,7 @@ interface SortHandler
 export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
 {
     const [sortHandler, setSortHandler] = useState<SortHandler>({ mode: "Serie", list: buyArray, direction: "Ascending" });
+    const [isSortMenuOpen, setSortMenuOpen] = useState<boolean>(false);
     const animInc = 200;
 
     const handleSortClick = (mode: SortMode, direction?: SortDirection) =>
@@ -56,7 +57,8 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const { mode, direction} = sortHandler;
     return (
         <ul className="buySeriesList">
-            <div className="sortDiv"><div className="sortHeader">SORT OPTIONS</div>
+            <div className="sortDiv"><div className="sortHeader">SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? "sortUp" : "sortDown"} sortCollapseIcon fadeInAnim`}/></span></div>
+              {isSortMenuOpen &&
                 <div className="sortButtonContainer">
                     <div className="modeDiv">
                         <button className={`sortButton ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className="sortIcon"/> by Serie</button>
@@ -75,6 +77,7 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
                     </div>
 
                 </div>
+}
 
             </div>
 
