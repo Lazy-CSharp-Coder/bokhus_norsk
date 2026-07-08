@@ -18,17 +18,34 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
   const listHeaderRef = useRef<HTMLDivElement>(null);
 
-
-  useEffect(() => 
+  const handleHeaderClick = () =>
   {
-    if (!listHeaderRef.current) return;
-
-    if (seriesListState == "Closed")
+    setSeriesListState((prev) =>
     {
-      listHeaderRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
 
-  }, [seriesListState]);
+      if (prev == "Open" && listHeaderRef.current)
+      {
+        requestAnimationFrame(() =>
+        {
+          listHeaderRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        return "Closed";
+      }
+      return "Open";
+    });
+
+  };
+
+  // useEffect(() => 
+  // {
+  //   if (!listHeaderRef.current) return;
+
+  //   if (seriesListState == "Closed")
+  //   {
+  //     listHeaderRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  //   }
+
+  // }, [seriesListState]);
 
   const getBookNumberInString = (numberInSeries: number): string =>
   {
@@ -49,7 +66,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
           </div>
 
         </div>
-        <span key={seriesListState} className="fadeInAnim" onClick={() => setSeriesListState((prev) => prev == "Closed" ? "Open" : "Closed")} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
+        <span key={seriesListState} className="fadeInAnim" onClick={() => handleHeaderClick} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
           <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
 
         </span>
