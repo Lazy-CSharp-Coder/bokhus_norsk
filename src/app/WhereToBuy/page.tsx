@@ -1,7 +1,16 @@
+import { client } from "@/sanity/client";
+import { Series } from "@/types/booktypes";
+
 import "./WhereToBuy.module.css";
 
-export default function WhereToBuy() 
+export default async function WhereToBuy() 
 {
+  
+    const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
+    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
+    const series = await client.fetch<Series[]>(SERIES_QUERY);
+  
+    if (!series) return (<h2 className="entiresNotFoundText">No series found in database</h2>);
   return (
     <>
 
@@ -16,4 +25,31 @@ export default function WhereToBuy()
     </>
 
   );
+}
+
+interface WhereToBuySeriesProps 
+{
+   serieSelected : Series,
+   
+}
+
+export async function WhereToBuySerie({serieSelected} : WhereToBuySeriesProps)
+{
+   // fetch authors and books here.
+
+    return(
+      <article className="whereToBuySerieArticle">
+        <div className="whereToBuySerieHeadingDiv">
+
+        </div>
+
+        <ul className="whereToBuyBooksInSerieList">
+
+
+
+        </ul>
+
+      </article>
+      
+      )
 }

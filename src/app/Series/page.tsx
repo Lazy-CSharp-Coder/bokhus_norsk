@@ -11,7 +11,7 @@ export default async function Series()
   const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
   const series = await client.fetch<Series[]>(SERIES_QUERY);
 
-  if (!series) return (<h2>No series found in database</h2>);
+  if (!series) return (<h2 className="entiresNotFoundText">No series found in database</h2>);
 
   return (
     <>
