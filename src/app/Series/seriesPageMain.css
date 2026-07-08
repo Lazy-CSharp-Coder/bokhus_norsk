@@ -16,9 +16,9 @@
 .seriesPage {
     flex-direction: column;
     align-items: center;
-    gap:2rem;
-    margin-top: 2rem;
-        padding-bottom: 5rem;
+    gap: 2rem;
+    margin-top: 4rem;
+    padding-bottom: 5rem;
 }
 
 .seriesPageSection {
@@ -30,7 +30,7 @@
 }
 
 .seriesPageDescriptionArticle {
-        width: 100%;
+    width: 100%;
     gap: 2rem;
 
     display: flex;
@@ -38,11 +38,6 @@
     align-items: center;
     justify-content: center;
     font-family: var(--libreFont);
-       
-}
-
-.seriesPageHeadingLineWrapper {
-
 
 }
 
@@ -59,13 +54,13 @@
     font-size: 2.5rem;
     color: var(--myWhiteColor);
     padding-bottom: 1rem;
-    
-     
-     
+
+
+
 }
 
 .seriesPageText {
-      line-height: 1.4;
+    line-height: 1.4;
     font-size: 1.5rem;
 
 
@@ -80,4 +75,3 @@
     list-style: none;
 
 }
-
