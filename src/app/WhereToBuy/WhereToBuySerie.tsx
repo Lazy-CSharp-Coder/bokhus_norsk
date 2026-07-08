@@ -10,13 +10,16 @@ import { numberToWords } from "convert-number-to-words";
 import { AvailableIn } from "./AvailableIn";
 import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
-import { redirect } from "next/navigation";
+import { TbExternalLink } from "react-icons/tb";
+import { GoLinkExternal } from "react-icons/go";
+
 
 type SerieListState = "Open" | "Closed";
 
 export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay }: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
+
   const listHeaderRef = useRef<HTMLDivElement>(null);
   const handleHeaderClick = () =>
   {
@@ -93,10 +96,8 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               </div>
               <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
-
+            {item.buyLink != undefined && <GoLinkExternal  className="buyLinkArrow" size="2.5rem"/> }
             <div className="buyAvailableDiv">
-
-
             </div>
           </li>
 
