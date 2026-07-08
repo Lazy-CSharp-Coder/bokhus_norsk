@@ -1,11 +1,23 @@
-.sortByDiv {
+.sortDiv {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--inputBackground);
 
+}
+
+.sortButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
 }
 
 .sortButton {
     padding : 1rem 2rem;
+    cursor: pointer;
     
 }

@@ -52,7 +52,7 @@ export default async function WhereToBuy()
             <div className="amazonHeadingIconWrapper flex">
               <h3 className="amazonHeading">Bokhus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
 
-              <GoLinkExternal size="2rem" className="amazonIconLink" />
+              <GoLinkExternal size="1.9rem" className="amazonIconLink" />
             </div>
 
 
