@@ -66,6 +66,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
           </div>
 
         </div>
+     
         <span key={seriesListState} className="fadeInAnim" onClick={handleHeaderClick} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
           <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
 
@@ -87,7 +88,10 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
 
+   <div className="buyAvailableDiv">
+   
 
+        </div>
           </li>
 
         )}
