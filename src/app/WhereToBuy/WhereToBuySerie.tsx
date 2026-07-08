@@ -96,7 +96,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               </div>
               <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
-            {item.buyLink != undefined ? <GoLinkExternal  className="buyLinkArrow" size="2.3zgrem"/> : <PiGlobeSimpleXLight  className="noLinkArrow" size="2.5rem"/> }
+            {item.buyLink != undefined ? <GoLinkExternal  className="buyLinkArrow" size="2rem"/> : <PiGlobeSimpleXLight  className="noLinkArrow" size="2.1rem"/> }
             <div className="buyAvailableDiv">
             </div>
           </li>
