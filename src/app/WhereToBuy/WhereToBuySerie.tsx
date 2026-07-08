@@ -49,8 +49,9 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
   const handleLinkClick = (url :string | undefined) =>
   {
-      if(url != undefined) redirect(url, "push");
-      else console.log("No buy url registered");
+    if(url != undefined) window.open(url, '_blank', 'noopener,noreferrer');
+    else console.log("No buy link url defined for book.")
+
 
   }
 
