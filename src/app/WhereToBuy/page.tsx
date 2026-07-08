@@ -9,6 +9,7 @@ import { BackgroundImage } from "@/components/common/BackgroundImage";
 
 import type { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { getWhereToBuyPropsArray } from "./getWhereToBuyPropsArray";
+import { WhereToBuyList } from "./WhereToBuyList";
 export default async function WhereToBuy() 
 {
 
@@ -72,16 +73,8 @@ export default async function WhereToBuy()
               Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
             </p>
           </div>
+          <WhereToBuyList buyArray={buyArray}/>
 
-          <ul className="buySeriesList">
-            {
-              buyArray.map((item, index) =>
-                <WhereToBuySerie key={index + "WhereToBuySerieComponent"} serieSelected={item.serieSelected} 
-                  authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={`${animInc*index}ms`} />
-           
-              )
-            }
-          </ul>
 
         </section>
       </main>
