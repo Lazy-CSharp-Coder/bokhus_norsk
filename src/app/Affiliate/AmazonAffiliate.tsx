@@ -18,7 +18,7 @@ export function AmazonAffilate()
                         This website contains links to books published by our company and sold through Amazon.
 
                     </p>
-                    <strong>As an Amazon Associate I earn from qualifying purchases.</strong>
+                    <strong>As an Amazon Associate we earn from qualifying purchases.</strong>
                     <p className="legalText">
                         If you purchase one of our books through an Amazon link on this website, we may receive both the normal proceeds from the sale of the book and an Amazon Associates commission, at no additional cost to you.
                     </p>
