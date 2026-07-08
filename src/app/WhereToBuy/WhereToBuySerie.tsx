@@ -10,7 +10,7 @@ import { numberToWords } from "convert-number-to-words";
 import { AvailableIn } from "./AvailableIn";
 import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
-import { TbExternalLink } from "react-icons/tb";
+import { PiGlobeSimpleXLight } from "react-icons/pi";
 import { GoLinkExternal } from "react-icons/go";
 
 
@@ -96,7 +96,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               </div>
               <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
-            {item.buyLink != undefined && <GoLinkExternal  className="buyLinkArrow" size="2.5rem"/> }
+            {item.buyLink != undefined ? <GoLinkExternal  className="buyLinkArrow" size="2.3zgrem"/> : <PiGlobeSimpleXLight  className="noLinkArrow" size="2.5rem"/> }
             <div className="buyAvailableDiv">
             </div>
           </li>

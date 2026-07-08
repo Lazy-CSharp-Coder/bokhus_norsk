@@ -141,11 +141,21 @@ position: relative;
     color: black;
 }
 
-.buyLinkArrow {
+.buyLinkArrow, .noLinkArrow {
     position: absolute;
     right: 5%;
     top: 50%;
     height: fit-content;
     transform: translateY(-50%);
-    color: rgb(150, 150, 150)
+
+}
+
+.buyLinkArrow {
+    color: rgba(135, 206,260, 0.4);
+    /* background-color: lightskyblue; */
+    
+}
+
+.noLinkArrow {
+ color: rgba(255, 0, 0, 0.3);
 }
