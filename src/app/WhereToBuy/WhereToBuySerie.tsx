@@ -38,7 +38,9 @@ export async function WhereToBuySerie({ serieSelected }: WhereToBuySeriesProps)
 
       <ul className="whereToBuyBooksList">
       {bookList.map((item, index)=> 
-      <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem">{item.bookTitle}</li>)}
+      <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem">{item.bookTitle}</li>
+      
+      )}
 
 
       </ul>
