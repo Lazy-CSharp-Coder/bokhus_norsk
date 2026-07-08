@@ -10,14 +10,17 @@ import { numberToWords } from "convert-number-to-words";
 import { AvailableIn } from "./AvailableIn";
 import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
+import { PiGlobeSimpleXLight } from "react-icons/pi";
+import { GoLinkExternal } from "react-icons/go";
+
 
 type SerieListState = "Open" | "Closed";
 
 export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay }: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
-  const listHeaderRef = useRef<HTMLDivElement>(null);
 
+  const listHeaderRef = useRef<HTMLDivElement>(null);
   const handleHeaderClick = () =>
   {
     setSeriesListState((prev) =>
@@ -47,6 +50,12 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
   // }, [seriesListState]);
 
+  const handleLinkClick = (url: string | undefined) =>
+  {
+    if (url != undefined) window.open(url, '_blank', 'noopener,noreferrer');
+    else console.log("No buy link url defined for book.");
+  };
+
   const getBookNumberInString = (numberInSeries: number): string =>
   {
     const tempStr = numberToWords(numberInSeries);
@@ -66,6 +75,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
           </div>
 
         </div>
+
         <span key={seriesListState} className="fadeInAnim" onClick={handleHeaderClick} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
           <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
 
@@ -75,7 +85,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
       <ul className="whereToBuyBooksList">
         {seriesListState == "Open" && bookList.map((item, index) =>
-          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${animInc * index}ms` }}>
+          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${animInc * index}ms` }} onClick={() => handleLinkClick(item.buyLink)} >
             <div className="buyListItemImageDiv">
               <Image className="buyImageBook" src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
             </div>
@@ -86,8 +96,9 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               </div>
               <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
-
-
+            {item.buyLink != undefined ? <GoLinkExternal  className="buyLinkArrow" size="2rem"/> : <PiGlobeSimpleXLight  className="noLinkArrow" size="2.1rem"/> }
+            <div className="buyAvailableDiv">
+            </div>
           </li>
 
         )}

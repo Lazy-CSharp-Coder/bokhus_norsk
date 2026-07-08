@@ -2,6 +2,7 @@ import { client } from "@/sanity/client";
 import { Series } from "@/types/booktypes";
 import { WhereToBuySerie } from "./WhereToBuySerie";
 import { TbExternalLink } from "react-icons/tb";
+import { GoLinkExternal } from "react-icons/go";
 import "./WhereToBuy.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
@@ -50,7 +51,7 @@ export default async function WhereToBuy()
             <div className="amazonHeadingIconWrapper flex">
               <h3 className="amazonHeading">Bokhus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
 
-              <TbExternalLink size="2rem" className="amazonIconLink" />
+              <GoLinkExternal size="2rem" className="amazonIconLink" />
             </div>
 
 
