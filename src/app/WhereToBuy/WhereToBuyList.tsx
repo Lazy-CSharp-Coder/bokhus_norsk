@@ -4,6 +4,8 @@ import { WhereToBuySerie } from "./WhereToBuySerie";
 import { useState } from "react";
 import "./WhereToBuyList.module.css";
 import { BsPersonFill } from "react-icons/bs";
+import { TbBooks } from "react-icons/tb";
+import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
 // muligens release date og genere senere
 
 type SortMode = "Serie" | "Author";
@@ -56,11 +58,11 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
             <div className="sortDiv">Sort by :
                 <div className="sortButtonContainer">
                     <div className="modeDiv">
-                        <button className="sortButton" onClick={() => sortHandler.mode != "Serie" && handleSortClick("Serie")}><BsPersonFill size="1rem" className="sortIcon"/> by Serie</button>
-                        <button className="sortButton" onClick={() => sortHandler.mode != "Author" && handleSortClick("Author")}>by Author</button></div>
+                        <button className="sortButton" onClick={() => sortHandler.mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className="sortIcon"/> by Serie</button>
+                        <button className="sortButton" onClick={() => sortHandler.mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className="sortIcon"/> by Author</button></div>
                     <div className="directionDiv">
-                        <button className="sortButton" onClick={() => sortHandler.direction != "Ascending" && handleSortClick(sortHandler.mode, "Ascending")}>Ascending</button>
-                        <button className="sortButton" onClick={() => sortHandler.direction != "Descending" && handleSortClick(sortHandler.mode, "Descending")}>Descending</button>
+                        <button className="sortButton" onClick={() => sortHandler.direction != "Ascending" && handleSortClick(sortHandler.mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className="sortIcon"/> Ascending</button>
+                        <button className="sortButton" onClick={() => sortHandler.direction != "Descending" && handleSortClick(sortHandler.mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Descending</button>
                     </div>
 
                 </div>
