@@ -5,10 +5,14 @@ import { urlFor } from "@/functions/urlFor";
 import "./WhereToBuySerie.module.css";
 import { ByAuthor } from "@/components/common/ByAuthor";
 import { ImBooks } from "react-icons/im";
+import { numberToWords } from "convert-number-to-words";
+import { mime } from "zod";
+import { AvailableIn } from "./AvailableIn";
 
 interface WhereToBuySeriesProps 
 {
   serieSelected: Series,
+  authorsStringArray : string[]
 
 }
 
@@ -35,17 +39,25 @@ export async function WhereToBuySerie({ serieSelected }: WhereToBuySeriesProps)
     return <h2>Books for series not found in database</h2>;
 
   }
-  const authorStrArray : string[] = authors.map((item) => item.name);
+  const authorStrArray: string[] = authors.map((item) => item.name);
+
+  const getBookNumberInString = (numberInSeries: number): string =>
+  {
+    const tempStr = numberToWords(numberInSeries);
+    return tempStr.charAt(0).toUpperCase() + tempStr.slice(1);
+  };
+
+  const availabilityTable = ["e-book", "paperback", "hardcover"];
 
   return (
     <article className="whereToBuySerieArticle">
       <div className="whereToBuySerieHeadingDiv">
-        <ImBooks size="4.4rem" className="buyBooksIcon"/> 
+        <ImBooks size="4.4rem" className="buyBooksIcon" />
         <div className="buyHeadingAuthorWrapper">
-            <h4 className="buyHeadingSerie">  {serieSelected.seriesName}</h4>
-        <ByAuthor authors={authorStrArray}/>
-          </div>   
-      
+          <h4 className="buyHeadingSerie">  {serieSelected.seriesName}</h4>
+          <ByAuthor authors={authorStrArray} />
+        </div>
+
 
       </div>
 
@@ -54,7 +66,15 @@ export async function WhereToBuySerie({ serieSelected }: WhereToBuySeriesProps)
           <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem">
             <div className="buyListItemImageDiv">
               <Image className="buyImageBook" src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
-            </div>{item.bookTitle}
+            </div>
+            <div className="buyListBookInfo">
+       
+              <div className="buyTitleBookNumberWrapper">       <span className="buyTitleBook"> {item.bookTitle} </span>
+                <div className="">Book <span className="buyListBookNumber">{getBookNumberInString(item.bookInSeries)}</span> of the Series </div>
+              </div>
+              <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
+            </div>
+
 
           </li>
 

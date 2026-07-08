@@ -6,6 +6,8 @@
     width: 100%;
     gap:2rem;
     margin-top: 4rem;
+    margin-bottom: 5.5rem;
+
 }
 
 .whereToBuySection {
@@ -94,4 +96,10 @@ color: var(--borderIconColor)
 .amazonTextBottom {
     padding-top: 1rem;
     border-top: 1px solid var(--myWhiteColor);
+}
+
+.buySeriesList {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
 }

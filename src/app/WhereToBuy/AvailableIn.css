@@ -1,0 +1,22 @@
+.availabilityList {
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    
+    }
+
+.availabilityItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    padding: 0.3rem 0.7rem;
+    border : 1px solid white;
+    width: max-content;
+    border-radius: 3px;
+    background-color: rgba(221, 221, 221, 0.5);
+    color: black;
+
+}
+
