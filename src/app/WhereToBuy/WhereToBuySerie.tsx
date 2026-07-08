@@ -40,9 +40,12 @@ export async function WhereToBuySerie({ serieSelected }: WhereToBuySeriesProps)
   return (
     <article className="whereToBuySerieArticle">
       <div className="whereToBuySerieHeadingDiv">
-        <ImBooks size="2.7rem" className="buyBooksIcon"/>    
-        <h4 className="buyHeadingSerie">  {serieSelected.seriesName}</h4>
+        <ImBooks size="4.4rem" className="buyBooksIcon"/> 
+        <div className="buyHeadingAuthorWrapper">
+            <h4 className="buyHeadingSerie">  {serieSelected.seriesName}</h4>
         <ByAuthor authors={authorStrArray}/>
+          </div>   
+      
 
       </div>
 
