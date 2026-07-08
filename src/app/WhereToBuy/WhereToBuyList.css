@@ -1,7 +1,7 @@
 .sortDiv {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction:column;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     padding: 1rem;
@@ -14,11 +14,32 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 1rem;
+    width: 100%;
+}
+
+.modeDiv {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+}
+.directionDiv {
+  display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    width: 100%;
 }
 
 .sortButton {
     padding : 1rem 2rem;
-    width: 5rem;
+    width: 10rem;
     cursor: pointer;
     
 }
+
+.sortIcon {
+    color: red;
+}
+
+
+
