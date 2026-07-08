@@ -10,6 +10,7 @@ import { numberToWords } from "convert-number-to-words";
 import { AvailableIn } from "./AvailableIn";
 import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
+import { redirect } from "next/navigation";
 
 type SerieListState = "Open" | "Closed";
 
@@ -17,7 +18,6 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
   const listHeaderRef = useRef<HTMLDivElement>(null);
-
   const handleHeaderClick = () =>
   {
     setSeriesListState((prev) =>
@@ -46,6 +46,13 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   //   }
 
   // }, [seriesListState]);
+
+  const handleLinkClick = (url :string | undefined) =>
+  {
+      if(url != undefined) redirect(url, "push");
+      else console.log("No buy url registered");
+
+  }
 
   const getBookNumberInString = (numberInSeries: number): string =>
   {
@@ -76,7 +83,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
       <ul className="whereToBuyBooksList">
         {seriesListState == "Open" && bookList.map((item, index) =>
-          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${animInc * index}ms` }}>
+          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${animInc * index}ms` }} onClick={() => handleLinkClick(item.buyLink)} >
             <div className="buyListItemImageDiv">
               <Image className="buyImageBook" src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
             </div>
