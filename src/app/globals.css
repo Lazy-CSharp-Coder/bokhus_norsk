@@ -112,6 +112,11 @@ a {
   text-decoration: none;
 }
 
+.entriesNotFoundText {
+    margin: 3rem 0rem;
+    font-size : 2rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
