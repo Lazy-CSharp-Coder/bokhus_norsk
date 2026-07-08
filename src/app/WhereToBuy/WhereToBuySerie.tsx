@@ -29,9 +29,9 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
         {
           listHeaderRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
         });
-        return "Closed";
+
       }
-      return "Open";
+      return prev == "Open" ? "Closed" :"Open";
     });
 
   };
