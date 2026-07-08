@@ -28,10 +28,12 @@ export default async function WhereToBuy()
                                <ExpandingLine key={"BuyLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                            </div> 
          
-
+<div className="buyIntroContainer">
+  
         <p className="whereToBuyText"> Here are links to websites where you can purchase books and series from us. </p>
         <p className="whereToBuyText">Should you experience some trouble with the links or other issues, please use the contact form to tell us about it.</p>
 
+</div>
         <div className="amazonDiv fadeInAnim">
           <div className="amazonHeadingIconWrapper flex">
             <h3 className="amazonHeading">Bokhus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
