@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { urlFor } from "@/functions/urlFor";
 import "./WhereToBuySerie.module.css";
@@ -11,13 +11,24 @@ import { AvailableIn } from "./AvailableIn";
 import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 
-
-
 type SerieListState = "Open" | "Closed";
 
 export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay }: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
+  const listHeaderRef = useRef<HTMLDivElement>(null);
+
+
+  useEffect(() => 
+  {
+    if (!listHeaderRef.current) return;
+
+    if (seriesListState == "Closed")
+    {
+      listHeaderRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+  }, [seriesListState]);
 
   const getBookNumberInString = (numberInSeries: number): string =>
   {
@@ -27,8 +38,8 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
   const animInc = 200;
   return (
-    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? animationDelay : "" }}>
-      <div className="whereToBuySerieHeadingDiv">
+    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? animationDelay : "" }} >
+      <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef}>
         <div className="whereToBuyIconInfoWrapper">
           <ImBooks size="4.4rem" className="buyBooksIcon" />
           <div className="buyHeadingAuthorWrapper">
@@ -38,7 +49,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
           </div>
 
         </div>
-        <span key={seriesListState} className="fadeInAnim" onClick={() => setSeriesListState((prev) => prev == "Closed" ? "Open" : "Closed")} style={{transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s"}}>
+        <span key={seriesListState} className="fadeInAnim" onClick={() => setSeriesListState((prev) => prev == "Closed" ? "Open" : "Closed")} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
           <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
 
         </span>
@@ -46,8 +57,8 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
       </div>
 
       <ul className="whereToBuyBooksList">
-        {seriesListState == "Open"  && bookList.map((item, index) =>
-          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{animationDelay : `${animInc*index}ms`}}>
+        {seriesListState == "Open" && bookList.map((item, index) =>
+          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${animInc * index}ms` }}>
             <div className="buyListItemImageDiv">
               <Image className="buyImageBook" src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
             </div>
