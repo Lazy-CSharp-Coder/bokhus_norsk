@@ -57,6 +57,7 @@ export default async function WhereToBuy()
             Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
           </p>
         </div>
+            <ExpandingLine key={"BuyLine"} lineSize={2} color="var(--bokhusRootsColor)" />
         {
           series.map((item) =>
             <WhereToBuySerie key={item._id + "WhereToBuy"} serieSelected={item} />

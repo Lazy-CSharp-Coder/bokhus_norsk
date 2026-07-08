@@ -1,12 +1,61 @@
 .whereToBuySerieArticle {
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     
 }
 
 .whereToBuyBooksList {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
     align-items: left;
-    
+    width: 100%;
+    padding: 0 1rem;
+
+}
+.whereToBuyBookListItem {
+ display: flex;
+ flex-direction: row;
+ gap: 2rem;
+ align-items: center;   
+}
+
+.buyListItemImageDiv {
+    position: relative;
+    width: 5rem;
+    height: auto;
+    aspect-ratio: 2/3;
+    background: red;
+        -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.8);
+}
+
+.buyImageBook {
+    object-fit: contain;
+}
+
+.buyBooksIcon {
+    color: rgb(99, 98, 98);
+}
+
+.whereToBuySerieHeadingDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--myWhiteColor);
+    padding: 1.5rem 1.5rem; 
+    width: 100%;
+    background-color: var(--regBackground);
+    border: 1px solid var(--borderIconColor);
+    border-radius: 5px;
+}
+
+.buyHeadingSerie {
+    font-size: 1.5rem;
+
 }
