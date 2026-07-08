@@ -23,15 +23,15 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
     setSeriesListState((prev) =>
     {
 
-      if (prev == "Open" && listHeaderRef.current)
-      {
-        requestAnimationFrame(() =>
-        {
-          listHeaderRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+      // if (prev == "Open" && listHeaderRef.current)
+      // {
+      //   requestAnimationFrame(() =>
+      //   {
+      //     listHeaderRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      //   });
 
-      }
-      return prev == "Open" ? "Closed" :"Open";
+      // }
+      return prev == "Open" ? "Closed" : "Open";
     });
 
   };
