@@ -18,6 +18,7 @@
 
 .sortButton {
     padding : 1rem 2rem;
+    width: 5rem;
     cursor: pointer;
     
 }
