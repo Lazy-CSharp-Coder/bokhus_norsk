@@ -5,6 +5,15 @@
     font-family: var(--libreFont);
     width: 100%;
     gap:2rem;
+    margin-top: 4rem;
+}
+
+.whereToBuySection {
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    justify-content: center;
+    width: 50%;
 }
 
 .whereToBuyHeading {
@@ -27,10 +36,14 @@
     font-size: 1.2rem;
     font-family: var(--robotoFont);
     padding: 2.3rem 3.2rem;
-    width: 45%;
+    margin: 0 2rem;
+border-radius: 5px;
     color: var(--myWhiteColor);
-    background-color: var(--inputBackground);
+    background-color: var(--regBackground);
     border: 1px solid var(--borderIconColor);
+
+       /* -webkit-box-shadow: 5px 4px 15px 5px rgba(30, 30, 30, 0.8);
+    box-shadow: 5px 4px 15px 5px rgba(30, 30, 30, 0.8);*/
 }
 
 .amazonHeadingIconWrapper {
