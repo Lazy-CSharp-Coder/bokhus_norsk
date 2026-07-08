@@ -52,17 +52,25 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     };
 
 
-
+    const { mode, direction} = sortHandler;
     return (
         <ul className="buySeriesList">
-            <div className="sortDiv">Sort by :
+            <div className="sortDiv"><div className="sortHeader">SORT OPTIONS</div>
                 <div className="sortButtonContainer">
                     <div className="modeDiv">
-                        <button className="sortButton" onClick={() => sortHandler.mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className="sortIcon"/> by Serie</button>
-                        <button className="sortButton" onClick={() => sortHandler.mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className="sortIcon"/> by Author</button></div>
+                        <button className={`sortButton ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className="sortIcon"/> by Serie</button>
+                        <button className={`sortButton ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className="sortIcon"/> by Author</button>
+                        </div>
+                        <div className="sortStatusDiv">
+                            {/* <span className="sortTag">CURRENT : </span> */}
+                            <span key={mode} className="sortCurrentMode sortModeAnim">{mode == "Serie" ? <TbBooks size="1.5rem" className="sortIcon"/> :<BsPersonFill size="1.5rem" className="sortIcon"/> }</span>
+                            <span key={direction} className="sortCurrentDirection sortModeAnim"> {direction == "Ascending" ? <AiOutlineSortAscending size="1.5rem" className="sortIcon"/> :<AiOutlineSortDescending size="1.5rem" className="sortIcon"/>  }</span>
+
+
+                        </div>
                     <div className="directionDiv">
-                        <button className="sortButton" onClick={() => sortHandler.direction != "Ascending" && handleSortClick(sortHandler.mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className="sortIcon"/> Ascending</button>
-                        <button className="sortButton" onClick={() => sortHandler.direction != "Descending" && handleSortClick(sortHandler.mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Descending</button>
+                        <button className={`sortButton  ${direction == "Ascending" && "isActive"}`} onClick={() => direction != "Ascending" && handleSortClick(mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className="sortIcon"/> Ascending</button>
+                        <button className={`sortButton ${direction == "Descending" && "isActive"}`} onClick={() => direction != "Descending" && handleSortClick(mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Descending</button>
                     </div>
 
                 </div>

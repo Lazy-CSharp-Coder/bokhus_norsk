@@ -3,18 +3,60 @@
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    
+    /* padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem; */
+    border: 1px solid var(--borderIconColor);
+    border-radius: 5px;;
     background-color: var(--inputBackground);
+    font-family: var(--robotoFont);
 
 }
 
+.sortHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid var(--borderIconColor);
+    border-radius: 5px;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--regBackground);
+    width: 100%;
+}
 .sortButtonContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 1rem;
+
+    padding: 1rem 2rem;
     width: 100%;
+}
+
+.sortStatusDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.sortCurrentMode {
+    color: var(--myWhiteColor);
+}
+.sortCurrentDirection {
+ color: var(--myWhiteColor);
+}
+
+.sortModeAnim {
+    animation-name: scaleIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .modeDiv {
@@ -86,6 +128,21 @@ border-top-color:  var(--buttonBorderBottomRightColor);
     transform: translate(2px, 2px);
 }
 
+.isActive {
+        /* border: 2px inset var(--borderIconColor); */
+    /* Shadow on Top and Left */
+border-top-color:  var(--buttonBorderBottomRightColor);
+  border-left-color:  var(--buttonBorderBottomRightColor);
+  
+  /* Highlight on Bottom and Right */
+  border-bottom-color: var(--buttonBorderTopLeftColor);
+  border-right-color: var(--buttonBorderTopLeftColor);
+}
+
+.isActive span {
+     display: inline-block;
+    transform: translate(2px, 2px);
+}
 
 
 
