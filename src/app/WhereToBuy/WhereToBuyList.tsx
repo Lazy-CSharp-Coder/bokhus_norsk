@@ -2,6 +2,7 @@
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { WhereToBuySerie } from "./WhereToBuySerie";
 import { useState } from "react";
+import "./WhereToBuyList.module.css";
 // muligens release date og genere senere
 
 type SortMode = "Serie" | "Author";
@@ -26,6 +27,13 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const animInc = 200;
     return (
         <ul className="buySeriesList">
+            <div className="sortDiv">Sort by : 
+
+                <button className="sortButton">by Serie</button>
+                 <button className="sortButton">by Author</button>
+                
+
+            </div>
 
             {
                 buyArray.map((item, index) =>

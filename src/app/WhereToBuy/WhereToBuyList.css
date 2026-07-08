@@ -1,0 +1,11 @@
+.sortByDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.sortButton {
+    padding : 1rem 2rem;
+    
+}
