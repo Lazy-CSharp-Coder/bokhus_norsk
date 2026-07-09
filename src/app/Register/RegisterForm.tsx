@@ -30,9 +30,13 @@ interface RegisterFormProps
 
 }
 
+type UserInfoHeaderDisplayState = "No user message" | "User found message" | "Display email"
+
 export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 {
 
+    const noUserMessage = "No profile registered. Please submit info.";
+    const userFoundMessage = "Profile at BokHus retrieved from database."
     const methods = useForm<RegisterFormInput, object, UserData>(
         {
             resolver: zodResolver(registerSchema),
@@ -41,7 +45,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
     );
 
     const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting } } = methods;
-    const [displayNewUserInfo, setDisplayNewUserInfo] = useState<boolean>(isNewUser);
+    const [userInfo, setUserInfo] = useState<UserInfoHeaderDisplayState>(isNewUser ? "No user message" : "User found message");
 
     const onSubmit = async (data: UserData) =>
     {
@@ -65,8 +69,9 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                 <div className="mailIconAdressWrapper flex">
                     <FaUserLarge size="3rem" className="userIcon" />
-                    {displayNewUserInfo ? <p className="noUserFoundText" onAnimationEnd={() => setDisplayNewUserInfo(false)}>No profile registered. Please submit info. <span>  </span> </p> :
-                        <p key={displayNewUserInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>}
+                    {userInfo != "Display email" ? <p className="noUserFoundText" onAnimationEnd={() => setUserInfo("Display email")}>
+                        {userInfo == "No user message" ? noUserMessage : userFoundMessage }</p> :
+                        <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>}
                 </div>
             </div>
 
