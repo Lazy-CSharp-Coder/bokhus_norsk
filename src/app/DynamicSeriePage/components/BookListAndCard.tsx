@@ -1,17 +1,17 @@
 "use client";
 import { useState } from "react";
 import type { Book, BooksArticleProps } from "@/types/booktypes";
-import { BookList } from "../../app/DynamicSeriePage/components/BookList";
-import { BookCard, BookCardSizer } from "../../app/DynamicSeriePage/components/BookCard";
-import { SerieDescription } from "../../app/DynamicSeriePage/components/SerieDescription";
+import { BookList } from "./BookList";
+import { BookCard, BookCardSizer } from "./BookCard";
+import { SerieDescription } from "./SerieDescription";
 import { useIntroState } from "@/globalStates";
 import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
-import { ReviewScrollButton } from "../general/ReviewScrollButton";
-import { ReviewArticle } from "./ReviewArticle";
+import { ReviewScrollButton } from "../../../components/general/ReviewScrollButton";
+import { ReviewArticle } from "../../../components/books/ReviewArticle";
+import "./BookListAndCard.module.css";
 
-
-export function BooksArticle({ authors, series, bookList }: BooksArticleProps)
+export function BookListAndCard({ authors, series, bookList }: BooksArticleProps)
 {
     const [bookToShow, setBookToShow] = useState<Book | undefined>(undefined);
 

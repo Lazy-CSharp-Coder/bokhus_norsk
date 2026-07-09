@@ -1,7 +1,7 @@
 import { BackgroundImage } from "../../../components/common/BackgroundImage";
 import { ByAuthor } from "../../../components/common/ByAuthor";
 import { SerieDescriptionProps } from "@/types/booktypes";
-import { RecommendedFor } from "../../../components/books/RecommendeFor";
+import { SerieRecommendedFor } from "./SerieRecommendeFor";
 import Image from "next/image";
 import "./SerieDescription.module.css";
 
@@ -33,7 +33,7 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                 ))}
 
             </ul>
-            <RecommendedFor ageGroup={ageGroup} />
+            <SerieRecommendedFor ageGroup={ageGroup} />
 
         </div>);
 

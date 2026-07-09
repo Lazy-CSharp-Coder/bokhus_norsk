@@ -1,0 +1,86 @@
+.reviewArticle {
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--robotoFont);
+    /* height: 100%; */
+    /* margin-bottom: 10rem; */
+    gap: 1rem;
+    height: max-content;
+    cursor: pointer;
+
+}
+
+
+.reviewsNotFoundText {
+    margin: 3rem 0rem;
+    font-size : 2rem;
+}
+
+.headingToTopWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.4);
+}
+
+.reviewTitle {
+
+    font-size: 1.3rem;
+    color: white;
+    width: 100%;
+
+    text-align: center;
+
+    padding: 2rem;
+    /* border: 1px solid rgba(221, 221, 221, 0.6); */
+    /* border-bottom: none; */
+}
+
+.reviewSlideContainer {
+
+    position: relative;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.4);
+    padding: 3.5rem 1.5rem;
+    /* border: 1px solid rgba(221, 221, 221, 0.6); */
+    overflow-x: hidden;
+    /* border-top: none; */
+}
+
+.reviewDisplayer {
+    flex-direction: row;
+    position: relative;
+    align-items: stretch;
+    justify-content: space-around;
+    height: max-content;
+    width: 100%;
+
+}
+
+/*     slider classes     */
+
+.leftSlider,
+.rightSlider {
+    z-index: 20;
+}
+
+.leftSlider {
+    position: absolute;
+    top: 43%;
+    left: 0.2rem;
+}
+
+.rightSlider {
+    position: absolute;
+    top: 43%;
+    right: 0.2rem;
+}
+
+/* end slider classes     */

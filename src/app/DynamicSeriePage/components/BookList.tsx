@@ -1,4 +1,4 @@
-import { BookListItem } from "../../../components/books/BookListItem";
+import { BookListItem } from "./BookListItem";
 import type { BookListProps } from "@/types/booktypes";
 import "./BookList.module.css";
 

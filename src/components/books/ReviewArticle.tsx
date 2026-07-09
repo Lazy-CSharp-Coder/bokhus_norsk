@@ -6,9 +6,9 @@ import { ReviewCard } from "./ReviewCard";
 import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
 import { useWindowWidth } from "../hooks/useWindowWidth";
+import "./ReviewArticle.module.css";
 
-
-export interface ReviewArticleProps
+interface ReviewArticleProps
 {
     bookId: string,
     bookName: string,
