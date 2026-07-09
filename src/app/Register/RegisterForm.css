@@ -120,7 +120,7 @@
 .noUserFoundText {
 
  animation-name: slideInAndOut;
- animation-duration: 3.8s;
+ animation-duration: 4.8s;
  animation-timing-function: ease-in-out;
  animation-fill-mode: backwards;
  animation-delay: 1s;
