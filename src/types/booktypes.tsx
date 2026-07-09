@@ -1,5 +1,4 @@
 import type { SanityImageSource } from '@sanity/image-url'
-import { BookArticleText } from './languagetypes';
 import { SanityReference } from 'next-sanity';
 
 // // // end sanity 
@@ -142,7 +141,6 @@ export interface BookCardProps extends Book
 {
     seriesName: string,
     animationName?: string,
-    bookArticleText : BookArticleText,
     saintyTagLanguage : string
 
 }

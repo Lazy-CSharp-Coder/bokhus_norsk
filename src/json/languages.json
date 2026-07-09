@@ -27,15 +27,15 @@
                            {
                 "name": "WORK WITH US",
                 "pageLink": "/WorkWithUs"
+            }, {
+                "name": "CONTACT",
+                "pageLink": "/Contact"
             },
             {
                 "name": "ABOUT",
                 "pageLink": "/About"
-            },
-               {
-                "name": "CONTACT US",
-                "pageLink": "/Contact"
             }
+              
    
         ],
         "heroPage": {
@@ -58,17 +58,8 @@
                 "International readers.",
                 "Timeless voices."
             ]
-        },
-        "bookArticle": {
-            "by": "by",
-            "book": "Book",
-            "ofThe": "of the",
-            "series": "Seires",
-            "availabilityTable" : ["e-book", "paperback", "hardcover"],
-            "released": "RELEASED ORIGINALLY IN",
-            "synopsis": "Book Description / Synopsis :",
-            "recommended": "Anbefalt for"
         }
+
     },
     {
         "language": "Norwegian",
@@ -120,16 +111,7 @@
                 "Internasjonale lesere.",
                 "Tidløse stemmer."
             ]
-        },
-        "bookArticle": {
-            "by": "av",
-            "book": "bok",
-            "ofThe": "i serien",
-            "series": " ",
-            "availabilityTable" : ["e-bok", "paperback", "hardback"],
-            "released": "UTGITT FØRSTE GANG I",
-            "synopsis": "Beskrivelse av boken :",
-            "recommended": "Anbefalt for"
         }
+
     }
 ]

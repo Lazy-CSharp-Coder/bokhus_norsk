@@ -19,24 +19,9 @@ export interface LanguageText
     iconUrl: string,
     menuItemsHeader : MenuItemsHeader[],
     heroPage : HeroPageText
-    bookArticle: BookArticleText
+
 
 }
-
-export interface BookArticleText 
-{
-    by: string,
-    book: string,
-    ofThe: string,
-    series: string,
-    availabilityTable : string[],
-    released: string,
-    synopsis: string,
-    recommended : string
-
-}
-
-
 
 export interface LanguageChosen 
 {
@@ -46,7 +31,7 @@ export interface LanguageChosen
     setLanguageNumber: (nr: number) => void,
     menuItemsHeader : MenuItemsHeader[]
     heroPage : HeroPageText,
-    bookArticle : BookArticleText
+
 
 }
 
