@@ -31,7 +31,7 @@ export function BookListItem({ item, handleClick }: BookListItemProps)
     <li className={`bookThumbnail ${isVisible ? "fadeInAnim" : "fadeOutAnim"}`} ref={listItemRef}
       onClick={() => handleClick(item)} style={{ animationDuration: "0.5s" }}>
 
-      <Image className="bookThumbnail" src={imageSrc} alt="book list image" fill={true} sizes="(max-width: 768px) 100vw, 50vw" />;
+      <Image className="bookThumbnail" src={imageSrc} alt="book list image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />;
 
 
     </li>);
