@@ -116,8 +116,14 @@
 
 }
 
+.userInfoIcon {
+    color: var(--myWhiteColor);
+}
 
 .userInfoText{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 color: white;
  animation-name: slideInAndOut;
  animation-duration: 4.8s;
