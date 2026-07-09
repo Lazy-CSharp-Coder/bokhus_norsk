@@ -23,7 +23,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                     </div>
       
                     <BookAvailableIn availability={availability} />
-                    <p className="releaseInfo">Originally released in <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="releaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book description / synopsis :</p>
                 </div>
                 <div className="descriptionSubWrapper flex">
