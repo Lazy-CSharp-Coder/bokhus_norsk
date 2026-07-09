@@ -1,11 +1,11 @@
 "use client";
 
-import { AsyncStatus, type Review, type ReviewCardDisplayOptions } from "../../types/reviewtypes";
+import { AsyncStatus, type Review, type ReviewCardDisplayOptions } from "../../../types/reviewtypes";
 import { useRef, useEffect, useState, useLayoutEffect } from "react";
-import { ReviewCard } from "./ReviewCard";
+import { ReviewCard } from "../../../components/books/ReviewCard";
 import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
-import { useWindowWidth } from "../hooks/useWindowWidth";
+import { useWindowWidth } from "../../../components/hooks/useWindowWidth";
 import "./ReviewArticle.module.css";
 
 interface ReviewArticleProps
@@ -81,7 +81,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         <article id="reviewArticle" className={`reviewArticle flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
             <div className="headingToTopWrapper flex">
                 <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
-                <span onClick={() => { window.scrollTo(0,0) }}> <GoMoveToTop size="1.8rem" /></span>
+                <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" /></span>
             </div>
             {reviewArray != null && reviewArray.length > 0 ?
                 <ReviewSlideShow reviewArray={reviewArray} /> : <h3 className="reviewsNotFoundText">No reviews found</h3>

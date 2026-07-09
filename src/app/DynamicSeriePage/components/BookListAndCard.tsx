@@ -8,7 +8,7 @@ import { useIntroState } from "@/globalStates";
 import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
 import { ReviewScrollButton } from "../../../components/general/ReviewScrollButton";
-import { ReviewArticle } from "../../../components/books/ReviewArticle";
+import { ReviewArticle } from "./ReviewArticle";
 import "./BookListAndCard.module.css";
 
 export function BookListAndCard({ authors, series, bookList }: BooksArticleProps)
