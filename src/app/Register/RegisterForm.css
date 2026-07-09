@@ -35,7 +35,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-/* border: var(--borderReg); */
+    /* border: var(--borderReg); */
     padding: 0.2rem 0.2rem;
     border-bottom: 1px solid var(--borderIconColor);
 
@@ -89,15 +89,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap:1rem;
+    gap: 1rem;
 
-      font-family: var(--robotoFont);
+    font-family: var(--robotoFont);
     /* color: var(--myWhiteColor);    */
     color: white;
     width: 100%;
     font-size: 1.4rem;
     font-weight: 300;
-    padding:2rem 1rem;
+    padding: 2rem 1rem;
     padding-bottom: 2.3rem;
     border-bottom: 2px solid rgb(125, 88, 33);
     /* border-radius: 5px; */
@@ -105,8 +105,9 @@
     /* background-color: rgb(230,230,230); */
     background-color: rgba(10, 10, 10, 0.9);
     /* background-color: var(--inputBackground); */
-   
+
 }
+
 .mailIconAdressWrapper {
     flex-direction: column;
     align-items: center;
@@ -120,42 +121,54 @@
     color: var(--myWhiteColor);
 }
 
-.userInfoText{
+.userInfoDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    animation-name: slideInAndOut;
+    animation-duration: 4.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
+}
+
+.userInfoText {
     display: flex;
     gap: 1rem;
     align-items: center;
-color: white;
- animation-name: slideInAndOut;
- animation-duration: 4.8s;
- animation-timing-function: ease-in-out;
- animation-fill-mode: backwards;
- animation-delay: 1s;
- font-size: 1.4rem;
+    color: white;
+
+    font-size: 1.4rem;
 }
 
 @keyframes slideInAndOut {
-  0% {
-    transform: scale(0, 0);
-  }
+    0% {
+        transform: scale(0, 0);
+    }
 
-  1% {
-    transform: scale(0.2, 0.2);
-  }
+    1% {
+        transform: scale(0.2, 0.2);
+    }
 
-  10% {
-    transform: scale(1, 0);
-  }
+    10% {
+        transform: scale(1, 0);
+    }
 
-  30% {
-    transform: scale(1, 1);
-  }
-  100% { transform: scale(1, 1);}
+    30% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
 
 }
 
 .userIcon {
-    color:white;
+    color: white;
 }
+
 .userEmailIcon {
     pointer-events: none;
     color: rgb(125, 88, 33);
@@ -198,8 +211,9 @@ color: white;
 
 .inputRegIcon,
 .inputRegListIcon,
-.inputRegSingleIcon, 
-.inputRegListARCIcon,.inputRegRulesIcon{
+.inputRegSingleIcon,
+.inputRegListARCIcon,
+.inputRegRulesIcon {
     position: absolute;
     right: 0.8rem;
 
@@ -225,6 +239,7 @@ color: white;
 .inputRegListIcon {
     top: 4rem;
 }
+
 .inputRegRulesIcon {
     top: 1rem;
 }
@@ -246,7 +261,7 @@ color: white;
 
 .labelInputWrapperOneLineFirst {
     gap: 1rem;
-    
+
     align-items: center;
 }
 
@@ -429,7 +444,7 @@ fieldset {
     justify-content: space-between;
     align-items: center;
 
-    
+
     padding: 1.2rem 0.5rem;
     border-bottom: 1px solid var(--borderIconColor);
 }
@@ -449,7 +464,7 @@ fieldset {
 .rulesWrapper {
     display: flex;
     flex-direction: column;
-    gap:1.2rem;
+    gap: 1.2rem;
 
 
     align-items: left;
@@ -466,12 +481,12 @@ fieldset {
 
 .rulesDiv {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-       position: relative;
+    position: relative;
 
 }
 
@@ -487,7 +502,7 @@ fieldset {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-        position: relative;
+    position: relative;
 }
 
 .bokhusComWrapper {

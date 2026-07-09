@@ -17,7 +17,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { GiNewspaper } from "react-icons/gi";
 import { FaBookOpenReader } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
-import { RxCross2 } from "react-icons/rx";
+import { MdOutlineClose } from "react-icons/md";
 import { IoCheckmarkSharp } from "react-icons/io5";
 
 
@@ -72,9 +72,9 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                 <div className="mailIconAdressWrapper flex">
                     <FaUserLarge size="3rem" className="userIcon" />
                     {userInfo != "Display email" ?
-                        <div className="scaleInAnim" onAnimationEnd={() => setUserInfo("Display email")}>
-                            {userInfo == "No user message" ? <p className="userInfoText"><RxCross2 size="1.2rem" className="userInfoIcon" /> {noUserMessage}</p> :
-                                <p className="userInfoText"><IoCheckmarkSharp size="1.2rem" className="userInfoIcon" /> {userFoundMessage}</p>}
+                        <div className="userInfoDiv" onAnimationEnd={() => setUserInfo("Display email")}>
+                            {userInfo == "No user message" ? <p className="userInfoText"><MdOutlineClose size="1.4rem" className="userInfoIcon" /> {noUserMessage}</p> :
+                                <p className="userInfoText"><IoCheckmarkSharp size="1.4rem" className="userInfoIcon" /> {userFoundMessage}</p>}
                         </div> :
 
                         <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>}
