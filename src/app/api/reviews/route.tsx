@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getReviews } from "@/app/DynamicSeriePage/functions/getReviews";
+import { getReviews } from "@/app/api/reviews/getReviews";
 
 export async function POST(req: Request)
 {

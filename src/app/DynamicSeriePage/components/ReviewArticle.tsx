@@ -2,7 +2,7 @@
 
 import { AsyncStatus, type Review, type ReviewCardDisplayOptions } from "../../../types/reviewtypes";
 import { useRef, useEffect, useState, useLayoutEffect } from "react";
-import { ReviewCard } from "../../../components/books/ReviewCard";
+import { ReviewCard } from "./ReviewCard";
 import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
 import { useWindowWidth } from "../../../components/hooks/useWindowWidth";
