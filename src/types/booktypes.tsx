@@ -106,13 +106,7 @@ export interface SerieDescriptionProps
     ageGroup?: string;
 }
 
-export interface BestSellerListProps
-{
 
-    bestSellerIntro?: string,
-    bestSellerList?: string[];
-
-}
 
 export interface BooksArticleProps
 {

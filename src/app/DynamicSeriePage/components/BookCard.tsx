@@ -22,7 +22,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                     </div>
       
-                    <BookAvailableIn availability={availability} />
+                    <BookAvailableIn availability={availability}fontSize="0.7rem"/>
                     <p className="releaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book description / synopsis :</p>
                 </div>

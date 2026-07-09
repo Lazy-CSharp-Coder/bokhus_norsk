@@ -1,7 +1,7 @@
 :root {
 
     --coverTitleColor: #ecc776;
-    --backcolorbook: rgba(20, 20, 20, 0.7);
+ 
     --marginBookList: 10vw;
 }
 
@@ -23,7 +23,7 @@
     /* margin-right: var(--marginBookList); */
     align-self: center;
     /* border: 1px solid rgba(221, 221, 221, 0.8); */
-    background-color: var(--backcolorbook);
+    background-color: var(--backgroundBook);
      min-height:100%;
     height: fit-content;
     overflow: auto;
@@ -78,7 +78,7 @@
 }
 
 .bookFactsAndDescriptionDiv {
-    grid-template-rows: auto fit-content;
+    /* grid-template-rows: auto fit-content; */
     width: 80%;
     justify-items: start;
     /* background-color: blue; */

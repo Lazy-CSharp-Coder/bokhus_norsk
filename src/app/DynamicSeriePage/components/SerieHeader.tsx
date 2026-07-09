@@ -18,7 +18,7 @@ export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerLi
                 </div>
                 <div className="authorNameBestsellerWrapper flex">
                     <ByAuthor key={authors + "#SeriesInfo"} authors={authors} />
-                    <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
+                    <BestSellerList fontSize="1.05rem" bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
                 </div>
             </div>
 

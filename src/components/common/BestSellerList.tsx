@@ -1,11 +1,18 @@
-import type { BestSellerListProps } from "@/types/booktypes";
-import "./BestSellerList.module.css";
 
-export function BestSellerList({ bestSellerIntro, bestSellerList }: BestSellerListProps)
+import "./BestSellerList.module.css";
+export interface BestSellerListProps
+{
+
+    bestSellerIntro?: string,
+    fontSize : string,
+    bestSellerList?: string[];
+
+}
+export function BestSellerList({ bestSellerIntro, bestSellerList, fontSize }: BestSellerListProps)
 {
     
     return (
-        <ul className="bestSellerList">{bestSellerIntro}
+        <ul className="bestSellerList" style={{fontSize: fontSize}}>{bestSellerIntro}
             {bestSellerList?.map((item, index, array) =>
                 <li key={index + "BS"} className="bestSellerText">{item}<span className="bestSellerSeparator">{`${index == array.length - 2 ? " and" : (index == array.length - 1) ? "" : ","}`}</span></li>
             )}
