@@ -63,9 +63,10 @@
 .buyOpenCloseArrow {
      color: rgb(190, 190, 190);
 
+
 }
 .buyOpenCloseArrowSpan {
-
+  cursor: pointer;
 }
 
 /* classes for list item and children */
@@ -82,6 +83,7 @@
     border: 1px solid var(--borderIconColor);
     position: relative;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .buyListItemImageDiv {

@@ -1,17 +1,28 @@
 "use client";
-import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { Show, SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
 import { ProfileButton } from "./ProfileButton";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+
+import { FaUserLarge } from "react-icons/fa6";
 
 export function LoginClerk()
 {
     const path = usePathname();
+    const router = useRouter();
+
+    const handleProfileClick = () =>
+    {
+        router.push("/Register");
+
+    };
+   const hasProfile = true;
     return (
 
         <div className="clerkButtons">
 
             <Show when="signed-out">
-                <SignInButton mode="modal" fallbackRedirectUrl={path}>
+                <SignInButton fallbackRedirectUrl={path}>
                     <button className="signInButton">Sign In</button>
                 </SignInButton>
                 {/* <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
@@ -33,9 +44,20 @@ export function LoginClerk()
                                     borderRadius: "50%"
                                 }
                             }
-                        }}
-                    />
-                    <ProfileButton />
+                        }} ><UserButton.MenuItems>
+                           <UserButton.Action label={hasProfile ? "Your profile at BokHus" : "Register profile"} labelIcon={<FaUserLarge size="16"/>} onClick={handleProfileClick} />
+                            
+                          
+
+                        </UserButton.MenuItems>
+
+
+                    </UserButton>
+
+                    {/* <SignOutButton redirectUrl={path || "/"}>
+                        <button type="button" className="signInButton">Sign Out</button>
+                    </SignOutButton> */}
+                    {/* <ProfileButton /> */}
 
                 </div>
 

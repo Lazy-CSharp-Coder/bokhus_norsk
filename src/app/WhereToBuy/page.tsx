@@ -9,6 +9,7 @@ import { BackgroundImage } from "@/components/common/BackgroundImage";
 
 import type { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { getWhereToBuyPropsArray } from "./getWhereToBuyPropsArray";
+import { WhereToBuyList } from "./WhereToBuyList";
 export default async function WhereToBuy() 
 {
 
@@ -27,7 +28,7 @@ export default async function WhereToBuy()
 
   );
 
-  const animInc = 200;
+  const waitForBackground = 800;
 
   return (
     <>
@@ -37,21 +38,21 @@ export default async function WhereToBuy()
 
         <section className="whereToBuySection">
           <div className="headingLineWrapper">
-            <h2 className="whereToBuyHeading">Where to buy books from Bokhus</h2>
+            <h2 className="whereToBuyHeading fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h2>
             <ExpandingLine key={"BuyLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
           </div>
 
-          <div className="buyIntroContainer">
+          <div className="buyIntroContainer fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>
 
             <p className="whereToBuyText"> Here are links to websites where you can purchase books and series from us. </p>
             <p className="whereToBuyText">Should you experience some trouble with the links or other issues, please use the contact form to tell us about it.</p>
 
           </div>
-          <div className="amazonDiv fadeInAnim">
+          <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground}ms`}}>
             <div className="amazonHeadingIconWrapper flex">
               <h3 className="amazonHeading">Bokhus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
 
-              <GoLinkExternal size="2rem" className="amazonIconLink" />
+              <GoLinkExternal size="1.9rem" className="amazonIconLink" />
             </div>
 
 
@@ -72,16 +73,8 @@ export default async function WhereToBuy()
               Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
             </p>
           </div>
+          <WhereToBuyList buyArray={buyArray}/>
 
-          <ul className="buySeriesList">
-            {
-              buyArray.map((item, index) =>
-                <WhereToBuySerie key={index + "WhereToBuySerieComponent"} serieSelected={item.serieSelected} 
-                  authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={`${animInc*index}ms`} />
-           
-              )
-            }
-          </ul>
 
         </section>
       </main>
