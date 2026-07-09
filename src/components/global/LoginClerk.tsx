@@ -1,17 +1,18 @@
 "use client";
-import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { Show, SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
 import { ProfileButton } from "./ProfileButton";
 import { usePathname } from "next/navigation";
 
 export function LoginClerk()
 {
     const path = usePathname();
+
     return (
 
         <div className="clerkButtons">
 
             <Show when="signed-out">
-                <SignInButton mode="modal" fallbackRedirectUrl={path}>
+                <SignInButton fallbackRedirectUrl={path}>
                     <button className="signInButton">Sign In</button>
                 </SignInButton>
                 {/* <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
@@ -33,8 +34,10 @@ export function LoginClerk()
                                     borderRadius: "50%"
                                 }
                             }
-                        }}
-                    />
+                        }} />
+                    {/* <SignOutButton redirectUrl={path || "/"}>
+                        <button type="button" className="signInButton">Sign Out</button>
+                    </SignOutButton> */}
                     <ProfileButton />
 
                 </div>
