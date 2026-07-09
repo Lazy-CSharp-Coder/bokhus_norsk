@@ -8,6 +8,7 @@ import { TbBooks } from "react-icons/tb";
 import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
 import { PiArrowFatLineDownFill } from "react-icons/pi";
 // muligens release date og genere senere
+import "./WhereToBuyList.module.css";
 
 type SortMode = "Serie" | "Author";
 type SortDirection = "Ascending" | "Descending";

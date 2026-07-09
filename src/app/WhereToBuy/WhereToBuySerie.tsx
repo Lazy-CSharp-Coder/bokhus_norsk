@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { urlFor } from "@/functions/urlFor";
 import "./WhereToBuySerie.module.css";
@@ -12,7 +12,7 @@ import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { PiGlobeSimpleXLight } from "react-icons/pi";
 import { GoLinkExternal } from "react-icons/go";
-
+import "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 

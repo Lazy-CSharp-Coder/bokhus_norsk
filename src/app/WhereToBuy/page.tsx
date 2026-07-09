@@ -1,7 +1,6 @@
 import { client } from "@/sanity/client";
 import { Series } from "@/types/booktypes";
-import { WhereToBuySerie } from "./WhereToBuySerie";
-import { TbExternalLink } from "react-icons/tb";
+
 import { GoLinkExternal } from "react-icons/go";
 import "./WhereToBuy.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
@@ -10,6 +9,8 @@ import { BackgroundImage } from "@/components/common/BackgroundImage";
 import type { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { getWhereToBuyPropsArray } from "./getWhereToBuyPropsArray";
 import { WhereToBuyList } from "./WhereToBuyList";
+import "./WhereToBuy.module.css";
+
 export default async function WhereToBuy() 
 {
 
