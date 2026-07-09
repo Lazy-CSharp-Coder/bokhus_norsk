@@ -17,7 +17,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { GiNewspaper } from "react-icons/gi";
 import { FaBookOpenReader } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
-import { MdOutlineClose } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
 import { IoCheckmarkSharp } from "react-icons/io5";
 
 
@@ -73,7 +73,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                     <FaUserLarge size="3rem" className="userIcon" />
                     {userInfo != "Display email" ?
                         <div className="userInfoDiv" onAnimationEnd={() => setUserInfo("Display email")}>
-                            {userInfo == "No user message" ? <p className="userInfoText"><MdOutlineClose size="1.4rem" className="userInfoIcon" /> {noUserMessage}</p> :
+                            {userInfo == "No user message" ? <p className="userInfoText"><IoMdClose size="1.4rem" className="userInfoIcon" /> {noUserMessage}</p> :
                                 <p className="userInfoText"><IoCheckmarkSharp size="1.4rem" className="userInfoIcon" /> {userFoundMessage}</p>}
                         </div> :
 
