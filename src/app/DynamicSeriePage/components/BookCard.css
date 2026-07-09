@@ -29,6 +29,7 @@
     overflow: auto;
     width: fit-content;
     margin-right: 1rem;
+     border-radius: var(--defaultBorderRadius);
     /* width: 84%; */
     cursor: pointer;
 }
@@ -43,7 +44,8 @@
     font-family: var(--libreFont);
 
     /* margin-right: var(--marginBookList); */
-    padding: 1.6rem 1.6rem;
+    padding: 2rem 1.6rem;
+   
     padding-right: 0;
     /* padding:0; */
     /* background-color: aquamarine; */

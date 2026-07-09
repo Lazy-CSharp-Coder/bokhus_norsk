@@ -10,7 +10,8 @@
 
     width: 100%;
     /* border : 1px solid white; */
-    background-color: var(--backcolorbook);
+    background-color: var(--backgroundBook);
+    border-radius: var(--defaultBorderRadius);
     padding: 1.2rem 2.2rem;
     height: fit-content;
 

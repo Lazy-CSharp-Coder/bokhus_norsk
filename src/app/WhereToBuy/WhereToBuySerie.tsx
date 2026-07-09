@@ -7,7 +7,7 @@ import "./WhereToBuySerie.module.css";
 import { ByAuthor } from "@/components/common/ByAuthor";
 import { ImBooks } from "react-icons/im";
 import { numberToWords } from "convert-number-to-words";
-import { AvailableIn } from "../../components/common/BookAvailableIn";
+import { BookAvailableIn } from "@/components/common/BookAvailableIn";
 import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { PiGlobeSimpleXLight } from "react-icons/pi";
@@ -94,7 +94,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               <div className="buyTitleBookNumberWrapper">       <span className="buyTitleBook"> {item.bookTitle} </span>
                 <div className="">Book <span className="buyListBookNumber">{getBookNumberInString(item.bookInSeries)}</span> of the Series </div>
               </div>
-              <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
+              <BookAvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
             {item.buyLink != undefined ? <GoLinkExternal className="buyLinkArrow" size="1.9rem" /> : <PiGlobeSimpleXLight className="noLinkArrow" size="2.1rem" />}
             <div className="buyAvailableDiv">
