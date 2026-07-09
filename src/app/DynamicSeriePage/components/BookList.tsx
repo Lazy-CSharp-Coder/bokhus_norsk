@@ -1,13 +1,12 @@
-// "use client";
-import { useIntroState } from "@/globalStates";
 import { BookListItem } from "./BookListItem";
 import type { BookListProps } from "@/types/booktypes";
+import "./BookList.module.css";
 
 export function BookList({ bookList, handleClick }: BookListProps)
 {
-      return (
+    return (
 
-            <ul className="bookList flex">
+        <ul className="bookList flex">
             {
                 bookList.map((item) =>
                     // <BookListItem key={item.uid} item={item}  />
@@ -15,5 +14,5 @@ export function BookList({ bookList, handleClick }: BookListProps)
 
                 )}
 
-            </ul> );
+        </ul>);
 }

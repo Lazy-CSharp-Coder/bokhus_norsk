@@ -26,7 +26,7 @@
     background-color: var(--backcolorbook);
      min-height:100%;
     height: fit-content;
-    
+    overflow: auto;
     width: fit-content;
     margin-right: 1rem;
     /* width: 84%; */

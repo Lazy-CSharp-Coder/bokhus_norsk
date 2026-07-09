@@ -1,13 +1,5 @@
-@import "./../../components/books/SeriesPage.css";
-@import "./../../components/books/SeriesSection.css";
-@import "./../../components/books/RecommededFor.css";
-@import "./../../components/books/DescriptionSeries.css";
-@import "./../../components/books/BooksArticle.css";
-@import "./../../components/books/BookList.css";
-@import "./../../components/books/BookCard.css";
+@import "./DynamicSeriePage.css";
 
-@import "./../../components/books/AvailableIn.css";
-@import "./../../components/books/Review.css";
 @import "./../../components/general/ReviewScrollButton.css";
 
 

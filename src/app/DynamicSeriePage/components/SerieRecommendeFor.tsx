@@ -1,9 +1,9 @@
 import { RecommendedForProps } from "@/types/booktypes";
 
+import "./SerieRecommendedFor.module.css";
+
 const recommendedText: string = "Recommende for readers :";
-
-
-export function RecommendedFor({ ageGroup }: RecommendedForProps)
+export function SerieRecommendedFor({ ageGroup }: RecommendedForProps)
 {
 
     return (

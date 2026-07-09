@@ -3,15 +3,15 @@ import { useState } from "react";
 import type { Book, BooksArticleProps } from "@/types/booktypes";
 import { BookList } from "./BookList";
 import { BookCard, BookCardSizer } from "./BookCard";
-import { DescriptionSeries } from "./DescriptionSeries";
+import { SerieDescription } from "./SerieDescription";
 import { useIntroState } from "@/globalStates";
 import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
-import { ReviewScrollButton } from "../general/ReviewScrollButton";
+import { ReviewScrollButton } from "../../../components/general/ReviewScrollButton";
 import { ReviewArticle } from "./ReviewArticle";
+import "./BookListAndCard.module.css";
 
-
-export function BooksArticle({ authors, series, bookList }: BooksArticleProps)
+export function BookListAndCard({ authors, series, bookList }: BooksArticleProps)
 {
     const [bookToShow, setBookToShow] = useState<Book | undefined>(undefined);
 
@@ -46,7 +46,7 @@ export function BooksArticle({ authors, series, bookList }: BooksArticleProps)
                                     _id={bookToShow._id} imageBook={bookToShow.imageBook} releaseYear={bookToShow.releaseYear} authorUids={bookToShow.authorUids}
                                     bookTitle={bookToShow.bookTitle} subTitle={bookToShow.subTitle} description={bookToShow.description} seriesName={series.seriesName}
                                     bookArticleText={bookArticle} saintyTagLanguage={sanityTag} /> :
-                                <DescriptionSeries seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
+                                <SerieDescription seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
                         }
                     </div>
                 </article>

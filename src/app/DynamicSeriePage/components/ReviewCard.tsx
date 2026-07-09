@@ -1,17 +1,18 @@
-import type { ReviewProps } from "../../types/reviewtypes";
+import type { ReviewProps } from "../../../types/reviewtypes";
 import Image from "next/image";
 import Link from "next/link";
+import "./ReviewCard.module.css";
 
-export function ReviewCard({ _id, format, bookReviewed, date, country, stars, reviewerName, titleReview, reviewDescription, linkReview, doAnimateStars, animationToUse}: ReviewProps)
+export function ReviewCard({ _id, format, bookReviewed, date, country, stars, reviewerName, titleReview, reviewDescription, linkReview, doAnimateStars, animationToUse }: ReviewProps)
 {
-       
+
     const animInc = 50;
     const waitForMain = 0;
 
-    
+
     return (
         <div id={_id} className={`reviewCardLinkWrapper flex  ${animationToUse}`}>
-            <div  className={`reviewCardDiv flex`}>
+            <div className={`reviewCardDiv flex`}>
                 <h3 className="titleReviewText">{titleReview}</h3>
                 <div className="starsDiv flex">
                     {[...Array(stars)].map((item, index) =>
@@ -20,7 +21,7 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
                 </div>
 
                 <p className="bookReviewed">{bookReviewed} <span className="onText">on</span> <span className="formatText">{format}</span></p>
- 
+
                 <div className="reviewerNameIconWrapper flex">
 
                     <div className="userIconDiv">

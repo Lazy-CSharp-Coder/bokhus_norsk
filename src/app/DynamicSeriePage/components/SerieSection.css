@@ -1,0 +1,15 @@
+/* ----- series css ------- */
+
+.serieSection {
+
+    
+    width: 65%;
+    gap: 2rem;
+
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 100vh; */
+    /* background-color: rgba(150, 0, 0, 0.5); */
+}
+

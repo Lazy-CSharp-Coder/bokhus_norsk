@@ -7,7 +7,7 @@ import "./WhereToBuySerie.module.css";
 import { ByAuthor } from "@/components/common/ByAuthor";
 import { ImBooks } from "react-icons/im";
 import { numberToWords } from "convert-number-to-words";
-import { AvailableIn } from "./AvailableIn";
+import { AvailableIn } from "../../components/common/BookAvailableIn";
 import { FaArrowDownWideShort } from "react-icons/fa6";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { PiGlobeSimpleXLight } from "react-icons/pi";
@@ -76,7 +76,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
         </div>
 
-        <span key={seriesListState}  className="buyOpenCloseArrowSpan fadeInAnim" onClick={handleHeaderClick} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
+        <span key={seriesListState} className="buyOpenCloseArrowSpan fadeInAnim" onClick={handleHeaderClick} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
           <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
 
         </span>
@@ -96,7 +96,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               </div>
               <AvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" />
             </div>
-            {item.buyLink != undefined ? <GoLinkExternal  className="buyLinkArrow" size="1.9rem"/> : <PiGlobeSimpleXLight  className="noLinkArrow" size="2.1rem"/> }
+            {item.buyLink != undefined ? <GoLinkExternal className="buyLinkArrow" size="1.9rem" /> : <PiGlobeSimpleXLight className="noLinkArrow" size="2.1rem" />}
             <div className="buyAvailableDiv">
             </div>
           </li>

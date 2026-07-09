@@ -1,10 +1,11 @@
-import { BackgroundImage } from "../common/BackgroundImage";
-import { ByAuthor } from "../common/ByAuthor";
-import { DescriptionSeriesProps } from "@/types/booktypes";
-import { RecommendedFor } from "./RecommendeFor";
+import { BackgroundImage } from "../../../components/common/BackgroundImage";
+import { ByAuthor } from "../../../components/common/ByAuthor";
+import { SerieDescriptionProps } from "@/types/booktypes";
+import { SerieRecommendedFor } from "./SerieRecommendeFor";
 import Image from "next/image";
+import "./SerieDescription.module.css";
 
-export function DescriptionSeries({ seriesName, authors, seriesFact, description, ageGroup, imageUrl }: DescriptionSeriesProps)
+export function SerieDescription({ seriesName, authors, seriesFact, description, ageGroup, imageUrl }: SerieDescriptionProps)
 {
     return (
         <div className="descriptionSeriesDiv flex borderFadeInAnim" style={{ animationDelay: "0.5s", animationDuration: "2s" }}>
@@ -32,7 +33,7 @@ export function DescriptionSeries({ seriesName, authors, seriesFact, description
                 ))}
 
             </ul>
-            <RecommendedFor ageGroup={ageGroup} />
+            <SerieRecommendedFor ageGroup={ageGroup} />
 
         </div>);
 

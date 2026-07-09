@@ -1,5 +1,5 @@
 import { BackgroundImage } from "@/components/common/BackgroundImage";
-import { SeriesSection } from "@/components/books/SeriesSection";
+import { SerieSection } from "@/app/DynamicSeriePage/components/SerieSection";
 import type { Series, Book, Author } from "@/types/booktypes";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { client } from "@/sanity/client";
@@ -65,11 +65,11 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    return (
       <>
          <ScrollToTop />
-         <BackgroundImage className="backgroundImageSeries" src={urlFor(serie.imageSeriesBackground, 1920)} />
+         <BackgroundImage className="seriePageBackgroundImage" src={urlFor(serie.imageSeriesBackground, 1920)} />
          <main className="seriesPage">
             {(serie && authors) &&
                <div className="presentationReviewHrefWrapper">
-                  <SeriesSection seriesSelected={serie} booksBelonging={bookList} authors={authors} />
+                  <SerieSection seriesSelected={serie} booksBelonging={bookList} authors={authors} />
                </div>}
 
 
