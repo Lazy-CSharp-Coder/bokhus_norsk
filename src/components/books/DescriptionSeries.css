@@ -8,7 +8,8 @@
     gap: 1rem;
     font-family: var(--libreFont);
     padding: 2.2rem 2.2rem;
-    border: 1px solid rgba(221, 221, 221, 0.5);
+    border: 2px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
   
     width: fit-content;
     height:100%;
@@ -21,7 +22,7 @@
 
 
 .descriptionBackground {
-  position: absolute;
+  position:absolute;
   width:100%;
   height: 100%;
   left:0;

@@ -25,7 +25,7 @@ export default function WorkWithUsPage()
 {
 
     const workWithUsArray: WorkWithUs[] = worWithUsJson;
-    const [isDisplayingTheme, setDisplayingTheme] = useState<WorkWithUs | null>(null);
+    const [isDisplayingTheme, setDisplayingTheme] = useState<WorkWithUs | null>(workWithUsArray[0]);
     const animDelay = 200;
     const waitForMainAnim = 600;
 
