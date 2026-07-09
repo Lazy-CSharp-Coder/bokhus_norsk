@@ -5,9 +5,9 @@ interface AvailabilityProps
     fontSize? :string
 }
 
-import "./AvailableIn.module.css";
+import "./BookAvailableIn.module.css";
 
-export function AvailableIn({ availability, classNameItem, fontSize }: AvailabilityProps)
+export function BookAvailableIn({ availability, classNameItem, fontSize }: AvailabilityProps)
 {
     const availabilityTable = ["e-book", "paperback", "hardcover"];
     return (

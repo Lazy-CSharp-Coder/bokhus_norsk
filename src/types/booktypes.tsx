@@ -97,7 +97,7 @@ export interface SeriesInfoProps
 
 
 }
-export interface DescriptionSeriesProps
+export interface SerieDescriptionProps
 {
     seriesName: string,
     imageUrl: string,

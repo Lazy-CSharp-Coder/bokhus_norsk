@@ -1,38 +1,30 @@
 import type { BookCardProps } from "@/types/booktypes";
 import { numberToWords } from "convert-number-to-words";
 import Image from "next/image";
-import { AvailableIn } from "./AvailableIn";
+import { BookAvailableIn } from "../../../components/common/BookAvailableIn";
 import { urlFor } from "@/functions/urlFor";
-import { BookInSeriesText } from "./BookInSeriesText";
+import { BookInSerieText } from "./BookInSerieText";
+import "./BookCard.module.css";
 
 export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, animationName, bookArticleText, saintyTagLanguage }: BookCardProps)
 {
-    const numStr = numberToWords(bookInSeries);
-    const withCapital = numStr.charAt(0).toUpperCase() + numStr.slice(1);
-    const imageSrc = urlFor(imageBook, 1000);
-
-    const availabilityTableToUse: string[] =
-        availability.map((item) => bookArticleText.availabilityTable[item]);
-
-    // destructure bookArticleText
-    const { by, book, ofThe, series, released, synopsis, recommended } = bookArticleText;
-
+    const imageSrc = urlFor(imageBook, 800);
     return (
         <div className={`bookDiv ${animationName ? animationName : "fadeInFromLeftAnim"}`} style={{ animationDuration: "1.2s" }}>
             <div className="bookImage">
-                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 768px) 100vw, 50vw" />
+                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
             </div>
             <div className="bookFactsAndDescriptionDiv grid">
                 <div className="factsDiv flex">
 
                     <div className="headingWrapper">
                         <h3 className={`bookTitle`}>{bookTitle}</h3>
-                        <BookInSeriesText sanityTagLanguage={saintyTagLanguage} bookTitle={bookTitle} bookInSeries={bookInSeries} bookArticleText={bookArticleText} seriesName={seriesName} />
+                        <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                     </div>
                     { }
-                    <AvailableIn availability={availabilityTableToUse} />
-                    <p className="releaseInfo">{released} <span className="releaseYear">{releaseYear}</span></p>
-                    <p className="synopsisText">{synopsis}</p>
+                    <BookAvailableIn availability={availability} />
+                    <p className="releaseInfo">Originally released in <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="synopsisText">Book description / synopsis :</p>
                 </div>
                 <div className="descriptionSubWrapper flex">
 
@@ -64,8 +56,7 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
     const withCapital = numStr.charAt(0).toUpperCase() + numStr.slice(1);
     const imageSrc = urlFor(imageBook, 1000);
 
-    const availabilityTableToUse: string[] =
-        availability.map((item) => bookArticleText.availabilityTable[item]);
+
 
     return (
         <div className={`bookDivForSizing`}>
@@ -78,7 +69,7 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
                         <h3 className={`bookTitle`}>{bookTitle}</h3>
                         <p className="bookInfo">Book <span className="bookNumberText">{withCapital}</span> of the <span className="bookNumberText">{seriesName} </span> Series</p>
                     </div>
-                    <AvailableIn availability={availabilityTableToUse} />
+                    <BookAvailableIn availability={availability} />
                     <p className="releaseInfo">RELEASED ORIGINALLY IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book Description / Synopsis :</p>
                 </div>

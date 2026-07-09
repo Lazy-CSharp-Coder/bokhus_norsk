@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import type { Book, BooksArticleProps } from "@/types/booktypes";
-import { BookList } from "./BookList";
-import { BookCard, BookCardSizer } from "./BookCard";
-import { DescriptionSeries } from "./DescriptionSeries";
+import { BookList } from "../../app/DynamicSeriePage/components/BookList";
+import { BookCard, BookCardSizer } from "../../app/DynamicSeriePage/components/BookCard";
+import { SerieDescription } from "../../app/DynamicSeriePage/components/SerieDescription";
 import { useIntroState } from "@/globalStates";
 import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
@@ -46,7 +46,7 @@ export function BooksArticle({ authors, series, bookList }: BooksArticleProps)
                                     _id={bookToShow._id} imageBook={bookToShow.imageBook} releaseYear={bookToShow.releaseYear} authorUids={bookToShow.authorUids}
                                     bookTitle={bookToShow.bookTitle} subTitle={bookToShow.subTitle} description={bookToShow.description} seriesName={series.seriesName}
                                     bookArticleText={bookArticle} saintyTagLanguage={sanityTag} /> :
-                                <DescriptionSeries seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
+                                <SerieDescription seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
                         }
                     </div>
                 </article>
