@@ -72,18 +72,10 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                 <div className="mailIconAdressWrapper flex">
                     <FaUserLarge size="3rem" className="userIcon" />
                     {userInfo != "Display email" ?
-                        <div className="userInfoDiv" onAnimationEnd={() => setUserInfo("Display email")}>
-                            {userInfo == "No user message" ?
-                                <p className="userInfoText">
-                                    <IoMdClose size="1.4rem" className="userInfoIcon" />
-                                    {noUserMessage}
-                                </p> :
-                                <p className="userInfoText">
-                                    <IoCheckmarkSharp size="1.4rem" className="userInfoIcon" />
-                                    {userFoundMessage}
-                                </p>
-                            }
-                        </div> :
+                        <div key={userInfo} className="userInfoDiv" >
+                            {userInfo == "No user message" ? <IoMdClose size="1.5rem" className="userInfoIcon userIconAnim" /> : <IoCheckmarkSharp size="1.4rem" className="userInfoIcon userIconAnim" />} 
+                             <span className="userTextAnim" onAnimationEnd={() => setUserInfo("Display email")}>{ userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
+                       </div> :
 
                         <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>}
                 </div>

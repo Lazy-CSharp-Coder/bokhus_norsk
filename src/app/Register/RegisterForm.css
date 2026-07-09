@@ -126,21 +126,29 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    animation-name: slideInAndOut;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+
+    color: white;
+
+}
+
+
+
+.userTextAnim, .userIconAnim {
+        animation-name: slideInAndOut;
     animation-duration: 4.8s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: backwards;
     animation-delay: 1s;
-}
-
-.userInfoText {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    color: white;
-
     font-size: 1.4rem;
 }
+
+.userIconAnim {
+    animation-delay: 0.8s;
+}
+
 
 @keyframes slideInAndOut {
     0% {
