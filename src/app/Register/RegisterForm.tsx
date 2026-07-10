@@ -19,7 +19,7 @@ import { FaBookOpenReader } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { IoCheckmarkSharp } from "react-icons/io5";
-
+import { IoMailOutline } from "react-icons/io5";
 
 import { languageOptions } from "./registerSchema";
 
@@ -76,8 +76,9 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                             {userInfo == "No user message" ? <IoMdClose size="1.5rem" className="userInfoIcon userIconAnim" /> : <IoCheckmarkSharp size="1.4rem" className="userInfoIcon userIconAnim" />} 
                              <span className="userTextAnim" onAnimationEnd={() => setUserInfo("Display email")}>{ userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
                        </div> :
-
-                        <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>}
+<div className="mailIconUserEmailWrapper"><IoMailOutline size="1.8rem" className="regMailIcon scaleInAnim"/>  <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>
+    </div>
+                      }
                 </div>
             </div>
 

@@ -67,6 +67,15 @@
 }
 
 
+
+.mailIconUserEmailWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    align-items: center;
+
+}
+
 .registerForm {
     flex-direction: column;
     gap: 1rem;
