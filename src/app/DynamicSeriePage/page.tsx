@@ -34,8 +34,6 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    const serie = series[0];
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
 
-
-
    console.log("Serie : " + serie._id + serie.seriesName + serie.authorUids);
    serie.authorUids.forEach((item) => { console.log(item._ref); });
 
