@@ -32,7 +32,7 @@ export default async function WhereToBuy()
   const waitForBackground = 800;
 
   return (
-    <>
+ 
 
       <main className="whereToBuyPage flex">
         <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy5.png" />
@@ -79,7 +79,6 @@ export default async function WhereToBuy()
 
         </section>
       </main>
-    </>
-
+   
   );
 }
