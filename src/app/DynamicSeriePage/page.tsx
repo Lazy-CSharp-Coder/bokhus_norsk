@@ -27,12 +27,14 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    const SERIES_QUERY = `*[_type == "Series" && _id == $serieUidFromParams]`;
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
-   const BOOK_QUERY = `*[_type == "Book" && _id in $bookUids[]._ref] | order(bookInSeries asc)`;
+   const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
 
 
    const series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
    const serie = series[0];
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
+
+
 
    console.log("Serie : " + serie._id + serie.seriesName + serie.authorUids);
    serie.authorUids.forEach((item) => { console.log(item._ref); });
@@ -51,7 +53,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
       return;
    }
    // console.log(authors);
-   const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { bookUids: serie.bookUids });
+   const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID : serie._id });
    if (bookList.length < 1)
    {
 
