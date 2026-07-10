@@ -1,15 +1,24 @@
 import { RecommendedForProps } from "@/types/booktypes";
 
 import "./SerieRecommendedFor.module.css";
+import { ExpandingLine } from "@/components/common/ExpandingLine";
 
 const recommendedText: string = "Recommende for readers :";
 export function SerieRecommendedFor({ ageGroup }: RecommendedForProps)
 {
 
     return (
-        <div className="suitedForDiv scaleInAnim" style={{ animationDelay: "2s", animationDuration: "1.5s" }}>
+        <>  <ExpandingLine lineSize={1} animationDuration="2s" animationDelay="1s" />
+        
+          <div className="suitedForDiv rotateInXAnim" style={{ animationDelay: "3s", animationDuration: "1.5s" }}>
+          
             {recommendedText} <span className="ageGroup">{ageGroup}</span>
+       
 
-        </div>);
+        </div>
+             <ExpandingLine lineSize={1} animationDuration="2s" animationDelay="2s"/>
+        
+        </>
+      );
 
 }
