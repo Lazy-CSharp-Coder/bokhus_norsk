@@ -1,0 +1,101 @@
+@media(max-width:39.99em) {
+    html {}
+}
+
+@media(max-width:63.99em) {
+
+    html {
+        font-size: 70%;
+
+    }
+
+    body {
+        width: 100vw;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem 3rem;
+    }
+ .desktopMode,
+    .desktopModeBlock {
+        display: none;
+    }
+
+    .mobileMode {
+        display: block;
+        margin-top: 0.2rem;
+
+    }
+
+    .backgroundImageHero {
+        background-size: contain;
+    }
+   
+    .heroSection {
+        width: 65%;
+
+        /* align-items: ; */
+        /* background-color: beige; */
+    }
+
+    .descriptionDivHeroPage {
+        width: 70%;
+        /* background: red; */
+    }
+
+    .quotesTextBottom {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+}
+
+@media(max-width: 119.99em) {
+    html {
+        font-size: 90%;
+    }
+
+    .heroSection {
+
+    }
+
+    .mobileMode {
+        display: none;
+    }
+
+    .desktopMode,
+    .desktopModeBlock {
+        display: flex;
+    }
+
+    
+    .backgroundImageHero {
+        background-size: contain;
+    }
+
+    .descriptionDivHeroPage {
+
+
+    }
+
+    .seriesPage {}
+
+
+}
+
+@media(max-width: 160em) {
+
+    html {
+        font-size: 110%;
+    }
+}
+
+@media(max-width: 240em) {
+
+    html {
+        font-size: 112%;
+    }
+}

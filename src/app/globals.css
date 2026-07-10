@@ -1,6 +1,6 @@
 @import "./../cssLib/Animations.css";
 @import "./../cssLib/submitButton.css";
-@import "./mediaQueries.css";
+@import "./mediaQueriesEM.css";
 
 
 
@@ -86,7 +86,7 @@ main {
   flex-grow: 1;
 }
 
-/* 
+
 .desktopMode {
   
   display: flex;
@@ -98,7 +98,7 @@ main {
 
 .mobileMode {
   display: none;
-} */
+}
 
 
 .hiddenFromView {
@@ -122,6 +122,9 @@ a {
 .headingLineWrapper {
   width: fit-content;
 }
+
+
+
 
 @media (prefers-color-scheme: dark) {
   html {

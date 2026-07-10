@@ -21,6 +21,7 @@
   min-height: 6rem;
   max-height: 6rem;
   width: 100%;
+  max-width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
@@ -59,46 +60,9 @@
   transition: color 0.3s ease-in;
 }
 
-.desktopMode {
-
-  display: flex;
-}
-
-.desktopModeBlock {
-  display: block;
-}
-
-.mobileMode {
-  display: none;
-}
-
-
 
 .headerMenuItem:hover {
   color:  var(--bokhusFutureColor);
-}
-
-@media (max-width: 1023px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0rem 3rem;
-  }
-
-  .desktopMode,
-  .desktopModeBlock {
-    display: none;
-  }
-
-  .mobileMode {
-    display: block;
-    margin-top: 0.2rem;
-
-  }
-
-  
 }
 
 /* clerk button div and classes  */
@@ -109,6 +73,14 @@
   gap: 1.5rem;
 }
 
+.loginBurgerWrapper {
+  display: flex;
+  flex-direction: row;
+  gap:2.5rem;
+  align-items: center;
+  width: fit-content;
+
+}
 
 .signInButton, .signUpButton {
    display: flex;

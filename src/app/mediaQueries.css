@@ -129,7 +129,7 @@
 
 /* Tablet and mobile devices */
 
-@media (max-width: 1023px) {
+@media (min-width: 48em) {
 
     html {
         font-size: 100%;
