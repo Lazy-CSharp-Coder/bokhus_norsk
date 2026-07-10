@@ -5,7 +5,7 @@
 @media(max-width:63.99em) {
 
     html {
-        font-size: 70%;
+        font-size: 40%;
 
     }
 
@@ -47,7 +47,7 @@
         font-size: 1.5rem;
         text-align: left;
     }
-}
+/* }
 
 @media(max-width: 119.99em) {
     html {
@@ -67,8 +67,8 @@
     .seriesPage {}
 
 
-}
-
+} */
+/* 
 @media(max-width: 160em) {
 
     html {
@@ -81,4 +81,4 @@
     html {
         font-size: 112%;
     }
-}
+} */

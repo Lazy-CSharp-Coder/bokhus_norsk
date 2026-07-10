@@ -134,7 +134,7 @@ display: flex;
     flex-direction: column;
     font-size: 1.8rem;
     margin-top: 2rem;
-    width: 45%;
+    width: 70%;
     text-align: left;
     gap: 3rem;
     justify-content: space-evenly;
@@ -150,23 +150,24 @@ display: flex;
     margin-top: 2rem;
 }
 
+ @media (max-width: 119.99em) {
+  html {
+    font-size: 70%;
+  }
+
+  
+
+} 
 
 @media (max-width: 63.99em) {
  
-  .backgroundImageHero {
-    background-size: contain;
-  }
 
   .heroSection {
-    width: 65%;
+    width: 100%;
   }
 
   .descriptionDivHeroPage {
     width: 70%;
   }
 
-  .quotesTextBottom {
-    font-size: 1.5rem;
-    text-align: left;
-  }
-}
+} 
