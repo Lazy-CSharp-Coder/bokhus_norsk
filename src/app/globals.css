@@ -1,6 +1,5 @@
 @import "./../cssLib/Animations.css";
 @import "./../cssLib/submitButton.css";
-@import "./mediaQueriesEM.css";
 
 
 
@@ -18,13 +17,13 @@
   --borderIconColor: rgb(125, 88, 33);
   --borderReg: 1px solid var(--borderIconColor);
   --borderRadiusReg: 5px;
-   --backgroundBook: rgba(20, 20, 20, 0.7);
+  --backgroundBook: rgba(20, 20, 20, 0.7);
   --buttonBorderTopLeftColor: rgb(175, 138, 83);
   --buttonBorderBottomRightColor: rgb(95, 63, 23);
   --buttonColor: rgb(235, 235, 235);
-  --buttonBackgroundColor :  rgb(125, 88, 33);
-  --defaultBorderRadius : 5px;
-  --defaultBorder : 2px solid var(--borderIconColor);
+  --buttonBackgroundColor: rgb(125, 88, 33);
+  --defaultBorderRadius: 5px;
+  --defaultBorder: 2px solid var(--borderIconColor);
 }
 
 * {
@@ -87,19 +86,6 @@ main {
 }
 
 
-.desktopMode {
-  
-  display: flex;
-}
-
-.desktopModeBlock {
-  display: block;
-}
-
-.mobileMode {
-  display: none;
-}
-
 
 .hiddenFromView {
   opacity: 0;
@@ -115,16 +101,58 @@ a {
 }
 
 .entriesNotFoundText {
-    margin: 3rem 0rem;
-    font-size : 2rem;
+  margin: 3rem 0rem;
+  font-size: 2rem;
 }
 
 .headingLineWrapper {
   width: fit-content;
 }
 
+@media (max-width: 39.99em) {
+  html {}
+}
 
+@media (max-width: 63.99em) {
+  html {
+    font-size: 70%;
+  }
 
+  .backgroundImageHero {
+    background-size: contain;
+  }
+
+  .heroSection {
+    width: 65%;
+  }
+
+  .descriptionDivHeroPage {
+    width: 70%;
+  }
+
+  .quotesTextBottom {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 119.99em) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 160em) {
+  html {
+    font-size: 110%;
+  }
+}
+
+@media (max-width: 240em) {
+  html {
+    font-size: 112%;
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   html {

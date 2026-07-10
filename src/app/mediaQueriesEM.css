@@ -9,11 +9,7 @@
 
     }
 
-    body {
-        width: 100vw;
-    }
-
-    header {
+     header {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -62,19 +58,6 @@
 
     }
 
-    .mobileMode {
-        display: none;
-    }
-
-    .desktopMode,
-    .desktopModeBlock {
-        display: flex;
-    }
-
-    
-    .backgroundImageHero {
-        background-size: contain;
-    }
 
     .descriptionDivHeroPage {
 

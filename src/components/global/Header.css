@@ -130,3 +130,38 @@ background-color: rgb(20, 20, 20);
 
 }
 
+.desktopMode {
+
+  display: flex;
+}
+
+.desktopModeBlock {
+  display: block;
+}
+
+.mobileMode {
+  display: none;
+}
+
+
+@media (max-width: 63.99em) {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+  }
+
+  .desktopMode,
+  .desktopModeBlock {
+    display: none;
+  }
+
+  .mobileMode {
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+}
