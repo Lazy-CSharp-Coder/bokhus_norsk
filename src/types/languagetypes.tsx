@@ -28,7 +28,6 @@ export interface LanguageChosen
     languageNumber: number,
     language: string,
     sanityTag: string,
-    setLanguageNumber: (nr: number) => void,
     menuItemsHeader : MenuItemsHeader[]
     heroPage : HeroPageText,
 

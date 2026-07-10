@@ -24,7 +24,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
         if (isDescriptionShowing) setIsDescriptionShowing(false);
     };
 
-    const { bookArticle, sanityTag } = useLanguageChosen();
+    const { sanityTag } = useLanguageChosen();
     const bookForSizing: Book = bookList[0];
     console.log("Sanity tag for language is  : " + sanityTag);
 
@@ -37,7 +37,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                     <BookCardSizer key={bookForSizing._id + "#sizerCard#"} availability={bookForSizing.availability} bookInSeries={bookForSizing.bookInSeries}
                         _id={bookForSizing._id} imageBook={bookForSizing.imageBook} releaseYear={bookForSizing.releaseYear} authorUids={bookForSizing.authorUids}
                         bookTitle={bookForSizing.bookTitle} subTitle={bookForSizing.subTitle} description={bookForSizing.description} seriesName={series.seriesName}
-                        bookArticleText={bookArticle} saintyTagLanguage={sanityTag} />
+                        saintyTagLanguage={sanityTag} />
 
                     <div className="bookCardWrapper">
                         {
@@ -45,7 +45,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                                 <BookCard key={bookToShow._id} availability={bookToShow.availability} bookInSeries={bookToShow.bookInSeries}
                                     _id={bookToShow._id} imageBook={bookToShow.imageBook} releaseYear={bookToShow.releaseYear} authorUids={bookToShow.authorUids}
                                     bookTitle={bookToShow.bookTitle} subTitle={bookToShow.subTitle} description={bookToShow.description} seriesName={series.seriesName}
-                                    bookArticleText={bookArticle} saintyTagLanguage={sanityTag} /> :
+                                   saintyTagLanguage={sanityTag} /> :
                                 <SerieDescription seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
                         }
                     </div>

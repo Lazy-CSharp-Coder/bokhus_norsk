@@ -1,9 +1,8 @@
 "use client";
-import { useIntroState } from "@/globalStates"
 
 export function ReviewScrollButton() 
 {
-    const intro = useIntroState();
+
     const handleScrollToReviews = () => 
     {
         const section = document.getElementById("reviewArticle");
