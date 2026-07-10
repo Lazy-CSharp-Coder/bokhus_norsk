@@ -10,6 +10,7 @@ export interface Book
 {
 
     _id: string,
+    seriesRef : SanityReference,
     commonId? : string,
     bookTitle: string,
     availability: number[],   // lydbok, e-bok, paperbak - muligens legge inn isbn
