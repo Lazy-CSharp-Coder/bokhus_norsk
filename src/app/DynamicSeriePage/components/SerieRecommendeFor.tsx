@@ -8,15 +8,15 @@ export function SerieRecommendedFor({ ageGroup }: RecommendedForProps)
 {
 
     return (
-        <>  <ExpandingLine lineSize={1} animationDuration="2s" animationDelay="1s" />
+        <>  <ExpandingLine lineSize={1} animationDuration="2s" animationDelay="1.5s" />
         
-          <div className="suitedForDiv rotateInXAnim" style={{ animationDelay: "3s", animationDuration: "1.5s" }}>
+          <div className="suitedForDiv rotateInXAnim" style={{ animationDelay: "2.5s", animationDuration: "1.5s" }}>
           
             {recommendedText} <span className="ageGroup">{ageGroup}</span>
        
 
         </div>
-             <ExpandingLine lineSize={1} animationDuration="2s" animationDelay="2s"/>
+             <ExpandingLine lineSize={1} animationDuration="2s" animationDelay="1s"/>
         
         </>
       );
