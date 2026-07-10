@@ -27,7 +27,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    const SERIES_QUERY = `*[_type == "Series" && _id == $serieUidFromParams]`;
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
-   const BOOK_QUERY = `*[_type == "Book" && _id in $bookUids[]._ref] | order(bookInSeries asc)`;
+   const BOOK_QUERY = `*[_type == "Book" && ] | order(bookInSeries asc)`;
 
 
    const series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
