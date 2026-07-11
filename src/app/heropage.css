@@ -170,10 +170,14 @@ display: flex;
 
 } */
 
+@media (max-width: 47.99em)
+{
+ .descriptionDivHeroPage {
+        width: 90%;
+    }
+}
 
 @media (max-width : 39.99em)
 {
-    .descriptionDivHeroPage {
-        width: 90%;
-    }
+   
 }
