@@ -98,6 +98,8 @@ main {
 a {
   color: inherit;
   text-decoration: none;
+  width: fit-content;
+  
 }
 
 .entriesNotFoundText {
@@ -112,14 +114,13 @@ a {
 @media (max-width: 199.99em)
 {
   html {
-   font-size:  100%;
+   font-size:  110%;
   }
 }
 
-
 @media (max-width: 159.99em) {
   html {
-    font-size: 88%;
+    font-size: 87.5%;
   }
 }
 
@@ -138,7 +139,7 @@ a {
 }
 @media (max-width: 39.99em) {
   html {
-    font-size: 60%;
+    font-size: 50%;
   }
 }
 

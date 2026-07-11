@@ -42,6 +42,7 @@ margin-top: 4rem;
     font-size: 2.5rem;
     color: var(--myWhiteColor);
     padding-bottom: 1rem;
+    text-align: center;
      
 
 }
@@ -81,6 +82,7 @@ margin-top: 4rem;
 .clickText {
     color: var(--myWhiteColor);
     font-size: 1.1rem;
+    text-align: center;
   
     /* font-style : italic; */
 }
@@ -90,3 +92,48 @@ margin-top: 4rem;
     /* border-bottom: 1px solid var(--bokhusRootsColor); */
 }
 
+
+
+@media (max-width: 199.99em)
+{
+ 
+}
+
+@media (max-width: 159.99em) {
+
+}
+
+ @media (max-width: 119.99em) {
+
+} 
+
+
+@media (max-width: 63.99em) {
+
+    .authorsHeadingWrapper {
+        width: 70%;
+    }
+    .linkList {
+        width: 65%;
+    }
+
+}
+@media (max-width: 39.99em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+
+@media (max-width: 24rem) {
+    html {
+        font-size: 50%;
+    }
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* 
