@@ -15,7 +15,7 @@ export default async function AuthorSection({ author }: { author: Author; })
     const SERIES_QUERY = `*[_type == "Series" && references($authorUid)]`;
     const seriesAuthor: Series[] = await client.fetch<Series[]>(SERIES_QUERY, { authorUid: _id });
 
-    if (seriesAuthor.length < 1) console.log("series not found. Queriy wrong");
+    if (seriesAuthor.length < 1) console.log("Series not found.");
     const animInc: number = 200;
     const animWaitForMain: number = 300;
 

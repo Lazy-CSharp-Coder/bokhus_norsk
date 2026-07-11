@@ -22,7 +22,7 @@ export default async function Authors()
     const setRouteToGo = (author: Author) =>
     {
         const params = new URLSearchParams();
-        console.log("uid from sanity is  " + author._id);
+
         params.set("message", author._id);
         return (`/DynamicAuthorPage?${params.toString()}`);
 
