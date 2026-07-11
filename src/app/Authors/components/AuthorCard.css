@@ -45,7 +45,8 @@ background-color:var(--regBackground);
     position: relative;
     height: auto;
     aspect-ratio: 1 / 1;
-    width: 19vw;
+    /* width: 19vw; */
+    width: 27.65rem;
 
 }
 
