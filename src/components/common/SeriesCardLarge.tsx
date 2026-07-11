@@ -32,7 +32,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
                     <h3 className="seriesCardLargeHeading">{seriesName}</h3>
                     <ByAuthor authors={authors} />
                     <div className="seriesCardLargeIconFactWrapper flex">
-                        <GiBookCover size="1.7rem" className="seriesCardLargeBookIcon" />
+                        <GiBookCover size="var(--seriesCardLargeBookIconSize)" className="seriesCardLargeBookIcon" />
                         <span className="seriesCardLargeFact">{seriesFact}</span>
                     </div>
 

@@ -75,3 +75,65 @@
     list-style: none;
 
 }
+
+@media (max-width: 199.99em)
+{
+ 
+}
+
+@media (max-width: 159.99em) {
+
+    .seriesPageSection {
+        width: 50%;
+    }
+}
+
+/* 1920px grense */
+
+ @media (max-width: 119.99em) {
+   .seriesPageSection {
+    width: 60%;
+   }
+} 
+
+/* 1440px grense */
+
+@media (max-width: 89.99em) {
+
+.seriesPageSection {
+    width: 65%;
+   }
+}
+
+
+@media (max-width: 63.99em) {
+  html {
+    /* font-size:70%; */
+  }
+.seriesPageSection {
+    width:95%;
+}
+
+.seriesPageDescriptionArticle {
+    padding: 0 5rem;
+}
+
+
+
+@media (max-width: 47.99em){
+
+
+    
+}
+
+}
+@media (max-width: 39.99em) {
+ 
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+

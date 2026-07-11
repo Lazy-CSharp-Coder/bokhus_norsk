@@ -28,7 +28,8 @@
 
 .seriesCardLargeImageDiv {
     position: relative;
-    height: 100%;
+    /* height: 100%; */
+   height: 15.92rem;
     /* width: 100%; */
     /* min-height: 100%; */
     flex: 1;
@@ -85,10 +86,11 @@
 }
 
 .seriesCardLargeBookIcon {
+    --seriesCardLargeBookIconSize: 1.7rem;
     color: rgb(141, 141, 141);
     margin-top: 0.2rem;
-
-
+    width: var(--seriesCardLargeBookIconSize);
+    height: var(--seriesCardLargeBookIconSize);
 }
 
 .seriesCardLargeFact {
@@ -145,38 +147,103 @@
     transform: translateY(-50%)
 }
 
-/* 
-
-.goToArrowWrapper {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    cursor: pointer;
+@media (max-width: 199.99em)
+{
+ 
 }
 
-.goToArrowWrapper:hover {
-    color: white;
-    scale: 1.01;
+@media (max-width: 159.99em) {
+
 }
 
-@keyframes moveArrow {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
+ @media (max-width: 119.99em) {
+
+} 
+
+/* under 1024px - tablet */
+
+@media (max-width: 63.99em) {
+
+}
+
+/* under 768px  - tablet */
+
+
+@media (max-width: 47.99em){
+
+    .seriesCardLarge {
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        gap:3rem;
+        /* padding: 6.3rem 2.5rem; */
+        padding: 5% 0;
+        text-align: center;
+            line-height: 1.2;
     }
 
-    60% {
-        transform: translateX(5px);
-        opacity: 1;
+    .seriesCardLargeImageDiv {
+        width: 88.2%;
+        
     }
 
-    90% {
-        opacity: 1;
+    .seriesCardLargeHeading {
+        font-size: 3.4rem;
     }
 
-    100% {
-        transform: translateX(0);
-        opacity: 1;
+    .seriesCardLargeInfoWrapper {
+        align-items:center;
     }
-} */
+    
+    .seriesCardLargeHeadingAuthorWrapper {
+        font-size: 2rem;
+        align-items: center;
+
+    }
+.seriesCardLargeIconFactWrapper {
+    flex-direction: column;
+    /* border-top: 1px solid var(--myWhiteColor); */
+    border-bottom: 1px solid var(--myWhiteColor);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    max-width: 90%;
+    /* line-height: 1.4; */
+}
+    .seriesCardLargeBookIcon {
+        --seriesCardLargeBookIconSize: 3rem;
+    }
+
+    .seriesCardLargeFact {
+        
+        font-size: 1.4rem;
+        /* text-align: center; */
+  
+    }
+
+    .seriesCardLargeTeaserBlurbWrapper {
+        align-items: center;
+        
+       max-width: 80%;
+        margin-top: 2rem;
+        gap:1.8rem;
+    }
+
+   .seriesCardLargeTeaser {
+    font-size: 1.43rem;
+    
+   }
+
+   .seriesCardLargeBlurb {
+    font-size: 1.4rem;
+    text-align: center;
+   }
+
+    
+}
+
+/* mobil og nedover */
+
+@media (max-width: 39.99em) {
+
+}
+
