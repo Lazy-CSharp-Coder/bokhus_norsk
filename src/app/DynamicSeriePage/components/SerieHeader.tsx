@@ -10,7 +10,7 @@ export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerLi
 {
     const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
     return (
-        <article key={"01" + "Description" + isDescriptionShowing} className="serieHeader flex fadeInAnim">
+        <article key={"01" + "Description"} className="serieHeader flex fadeInAnim">
 
             <div className="headingAndAuthorInfoDiv grid" onClick={() => setIsDescriptionShowing(true)}>
                 <div className="serieNameArrowWrapper flex">                <h2 className="serieName">{seriesName}</h2>
