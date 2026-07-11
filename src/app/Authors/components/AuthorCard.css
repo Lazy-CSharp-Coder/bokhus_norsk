@@ -136,10 +136,12 @@ background-color:var(--regBackground);
     font-size:70%;
   }
 
+
   .authorCard {
     flex-direction: column;
     align-items: center;
-    padding: 3.2rem 5rem;
+/* width: 80%; */
+    padding: 4rem 6rem;
   }
 
   .authorImageDiv {
@@ -150,7 +152,7 @@ background-color:var(--regBackground);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 75%; */
+    width: 100%;
     gap:2rem;
   }
 .authorNameSubTitleWrapper {
