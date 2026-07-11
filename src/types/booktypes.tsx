@@ -67,14 +67,14 @@ export interface Author
 
 // intro states - global
 
-export type IntroPlayState = "played" | "never";
 
-export interface IntroSeries
+
+export interface DescriptionShowing
 {
-    hasIntroBeenPlayed: IntroPlayState,
-    setIntroBeenPlayed: (state: IntroPlayState) => void,
+ 
     isDescriptionShowing: boolean,
-    setIsDescriptionShowing : (state : boolean) => void
+    setIsDescriptionShowing : (value : boolean) => void
+
 }
 
 

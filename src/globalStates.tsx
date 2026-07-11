@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, type PropsWithChildren, useContext, useState } from "react";
-import type { IntroSeries, IntroPlayState } from "./types/booktypes";
+import type {DescriptionShowing } from "./types/booktypes";
 import { LanguageChosen, LanguageText } from "./types/languagetypes";
 import languageTextFromJson from "@/json/languages.json";
 
@@ -22,13 +22,14 @@ const startupLanguage: LanguageChosen =
 }
 
 // state provider 
-const IntroPlayed = createContext<IntroSeries>({ hasIntroBeenPlayed: "never", setIntroBeenPlayed: () => { }, isDescriptionShowing: false, setIsDescriptionShowing: () => { } });
+const DescriptionShowingContext = createContext<DescriptionShowing>({ isDescriptionShowing: false, setIsDescriptionShowing : () => {}});
+
 const LanguageContext = createContext<LanguageChosen>(startupLanguage);
 // hook to handle the Intro to series
 
-export function useIntroState()
+export function useDescriptionShowingState()
 {
-    const context = useContext(IntroPlayed);
+    const context = useContext(DescriptionShowingContext);
     if (context == undefined)
         throw new Error("useIntroState must be used inside a StateProvider");
     return context;
@@ -46,8 +47,8 @@ export function useLanguageChosen()
 
 export function StateProvider({ children }: PropsWithChildren)
 {
-    const [hasIntroBeenPlayed, setIntroBeenPlayed] = useState<IntroPlayState>("played");
-    const [isDescriptionShowing, setIsDescriptionShowing] = useState<boolean>(true);
+
+    const [isDescriptionShowing, setIsDescriptionShowing] = useState<boolean>(false);
     const [languageChosen, setLanguageChosen] = useState<LanguageChosen>(startupLanguage);
 
     
@@ -55,10 +56,10 @@ export function StateProvider({ children }: PropsWithChildren)
 
 
 
-    return <IntroPlayed.Provider value={{ hasIntroBeenPlayed, setIntroBeenPlayed, isDescriptionShowing, setIsDescriptionShowing }}>
+    return <DescriptionShowingContext.Provider value={{  isDescriptionShowing, setIsDescriptionShowing }}>
         <LanguageContext.Provider value={{ languageNumber, heroPage, menuItemsHeader, language, sanityTag }}>
             {children}
         </LanguageContext.Provider>
-    </IntroPlayed.Provider>;
+    </DescriptionShowingContext.Provider>;
 }
 
