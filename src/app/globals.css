@@ -111,6 +111,13 @@ a {
   width: fit-content;
 } 
 
+@media (max-width: 239.99)
+{
+  html {
+    font-size: 130%;
+  }
+}
+
 @media (max-width: 199.99em)
 {
   html {
@@ -120,7 +127,7 @@ a {
 
 @media (max-width: 159.99em) {
   html {
-    font-size: 87.5%;
+    font-size: 100%;
   }
 }
 /* max 1920 */
