@@ -18,11 +18,16 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                 <div className="factsDiv flex">
 
                     <div className="headingWrapper">
-                        <h3 className={`bookTitle`}>{bookTitle}</h3>
+                        <h3 className="bookTitle">{bookTitle}</h3>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
+                        <span className="headingAvailableSeparator">
+
+       <BookAvailableIn availability={availability}fontSize="0.7rem"/>
+                        </span>
+                 
                     </div>
       
-                    <BookAvailableIn availability={availability}fontSize="0.7rem"/>
+                  
                     <p className="releaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book description / synopsis :</p>
                 </div>

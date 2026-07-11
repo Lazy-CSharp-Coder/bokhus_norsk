@@ -112,10 +112,9 @@ a {
 @media (max-width: 199.99em)
 {
   html {
-   font-size:  100%;
+   font-size:  110%;
   }
 }
-
 
 @media (max-width: 159.99em) {
   html {
