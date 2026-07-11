@@ -29,7 +29,7 @@ export default async function WhereToBuy()
 
   );
 
-  const waitForBackground = 800;
+  const waitForBackground = 0;
 
   return (
  
