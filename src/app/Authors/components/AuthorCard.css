@@ -132,9 +132,6 @@ background-color:var(--regBackground);
 
 
 @media (max-width: 63.99em) {
-  html {
-    font-size:70%;
-  }
 
 
   .authorCard {
@@ -181,15 +178,6 @@ background-color:var(--regBackground);
 
 }
 @media (max-width: 39.99em) {
-  html {
-    font-size: 60%;
-  }
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-/* 

@@ -126,10 +126,17 @@ a {
 
  @media (max-width: 119.99em) {
   html {
-    font-size: 70%;
+    font-size: 80%;
   }
 } 
 
+
+@media (max-width: 89.99em) {
+html {
+  font-size: 70%;
+}
+
+}
 
 @media (max-width: 63.99em) {
   html {
@@ -137,6 +144,16 @@ a {
   }
 
 }
+
+
+@media (max-width: 47.99em){
+
+  html {
+    font-size: 65%;
+  }    
+}
+
+
 @media (max-width: 39.99em) {
   html {
     font-size: 50%;
