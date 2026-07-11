@@ -137,7 +137,9 @@ a {
 
 }
 @media (max-width: 39.99em) {
-  html {}
+  html {
+    font-size: 60%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

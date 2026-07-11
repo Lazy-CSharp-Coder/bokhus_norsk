@@ -147,33 +147,33 @@ display: flex;
 .quotesDivBottom {
     flex-direction: row;
     gap: 1.2rem;
-    margin-top: 2rem;
-}
-
-@media (max-width : 39.99em)
-{
-    
+   
 }
 
 @media (max-width: 63.99em) {
  
 
-  .heroSection {
-    width: 100%;
-  }
 
   .descriptionDivHeroPage {
     width: 70%;
   }
 
 } 
-
+/* 
 @media (max-width: 63.99em) and (orientation: landscape) 
 {
 
-    /* do test this on tablet */
+     do test this on tablet
    .backgroundImageHero {
      background-size: contain;
    }
 
+} */
+
+
+@media (max-width : 39.99em)
+{
+    .descriptionDivHeroPage {
+        width: 90%;
+    }
 }

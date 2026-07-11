@@ -2,7 +2,7 @@
     border: none;
     color:var(--myWhiteColor);
     font-family : var(--robotoFont);
-    font-size: 1rem;
+    /* font-size: 1rem; */
     transition: all 0.4s ease-in;
     background-color: transparent;
     text-decoration: none;
@@ -11,12 +11,6 @@
 }
 
 
-
-.footerInfoHeading {
-    font-size: 1.8rem;
-    color: white;
-
-}
 
 .termsLink:hover, .privacyLink:hover, .affiliateLink:hover, .cookieLink:hover{
 
