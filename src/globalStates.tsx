@@ -22,7 +22,7 @@ const startupLanguage: LanguageChosen =
 }
 
 // state provider 
-const DescriptionShowingContext = createContext<DescriptionShowing>({ isDescriptionShowing: true, setIsDescriptionShowing : () => {}});
+const DescriptionShowingContext = createContext<DescriptionShowing>({ isDescriptionShowing: true, setIsDescriptionShowing : (value: boolean) => {}});
 
 const LanguageContext = createContext<LanguageChosen>(startupLanguage);
 // hook to handle the Intro to series
@@ -49,10 +49,10 @@ export function StateProvider({ children }: PropsWithChildren)
 {
 
     const [isDescriptionShowing, setIsDescriptionShowing] = useState<boolean>(true);
-    const [languageChosen, setLanguageChosen] = useState<LanguageChosen>(startupLanguage);
+
 
     
-    const { languageNumber, heroPage,  menuItemsHeader, language, sanityTag} = languageChosen;
+    const { languageNumber, heroPage,  menuItemsHeader, language, sanityTag} = startupLanguage;
 
 
 
