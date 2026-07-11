@@ -26,7 +26,7 @@
     flex-direction: column;
     align-items: left;
     gap: 2.2rem;
-    max-width:70rem;
+    max-width:80rem;
 }
 
 .seriesPageDescriptionArticle {
@@ -79,7 +79,7 @@
 @media (max-width: 199.99em)
 {
  .seriesPageSection {
-    max-width: 90rem;
+    /* max-width: 90rem; */
  }
 }
 
@@ -103,7 +103,7 @@
 @media (max-width: 89.99em) {
 
 .seriesPageSection {
-    max-width: 80rem;
+    /* max-width: 80rem; */
    }
 }
 
