@@ -10,3 +10,12 @@
 .quotesTextBottom {
     font-size: 1.5rem;
 }
+
+
+
+@media (max-width : 39.99em)
+{
+  .quotesDivBottom {
+    flex-direction: column;
+  }
+}

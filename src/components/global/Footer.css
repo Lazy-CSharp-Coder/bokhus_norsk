@@ -1,20 +1,18 @@
-
-
 @import "./ButtonsFooter.css";
 @import "./legal/legal.css";
 
-footer{
+footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-   gap: 2rem;
-  min-height: 6rem;
-  max-height: 6rem;
+    gap: 2rem;
+    min-height: 6rem;
+    max-height: 6rem;
     padding: 0.8rem 2rem;
     width: 100%;
-        font-family : var(--robotoFont);
-  background-color:var(--commonBackgroundColor);
+    font-family: var(--robotoFont);
+    background-color: var(--commonBackgroundColor);
 
 }
 
@@ -22,13 +20,13 @@ footer{
 .logoTermsWrapper {
     display: flex;
     flex-direction: row;
-    gap:2rem;
+    gap: 2rem;
 }
 
 .logoFooterWrapper {
 
     width: 5.3rem;
-    aspect-ratio: 1/1 ;
+    aspect-ratio: 1/1;
     filter: invert();
     position: relative;
 }
@@ -41,9 +39,11 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: left;
-    gap:4rem;
+    gap: 4rem;
     align-items: flex-end;
 }
+
+
 .pageCreditsDiv {
     display: flex;
     flex-direction: row;
@@ -51,19 +51,23 @@ footer{
 }
 
 
-.logoBPDiv, .socialMediaDiv, .iconCreditDiv, .contactUsDiv {
+.logoBPDiv,
+.socialMediaDiv,
+.iconCreditDiv,
+.contactUsDiv {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
-   
+    justify-content: flex-end;
+
 }
 
 .contactUsDiv {
-      gap: 0.4rem;
+    /* gap: 0.1rem; */
 }
 
 .socialMediaDiv {
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .iconCreditDiv {
@@ -71,6 +75,49 @@ footer{
 }
 
 .logoBPDiv {
+    gap: 0.4rem;
+}
+
+
+.footerEndMobileDiv {
+    position: fixed;
+    background-color: var(--commonBackgroundColor);
+    bottom: 6rem;
+    right: 0.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(6, fit-content);
+    justify-items:start;
+    align-items: center;
+
+    row-gap: 1rem;
+    column-gap: 0.8rem;
+    padding: 2rem 2rem;
+    padding-right: 4rem;
+    border: 1px solid var(--myWhiteColor);
+    border-radius: 5px;
+  
+    /* width: max-content; */
+
+}
+.infoIcon {
+    justify-self: left;
+}
+.creditsLink {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.contactUsDivMobile {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-start;
+
+}
+
+.contactUsDivMobile {
     gap: 0.4rem;
 }
 
@@ -87,15 +134,15 @@ footer{
     align-items: center;
     justify-items: center;
     column-gap: 2rem;
+    font-size: 1rem;
 
 }
 
-.contactUsLink 
-{
-    display: flex;
+.contactUsLink {
+    /* display: flex;
     flex-direction: row;
     gap: 2rem;
-    align-items: center;
+    align-items: center; */
 }
 
 .socialMediaGroup {
@@ -107,3 +154,68 @@ footer{
 
 }
 
+.desktopModeFooter {
+
+  display: flex;
+}
+
+.desktopModeBlockFooter {
+  display: block;
+}
+
+.mobileModeFooter {
+  display: none;
+}
+
+@media (max-width: 63.99em) {
+
+    .logoTermsWrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+
+    .termsGroup {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-auto-rows: auto;
+        align-content: center;
+        justify-items: left;
+        padding: 0;
+        margin: 0;
+        row-gap: 0.3rem;
+        column-gap: 2rem;
+
+    }
+
+    .footerEndDiv {
+        gap: 3rem;
+
+    }
+
+}
+
+@media (max-width: 47.99em) {
+
+   .desktopModeFooter {
+     display: none;
+   }
+
+   .mobileModeFooter {
+    display: grid;   }
+
+}
+
+@media (max-width: 44em) {
+    
+    .termsGroup {
+        font-size: 0.9rem;
+        column-gap: 1.5rem;
+    }
+
+}
+
+@media (max-width: 39.99em){
+
+}

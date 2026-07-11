@@ -22,15 +22,20 @@ export function Header()
             </Link>
             <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
 
-                <span className="mobileMode">  <HamburgerMenu menuItems={menuItemsHeader} /></span>
+
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItemsHeader.map((item, index) =>
 
                         <Link key={item.name + index} className="headerMenuItem" href={item.pageLink}>{item.name}</Link>)
                     }
                 </div>
+            </div>  
+            <div className="loginBurgerWrapper">
+  <LoginClerk />
+            <span className="mobileMode">  <HamburgerMenu menuItems={menuItemsHeader} /></span>
+
             </div>
-            <LoginClerk />
+          
         </header>
     );
 

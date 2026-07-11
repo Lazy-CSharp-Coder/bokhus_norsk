@@ -1,6 +1,5 @@
 @import "./../cssLib/Animations.css";
 @import "./../cssLib/submitButton.css";
-@import "./mediaQueries.css";
 
 
 
@@ -18,13 +17,13 @@
   --borderIconColor: rgb(125, 88, 33);
   --borderReg: 1px solid var(--borderIconColor);
   --borderRadiusReg: 5px;
-   --backgroundBook: rgba(20, 20, 20, 0.7);
+  --backgroundBook: rgba(20, 20, 20, 0.7);
   --buttonBorderTopLeftColor: rgb(175, 138, 83);
   --buttonBorderBottomRightColor: rgb(95, 63, 23);
   --buttonColor: rgb(235, 235, 235);
-  --buttonBackgroundColor :  rgb(125, 88, 33);
-  --defaultBorderRadius : 5px;
-  --defaultBorder : 2px solid var(--borderIconColor);
+  --buttonBackgroundColor: rgb(125, 88, 33);
+  --defaultBorderRadius: 5px;
+  --defaultBorder: 2px solid var(--borderIconColor);
 }
 
 * {
@@ -86,19 +85,6 @@ main {
   flex-grow: 1;
 }
 
-/* 
-.desktopMode {
-  
-  display: flex;
-}
-
-.desktopModeBlock {
-  display: block;
-}
-
-.mobileMode {
-  display: none;
-} */
 
 
 .hiddenFromView {
@@ -115,12 +101,45 @@ a {
 }
 
 .entriesNotFoundText {
-    margin: 3rem 0rem;
-    font-size : 2rem;
+  margin: 3rem 0rem;
+  font-size: 2rem;
 }
 
 .headingLineWrapper {
   width: fit-content;
+} 
+
+@media (max-width: 199.99em)
+{
+  html {
+   font-size:  100%;
+  }
+}
+
+
+@media (max-width: 159.99em) {
+  html {
+    font-size: 88%;
+  }
+}
+
+ @media (max-width: 119.99em) {
+  html {
+    font-size: 70%;
+  }
+} 
+
+
+@media (max-width: 63.99em) {
+  html {
+    font-size:70%;
+  }
+
+}
+@media (max-width: 39.99em) {
+  html {
+    font-size: 60%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
