@@ -2,15 +2,15 @@
 import { ByAuthor } from "../../../components/common/ByAuthor";
 import { BestSellerList } from "../../../components/common/BestSellerList";
 import { SeriesInfoProps } from "@/types/booktypes";
-import { useIntroState } from "@/globalStates";
+import { useDescriptionShowingState} from "@/globalStates";
 import { HiOutlineArrowSmallLeft } from "react-icons/hi2";
 import "./SerieHeader.module.css";
 
 export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerList }: SeriesInfoProps)
 {
-    const { isDescriptionShowing, setIsDescriptionShowing } = useIntroState();
+    const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
     return (
-        <article key={"01" + "Description" + isDescriptionShowing} className="serieHeader flex fadeInAnim">
+        <article key={"01" + "Description"} className="serieHeader flex fadeInAnim">
 
             <div className="headingAndAuthorInfoDiv grid" onClick={() => setIsDescriptionShowing(true)}>
                 <div className="serieNameArrowWrapper flex">                <h2 className="serieName">{seriesName}</h2>

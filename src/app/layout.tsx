@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Libre_Baskerville, Roboto } from "next/font/google";
 import { Footer } from "@/components/global/Footer";
+import { StateProvider } from "@/globalStates";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--libreFont",
@@ -33,9 +34,11 @@ export default function RootLayout({
       <body className={`${libreBaskerville.variable} ${roboto.variable}`}>
 
         <ClerkProvider>
-          <Header />
-          {children}
-          <Footer/>
+          <StateProvider>
+            <Header />
+            {children}
+            <Footer />
+          </StateProvider>
         </ClerkProvider>
       </body>
     </html>

@@ -4,7 +4,7 @@ import type { Book, BooksArticleProps } from "@/types/booktypes";
 import { BookList } from "./BookList";
 import { BookCard, BookCardSizer } from "./BookCard";
 import { SerieDescription } from "./SerieDescription";
-import { useIntroState } from "@/globalStates";
+import { useDescriptionShowingState} from "@/globalStates";
 import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
 import { ReviewScrollButton } from "../../../components/general/ReviewScrollButton";
@@ -15,18 +15,17 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
 {
     const [bookToShow, setBookToShow] = useState<Book | undefined>(undefined);
 
-    const { isDescriptionShowing, setIsDescriptionShowing } = useIntroState();
+    const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
 
     const handleClick = (item: Book) =>
     {
-        // setIntroBeenPlayed("played");
         setBookToShow(item);
         if (isDescriptionShowing) setIsDescriptionShowing(false);
     };
 
     const { sanityTag } = useLanguageChosen();
     const bookForSizing: Book = bookList[0];
-    console.log("Sanity tag for language is  : " + sanityTag);
+    // console.log("Sanity tag for language is  : " + sanityTag);
 
 
     return (
@@ -34,7 +33,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
             <div className="bookArticleReviewButtonWrapper flex">
                 <article className="booksArticle">
                     <BookList bookList={bookList} handleClick={handleClick} />
-                    <BookCardSizer key={bookForSizing._id + "#sizerCard#"} availability={bookForSizing.availability} bookInSeries={bookForSizing.bookInSeries}
+                    <BookCardSizer key={bookForSizing._id + "#sizerCard#"} availability={bookForSizing.availability} bookInSeries={bookForSizing.bookInSeries} seriesRef={bookForSizing.seriesRef}
                         _id={bookForSizing._id} imageBook={bookForSizing.imageBook} releaseYear={bookForSizing.releaseYear} authorUids={bookForSizing.authorUids}
                         bookTitle={bookForSizing.bookTitle} subTitle={bookForSizing.subTitle} description={bookForSizing.description} seriesName={series.seriesName}
                         saintyTagLanguage={sanityTag} />
@@ -42,7 +41,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                     <div className="bookCardWrapper">
                         {
                             bookToShow && !isDescriptionShowing ?
-                                <BookCard key={bookToShow._id} availability={bookToShow.availability} bookInSeries={bookToShow.bookInSeries}
+                                <BookCard key={bookToShow._id} availability={bookToShow.availability} bookInSeries={bookToShow.bookInSeries} seriesRef={bookToShow.seriesRef}
                                     _id={bookToShow._id} imageBook={bookToShow.imageBook} releaseYear={bookToShow.releaseYear} authorUids={bookToShow.authorUids}
                                     bookTitle={bookToShow.bookTitle} subTitle={bookToShow.subTitle} description={bookToShow.description} seriesName={series.seriesName}
                                    saintyTagLanguage={sanityTag} /> :

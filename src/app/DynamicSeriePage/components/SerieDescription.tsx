@@ -1,4 +1,4 @@
-import { BackgroundImage } from "../../../components/common/BackgroundImage";
+
 import { ByAuthor } from "../../../components/common/ByAuthor";
 import { SerieDescriptionProps } from "@/types/booktypes";
 import { SerieRecommendedFor } from "./SerieRecommendeFor";
