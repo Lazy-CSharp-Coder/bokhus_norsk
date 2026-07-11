@@ -31,8 +31,9 @@
   position: relative;
   aspect-ratio: 2/3;
 
-  max-width: 7vw;
-  min-width: 7vw;
+  /* max-width: 7vw; */
+  /* min-width: 7vw; */
+  width: 9.2rem;
   
   height: fit-content;
   align-self: center;

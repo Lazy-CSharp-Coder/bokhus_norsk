@@ -70,7 +70,7 @@ background-color:var(--regBackground);
 .authorNameSubTitleWrapper {
     flex-direction: column;
     gap: 1rem;
-
+    width: fit-content;
 }
 
 .authorGenreText {
@@ -115,3 +115,78 @@ background-color:var(--regBackground);
     z-index: -1;
 
 }
+
+@media (max-width: 199.99em)
+{
+ 
+}
+
+@media (max-width: 159.99em) {
+
+}
+
+ @media (max-width: 119.99em) {
+
+} 
+
+
+@media (max-width: 63.99em) {
+  html {
+    font-size:70%;
+  }
+
+  .authorCard {
+    flex-direction: column;
+    align-items: center;
+    padding: 3.2rem 5rem;
+  }
+
+  .authorImageDiv {
+    width: 25rem;
+  }
+
+  .authorNameAndDescriptionDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 75%; */
+    gap:2rem;
+  }
+.authorNameSubTitleWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    
+}
+.authorFactsDiv {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.authorName {
+    width: 100%;
+    text-align: center;
+    font-size: 2.8rem;
+}
+
+.authorDescriptionList {
+    font-size : 1.3rem
+}
+
+
+
+}
+@media (max-width: 39.99em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* 
