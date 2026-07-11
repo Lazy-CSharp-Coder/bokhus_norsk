@@ -1,4 +1,4 @@
-@import "./HamburgerMenu.css";
+
 
 :root {
   --headerFontFamily: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -130,6 +130,7 @@ background-color: rgb(20, 20, 20);
 
 }
 
+
 .desktopMode {
 
   display: flex;
@@ -142,7 +143,6 @@ background-color: rgb(20, 20, 20);
 .mobileMode {
   display: none;
 }
-
 
 @media (max-width: 63.99em) {
 

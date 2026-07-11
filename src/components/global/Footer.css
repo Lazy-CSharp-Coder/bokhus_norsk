@@ -43,6 +43,7 @@ footer {
     align-items: flex-end;
 }
 
+
 .pageCreditsDiv {
     display: flex;
     flex-direction: row;
@@ -55,17 +56,18 @@ footer {
 .iconCreditDiv,
 .contactUsDiv {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 
 }
 
 .contactUsDiv {
-    gap: 0.4rem;
+    /* gap: 0.1rem; */
 }
 
 .socialMediaDiv {
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .iconCreditDiv {
@@ -73,6 +75,35 @@ footer {
 }
 
 .logoBPDiv {
+    gap: 0.4rem;
+}
+
+
+.footerEndMobileDiv {
+    position: fixed;
+    background-color: var(--commonBackgroundColor);
+    bottom: 6rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 2rem 4rem;
+    border: 1px solid var(--myWhiteColor);
+    gap: 1rem;
+    width: max-content;
+
+}
+
+
+.contactUsDivMobile {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-start;
+
+}
+
+.contactUsDivMobile {
     gap: 0.4rem;
 }
 
@@ -94,10 +125,10 @@ footer {
 }
 
 .contactUsLink {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     gap: 2rem;
-    align-items: center;
+    align-items: center; */
 }
 
 .socialMediaGroup {
@@ -109,6 +140,18 @@ footer {
 
 }
 
+.desktopModeFooter {
+
+  display: flex;
+}
+
+.desktopModeBlockFooter {
+  display: block;
+}
+
+.mobileModeFooter {
+  display: none;
+}
 
 @media (max-width: 63.99em) {
 
@@ -141,7 +184,13 @@ footer {
 
 @media (max-width: 47.99em) {
 
+   .desktopModeFooter {
+     display: none;
+   }
 
+   .mobileModeFooter {
+    display: flex;
+   }
 
 }
 
