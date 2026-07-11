@@ -9,10 +9,12 @@ import { LogoBPWebDev } from "./LogoBPWebDev";
 import "./Footer.module.css";
 import { useState } from "react";
 import { PiArrowFatLinesUpFill } from "react-icons/pi";
+import { useRouter } from "next/navigation";
 
 export function Footer()
 {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+    const router = useRouter();
 
     return (
         <footer>
@@ -70,45 +72,29 @@ export function Footer()
             <PiArrowFatLinesUpFill className="mobileFooterEndIcon mobileModeFooter" size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
             {isMobileMenuOpen &&
                 <div className="footerEndMobileDiv mobileModeFooter fadeInFromBelowAnim">
-                    {/* <div className="contactUsDivMobile"> */}
+                
                         <Link className="contactUsLink" href="/Contact">
                             <IoMailOutline size="2rem" /></Link>
 
                         <span className="logoText">CONTACT</span>
 
-                    {/* </div> */}
-
-                    {/* <div className="contactUsDivMobile"> */}
-
                         <FaInstagram size={"1.8rem"} />
                         <span className="logoText">INSTAGRAM</span>
-                    {/* </div> */}
-
-                    {/* <div className="contactUsDivMobile"> */}
-
-                        <FaFacebook className="facebookIcon" size={"1.7rem"} />
+             
+                       <FaFacebook className="facebookIcon" size={"1.7rem"} />
                         <span className="logoText">FACEBOOK</span>
 
-                    {/* </div> */}
-
-                    <Link href="/Credits">
-                        <IoIosInformationCircleOutline size="2.09rem" />      </Link>
+                        <span onClick={() => router.push("/Credits")}>
+                        <IoIosInformationCircleOutline size="2rem"/> </span>                         
                         <span className="logoText">CREDITS</span>
 
               
 
 
-                    {/* <div className="contactUsDivMobile"> */}
                         <LogoBPWebDev />
                         <span className="logoText">WEBPAGE BY         </span>
 
-                    {/* </div> */}
-
-
-
-
-
-                </div>}
+               </div>}
 
 
         </footer>

@@ -85,18 +85,26 @@ footer {
     bottom: 6rem;
     right: 0.2rem;
     display: grid;
+    justify-items:left;
+    align-items: center;
 grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(6, fit-content);
-
+    row-gap: 1rem;
+    column-gap: 0.8rem;
     padding: 2rem 2rem;
     padding-right: 4rem;
     border: 1px solid var(--myWhiteColor);
     border-radius: 5px;
-    gap: 1rem;
+  
     /* width: max-content; */
 
 }
 
+.creditsLink {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
 
 .contactUsDivMobile {
     display: flex;
@@ -192,8 +200,7 @@ grid-template-columns: repeat(2, auto);
    }
 
    .mobileModeFooter {
-    display: flex;
-   }
+    display: grid;   }
 
 }
 
