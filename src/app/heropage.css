@@ -134,7 +134,7 @@ display: flex;
     flex-direction: column;
     font-size: 1.8rem;
     margin-top: 2rem;
-    width: 70%;
+    width: 55%;
     text-align: left;
     gap: 3rem;
     justify-content: space-evenly;
@@ -150,14 +150,6 @@ display: flex;
     margin-top: 2rem;
 }
 
- @media (max-width: 119.99em) {
-  html {
-    font-size: 70%;
-  }
-
-  
-
-} 
 
 @media (max-width: 63.99em) {
  
@@ -171,3 +163,13 @@ display: flex;
   }
 
 } 
+
+@media (max-width: 63.99em) and (orientation: landscape) 
+{
+
+    /* do test this on tablet */
+   .backgroundImageHero {
+     background-size: contain;
+   }
+
+}

@@ -107,13 +107,17 @@ a {
 
 .headingLineWrapper {
   width: fit-content;
-}
-@media (max-width: 240em) {
-  html {
-    font-size: 140%;
-   }
 } 
-@media (max-width: 160em) {
+
+@media (max-width: 199.99em)
+{
+  html {
+   font-size:  100%;
+  }
+}
+
+
+@media (max-width: 159.99em) {
   html {
     font-size: 88%;
   }
