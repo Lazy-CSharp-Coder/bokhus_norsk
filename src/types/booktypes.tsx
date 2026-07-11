@@ -167,17 +167,6 @@ export interface SeriesHeadingProps
 
 }
 
-export interface EndTeaserInfoProps
-{
-    isShowing: boolean;
-}
-
-export interface ShowTeaserProps
-{
-    seriesTeaser?: string,
-
-}
-
 export interface AuthorCardProps extends Author
 {
     animationDelay ? : string
