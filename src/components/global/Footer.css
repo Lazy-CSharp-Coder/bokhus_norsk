@@ -85,10 +85,11 @@ footer {
     bottom: 6rem;
     right: 0.2rem;
     display: grid;
-    justify-items:left;
-    align-items: center;
-grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(6, fit-content);
+    justify-items:start;
+    align-items: center;
+
     row-gap: 1rem;
     column-gap: 0.8rem;
     padding: 2rem 2rem;
@@ -99,7 +100,9 @@ grid-template-columns: repeat(2, auto);
     /* width: max-content; */
 
 }
-
+.infoIcon {
+    justify-self: left;
+}
 .creditsLink {
     margin: 0;
     padding: 0;

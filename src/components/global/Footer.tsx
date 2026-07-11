@@ -50,7 +50,7 @@ export function Footer()
                 <div className="pageCreditsDiv">
 
                     <Link className="iconCreditDiv" href="/Credits">
-                        <IoIosInformationCircleOutline size="2.09rem" className="iconCreditIcon" />
+                        <IoIosInformationCircleOutline size="2.0rem" className="iconCreditIcon" />
                         <span className="logoText">CREDITS
                         </span>
 
@@ -72,29 +72,30 @@ export function Footer()
             <PiArrowFatLinesUpFill className="mobileFooterEndIcon mobileModeFooter" size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
             {isMobileMenuOpen &&
                 <div className="footerEndMobileDiv mobileModeFooter fadeInFromBelowAnim">
-                
-                        <Link className="contactUsLink" href="/Contact">
-                            <IoMailOutline size="2rem" /></Link>
 
-                        <span className="logoText">CONTACT</span>
+                    <Link className="contactUsLink" href="/Contact">
+                        <IoMailOutline size="2rem" /></Link>
 
-                        <FaInstagram size="1.8rem" />
-                        <span className="logoText">INSTAGRAM</span>
-             
-                       <FaFacebook className="facebookIcon" size="1.7rem" />
-                        <span className="logoText">FACEBOOK</span>
+                    <span className="logoText">CONTACT</span>
 
-                        {/* <span onClick={() => router.push("/Credits")}> </span>    */}
-                        <IoIosInformationCircleOutline size="1.7rem"/>                      
+                    <FaInstagram size="1.8rem" />
+                    <span className="logoText">INSTAGRAM</span>
+
+                    <FaFacebook className="facebookIcon" size="1.7rem" />
+                    <span className="logoText">FACEBOOK</span>
+
+                    <Link href="/Credits">
+                        <IoIosInformationCircleOutline size="2rem" className="infoIcon" />      </Link>
                         <span className="logoText">CREDITS</span>
 
               
 
 
-                        <LogoBPWebDev />
-                        <span className="logoText">WEBPAGE BY         </span>
 
-               </div>}
+                    <LogoBPWebDev />
+                    <span className="logoText">WEBPAGE BY         </span>
+
+                </div>}
 
 
         </footer>
