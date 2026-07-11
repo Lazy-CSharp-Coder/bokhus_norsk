@@ -26,7 +26,7 @@
     flex-direction: column;
     align-items: left;
     gap: 2.2rem;
-    width: 50%;
+    max-width:70rem;
 }
 
 .seriesPageDescriptionArticle {
@@ -78,13 +78,15 @@
 
 @media (max-width: 199.99em)
 {
- 
+ .seriesPageSection {
+    max-width: 90rem;
+ }
 }
 
 @media (max-width: 159.99em) {
 
     .seriesPageSection {
-        width: 50%;
+        
     }
 }
 
@@ -92,7 +94,7 @@
 
  @media (max-width: 119.99em) {
    .seriesPageSection {
-    width: 60%;
+
    }
 } 
 
@@ -101,7 +103,7 @@
 @media (max-width: 89.99em) {
 
 .seriesPageSection {
-    width: 65%;
+    max-width: 80rem;
    }
 }
 
