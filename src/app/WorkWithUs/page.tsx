@@ -2,7 +2,7 @@
 import worWithUsJson from "@/json//workWithUs.json";
 import { WorkWithUsButton } from "./WorkWithUsButton";
 import { useState } from "react";
-import { WorkWithUsTheme } from "./WorkWithUsTheme";
+import { WorkWithUsStartup, WorkWithUsTheme } from "./WorkWithUsTheme";
 // import { is } from "zod/locales";
 import "./WorkWithUs.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
@@ -25,9 +25,10 @@ export default function WorkWithUsPage()
 {
 
     const workWithUsArray: WorkWithUs[] = worWithUsJson;
-    const [isDisplayingTheme, setDisplayingTheme] = useState<WorkWithUs | null>(workWithUsArray[0]);
+    const [isDisplayingTheme, setDisplayingTheme] = useState<WorkWithUs | null>(null);
     const animDelay = 200;
     const waitForMainAnim = 600;
+  
 
     return (
         <main className="workWithUsPage">
@@ -64,8 +65,8 @@ export default function WorkWithUsPage()
 
                     </ul>
 
-                    <div style={{ opacity: isDisplayingTheme != null ? "1" : "0", flex: "2", width: "100%", height: "auto" }}>
-                        {isDisplayingTheme && <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} />}
+                    <div style={{ flex: "2", width: "100%", height: "auto" }}>
+                        {isDisplayingTheme ? <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} /> : <WorkWithUsStartup/> }
                     </div>
                 </article>
                 <p className="workWithUsIntroText fadeInAnim" style={{ animationDelay: "2.8s" }} >If your are interested in working with us, click <Link href="/Contact" className="linkContact">here</Link> to fill out contact information.</p>

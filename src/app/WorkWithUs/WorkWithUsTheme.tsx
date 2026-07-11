@@ -11,6 +11,7 @@ import { PiMagnifyingGlassBold } from "react-icons/pi";
 import { PiFloppyDisk } from "react-icons/pi";
 import { GiTeacher } from "react-icons/gi";
 import { FaFileCircleQuestion } from "react-icons/fa6";
+import { TfiWrite } from "react-icons/tfi";
 
 interface ReactIcons 
 {
@@ -106,6 +107,23 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
                 )}
 
             </ul>
+        </div>
+
+    );
+}
+
+
+export function WorkWithUsStartup()
+{
+
+    return (
+        <div className="workWithUsThemeDiv fadeInFromLeftAnim" style={{animationDelay:"2.3s"}}>
+            <div className="themeIconWrapper">
+                <h3 className="themeHeading">Work with us</h3>
+                <TfiWrite size="2rem" className="iconWorkWithUs"/>
+            </div>
+            <p className="workWithUsSubTitle">Click on category in list for more information</p>
+
         </div>
 
     );
