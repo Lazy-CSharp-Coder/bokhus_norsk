@@ -143,13 +143,13 @@
 }
 
 .synopsisText {
-    /* font-style: italic; */
+    font-style: italic;
     font-family: var(--robotoFont);
 
     color: var(--myWhiteColor);
     font-size: 1.1rem;
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid var(--myWhiteColor)
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--myWhiteColor);
 }
 
 .releaseYear {

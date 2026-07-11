@@ -111,6 +111,13 @@ a {
   width: fit-content;
 } 
 
+@media (max-width: 239.99)
+{
+  html {
+    font-size: 130%;
+  }
+}
+
 @media (max-width: 199.99em)
 {
   html {
@@ -120,16 +127,17 @@ a {
 
 @media (max-width: 159.99em) {
   html {
-    font-size: 87.5%;
+    font-size: 100%;
   }
 }
-
+/* max 1920 */
  @media (max-width: 119.99em) {
   html {
     font-size: 80%;
   }
 } 
 
+/*max 1440 */
 
 @media (max-width: 89.99em) {
 html {
@@ -138,6 +146,8 @@ html {
 
 }
 
+/* max 1024 */
+
 @media (max-width: 63.99em) {
   html {
     font-size:70%;
@@ -145,6 +155,7 @@ html {
 
 }
 
+/* max 768 */
 
 @media (max-width: 47.99em){
 
@@ -153,6 +164,7 @@ html {
   }    
 }
 
+/* max 425 */
 
 @media (max-width: 39.99em) {
   html {
