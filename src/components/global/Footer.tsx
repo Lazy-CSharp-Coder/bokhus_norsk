@@ -78,14 +78,14 @@ export function Footer()
 
                         <span className="logoText">CONTACT</span>
 
-                        <FaInstagram size={"1.8rem"} />
+                        <FaInstagram size="1.8rem" />
                         <span className="logoText">INSTAGRAM</span>
              
-                       <FaFacebook className="facebookIcon" size={"1.7rem"} />
+                       <FaFacebook className="facebookIcon" size="1.7rem" />
                         <span className="logoText">FACEBOOK</span>
 
-                        <span onClick={() => router.push("/Credits")}>
-                        <IoIosInformationCircleOutline size="2rem"/> </span>                         
+                        {/* <span onClick={() => router.push("/Credits")}> </span>    */}
+                        <IoIosInformationCircleOutline size="1.7rem"/>                      
                         <span className="logoText">CREDITS</span>
 
               
