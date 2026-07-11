@@ -83,14 +83,17 @@ footer {
     position: fixed;
     background-color: var(--commonBackgroundColor);
     bottom: 6rem;
-    right: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    padding: 2rem 4rem;
+    right: 0.2rem;
+    display: grid;
+grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(6, fit-content);
+
+    padding: 2rem 2rem;
+    padding-right: 4rem;
     border: 1px solid var(--myWhiteColor);
+    border-radius: 5px;
     gap: 1rem;
-    width: max-content;
+    /* width: max-content; */
 
 }
 
@@ -195,11 +198,7 @@ footer {
 }
 
 @media (max-width: 44em) {
-    .footerEndDiv {
-        gap: 1.5rem;
-
-    }
-
+    
     .termsGroup {
         font-size: 0.9rem;
         column-gap: 1.5rem;

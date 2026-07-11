@@ -69,44 +69,40 @@ export function Footer()
             </div>
             <PiArrowFatLinesUpFill className="mobileFooterEndIcon mobileModeFooter" size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
             {isMobileMenuOpen &&
-                <div className="footerEndMobileDiv mobileModeFooter">
-                    <div className="contactUsDivMobile">
+                <div className="footerEndMobileDiv mobileModeFooter fadeInFromBelowAnim">
+                    {/* <div className="contactUsDivMobile"> */}
                         <Link className="contactUsLink" href="/Contact">
-                            <IoMailOutline className="mailIcon" size="2rem" /></Link>
+                            <IoMailOutline size="2rem" /></Link>
 
                         <span className="logoText">CONTACT</span>
 
-                    </div>
+                    {/* </div> */}
 
-                    <div className="contactUsDivMobile">
+                    {/* <div className="contactUsDivMobile"> */}
 
-                        <FaInstagram className="instagramIcon" size={"1.8rem"} />
-                        <span className="logoText">BokHus at Instagram</span></div>
-                    <div className="contactUsDivMobile">
+                        <FaInstagram size={"1.8rem"} />
+                        <span className="logoText">INSTAGRAM</span>
+                    {/* </div> */}
+
+                    {/* <div className="contactUsDivMobile"> */}
 
                         <FaFacebook className="facebookIcon" size={"1.7rem"} />
-                        <span className="logoText">BokHus at Facebook</span>
+                        <span className="logoText">FACEBOOK</span>
 
-                    </div>
+                    {/* </div> */}
 
+                    <Link href="/Credits">
+                        <IoIosInformationCircleOutline size="2.09rem" />      </Link>
+                        <span className="logoText">CREDITS</span>
 
-
-
-                    <Link className="contactUsDivMobile" href="/Credits">
-                        <IoIosInformationCircleOutline size="2.09rem" className="iconCreditIcon" />
-                        <span className="logoText">CREDITS
-                        </span>
+              
 
 
-                    </Link>
-
-
-                    <div className="contactUsDivMobile">
+                    {/* <div className="contactUsDivMobile"> */}
                         <LogoBPWebDev />
-                        <span className="logoText">WEBPAGE BY
-                        </span>
+                        <span className="logoText">WEBPAGE BY         </span>
 
-                    </div>
+                    {/* </div> */}
 
 
 
