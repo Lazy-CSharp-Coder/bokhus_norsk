@@ -150,6 +150,10 @@ display: flex;
     margin-top: 2rem;
 }
 
+@media (max-width : 39.99em)
+{
+    
+}
 
 @media (max-width: 63.99em) {
  
