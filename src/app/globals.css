@@ -123,13 +123,14 @@ a {
     font-size: 87.5%;
   }
 }
-
+/* max 1920 */
  @media (max-width: 119.99em) {
   html {
     font-size: 80%;
   }
 } 
 
+/*max 1440 */
 
 @media (max-width: 89.99em) {
 html {
@@ -138,6 +139,8 @@ html {
 
 }
 
+/* max 1024 */
+
 @media (max-width: 63.99em) {
   html {
     font-size:70%;
@@ -145,6 +148,7 @@ html {
 
 }
 
+/* max 768 */
 
 @media (max-width: 47.99em){
 
@@ -153,6 +157,7 @@ html {
   }    
 }
 
+/* max 425 */
 
 @media (max-width: 39.99em) {
   html {
