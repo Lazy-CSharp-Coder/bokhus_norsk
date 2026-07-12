@@ -90,6 +90,10 @@
 }
 
 /* .sortButton {
+    font-size: 1rem;
+} */
+
+/* .sortButton {
     padding : 1rem 2rem;
     width: 10rem;
     cursor: pointer;
@@ -102,19 +106,28 @@
 
 .sortIcon {
     color: var(--myWhiteColor);
+       
 
 }
 
+.sortIconStatus {
+ width: var(--sortIconDirectionSize);
+        height: var(--sortIconDirectionSize);
+color: var(--myWhiteColor);
+}
 
 .sortButton {
-       padding : 0.5rem 2rem;
-    width: 10rem;
+    --sortIconModeSize : 1.2rem;
+    --sortIconDirectionSize: 1.5rem;
+       padding : 0.5rem 0rem;
+    width: 100%;
     cursor: pointer;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    gap: 0.2rem;
+    justify-content:center;
     align-items: center;
-    
+    font-size: 0.82rem;
 color: var(--buttonColor);
     border-width: 3px;
     /* border: 2px outset red; */
@@ -162,4 +175,25 @@ border-top-color:  var(--buttonBorderBottomRightColor);
 }
 
 
+/* max 640 */
+
+@media (max-width: 39.99em) {
+    .modeDiv, .directionDiv {
+        flex-direction: column;
+    }
+    .sortButton {
+        width: 100%;
+       
+    
+    }
+    .sortIconStatus {
+     --sortIconDirectionSize: 3rem;
+    }
+}
+
+/* max 480px */
+@media (max-width: 29.99em) {
+
+  
+}
 

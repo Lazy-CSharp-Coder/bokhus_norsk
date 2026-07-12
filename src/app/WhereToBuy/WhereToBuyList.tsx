@@ -68,8 +68,8 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
                         </div>
                         <div className="sortStatusDiv">
                             {/* <span className="sortTag">CURRENT : </span> */}
-                            <span key={mode} className="sortCurrentMode sortModeAnim">{mode == "Serie" ? <TbBooks size="1.5rem" className="sortIcon"/> :<BsPersonFill size="1.5rem" className="sortIcon"/> }</span>
-                            <span key={direction} className="sortCurrentDirection sortModeAnim"> {direction == "Ascending" ? <AiOutlineSortAscending size="1.5rem" className="sortIcon"/> :<AiOutlineSortDescending size="1.5rem" className="sortIcon"/>  }</span>
+                            <span key={mode} className="sortCurrentMode sortModeAnim">{mode == "Serie" ? <TbBooks size="1.5rem" className="sortIconStatus"/> :<BsPersonFill size="1.5rem" className="sortIconStatus"/> }</span>
+                            <span key={direction} className="sortCurrentDirection sortModeAnim"> {direction == "Ascending" ? <AiOutlineSortAscending size="1.5rem"className="sortIconStatus"/> :<AiOutlineSortDescending size="1.5rem" className="sortIconStatus"/>  }</span>
 
 
                         </div>
