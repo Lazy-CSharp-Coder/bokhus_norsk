@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
+    /* justify-content: top; */
     margin-top: 3rem;
     min-width: 100%;
     max-width: 100%;
 
     gap: 3rem;
     overflow-x: hidden;
-    height: auto;
+    height: max-content;
     padding-bottom: 5%;
     flex-grow: 1;
 }

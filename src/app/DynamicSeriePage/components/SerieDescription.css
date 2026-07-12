@@ -1,7 +1,7 @@
 .descriptionSeriesDiv {
    
     flex-direction: column;
-    position: relative;
+    /* position: relative; */
     justify-content: space-evenly;
     align-items: flex-start;
     align-self: center;
@@ -105,6 +105,8 @@
     position: static;
     width: 95%;
     height: max-content;
+    /* margin:0; */
+    /* padding: 0; */
     gap: 3rem;
     align-items: center;
     justify-content: center;
@@ -138,6 +140,7 @@
 
    .seriesFact {
     font-size: 3rem;
+    color:red;
    }
 
    
