@@ -7,7 +7,9 @@
     align-items: center;
     background-color: var(--regBackground);
     gap: 1.5rem;
-    width: 38%;
+    /* width: 38%; */
+    max-width: 60rem;
+
     margin: 4rem 0;
 
     color: var(--myWhiteColor);
@@ -529,3 +531,20 @@ fieldset {
 
     /* margin-right: 0.5rem; */
 }
+
+
+
+
+@media (max-width: 63.99em) {
+    .registerSection {
+        max-width: 95%;
+        
+    }
+  
+}
+@media (max-width: 39.99em) {
+  html {
+   
+  }
+}
+
