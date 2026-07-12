@@ -130,10 +130,10 @@ margin-top: 4rem;
 @media (max-width: 63.99em) {
 
     .authorsHeadingWrapper {
-        width: 70%;
+        max-width: 70%;
     }
     .linkList {
-        width: 65%;
+        max-width: 65%;
     }
 
 }
@@ -149,10 +149,3 @@ margin-top: 4rem;
         font-size: 50%;
     }
 }
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-/* 

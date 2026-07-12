@@ -74,7 +74,7 @@ export function Footer()
 
                 <PiArrowFatLinesUpFill className="mobileFooterEndIcon" size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
                 {isMobileMenuOpen &&
-                    <div className="footerEndMobileDiv fadeInFromBelowAnim">
+                    <div className="footerEndMobileDiv">
 
                         <Link className="contactUsLink" href="/Contact">
                             <IoMailOutline size="2rem" /></Link>

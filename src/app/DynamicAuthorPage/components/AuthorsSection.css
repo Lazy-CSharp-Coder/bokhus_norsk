@@ -5,7 +5,8 @@
     gap: 2.5rem;
     align-items:center;
       
-    width: 74%;
+    /* width: 74%; */
+    max-width: 103.4rem;
     height:fit-content;
 
 }
@@ -18,17 +19,25 @@
 
 }
 
+@media (max-width: 63.99em) {
 
-.backgroundImageAuthor {
-  width:100%;
-  height: 100%;
-  position: fixed;
-  top:0;
-  background-image: var(--defaultBackgroundImage);
-  background-size:cover;
-  position: fixed;
-  background-repeat: no-repeat;
-  filter:blur(5px) brightness(78%);
-  z-index: -1;
+.authorSection {
+    max-width: 88% ;
+}
 
+.seriesCardList {
+    width: 100%;
+}
+}
+@media (max-width: 39.99em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+
+@media (max-width: 24rem) {
+    html {
+        font-size: 50%;
+    }
 }
