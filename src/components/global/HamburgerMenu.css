@@ -11,6 +11,8 @@
     top: 6rem;
     right: 0rem;
     padding : 1rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 500;
     /* border : 1px solid white; */
     background-color: rgba(20, 20, 20, 0.8);
 }
