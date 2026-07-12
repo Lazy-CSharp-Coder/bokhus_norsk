@@ -92,6 +92,7 @@
 .headingWrapper {
     display: flex;
     flex-direction: column;
+    font-size: 0.7rem;
    
 }
 
@@ -211,25 +212,84 @@
 @media (max-width: 63.99em) {
    
    .bookDiv {
-    /* width: 11.3rem; */
-    /* background: blue; */
+
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 0;
-    background: red;
+    padding-top: 2rem;
+    padding: 6rem 0rem;
+
+    height: max-content;
+    gap:3rem;
+
     position:static;
     align-items: center;
+    justify-content: top;
     
 
 
    }
 
    .bookImage {
-    width: 50rem;
+    width: 58rem;
+    flex: 0 0 auto;
    }
 
    .bookDivForSizing {
     display: none;
+   }
+   .headingWrapper {
+    align-items: center;
+    
+   }
+   .bookTitle {
+    font-size: 5rem;
+    text-align: center;
+   }
+   .bookInfo {
+    font-size: 2rem;
+   }
+
+   .headingAvailableSeparator {
+
+    margin:1rem;
+    font-size: 1.5rem;
+   }
+.bookFactsAndDescriptionDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.5rem;
+    padding: 0 1rem;
+    width: 100%;
+}
+.factsDiv {
+    display: flex;
+    justify-content: center;
+    gap:2rem;
+    align-items: center;
+}
+   .releaseInfo {
+    font-size: 1.8rem;
+    text-align: center;
+   }
+
+   .synopsisText {
+    font-size: 2rem;
+    text-align: center;
+   }
+.descriptionSubWrapper {
+    gap:2rem;
+    padding: 0 3rem;
+    align-items: center;
+}
+.subTitle {
+    font-size: 1.9rem;
+    text-align: center;
+}
+   .descriptionList {
+    font-size:1.8rem;
+    gap:1rem;
+    
    }
 }

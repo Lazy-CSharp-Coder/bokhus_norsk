@@ -8,7 +8,7 @@ import "./BookCard.module.css";
 
 export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, animationName}: BookCardProps)
 {
-    const imageSrc = urlFor(imageBook, 800);
+    const imageSrc = urlFor(imageBook, 900);
     return (
         <div className={`bookDiv ${animationName ? animationName : "fadeInFromLeftAnim"}`} style={{ animationDuration: "1.2s" }}>
             <div className="bookImage">
@@ -22,7 +22,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                         <span className="headingAvailableSeparator">
 
-       <BookAvailableIn availability={availability}fontSize="0.7rem"/>
+       <BookAvailableIn availability={availability}/>
                         </span>
                  
                     </div>
