@@ -122,14 +122,16 @@ a {
 @media (max-width: 199.99em) /* usikker */
 {
   html {
-   /* font-size:  100%; */
+   font-size:  100%;
   }
 }
 
 @media (max-width: 159.99em) {
   html {
-    font-size: 100%;
+    font-size: 90%;
+  
   }
+
 }
 /* max 1920 */
  @media (max-width: 119.99em) {
@@ -142,6 +144,7 @@ a {
 @media (max-width: 89.99em) {
   html {
   font-size: 60%;
+  /* font-size: 70%; */
 }
 
 }
