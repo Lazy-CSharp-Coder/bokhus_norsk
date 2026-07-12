@@ -122,13 +122,13 @@ a {
 @media (max-width: 199.99em) /* usikker */
 {
   html {
-   /* font-size:  100%; */
+   font-size:  100%;
   }
 }
 
 @media (max-width: 159.99em) {
   html {
-    font-size: 100%;
+    font-size: 90%;
   
   }
 
