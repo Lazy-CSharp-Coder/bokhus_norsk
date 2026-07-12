@@ -23,3 +23,10 @@
     font-style: normal;
     font-weight: 500;
 }
+
+@media (max-width: 63.99em) {
+
+    .bestSellerList {
+        font-size: 1.85rem;
+    }
+}

@@ -4,7 +4,7 @@ export interface BestSellerListProps
 {
 
     bestSellerIntro?: string,
-    fontSize : string,
+    fontSize? : string,
     bestSellerList?: string[];
 
 }

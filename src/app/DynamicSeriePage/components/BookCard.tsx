@@ -22,7 +22,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                         <span className="headingAvailableSeparator">
 
-       <BookAvailableIn availability={availability}fontSize="0.7rem"/>
+       <BookAvailableIn availability={availability}/>
                         </span>
                  
                     </div>

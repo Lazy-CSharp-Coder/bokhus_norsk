@@ -33,17 +33,6 @@
 }
 
 
-
-
-.seriesFact {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    font-style: italic;
-
-}
-
-
-
 .authorNameBestsellerWrapper {
     flex-direction: column;
     gap: 0.58rem;
@@ -51,9 +40,35 @@
 }
 
 
-
-
 .arrowToDescription{
    font-size: 1.5rem;
    margin-top: 2px;
 }
+
+
+
+@media (max-width: 63.99em) {
+ 
+    .serieHeader{
+        position: static;
+        width: 100%;
+        font-size:2rem;
+    
+    }
+  .serieName {
+    font-size: 4rem;
+  }
+  .headingAndAuthorInfoDiv {
+    display: flex;
+    flex-direction: column;
+    gap:0.2rem;
+    padding:2.2rem 2rem;
+  }
+
+  .authorNameBestsellerWrapper {
+    font-size: 2rem;
+  }
+
+  
+
+} 

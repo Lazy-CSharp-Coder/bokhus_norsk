@@ -149,6 +149,7 @@ export interface AvailabilityProps
 export interface RecommendedForProps
 {
     ageGroup?: string,
+
 }
 
 export interface SeriesCardProps

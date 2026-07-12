@@ -12,13 +12,14 @@ export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerLi
     return (
         <article key={"01" + "Description"} className="serieHeader flex fadeInAnim">
 
-            <div className="headingAndAuthorInfoDiv grid" onClick={() => setIsDescriptionShowing(true)}>
+            <div className="headingAndAuthorInfoDiv" onClick={() => setIsDescriptionShowing(true)}>
                 <div className="serieNameArrowWrapper flex">                <h2 className="serieName">{seriesName}</h2>
                     {!isDescriptionShowing && <HiOutlineArrowSmallLeft className="arrowToDescription scaleInAnim" />}
                 </div>
                 <div className="authorNameBestsellerWrapper flex">
                     <ByAuthor key={authors + "#SeriesInfo"} authors={authors} />
-                    <BestSellerList fontSize="1.05rem" bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
+                    
+                    <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
                 </div>
             </div>
 

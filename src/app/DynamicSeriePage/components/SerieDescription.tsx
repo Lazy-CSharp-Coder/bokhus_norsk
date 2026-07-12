@@ -19,7 +19,7 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                 <div className="serieNameFactDiv fadeInAnim" style={{ animationDelay: "0.9s", animationDuration: "1.5s" }}>
                     <h2 className="seriesName"> {seriesName} </h2>
                     <ByAuthor key={authors + "#Description"} authors={authors} />
-                    <p className="seriesFact">{seriesFact}</p>
+                    <p className="seriesDescriptionFact">{seriesFact}</p>
 
                 </div>
 
@@ -33,7 +33,11 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                 ))}
 
             </ul>
+
             <SerieRecommendedFor ageGroup={ageGroup} />
+
+
+
 
         </div>);
 

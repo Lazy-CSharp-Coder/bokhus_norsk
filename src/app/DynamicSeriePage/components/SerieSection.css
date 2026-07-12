@@ -3,7 +3,8 @@
 .serieSection {
 
     
-    width: 65%;
+    /* width: 65%; */
+    max-width: 100rem;
     gap: 2rem;
 
     height: fit-content;
@@ -12,4 +13,46 @@
     /* min-height: 100vh; */
     /* background-color: rgba(150, 0, 0, 0.5); */
 }
+
+
+
+@media (max-width: 159.99em) {
+
+
+}
+
+  
+
+/* max 1920 */
+@media (max-width: 119.99em) {
+       
+}
+
+
+/* 1440px */
+
+@media (max-width: 89.99em) {
+   
+   .serieSection {
+    /* max-width:82%; */
+    /* background: blue; */
+   }
+}
+
+
+@media (max-width: 63.99em) {
+ 
+    .serieSection {
+        position:static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        gap:2rem;
+        margin: 0;
+        padding: 0;
+    }
+  
+
+} 
 

@@ -7,7 +7,7 @@ import { SerieDescription } from "./SerieDescription";
 import { useDescriptionShowingState} from "@/globalStates";
 import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
-import { ReviewScrollButton } from "../../../components/general/ReviewScrollButton";
+import { ReviewScrollButton } from "./ReviewScrollButton";
 import { ReviewArticle } from "./ReviewArticle";
 import "./BookListAndCard.module.css";
 
