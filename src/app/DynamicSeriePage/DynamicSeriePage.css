@@ -6,11 +6,12 @@
     margin-top: 3rem;
     min-width: 100%;
     max-width: 100%;
-    width: fit-content;
+
     gap: 3rem;
     overflow-x: hidden;
-    height: fit-content;
+    height: auto;
     padding-bottom: 5%;
+    flex-grow: 1;
 }
 
 .seriePageBackgroundImage {

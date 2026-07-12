@@ -2,7 +2,7 @@
 
     --coverTitleColor: #ecc776;
 
-    --marginBookList: 10vw;
+    /* --marginBookList: 10vw; */
     --marginBookList : 13.65rem;
 }
 
@@ -204,3 +204,32 @@
 }
 
 /* Media queries for BookCard */
+
+
+/* 1440px */
+
+@media (max-width: 63.99em) {
+   
+   .bookDiv {
+    /* width: 11.3rem; */
+    /* background: blue; */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: red;
+    position:static;
+    align-items: center;
+    
+
+
+   }
+
+   .bookImage {
+    width: 50rem;
+   }
+
+   .bookDivForSizing {
+    display: none;
+   }
+}
