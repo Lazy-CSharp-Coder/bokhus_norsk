@@ -109,6 +109,7 @@ a {
 
 .headingLineWrapper {
   width: fit-content;
+  text-align: center;
 } 
 
 @media (max-width: 240em)
@@ -178,11 +179,12 @@ a {
 /* max 480px */
 @media (max-width: 29.99em) {
 
+  
 }
 
 @media (max-width: 24rem) {
     html {
-        font-size: 50%;
+        /* font-size: 50%; */
     }
 }
 @media (prefers-color-scheme: dark) {
