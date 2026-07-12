@@ -138,9 +138,10 @@
     font-size: 4rem;
    }
 
-   .seriesFact {
-    font-size: 3rem;
-    color:red;
+   .descriptionSeriesDiv .seriesFact {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: var(--myWhiteColor);
    }
 
    
