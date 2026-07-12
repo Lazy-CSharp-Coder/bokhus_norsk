@@ -34,7 +34,7 @@
 
 .aboutSection {
     flex-direction: column;
-    width: 43%;
+    width: 50rem;
     align-items: left;
     gap: 1rem;
 }
