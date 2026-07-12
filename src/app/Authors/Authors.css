@@ -112,7 +112,7 @@ margin-top: 4rem;
  @media (max-width: 119.99em) {
 
     .authorsSection {
-        /* max-width: 90rem; */
+        max-width: 80%;
     }
 
 } 
@@ -130,10 +130,10 @@ margin-top: 4rem;
 @media (max-width: 63.99em) {
 
     .authorsHeadingWrapper {
-        max-width: 70%;
+        max-width: 75%;
     }
     .linkList {
-        max-width: 65%;
+        max-width: 75%;
     }
 
 }
