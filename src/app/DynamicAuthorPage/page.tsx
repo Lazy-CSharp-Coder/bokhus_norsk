@@ -16,7 +16,7 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
     const authors: Author[] = await client.fetch<Author[]>(AUTOHRS_QUERY, { authorUid: authorUid });
 
     if (!authors) return;
-    console.log("Author fetched is : " + authors[0].name);
+
 
     return (
         <>

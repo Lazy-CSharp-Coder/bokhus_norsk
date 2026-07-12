@@ -111,17 +111,17 @@ a {
   width: fit-content;
 } 
 
-@media (max-width: 239.99)
+@media (max-width: 240em)
 {
   html {
-    font-size: 130%;
+    /* font-size: 100%; */
   }
 }
 
-@media (max-width: 199.99em)
+@media (max-width: 199.99em) /* usikker */
 {
   html {
-   font-size:  110%;
+   /* font-size:  100%; */
   }
 }
 
@@ -136,13 +136,16 @@ a {
     font-size: 80%;
   }
 } 
-
-/*max 1440 */
+/* 1440px */
 
 @media (max-width: 89.99em) {
-html {
-  font-size: 70%;
+  html {
+  font-size: 60%;
 }
+
+}
+/* max 1280 */
+@media (max-width: 79.99em) {
 
 }
 
@@ -164,7 +167,7 @@ html {
   }    
 }
 
-/* max 425 */
+/* max 640 */
 
 @media (max-width: 39.99em) {
   html {
@@ -172,6 +175,16 @@ html {
   }
 }
 
+/* max 480px */
+@media (max-width: 29.99em) {
+
+}
+
+@media (max-width: 24rem) {
+    html {
+        font-size: 50%;
+    }
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -24,13 +24,13 @@ export function HamburgerMenu({ menuItems }: HeaderProps)
                 <GiHamburgerMenu size="2.5rem" />
             </span>
             {menuState!= "hiding" &&
-                <div onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
+                <nav onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
 
                     {menuItems?.map((item, index) =>
 
-                        <Link key={item.name + index} className="headerMenuItem" href={item.pageLink}>{item.name}</Link>)
+                        <Link key={item.name + index} className="headerMenuItemHamburger" href={item.pageLink}>{item.name}</Link>)
                     }
-                </div>}
+                </nav>}
 
         </>
     );

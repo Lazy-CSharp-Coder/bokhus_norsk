@@ -78,31 +78,60 @@ footer {
     gap: 0.4rem;
 }
 
+.arrowMenuWrapper {
+    position: relative;
+}
 
 .footerEndMobileDiv {
-    position: fixed;
+    position: absolute;
     background-color: var(--commonBackgroundColor);
-    bottom: 6rem;
-    right: 0.2rem;
+    bottom: 100%;
+    right: 0;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    word-wrap: none;
+    grid-template-columns: repeat(2, max-content);
     grid-template-rows: repeat(6, fit-content);
-    justify-items:start;
+    justify-items: start;
     align-items: center;
-
+    color: var(--myWhiteColor);
+    font-size: 1rem;
     row-gap: 1rem;
     column-gap: 0.8rem;
     padding: 2rem 2rem;
     padding-right: 4rem;
     border: 1px solid var(--myWhiteColor);
     border-radius: 5px;
-  
+    transform: translate(1.5rem, -1rem);
+    animation-name: fadeInFromBelowFooter;
+    animation-duration: var(--defaultAnimDuration);
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-fill-mode: backwards;
     /* width: max-content; */
 
 }
+
+
+.fadeInFromBelowAnim {}
+
+@keyframes fadeInFromBelowFooter {
+    0% {
+
+        transform: translate(1.5rem, calc(-1rem + 15px));
+        opacity: 0;
+    }
+
+    100% {
+
+        transform: translate(1.5rem, -1rem);
+        opacity: 1;
+    }
+}
+
 .infoIcon {
     justify-self: left;
 }
+
 .creditsLink {
     margin: 0;
     padding: 0;
@@ -112,7 +141,7 @@ footer {
 .contactUsDivMobile {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     justify-content: flex-start;
 
 }
@@ -156,15 +185,15 @@ footer {
 
 .desktopModeFooter {
 
-  display: flex;
+    display: flex;
 }
 
 .desktopModeBlockFooter {
-  display: block;
+    display: block;
 }
 
 .mobileModeFooter {
-  display: none;
+    display: none;
 }
 
 @media (max-width: 63.99em) {
@@ -198,17 +227,18 @@ footer {
 
 @media (max-width: 47.99em) {
 
-   .desktopModeFooter {
-     display: none;
-   }
+    .desktopModeFooter {
+        display: none;
+    }
 
-   .mobileModeFooter {
-    display: grid;   }
+    .mobileModeFooter {
+        display: grid;
+    }
 
 }
 
 @media (max-width: 44em) {
-    
+
     .termsGroup {
         font-size: 0.9rem;
         column-gap: 1.5rem;
@@ -216,6 +246,4 @@ footer {
 
 }
 
-@media (max-width: 39.99em){
-
-}
+@media (max-width: 39.99em) {}

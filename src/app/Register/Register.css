@@ -31,10 +31,10 @@
 
 .registerPage {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     background-color: transparent;
     width: 100%;
-        padding-left: 12%;
+        /* padding-left: 12%; */
     
 }
