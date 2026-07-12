@@ -66,15 +66,16 @@
     width: 95%;
     max-width: 90vw;
     height: 32.4rem;
-    padding-bottom: 1.2rem;
-    overflow-x: scroll;
+    margin: 0;
+    padding: 0 0 1.2rem 0;
+    overflow-x: auto;
     overflow-y: hidden;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 2rem;
-
+    scroll-snap-type: x proximity;
 
     /* scroll-behavior: smooth;
     scrollbar-width: thin;

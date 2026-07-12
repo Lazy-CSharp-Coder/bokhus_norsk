@@ -33,8 +33,12 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                 ))}
 
             </ul>
-            <SerieRecommendedFor ageGroup={ageGroup} />
+        
+ <SerieRecommendedFor ageGroup={ageGroup} />
 
+
+   
+           
         </div>);
 
 }
