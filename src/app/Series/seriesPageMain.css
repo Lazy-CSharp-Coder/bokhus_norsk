@@ -109,9 +109,7 @@
 
 
 @media (max-width: 63.99em) {
-  html {
-    /* font-size:70%; */
-  }
+
 .seriesPageSection {
     width:95%;
 }
@@ -131,11 +129,5 @@
 }
 @media (max-width: 39.99em) {
  
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
