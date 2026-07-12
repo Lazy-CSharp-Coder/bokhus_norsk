@@ -233,6 +233,7 @@
 
    
    .bookImage {
+    max-width: 52rem;
     width: 52rem;
     flex: 0 0 auto;
    }
