@@ -5,19 +5,19 @@
 
 
 .contactBackground {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-
-  background-image: var(--defaultBackgroundImage);
-  background-size: cover;
     position: fixed;
-  background-repeat: no-repeat;
-  filter: blur(3px) brightness(88%);
-  z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    filter: blur(3px) brightness(88%);
+    z-index: -1;
 
 
 }
@@ -26,13 +26,14 @@
 .contactPage {
 
     display: flex;
-        justify-content: center;
+    justify-content: center;
 
     align-items: center;
     width: 100%;
     /* padding-right: 12rem; */
     padding-top: 2rem;
-    padding-bottom: 2.5rem;;
+    padding-bottom: 2.5rem;
+    ;
     color: white;
     font-family: var(--robotoFont);
 
@@ -45,22 +46,23 @@
     width: 30%;
 } */
 
-.contactUsSection{
+.contactUsSection {
     flex-direction: column;
-    align-items:flex-start;
+    align-items: flex-start;
     gap: 0.5rem;
     /* width:35%; */
-    max-width: 45rem;
-height: fit-content;
+    max-width: 49rem;
+    height: fit-content;
     font-family: var(--robotoFont);
-    padding: 1.5rem 3.5rem;;
+    padding: 1.5rem 3.5rem;
+    ;
     background-color: rgba(20, 20, 20, 0.8);
-/* background-color: rgb(34, 34, 34); */
-     border : 1px solid  rgb(125, 88, 33);
+    /* background-color: rgb(34, 34, 34); */
+    border: 1px solid rgb(125, 88, 33);
     border-radius: 5px;
     padding-bottom: 3rem;
     color: var(--myWhiteColor);
-/* -webkit-box-shadow: 10px 10px 23px 3px #000000; 
+    /* -webkit-box-shadow: 10px 10px 23px 3px #000000; 
 box-shadow: 10px 10px 23px 3px #000000; */
 
 
@@ -70,7 +72,7 @@ box-shadow: 10px 10px 23px 3px #000000; */
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  
+
     width: 100%;
 }
 
@@ -110,9 +112,9 @@ box-shadow: 10px 10px 23px 3px #000000; */
     font-size: 1rem;
     font-size: var(--contactTextSize);
 
-  padding: 1rem 0;
-    border-bottom: 1px solid  rgb(125, 88, 33);
-    border-top: 1px solid  rgb(125, 88, 33);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(125, 88, 33);
+    border-top: 1px solid rgb(125, 88, 33);
     line-height: 1.4;
 }
 
@@ -141,47 +143,48 @@ box-shadow: 10px 10px 23px 3px #000000; */
 
 .inputIcon {
     position: absolute;
-     right: 0.8rem;
-     top: 2.7rem;
+    right: 0.8rem;
+    top: 2.7rem;
 
-  pointer-events: none;
-  color: rgb(125, 88, 33)
-  /* color: rgb(150, 150, 150); */
+    pointer-events: none;
+    color: rgb(125, 88, 33)
+        /* color: rgb(150, 150, 150); */
 }
 
 
 .inputIconRecaptcha {
     position: absolute;
-     right: 0.8rem;
-     top: 1.2rem;
+    right: 0.8rem;
+    top: 1.2rem;
 
-  pointer-events: none;
-  color: rgb(125, 88, 33)
-  /* color: rgb(150, 150, 150); */
+    pointer-events: none;
+    color: rgb(125, 88, 33)
+        /* color: rgb(150, 150, 150); */
 }
 
 .recaptchaWrapper {
     display: flex;
     justify-content: left;
     width: 100%;
-   /* background-color: rgb(34, 34, 34); */
- /* background-color: rgb(230,230,230); */
- background-color:rgb(34, 34, 34);
- padding: 0.2rem 1rem;
- padding-bottom: 0;
- border-radius: 5px;
-   position: relative;
-  border : 1px solid  rgb(125, 88, 33);
+    /* background-color: rgb(34, 34, 34); */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
+    padding: 0.2rem 1rem;
+    padding-bottom: 0;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid rgb(125, 88, 33);
 
 }
+
 .contactInput {
     background-color: var(--myWhiteColor);
     font-family: var(--robotoFont);
     color: var(--myWhiteColor);
-  width: 100%;
+    width: 100%;
     font-size: var(--regFontSize);
     padding: 1rem 1rem;
-border : 1px solid  rgb(125, 88, 33);
+    border: 1px solid rgb(125, 88, 33);
     border-radius: 5px;
     /* background-color: lightgrey; */
     /* background-color: rgb(230,230,230); */
@@ -223,8 +226,8 @@ border : 1px solid  rgb(125, 88, 33);
     left: 0px;
     width: 100%;
     font-size: 1.1rem;
-     background-color:rgb(20, 20, 20);
-     
+    background-color: rgb(20, 20, 20);
+
 }
 
 .bokhusComWrapperContact {
@@ -232,24 +235,61 @@ border : 1px solid  rgb(125, 88, 33);
     margin-top: 0.5rem;
     padding-top: 1.2rem;
     width: 100%;
-    border-top: 1px solid  rgb(125, 88, 33);
+    border-top: 1px solid rgb(125, 88, 33);
 
     /* margin-  right: 0.5rem; */
 }
 
 .errorRegisterForm {
-    position : absolute;
-    left: 105%; 
+    position: absolute;
+    left: 105%;
     top: 50%;
     text-wrap: nowrap;
-    color:white;
+    color: white;
     padding: 0.5rem 1rem;
     /* background-color:rgb(20,20, 20); */
     background-color: var(--inputBackground);
-    border : 1px solid var(--borderIconColor);
+    border: 1px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
-    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-box-shadow: 5px 5px 15px 5px #000000;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+
+}
+
+
+/* max 1920 */
+@media (max-width: 119.99em) {
+    .contactUsSection {
+        /* max-width: 38%; */
+    }
     
 }
 
+/* 1440px */
+
+@media (max-width: 89.99em) {
+   
+   .contactUsSection {
+    /* max-width: 38%; */
+   }
+}
+
+
+@media (max-width: 63.99em) {
+ 
+
+
+  .contactUsSection {
+    /* max-width: 65rem; */
+    /* max-width: 60%; */
+  }
+
+} 
+
+
+@media (max-width: 47.99em)
+{
+ .contactUsSection {
+       max-width: 80%;
+    }
+}

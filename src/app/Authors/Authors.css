@@ -138,14 +138,10 @@ margin-top: 4rem;
 
 }
 @media (max-width: 39.99em) {
-  html {
-    font-size: 60%;
-  }
+
 }
 
 
 @media (max-width: 24rem) {
-    html {
-        font-size: 50%;
-    }
+  
 }
