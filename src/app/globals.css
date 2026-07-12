@@ -129,7 +129,9 @@ a {
 @media (max-width: 159.99em) {
   html {
     font-size: 100%;
+  
   }
+
 }
 /* max 1920 */
  @media (max-width: 119.99em) {

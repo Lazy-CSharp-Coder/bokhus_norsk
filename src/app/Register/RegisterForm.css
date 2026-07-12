@@ -533,7 +533,14 @@ fieldset {
 }
 
 
+@media (max-width: 159.99em) {
+  .registerSection {
+    width: 50%;
+  }
 
+}
+
+  
 
 @media (max-width: 63.99em) {
     .registerSection {
