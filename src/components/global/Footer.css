@@ -77,25 +77,30 @@ footer {
 .logoBPDiv {
     gap: 0.4rem;
 }
-
+.arrowMenuWrapper {
+    position: relative;
+}
 
 .footerEndMobileDiv {
-    position: fixed;
+    position: absolute;
     background-color: var(--commonBackgroundColor);
-    bottom: 6rem;
-    right: 0.2rem;
+    bottom: 100%;
+    right: 0;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    word-wrap: none;
+    grid-template-columns: repeat(2, max-content);
     grid-template-rows: repeat(6, fit-content);
     justify-items:start;
     align-items: center;
-
+    color: var(--myWhiteColor);
+    font-size: 1rem;
     row-gap: 1rem;
     column-gap: 0.8rem;
     padding: 2rem 2rem;
     padding-right: 4rem;
     border: 1px solid var(--myWhiteColor);
     border-radius: 5px;
+    transform: translate(1.5rem, -1rem);
   
     /* width: max-content; */
 

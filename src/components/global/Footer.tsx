@@ -69,35 +69,38 @@ export function Footer()
                 </div>
 
             </div>
-            <PiArrowFatLinesUpFill className="mobileFooterEndIcon mobileModeFooter" size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
-            {isMobileMenuOpen &&
-                <div className="footerEndMobileDiv mobileModeFooter fadeInFromBelowAnim">
-
-                    <Link className="contactUsLink" href="/Contact">
-                        <IoMailOutline size="2rem" /></Link>
-
-                    <span className="logoText">CONTACT</span>
-
-                    <FaInstagram size="1.8rem" />
-                    <span className="logoText">INSTAGRAM</span>
-
-                    <FaFacebook className="facebookIcon" size="1.7rem" />
-                    <span className="logoText">FACEBOOK</span>
-
-                    <Link href="/Credits">
-                        <IoIosInformationCircleOutline size="2rem" className="infoIcon" />      </Link>
-                        <span className="logoText">CREDITS</span>
-
-              
+            <div className="arrowMenuWrapper mobileModeFooter">
 
 
+                <PiArrowFatLinesUpFill className="mobileFooterEndIcon" size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
+                {isMobileMenuOpen &&
+                    <div className="footerEndMobileDiv fadeInFromBelowAnim">
 
-                    <LogoBPWebDev />
-                    <span className="logoText">WEBPAGE BY         </span>
+                        <Link className="contactUsLink" href="/Contact">
+                            <IoMailOutline size="2rem" /></Link>
 
-                </div>}
+                        <span className="logoTextMobile">CONTACT</span>
+
+                        <FaInstagram size="1.8rem" />
+                        <span className="logoTextMobile">INSTAGRAM</span>
+
+                        <FaFacebook className="facebookIcon" size="1.7rem" />
+                        <span className="logoTextMobile">FACEBOOK</span>
+
+                        <Link href="/Credits">
+                            <IoIosInformationCircleOutline size="2rem" className="infoIcon" />      </Link>
+                        <span className="logoTextMobile">CREDITS</span>
 
 
+
+
+
+                        <LogoBPWebDev />
+                        <span className="logoTextMobile">WEBPAGE BY         </span>
+
+                    </div>}
+
+            </div>
         </footer>
     );
 }
