@@ -144,6 +144,7 @@ a {
 @media (max-width: 89.99em) {
   html {
   font-size: 60%;
+  /* font-size: 70%; */
 }
 
 }
