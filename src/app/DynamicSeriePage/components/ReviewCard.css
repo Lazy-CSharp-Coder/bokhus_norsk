@@ -137,7 +137,27 @@
 
 @media (max-width: 63.99em) {
   .reviewCardLinkWrapper {
-    width: 100;
+    width: 100%;
     flex: 1;
+    padding: 0 2rem;
+  }
+  .titleReviewText {
+    font-size: 2rem;
+  }
+.reviewerNameText {
+    font-size: 1.5rem;
+}
+  .reviewedInText {
+    font-size: 1.5rem;
+  }
+
+  .reviewList {
+    font-size: 1.7rem;
+    background: red;
+  }
+
+  .starImage {
+   width: 2rem;
+   height: 2rem;
   }
 }
