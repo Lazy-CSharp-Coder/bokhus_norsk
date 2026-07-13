@@ -91,7 +91,9 @@
 
 @media (max-width: 63.99em) {
 
-    .reviewArticle {
-      
-    }
+   
+   .reviewSlideContainer {
+    padding: 4rem 4rem;
+   }
+ 
 }
