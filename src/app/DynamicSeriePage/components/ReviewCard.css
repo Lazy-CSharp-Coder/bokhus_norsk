@@ -133,3 +133,11 @@
 
 
 }
+
+
+@media (max-width: 63.99em) {
+  .reviewCardLinkWrapper {
+    width: 100;
+    flex: 1;
+  }
+}
