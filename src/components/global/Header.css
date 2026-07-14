@@ -57,12 +57,25 @@
   font-weight: 500;
   letter-spacing: 0.3px;
   color: var(--myWhiteColor);
-  transition: color 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  display: flex;
+  flex-direction: row;
+  gap:0.5rem;
+  align-items: center;
 }
+
+.form-container {
+  display: grid;
+  grid-template-columns: 30% 50%;
+  justify-items: left;
+  padding: 2% 4%;
+}
+
 
 
 .headerMenuItem:hover {
   color:  var(--bokhusFutureColor);
+  scale: 1.01;
 }
 
 /* clerk button div and classes  */

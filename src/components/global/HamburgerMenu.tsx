@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import type { HeaderProps } from "@/types/types"
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
+import { HeaderMenuItemProps } from "@/types/types";
+
+interface HamburgerMenuProps {
+    menuItems : HeaderMenuItemProps[]
+}
+
 
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
 
-export function HamburgerMenu({ menuItems }: HeaderProps)
+export function HamburgerMenu({ menuItems }: HamburgerMenuProps)
 {
     const [menuState, setMenuState] = useState<HamburgerMenuState>("hiding");
 
@@ -28,7 +34,7 @@ export function HamburgerMenu({ menuItems }: HeaderProps)
 
                     {menuItems?.map((item, index) =>
 
-                        <Link key={item.name + index} className="headerMenuItemHamburger" href={item.pageLink}>{item.name}</Link>)
+                        <Link key={item.name + index} className="headerMenuItemHamburger" href={item.pageLink}><item.IconToUse size={item.size}/>   {item.name}</Link>)
                     }
                 </nav>}
 

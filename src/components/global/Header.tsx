@@ -1,80 +1,82 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HamburgerMenu } from "./HamburgerMenu";
-import languagesJson from "@/json/languages.json";
-import { LanguageText } from "@/types/languagetypes";
 import { LoginClerk } from "./LoginClerk";
-import "./Header.module.css";
+import { HeaderMenuItem } from "./HeaderMenuItem";
+
 import { RiHome4Line } from "react-icons/ri";  // HOME
 import { BsPersonFill } from "react-icons/bs";  // AUTHORS
 import { TbBooks } from "react-icons/tb";  // SERIES
-import type { ReactIcons } from "@/types/types";
 import { TfiWrite } from "react-icons/tfi";
 import { FaShop } from "react-icons/fa6";
 import { RiContactsBookLine } from "react-icons/ri";
-import { FaUserCheck } from "react-icons/fa6";
-import { HeaderMenuItem } from "./HeaderMenuLitem";
+import { IoMailOutline } from "react-icons/io5";
+import { VscInfo } from "react-icons/vsc";
+import type { HeaderMenuItemProps } from "@/types/types";
 
+import "./Header.module.css";
 
-const reactIconsArray: ReactIcons[] =
+const menuItems: HeaderMenuItemProps[] =
     [
         {
             name: "HOME",
-            icon: RiHome4Line,
-            size: "2rem"
+            IconToUse: RiHome4Line,
+            size: "1.5rem",
+            pageLink : "/"
 
         },
 
         {
             name: "AUTHORS",
-            icon: BsPersonFill,
-            size: "2rem"
+            IconToUse: BsPersonFill,
+            size: "1.5rem",
+                pageLink : "/Authors"
         },
 
         {
             name: "SERIES",
-            icon: TbBooks,
-            size: "2rem"
+            IconToUse: TbBooks,
+            size: "1.5rem",
+                pageLink : "/Series"
         },
 
         {
             name: "REGISTER",
-            icon: TfiWrite,
-            size: "1.8rem"
+            IconToUse: TfiWrite,
+            size: "1.2rem",
+                pageLink : "/Register"
         },
         {
             name: "WHERE TO BUY",
-            icon: FaShop,
-            size: "2rem"
+            IconToUse: FaShop,
+            size: "1.5rem",
+                pageLink : "/WhereToBuy"
         },
         {
             name: "WORK WITH US",
-            icon: RiContactsBookLine,
-            size: "2rem"
+            IconToUse: RiContactsBookLine,
+            size: "1.5rem",
+                pageLink : "/WorkWithUs"
         },
         {
             name: "CONTACT",
-            icon: FaUserCheck,
-            size: "2rem"
+            IconToUse: IoMailOutline,
+            size: "1.5rem",
+                pageLink : "/Contact"
         },
+        {
+            name: "ABOUT",
+            IconToUse: VscInfo,
+            size: "1.5rem",    pageLink : "/About"
+        },
+
 
     ];
 
 
-export interface HeaderMenuItem
-{
-    name: string,
-    pageLink: string,
-    iconNumber: number;
-}
-
 
 export function Header()
 {
-    const languageArray: LanguageText[] = languagesJson;
-
-    const { menuItemsHeader } = languageArray[0];
-
     return (
 
         <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }}>
@@ -87,14 +89,14 @@ export function Header()
 
 
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
-                    {menuItemsHeader.map((item, index) =>
-                        <HeaderMenuItem IconToUse={reactIconsArray[index].icon} size={reactIconsArray[index].size} pageLink={item.pageLink}/>)
+                    {menuItems.map((item, index) =>
+                        <HeaderMenuItem name={item.name} IconToUse={item.IconToUse} size={item.size} pageLink={item.pageLink}/>)
                     }
                 </div>
             </div>
             <div className="loginBurgerWrapper">
                 <LoginClerk />
-                <span className="mobileMode">  <HamburgerMenu menuItems={menuItemsHeader} /></span>
+                <span className="mobileMode">  <HamburgerMenu menuItems={menuItems} /></span>
 
             </div>
 

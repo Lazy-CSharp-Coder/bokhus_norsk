@@ -17,3 +17,9 @@
     background-color: rgba(20, 20, 20, 0.8);
 }
 
+.headerMenuItemHamburger {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    align-items: center;
+}

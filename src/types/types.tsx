@@ -10,18 +10,9 @@ export interface PageProps
 {
    searchParams: Promise<{ [key: string]: string | string[] | undefined; }>;
 }
-export interface MenuItemsHeader 
-{
-    name : string,
-    pageLink : string
-}
 
 
-export interface HeaderProps
-{
-    background?: string,
-    menuItems?: MenuItemsHeader[],
-}
+
 
 export interface About {
     aboutHeading: string, 
@@ -48,9 +39,14 @@ export interface ExpandingLineProps
 export interface ReactIcons 
 {
     name : string,
-    icon: IconType,
+    IconToUse: IconType,
     size: string,
     className?: string,
 
 }
 
+
+export interface HeaderMenuItemProps extends ReactIcons {
+
+    pageLink : string
+}
