@@ -31,7 +31,7 @@ export function HamburgerMenu()
             {menuState!= "hiding" &&
                 <nav onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
 
-                    {Array(menuItems.length)?.map((_, index) =>
+                    {menuItems.map((_, index) =>
 
                        <HeaderMenuItem index={index} className="headerMenuItemHamburger"/>
                     )}

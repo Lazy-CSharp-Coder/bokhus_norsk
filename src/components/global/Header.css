@@ -64,17 +64,26 @@
   align-items: center;
 }
 
-.form-container {
-  display: grid;
-  grid-template-columns: 30% 50%;
-  justify-items: left;
-  padding: 2% 4%;
+.headerMenuItem:hover {
+  color: var(--bokhusFutureColor);
+  scale: 1.01;
+}
+
+.headerIcon {
+  /* color: var(--myWhiteColor); */
+}
+.headerIcon svg, 
+.headerIcon path {
+    /* fill: var(--myWhiteColor); */
+  /* stroke: var(--myWhiteColor); */
+  transition: fill 0.5s ease, stroke 0.3s ease;
 }
 
 
-
-.headerMenuItem:hover {
-  color:  var(--bokhusFutureColor);
+.headerMenuItem:hover .headerIcon {
+   fill: var(--bokhusRootsColor);
+  stroke: var(--bokhusRootsColor);
+  /* color: var(--bokhusRootsColor); */
   scale: 1.01;
 }
 

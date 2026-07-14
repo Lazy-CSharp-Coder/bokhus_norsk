@@ -9,7 +9,7 @@ export function HeaderMenuItem({ index, className } : {index: number, className 
     const link = pageLink ?? "/"
     const IconToUse = icon;
     return (
-        <Link className={className} href={link}> <IconToUse size={size} /> {name}</Link>
+        <Link className={className} href={link}> <IconToUse size={size} className="headerIcon"/> {name}</Link>
 
     );
 }

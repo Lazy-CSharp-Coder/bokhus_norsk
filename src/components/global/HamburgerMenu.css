@@ -9,6 +9,7 @@
     align-items: left;
     gap: 0.5rem;
     top: 6rem;
+    background-color: red;
     right: 0rem;
     padding : 1rem 2rem;
     font-size: 1.8rem;
@@ -20,6 +21,8 @@
 .headerMenuItemHamburger {
     display: flex;
     flex-direction: row;
-    gap: 0.2rem;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0.5rem;
     align-items: center;
 }
