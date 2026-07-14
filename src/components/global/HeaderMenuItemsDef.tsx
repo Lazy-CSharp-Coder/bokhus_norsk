@@ -3,15 +3,13 @@
 import { RiHome4Line } from "react-icons/ri";  // HOME
 import { BsPersonFill } from "react-icons/bs";  // AUTHORS
 import { TbBooks } from "react-icons/tb";  // SERIES
-import { TfiWrite } from "react-icons/tfi";
-import { FaShop } from "react-icons/fa6";
 import { FaHandshake } from "react-icons/fa";
-
 import { IoMailOutline } from "react-icons/io5";
 import { VscInfo } from "react-icons/vsc";
 import type { ReactIcons} from "@/types/types";
 import { CgShoppingCart } from "react-icons/cg";
-
+import { FaPencil } from "react-icons/fa6";
+import { PiNotePencilBold } from "react-icons/pi";
 export const menuItems: ReactIcons[] =
     [
         {
@@ -38,8 +36,8 @@ export const menuItems: ReactIcons[] =
 
         {
             name: "REGISTER",
-            icon: TfiWrite,
-            size: "1.1rem",
+            icon: PiNotePencilBold,
+            size: "1.5rem",
                 pageLink : "/Register"
         },
         {
