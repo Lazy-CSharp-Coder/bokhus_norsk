@@ -39,7 +39,7 @@ export interface ExpandingLineProps
 export interface ReactIcons 
 {
     name : string,
-    icon: IconType,
+    Icon: IconType,
     size: string,
     className?: string,
 

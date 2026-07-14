@@ -20,7 +20,7 @@ const menuItems: HeaderMenuItemProps[] =
     [
         {
             name: "HOME",
-            icon: RiHome4Line,
+            Icon: RiHome4Line,
             size: "1.5rem",
             pageLink : "/"
 
@@ -28,45 +28,45 @@ const menuItems: HeaderMenuItemProps[] =
 
         {
             name: "AUTHORS",
-            icon: BsPersonFill,
+            Icon: BsPersonFill,
             size: "1.5rem",
                 pageLink : "/Authors"
         },
 
         {
             name: "SERIES",
-            icon: TbBooks,
+            Icon: TbBooks,
             size: "1.5rem",
                 pageLink : "/Series"
         },
 
         {
             name: "REGISTER",
-            icon: TfiWrite,
+            Icon: TfiWrite,
             size: "1.2rem",
                 pageLink : "/Register"
         },
         {
             name: "WHERE TO BUY",
-            icon: FaShop,
+            Icon: FaShop,
             size: "1.5rem",
                 pageLink : "/WhereToBuy"
         },
         {
             name: "WORK WITH US",
-            icon: RiContactsBookLine,
+            Icon: RiContactsBookLine,
             size: "1.5rem",
                 pageLink : "/WorkWithUs"
         },
         {
             name: "CONTACT",
-            icon: IoMailOutline,
+            Icon: IoMailOutline,
             size: "1.5rem",
                 pageLink : "/Contact"
         },
         {
             name: "ABOUT",
-            icon: VscInfo,
+            Icon: VscInfo,
             size: "1.5rem",    pageLink : "/About"
         },
 
