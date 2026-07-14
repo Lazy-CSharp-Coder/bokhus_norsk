@@ -35,7 +35,7 @@ export function HamburgerMenu({ menuItems }: HamburgerMenuProps)
 
                     {menuItems?.map((item, index) =>
 
-                       <HeaderMenuItem {...item}/>
+                       <HeaderMenuItem item={item}/>
                     )}
                 </nav>}
 

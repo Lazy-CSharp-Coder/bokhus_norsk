@@ -20,7 +20,7 @@ const menuItems: HeaderMenuItemProps[] =
     [
         {
             name: "HOME",
-            Icon: RiHome4Line,
+            icon: RiHome4Line,
             size: "1.5rem",
             pageLink : "/"
 
@@ -28,45 +28,45 @@ const menuItems: HeaderMenuItemProps[] =
 
         {
             name: "AUTHORS",
-            Icon: BsPersonFill,
+            icon: BsPersonFill,
             size: "1.5rem",
                 pageLink : "/Authors"
         },
 
         {
             name: "SERIES",
-            Icon: TbBooks,
+            icon: TbBooks,
             size: "1.5rem",
                 pageLink : "/Series"
         },
 
         {
             name: "REGISTER",
-            Icon: TfiWrite,
+            icon: TfiWrite,
             size: "1.2rem",
                 pageLink : "/Register"
         },
         {
             name: "WHERE TO BUY",
-            Icon: FaShop,
+            icon: FaShop,
             size: "1.5rem",
                 pageLink : "/WhereToBuy"
         },
         {
             name: "WORK WITH US",
-            Icon: RiContactsBookLine,
+            icon: RiContactsBookLine,
             size: "1.5rem",
                 pageLink : "/WorkWithUs"
         },
         {
             name: "CONTACT",
-            Icon: IoMailOutline,
+            icon: IoMailOutline,
             size: "1.5rem",
                 pageLink : "/Contact"
         },
         {
             name: "ABOUT",
-            Icon: VscInfo,
+            icon: VscInfo,
             size: "1.5rem",    pageLink : "/About"
         },
 
@@ -90,7 +90,7 @@ export  function Header()
 
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItems.map((item, index) =>
-                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} {...item}/>)
+                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} item={item}/>)
                     }
                 </div>
             </div>
