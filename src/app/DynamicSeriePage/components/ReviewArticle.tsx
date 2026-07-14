@@ -183,7 +183,7 @@ export function ReviewSlideShow({ reviewArray }: { reviewArray: Review[]; })
 
 
     };
-    reviewArray.forEach((item) => { console.log("review item id ;" + item._id); });
+    // reviewArray.forEach((item) => { console.log("review item id ;" + item._id); });
     return (
 
         <div className="reviewSlideContainer flex">

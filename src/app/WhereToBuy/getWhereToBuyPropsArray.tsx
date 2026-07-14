@@ -3,7 +3,8 @@ import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { client } from "@/sanity/client";
 
 const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsUids]`;
-const BOOK_QUERY = `*[_type == "Book" && _id in $bookUids[]._ref] | order(bookInSeries asc)`;
+   const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
+
 
 export function getWhereToBuyPropsArray(serieArray: Series[]): Promise<WhereToBuySeriesProps[]>
 {
@@ -17,7 +18,8 @@ export function getWhereToBuyPropsArray(serieArray: Series[]): Promise<WhereToBu
       {
         console.log("Error fetching : No author for serie found");
       }
-      const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { bookUids: item.bookUids });
+      const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID: item._id });
+
       if (bookList.length < 1)
       {
         console.log("Error fetching : No books for serie found");
@@ -28,7 +30,7 @@ export function getWhereToBuyPropsArray(serieArray: Series[]): Promise<WhereToBu
         authorsStrArray: authors.map((item) => item.name),
         bookList: bookList,
 
-      }
+      };
     }));
-  
+
 }

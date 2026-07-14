@@ -2,8 +2,11 @@ import type { ReviewProps } from "../../../types/reviewtypes";
 import Image from "next/image";
 import Link from "next/link";
 import "./ReviewCard.module.css";
+import { IoStarSharp } from "react-icons/io5";
+import { LuUserPen } from "react-icons/lu";
+import { GoLinkExternal } from "react-icons/go";
 
-export function ReviewCard({ _id, format, bookReviewed, date, country, stars, reviewerName, titleReview, reviewDescription, linkReview, doAnimateStars, animationToUse }: ReviewProps)
+export function ReviewCard({ _id, format, bookReviewed, date, country, stars, reviewerName, titleReview, reviewDescription, linkReview, reviewedOn, animationToUse }: ReviewProps)
 {
 
     const animInc = 50;
@@ -13,10 +16,11 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
     return (
         <div id={_id} className={`reviewCardLinkWrapper flex  ${animationToUse}`}>
             <div className={`reviewCardDiv flex`}>
-                <h3 className="titleReviewText">{titleReview}</h3>
+                <h3 className="titleReviewText">{titleReview.toUpperCase()}</h3>
                 <div className="starsDiv flex">
-                    {[...Array(stars)].map((item, index) =>
-                        <Image key={index + "star"} style={{ animationDelay: `${(animInc * index) + waitForMain}ms` }} className={`starImg ${doAnimateStars ? "scaleInAnim" : ""}`} src="/icons/star2.png" alt="star icon" width={20} height={20}></Image>)
+                    {[...Array(stars)].map((_, index) =>
+                        <IoStarSharp key={"StarIconReview" + index} className="starIcon" size="1.5rem" />)
+
                     }
                 </div>
 
@@ -24,9 +28,9 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
 
                 <div className="reviewerNameIconWrapper flex">
 
-                    <div className="userIconDiv">
-                        <Image src="/icons/userReview.png" alt="user icon review" width="25" height="25" />
-                    </div>
+
+                    <LuUserPen size="1.6rem" className="userIcon" />
+
                     <p className="reviewerNameText">{reviewerName}</p>
 
                 </div>
@@ -41,7 +45,7 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
 
 
             </div>
-            <Link className="linkToReview" href={linkReview} target="_blank">Click to see review <span className="arrowLink">&#8594;</span></Link>
+            <Link className="linkToReview" href={linkReview} target="_blank"><span>Click to see review on <span className="reviewSiteText">{reviewedOn} </span> </span><GoLinkExternal size="1.2rem"/></Link>
 
 
         </div>);

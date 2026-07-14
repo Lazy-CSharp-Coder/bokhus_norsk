@@ -5,6 +5,64 @@ import languagesJson from "@/json/languages.json";
 import { LanguageText } from "@/types/languagetypes";
 import { LoginClerk } from "./LoginClerk";
 import "./Header.module.css";
+import { RiHome4Line } from "react-icons/ri";  // HOME
+import { BsPersonFill } from "react-icons/bs";  // AUTHORS
+import { TbBooks } from "react-icons/tb";  // SERIES
+import { ReactIcons } from "@/types/types";
+import { TfiWrite } from "react-icons/tfi";
+import { FaShop } from "react-icons/fa6";
+
+
+// const reactIconsArray: ReactIcons =
+//     [
+//             {
+//                 name : "HOME",
+//                 icon: RiHome4Line,
+//                 size : "2rem"
+    
+//             },
+            
+//             {
+//                  name : "AUTHORS",
+//                 icon: BsPersonFill,
+//                 size: "2rem"
+//             },
+               
+//             {
+//                  name : "SERIES",
+//                 icon: TbBooks,
+//                 size: "2rem"
+//             },
+               
+//             {
+//                 name : "REGISTER",
+//                 icon: TfiWrite,
+//                 size: "1.8rem"
+//             },
+//                {
+//                 name : "WHERE TO BUY",
+//                 icon: FaShop,
+//                 size: "2rem"
+//             },
+//                {
+//                 name : "WORK WITH US",
+//                 icon: IoShareSocialOutline,
+//                 size: "2rem"
+//             },
+//                {
+//                 name : "CONTACT",
+//                 icon: RiComputerLine,
+//                 size: "2rem"
+//             }, 
+
+//     ];
+// export interface HeaderMenuItem
+// {
+//     name : string,
+//     pageLink : string,
+//     iconNumber: number;
+// }
+
 
 export function Header()
 {

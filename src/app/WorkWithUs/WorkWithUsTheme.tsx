@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+
 import { WorkWithUs } from "./page";
 import { CiEdit } from "react-icons/ci";
 import { GoStack } from "react-icons/go";
@@ -12,15 +12,8 @@ import { PiFloppyDisk } from "react-icons/pi";
 import { GiTeacher } from "react-icons/gi";
 import { FaFileCircleQuestion } from "react-icons/fa6";
 import { TfiWrite } from "react-icons/tfi";
+import type { ReactIcons } from "@/types/types";
 
-interface ReactIcons 
-{
-    name : string,
-    icon: IconType,
-    size: string,
-    className?: string,
-
-}
 
 
 const reactIconsArray: ReactIcons[] =
