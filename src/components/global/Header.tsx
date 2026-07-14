@@ -5,13 +5,27 @@ import { LoginClerk } from "./LoginClerk";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { HeaderMenuItem } from "./HeaderMenuItem";
 import "./Header.module.css";
+import { useRef } from "react";
 
 
 export  function Header()
 {
+    const headerRef = useRef<HTMLDivElement>(null);
+
+    
+    const handleOutsideClick() =>
+    {
+        let shallClose = false;
+        if (headerRef.current && headerRef.current.contains(e.target as Node)) shallClose = false;
+        else shallClose = true;
+
+        if()
+
+
+    }
     return (
 
-        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }}>
+        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }} ref={headerRef}>
 
             <Link href={"/"} className="headerIcon fadeInAnim">
 
