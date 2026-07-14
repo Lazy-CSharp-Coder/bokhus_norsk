@@ -1,75 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HamburgerMenu } from "./HamburgerMenu";
-import languagesJson from "@/json/languages.json";
-import { LanguageText } from "@/types/languagetypes";
 import { LoginClerk } from "./LoginClerk";
+import { menuItems } from "./HeaderMenuItemsDef";
+import { HeaderMenuItem } from "./HeaderMenuItem";
 import "./Header.module.css";
-import { RiHome4Line } from "react-icons/ri";  // HOME
-import { BsPersonFill } from "react-icons/bs";  // AUTHORS
-import { TbBooks } from "react-icons/tb";  // SERIES
-import { ReactIcons } from "@/types/types";
-import { TfiWrite } from "react-icons/tfi";
-import { FaShop } from "react-icons/fa6";
 
 
-// const reactIconsArray: ReactIcons =
-//     [
-//             {
-//                 name : "HOME",
-//                 icon: RiHome4Line,
-//                 size : "2rem"
-    
-//             },
-            
-//             {
-//                  name : "AUTHORS",
-//                 icon: BsPersonFill,
-//                 size: "2rem"
-//             },
-               
-//             {
-//                  name : "SERIES",
-//                 icon: TbBooks,
-//                 size: "2rem"
-//             },
-               
-//             {
-//                 name : "REGISTER",
-//                 icon: TfiWrite,
-//                 size: "1.8rem"
-//             },
-//                {
-//                 name : "WHERE TO BUY",
-//                 icon: FaShop,
-//                 size: "2rem"
-//             },
-//                {
-//                 name : "WORK WITH US",
-//                 icon: IoShareSocialOutline,
-//                 size: "2rem"
-//             },
-//                {
-//                 name : "CONTACT",
-//                 icon: RiComputerLine,
-//                 size: "2rem"
-//             }, 
-
-//     ];
-// export interface HeaderMenuItem
-// {
-//     name : string,
-//     pageLink : string,
-//     iconNumber: number;
-// }
-
-
-export function Header()
+export  function Header()
 {
-    const languageArray: LanguageText[] = languagesJson;
-
-    const { menuItemsHeader } = languageArray[0];
-
     return (
 
         <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }}>
@@ -82,18 +21,17 @@ export function Header()
 
 
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
-                    {menuItemsHeader.map((item, index) =>
-
-                        <Link key={item.name + index} className="headerMenuItem" href={item.pageLink}>{item.name}</Link>)
+                    {menuItems.map((_, index) =>
+                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className="headerMenuItem" iconClassName="headerIcon"/>)
                     }
                 </div>
-            </div>  
+            </div>
             <div className="loginBurgerWrapper">
-  <LoginClerk />
-            <span className="mobileMode">  <HamburgerMenu menuItems={menuItemsHeader} /></span>
+                <LoginClerk />
+                <span className="mobileMode">  <HamburgerMenu /></span>
 
             </div>
-          
+
         </header>
     );
 

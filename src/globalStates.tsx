@@ -16,7 +16,7 @@ const startupLanguage: LanguageChosen =
     language : "english",
     sanityTag: "ENG",
 
-    menuItemsHeader : startup.menuItemsHeader,
+
     heroPage : startup.heroPage,
   
 }
@@ -52,12 +52,12 @@ export function StateProvider({ children }: PropsWithChildren)
 
 
     
-    const { languageNumber, heroPage,  menuItemsHeader, language, sanityTag} = startupLanguage;
+    const { languageNumber, heroPage,  language, sanityTag} = startupLanguage;
 
 
 
     return <DescriptionShowingContext.Provider value={{  isDescriptionShowing, setIsDescriptionShowing }}>
-        <LanguageContext.Provider value={{ languageNumber, heroPage, menuItemsHeader, language, sanityTag }}>
+        <LanguageContext.Provider value={{ languageNumber, heroPage,  language, sanityTag }}>
             {children}
         </LanguageContext.Provider>
     </DescriptionShowingContext.Provider>;
