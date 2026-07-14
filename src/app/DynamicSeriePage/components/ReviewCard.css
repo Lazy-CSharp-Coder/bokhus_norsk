@@ -7,6 +7,7 @@
  border-radius: 5px;
     padding: 2rem 4rem;
     background-color: rgb(20, 20, 20, 0.7);
+    margin: 3.5rem 3.8rem;
 }
 
 
@@ -151,9 +152,12 @@ gap:1rem;
 @media (max-width: 63.99em) {
   .reviewCardLinkWrapper {
     width: 100%;
-    flex: 1;
-    padding: 3rem 4rem;
+    /* flex: 1; */
+    margin: 4rem 4.5rem; 
+      padding: 3rem 4rem;
   }
+
+
   .titleReviewText {
     font-size: 2rem;
   }
@@ -166,11 +170,22 @@ gap:1rem;
 
   .reviewList {
     font-size: 1.7rem;
-    background: red;
+    /* background: red; */
+       padding: 0rem 0.2rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.7rem;
   }
 
-  .starImage {
+  .userIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .starIcon {
    width: 2rem;
    height: 2rem;
+  }
+
+  .linkToReview {
+    font-size: 1.7rem;
   }
 }
