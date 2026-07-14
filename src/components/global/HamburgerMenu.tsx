@@ -19,7 +19,7 @@ export function HamburgerMenu()
      const headerRef = useRef<HTMLDivElement>(null);
 
     
-    const handleOutsideClick = (e : ) =>
+    const handleOutsideClick = (e : MouseEvent) =>
     {
         let shallClose = false;
         if (headerRef.current && headerRef.current.contains(e.target as Node)) shallClose = false;
