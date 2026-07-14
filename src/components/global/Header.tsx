@@ -7,11 +7,13 @@ import { HeaderMenuItem } from "./HeaderMenuItem";
 import "./Header.module.css";
 
 
+
 export  function Header()
 {
+   
     return (
 
-        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }}>
+        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }} >
 
             <Link href={"/"} className="headerIcon fadeInAnim">
 
