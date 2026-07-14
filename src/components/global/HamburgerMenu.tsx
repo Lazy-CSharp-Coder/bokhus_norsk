@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
+import { useState, useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
@@ -16,6 +15,19 @@ export function HamburgerMenu()
 {
     const [menuState, setMenuState] = useState<HamburgerMenuState>("hiding");
 
+     const headerRef = useRef<HTMLDivElement>(null);
+
+    
+    const handleOutsideClick = () =>
+    {
+        let shallClose = false;
+        if (headerRef.current && headerRef.current.contains(e.target as Node)) shallClose = false;
+        else shallClose = true;
+        
+
+
+    }
+
     const handleClick = ()=>
     {
         if(menuState == "hiding") setMenuState("showing");
@@ -29,7 +41,7 @@ export function HamburgerMenu()
                 <GiHamburgerMenu size="2.5rem" />
             </span>
             {menuState!= "hiding" &&
-                <nav onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
+                <nav ref={headerRef} onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
 
                     {menuItems.map((_, index) =>
 
