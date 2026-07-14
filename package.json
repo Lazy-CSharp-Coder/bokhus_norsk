@@ -11,9 +11,12 @@
   "dependencies": {
     "@clerk/nextjs": "^7.5.18",
     "@hookform/resolvers": "^5.4.0",
+    "@sanity/client": "^7.23.1",
+    "@sanity/image-url": "^2.1.1",
+    "clerk": "^2.1.0",
     "convert-number-to-words": "^1.0.3",
     "next": "^16.2.9",
-    "next-sanity": "^11.6.13",
+    "next-sanity": "^13.1.1",
     "numbers-to-words": "^2.0.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
