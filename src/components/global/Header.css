@@ -102,51 +102,38 @@
 
 }
 
-.signInButton, .signUpButton {
+.signInButton {
    display: flex;
+   font-family: var(--headerFontFamily);
   justify-content: center;
   align-items: center; 
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  padding: 0.4rem 1.5rem;
-background-color: rgb(20, 20, 20);
-  border: 2px outset var(--bokhusRootsColor);
-  border-radius: 1px;
+  /* padding: 0.4rem 1.5rem; */
+background-color: transparent;
+  /* border: 2px outset var(--bokhusRootsColor); */
+  /* border-radius:  1px; */
+  border: none;
   /* font-family: sans-serif; */
-  position: relative;
+  padding-bottom: 0.1rem;
+ border-bottom: 2px solid var(--bokhusRootsColor);
   /* font-family : var(--headerFontFamily); */
   color: var(--bokhusFutureColor);
   cursor: pointer;
-
+  transition: all 0.4s ease-in;
 }
 
-.signInButton:hover, .signUpButton:hover {
-
-}
-
-.signInButton:active, .signUpButton:active {
-
- border: 2px inset rgb(20, 20, 20);
-}
-
-.profileButton {
-  border: none;
+.signInButton:hover {
   color: var(--myWhiteColor);
-  background-color: transparent;
-  font-family: var(--headerFontFamily);
-  
-  border: 2px solid var(--bokhusRootsColor);
-  border-radius: 50%;
-  padding:0.6rem;
- cursor: pointer;
+  border-color: var(--bokhusFutureColor);
+  scale: 1.01;
 }
 
 .userButtonDiv {
-  display: flex;
-  gap: 1.7rem;
-  align-items: center;
-  font-size: 1rem;
-  
+
+display: flex;
+align-items: center;
+
 
 }
 

@@ -25,7 +25,7 @@ export function LoginClerk()
 
             <Show when="signed-out">
                 <SignInButton fallbackRedirectUrl={path}>
-                    <button className="signInButton">Sign In</button>
+                    <button className="signInButton">SIGN IN</button>
                 </SignInButton>
                 {/* <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
                     <button className="signUpButton">
