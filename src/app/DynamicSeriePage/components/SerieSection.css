@@ -14,31 +14,27 @@
     /* background-color: rgba(150, 0, 0, 0.5); */
 }
 
-
+/*
 
 @media (max-width: 159.99em) {
 
 
 }
 
-  
+  */
 
-/* max 1920 */
+/* max 1920 
 @media (max-width: 119.99em) {
        
 }
 
 
-/* 1440px */
+/* 1440px 
 
 @media (max-width: 89.99em) {
    
-   .serieSection {
-    /* max-width:82%; */
-    /* background: blue; */
-   }
 }
-
+*/
 
 @media (max-width: 63.99em) {
  
