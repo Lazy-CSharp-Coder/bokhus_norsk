@@ -1,13 +1,15 @@
 
 import Link from "next/link";
-import type { HeaderMenuItemProps } from "@/types/types";
 
-export function HeaderMenuItem({item }:{item : HeaderMenuItemProps})
+import { menuItems } from "./HeaderMenuItemsDef";
+
+export function HeaderMenuItem({ index, className } : {index: number, className : string})
 {
-    const{ icon, pageLink, size, name} = item;
+    const{  pageLink,name, icon, size} = menuItems[index];  
+    const link = pageLink ?? "/"
     const IconToUse = icon;
     return (
-        <Link className="headerMenuItem" href={pageLink}> <IconToUse size={size} /> {name}</Link>
+        <Link className={className} href={link}> <IconToUse size={size} /> {name}</Link>
 
     );
 }

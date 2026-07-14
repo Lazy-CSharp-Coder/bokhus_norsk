@@ -3,18 +3,16 @@
 import { useState } from "react";
 
 import { GiHamburgerMenu } from "react-icons/gi";
-import Link from "next/link";
-import { HeaderMenuItemProps } from "@/types/types";
-import { HeaderMenuItem } from "./HeaderMenuItem";
 
-interface HamburgerMenuProps {
-    menuItems : HeaderMenuItemProps[]
-}
+
+import { HeaderMenuItem } from "./HeaderMenuItem";
+import { menuItems } from "./HeaderMenuItemsDef";
+
 
 
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
 
-export function HamburgerMenu({ menuItems }: HamburgerMenuProps)
+export function HamburgerMenu()
 {
     const [menuState, setMenuState] = useState<HamburgerMenuState>("hiding");
 
@@ -33,9 +31,9 @@ export function HamburgerMenu({ menuItems }: HamburgerMenuProps)
             {menuState!= "hiding" &&
                 <nav onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
 
-                    {menuItems?.map((item, index) =>
+                    {Array(menuItems.length)?.map((_, index) =>
 
-                       <HeaderMenuItem item={item}/>
+                       <HeaderMenuItem index={index} className="headerMenuItemHamburger"/>
                     )}
                 </nav>}
 

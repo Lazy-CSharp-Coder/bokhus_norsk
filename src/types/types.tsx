@@ -42,11 +42,15 @@ export interface ReactIcons
     icon: IconType,
     size: string,
     className?: string,
+    pageLink? : string
 
 }
 
 
-export interface HeaderMenuItemProps extends ReactIcons {
+export interface HeaderMenuItemProps {
 
+    name : string, 
+    iconNumber : number,
     pageLink : string
 }
+
