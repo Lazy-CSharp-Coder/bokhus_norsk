@@ -1,12 +1,40 @@
-body {
-display: flex;
-justify-content: flex-start;
+.signInToProceedDiv 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    color: var(--myWhiteColor);
+    font-size: 2rem;
+    margin-top: 2rem;
+    flex-grow: 1;
+}
 
-min-height: 100vh;
- background: #031211;
-background: -moz-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
-background: -webkit-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
-background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%); 
+
+.registerBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+
+  background-image: var(--defaultBackgroundImage);
+  background-size: cover;
+    position: fixed;
+  background-repeat: no-repeat;
+  filter: blur(5px) brightness(98%);
+  z-index: -1;
+
 
 }
 
+.registerPage {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+        /* padding-left: 12%; */
+    
+}

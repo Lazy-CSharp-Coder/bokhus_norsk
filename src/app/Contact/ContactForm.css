@@ -1,0 +1,302 @@
+:root {
+    --contactTextSize: 1.1rem;
+}
+
+
+
+.contactBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    filter: blur(3px) brightness(88%);
+    z-index: -1;
+
+
+}
+
+
+.contactPage {
+
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    width: 100%;
+    /* padding-right: 12rem; */
+
+
+    color: white;
+    font-family: var(--robotoFont);
+
+
+}
+
+
+/* .contactUsSection 
+{ flex-direction: column;
+    width: 30%;
+} */
+
+.contactUsSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    /* width:35%; */
+    width: 55rem;
+    margin: 4rem 0;
+    height: fit-content;
+    font-family: var(--robotoFont);
+    padding: 1.5rem 3.5rem;
+
+    background-color: rgba(20, 20, 20, 0.8);
+    /* background-color: rgb(34, 34, 34); */
+    border: 1px solid rgb(125, 88, 33);
+    border-radius: 5px;
+    padding-bottom: 3rem;
+    color: var(--myWhiteColor);
+    /* -webkit-box-shadow: 10px 10px 23px 3px #000000; 
+box-shadow: 10px 10px 23px 3px #000000; */
+
+
+}
+
+.logoHeadingWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.contactUsHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: fit-content;
+    gap: 0.2rem;
+
+    font-size: 1.5rem;
+
+    font-weight: normal;
+
+    /* padding: 1rem 0; */
+    /* padding-right: 0.5rem; */
+    /* border-bottom: 1px solid black; */
+    text-align: left;
+    font-weight: 500;
+}
+
+
+.logoRegWrapper {
+
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    filter: invert();
+    position: relative;
+}
+
+.logoRegImg {
+    object-fit: contain;
+}
+
+
+.contactUsText {
+    font-size: 1rem;
+    font-size: var(--contactTextSize);
+
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(125, 88, 33);
+    border-top: 1px solid rgb(125, 88, 33);
+    line-height: 1.4;
+}
+
+.contactUsForm {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
+    width: 100%;
+    height: fit-content;
+    font-size: var(--contactTextSize);
+
+}
+
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    /* align-items: center; */
+    width: 100%;
+    position: relative;
+
+
+}
+
+.inputIcon {
+    position: absolute;
+    right: 0.8rem;
+    top: 2.7rem;
+
+    pointer-events: none;
+    color: rgb(125, 88, 33)
+        /* color: rgb(150, 150, 150); */
+}
+
+
+.inputIconRecaptcha {
+    position: absolute;
+    right: 0.8rem;
+    top: 1.2rem;
+
+    pointer-events: none;
+    color: rgb(125, 88, 33)
+        /* color: rgb(150, 150, 150); */
+}
+
+.recaptchaWrapper {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    /* background-color: rgb(34, 34, 34); */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
+    padding: 0.2rem 1rem;
+    padding-bottom: 0;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid rgb(125, 88, 33);
+
+}
+
+.contactInput {
+    background-color: var(--myWhiteColor);
+    font-family: var(--robotoFont);
+    color: var(--myWhiteColor);
+    width: 100%;
+    font-size: var(--regFontSize);
+    padding: 1rem 1rem;
+    border: 1px solid rgb(125, 88, 33);
+    border-radius: 5px;
+    /* background-color: lightgrey; */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
+
+}
+
+
+/* .submitButtonSuggestion {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-size: 1rem;
+  width: 100%;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(20, 20, 20);
+  border: 2px solid var(--bokhusRootsColor);
+  border-radius: 1px;
+
+  position: relative;
+
+  color: var(--bokhusFutureColor);
+  cursor: pointer;
+
+  box-shadow: 2px 2px 0 var(--bokhusRootsColor);
+} */
+
+
+.serverMessageDiv {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* padding: 2.1rem 4rem; */
+    color: var(--myWhiteColor);
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 1.1rem;
+    background-color: rgb(20, 20, 20);
+
+}
+
+.bokhusComWrapperContact {
+    justify-content: center;
+    margin-top: 0.5rem;
+    padding-top: 1.2rem;
+    width: 100%;
+    border-top: 1px solid rgb(125, 88, 33);
+
+    /* margin-  right: 0.5rem; */
+}
+
+.errorRegisterForm {
+    position: absolute;
+    left: 105%;
+    top: 50%;
+    text-wrap: nowrap;
+    color: white;
+    padding: 0.5rem 1rem;
+    /* background-color:rgb(20,20, 20); */
+    background-color: var(--inputBackground);
+    border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+
+}
+
+@media (max-width: 159.99em) {
+  .contactUsSection {
+    max-width: 40%;
+  }
+
+}
+
+
+/* max 1920 */
+@media (max-width: 119.99em) {
+    .contactUsSection {
+        /* max-width: 38%; */
+    }
+    
+}
+
+/* 1440px */
+
+@media (max-width: 89.99em) {
+   
+   .contactUsSection {
+    /* max-width: 38%; */
+   }
+}
+
+
+@media (max-width: 63.99em) {
+ 
+
+
+  .contactUsSection {
+    /* max-width: 65rem; */
+    max-width: 58%;
+  }
+
+} 
+
+
+@media (max-width: 47.99em)
+{
+ .contactUsSection {
+       max-width: 80%;
+    }
+}

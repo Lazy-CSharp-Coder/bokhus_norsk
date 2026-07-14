@@ -1,14 +1,3 @@
-body {
-display: flex;
-justify-content:top;
-align-items: left;
-height: 100vh;
- /* background: #031211;
-background: -moz-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
-background: -webkit-linear-gradient(left, #031211 0%, #3562CB 40%, #040A0A 100%);
-background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  */
-
-}
 
 .aboutBackground {
     position: fixed;
@@ -36,25 +25,30 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
     gap: 2.5rem;
     width:100%;
     height: 100%;
-    /* padding: rem 0rem; */
-    margin-left: 12rem;
-  padding-bottom: 4rem;
+
+    /* padding: 4.3rem 0rem; */
+
+    
+
      color: rgba(221, 221, 221, 1);
     font-family: var(--robotoFont);
 }
 
 .aboutSection {
     flex-direction: column;
-    width: 40%;
+    max-width: 90rem;
     align-items: left;
+    margin: 3rem 0;
+    padding: 0 12rem;
     gap: 1rem;
+ 
 }
 
 .aboutHeading {
     font-size: 2rem;
     color: white;
-    border-bottom: 1px solid white;
-    padding: 1rem 0;
+
+    padding-bottom: 1rem;
 }
 
 .aboutTextDiv {
@@ -64,17 +58,58 @@ background: linear-gradient(to right, #031211 0%, #3562CB 40%, #040A0A 100%);  *
 }
 
 .aboutText {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 0;
     margin: 0;
     line-height: 1.3;
 }
 
-.bokhusComWrapper {
+.bokhusComWrapperAbout {
     justify-content:center;
-    padding-top: 1.4rem;
+    padding-top: 1.2rem;
 
-        border-top: 1px solid white;
 
     /* margin-right: 0.5rem; */
 }
+@media (max-width: 159.99em) {
+  .aboutSection {
+    max-width: 70%;
+    /* background: beige;  */
+  }
+
+}
+
+  
+
+/* max 1920 */
+@media (max-width: 119.99em) {
+    .aboutSection {
+        max-width: 60%;
+        /* background:red; */ 
+    }
+    
+}
+
+
+/* 1440px */
+
+@media (max-width: 89.99em) {
+   
+   .aboutSection {
+    max-width:70%;
+    /* background: blue; */
+   }
+}
+
+
+@media (max-width: 63.99em) {
+ 
+  .aboutSection {
+    /* max-width: 65rem; */
+     max-width: 95%;
+     /* background: red; */
+     padding: 0 4rem;
+  }
+
+} 
+

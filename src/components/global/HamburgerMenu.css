@@ -7,11 +7,60 @@
     position: fixed;
  flex-direction: column;
     align-items: left;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0;
     top: 6rem;
+    background: red;
     right: 0rem;
-    padding : 1rem 2rem;
+
+    font-size: 2rem;
+    font-weight: 500;
+    gap:0.3;
     /* border : 1px solid white; */
     background-color: rgba(20, 20, 20, 0.8);
+    padding: 0.3rem 0.3rem;
 }
 
+.hamburgerItem {
+    display: flex;
+    flex-direction: row;
+        justify-content: flex-start;
+    gap: 1.8rem;
+    padding: 0rem;
+    align-items: center;
+        padding : 0.5rem 3rem;
+        width: 100%;
+        transition: all 0.3s ease-in;
+}
+
+.menuItemsContainer {
+  flex-direction: row;
+  gap: 2.8rem;
+  align-items: center;
+}
+
+
+.hamburgerItem:hover {
+  color: var(--bokhusFutureColor);
+  scale: 1.01;
+  background-color: rgb(70,70, 70)
+}
+
+.hamburgerIcon {
+    transform: scale(1.3);
+}
+
+.hamburgerIcon svg, 
+.hamburgerIcon path {
+    /* fill: var(--myWhiteColor); */
+  /* stroke: var(--myWhiteColor); */
+  transition: fill 0.5s ease, stroke 0.3s ease;
+}
+
+
+.hamburgerItem:hover .hamburgerIcon {
+   fill: var(--bokhusRootsColor);
+  stroke: var(--bokhusRootsColor);
+  /* color: var(--bokhusRootsColor); */
+  scale: 1.01;
+}

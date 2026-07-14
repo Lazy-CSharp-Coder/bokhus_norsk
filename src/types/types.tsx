@@ -1,17 +1,7 @@
 
 // BackgroundImageProps and corresponding animationtyp
 
-type AnimTypes = "No Animation"| "RotateIn" | "FadeIn" | "ScaleIn";
-
-export interface BackgroundImageProps 
-{
-    className : string,
-    src : string,
-    animType?: AnimTypes,
-    animDuration? : string,
-    animDelay? : string
-}
-
+import type { IconType } from "react-icons";
 // end types BackgroundImage
 
 // interface for sending message string to page
@@ -20,18 +10,9 @@ export interface PageProps
 {
    searchParams: Promise<{ [key: string]: string | string[] | undefined; }>;
 }
-export interface MenuItemsHeader 
-{
-    name : string,
-    pageLink : string
-}
 
 
-export interface HeaderProps
-{
-    background?: string,
-    menuItems?: MenuItemsHeader[],
-}
+
 
 export interface About {
     aboutHeading: string, 
@@ -41,6 +22,35 @@ export interface About {
 export interface QuoteBottomProps
 {
     fontSize: string,
-    fontFamily?: string;
+    fontFamily?: string,
+    noAnim? : boolean
+}
+
+export interface ExpandingLineProps 
+{
+    width? : string,
+    lineSize : number, 
+    lineType? : string,
+    color? : string,
+    animationDelay? : string,
+    animationDuration? : string, 
+}
+
+export interface ReactIcons 
+{
+    name : string,
+    icon: IconType,
+    size: string,
+    className?: string,
+    pageLink? : string
+
+}
+
+
+export interface HeaderMenuItemProps {
+
+    name : string, 
+    iconNumber : number,
+    pageLink : string
 }
 

@@ -1,0 +1,36 @@
+.submitButton {
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    /* color: var(--myWhiteColor); */
+color: var(--buttonColor);
+    border-width: 3px;
+    /* border: 2px outset red; */
+    background-color: var(--buttonBackgroundColor);
+    border-top-color:var(--buttonBorderTopLeftColor);
+  border-left-color: var(--buttonBorderTopLeftColor);
+  
+border-radius: 2px;
+
+  /* Shadow on Bottom and Right */
+border-bottom-color: var(--buttonBorderBottomRightColor);
+  border-right-color: var(--buttonBorderBottomRightColor);
+}
+
+.submitButton:active{
+    /* border: 2px inset var(--borderIconColor); */
+    /* Shadow on Top and Left */
+border-top-color:  var(--buttonBorderBottomRightColor);
+  border-left-color:  var(--buttonBorderBottomRightColor);
+  
+  /* Highlight on Bottom and Right */
+  border-bottom-color: var(--buttonBorderTopLeftColor);
+  border-right-color: var(--buttonBorderTopLeftColor);
+}
+
+.submitButton:active span {
+    display: inline-block;
+    transform: translate(2px, 2px);
+}
+

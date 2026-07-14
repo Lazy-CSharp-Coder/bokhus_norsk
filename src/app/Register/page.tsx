@@ -1,54 +1,66 @@
-"use client"
-import { useState } from "react";
+"use server";
+
 import "./Register.module.css";
-import { RegisterForm } from "@/components/register/RegisterForm";
-import { UserData } from "@/components/register/registerSchema";
+import { RegisterForm } from "@/app/Register/RegisterForm";
+import { BrandedClerkUserId, clerkUserId, UserData } from "@/app/Register/registerSchema";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { client } from "@/sanity/client";
+import { SignIn } from "./SignIn";
+import { BackgroundImage } from "@/components/common/BackgroundImage";
+// const defaultData: UserData =
+// {
+//   email: "",
+//   country: "",
+//   preferredLanguage: ["English"],
+//   genresInterestedIn: ["Historical novels"],
+//   linkProfilePage: "",
+//   newsLetter: true,
+//   arcInterest: false,
 
-type AuthScreen = "Login" | "Forgot Password" | "Register Data"
 
-const defaultData : UserData =
+// };
+
+
+export default async function Register() 
 {
-    email : "",
-    country : "",
-    preferredLanguage : [ "English" ],
-    genresInterestedIn : ["Historical novels"],
-    linkProfilePage : "",
-    newsLetter : true,
-    arcInterest : false, 
+  const { isAuthenticated, userId } = await auth();
+
+  if (!isAuthenticated)
+    return (<SignIn />);
+
+  const user = await currentUser();
+  if (!user)
+  {
+    return "Unauthorized user";
+  }
 
 
-}
+  const USER_QUERY = `*[_type == "User" && userId == $userIdFromClerk]`;
+  const userData: UserData[] = await client.fetch<UserData[]>(USER_QUERY, { userIdFromClerk: userId });
+  const dataToSend: UserData =
+    userData[0] ? userData[0] :
+      {
+        userId: clerkUserId.parse(userId),
+        email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
+        country: "",
+        preferredLanguage: "English",
+        genresInterestedIn: [],
+        linkProfilePage: "",
+        newsLetter: true,
+        arcInterest: false,
+        arc: undefined
 
-
-export default function Register() 
-{
-    const[screen, setScreen] = useState<AuthScreen>("Register Data")
-
-      const onSuccess = () =>
-    {
-      console.log("handle successs");
-      setScreen("Register Data");
-
-    }
-
-    const handleForgotPassword = () =>
-    {
-       console.log ("handle forgot password")
-       setScreen("Forgot Password");
-    }
+      };
 
 
   return (
 
-      <main className="registerPage flex">
+    <main className="registerPage flex">
 
-   
-        <RegisterForm onSuccess={onSuccess} data={defaultData}/>
-    
-
-
-      </main>
+      <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.png" />
+      <RegisterForm data={dataToSend} isNewUser={!userData[0] ? true : false} />
+    </main>
 
 
   );
-}
+};

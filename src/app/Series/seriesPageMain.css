@@ -1,0 +1,133 @@
+.seriesPageBackgroundImage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    filter: blur(5px) brightness(45%);
+    z-index: -1;
+
+}
+
+.seriesPage {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+.seriesPageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 2.2rem;
+    max-width:80rem;
+}
+
+.seriesPageDescriptionArticle {
+    width: 100%;
+    gap: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--libreFont);
+
+}
+
+.seriesPageTextDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+    /* background-color: red; */
+}
+
+.seriesPageHeading {
+    font-size: 2.5rem;
+    color: var(--myWhiteColor);
+    padding-bottom: 1rem;
+
+
+
+}
+
+.seriesPageText {
+    line-height: 1.4;
+    font-size: 1.5rem;
+
+
+}
+
+.seriesList {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    padding: 2rem 2rem;
+    list-style: none;
+
+}
+
+@media (max-width: 199.99em)
+{
+ .seriesPageSection {
+    /* max-width: 90rem; */
+ }
+}
+
+@media (max-width: 159.99em) {
+
+    .seriesPageSection {
+        
+    }
+}
+
+/* 1920px grense */
+
+ @media (max-width: 119.99em) {
+   .seriesPageSection {
+     max-width: 60%;
+   }
+} 
+
+/* 1440px grense */
+
+@media (max-width: 89.99em) {
+
+.seriesPageSection {
+    max-width: 85%;
+   }
+}
+
+
+@media (max-width: 63.99em) {
+
+.seriesPageSection {
+    width:95%;
+}
+
+.seriesPageDescriptionArticle {
+    padding: 0 5rem;
+}
+
+
+
+@media (max-width: 47.99em){
+
+
+    
+}
+
+}
+@media (max-width: 39.99em) {
+ 
+}
+

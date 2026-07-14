@@ -1,26 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Signika:wght@300..700&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap'); */
-
-@import "./../components/global/BackgroundImage.css";
-@import "./../components/global/Header.css";
 @import "./../cssLib/Animations.css";
-
-
-
+@import "./../cssLib/submitButton.css";
 
 
 
 :root {
   --background: black;
   --foreground: rgb(221, 221, 221);
-  --openSans: "Open Sans";
-  --alternateFontFamily: "Oxygen", sans-serif;
 
   --myWhiteColor: rgba(221, 221, 221, 1);
- --bokhusRootsColor : rgb(178, 126, 29);
- --bokhusFutureColor: lightskyblue;
-
+  --bokhusRootsColor: rgb(178, 126, 29);
+  --bokhusFutureColor: lightskyblue;
+  --commonBackgroundColor: rgba(20, 20, 20, 0.8);
+  --regFontSize: 1.1rem;
+  --regBackground: rgba(20, 20, 20, 0.9);
+  --inputBackground: rgb(34, 34, 34);
+  --borderIconColor: rgb(125, 88, 33);
+  --borderReg: 1px solid var(--borderIconColor);
+  --borderRadiusReg: 5px;
+  --backgroundBook: rgba(20, 20, 20, 0.7);
+  --buttonBorderTopLeftColor: rgb(175, 138, 83);
+  --buttonBorderBottomRightColor: rgb(95, 63, 23);
+  --buttonColor: rgb(235, 235, 235);
+  --buttonBackgroundColor: rgb(125, 88, 33);
+  --defaultBorderRadius: 5px;
+  --defaultBorder: 2px solid var(--borderIconColor);
 }
 
 * {
@@ -32,7 +35,8 @@
 
 html {
   max-width: 100vw;
-  /* scroll-behavior: smooth; */
+  width: 100vw;
+  scroll-behavior: smooth;
 
 
 }
@@ -43,13 +47,18 @@ body {
   font-family: var(--libreFont);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  
+  /* align-items: left; */
+  /* justify-content: flex-start; */
+
   width: 100vw;
- /* justify-content: center; */
+  max-width: 100vw;
+  /* justify-content: center; */
   min-height: 100vh;
   height: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+
 
 
   overflow-y: auto;
@@ -73,19 +82,10 @@ body {
   object-fit: contain;
 }
 
-/* 
-.desktopMode {
-  
-  display: flex;
+main {
+  flex-grow: 1;
 }
 
-.desktopModeBlock {
-  display: block;
-}
-
-.mobileMode {
-  display: none;
-} */
 
 
 .hiddenFromView {
@@ -99,10 +99,108 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  width: fit-content;
+  
 }
 
+.entriesNotFoundText {
+  margin: 3rem 0rem;
+  font-size: 2rem;
+}
+
+.headingLineWrapper {
+  width: fit-content;
+  text-align: center;
+} 
+
+@media (max-width: 240em)
+{
+  html {
+    /* font-size: 100%; */
+  }
+}
+
+@media (max-width: 199.99em) /* usikker */
+{
+  html {
+   font-size:  100%;
+  }
+}
+
+@media (max-width: 159.99em) {
+  html {
+    font-size: 90%;
+  
+  }
+
+}
+/* max 1920 */
+ @media (max-width: 119.99em) {
+  html {
+    font-size: 80%;
+  }
+} 
+/* 1440px */
+
+@media (max-width: 89.99em) {
+  html {
+  font-size: 60%;
+  /* font-size: 70%; */
+}
+
+}
+/* max 1280 */
+@media (max-width: 79.99em) {
+
+}
+
+/* max 1024 */
+
+@media (max-width: 63.99em) {
+  html {
+    font-size:70%;
+  }
+
+}
+
+/* max 768 */
+
+@media (max-width: 47.99em){
+
+  html {
+    font-size: 65%;
+  }    
+}
+
+/* max 640 */
+
+@media (max-width: 39.99em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* max 480px */
+@media (max-width: 29.99em) {
+
+  
+}
+
+@media (max-width: 24rem) {
+    html {
+        /* font-size: 50%; */
+    }
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+
+/* 
+@media (max-width: 1920px)
+{
+    html {
+        font-size: 75%;
+    }
+} */

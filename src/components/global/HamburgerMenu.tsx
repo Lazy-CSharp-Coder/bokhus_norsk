@@ -1,15 +1,31 @@
 "use client";
 
-import { useState } from "react";
-import type { HeaderProps } from "@/types/types"
+import { useState, useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Link from "next/link";
+
+
+import { HeaderMenuItem } from "./HeaderMenuItem";
+import { menuItems } from "./HeaderMenuItemsDef";
+import { useOutsideClick } from "@/functions/useOutsideClick";
+
+
 
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
 
-export function HamburgerMenu({ menuItems }: HeaderProps)
+export function HamburgerMenu()
 {
     const [menuState, setMenuState] = useState<HamburgerMenuState>("hiding");
+
+     const headerRef = useRef<HTMLDivElement>(null);
+
+    
+    const handleOutsideClick = (e : MouseEvent) =>
+    {
+        let shallClose = false;
+        if (headerRef.current && headerRef.current.contains(e.target as Node)) shallClose = false;
+        else shallClose = true; 
+        if(shallClose && menuState =="showing") setMenuState("animatingOut");
+    };
 
     const handleClick = ()=>
     {
@@ -17,20 +33,20 @@ export function HamburgerMenu({ menuItems }: HeaderProps)
         else if(menuState == "showing") setMenuState("animatingOut");
 
     }
-
+    useOutsideClick(handleOutsideClick);
     return (
         <>
             <span className="burgerSpan" onClick={handleClick}>
                 <GiHamburgerMenu size="2.5rem" />
             </span>
             {menuState!= "hiding" &&
-                <div onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
+                <nav ref={headerRef} onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
 
-                    {menuItems?.map((item, index) =>
+                    {menuItems.map((_, index) =>
 
-                        <Link key={item.name + index} className="headerMenuItem" href={item.pageLink}>{item.name}</Link>)
-                    }
-                </div>}
+                       <HeaderMenuItem key={"#HamItem" + index} index={index} className="hamburgerItem" iconClassName="hamburgerIcon"/>
+                    )}
+                </nav>}
 
         </>
     );

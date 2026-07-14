@@ -1,30 +1,31 @@
-@import "./HamburgerMenu.css";
-
 :root {
   --headerFontFamily: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
 }
 
-header {
+.headerBokHus {
   display: flex;
-  background-color: rgba(20, 20, 20, 0.7);
+  background-color: var(--commonBackgroundColor);
 
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 5%;
   /* gap: 5rem; */
   /* border: 1px solid rgba(20, 20, 20, 1); */
   position: sticky;
-  height: 8rem;
-  min-height: 8rem;
-  max-height: 8rem;
+
+  min-height: 6rem;
+  max-height: 6rem;
   width: 100%;
+  max-width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
   transition: all 0.4s ease-in;
   font-family: var(--headerFontFamily);
-  padding: 0 2rem;
+
 }
 
 .logoMenuWrapper {
@@ -38,27 +39,102 @@ header {
 .headerIcon {
   position: relative;
   display: inline-block;
-  height: 5.8rem;
+  height: 4.7rem;
   aspect-ratio: 1 /1;
 }
 
 .menuItemsContainer {
   flex-direction: row;
-  gap: 2.6rem;
+  gap: 2.8rem;
   align-items: center;
 }
 
 .headerMenuItem {
 
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: 0.4px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
   color: var(--myWhiteColor);
-  transition: color 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
 
+.headerMenuItem:hover {
+  color: var(--bokhusFutureColor);
+  scale: 1.01;
+}
+
+
+.headerIcon svg,
+.headerIcon path {
+  /* fill: var(--myWhiteColor); */
+  /* stroke: var(--myWhiteColor); */
+  transition: fill 0.5s ease, stroke 0.3s ease;
+}
+
+
+.headerMenuItem:hover .headerIcon {
+  fill: var(--bokhusRootsColor);
+  stroke: var(--bokhusRootsColor);
+  /* color: var(--bokhusRootsColor); */
+  scale: 1.01;
+}
+
+/* clerk button div and classes  */
+
+.clerkButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.loginBurgerWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: center;
+  width: fit-content;
+
+}
+
+.signInButton {
+  display: flex;
+  font-family: var(--headerFontFamily);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  /* padding: 0.4rem 1.5rem; */
+  background-color: transparent;
+  /* border: 2px outset var(--bokhusRootsColor); */
+  /* border-radius:  1px; */
+  border: none;
+  /* font-family: sans-serif; */
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--bokhusRootsColor);
+  /* font-family : var(--headerFontFamily); */
+  color: var(--bokhusFutureColor);
+  cursor: pointer;
+  transition: all 0.4s ease-in;
+}
+
+.signInButton:hover {
+  color: var(--myWhiteColor);
+  border-color: var(--bokhusFutureColor);
+  scale: 1.01;
+}
+
+.userButtonDiv {
+
+  display: flex;
+  align-items: center;
 
 
 }
+
 
 .desktopMode {
 
@@ -73,13 +149,8 @@ header {
   display: none;
 }
 
+@media (max-width: 63.99em) {
 
-
-.headerMenuItem:hover {
-  color: rgb(98, 159, 255);
-}
-
-@media (max-width: 1023px) {
   header {
     display: flex;
     flex-direction: row;
@@ -96,6 +167,6 @@ header {
   .mobileMode {
     display: block;
     margin-top: 0.2rem;
-
   }
+
 }

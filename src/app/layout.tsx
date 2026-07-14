@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/global/Header";
 import "./globals.css";
-import { StateProvider } from "@/globalStates";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Libre_Baskerville, Roboto } from "next/font/google";
+import { Footer } from "@/components/global/Footer";
+import { StateProvider } from "@/globalStates";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--libreFont",
@@ -28,13 +30,16 @@ export default function RootLayout({
 }>)
 {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${libreBaskerville.variable} ${roboto.variable}`}>
 
-        {/* <StateProvider> */}
-          <Header />
-          {children}
-        {/* </StateProvider> */}
+        <ClerkProvider>
+          <StateProvider>
+            <Header />
+            {children}
+            <Footer />
+          </StateProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

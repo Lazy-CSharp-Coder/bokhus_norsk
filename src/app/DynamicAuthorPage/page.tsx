@@ -1,0 +1,31 @@
+import type { PageProps } from "@/types/types";
+import type { Author } from "@/types/booktypes";
+import { client } from "@/sanity/client";
+import AuthorSection from "@/app/DynamicAuthorPage/components/AuthorSection";
+import "./DynamicAuthorPage.module.css";
+import { BackgroundImage } from "@/components/common/BackgroundImage";
+
+
+export default async function DynamicAuthorPage({ searchParams }: PageProps)
+{
+
+    const params = await searchParams;
+    const authorUid = params.message as string;
+
+    const AUTOHRS_QUERY = `*[_type == "Author" && _id == $authorUid]`;
+    const authors: Author[] = await client.fetch<Author[]>(AUTOHRS_QUERY, { authorUid: authorUid });
+
+    if (!authors) return;
+
+
+    return (
+        <>
+            <BackgroundImage className="backgroundImageAuthorsPage" src={"/images/backgrounds/pen.jpg"} />
+            <main className="authorsPage flex">
+
+                <AuthorSection author={authors[0]} />
+            </main>
+        </>
+
+    );
+} 

@@ -1,5 +1,4 @@
 import type { SanityImageSource } from '@sanity/image-url'
-import { BookArticleText } from './languagetypes';
 import { SanityReference } from 'next-sanity';
 
 // // // end sanity 
@@ -11,6 +10,7 @@ export interface Book
 {
 
     _id: string,
+    seriesRef : SanityReference,
     commonId? : string,
     bookTitle: string,
     availability: number[],   // lydbok, e-bok, paperbak - muligens legge inn isbn
@@ -31,13 +31,16 @@ export interface Series
     _id: string, // generateed by Sanity 
     commonId? : string,
     seriesName: string,
+    genre : string [],
     imageSeries: SanityImageSource,
+   imageSeriesBackground : SanityImageSource,
     // imageUrl?: string,
     authorUids: SanityReference[],
     languageID: string, 
     dialektNO ? : string, 
     seriesFact: string,
     seriesTeaser: string,
+    seriesBlurb : string,
     description: string[],
     ageGroup?: string,
     bookUids: string[];
@@ -64,14 +67,14 @@ export interface Author
 
 // intro states - global
 
-export type IntroPlayState = "played" | "never";
 
-export interface IntroSeries
+
+export interface DescriptionShowing
 {
-    hasIntroBeenPlayed: IntroPlayState,
-    setIntroBeenPlayed: (state: IntroPlayState) => void,
+ 
     isDescriptionShowing: boolean,
-    setIsDescriptionShowing : (state : boolean) => void
+    setIsDescriptionShowing : (value : boolean) => void
+
 }
 
 
@@ -94,7 +97,7 @@ export interface SeriesInfoProps
 
 
 }
-export interface DescriptionSeriesProps
+export interface SerieDescriptionProps
 {
     seriesName: string,
     imageUrl: string,
@@ -104,13 +107,7 @@ export interface DescriptionSeriesProps
     ageGroup?: string;
 }
 
-export interface BestSellerListProps
-{
 
-    bestSellerIntro?: string,
-    bestSellerList?: string[];
-
-}
 
 export interface BooksArticleProps
 {
@@ -139,7 +136,6 @@ export interface BookCardProps extends Book
 {
     seriesName: string,
     animationName?: string,
-    bookArticleText : BookArticleText,
     saintyTagLanguage : string
 
 }
@@ -153,6 +149,7 @@ export interface AvailabilityProps
 export interface RecommendedForProps
 {
     ageGroup?: string,
+
 }
 
 export interface SeriesCardProps
@@ -168,17 +165,6 @@ export interface SeriesHeadingProps
 {
     authorName: string,
     animationDelay?: number;
-
-}
-
-export interface EndTeaserInfoProps
-{
-    isShowing: boolean;
-}
-
-export interface ShowTeaserProps
-{
-    seriesTeaser?: string,
 
 }
 

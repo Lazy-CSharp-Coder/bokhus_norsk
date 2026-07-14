@@ -1,4 +1,4 @@
-import { MenuItemsHeader } from "./types";
+
 
 export interface QuotesHeading {
     start : string,
@@ -12,44 +12,23 @@ export interface HeroPageText
     quotesBottom : string[]
 }
 
-
-
-
 export interface LanguageText
 {
     language: string,
     sanityTag: string,
     iconUrl: string,
-    menuItemsHeader : MenuItemsHeader[],
     heroPage : HeroPageText
-    bookArticle: BookArticleText
+
 
 }
-
-export interface BookArticleText 
-{
-    by: string,
-    book: string,
-    ofThe: string,
-    series: string,
-    availabilityTable : string[],
-    released: string,
-    synopsis: string,
-    recommended : string
-
-}
-
-
 
 export interface LanguageChosen 
 {
     languageNumber: number,
     language: string,
     sanityTag: string,
-    setLanguageNumber: (nr: number) => void,
-    menuItemsHeader : MenuItemsHeader[]
     heroPage : HeroPageText,
-    bookArticle : BookArticleText
+
 
 }
 

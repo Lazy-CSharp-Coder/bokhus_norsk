@@ -1,0 +1,21 @@
+
+.quotesDivBottom {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+
+}
+
+.quotesTextBottom {
+    font-size: 1.5rem;
+}
+
+
+
+@media (max-width : 39.99em)
+{
+  .quotesDivBottom {
+    flex-direction: column;
+  }
+}

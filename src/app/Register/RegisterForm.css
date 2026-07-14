@@ -1,0 +1,559 @@
+@import "./submit.css";
+
+.registerSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--regBackground);
+    gap: 1.5rem;
+    /* width: 38%; */
+    width: 60rem;
+
+    margin: 4rem 0;
+
+    color: var(--myWhiteColor);
+    font-family: var(--robotoFont);
+    border: 2px solid rgb(125, 88, 33);
+    border-radius: 5px;
+
+}
+
+.generalInfoArticle {
+    flex-direction: column;
+    align-items: left;
+    gap: 1rem;
+    width: 100%;
+    height: fit-content;
+    font-family: var(--robotoFont);
+    padding: 2rem 4rem;
+    /* background-color: #f0f4f8; */
+
+    padding-bottom: 3rem;
+
+}
+
+.headingLogoTextWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border: var(--borderReg); */
+    padding: 0.2rem 0.2rem;
+    border-bottom: 1px solid var(--borderIconColor);
+
+}
+
+.registerHeading,
+.registerARC,
+.arcRulesHeading {
+    font-size: 1.6rem;
+    font-weight: normal;
+    /* padding: 1.5rem 0; */
+
+    text-align: left;
+    font-weight: 500;
+}
+
+
+
+.logoRegWrapper {
+
+    width: 3.5rem;
+    aspect-ratio: 1/1;
+    filter: invert();
+    position: relative;
+}
+
+.logoRegImg {
+    object-fit: contain;
+}
+
+
+
+.mailIconUserEmailWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    align-items: center;
+
+}
+
+.registerForm {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    width: 100%;
+    font-size: var(--regFontSize);
+    color: var(--myWhiteColor);
+
+}
+
+.regUpperHalfWrapper {
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 1.5rem 0;
+    width: 100%;
+}
+
+.userEmailDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    font-family: var(--robotoFont);
+    /* color: var(--myWhiteColor);    */
+    color: white;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 2rem 1rem;
+    padding-bottom: 2.3rem;
+    border-bottom: 2px solid rgb(125, 88, 33);
+    /* border-radius: 5px; */
+    /* background-color: lightgrey; */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgba(10, 10, 10, 0.9);
+    /* background-color: var(--inputBackground); */
+
+}
+
+.mailIconAdressWrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+
+
+}
+
+.userInfoIcon {
+    color: var(--myWhiteColor);
+}
+
+.userInfoDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+
+    color: white;
+
+}
+
+
+
+.userTextAnim, .userIconAnim {
+        animation-name: slideInAndOut;
+    animation-duration: 4.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
+    font-size: 1.4rem;
+}
+
+.userIconAnim {
+    animation-delay: 0.8s;
+}
+
+
+@keyframes slideInAndOut {
+    0% {
+        transform: scale(0, 0);
+    }
+
+    1% {
+        transform: scale(0.2, 0.2);
+    }
+
+    10% {
+        transform: scale(1, 0);
+    }
+
+    30% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+
+}
+
+.userIcon {
+    color: white;
+}
+
+.userEmailIcon {
+    pointer-events: none;
+    color: rgb(125, 88, 33);
+
+}
+
+
+
+.registerDiv,
+.registerTextArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+
+
+}
+
+
+.registerInput,
+.registerInputSingleCheck {
+
+    font-family: var(--robotoFont);
+    color: var(--myWhiteColor);
+    width: 100%;
+    font-size: var(--regFontSize);
+    padding: 1rem 1rem;
+    border: 1px solid rgb(125, 88, 33);
+    border-radius: 5px;
+    /* background-color: lightgrey; */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
+
+}
+
+
+.inputRegIcon,
+.inputRegListIcon,
+.inputRegSingleIcon,
+.inputRegListARCIcon,
+.inputRegRulesIcon {
+    position: absolute;
+    right: 0.8rem;
+
+
+    pointer-events: none;
+    color: rgb(125, 88, 33)
+        /* color: rgb(150, 150, 150); */
+}
+
+.inputRegIcon {
+    top: 3rem;
+}
+
+.inputRegListARCIcon {
+    top: 4.5rem;
+    /* right: 0.8rem; */
+}
+
+.inputRegSingleIcon {
+    top: 0.5rem;
+}
+
+.inputRegListIcon {
+    top: 4rem;
+}
+
+.inputRegRulesIcon {
+    top: 1rem;
+}
+
+.oneLineDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    padding-right: 4rem;
+    width: 100%;
+    background-color: var(--inputBackground);
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+
+    justify-content: space-between;
+    position: relative;
+}
+
+.labelInputWrapperOneLineFirst {
+    gap: 1rem;
+
+    align-items: center;
+}
+
+.labelInputWrapperOneLineSecond {
+    gap: 1rem;
+    align-items: center;
+}
+
+.newsLetterArcOptionsWrapper {
+    flex-direction: column;
+
+    /* border-bottom: 1px solid black; */
+    gap: 1rem;
+    width: 100%;
+
+
+    /* border: 1px solid black; */
+}
+
+.reverseHorizontally {
+    transform: scaleX(-1);
+}
+
+.registerTextAreaInput {
+
+    font-family: var(--robotoFont);
+    color: var(--myWhiteColor);
+    width: 100%;
+    font-size: var(--regFontSize);
+    padding: 1rem 1rem;
+    border: 1px solid rgb(125, 88, 33);
+    border-radius: 5px;
+    /* background-color: lightgrey; */
+    /* background-color: rgb(230,230,230); */
+    background-color: rgb(34, 34, 34);
+}
+
+.multipleChoicesList {
+    flex-direction: column;
+    width: max-content;
+    justify-content: top;
+    align-items: left;
+    gap: 1rem;
+    color: var(--myWhiteColor);
+    background-color: var(--inputBackground);
+    padding: 1.5rem 1.5rem;
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+    width: 100%;
+}
+
+
+.multipleChoicesARCList {
+
+    flex-direction: column;
+    width: max-content;
+    justify-content: top;
+    align-items: left;
+    gap: 1rem;
+    color: var(--myWhiteColor);
+    background-color: var(--inputBackground);
+    padding: 1.5rem 1.5rem;
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+    width: 100%;
+
+}
+
+.multipleChoicesDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem 0;
+    color: var(--myWhiteColor);
+
+
+
+}
+
+
+.multipleChoicesARCDiv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    /* background-color: aquamarine; */
+}
+
+.errorRegisterForm {
+    position: absolute;
+    left: 105%;
+    top: 50%;
+    text-wrap: nowrap;
+    color: white;
+    padding: 0.5rem 1rem;
+    /* background-color:rgb(20,20, 20); */
+    background-color: var(--inputBackground);
+    border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+.languagesText {
+    width: max-content;
+    color: var(--myWhiteColor);
+}
+
+/* .languagePreferredDiv,
+.registerInput {
+    width: 15rem;
+} */
+
+.languagePreferredDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    align-items: center;
+    justify-content: left;
+    color: var(--myWhiteColor);
+}
+
+/* input,
+textarea {
+    background-color: white;
+    font-family: var(--robotoFont);
+    color: black;
+    font-size: var(--regFontSize);
+    padding: 0.2rem 0.2rem;
+} */
+
+input[type="checkbox"] {
+    accent-color: var(--inputBackground);
+    /* Replace with your desired color name, hex, or rgb */
+    border: 1px solid var(--borderIconColor);
+    width: 1rem;
+    height: 1rem;
+
+
+}
+
+.arcArticle {
+    flex-direction: column;
+    width: max-content;
+    /* padding: 2rem 4rem; */
+    gap: 1rem;
+    width: 100%;
+    margin-top: 3rem;
+    /* background-color: lightgray; */
+    padding-bottom: 1rem;
+}
+
+fieldset {
+    border: none;
+}
+
+.arcForm {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+
+    font-size: var(--regFontSize);
+    width: 100%;
+
+}
+
+.arcHeadingIconWrapper {
+    justify-content: space-between;
+    align-items: center;
+
+
+    padding: 1.2rem 0.5rem;
+    border-bottom: 1px solid var(--borderIconColor);
+}
+
+.arcRulesForm {
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    /* border-top: 1px solid black;æ */
+    /* border-bottom: 1px solid black; */
+    gap: 3rem;
+    font-size: var(--regFontSize);
+    /* background-color: red; */
+
+}
+
+.rulesWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+
+    align-items: left;
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+
+
+    background-color: var(--inputBackground);
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+    position: relative;
+
+}
+
+.rulesDiv {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+
+}
+
+.rulesLabel {
+    color: var(--myWhiteColor);
+    /* margin-right: 3rem; */
+}
+
+
+
+.labelInputRulesDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.bokhusComWrapper {
+    justify-content: center;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--borderIconColor);
+
+    /* margin-right: 0.5rem; */
+}
+
+
+@media (max-width: 159.99em) {
+  .registerSection {
+    width: 50%;
+  }
+
+}
+
+  
+
+@media (max-width: 63.99em) {
+    .registerSection {
+        width: 68%;
+        
+    }
+  
+}
+@media (max-width: 39.99em) {
+
+    .registerSection {
+        width: 90%;
+    }
+
+}
+

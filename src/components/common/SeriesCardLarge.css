@@ -1,0 +1,249 @@
+:root {
+    --regFontSize: 1.1rem;
+    --regBackground: rgba(20, 20, 20, 0.8);
+    --inputBackground: rgb(34, 34, 34);
+    --inputBackgroundOpacity: rgb(34, 34, 34, 0.8);
+    --borderIconColor: rgb(125, 88, 33);
+    --borderReg: 1px solid var(--borderIconColor);
+    --borderRadiusReg: 5px;
+}
+
+.seriesCardLarge {
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    /* justify-content: stretch; */
+    width: 100%;
+    height: 20rem;
+    padding: 2rem 2.2rem;
+    gap: 1.8rem;
+    background-color: var(--regBackground);
+    border: 1px solid var(--borderIconColor);
+    border-radius: 5px;
+    font-family: var(--libreFont);
+    -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.seriesCardLargeImageDiv {
+    position: relative;
+    /* height: 100%; */
+   height: 15.92rem;
+    /* width: 100%; */
+    /* min-height: 100%; */
+    flex: 1;
+    aspect-ratio: 3/2;
+    border: 1px solid rgba(221, 221, 221, 0.7);
+    border-radius: 2px;
+    /* border: 1px solid var(--myWhiteColor); */
+    /* padding: 2rem 2rem; */
+}
+
+.seriesCardLargeImage {
+    object-fit: contain;
+}
+
+.seriesCardLargeInfoWrapper {
+    padding: 0.8rem 0;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 2;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.seriesCardLargeArrowIcon {
+    color: var(--borderIconColor);
+}
+
+.seriesCardLargeHeadingAuthorWrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.seriesCardLargeHeading {
+
+    font-size: 2.4rem;
+    color: white;
+    background: transparent;
+
+
+}
+
+.seriesCardLargeIconFactWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: 0.1rem;
+
+}
+
+.seriesCardLargeBookIcon {
+    --seriesCardLargeBookIconSize: 1.7rem;
+    color: rgb(141, 141, 141);
+    margin-top: 0.2rem;
+    width: var(--seriesCardLargeBookIconSize);
+    height: var(--seriesCardLargeBookIconSize);
+}
+
+.seriesCardLargeFact {
+    font-size: 1.08rem;
+    padding-top: 0.3rem;
+    font-weight: 200;
+
+    /* background-color: red; */
+    color: var(--myWhiteColor);
+    /* margin-top: 0.2rem; */
+}
+
+
+.seriesCardLargeTeaserBlurbWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 0.5rem;
+    gap: 1rem;
+    color: var(---borderIconColor);
+    /* background-color: red; */
+    font-size: 1rem;
+    margin-top: 1rem;
+    /* background-color: var(--inputBackground); */
+}
+
+.seriesCardLargeTeaser {
+    color: var(--bokhusRootsColor);
+    font-size: 1.05rem;
+
+    font-weight: 500;
+
+}
+
+.seriesCardLargeBlurb {
+    font-family: var(--robotoFont);
+    font-size: 1rem;
+    color: var(--myWhiteColor);
+    text-align: left;
+    font-style: italic;
+    line-height: 1.4;
+    /* padding: 0.5rem 1rem; */
+    /* background-color: var(--inputBackground); */
+}
+
+.seriesCardLargeArrowIcon {
+    position: absolute;
+    top: 50%;
+    color: var(--myWhiteColor);
+    opacity: 0.1;
+    right: 2%;
+    transform: translateY(-50%)
+}
+
+@media (max-width: 199.99em)
+{
+ 
+}
+
+@media (max-width: 159.99em) {
+
+}
+
+ @media (max-width: 119.99em) {
+
+} 
+
+/* under 1024px - tablet */
+
+@media (max-width: 63.99em) {
+
+}
+
+/* under 768px  - tablet */
+
+
+@media (max-width: 47.99em){
+
+    .seriesCardLarge {
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        gap:3rem;
+        /* padding: 6.3rem 2.5rem; */
+        padding: 5% 0;
+        text-align: center;
+            line-height: 1.2;
+    }
+
+    .seriesCardLargeImageDiv {
+        width: 88.2%;
+        
+    }
+
+    .seriesCardLargeHeading {
+        font-size: 3.4rem;
+    }
+
+    .seriesCardLargeInfoWrapper {
+        align-items:center;
+    }
+    
+    .seriesCardLargeHeadingAuthorWrapper {
+        font-size: 2rem;
+        align-items: center;
+
+    }
+.seriesCardLargeIconFactWrapper {
+    flex-direction: column;
+    /* border-top: 1px solid var(--myWhiteColor); */
+    border-bottom: 1px solid var(--myWhiteColor);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    max-width: 90%;
+    /* line-height: 1.4; */
+}
+    .seriesCardLargeBookIcon {
+        --seriesCardLargeBookIconSize: 3rem;
+    }
+
+    .seriesCardLargeFact {
+        
+        font-size: 1.4rem;
+        /* text-align: center; */
+  
+    }
+
+    .seriesCardLargeTeaserBlurbWrapper {
+        align-items: center;
+        
+       max-width: 80%;
+        margin-top: 2rem;
+        gap:1.8rem;
+    }
+
+   .seriesCardLargeTeaser {
+    font-size: 1.43rem;
+    
+   }
+
+   .seriesCardLargeBlurb {
+    font-size: 1.4rem;
+    text-align: center;
+   }
+
+    
+}
+
+/* mobil og nedover */
+
+@media (max-width: 39.99em) {
+
+}
+
