@@ -20,7 +20,7 @@ const menuItems: HeaderMenuItemProps[] =
     [
         {
             name: "HOME",
-            IconToUse: RiHome4Line,
+            icon: RiHome4Line,
             size: "1.5rem",
             pageLink : "/"
 
@@ -28,45 +28,45 @@ const menuItems: HeaderMenuItemProps[] =
 
         {
             name: "AUTHORS",
-            IconToUse: BsPersonFill,
+            icon: BsPersonFill,
             size: "1.5rem",
                 pageLink : "/Authors"
         },
 
         {
             name: "SERIES",
-            IconToUse: TbBooks,
+            icon: TbBooks,
             size: "1.5rem",
                 pageLink : "/Series"
         },
 
         {
             name: "REGISTER",
-            IconToUse: TfiWrite,
+            icon: TfiWrite,
             size: "1.2rem",
                 pageLink : "/Register"
         },
         {
             name: "WHERE TO BUY",
-            IconToUse: FaShop,
+            icon: FaShop,
             size: "1.5rem",
                 pageLink : "/WhereToBuy"
         },
         {
             name: "WORK WITH US",
-            IconToUse: RiContactsBookLine,
+            icon: RiContactsBookLine,
             size: "1.5rem",
                 pageLink : "/WorkWithUs"
         },
         {
             name: "CONTACT",
-            IconToUse: IoMailOutline,
+            icon: IoMailOutline,
             size: "1.5rem",
                 pageLink : "/Contact"
         },
         {
             name: "ABOUT",
-            IconToUse: VscInfo,
+            icon: VscInfo,
             size: "1.5rem",    pageLink : "/About"
         },
 
@@ -75,7 +75,7 @@ const menuItems: HeaderMenuItemProps[] =
 
 
 
-export function Header()
+export  function Header()
 {
     return (
 
@@ -90,7 +90,7 @@ export function Header()
 
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItems.map((item, index) =>
-                        <HeaderMenuItem name={item.name} IconToUse={item.IconToUse} size={item.size} pageLink={item.pageLink}/>)
+                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} {...item}/>)
                     }
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 import { HeaderMenuItemProps } from "@/types/types";
+import { HeaderMenuItem } from "./HeaderMenuItem";
 
 interface HamburgerMenuProps {
     menuItems : HeaderMenuItemProps[]
@@ -34,8 +35,8 @@ export function HamburgerMenu({ menuItems }: HamburgerMenuProps)
 
                     {menuItems?.map((item, index) =>
 
-                        <Link key={item.name + index} className="headerMenuItemHamburger" href={item.pageLink}><item.IconToUse size={item.size}/>   {item.name}</Link>)
-                    }
+                       <HeaderMenuItem {...item}/>
+                    )}
                 </nav>}
 
         </>

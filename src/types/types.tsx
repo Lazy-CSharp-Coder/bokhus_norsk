@@ -1,7 +1,7 @@
 
 // BackgroundImageProps and corresponding animationtyp
 
-import { IconType } from "react-icons";
+import type { IconType } from "react-icons";
 // end types BackgroundImage
 
 // interface for sending message string to page
@@ -39,7 +39,7 @@ export interface ExpandingLineProps
 export interface ReactIcons 
 {
     name : string,
-    IconToUse: IconType,
+    icon: IconType,
     size: string,
     className?: string,
 
