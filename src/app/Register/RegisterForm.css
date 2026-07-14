@@ -544,14 +544,16 @@ fieldset {
 
 @media (max-width: 63.99em) {
     .registerSection {
-        max-width: 95%;
+        width: 68%;
         
     }
   
 }
 @media (max-width: 39.99em) {
-  html {
-   
-  }
+
+    .registerSection {
+        width: 90%;
+    }
+
 }
 
