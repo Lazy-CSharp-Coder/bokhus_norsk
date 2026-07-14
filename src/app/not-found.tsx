@@ -1,14 +1,14 @@
-import Link from "next/link"
+import Link from 'next/link';
+import styles from './not-found.module.css';
 
-export default function PageNotFound() 
-{
-    return ( 
-        <div className="notFoundPageDiv">
-    <h2>Page not found.</h2>
-            <p>Requested page wa not found</p>
-            <Link href="/">Go to Home page</Link>
-            </div>
-
-
-    )
+export default function NotFound() {
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Not Found</h2>
+      <p className={styles.text}>Could not find requested resource</p>
+      <Link href="/" className={styles.link}>
+        Return Home
+      </Link>
+    </div>
+  );
 }

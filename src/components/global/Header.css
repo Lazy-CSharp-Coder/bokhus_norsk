@@ -41,6 +41,7 @@
   display: inline-block;
   height: 4.7rem;
   aspect-ratio: 1 /1;
+  color: var(--myWhiteColor);
 }
 
 .menuItemsContainer {
@@ -70,16 +71,14 @@
 
 .headerIcon svg,
 .headerIcon path {
-  /* fill: var(--myWhiteColor); */
-  /* stroke: var(--myWhiteColor); */
-  transition: fill 0.5s ease, stroke 0.3s ease;
+  color: inherit;
+  fill: currentColor;
+  stroke: currentColor;
+  transition: color 0.3s ease, fill 0.5s ease, stroke 0.3s ease;
 }
 
-
 .headerMenuItem:hover .headerIcon {
-  fill: var(--bokhusRootsColor);
-  stroke: var(--bokhusRootsColor);
-  /* color: var(--bokhusRootsColor); */
+  color: var(--bokhusRootsColor);
   scale: 1.01;
 }
 
