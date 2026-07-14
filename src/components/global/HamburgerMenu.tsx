@@ -6,6 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import { HeaderMenuItem } from "./HeaderMenuItem";
 import { menuItems } from "./HeaderMenuItemsDef";
+import { useOutsideClick } from "@/functions/useOutsideClick";
 
 
 
@@ -18,15 +19,13 @@ export function HamburgerMenu()
      const headerRef = useRef<HTMLDivElement>(null);
 
     
-    const handleOutsideClick = () =>
+    const handleOutsideClick = (e : ) =>
     {
         let shallClose = false;
         if (headerRef.current && headerRef.current.contains(e.target as Node)) shallClose = false;
-        else shallClose = true;
-        
-
-
-    }
+        else shallClose = true; 
+        if(shallClose && menuState =="showing") setMenuState("animatingOut");
+    };
 
     const handleClick = ()=>
     {
@@ -34,7 +33,7 @@ export function HamburgerMenu()
         else if(menuState == "showing") setMenuState("animatingOut");
 
     }
-
+    useOutsideClick(handleOutsideClick);
     return (
         <>
             <span className="burgerSpan" onClick={handleClick}>

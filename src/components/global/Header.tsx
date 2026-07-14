@@ -13,7 +13,7 @@ export  function Header()
    
     return (
 
-        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }} ref={headerRef}>
+        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }} >
 
             <Link href={"/"} className="headerIcon fadeInAnim">
 
