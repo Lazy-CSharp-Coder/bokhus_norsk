@@ -1,11 +1,12 @@
 "use client";
+import { Suspense } from "react";
 import { Show, SignInButton, useClerk, UserButton } from "@clerk/nextjs";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { FaUserLarge } from "react-icons/fa6";
 import { PiSignOutBold } from "react-icons/pi";
 
-export function LoginClerk()
+function LoginClerkContent()
 {
     const pathname = usePathname();
     const searchParams = useSearchParams();
@@ -52,7 +53,7 @@ export function LoginClerk()
                             }
                         }} ><UserButton.MenuItems>
                             <UserButton.Action label={"Your profile at BokHus"} labelIcon={<FaUserLarge size="16" />} onClick={handleProfileClick} />
-                            <UserButton.Action label="Sign Out" onClick={() => signOut({ redirectUrl: path || "/" })} labelIcon={<PiSignOutBold size="17"/>} />
+                            <UserButton.Action label="Sign Out" onClick={() => signOut({ redirectUrl: path || "/" })} labelIcon={<PiSignOutBold size="17" />} />
                         </UserButton.MenuItems>
                     </UserButton>
                 </div>
@@ -60,3 +61,12 @@ export function LoginClerk()
         </div>);
 
 };
+
+export function LoginClerk()
+{
+    return (
+        <Suspense fallback={<div className="clerkButtons"><button className="signInButton">SIGN IN</button></div>}>
+            <LoginClerkContent />
+        </Suspense>
+    );
+}
