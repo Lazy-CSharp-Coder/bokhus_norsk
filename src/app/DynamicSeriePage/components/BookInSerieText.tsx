@@ -15,7 +15,7 @@ export function BookInSerieText({ bookInSerie, serieName }: BookInSeriesTextProp
     const numStr = numTemp.charAt(0).toUpperCase() + numTemp.slice(1);
 
     return (   
-                <p className="bookInfo">
+                <p className="bookInfoDiv">
                    Book <span className="bookNumberText"> {numStr} </span>
                      of the <span className="bookNumberText">{serieName} </span> Series
                 </p>

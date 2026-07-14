@@ -53,6 +53,12 @@
 
 }
 
+.bookReviewed {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: white;
+}
+
 
 .reviewerNameIconWrapper {
     flex-direction: row;
@@ -65,12 +71,6 @@
 
 .reviewerNameText {
     font-size: 1.1rem;
-}
-
-.bookReviewed {
-    font-style: italic;
-    font-size: 0.9rem;
-    color: white;
 }
 
 .onText {
@@ -160,6 +160,10 @@ gap:1rem;
 
   .titleReviewText {
     font-size: 2rem;
+  }
+
+  .bookReviewed {
+    font-size: 1.5rem;
   }
 .reviewerNameText {
     font-size: 1.5rem;
