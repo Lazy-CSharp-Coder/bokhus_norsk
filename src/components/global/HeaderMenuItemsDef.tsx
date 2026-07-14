@@ -8,8 +8,8 @@ import { IoMailOutline } from "react-icons/io5";
 import { VscInfo } from "react-icons/vsc";
 import type { ReactIcons} from "@/types/types";
 import { CgShoppingCart } from "react-icons/cg";
-import { FaPencil } from "react-icons/fa6";
 import { PiNotePencilBold } from "react-icons/pi";
+
 export const menuItems: ReactIcons[] =
     [
         {
@@ -61,7 +61,8 @@ export const menuItems: ReactIcons[] =
         {
             name: "ABOUT",
             icon: VscInfo,
-            size: "1.5rem",    pageLink : "/About"
+            size: "1.5rem",    
+            pageLink : "/About"
         },
 
 
