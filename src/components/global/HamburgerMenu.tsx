@@ -33,7 +33,7 @@ export function HamburgerMenu()
 
                     {menuItems.map((_, index) =>
 
-                       <HeaderMenuItem index={index} className="headerMenuItemHamburger"/>
+                       <HeaderMenuItem index={index} className="hamburgerItem" iconClassName="hamburgerIcon"/>
                     )}
                 </nav>}
 

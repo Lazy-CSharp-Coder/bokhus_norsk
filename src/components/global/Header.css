@@ -69,9 +69,7 @@
   scale: 1.01;
 }
 
-.headerIcon {
-  /* color: var(--myWhiteColor); */
-}
+
 .headerIcon svg, 
 .headerIcon path {
     /* fill: var(--myWhiteColor); */

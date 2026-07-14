@@ -22,7 +22,7 @@ export  function Header()
 
                 <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItems.map((_, index) =>
-                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className="headerMenuItem"/>)
+                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className="headerMenuItem" iconClassName="headerIcon"/>)
                     }
                 </div>
             </div>
