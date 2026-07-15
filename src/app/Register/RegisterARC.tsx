@@ -132,7 +132,7 @@ export function RegisterARC()
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleNotShare"} type="checkbox" {...register("arc.rules.notShare")} />
                             <label className="rulesLabel" htmlFor="ruleNotShare">Do you understand that you should not distribute your ARC copy ?</label>
-                            {errors.arc?.rules?.notShare && <p className="errorRulesx">{errors.arc.rules.notShare.message}</p>}
+                            {errors.arc?.rules?.notShare && <p className="errorRules">{errors.arc.rules.notShare.message}</p>}
                         </div>
 
 
@@ -141,7 +141,7 @@ export function RegisterARC()
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
                             <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
-                            {errors.arc?.rules?.honestReview && <p className="errorRulesx">{errors.arc.rules.honestReview.message}</p>}
+                            {errors.arc?.rules?.honestReview && <p className="errorRules">{errors.arc.rules.honestReview.message}</p>}
                         </div>
 
 

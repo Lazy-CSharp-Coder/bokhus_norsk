@@ -99,13 +99,13 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                             <div className="registerDiv">
                                 <IoEarthSharp className="inputRegIcon" size="1.9rem" />
-                                <label>Which country are you from (optional) : </label>
+                                <label>Which country are you from (optional) :    {errors.country && <p className="errorRegisterForm">{errors.country.message}</p>} </label>
                                 <input className="registerInput" type="text" {...register("country")} placeholder="country" />
-                                {errors.country && <p className="errorRegisterForm">{errors.country.message}</p>}
+                            
 
                             </div>
                             <div className="multipleChoicesDiv">
-                                <label className="languagesText">What languages do you prefer ?</label>
+                                <label className="languagesText">What languages do you prefer ?{errors.preferredLanguage && <p className="errorRegisterForm">{errors.preferredLanguage.message}</p>}</label>
                                 <ul className="multipleChoicesList flex">
                                     <LuLetterText className="inputRegListIcon" size="2rem" />
                                     {languageOptions.map((item) => (
@@ -115,10 +115,10 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                         </li>
                                     ))}
 
-                                </ul>  {errors.preferredLanguage && <p className="errorRegisterForm">{errors.preferredLanguage.message}</p>}
+                                </ul>  
                             </div>
                             <div className="multipleChoicesDiv">
-                                <label className="languagesText">What genres are you interested in ?</label>
+                                <label className="languagesText">What genres are you interested in ? {errors.genresInterestedIn && <p className="errorRegisterForm">{errors.genresInterestedIn.message}</p>}</label>
 
                                 <ul className="multipleChoicesList flex">
                                     <LiaSwatchbookSolid className="inputRegListIcon" size="2.1rem" />
@@ -129,14 +129,14 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                         </li>
                                     ))}
                              
-                                </ul>       {errors.genresInterestedIn && <p className="errorRegisterForm">{errors.genresInterestedIn.message}</p>}
+                                </ul>      
                             </div>
                             <div className="registerDiv">
                                 <TbWorldWww className="inputRegIcon" size="1.85rem" />
-                                <label>Do you have a profile page (optional) : </label>
+                                <label>Do you have a profile page (optional) :  {errors.linkProfilePage && <p className="errorRegisterForm">{errors.linkProfilePage.message}</p>}
+ </label>
                                 <input className="registerInput" type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
-                                {errors.linkProfilePage && <p className="errorRegisterForm">{errors.linkProfilePage.message}</p>}
-
+                              
                             </div>
                         </div>
                         <div className="newsLetterArcOptionsWrapper flex">
