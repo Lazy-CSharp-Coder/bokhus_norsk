@@ -5,7 +5,7 @@ export function ByAuthor({ authors }: { authors: string[]; })
     return (<p className="authorsSeparator">by
         {
             authors.length > 1 ? authors.map((item, index, array) =>
-                <span key={item + index} className="authorNameText">{item}
+                <span key={item + index} className="authorNameText"> {item}
                     <span className="authorsSeparator">
                         {index < array.length - 1 ? ", " : "and "}</span>
                     {index == array.length - 1 && "."}</span>) : <span className="authorNameText"> {authors[0]}</span>
