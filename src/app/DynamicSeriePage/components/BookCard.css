@@ -248,14 +248,14 @@
     font-size: 3rem;
     text-align: center;
    }
-   .bookInfo {
-    font-size: 2rem;
+   .bookInfoDiv {
+    font-size: 1.6rem;
    }
 
    .headingAvailableSeparator {
 
     margin:1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
    }
 .bookFactsAndDescriptionDiv {
     display: flex;
@@ -290,7 +290,7 @@
     text-align: center;
 }
    .descriptionList {
-    font-size:1.7rem;
+    font-size:1.6rem;
     gap:1rem;
     
    }
