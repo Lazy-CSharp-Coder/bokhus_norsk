@@ -1,0 +1,20 @@
+.regErrorDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+
+    --errorTextColor: rgb(175, 92, 76);
+    text-wrap: nowrap;
+    color: var(--errorTextColor);
+
+    /* background-color:rgb(20,20, 20); */
+    background-color: transparent;
+    /* border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000; */
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
