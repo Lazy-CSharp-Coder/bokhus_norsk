@@ -81,7 +81,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         <article id="reviewArticle" className={`reviewArticle flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
             <div className="headingToTopWrapper flex">
                 <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
-                <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" /></span>
+                <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className="goToTopIcon" /></span>
             </div>
             {reviewArray != null && reviewArray.length > 0 ?
                 <ReviewSlideShow reviewArray={reviewArray} /> : <h3 className="reviewsNotFoundText">No reviews found</h3>

@@ -147,8 +147,9 @@
 
 
 
-.userTextAnim, .userIconAnim {
-        animation-name: slideInAndOut;
+.userTextAnim,
+.userIconAnim {
+    animation-name: slideInAndOut;
     animation-duration: 4.8s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: backwards;
@@ -378,25 +379,22 @@
 }
 
 .errorRegisterForm {
-    position: absolute;
-    left: 105%;
-    top: 50%;
-    text-wrap: nowrap;
-    color: white;
-    padding: 0.5rem 1rem;
-    /* background-color:rgb(20,20, 20); */
-    background-color: var(--inputBackground);
-    border: 1px solid var(--borderIconColor);
-    border-radius: var(--borderRadiusReg);
-    -webkit-box-shadow: 5px 5px 15px 5px #000000;
-    box-shadow: 5px 5px 15px 5px #000000;
+
+    color: var(--errorTextColor);
+    font-size: 1.4rem;
     animation-name: fadeIn;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
 }
 
 .languagesText {
+
     width: max-content;
+    display: flex;
+    flex-direction: row;
+
+    gap: 1rem;
+    align-items: center;
     color: var(--myWhiteColor);
 }
 
@@ -488,7 +486,9 @@ fieldset {
 
     align-items: left;
     width: 100%;
-    padding: 1.5rem 1.5rem;
+    padding: 1.7rem;
+
+
 
 
     background-color: var(--inputBackground);
@@ -510,10 +510,14 @@ fieldset {
 }
 
 .rulesLabel {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    align-items: center;
     color: var(--myWhiteColor);
+    text-wrap: nowrap;
     /* margin-right: 3rem; */
 }
-
 
 
 .labelInputRulesDiv {
@@ -521,8 +525,29 @@ fieldset {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    position: relative;
+    width: 100%;
 }
+
+.errorRules {
+    color: var(--errorTextColor);
+}
+
+
+.errorRulesDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0rem 0.3rem;
+    gap: 1.2rem;
+    color: var(--errorTextColor);
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+
+}
+
+
 
 .bokhusComWrapper {
     justify-content: center;
@@ -534,21 +559,22 @@ fieldset {
 
 
 @media (max-width: 159.99em) {
-  .registerSection {
-    width: 50%;
-  }
+    .registerSection {
+        width: 50%;
+    }
 
 }
 
-  
+
 
 @media (max-width: 63.99em) {
     .registerSection {
         width: 68%;
-        
+
     }
-  
+
 }
+
 @media (max-width: 39.99em) {
 
     .registerSection {
@@ -556,4 +582,3 @@ fieldset {
     }
 
 }
-

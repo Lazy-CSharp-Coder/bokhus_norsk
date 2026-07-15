@@ -245,24 +245,24 @@
     
    }
    .bookTitle {
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
    }
-   .bookInfo {
-    font-size: 2rem;
+   .bookInfoDiv {
+    font-size: 1.6rem;
    }
 
    .headingAvailableSeparator {
 
     margin:1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
    }
 .bookFactsAndDescriptionDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:1.5rem;
-    padding: 0 1rem;
+    padding: 0 0.2rem;
     width: 100%;
 }
 .factsDiv {
@@ -272,12 +272,12 @@
     align-items: center;
 }
    .releaseInfo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
    }
 
    .synopsisText {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
    }
 .descriptionSubWrapper {
@@ -286,11 +286,11 @@
     align-items: center;
 }
 .subTitle {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     text-align: center;
 }
    .descriptionList {
-    font-size:1.8rem;
+    font-size:1.6rem;
     gap:1rem;
     
    }

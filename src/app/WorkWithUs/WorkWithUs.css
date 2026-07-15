@@ -175,19 +175,20 @@
 
 @media (max-width: 63.99em) {
     .workWithUsSection {
-        max-width: 80%;
+        max-width: 90%;
         
     }
     .workWithUsListArticle {
         flex-direction: column;
-        gap: 3rem;
+        gap: 4rem;
     }
 
     .workList {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
+
         width: 100%;
 
     }

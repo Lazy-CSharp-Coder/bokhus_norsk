@@ -169,7 +169,7 @@
 /* under 768px  - tablet */
 
 
-@media (max-width: 47.99em){
+@media (max-width: 63.99em){
 
     .seriesCardLarge {
         flex-direction: column;
@@ -183,7 +183,7 @@
     }
 
     .seriesCardLargeImageDiv {
-        width: 88.2%;
+        width: 90%;
         
     }
 

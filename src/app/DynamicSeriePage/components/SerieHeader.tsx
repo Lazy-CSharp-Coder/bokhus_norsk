@@ -1,6 +1,6 @@
 "use client";
 import { ByAuthor } from "../../../components/common/ByAuthor";
-import { BestSellerList } from "../../../components/common/BestSellerList";
+import { BestSellerList } from "./BestSellerList";
 import { SeriesInfoProps } from "@/types/booktypes";
 import { useDescriptionShowingState} from "@/globalStates";
 import { HiOutlineArrowSmallLeft } from "react-icons/hi2";
