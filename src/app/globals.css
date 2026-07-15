@@ -184,7 +184,9 @@ a {
 /* max 480px */
 @media (max-width: 29.99em) {
 
-  
+    html {
+      font-size: 82%;
+    }
 }
 
 @media (max-width: 24rem) {

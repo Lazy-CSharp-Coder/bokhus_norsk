@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
 import { HeaderMenuItem } from "./HeaderMenuItem";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { useOutsideClick } from "@/functions/useOutsideClick";
+import { usePathname } from "next/navigation";
 
 
 
@@ -17,8 +18,14 @@ export function HamburgerMenu()
     const [menuState, setMenuState] = useState<HamburgerMenuState>("hiding");
 
      const headerRef = useRef<HTMLDivElement>(null);
+    // const path = usePathname();
 
-    
+    // useEffect(() =>
+    // {
+    //     handleClick();
+
+    // },[path]);
+     
     const handleOutsideClick = (e : MouseEvent) =>
     {
         let shallClose = false;
@@ -34,6 +41,8 @@ export function HamburgerMenu()
 
     }
     useOutsideClick(handleOutsideClick);
+
+
     return (
         <>
             <span className="burgerSpan" onClick={handleClick}>
@@ -44,7 +53,7 @@ export function HamburgerMenu()
 
                     {menuItems.map((_, index) =>
 
-                       <HeaderMenuItem key={"#HamItem" + index} index={index} className="hamburgerItem" iconClassName="hamburgerIcon"/>
+                       <HeaderMenuItem key={"#HamItem" + index} index={index} className="hamburgerItem" iconClassName="hamburgerIcon" onClick={handleClick}/>
                     )}
                 </nav>}
 
