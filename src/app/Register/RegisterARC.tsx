@@ -104,7 +104,7 @@ export function RegisterARC()
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <BsFileEarmarkPost size="1.8rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">Where do you post reviews  ? </label>
+                    <label className="languagesText">Where do you post reviews  ?   {errors.arc?.reviewSites && <p className="errorRegisterForm">{errors.arc.reviewSites.message}</p>}</label>
                     <ul className="multipleChoicesARCList flex">
                         {reviewSitesDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -114,7 +114,7 @@ export function RegisterARC()
                         ))}
 
                     </ul>
-                    {errors.arc?.reviewSites && <p className="errorRegisterForm">{errors.arc.reviewSites.message}</p>}
+                  
                 </div>
 
             </fieldset>
