@@ -26,7 +26,7 @@ export function RegisterARC()
     const formatOptions = arcSchema.shape.format.options;
     const howLongOptions = arcSchema.shape.howLong.options;
     const comfortableOptions = arcSchema.shape.comfortable.options;
-    const errorRules : string = "You have to accept this term to continues";
+    const errorRules: string = "You have to accept this term to continues";
     return (
         <article key={"#ARCTeam#"} className="arcArticle flex fadeInFromBelowAnim">
             <div className="arcHeadingIconWrapper flex">
@@ -39,7 +39,7 @@ export function RegisterARC()
 
                 <div className="multipleChoicesARCDiv flex">
                     <FaRegCopy className="inputRegListARCIcon" size="1.7rem" />
-                    <label className="languagesText">What format do you prefer for ARC copy ?</label>
+                    <label className="languagesText">What format do you prefer for ARC copy ?   {errors.arc?.format && <p className="errorRegisterForm">{errors.arc.format.message}</p>}</label>
                     <ul className="multipleChoicesARCList flex">
                         {formatOptions.map((item) => (
 
@@ -53,7 +53,7 @@ export function RegisterARC()
                         ))}
 
                     </ul>
-                    {errors.arc?.format && <p className="errorRegisterForm">{errors.arc.format.message}</p>}
+
                 </div>
                 <div className="registerTextArea">
                     <FaQuestion className="inputRegIcon" size="1.6rem" />
@@ -63,7 +63,7 @@ export function RegisterARC()
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <FaRegClock size="1.8rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">How long does it usually take you to read a book ?</label>
+                    <label className="languagesText">How long does it usually take you to read a book ?   {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}</label>
                     <ul className="multipleChoicesARCList flex">
                         {howLongOptions.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -73,10 +73,10 @@ export function RegisterARC()
                         ))}
 
                     </ul>
-                    {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}
+
                 </div> <div className="multipleChoicesARCDiv flex">
                     <TbEyeEdit size="2rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">What do you notice when you read books  ?</label>
+                    <label className="languagesText">What do you notice when you read books  ?   {errors.arc?.notice && <p className="errorRegisterForm">{errors.arc.notice.message}</p>}</label>
                     <ul className="multipleChoicesARCList flex">
                         {noticeDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -86,11 +86,11 @@ export function RegisterARC()
                         ))}
 
                     </ul>
-                    {errors.arc?.notice && <p className="errorRegisterForm">{errors.arc.notice.message}</p>}
+
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <TbUserQuestion size="1.9rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">Are you comfortable with giving an honest review ?</label>
+                    <label className="languagesText">Are you comfortable with giving an honest review ?  {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}</label>
                     <ul className="multipleChoicesARCList flex">
                         {comfortableOptions.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -100,7 +100,7 @@ export function RegisterARC()
                         ))}
 
                     </ul>
-                    {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}
+
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <BsFileEarmarkPost size="1.8rem" className="inputRegListARCIcon" />
@@ -114,7 +114,7 @@ export function RegisterARC()
                         ))}
 
                     </ul>
-                  
+
                 </div>
 
             </fieldset>
@@ -141,11 +141,11 @@ export function RegisterARC()
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
                             <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
-                                 {errors.arc?.rules?.honestReview && <p className="errorRulesx">{errors.arc.rules.honestReview.message}</p>}
+                            {errors.arc?.rules?.honestReview && <p className="errorRulesx">{errors.arc.rules.honestReview.message}</p>}
                         </div>
 
 
-                   
+
 
 
                     </div>
@@ -174,11 +174,11 @@ export function RegisterARC()
                             <label className="rulesLabel" htmlFor="ruleContactFutureARC">  Do you want to be contacted about future ARC copies ?</label>
                         </div>
                     </div>
-                
+
                 </div>
-    <div className="errorRulesDiv">
-                             {(errors.arc?.rules?.honestReview || errors.arc?.rules?.notShare) && <p className="errorRules">{errorRules}</p>}
-                    </div>-
+                <div className="errorRulesDiv">
+                    {(errors.arc?.rules?.honestReview || errors.arc?.rules?.notShare) && <p className="errorRules">{errorRules}</p>}
+                </div>-
             </fieldset>
 
         </article>
