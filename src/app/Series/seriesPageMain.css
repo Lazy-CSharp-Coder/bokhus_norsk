@@ -111,11 +111,12 @@
 @media (max-width: 63.99em) {
 
 .seriesPageSection {
+    max-width: 100%;
     width:95%;
 }
 
 .seriesPageDescriptionArticle {
-    padding: 0 5rem;
+    padding: 0 3rem;
 }
 
 
