@@ -165,11 +165,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                         {isJoiningOurTeam && <RegisterARC />}
 
                         <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
-                        {Object.keys(errors).length > 0 && (
-                            <p className="errorRegisterForm">
-                                {/* {Object.entries(errors).map(([fieldName, error]) =>`${fieldName} :  ${error.message}`).join('\n') */}
-                                Form not valid. Please check marked entires.
-                            </p>)}
+                  
                     </form>
 
 
