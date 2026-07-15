@@ -236,7 +236,7 @@ footer {
 
 }
 
-@media (max-width: 47.99em) {
+@media (max-width: 63.99em) {
 
     .desktopModeFooter {
         display: none;
