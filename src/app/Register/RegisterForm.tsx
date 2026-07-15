@@ -73,12 +73,12 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                     <FaUserLarge size="3rem" className="userIcon" />
                     {userInfo != "Display email" ?
                         <div key={userInfo} className="userInfoDiv" >
-                            {userInfo == "No user message" ? <IoMdClose size="1.5rem" className="userInfoIcon userIconAnim" /> : <IoCheckmarkSharp size="1.4rem" className="userInfoIcon userIconAnim" />} 
-                             <span className="userTextAnim" onAnimationEnd={() => setUserInfo("Display email")}>{ userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
-                       </div> :
-<div className="mailIconUserEmailWrapper"><IoMailOutline size="1.8rem" className="regMailIcon scaleInAnim"/>  <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>
-    </div>
-                      }
+                            {userInfo == "No user message" ? <IoMdClose size="1.5rem" className="userInfoIcon userIconAnim" /> : <IoCheckmarkSharp size="1.4rem" className="userInfoIcon userIconAnim" />}
+                            <span className="userTextAnim" onAnimationEnd={() => setUserInfo("Display email")}>{userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
+                        </div> :
+                        <div className="mailIconUserEmailWrapper"><IoMailOutline size="1.8rem" className="regMailIcon scaleInAnim" />  <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>
+                        </div>
+                    }
                 </div>
             </div>
 
@@ -114,8 +114,8 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                             <label htmlFor={item}>{item}</label>
                                         </li>
                                     ))}
-                                    {errors.preferredLanguage && <p className="errorRegisterForm">{errors.preferredLanguage.message}</p>}
-                                </ul>
+
+                                </ul>  {errors.preferredLanguage && <p className="errorRegisterForm">{errors.preferredLanguage.message}</p>}
                             </div>
                             <div className="multipleChoicesDiv">
                                 <label className="languagesText">What genres are you interested in ?</label>
@@ -128,8 +128,8 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                             <label htmlFor={item}>{item}</label>
                                         </li>
                                     ))}
-                                    {errors.genresInterestedIn && <p className="errorRegisterForm">{errors.genresInterestedIn.message}</p>}
-                                </ul>
+                             
+                                </ul>       {errors.genresInterestedIn && <p className="errorRegisterForm">{errors.genresInterestedIn.message}</p>}
                             </div>
                             <div className="registerDiv">
                                 <TbWorldWww className="inputRegIcon" size="1.85rem" />

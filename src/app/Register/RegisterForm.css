@@ -378,14 +378,16 @@
 }
 
 .errorRegisterForm {
+    --errorTextColor : rgb(200, 0, 0);
+    --errorBackground : 
     position: absolute;
-    left: 105%;
-    top: 50%;
+    right: 0%;
+    top: 1%;
     text-wrap: nowrap;
-    color: white;
+    color: var(--errorTextColor);
     padding: 0.5rem 1rem;
     /* background-color:rgb(20,20, 20); */
-    background-color: var(--inputBackground);
+    background-color:  rgb(231, 231, 231);
     border: 1px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
@@ -511,6 +513,7 @@ fieldset {
 
 .rulesLabel {
     color: var(--myWhiteColor);
+    text-wrap: nowrap;
     /* margin-right: 3rem; */
 }
 
@@ -521,7 +524,28 @@ fieldset {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    position: relative;
+      position: relative;
+      width: 100%;
+}
+
+.errorRules{
+    --errorTextColor : rgb(200, 0, 0);
+ 
+    position: absolute;
+    right: -1rem;
+    top: 1%;
+    text-wrap: nowrap;
+    color: var(--errorTextColor);
+    padding: 0.5rem 1rem;
+    /* background-color:rgb(20,20, 20); */
+    background-color:  rgb(231, 231, 231);
+    border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 
 .bokhusComWrapper {

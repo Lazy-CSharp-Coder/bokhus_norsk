@@ -51,8 +51,9 @@ export function RegisterARC()
 
 
                         ))}
-                        {errors.arc?.format && <p className="errorRegisterForm">{errors.arc.format.message}</p>}
+
                     </ul>
+                    {errors.arc?.format && <p className="errorRegisterForm">{errors.arc.format.message}</p>}
                 </div>
                 <div className="registerTextArea">
                     <FaQuestion className="inputRegIcon" size="1.6rem" />
@@ -70,8 +71,9 @@ export function RegisterARC()
                                 <label htmlFor={item}>{item}</label>
                             </li>
                         ))}
-                        {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}
+
                     </ul>
+                    {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}
                 </div> <div className="multipleChoicesARCDiv flex">
                     <TbEyeEdit size="2rem" className="inputRegListARCIcon" />
                     <label className="languagesText">What do you notice when you read books  ?</label>
@@ -82,8 +84,9 @@ export function RegisterARC()
                                 <label htmlFor={`#notice#${item}`}>{item}</label>
                             </li>
                         ))}
-                        {errors.arc?.notice && <p className="errorRegisterForm">{errors.arc.notice.message}</p>}
+
                     </ul>
+                    {errors.arc?.notice && <p className="errorRegisterForm">{errors.arc.notice.message}</p>}
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <TbUserQuestion size="1.9rem" className="inputRegListARCIcon" />
@@ -95,8 +98,9 @@ export function RegisterARC()
                                 <label htmlFor={"#pref#" + item}>{item}</label>
                             </li>
                         ))}
-                        {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}
+
                     </ul>
+                    {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <BsFileEarmarkPost size="1.8rem" className="inputRegListARCIcon" />
@@ -108,8 +112,9 @@ export function RegisterARC()
                                 <label htmlFor={`#reviewSites#${item}`}>{item}</label>
                             </li>
                         ))}
-                        {errors.arc?.reviewSites && <p className="errorRegisterForm">{errors.arc.reviewSites.message}</p>}
+
                     </ul>
+                    {errors.arc?.reviewSites && <p className="errorRegisterForm">{errors.arc.reviewSites.message}</p>}
                 </div>
 
             </fieldset>
@@ -127,19 +132,20 @@ export function RegisterARC()
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleNotShare"} type="checkbox" {...register("arc.rules.notShare")} />
                             <label className="rulesLabel" htmlFor="ruleNotShare">Do you understand that you should not distribute your ARC copy ?</label>
-
+                            {errors.arc?.rules?.notShare && <p className="errorRules">{errors.arc.rules.notShare.message}</p>}
                         </div>
-                        {errors.arc?.rules?.notShare && <p className="errorRegisterForm">{errors.arc.rules.notShare.message}</p>}
+
 
                     </div>
                     <div className="rulesDiv">
+                        <div className="labelInputRulesDiv flex">
+                            <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
+                            <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
+                                 {errors.arc?.rules?.honestReview && <p className="errorRules">{errors.arc.rules.honestReview.message}</p>}
+                        </div>
 
-                        <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
-                        <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
 
-
-
-                        {errors.arc?.rules?.honestReview && <p className="errorRegisterForm">{errors.arc.rules.honestReview.message}</p>}
+                   
 
 
                     </div>
