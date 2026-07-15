@@ -144,22 +144,13 @@ export function RegisterARC()
                             <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?    {errors.arc?.rules?.honestReview && <p className="errorRules">{errors.arc.rules.honestReview.message}</p>}</label>
 
                         </div>
-
-
-
-
-
                     </div>
                     <div className="rulesDiv">
 
                         <div className="labelInputRulesDiv flex">
                             <input id={"rule18"} type="checkbox" {...register("arc.rules.above18")} />
                             <label className="rulesLabel" htmlFor="rule18"> Are you above 18 years old, in case book contains adult content ?</label>
-
-
                         </div>
-
-
                     </div>
                     <div className="rulesDiv">
 
@@ -174,8 +165,6 @@ export function RegisterARC()
                             <input id={"ruleContactFutureARC"} type="checkbox" {...register("arc.rules.contactFutureARC")} />
                             <label className="rulesLabel" htmlFor="ruleContactFutureARC">  Do you want to be contacted about future ARC copies ?</label>
                         </div>
-
-               
                     </div>
                              {(errors.arc?.rules?.honestReview || errors.arc?.rules?.notShare) && 
                         <div className="errorRulesDiv">  * <RegErrorMessage message={errorRules} iconSize="1.1rem"/> </div>}
