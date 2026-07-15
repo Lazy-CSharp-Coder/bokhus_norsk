@@ -288,7 +288,7 @@ box-shadow: 10px 10px 23px 3px #000000; */
 
   .contactUsSection {
     /* max-width: 65rem; */
-    max-width: 58%;
+    max-width: 88%;
   }
 
 } 
@@ -297,6 +297,6 @@ box-shadow: 10px 10px 23px 3px #000000; */
 @media (max-width: 47.99em)
 {
  .contactUsSection {
-       max-width: 80%;
+      
     }
 }
