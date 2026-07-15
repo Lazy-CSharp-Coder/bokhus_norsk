@@ -88,3 +88,22 @@
     color: lightblue;
     text-decoration: underline;
 }
+
+
+
+@media (max-width: 89.99em) {
+
+   .legalSection {
+        max-width: 80%;
+    }
+
+}
+
+@media (max-width: 63.99em) {
+
+    .legalSection {
+        max-width: 95%;
+    }
+
+
+}
