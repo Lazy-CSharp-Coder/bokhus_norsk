@@ -171,6 +171,10 @@ footer {
 
 }
 
+.legalLink {
+    cursor: pointer;
+}
+
 .contactUsLink {
     /* display: flex;
     flex-direction: row;
