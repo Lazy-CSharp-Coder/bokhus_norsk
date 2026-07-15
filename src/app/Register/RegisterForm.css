@@ -530,7 +530,7 @@ fieldset {
 }
 
 .errorRules{
-    --errorTextColor : rgb(200, 0, 0);
+    --errorTextColor : rgb(239, 65, 65);
     --errorBackground : transparent;
     
     text-wrap: nowrap;
