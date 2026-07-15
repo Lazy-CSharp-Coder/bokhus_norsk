@@ -92,8 +92,14 @@
 @media (max-width: 63.99em) {
 
    
-   .reviewSlideContainer {
+   .reviewTitle {
+    font-size: 2rem;
    
+   }
+
+   .goToTopIcon {
+    width: 2.5rem;
+    height: 2.5rem;
    }
  
 }
