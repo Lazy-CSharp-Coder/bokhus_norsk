@@ -76,27 +76,36 @@ export function Footer()
                 {isMobileMenuOpen &&
                     <div className="footerEndMobileDiv">
 
-                        <Link className="contactUsLink" href="/Contact">
-                            <IoMailOutline size="2rem" /></Link>
+                        <Link className="linkMobile" href="/Contact">
+                            <IoMailOutline size="2rem" /> <span className="logoTextMobile">CONTACT</span></Link>
 
-                        <span className="logoTextMobile">CONTACT</span>
 
-                        <FaInstagram size="1.8rem" />
-                        <span className="logoTextMobile">INSTAGRAM</span>
+                        <Link className="linkMobile" href="/">
+                            <FaInstagram size="1.8rem" />
+                            <span className="logoTextMobile">INSTAGRAM</span></Link>
 
-                        <FaFacebook className="facebookIcon" size="1.7rem" />
-                        <span className="logoTextMobile">FACEBOOK</span>
-
-                        <Link href="/Credits">
-                            <IoIosInformationCircleOutline size="2rem" className="infoIcon" />      </Link>
-                        <span className="logoTextMobile">CREDITS</span>
+                        <Link className="linkMobile" href="/">
+                            <FaFacebook className="facebookIcon" size="1.7rem" />
+                            <span className="logoTextMobile">FACEBOOK</span></Link>
 
 
 
 
 
-                        <LogoBPWebDev />
-                        <span className="logoTextMobile">WEBPAGE BY         </span>
+
+                        <Link href="/Credits" className="linkMobile">
+                            <IoIosInformationCircleOutline size="2rem" className="infoIcon" />                <span className="logoTextMobile">CREDITS</span>     </Link>
+
+
+
+
+                        <Link href="/Credits" className="linkMobile">
+                      <LogoBPWebDev />
+                        <span className="logoTextMobile">WEBPAGE BY         </span>  </Link>
+
+
+
+                       
 
                     </div>}
 
