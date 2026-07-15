@@ -11,6 +11,7 @@ import { TbEyeEdit } from "react-icons/tb";
 import { FaRegCopy } from "react-icons/fa";
 
 import { LuScrollText } from "react-icons/lu";
+import { RegErrorMessage } from "./RegErrorMessage";
 
 interface ARCFormProps
 {
@@ -39,7 +40,7 @@ export function RegisterARC()
 
                 <div className="multipleChoicesARCDiv flex">
                     <FaRegCopy className="inputRegListARCIcon" size="1.7rem" />
-                    <label className="languagesText">What format do you prefer for ARC copy ?   {errors.arc?.format && <p className="errorRegisterForm">{errors.arc.format.message}</p>}</label>
+                    <label className="languagesText">What format do you prefer for ARC copy ?   {errors.arc?.format && <RegErrorMessage message={errors.arc?.format.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
                         {formatOptions.map((item) => (
 
@@ -63,7 +64,7 @@ export function RegisterARC()
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <FaRegClock size="1.8rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">How long does it usually take you to read a book ?   {errors.arc?.howLong && <p className="errorRegisterForm">{errors.arc.howLong.message}</p>}</label>
+                    <label className="languagesText">How long does it usually take you to read a book ?   {errors.arc?.howLong && <RegErrorMessage message={errors.arc.howLong.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
                         {howLongOptions.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -76,7 +77,7 @@ export function RegisterARC()
 
                 </div> <div className="multipleChoicesARCDiv flex">
                     <TbEyeEdit size="2rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">What do you notice when you read books  ?   {errors.arc?.notice && <p className="errorRegisterForm">{errors.arc.notice.message}</p>}</label>
+                    <label className="languagesText">What do you notice when you read books  ?   {errors.arc?.notice && <RegErrorMessage message={errors.arc.notice.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
                         {noticeDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -90,7 +91,7 @@ export function RegisterARC()
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <TbUserQuestion size="1.9rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">Are you comfortable with giving an honest review ?  {errors.arc?.comfortable && <p className="errorRegisterForm">{errors.arc.comfortable.message}</p>}</label>
+                    <label className="languagesText">Are you comfortable with giving an honest review ?  {errors.arc?.comfortable && <RegErrorMessage message={errors.arc.comfortable.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
                         {comfortableOptions.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -104,7 +105,7 @@ export function RegisterARC()
                 </div>
                 <div className="multipleChoicesARCDiv flex">
                     <BsFileEarmarkPost size="1.8rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">Where do you post reviews  ?   {errors.arc?.reviewSites && <p className="errorRegisterForm">{errors.arc.reviewSites.message}</p>}</label>
+                    <label className="languagesText">Where do you post reviews  ?   {errors.arc?.reviewSites && <RegErrorMessage message={errors.arc.reviewSites.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
                         {reviewSitesDef.map((item) => (
                             <li key={item} className="languagePreferredDiv">
@@ -131,8 +132,8 @@ export function RegisterARC()
 
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleNotShare"} type="checkbox" {...register("arc.rules.notShare")} />
-                            <label className="rulesLabel" htmlFor="ruleNotShare">Do you understand that you should not distribute your ARC copy ?</label>
-                            {errors.arc?.rules?.notShare && <p className="errorRules">{errors.arc.rules.notShare.message}</p>}
+                            <label className="rulesLabel" htmlFor="ruleNotShare">Do you understand that you should not distribute your ARC copy ?      {errors.arc?.rules?.notShare && <p className="errorRules">{errors.arc.rules.notShare.message}</p>}</label>
+
                         </div>
 
 
@@ -140,8 +141,8 @@ export function RegisterARC()
                     <div className="rulesDiv">
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
-                            <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
-                            {errors.arc?.rules?.honestReview && <p className="errorRules">{errors.arc.rules.honestReview.message}</p>}
+                            <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?    {errors.arc?.rules?.honestReview && <p className="errorRules">{errors.arc.rules.honestReview.message}</p>}</label>
+
                         </div>
 
 
@@ -173,12 +174,12 @@ export function RegisterARC()
                             <input id={"ruleContactFutureARC"} type="checkbox" {...register("arc.rules.contactFutureARC")} />
                             <label className="rulesLabel" htmlFor="ruleContactFutureARC">  Do you want to be contacted about future ARC copies ?</label>
                         </div>
-                    </div>
 
+               
+                    </div>
+                             {(errors.arc?.rules?.honestReview || errors.arc?.rules?.notShare) && 
+                        <div className="errorRulesDiv">  * <RegErrorMessage message={errorRules} iconSize="1.1rem"/> </div>}
                 </div>
-                <div className="errorRulesDiv">
-                    {(errors.arc?.rules?.honestReview || errors.arc?.rules?.notShare) && <p className="errorRules">{errorRules}</p>}
-                </div>-
             </fieldset>
 
         </article>

@@ -80,7 +80,7 @@ export const registerSchema = z.object(
         preferredLanguage: preferredLanguageDef,
               
         genresInterestedIn: z.array(z.enum(genresDef))
-            .min(1, { error: () => "You have to choose atleast one of the alternatives" }),
+            .min(1, { error: () => "You have to choose one of the alternatives" }),
         linkProfilePage: z.url({ message: "Invalid URL" }).or(z.literal("")).optional(),
         newsLetter: z.boolean(),
         arcInterest: z.boolean(),

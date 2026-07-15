@@ -24,6 +24,7 @@
   --buttonBackgroundColor: rgb(125, 88, 33);
   --defaultBorderRadius: 5px;
   --defaultBorder: 2px solid var(--borderIconColor);
+  --errorTextColor: rgb(175, 92, 76);
 }
 
 * {
