@@ -26,7 +26,7 @@ export function RegisterARC()
     const formatOptions = arcSchema.shape.format.options;
     const howLongOptions = arcSchema.shape.howLong.options;
     const comfortableOptions = arcSchema.shape.comfortable.options;
-
+    const errorRules : string = "You have to accept this term to continues";
     return (
         <article key={"#ARCTeam#"} className="arcArticle flex fadeInFromBelowAnim">
             <div className="arcHeadingIconWrapper flex">
@@ -132,7 +132,7 @@ export function RegisterARC()
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleNotShare"} type="checkbox" {...register("arc.rules.notShare")} />
                             <label className="rulesLabel" htmlFor="ruleNotShare">Do you understand that you should not distribute your ARC copy ?</label>
-                            {errors.arc?.rules?.notShare && <p className="errorRules">{errors.arc.rules.notShare.message}</p>}
+                            {errors.arc?.rules?.notShare && <p className="errorRulesx">{errors.arc.rules.notShare.message}</p>}
                         </div>
 
 
@@ -141,7 +141,7 @@ export function RegisterARC()
                         <div className="labelInputRulesDiv flex">
                             <input id={"ruleHonest"} type="checkbox" {...register("arc.rules.honestReview")} />
                             <label className="rulesLabel" htmlFor="ruleHonest"> Do you understand that the review should be honest, not bought or pressured ?</label>
-                                 {errors.arc?.rules?.honestReview && <p className="errorRules">{errors.arc.rules.honestReview.message}</p>}
+                                 {errors.arc?.rules?.honestReview && <p className="errorRulesx">{errors.arc.rules.honestReview.message}</p>}
                         </div>
 
 
@@ -174,8 +174,11 @@ export function RegisterARC()
                             <label className="rulesLabel" htmlFor="ruleContactFutureARC">  Do you want to be contacted about future ARC copies ?</label>
                         </div>
                     </div>
+                
                 </div>
-
+    <div className="errorRulesDiv">
+                             {(errors.arc?.rules?.honestReview || errors.arc?.rules?.notShare) && <p className="errorRules">{errorRules}</p>}
+                    </div>-
             </fieldset>
 
         </article>

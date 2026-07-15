@@ -17,8 +17,8 @@ export type UserData = z.infer<typeof registerSchema>;
 export type ARCData = z.infer<typeof arcSchema>;
 
 export const rulesSchema = z.object({
-    notShare: z.boolean().refine((value) => value === true, { message: "You have to accept this term to continue" }),
-    honestReview: z.boolean().refine((value) => value === true, { message: "You have to accept this term to continue" }),
+    notShare: z.boolean().refine((value) => value === true, { message: "*" }),
+    honestReview: z.boolean().refine((value) => value === true, { message: "*" }),
     above18: z.boolean(),
     reminder: z.boolean(),
     contactFutureARC: z.boolean(),
