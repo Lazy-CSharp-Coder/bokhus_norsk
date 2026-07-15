@@ -54,6 +54,7 @@
     font-size: 2.5rem;
     color: var(--myWhiteColor);
     padding-bottom: 1rem;
+    text-align: center;
 
 
 
@@ -71,7 +72,7 @@
     flex-direction: column;
     gap: 2.5rem;
     width: 100%;
-    padding: 2rem 2rem;
+    padding: 2rem 1rem;
     list-style: none;
 
 }
@@ -112,11 +113,11 @@
 
 .seriesPageSection {
     max-width: 100%;
-    width:95%;
+    width:99%;
 }
 
 .seriesPageDescriptionArticle {
-    padding: 0 3rem;
+    padding: 0 2rem;
 }
 
 
