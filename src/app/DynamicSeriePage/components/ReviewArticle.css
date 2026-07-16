@@ -70,21 +70,13 @@
 
 .leftSlider,
 .rightSlider {
-      position: absolute;
+
     z-index: 20;
-    top: 2%;
+
     /* transform: translateY(-50%); */
 
 }
 
-.leftSlider {
-    
-    left: 5rem;
-}
-
-.rightSlider {
-      right: 5rem;
-    }
 
 /* end slider classes     */
 

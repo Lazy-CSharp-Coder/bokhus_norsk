@@ -28,6 +28,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const [reviewArray, setReviewArray] = useState<Review[] | null>(null);
     const [asyncStatus, setAsyncStatus] = useState<AsyncStatus>("not started");
+    
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({ firstIndexDisplaying: 0, animationToUse: "fadeInFromRightAnim" });
     const itemRefsForHeight = useRef<(HTMLDivElement | null)[]>([]);
@@ -126,7 +127,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     }, []);
 
-
+    const pairToDisplay : Review[] = reviewArray?.slice(0, 2);
 
     const handleLeftSliderClick = () =>
     {
@@ -220,8 +221,9 @@ export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideSh
             <div className="reviewDisplayer flex" style={{ height: height }}>
                 {array.map((item, index) =>
                 {
-
+                   
                     return (
+                         index < array.length &&
                         <ReviewCard key={item._id} _id={item._id} bookRef={item.bookRef} bookReviewed={item.bookReviewed} format={item.format} date={item.date} country={item.country}
                             stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
                             reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={animationToUse} />);
