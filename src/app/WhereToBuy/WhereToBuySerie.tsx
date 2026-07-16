@@ -39,16 +39,6 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
   };
 
-  // useEffect(() => 
-  // {
-  //   if (!listHeaderRef.current) return;
-
-  //   if (seriesListState == "Closed")
-  //   {
-  //     listHeaderRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  //   }
-
-  // }, [seriesListState]);
 
   const handleLinkClick = (url: string | undefined) =>
   {
@@ -65,7 +55,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   const animInc = 200;
   return (
     <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? animationDelay : "" }} >
-      <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef}>
+      <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef}  onClick={handleHeaderClick}>
         <div className="whereToBuyIconInfoWrapper">
           <ImBooks size="4.4rem" className="buyBooksIcon" />
           <div className="buyHeadingAuthorWrapper">
@@ -76,7 +66,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
         </div>
 
-        <span key={seriesListState} className="buyOpenCloseArrowSpan fadeInAnim" onClick={handleHeaderClick} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
+        <span key={seriesListState} className="buyOpenCloseArrowSpan fadeInAnim" style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
           <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
 
         </span>

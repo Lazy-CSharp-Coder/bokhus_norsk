@@ -168,7 +168,7 @@
 }
 
 .subTitle {
-    font-size: 1.15rem;
+    font-size: calc(var(--bookDescriptionFontSize) + 0.06rem);
 
     font-weight: bold;
     /* font-style: italic; */
@@ -190,7 +190,7 @@
     height: max-content;
     /* background-color: blueviolet; */
     /* font-weight: 100; */
-    font-size: 1.1rem;
+    font-size: var(--bookDescriptionFontSize);
     height: 95%;
     color: var(--myWhiteColor);
     padding-bottom: 1rem;
