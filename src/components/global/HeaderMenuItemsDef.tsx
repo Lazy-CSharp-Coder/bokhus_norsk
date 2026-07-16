@@ -8,7 +8,6 @@ import { IoMailOutline } from "react-icons/io5";
 import { VscInfo } from "react-icons/vsc";
 import type { ReactIcons } from "@/types/types";
 import { CgShoppingCart } from "react-icons/cg";
-import { PiNotePencilBold } from "react-icons/pi";
 
 export const menuItems: ReactIcons[] =
     [
@@ -34,13 +33,7 @@ export const menuItems: ReactIcons[] =
             pageLink: "/Series"
         },
 
-        {
-            name: "REGISTER",
-            icon: PiNotePencilBold,
-            size: "1.5rem",
-            pageLink: "/Register"
-        },
-        {
+               {
             name: "WHERE TO BUY",
             icon: CgShoppingCart,
             size: "1.5rem",

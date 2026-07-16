@@ -185,7 +185,7 @@ box-shadow: 10px 10px 23px 3px #000000; */
     left: 0px;
     width: 100%;
     font-size: 1.1rem;
-    background-color: rgb(20, 20, 20);
+    background-color: transparent;
 
 }
 
@@ -195,7 +195,7 @@ box-shadow: 10px 10px 23px 3px #000000; */
     padding-top: 1.2rem;
     width: 100%;
     border-top: 1px solid rgb(125, 88, 33);
-
+background-color: transparent;
     /* margin-  right: 0.5rem; */
 }
 
