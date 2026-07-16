@@ -54,3 +54,7 @@ export interface HeaderMenuItemProps {
     pageLink : string
 }
 
+export interface NewUserAlert {
+    email : string,
+    arcInterest : string
+}

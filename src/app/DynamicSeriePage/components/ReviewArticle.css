@@ -18,6 +18,15 @@
     font-size : 2rem;
 }
 
+
+.reviewHeadingArrowContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: fit-content;
+    align-items: center;
+}
+
 .headingToTopWrapper {
     flex-direction: row;
     justify-content: space-between;
@@ -67,13 +76,6 @@
 
 }
 
-.reviewHeadingArrowContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    width: fit-content;
-    align-items: center;
-}
 
 /*     slider classes     */
 
@@ -104,22 +106,16 @@
     width: 2.5rem;
     height: 2.5rem;
    }
- 
+ .reviewHeadingArrowContainer {
+    gap: 0.5rem;
+ }
 .leftSlider,
 .rightSlider {
-      position: absolute;
-    z-index: 20;
-    top: 2%;
+ width:3.5rem;
+ height: 3.5rem;
     /* transform: translateY(-50%); */
 
 }
 
-.leftSlider {
-    
-    left: 25%;
-}
 
-.rightSlider {
-      right: 25%;
-    }
 }

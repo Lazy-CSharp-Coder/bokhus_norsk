@@ -179,11 +179,11 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                 <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className="goToTopIcon" /></span>
                 <div className="reviewHeadingArrowContainer">
 
-                    <span style={{ opacity: firstIndexDisplaying === 0 ? "0.3" : "1" }} onClick={handleLeftSliderClick} className="leftSlider"><IoMdArrowDropleft size={"3rem"} /></span>
+                    <span style={{ opacity: firstIndexDisplaying === 0 ? "0.3" : "1" }} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className="leftSlider" size={"3rem"} /></span>
 
                     <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
 
-                    <span style={{ opacity: (reviewArray != null) && (firstIndexDisplaying < reviewArray.length - 2) ? "1" : "0.3" }} onClick={handleRightSliderClick} className="rightSlider"><IoMdArrowDropright size={"3rem"} /></span>
+                    <span style={{ opacity: (reviewArray != null) && (firstIndexDisplaying < reviewArray.length - 2) ? "1" : "0.3" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
 
 
                 </div>
@@ -213,7 +213,14 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideShowProps)
 {
 
+ const width = useWindowWidth();
 
+
+    // set limit to when to not display second card
+    const tabletLimit = 1024;
+
+    // true if in tablet mode, if window does not exist, not in tablet mode (why shouldn't it I don't know)
+    const tabletMode = width ? (width < tabletLimit ? true : false) : false;
 
 
 
@@ -236,7 +243,7 @@ export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideSh
                 {
 
                     return (
-                        index < array.length &&
+                        index < array.length && !(index == array.length-1 || !tabletMode) &&
                         <ReviewCard key={item._id} _id={item._id} bookRef={item.bookRef} bookReviewed={item.bookReviewed} format={item.format} date={item.date} country={item.country}
                             stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
                             reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={animationToUse} />);
