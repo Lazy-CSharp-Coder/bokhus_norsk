@@ -159,7 +159,7 @@ a {
 
 @media (max-width: 63.99em) {
   html {
-    font-size:120%;
+    font-size:105%;
   }
 
 }
@@ -169,7 +169,7 @@ a {
 @media (max-width: 47.99em){
 
   html {
-    font-size: 100%;
+    font-size: 96%;
   }    
 }
 
@@ -185,7 +185,7 @@ a {
 @media (max-width: 29.99em) {
 
     html {
-      font-size: 82%;
+      font-size: 70%;
     }
 }
 
