@@ -179,7 +179,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
                     <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
 
-                    <span style={{ opacity: firstIndexDisplaying === (reviewArray != null && reviewArray.length - 1) ? "0.3" : "1" }} onClick={handleRightSliderClick} className="rightSlider"><IoMdArrowDropright size={"3rem"} /></span>
+                    <span style={{ opacity: (reviewArray != null) && (firstIndexDisplaying < reviewArray.length - 2) ? "0.3" : "1" }} onClick={handleRightSliderClick} className="rightSlider"><IoMdArrowDropright size={"3rem"} /></span>
 
 
                 </div>
