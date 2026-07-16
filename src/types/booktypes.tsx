@@ -119,7 +119,7 @@ export interface BooksArticleProps
 
 }
 
-export interface BookProps extends Book {
+export interface SingleBookCardProps extends Book {
     authors: string[]
 }
 
