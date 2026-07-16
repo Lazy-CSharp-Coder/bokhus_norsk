@@ -145,7 +145,7 @@
     text-align: center;
    }
    .descriptionSeriesList {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     gap:1rem;
     /* width: 100%; */
     padding: 0 0;
@@ -156,12 +156,6 @@
 
 @media (max-width: 39.99em) {
 
-    .descriptionSeriesDiv .seriesFact {  font-size: 1.7rem;
-    }
-  .descriptionSeriesList {
-    font-size: 1.7rem;
-    
-  }
 }
 
 }
