@@ -146,7 +146,7 @@
     color: #ddb76e;
     border-top: 1px solid var(--myWhiteColor);
     border-bottom: 1px solid var(--myWhiteColor);
-
+    cursor: pointer;
 
 }
 

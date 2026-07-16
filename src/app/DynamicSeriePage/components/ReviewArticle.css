@@ -8,7 +8,7 @@
     /* margin-bottom: 10rem; */
     gap: 1rem;
     height: max-content;
-    cursor: pointer;
+
     position: relative;
 }
 
@@ -80,8 +80,8 @@
 /*     slider classes     */
 
 .leftSlider,
-.rightSlider {
-
+.rightSlider, .goToTopIcon {
+    cursor: pointer;
     z-index: 20;
 
     /* transform: translateY(-50%); */
