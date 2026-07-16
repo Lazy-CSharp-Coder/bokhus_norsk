@@ -42,10 +42,7 @@ export async function submitUserData(rawData: UserData)
                 ...rawData,
                 _createdAt: new Date().toISOString()
             });
-            interface NewUserAlert {
-                email : string,
-                arcInterest : string
-            }
+          
             const response = await sendNewUserAlert(newUserData);
             if(!response.success) console.error("There was an error sending new user alert : " + response.message);
         }
