@@ -119,6 +119,10 @@ export interface BooksArticleProps
 
 }
 
+export interface BookProps extends Book {
+    authors: string[]
+}
+
 export interface BookListProps
 {
     bookList: Book[],

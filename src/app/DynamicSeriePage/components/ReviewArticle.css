@@ -9,7 +9,7 @@
     gap: 1rem;
     height: max-content;
     cursor: pointer;
-
+    position: relative;
 }
 
 
@@ -21,6 +21,7 @@
 .headingToTopWrapper {
     flex-direction: row;
     justify-content: space-between;
+
     align-items: center;
     padding: 0 3rem;
     width: 100%;
@@ -43,7 +44,7 @@
 
 .reviewSlideContainer {
 
-    position: relative;
+
     flex-direction: row;
     align-items: stretch;
     height: 100%;
@@ -58,7 +59,7 @@
 
 .reviewDisplayer {
     flex-direction: row;
-    position: relative;
+  
     align-items: stretch;
     justify-content: space-around;
     height: max-content;
@@ -66,25 +67,25 @@
 
 }
 
+.reviewHeadingArrowContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: fit-content;
+    align-items: center;
+}
+
 /*     slider classes     */
 
 .leftSlider,
 .rightSlider {
-      position: absolute;
+
     z-index: 20;
-    top: 42%;
+
     /* transform: translateY(-50%); */
 
 }
 
-.leftSlider {
-    
-    left: 0.3rem;
-}
-
-.rightSlider {
-      right: 0.3rem;
-    }
 
 /* end slider classes     */
 
