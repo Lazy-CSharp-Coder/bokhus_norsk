@@ -61,11 +61,11 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
     const { email, subject, comment } = validateFields.data;
     try {
         const { error } = await resend.emails.send({
-            from : "Constact Form <onboarding@resend.dev>",
+            from : "Contact Form Mail <onboarding@resend.dev>",
             to: process.env.CONTACT_RECEIVER_EMAIL as string,
             replyTo: email, 
             subject : `Contact Form : ${subject}`,
-            html : `<p>${email} has send the following message from your english web page.</p>
+            html : `<p>${email} has send the following message from your english Bokhus.com web page.</p>
             <p>Subject is : ${subject}. </p> <br>
             <p>${comment}</p>`
         });
@@ -82,3 +82,4 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
     }
 
 }
+
