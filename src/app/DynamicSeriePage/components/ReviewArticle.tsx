@@ -1,5 +1,5 @@
 "use client";
-
+import type { AnimationToUse } from "../../../types/reviewtypes";
 import { AsyncStatus, type Review, type ReviewCardDisplayOptions } from "../../../types/reviewtypes";
 import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import { ReviewCard } from "./ReviewCard";
@@ -20,7 +20,7 @@ interface ReviewSlideShowProps
 {
     array: Review[],
     height: string,
-    animationToUse? : string;
+    animationToUse : AnimationToUse
 }
 
 export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
