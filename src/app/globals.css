@@ -42,6 +42,8 @@
   --regFontSize : 1.1rem;
   --contactDescriptionFontSize: 1.1rem;
 
+/* review sizes */
+  --reviewDescriptionFontSize : 0.85rem;
 }
 
 * {

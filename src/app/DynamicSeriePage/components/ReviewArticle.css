@@ -95,7 +95,7 @@
    .reviewTitle {
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1.5rem;
    
    }
 
@@ -104,4 +104,21 @@
     height: 2.5rem;
    }
  
+.leftSlider,
+.rightSlider {
+      position: absolute;
+    z-index: 20;
+    top: 2%;
+    /* transform: translateY(-50%); */
+
+}
+
+.leftSlider {
+    
+    left: 25%;
+}
+
+.rightSlider {
+      right: 25%;
+    }
 }
