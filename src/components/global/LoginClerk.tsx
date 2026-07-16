@@ -2,7 +2,7 @@
 import { Suspense } from "react";
 import { Show, SignInButton, useClerk, UserButton } from "@clerk/nextjs";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
+import Link from "next/link";
 import { FaUserLarge } from "react-icons/fa6";
 import { PiSignOutBold } from "react-icons/pi";
 
@@ -26,7 +26,7 @@ function LoginClerkContent()
 
             <Show when="signed-out">
                 <SignInButton fallbackRedirectUrl={path}>
-                    <button className="signInButton">SIGN IN</button>
+                    <button className="signInButton">SIGN IN <span className="signInRegisterSpan"> / </span> REGISTER</button>
                 </SignInButton>
                 {/* <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
                     <button className="signUpButton">
@@ -56,7 +56,10 @@ function LoginClerkContent()
                             <UserButton.Action label="Sign Out" onClick={() => signOut({ redirectUrl: path || "/" })} labelIcon={<PiSignOutBold size="17" />} />
                         </UserButton.MenuItems>
                     </UserButton>
+
+                    <Link className="signInButton" href="/Register">REGISTER</Link>
                 </div>
+
             </Show>
         </div>);
 
