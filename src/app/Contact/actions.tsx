@@ -2,6 +2,7 @@
 
 import { Resend } from "resend";
 import { ContactInfo,ServerResponse, contactSchema } from "./contactSchema";
+import type { NewUserAlert } from "@/types/types";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -83,3 +84,29 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
 
 }
 
+
+export async function sendNewUserAlert(data : NewUserAlert) : Promise<ServerResponse>
+{
+    const { email, arcInterest} = data;
+      try {
+        const { error } = await resend.emails.send({
+            from : "New User Altert Mail <onboarding@resend.dev>",
+            to: process.env.CONTACT_RECEIVER_EMAIL as string,
+            replyTo: email, 
+            subject : `New user has registered at BokHus.com`,
+            html : `<p>${email} has registered as user at your web-page.</p>
+            <p>${arcInterest}</p> <br>
+            <p>Please refer to Sanity Studio database for more information</p>`
+        });
+        if(error)
+        {
+            return { success : false, message: error.message}
+        }
+        return { success : true, message : "Your message has been sendt to Bokhus.com"};
+    
+    }
+    catch (err)
+    {
+        return { success : false, message : "An unexpected server error occured"}
+    }
+}
