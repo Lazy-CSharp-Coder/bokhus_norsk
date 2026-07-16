@@ -127,11 +127,11 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     }, []);
 
-    const pairToDisplay: Review[] = reviewArray?.slice(0, 2);
+    const pairToDisplay: Review[] = reviewArray ? reviewArray?.slice(0, 2) : [] ;
 
     const handleLeftSliderClick = () =>
     {
-
+        if(firstIndexDisplaying > 1)
         setDisplayOptions((prev) =>
         {
 
@@ -151,10 +151,14 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     const handleRightSliderClick = () =>
     {
+        
         if (reviewArray == null) return;
+        if(firstIndexDisplaying >= reviewArray.length - 2) return;
+        
         setDisplayOptions((prev) =>
         {
 
+            
             if (window.innerWidth >= tabletLimit)
                 return {
                     firstIndexDisplaying: (prev.firstIndexDisplaying == reviewArray.length - 1 || prev.firstIndexDisplaying == reviewArray.length - 2) ? reviewArray.length - 1 :
@@ -179,7 +183,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
                     <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
 
-                    <span style={{ opacity: (reviewArray != null) && (firstIndexDisplaying < reviewArray.length - 2) ? "0.3" : "1" }} onClick={handleRightSliderClick} className="rightSlider"><IoMdArrowDropright size={"3rem"} /></span>
+                    <span style={{ opacity: (reviewArray != null) && (firstIndexDisplaying < reviewArray.length - 2) ? "1" : "0.3" }} onClick={handleRightSliderClick} className="rightSlider"><IoMdArrowDropright size={"3rem"} /></span>
 
 
                 </div>
