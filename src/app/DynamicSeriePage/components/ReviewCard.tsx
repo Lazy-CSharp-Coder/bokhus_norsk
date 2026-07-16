@@ -1,5 +1,4 @@
 import type { ReviewProps } from "../../../types/reviewtypes";
-import Image from "next/image";
 import Link from "next/link";
 import "./ReviewCard.module.css";
 import { IoStarSharp } from "react-icons/io5";
@@ -52,6 +51,3 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
 }
 
 
-// star attrib :<a href="https://www.flaticon.com/free-icons/star" title="star icons">Star icons created by Maxim Basinski Premium - Flaticon</a>
-
-// user attrib : <a href="https://www.flaticon.com/free-icons/account" title="account icons">Account icons created by Shashank Singh - Flaticon</a>

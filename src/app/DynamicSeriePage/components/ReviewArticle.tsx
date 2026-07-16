@@ -241,11 +241,6 @@ export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideSh
                             stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
                             reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={animationToUse} />);
 
-                    {/*}:
-                        (index == (firstIndexDisplaying + 1) && !tabletMode) &&
-                        <ReviewCard key={item._id} _id={item._id} bookRef={item.bookRef} bookReviewed={item.bookReviewed} format={item.format} date={item.date} country={item.country}
-                            stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
-                            reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={animationToUse} />;*/}
                 }
                 )}
 
