@@ -60,7 +60,7 @@
 
 .workWithUsHeading {
     color: white;
-    font-size: 2.5rem;
+    font-size: var(--pageHeadingFontSize);
     padding: 1rem 0;
 
 }
@@ -75,7 +75,7 @@
 
 .workWithUsIntroText {
     line-height: 1.4;
-    font-size: 1.4rem;
+    font-size: var(--pageDescriptionFontSize);
 
     color: var(--myWhiteColor);
     ;
