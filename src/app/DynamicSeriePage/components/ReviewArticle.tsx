@@ -80,6 +80,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
         };
         getThemReviews();
+        console.log("Get them reviews called");
         // setAsyncStatus("done");
     }, [bookId]);
 
@@ -103,7 +104,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         window.addEventListener("resize", handleResize);
 
         return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    }, [reviewDisplayHeight, reviewArray?.length]);
 
     useEffect(() =>
     {
@@ -187,7 +188,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                         reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse="none" />
                 </div>
             )}
-            {reviewArray != null && reviewArray.length > 0 ?
+            {reviewArray != null && reviewDisplayHeight != 0 ?
                 <ReviewSlideShow array={reviewArray} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} /> : <h3 className="reviewsNotFoundText">No reviews found</h3>
             }
         </article>);
