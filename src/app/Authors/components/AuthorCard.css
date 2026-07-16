@@ -51,7 +51,7 @@
 
 .authorFactsDiv {
     flex-direction: column;
-    font-size: 1.25rem;
+    font-size: calc(var(--authorDescriptionFontSize) + 0.15rem);
     gap: 0.3rem;
     margin-left: 0.12rem;
     color: var(--myWhiteColor);
@@ -79,7 +79,7 @@
 
 .authorName {
     font-family: var(--robotoFont);
-    font-size: 2.3rem;
+    font-size: var(--authorHeadingFontSize);
     font-weight: 500;
     width: fit-content;
     padding-bottom: 0.5rem;
@@ -91,7 +91,7 @@
 
 .authorDescriptionList {
     font-family: var(--robotoFont);
-    font-size: 1.1rem;
+    font-size: var(--authorDescriptionFontSize);
     color: var(--myWhiteColor);
     flex-direction: column;
     align-items: left;

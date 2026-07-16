@@ -25,6 +25,18 @@
   --defaultBorderRadius: 5px;
   --defaultBorder: 2px solid var(--borderIconColor);
   --errorTextColor: rgb(175, 92, 76);
+
+  --pageHeadingFontSize : 2.5rem;
+  --pageDescriptionFontSize : 1.5rem;
+
+  /* authorPage variables */
+  --authorHeadingFontSize: 2.5rem;
+  --authorDescriptionFontSize : 1.2rem;
+
+ /* seriesPageVariables */
+
+  --seriesDescriptionFontSize : 1.1rem;
+  --bookDescriptionFontSize : 1.1rem;
 }
 
 * {
