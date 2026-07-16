@@ -65,8 +65,11 @@
 
 
 }
-.buyOpenCloseArrowSpan {
-  cursor: pointer;
+.buyTextArrowDiv {
+  display: flex;
+  align-items: center;
+  gap:1.1rem;
+  font-size: 0.8rem;
 }
 
 /* classes for list item and children */

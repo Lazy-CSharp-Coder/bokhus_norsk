@@ -8,9 +8,10 @@ import { ByAuthor } from "@/components/common/ByAuthor";
 import { ImBooks } from "react-icons/im";
 import { numberToWords } from "convert-number-to-words";
 import { BookAvailableIn } from "@/components/common/BookAvailableIn";
-import { FaArrowDownWideShort } from "react-icons/fa6";
+
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
-import { PiGlobeSimpleXLight } from "react-icons/pi";
+import { PiGlobeSimpleXLight, PiArrowFatLineDownFill, PiArrowFatLineDownBold, PiArrowFatLineDownLight } from "react-icons/pi";
+import { PiArrowFatLinesDownBold } from "react-icons/pi";
 import { GoLinkExternal } from "react-icons/go";
 import "./WhereToBuySerie.module.css";
 
@@ -55,7 +56,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   const animInc = 200;
   return (
     <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? animationDelay : "" }} >
-      <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef}  onClick={handleHeaderClick}>
+      <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef} onClick={handleHeaderClick}>
         <div className="whereToBuyIconInfoWrapper">
           <ImBooks size="4.4rem" className="buyBooksIcon" />
           <div className="buyHeadingAuthorWrapper">
@@ -66,10 +67,11 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
         </div>
 
-        <span key={seriesListState} className="buyOpenCloseArrowSpan fadeInAnim" style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
-          <FaArrowDownWideShort size="2rem" className="buyOpenCloseArrow" />
+ 
+      <div key={seriesListState} className="buyTextArrowDiv fadeInAnim" style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
+             {seriesListState == "Closed" && "CLICK TO EXPAND"}
+        <PiArrowFatLineDownLight size="2rem" className="buyOpenCloseArrow" /></div>
 
-        </span>
 
       </div>
 
