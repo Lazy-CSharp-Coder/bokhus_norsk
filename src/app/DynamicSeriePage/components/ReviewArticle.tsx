@@ -19,7 +19,7 @@ interface ReviewArticleProps
 interface ReviewSlideShowProps
 {
     array: Review[],
-    height:
+    height: string,
     animationToUse? : string;
 }
 
@@ -31,6 +31,8 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({ firstIndexDisplaying: 0, animationToUse: "fadeInFromRightAnim" });
     const itemRefsForHeight = useRef<(HTMLDivElement | null)[]>([]);
+    
+    const [reviewDisplayHeight, setReveiwDisplayHeight] = useState<number>(0);
     const { firstIndexDisplaying, animationToUse } = displayOptions;  // desctructuring displayOptions
     const width = useWindowWidth();
 
@@ -88,6 +90,20 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     // }, [bookId]);
 
+  useLayoutEffect(() => 
+    {
+        const handleResize = () =>
+        {
+            setReveiwDisplayHeight(heightOfReviewDisplay());
+        };
+
+        // hvis det ikke er en høyde fra før, kjør handleResize();
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() =>
     {
@@ -133,6 +149,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     const handleRightSliderClick = () =>
     {
+        if(reviewArray == null) return;
         setDisplayOptions((prev) =>
         {
 
@@ -155,7 +172,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                 <span style={{ opacity: firstIndexDisplaying === 0 ? "0.3" : "1" }} onClick={handleLeftSliderClick} className="leftSlider"><IoMdArrowDropleft size={"3rem"} /></span>
                 <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
                 <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className="goToTopIcon" /></span>
-                <span style={{ opacity: firstIndexDisplaying === reviewArray.length - 1 ? "0.3" : "1" }} onClick={handleRightSliderClick} className="rightSlider"><IoMdArrowDropright size={"3rem"} /></span>
+                <span style={{ opacity: firstIndexDisplaying === (reviewArray != null && reviewArray.length - 1) ? "0.3" : "1" }} onClick={handleRightSliderClick} className="rightSlider"><IoMdArrowDropright size={"3rem"} /></span>
 
 
 
@@ -171,19 +188,18 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                 </div>
             )}
             {reviewArray != null && reviewArray.length > 0 ?
-                <ReviewSlideShow reviewArray={reviewArray} /> : <h3 className="reviewsNotFoundText">No reviews found</h3>
+                <ReviewSlideShow array={reviewArray} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} /> : <h3 className="reviewsNotFoundText">No reviews found</h3>
             }
         </article>);
 }
 
 
 
-export function ReviewSlideShow({ array, animationToUse }: ReviewSlideShowProps)
+export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideShowProps)
 {
 
 
 
-    const [reviewDisplayHeight, setReveiwDisplayHeight] = useState<number>(0);
 
 
     // function to find height dependent on refs collected from the not visible div
@@ -192,21 +208,7 @@ export function ReviewSlideShow({ array, animationToUse }: ReviewSlideShowProps)
 
     // useEffect for controlling window width - needed to recalculate height
 
-    useLayoutEffect(() => 
-    {
-        const handleResize = () =>
-        {
-            setReveiwDisplayHeight(heightOfReviewDisplay());
-        };
-
-        // hvis det ikke er en høyde fra før, kjør handleResize();
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
+  
 
     // reviewArray.forEach((item) => { console.log("review item id ;" + item._id); });
     return (
@@ -214,14 +216,14 @@ export function ReviewSlideShow({ array, animationToUse }: ReviewSlideShowProps)
         <div className="reviewSlideContainer flex">
         
 
-            <div className="reviewDisplayer flex" style={{ height: `${reviewDisplayHeight}px` }}>
-                {reviewArray.map((item, index) =>
+            <div className="reviewDisplayer flex" style={{ height: height }}>
+                {array.map((item, index) =>
                 {
 
                     return (
                         <ReviewCard key={item._id} _id={item._id} bookRef={item.bookRef} bookReviewed={item.bookReviewed} format={item.format} date={item.date} country={item.country}
                             stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
-                            reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={""} />);
+                            reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={animationToUse} />);
 
                     {/*}:
                         (index == (firstIndexDisplaying + 1) && !tabletMode) &&
