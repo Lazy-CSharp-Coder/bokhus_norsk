@@ -93,8 +93,8 @@ export async function sendNewUserAlert(data : NewUserAlert) : Promise<ServerResp
             from : "New User Altert Mail <onboarding@resend.dev>",
             to: process.env.CONTACT_RECEIVER_EMAIL as string,
             replyTo: email, 
-            subject : `New user has registered at BokHus.com`,
-            html : `<p>${email} has registered as user at your web-page.</p>
+            subject : `User has registered profile information at BokHus.com`,
+            html : `<p>${email} has registered/updated profile information at your web-page.</p>
             <p>${arcInterest}</p> <br>
             <p>Please refer to Sanity Studio database for more information</p>`
         });
