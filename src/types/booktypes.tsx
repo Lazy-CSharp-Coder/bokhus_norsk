@@ -18,7 +18,7 @@ export interface Book
     bookInSeries: number,
     imageBook?: SanityImageSource,
     releaseYear: number,
-    authorUids: string[],
+    authorUids: SanityReference[],
     subTitle: string,
     description: string[],
     buyLink?: string;
