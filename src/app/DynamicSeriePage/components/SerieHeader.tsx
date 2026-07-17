@@ -2,12 +2,14 @@
 import { ByAuthor } from "../../../components/common/ByAuthor";
 import { BestSellerList } from "./BestSellerList";
 import { SeriesInfoProps } from "@/types/booktypes";
-import { useDescriptionShowingState} from "@/globalStates";
+import { useDescriptionShowingState } from "@/globalStates";
 import { HiOutlineArrowSmallLeft } from "react-icons/hi2";
 import "./SerieHeader.module.css";
 
 export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerList }: SeriesInfoProps)
 {
+
+
     const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
     return (
         <article key={"01" + "Description"} className="serieHeader flex fadeInAnim">
@@ -18,8 +20,12 @@ export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerLi
                 </div>
                 <div className="authorNameBestsellerWrapper flex">
                     <ByAuthor key={authors + "#SeriesInfo"} authors={authors} />
-                    
-                    <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
+                    <span style={{ opacity: bestSellerIntro != "not found" ? "1" : "0" }}>
+
+                        <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
+
+                    </span>
+
                 </div>
             </div>
 

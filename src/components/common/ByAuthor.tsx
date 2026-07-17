@@ -8,7 +8,7 @@ export function ByAuthor({ authors }: { authors: string[]; })
                 <span key={item + index} className="authorNameText"> {item}
                     <span className="authorsSeparator">
                         {index < array.length - 1 ? ", " : "and "}</span>
-                    {index == array.length - 1 && "."}</span>) : <span className="authorNameText"> {authors[0]}</span>
+                    {index == array.length - 1}</span>) : <span className="authorNameText"> {authors[0]}</span>
         }
     </p>);
 }
