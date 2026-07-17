@@ -33,7 +33,6 @@
     /* width: 100%; */
     /* min-height: 100%; */
     flex: 1;
-    max-width: fit-content;
     aspect-ratio: 3/2;
     border: 1px solid rgba(221, 221, 221, 0.7);
     border-radius: 2px;
