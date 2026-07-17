@@ -1,11 +1,10 @@
 import { SingleBookCardProps } from "@/types/booktypes";
 import { urlFor } from "@/functions/urlFor";
-import { BookInSerieText } from "@/app/DynamicSeriePage/components/BookInSerieText";
 import Image from "next/image";
 import { BookAvailableIn } from "@/components/common/BookAvailableIn";
 import { ByAuthor } from "@/components/common/ByAuthor";
 
-export function SingleBookCard({ _id, imageBook, bookTitle, authors, availability, releaseYear, subTitle, description }: SingleBookCardProps)
+export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availability, releaseYear, subTitle, description }: SingleBookCardProps)
 {
     const imageSrc = urlFor(imageBook, 800);
     return (
@@ -18,7 +17,7 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authors, availabilit
 
                     <div className="singleBookCardHeadingWrapper">
                         <h3 className="singelBookCardBookTitle">{bookTitle}</h3>
-                        <ByAuthor authors={authors} />
+                        <ByAuthor authors={authorNames} />
                         <span className="singleBookCardAvailabilitySpan">
 
                             <BookAvailableIn availability={availability} />

@@ -1,0 +1,11 @@
+
+.errorPage {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: var(--robotoFont);
+  justify-content: center;
+  height: 100%;
+  flex-grow: 1;
+  padding-top:5rem;
+}

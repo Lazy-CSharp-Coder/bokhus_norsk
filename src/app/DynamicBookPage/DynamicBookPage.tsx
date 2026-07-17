@@ -1,12 +1,15 @@
 import { client } from "@/sanity/client";
 import type { PageProps } from "@/types/types";
-import type { Book } from "@/types/booktypes";
+import type { Author, Book } from "@/types/booktypes";
+import { ErrorPage } from "@/components/common/ErrorPage";
+import { SingleBookCard } from "./components/SingleBookCard";
 
 export default async function DynamicBookPage({ searchParams }: PageProps)
 {
 
     const params = await searchParams;
-    const bookUid = params.message as string;
+    // const bookUid = params.message as string;
+    const bookUid = "779ccbb4-8d96-4c30-aee9-65a54403e014";
     const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
        const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
 
@@ -14,13 +17,21 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
 
     if (!bookToShow)
     {
-        console.log("Error fetching : No books for series found.");
-        return <div className="notFoundDatabase"      >BOOKS FOR SERIE NOT FOUND IN DATABASE</div>;
-
+        return(
+      <ErrorPage message="BOOKS FOR SERIE NOT FOUND IN DATABASE" />)
     }
 
+    const authors : Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds : bookToShow.authorUids });
+
+    if(!authors)
+    {
+        return(
+        <ErrorPage message="AUTHORS FOR BOOK NOT FOUND IN DATABASE"/>)
+    }
+    const authorNames : string[] = authors.map((item) => item.name);
     return(
-        
+        <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
+        description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids}/>
     )
 
 }
