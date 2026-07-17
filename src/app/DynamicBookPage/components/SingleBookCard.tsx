@@ -11,7 +11,7 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availab
     console.log(authorNames);
     const imageSrc = urlFor(imageBook, 800);
     return (
-        <div className={`singleBookCard ${"fadeInAnim"}`} style={{ animationDuration: "1.2s" }}>
+        <div className={`singleBookCard ${"fadeInFromBelowAnim"}`} style={{ animationDuration: "1.2s", animationDelay: "0.8s" }}>
             <div className="singleBookCardImage">
                 <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
             </div>
