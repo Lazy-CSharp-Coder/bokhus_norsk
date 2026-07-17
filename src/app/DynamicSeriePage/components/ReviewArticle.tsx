@@ -92,7 +92,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
             // setAsyncStatus("done");
 
-         if(reviewArray) setDisplayOptions({ reviewArray : reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, 2) : [], lastIndexDisplaying: 1, animationToUse: "fadeInFromRightAnim" }) 
+         if(reviewArray) setDisplayOptions({ reviewArray : reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode ?1: 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim" }) 
         };
         getThemReviews();
         console.log("Get them reviews called");
@@ -145,7 +145,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     const { reviewArray, arrayToView, animationToUse} = displayOptions;
 
-    const handleLeftSliderClick = () =>
+    const handleRightSliderClick = () =>
     {
         if (reviewArray == null || displayOptions.lastIndexDisplaying == reviewArray.length - 1) return;
         setDisplayOptions((prev) =>
@@ -163,7 +163,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                 });
             return (
                 {...prev,
-                    arrayToView: reviewArray.slice(prev.lastIndexDisplaying + 1, 1),
+                    arrayToView: reviewArray.slice(prev.lastIndexDisplaying, 1),
                     lastIndexDisplaying: prev.lastIndexDisplaying+1,
                     animationToUse: "fadeInFromLeftAnim"
                 });
@@ -173,7 +173,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     };
 
-    const handleRightSliderClick = () =>
+    const handleLeftSliderClick = () =>
     {
         return;
 
