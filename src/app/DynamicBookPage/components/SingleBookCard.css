@@ -85,6 +85,82 @@
     padding-left: 0.1rem;
 }
 
+.singleBbookCardReleaseText {
+    color: rgba(221, 221, 221, 1);
+    font-size: 1.1rem;
+    font-family: var(--libreFont);
+
+    /* font-family: var(--descriptionFont); */
+}
+
+.sbkReleaseYear {
+    color: lightblue;
+}
+
+
+.singleBookCardSynopsisText {
+    font-style: italic;
+    font-family: var(--robotoFont);
+
+    color: var(--myWhiteColor);
+    font-size: 1.2rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--myWhiteColor);
+}
+
+
+
+
+.singleBookCardSubDescriptionWrapper {
+
+
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+
+}
+
+
+
+.singleBookCardSubTitle {
+    font-size: calc(var(--bookDescriptionFontSize) + 0.06rem);
+
+    font-weight: bold;
+    /* font-style: italic; */
+    color: var(--coverTitleColor);
+    font-family: var(--robotoFont);
+    opacity: 0.9;
+
+}
+
+/* .avalableTypes {
+    color: white;
+} */
+
+.singleBookCardDescriptionList {
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+    max-width: 100%;
+    height: max-content;
+    /* background-color: blueviolet; */
+    /* font-weight: 100; */
+    font-size: var(--bookDescriptionFontSize);
+    height: 95%;
+    color: var(--myWhiteColor);
+    padding-bottom: 1rem;
+    font-family: var(--robotoFont);
+
+    /* uten space-evenly */
+
+    line-height: 1.3;
+    /*    gap: 12px;
+    */
+    /* margin-top: 20px; */
+
+}
+
+
 .factsDiv {
     flex-direction: column;
     align-items: flex-start;
@@ -112,74 +188,7 @@
     font-style: italic;
 }
 
-.releaseInfo {
-    color: rgba(221, 221, 221, 1);
-    font-size: 1.1rem;
-    font-family: var(--libreFont);
 
-    /* font-family: var(--descriptionFont); */
-}
-
-.synopsisText {
-    font-style: italic;
-    font-family: var(--robotoFont);
-
-    color: var(--myWhiteColor);
-    font-size: 1.2rem;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid var(--myWhiteColor);
-}
-
-.releaseYear {
-    color: lightblue;
-}
-
-.descriptionSubWrapper {
-
-
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
-
-}
-
-.subTitle {
-    font-size: calc(var(--bookDescriptionFontSize) + 0.06rem);
-
-    font-weight: bold;
-    /* font-style: italic; */
-    color: var(--coverTitleColor);
-    font-family: var(--robotoFont);
-    opacity: 0.9;
-
-}
-
-/* .avalableTypes {
-    color: white;
-} */
-
-.descriptionList {
-    flex-direction: column;
-    align-items: left;
-    justify-content: space-evenly;
-    max-width: 100%;
-    height: max-content;
-    /* background-color: blueviolet; */
-    /* font-weight: 100; */
-    font-size: var(--bookDescriptionFontSize);
-    height: 95%;
-    color: var(--myWhiteColor);
-    padding-bottom: 1rem;
-    font-family: var(--robotoFont);
-
-    /* uten space-evenly */
-
-    line-height: 1.3;
-    /*    gap: 12px;
-    */
-    /* margin-top: 20px; */
-
-}
 
 /* Media queries for BookCard */
 

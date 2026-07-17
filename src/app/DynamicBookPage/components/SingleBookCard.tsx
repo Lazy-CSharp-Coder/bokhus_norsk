@@ -26,13 +26,13 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availab
                     </div>
 
 
-                    <p className="singleBookCardReleaseText">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="singleBookCardReleaseText">ORIGINALLY RELEASED IN <span className="sbkReleaseYear">{releaseYear}</span></p>
                     <p className="singleBookCardSynopsisText">Book description / synopsis :</p>
                 </div>
                 <div className="singleBookCardSubDescriptionWrapper flex">
 
                     {subTitle &&
-                        <h4 className={`subTitle`}>{`${subTitle}`}</h4>
+                        <h4 className="singleBookCardSubTitle">{`${subTitle}`}</h4>
                     }
 
 
