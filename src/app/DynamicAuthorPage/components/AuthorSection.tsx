@@ -41,7 +41,7 @@ export default async function AuthorSection({ author }: { author: Author; })
                 <ul className="seriesCardList flex">
                     {seriesToDisplay.length > 0 &&
                         seriesToDisplay.map((item, index) =>
-                            <SeriesCardLarge {...item} animationDelay={index * animDelayInc} />)
+                            <SeriesCardLarge key={`#SCAUTHOR + ${index}`} {...item} animationDelay={index * animDelayInc} />)
                            
 
                     } </ul>
