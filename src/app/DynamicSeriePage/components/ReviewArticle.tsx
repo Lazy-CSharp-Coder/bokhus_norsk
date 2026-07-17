@@ -183,7 +183,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
                     <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
 
-                    <span style={{ opacity: (reviewArray != null) && (firstIndexDisplaying < reviewArray.length - 2) ? "1" : "0.3" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
+                    <span style={{ opacity: (reviewArray) && (firstIndexDisplaying < reviewArray.length - 2) ? "1" : "0.3" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
 
 
                 </div>
@@ -239,11 +239,12 @@ export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideSh
 
 
             <div className="reviewDisplayer flex" style={{ height: height }}>
-                {array.map((item, index) =>
-                {
+            {array.filter((item,index)=>{ return tabletMode ? index !== 1 : true }).map((item, index) =>
+                
+               {
 
                     return (
-                        index < array.length && !(index == array.length-1 || !tabletMode) &&
+                   
                         <ReviewCard key={item._id} _id={item._id} bookRef={item.bookRef} bookReviewed={item.bookReviewed} format={item.format} date={item.date} country={item.country}
                             stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
                             reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={animationToUse} />);
