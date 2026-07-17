@@ -21,7 +21,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
             <ErrorPage message="BOOKS FOR SERIE NOT FOUND IN DATABASE" />);
     }
    const authorsIds: string[] = bookToShow.authorUids ? bookToShow.authorUids.map((item) => item._ref) : [];
-    const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: bookToShow.authorUids });
+    const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
 
     if (!authors)
     {
