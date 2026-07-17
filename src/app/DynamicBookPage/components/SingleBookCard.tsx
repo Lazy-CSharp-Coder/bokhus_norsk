@@ -3,20 +3,23 @@ import { urlFor } from "@/functions/urlFor";
 import Image from "next/image";
 import { BookAvailableIn } from "@/components/common/BookAvailableIn";
 import { ByAuthor } from "@/components/common/ByAuthor";
+import "./SingleBookCard.module.css";
+
 
 export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availability, releaseYear, subTitle, description }: SingleBookCardProps)
 {
+    console.log(authorNames);
     const imageSrc = urlFor(imageBook, 800);
     return (
         <div className={`singleBookCard ${"fadeInAnim"}`} style={{ animationDuration: "1.2s" }}>
             <div className="singleBookCardImage">
                 <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
             </div>
-            <div className="singelBookCardInfoDiv">
-                <div className="singeBookCardFactDiv flex">
+            <div className="singleBookCardInfoDiv">
+                <div className="singleBookCardFactDiv flex">
 
                     <div className="singleBookCardHeadingWrapper">
-                        <h3 className="singelBookCardBookTitle">{bookTitle}</h3>
+                        <h3 className="singleBookCardBookTitle">{bookTitle}</h3>
                         <ByAuthor authors={authorNames} />
                         <span className="singleBookCardAvailabilitySpan">
 

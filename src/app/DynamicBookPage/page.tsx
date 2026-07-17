@@ -20,7 +20,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
         return (
             <ErrorPage message="BOOKS FOR SERIE NOT FOUND IN DATABASE" />);
     }
-
+   const authorsIds: string[] = bookToShow.authorUids ? bookToShow.authorUids.map((item) => item._ref) : [];
     const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: bookToShow.authorUids });
 
     if (!authors)
@@ -31,8 +31,13 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     const authorNames: string[] = authors.map((item) => item.name);
     return (
         <main className="singleBookPage">
-            <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
-                description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
+            <section className="singleBookCardSection">
+                <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
+                    description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
+
+
+
+            </section>
 
 
         </main>
