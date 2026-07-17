@@ -104,7 +104,8 @@
 @media (max-width: 89.99em) {
 
 .seriesPageSection {
-    max-width: 85%;
+    max-width: 70%;
+    width: 70%;
    }
 }
 
