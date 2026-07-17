@@ -6,6 +6,11 @@
     --marginBookList : 13.65rem;
 }
 
+.singleBookPage {
+    display: flex;
+    width: 100%;
+    flex:1 ;
+}
 
 .singleBbookCard {
 

@@ -11,27 +11,32 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     // const bookUid = params.message as string;
     const bookUid = "779ccbb4-8d96-4c30-aee9-65a54403e014";
     const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
-       const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
+    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
 
     const bookToShow: Book = await client.fetch<Book>(BOOK_QUERY, { bookUidFromParams: bookUid });
 
     if (!bookToShow)
     {
-        return(
-      <ErrorPage message="BOOKS FOR SERIE NOT FOUND IN DATABASE" />)
+        return (
+            <ErrorPage message="BOOKS FOR SERIE NOT FOUND IN DATABASE" />);
     }
 
-    const authors : Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds : bookToShow.authorUids });
+    const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: bookToShow.authorUids });
 
-    if(!authors)
+    if (!authors)
     {
-        return(
-        <ErrorPage message="AUTHORS FOR BOOK NOT FOUND IN DATABASE"/>)
+        return (
+            <ErrorPage message="AUTHORS FOR BOOK NOT FOUND IN DATABASE" />);
     }
-    const authorNames : string[] = authors.map((item) => item.name);
-    return(
-        <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
-        description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids}/>
-    )
+    const authorNames: string[] = authors.map((item) => item.name);
+    return (
+        <main className="singleBookPage">
+            <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
+                description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
+
+
+        </main>
+
+    );
 
 }
