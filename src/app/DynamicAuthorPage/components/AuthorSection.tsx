@@ -30,10 +30,6 @@ export default async function AuthorSection({ author }: { author: Author; })
     };
 
     const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesAuthor);
-    const animInc: number = 200;
-    const animWaitForMain: number = 300;
-
-    const array: string[] = [author.name];
     const animDelayInc: number = 200;
     return (
         <>
