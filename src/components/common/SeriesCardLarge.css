@@ -184,7 +184,9 @@
     }
 
     .seriesCardLargeImageDiv {
-        width: 90%;
+
+ 
+        flex: 0 0 auto;
         
     }
 
