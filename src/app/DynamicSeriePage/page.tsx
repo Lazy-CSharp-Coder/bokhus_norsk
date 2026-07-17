@@ -48,7 +48,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    {
       console.log("Error fetching : No author for series found.");
       return <h2>Author not found in database</h2>;
-      return;
+    
    }
    // console.log(authors);
    const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID : serie._id });
@@ -56,7 +56,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    {
 
       console.log("Error fetching : No books for series found.");
-      return <h2>Books for series not found in database</h2>;
+      return <div className="notFoundDatabase"      >BOOKS FOR SERIE NOT FOUND IN DATABASE</div>;
 
    }
 
