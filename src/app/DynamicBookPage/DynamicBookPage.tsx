@@ -1,5 +1,5 @@
 import type { PageProps  } from "@/types/types";
-import type { BookProps } from "@/types/booktypes";
+
 export default async function DynamicAuthorPage({ searchParams }: PageProps)
 {
 
