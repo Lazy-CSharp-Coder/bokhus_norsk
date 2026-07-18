@@ -512,7 +512,7 @@ fieldset {
     gap: 0.8rem;
     align-items: center;
     color: var(--myWhiteColor);
-    text-wrap: nowrap;
+    text-wrap:wrap;
     /* margin-right: 3rem; */
 }
 
@@ -527,6 +527,7 @@ fieldset {
 
 .errorRules {
     color: var(--errorTextColor);
+    
 }
 
 
@@ -567,7 +568,12 @@ fieldset {
 @media (max-width: 63.99em) {
     .registerSection {
         width: 90%;
+     --regFontSize: 0.8rem; 
+    
+    }
 
+    .generalInfoArticle {
+        padding: 1rem 2rem;
     }
 
 }
@@ -576,6 +582,7 @@ fieldset {
 
     .registerSection {
         width: 95%;
+
     }
 
 }
