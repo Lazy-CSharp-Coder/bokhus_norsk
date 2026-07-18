@@ -36,10 +36,11 @@
 
 .aboutSection {
     flex-direction: column;
-    max-width: 90rem;
+    max-width: 70rem;
     align-items: left;
     margin: 3rem 0;
-    padding: 0 12rem;
+    margin-left: 5%;
+    /* padding: 0 12rem; */
     gap: 1rem;
  
 }
@@ -104,11 +105,15 @@
 
 @media (max-width: 63.99em) {
  
+    .aboutPage {
+        align-items: center;
+    }
   .aboutSection {
     /* max-width: 65rem; */
-     max-width: 95%;
+     max-width: 85%;
+     margin-left: 0;
      /* background: red; */
-     padding: 0 4rem;
+    
   }
 
 } 
