@@ -3,6 +3,7 @@ import Image from "next/image";
 import { urlFor } from "@/functions/urlFor";
 import "./AuthorCard.module.css";
 import { SlArrowRight } from "react-icons/sl";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 export function AuthorCard({ _id, profileImage, name, subTitle, genre, description, animationDelay }: AuthorCardProps)
 {
@@ -32,7 +33,7 @@ export function AuthorCard({ _id, profileImage, name, subTitle, genre, descripti
                 </ul>
                 {/* <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} /> */}
             </div>
-            <span className="bigGoToArrowSpan"><SlArrowRight size="10rem" className="bigGotToArrow"/></span>
+            <span className="bigGoToArrowSpan">CLICK TO ACCESS<MdOutlineKeyboardDoubleArrowRight size="5rem" className="bigGotToArrow"/></span>
 
 
         </article>
