@@ -9,6 +9,7 @@ import { GiBookCover } from "react-icons/gi";
 import "./SeriesCardLarge.css";
 
 import { Icon } from "next/dist/lib/metadata/types/metadata-types";
+import {MdOutlineKeyboardDoubleArrowRight} from "react-icons/md";
 
 interface Category 
 {
@@ -48,6 +49,8 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
 
                 {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
             </div>
+               <span className="bigGoToArrowSpanSerie"><MdOutlineKeyboardDoubleArrowRight size="var(--arrowSize)" className="bigGotToArrowSerie"/></span>
+
         </div>
     );
 }
