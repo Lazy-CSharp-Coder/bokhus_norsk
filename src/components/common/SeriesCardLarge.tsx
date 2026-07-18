@@ -49,7 +49,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
 
                 {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
             </div>
-               <span className="bigGoToArrowSpanSerie"><MdOutlineKeyboardDoubleArrowRight size="var(--arrowSize)" className="bigGotToArrowSerie"/></span>
+               <span className="bigGoToArrowSpanSerie"><MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className="bigGotToArrowSerie"/></span>
 
         </div>
     );
