@@ -1,5 +1,5 @@
 :root {
-    --arrowSizeSerie : 3.5rem;
+    --arrowSizeSerie: 3.5rem;
 }
 
 .seriesCardLarge {
@@ -189,6 +189,7 @@
         padding: 5% 0;
         text-align: center;
         line-height: 1.2;
+        --arrowSizeSerie: 3.5rem;
     }
 
     .seriesCardLargeImageDiv {
@@ -201,8 +202,8 @@
     }
 
     .bigGoToArrowSpanSerie svg.bigGoToArrow {
-  
-                position: static;
+
+        position: static;
 
     }
 
