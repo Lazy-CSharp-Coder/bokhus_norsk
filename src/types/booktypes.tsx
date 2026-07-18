@@ -175,7 +175,7 @@ export interface SeriesHeadingProps
 export interface AuthorCardProps extends Author
 {
     animationDelay ? : string,
-     shouldDisplayGuidance?: boolean
+     shouldDisplayGuidance: boolean
 }
 
 
