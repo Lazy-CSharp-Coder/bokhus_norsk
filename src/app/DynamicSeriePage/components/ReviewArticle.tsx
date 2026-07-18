@@ -5,11 +5,8 @@ import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import { ReviewCard } from "./ReviewCard";
 import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
-import { useWindowWidth } from "../../../components/hooks/useWindowWidth";
+
 import "./ReviewArticle.module.css";
-import { reverificationError } from "@clerk/nextjs/server";
-import { array } from "zod";
-import { Preview } from "sanity";
 
 interface ReviewArticleProps
 {
