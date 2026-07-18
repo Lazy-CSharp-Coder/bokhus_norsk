@@ -119,8 +119,8 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                  setDisplayOptions((prev) =>  {
                     // get starting point, should be a % 2 == 0 number
                     const startPoint = prev.lastIndexDisplaying % 2 ? prev.lastIndexDisplaying-1 : prev.lastIndexDisplaying;
-                    const endPoint = startPoint < reviewArray.length - 3 ? startPoint+2 : startPoint+1;
-                    return {...prev, tabletMode : false, arrayToView : reviewArray.slice(startPoint, endPoint)};
+                    const endPoint = startPoint < reviewArray.length - 2 ? startPoint+2 : startPoint+1;
+                    return {...prev, tabletMode : false, arrayToView : reviewArray.slice(startPoint, endPoint), lastIndexDisplaying : endPoint-1};
                  });
         };
 
