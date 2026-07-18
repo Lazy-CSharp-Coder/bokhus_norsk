@@ -527,6 +527,7 @@ fieldset {
 
 .errorRules {
     color: var(--errorTextColor);
+    
 }
 
 
@@ -567,7 +568,7 @@ fieldset {
 @media (max-width: 63.99em) {
     .registerSection {
         width: 90%;
-
+        --regFontSize: 0.8rem;
     }
 
 }
@@ -576,6 +577,7 @@ fieldset {
 
     .registerSection {
         width: 95%;
+
     }
 
 }
