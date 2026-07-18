@@ -51,7 +51,7 @@ export default async function WhereToBuy()
           </div>
           <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground}ms`}}>
             <div className="amazonHeadingIconWrapper flex">
-              <h3 className="amazonHeading">Bokhus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
+              <h3 className="amazonHeading">BokHus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
 
               <GoLinkExternal size="1.9rem" className="amazonIconLink" />
             </div>

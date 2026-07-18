@@ -1,4 +1,5 @@
-import type { Author, Series } from "@/types/booktypes";
+import type { Author, Book, Series, SeriesCardProps } from "@/types/booktypes";
+import { getSeriesCardPropsArray } from "@/app/Series/getSeriesCardPropsArray";
 import { AuthorCard } from "../../Authors/components/AuthorCard";
 import { AuthorSeriesHeading } from "./AuthorSeriesHeading";
 import { client } from "@/sanity/client";
@@ -13,13 +14,13 @@ export default async function AuthorSection({ author }: { author: Author; })
     // set a placeholder if not found 
     const { _id, name, profileImage, subTitle, bestSellerIntro, bestSellerList, description } = author;
     const SERIES_QUERY = `*[_type == "Series" && references($authorUid)]`;
+    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID]`;
+
     const seriesAuthor: Series[] = await client.fetch<Series[]>(SERIES_QUERY, { authorUid: _id });
 
     if (seriesAuthor.length < 1) console.log("Series not found.");
-    const animInc: number = 200;
-    const animWaitForMain: number = 300;
 
-    const array: string[] = [author.name];
+    const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesAuthor);
     const animDelayInc: number = 200;
     return (
         <>
@@ -29,9 +30,10 @@ export default async function AuthorSection({ author }: { author: Author; })
                 <AuthorSeriesHeading authorName={name} animationDelay={200} />
 
                 <ul className="seriesCardList flex">
-                    {seriesAuthor.length > 0 &&
-                        seriesAuthor.map((item, index) =>
-                            <SeriesCardLarge key={item._id} authors={array} seriesSelected={item} imageUrl={urlFor(item.imageSeries, 800)} routeToGo={setRouteToGo(item)} animationDelay={(index * animInc) + animWaitForMain} />)
+                    {seriesToDisplay.length > 0 &&
+                        seriesToDisplay.map((item, index) =>
+                            <SeriesCardLarge key={`#SCAUTHOR + ${index}`} {...item} animationDelay={index * animDelayInc} />)
+                           
 
                     } </ul>
             </section>

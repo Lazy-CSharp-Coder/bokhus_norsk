@@ -26,9 +26,3 @@ export interface ReviewProps extends Review
     animationToUse: AnimationToUse,
 
 }
-
-export interface ReviewCardDisplayOptions
-{
-    firstIndexDisplaying: number,
-    animationToUse: AnimationToUse;
-}

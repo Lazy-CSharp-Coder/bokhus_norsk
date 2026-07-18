@@ -4,14 +4,14 @@ import "./Series.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { SeriesPageList } from "./SeriesPageList";
-
+import { ErrorPage } from "@/components/common/ErrorPage";
 export default async function Series() 
 {
   const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
   const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
   const series = await client.fetch<Series[]>(SERIES_QUERY);
 
-  if (!series) return (<h2 className="entiresNotFoundText">No series found in database</h2>);
+  if (!series) return (<ErrorPage message="No series found in database" />);
 
   return (
     <>

@@ -305,7 +305,7 @@
 
 .registerTextAreaInput {
 
-
+    font-size: var(--regFontSize);
     color: var(--myWhiteColor);
     width: 100%;
     padding: 1rem 1rem;

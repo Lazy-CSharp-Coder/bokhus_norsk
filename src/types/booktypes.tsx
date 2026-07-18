@@ -18,7 +18,7 @@ export interface Book
     bookInSeries: number,
     imageBook?: SanityImageSource,
     releaseYear: number,
-    authorUids: string[],
+    authorUids: SanityReference[],
     subTitle: string,
     description: string[],
     buyLink?: string;
@@ -119,8 +119,8 @@ export interface BooksArticleProps
 
 }
 
-export interface BookProps extends Book {
-    authors: string[]
+export interface SingleBookCardProps extends Book {
+    authorNames: string[]
 }
 
 export interface BookListProps
