@@ -1,11 +1,6 @@
 :root {
-    --regFontSize: 1.1rem;
-    --regBackground: rgba(20, 20, 20, 0.8);
-    --inputBackground: rgb(34, 34, 34);
-    --borderIconColor: rgb(125, 88, 33);
-    --borderReg: 1px solid var(--borderIconColor);
-    --borderRadiusReg: 5px;
-     --arrowSize : 5rem;
+  
+        --arrowSize : 5rem;
 }
 
 .authorCard {

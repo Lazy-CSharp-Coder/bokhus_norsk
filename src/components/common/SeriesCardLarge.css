@@ -1,11 +1,5 @@
 :root {
-    --regFontSize: 1.1rem;
-    --regBackground: rgba(20, 20, 20, 0.8);
-    --inputBackground: rgb(34, 34, 34);
-    --inputBackgroundOpacity: rgb(34, 34, 34, 0.8);
-    --borderIconColor: rgb(125, 88, 33);
-    --borderReg: 1px solid var(--borderIconColor);
-    --borderRadiusReg: 5px;
+    --arrowSizeSerie : 5rem;
 }
 
 .seriesCardLarge {
@@ -42,8 +36,8 @@
 }
 
 .bigGoToArrowSpanSerie svg.bigGoToArrow {
-    width: var(--arrowSize);
-    height: var(--arrowSize);
+    width: var(--arrowSizeSerie);
+    height: var(--arrowSizeSerie);
 
 }
 
@@ -207,9 +201,8 @@
     }
 
     .bigGoToArrowSpanSerie svg.bigGoToArrow {
-        --arrowSize: 1rem;
-        width: var(--arrowSize);
-        height: var(--arrowSize);
+  
+        
         position: static;
 
     }
