@@ -1,7 +1,7 @@
 import type { AuthorCardProps } from "@/types/booktypes";
 import Image from "next/image";
 import { urlFor } from "@/functions/urlFor";
-import "./AuthorCard.module.css";
+import "./AuthorCard.module.css";import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 export function AuthorCard({ _id, profileImage, name, subTitle, genre, description, animationDelay }: AuthorCardProps)
 {
@@ -31,6 +31,8 @@ export function AuthorCard({ _id, profileImage, name, subTitle, genre, descripti
                 </ul>
                 {/* <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} /> */}
             </div>
+            <span className="bigGoToArrowSpan"><MdOutlineKeyboardDoubleArrowRight size="var(--arrowSize)" className="bigGotToArrow"/></span>
+
 
         </article>
     );

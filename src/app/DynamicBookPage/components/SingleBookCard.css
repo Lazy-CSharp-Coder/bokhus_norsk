@@ -59,6 +59,7 @@
     border-radius: var(--defaultBorderRadius);
     /* width: 84%; */
     cursor: pointer;
+    position: relative;
 }
 
 /* css classes for image component next.js */
