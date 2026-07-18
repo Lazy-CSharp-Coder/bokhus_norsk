@@ -116,7 +116,12 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
             if(window.innerWidth < tabletLimit && !tabletMode)
                 setDisplayOptions((prev) =>  ({...prev, tabletMode : true, arrayToView : arrayToView.slice(0, 1), lastIndexDisplaying : prev.lastIndexDisplaying-1}));
             else if(tabletMode && (window.innerWidth >= tabletLimit)) 
-                 setDisplayOptions((prev) =>  ({...prev, tabletMode : false, arrayToView : reviewArray.slice(prev.lastIndexDisplaying,prev.lastIndexDisplaying < reviewArray.length-3? prev.lastIndexDisplaying+2 : prev.lastIndexDisplaying+1)}));
+                 setDisplayOptions((prev) =>  {
+                    // get starting point, should be a % 2 == 0 number
+                    const startPoint = prev.lastIndexDisplaying % 2 ? prev.lastIndexDisplaying-1 : prev.lastIndexDisplaying;
+                    const endPoint = startPoint < reviewArray.length - 3 ? startPoint+2 : startPoint+1;
+                    return {...prev, tabletMode : false, arrayToView : reviewArray.slice(startPoint, endPoint)};
+                 });
         };
 
         // hvis det ikke er en høyde fra før, kjør handleResize();
