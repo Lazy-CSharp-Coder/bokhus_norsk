@@ -29,10 +29,10 @@ interface ReviewSlideShowProps
 
 export interface ReviewCardDisplayOptions
 {
-    reviewArray : Review[],
+    reviewArray: Review[],
     arrayToView: Review[],
     lastIndexDisplaying: number,
-    tabletMode : boolean, 
+    tabletMode: boolean,
     animationToUse: AnimationToUse;
 }
 
@@ -44,9 +44,10 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
-        reviewArray : [], arrayToView : [], lastIndexDisplaying: -1, animationToUse : "fadeInFromRightAnim", tabletMode : false})
-        
-       
+        reviewArray: [], arrayToView: [], lastIndexDisplaying: -1, animationToUse: "fadeInFromRightAnim", tabletMode: false
+    });
+
+
     const itemRefsForHeight = useRef<(HTMLDivElement | null)[]>([]);
 
     const [reviewDisplayHeight, setReveiwDisplayHeight] = useState<number>(0);
@@ -58,10 +59,10 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
     const tabletLimit = 1024;
 
     const heightOfReviewDisplay = () =>
-    { 
-        
+    {
+
         let height = 0;
-       
+
         itemRefsForHeight.current.forEach((item) =>
         {
             if (item)
@@ -92,12 +93,12 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
             // setAsyncStatus("done");
 
-         if(reviewArray) setDisplayOptions({ reviewArray : reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode || reviewArray.length == 1 ? 1: 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode : tabletMode }) 
+            if (reviewArray) setDisplayOptions({ reviewArray: reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
         };
         getThemReviews();
         console.log("Get them reviews called");
-      
-          
+
+
         // setAsyncStatus("done");
     }, [bookId]);
 
@@ -113,15 +114,16 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         const handleResize = () =>
         {
             setReveiwDisplayHeight(heightOfReviewDisplay());
-            if(window.innerWidth < tabletLimit && !tabletMode)
-                setDisplayOptions((prev) =>  ({...prev, tabletMode : true, arrayToView : prev.arrayToView.slice(0, 1), lastIndexDisplaying : prev.arrayToView.length == 1 ? prev.lastIndexDisplaying : prev.lastIndexDisplaying-1}));
-            else if(tabletMode && (window.innerWidth >= tabletLimit)) 
-                 setDisplayOptions((prev) =>  {
+            if (window.innerWidth < tabletLimit && !tabletMode)
+                setDisplayOptions((prev) => ({ ...prev, tabletMode: true, arrayToView: prev.arrayToView.slice(0, 1), lastIndexDisplaying: prev.arrayToView.length == 1 ? prev.lastIndexDisplaying : prev.lastIndexDisplaying - 1 }));
+            else if (tabletMode && (window.innerWidth >= tabletLimit))
+                setDisplayOptions((prev) =>
+                {
                     // get starting point, should be a % 2 == 0 number
-                    const startPoint = prev.lastIndexDisplaying % 2 ? prev.lastIndexDisplaying-1 : prev.lastIndexDisplaying;
-                    const endPoint = startPoint < reviewArray.length - 2 ? startPoint+2 : startPoint+1;
-                    return {...prev, tabletMode : false, arrayToView : reviewArray.slice(startPoint, endPoint), lastIndexDisplaying : endPoint-1};
-                 });
+                    const startPoint = prev.lastIndexDisplaying % 2 ? prev.lastIndexDisplaying - 1 : prev.lastIndexDisplaying;
+                    const endPoint = startPoint < reviewArray.length - 2 ? startPoint + 2 : startPoint + 1;
+                    return { ...prev, tabletMode: false, arrayToView: reviewArray.slice(startPoint, endPoint), lastIndexDisplaying: endPoint - 1 };
+                });
         };
 
         // hvis det ikke er en høyde fra før, kjør handleResize();
@@ -152,7 +154,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     }, []);
 
-    const { reviewArray, arrayToView, animationToUse, lastIndexDisplaying, tabletMode} = displayOptions;
+    const { reviewArray, arrayToView, animationToUse, lastIndexDisplaying, tabletMode } = displayOptions;
 
     const handleRightSliderClick = () =>
     {
@@ -161,11 +163,13 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         {
             console.log("Slicing Right in reviews. Amount of reviews : " + reviewArray.length);
 
-            const sliceEnd = tabletMode || lastIndexDisplaying == reviewArray.length-3 ? prev.lastIndexDisplaying + 2: prev.lastIndexDisplaying + 3;
-            console.log("Slice end is : " +sliceEnd + " LastIndexDisplaying is : " + lastIndexDisplaying ) 
-            return ({...prev,arrayToView: reviewArray.slice(prev.lastIndexDisplaying + 1, sliceEnd),
-                    lastIndexDisplaying: prev.lastIndexDisplaying+1,
-                    animationToUse: "fadeInFromLeftAnim"} );
+            const sliceEnd = tabletMode || lastIndexDisplaying == reviewArray.length - 3 ? prev.lastIndexDisplaying + 2 : prev.lastIndexDisplaying + 3;
+            console.log("Slice end is : " + sliceEnd + " LastIndexDisplaying is : " + lastIndexDisplaying);
+            return ({
+                ...prev, arrayToView: reviewArray.slice(prev.lastIndexDisplaying + 1, sliceEnd),
+                lastIndexDisplaying: prev.lastIndexDisplaying + 1,
+                animationToUse: "fadeInFromLeftAnim"
+            });
         });
 
 
@@ -173,26 +177,28 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
     const handleLeftSliderClick = () =>
     {
-        if(reviewArray == undefined || lastIndexDisplaying == 0 || (lastIndexDisplaying == 1 && !tabletMode)) return;
-        
+        if (reviewArray == undefined || lastIndexDisplaying == 0 || (lastIndexDisplaying == 1 && !tabletMode)) return;
+
         setDisplayOptions((prev) =>
         {
             console.log("Slicing Left in reviews. Amount of reviews : " + reviewArray.length);
 
-            const sliceStart = tabletMode ? lastIndexDisplaying-1: lastIndexDisplaying-2;
-            const sliceEnd = tabletMode ? sliceStart+1 : sliceStart+2;
+            const sliceStart = tabletMode ? lastIndexDisplaying - 1 : lastIndexDisplaying - 2;
+            const sliceEnd = tabletMode ? sliceStart + 1 : sliceStart + 2;
 
-            console.log("Slice start is : " +sliceStart + " LastIndexDisplaying is : " + lastIndexDisplaying ) 
-            return ({...prev,arrayToView: reviewArray.slice(sliceStart, sliceEnd),
-                    lastIndexDisplaying: sliceEnd-1,
-                    animationToUse: "fadeInFromLeftAnim"} );
+            console.log("Slice start is : " + sliceStart + " LastIndexDisplaying is : " + lastIndexDisplaying);
+            return ({
+                ...prev, arrayToView: reviewArray.slice(sliceStart, sliceEnd),
+                lastIndexDisplaying: sliceEnd - 1,
+                animationToUse: "fadeInFromLeftAnim"
+            });
         });
 
 
 
     };
 
- 
+
     return (
         <article id="reviewArticle" className={`reviewArticle flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
             <div className="headingToTopWrapper flex">
@@ -200,11 +206,11 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                 <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className="goToTopIcon" /></span>
                 <div className="reviewHeadingArrowContainer">
 
-                    <span style={{ }} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className="leftSlider" size={"3rem"} /></span>
+                    <span style={{}} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className="leftSlider" size={"3rem"} /></span>
 
                     <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
 
-                    <span style={{ }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
+                    <span style={{}} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
 
 
                 </div>
@@ -233,7 +239,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
 export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideShowProps)
 {
-    console.log(`ReviewSlideShowData : Array length : ${array.length}` );
+    console.log(`ReviewSlideShowData : Array length : ${array.length}`);
     return (
 
         <div className="reviewSlideContainer flex">
@@ -241,7 +247,7 @@ export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideSh
 
             <div className="reviewDisplayer flex" style={{ height: height }}>
                 {array.map((item, index) =>
- {
+                {
 
                     return (
 
