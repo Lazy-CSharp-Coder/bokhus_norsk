@@ -4,8 +4,8 @@ import { urlFor } from "@/functions/urlFor";
 import { setRouteToGo } from "@/functions/setRouteToGo";
 
 const AUTHORS_QUERY = `*[_type == "Author" && _id in $authorsIds]`;
-
 const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID]`;
+
 export async function getSeriesCardPropsArray(seriesArray: Series[]): Promise<SeriesCardProps[]>
 {
     return Promise.all(

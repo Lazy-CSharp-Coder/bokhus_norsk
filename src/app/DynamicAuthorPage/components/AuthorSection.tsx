@@ -20,15 +20,6 @@ export default async function AuthorSection({ author }: { author: Author; })
 
     if (seriesAuthor.length < 1) console.log("Series not found.");
 
-    const checkForNumberOfBooks = async (item: Series) =>
-    {
-        const booksToShow: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieId: item._id });
-        if (booksToShow.length == 1) return booksToShow[0];
-        else return item;
-
-
-    };
-
     const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesAuthor);
     const animDelayInc: number = 200;
     return (
