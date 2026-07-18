@@ -14,6 +14,7 @@
     align-items: center;
     height: 100%;
     gap: 3rem;
+    /* position: relative; */
     font-family: var(--robotoFont);
     /* background-color: rgba(221, 221, 221, 0.6); */
     background-color: var(--regBackground);
@@ -25,6 +26,21 @@
     padding-right: 2.8rem;
     -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
+}
+
+.bigGoToArrowSpan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+    
+    /* position: absolute; */
+height: 100%;
+    /* transform: translateY(-50%); */
+}
+
+.bigGoToArrow {
+  
 }
 
 .authorNameAndDescriptionDiv {
