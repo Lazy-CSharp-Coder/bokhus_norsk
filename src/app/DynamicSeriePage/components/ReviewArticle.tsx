@@ -9,6 +9,7 @@ import { useWindowWidth } from "../../../components/hooks/useWindowWidth";
 import "./ReviewArticle.module.css";
 import { reverificationError } from "@clerk/nextjs/server";
 import { array } from "zod";
+import { Preview } from "sanity";
 
 interface ReviewArticleProps
 {
@@ -112,6 +113,10 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         const handleResize = () =>
         {
             setReveiwDisplayHeight(heightOfReviewDisplay());
+            if(window.innerWidth < tabletLimit && !tabletMode)
+                setDisplayOptions((prev) =>  ({...prev, tabletMode : true, arrayToView : arrayToView.slice(0, 1)}));
+            else if(tabletMode && !(window.innerWidth < tabletLimit)) 
+                 setDisplayOptions((prev) =>  ({...prev, tabletMode :false, arrayToView : reviewArray.slice(prev.lastIndexDisplaying, prev.lastIndexDisplaying+2)}));
         };
 
         // hvis det ikke er en høyde fra før, kjør handleResize();
