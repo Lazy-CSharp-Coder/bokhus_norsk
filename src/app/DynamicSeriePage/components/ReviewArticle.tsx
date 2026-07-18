@@ -114,9 +114,9 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         {
             setReveiwDisplayHeight(heightOfReviewDisplay());
             if(window.innerWidth < tabletLimit && !tabletMode)
-                setDisplayOptions((prev) =>  ({...prev, tabletMode : true, arrayToView : arrayToView.slice(0, 1)}));
-            else if(tabletMode && !(window.innerWidth < tabletLimit)) 
-                 setDisplayOptions((prev) =>  ({...prev, tabletMode :false, arrayToView : reviewArray.slice(prev.lastIndexDisplaying, prev.lastIndexDisplaying+2)}));
+                setDisplayOptions((prev) =>  ({...prev, tabletMode : true, arrayToView : arrayToView.slice(0, 1), lastIndexDisplaying : prev.lastIndexDisplaying-1}));
+            else if(tabletMode && (window.innerWidth >= tabletLimit)) 
+                 setDisplayOptions((prev) =>  ({...prev, tabletMode : false, arrayToView : reviewArray.slice(prev.lastIndexDisplaying,prev.lastIndexDisplaying < reviewArray.length-3? prev.lastIndexDisplaying+2 : prev.lastIndexDisplaying+1)}));
         };
 
         // hvis det ikke er en høyde fra før, kjør handleResize();
