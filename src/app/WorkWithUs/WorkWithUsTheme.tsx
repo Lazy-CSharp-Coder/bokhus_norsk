@@ -89,7 +89,7 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
     const size = reactIconsArray[subject.iconNumber].size;
     const { theme, list, iconNumber } = subject;
     return (
-        <div className="workWithUsThemeDiv fadeInFromLeftAnim">
+        <div className="workWithUsThemeDiv fadeInFromLeftAnim" id={`#SCROLL#ID#${theme}`}>
             <div className="themeIconWrapper">
                 <h3 className="themeHeading">{theme}</h3>
                 <IconToUse size={size} className="iconWorkWithUs"/>

@@ -1,7 +1,7 @@
 "use client";
 import worWithUsJson from "@/json//workWithUs.json";
 import { WorkWithUsButton } from "./WorkWithUsButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { WorkWithUsStartup, WorkWithUsTheme } from "./WorkWithUsTheme";
 // import { is } from "zod/locales";
 import "./WorkWithUs.module.css";
@@ -28,7 +28,16 @@ export default function WorkWithUsPage()
     const [isDisplayingTheme, setDisplayingTheme] = useState<WorkWithUs | null>(null);
     const animDelay = 200;
     const waitForMainAnim = 600;
-  
+
+    const tabletLimit = 1024;
+    useEffect(() =>
+    {
+        if(isDisplayingTheme != null)
+        {
+            const elementToScrollTo = document.getElementById(`#SCROLL#ID#${isDisplayingTheme.theme}`)
+            if(elementToScrollTo && window.innerWidth < tabletLimit) elementToScrollTo.scrollIntoView({behavior: "smooth", block: "center"});
+        }
+    }, [isDisplayingTheme])
 
     return (
         <main className="workWithUsPage">
