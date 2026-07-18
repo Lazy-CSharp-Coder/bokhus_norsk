@@ -95,7 +95,7 @@
     width: 5.4rem;
     height: auto;
     aspect-ratio: 2/3;
-
+    flex: 0 0 auto;
     -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.8);
     box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.8);
 }
@@ -125,6 +125,7 @@
     padding-bottom: 0.3rem;
     width: fit-content;
     font-size: 1.29rem;
+    
     border-bottom: 1px solid var(--bokhusRootsColor);
 }
 
