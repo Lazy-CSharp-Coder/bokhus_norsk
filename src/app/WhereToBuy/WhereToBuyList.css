@@ -180,6 +180,7 @@ border-top-color:  var(--buttonBorderBottomRightColor);
 @media (max-width: 39.99em) {
     .modeDiv, .directionDiv {
         flex-direction: column;
+        gap: 0.9rem;
     }
     .sortButton {
         width: 100%;
@@ -194,6 +195,15 @@ border-top-color:  var(--buttonBorderBottomRightColor);
 /* max 480px */
 @media (max-width: 29.99em) {
 
+    .modeDiv, .directionDiv {
+        gap: 0.7rem;
+    }
+    .sortButton {
+        padding: 0.2rem 0;
+    }
+    .sortIconStatus {
+        --sortIconDirectionSize: 2rem;
+    }
   
 }
 

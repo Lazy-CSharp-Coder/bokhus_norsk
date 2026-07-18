@@ -40,7 +40,7 @@
     background-color: var(--regBackground);
     border: 1px solid var(--borderIconColor);
     border-radius: 5px;
-    
+
 }
 
 
@@ -61,15 +61,16 @@
 }
 
 .buyOpenCloseArrow {
-     color: rgb(190, 190, 190);
+    color: rgb(190, 190, 190);
 
 
 }
+
 .buyTextArrowDiv {
-  display: flex;
-  align-items: center;
-  gap:1.1rem;
-  font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    font-size: 0.8rem;
 }
 
 /* classes for list item and children */
@@ -79,8 +80,8 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    height: 10.4rem;
-    padding: 0 1.2rem;
+    /* height: 10.4rem; */
+    padding: 1.2rem 1.2rem;
     align-items: center;
     background-color: var(--inputBackground);
     border: 1px solid var(--borderIconColor);
@@ -90,11 +91,11 @@
 }
 
 .buyListItemImageDiv {
-position: relative;
+    position: relative;
     width: 5.4rem;
     height: auto;
     aspect-ratio: 2/3;
-
+    flex: 0 0 auto;
     -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.8);
     box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.8);
 }
@@ -124,6 +125,7 @@ position: relative;
     padding-bottom: 0.3rem;
     width: fit-content;
     font-size: 1.29rem;
+    
     border-bottom: 1px solid var(--bokhusRootsColor);
 }
 
@@ -146,7 +148,8 @@ position: relative;
     color: black;
 }
 
-.buyLinkArrow, .noLinkArrow {
+.buyLinkArrow,
+.noLinkArrow {
     position: absolute;
     right: 5%;
     top: 50%;
@@ -156,11 +159,55 @@ position: relative;
 }
 
 .buyLinkArrow {
-    color: rgba(135, 206,260, 0.4);
+    color: rgba(135, 206, 260, 0.4);
     /* background-color: lightskyblue; */
-    
+
 }
 
 .noLinkArrow {
- color: rgba(255, 0, 0, 0.3);
+    color: rgba(255, 0, 0, 0.3);
+}
+
+
+
+/* max 480px */
+@media (max-width: 29.99em) {
+
+
+    .whereToBuySerieHeadingDiv {
+        font-size: 0.8rem;
+    }
+
+    .buyHeadingSerie {
+        font-size: 1.3rem;
+    }
+    .whereToBuyBookListItem {
+        padding: 1rem;
+    }
+
+    .buyListItemImageDiv {
+        width: 4.7rem;
+        -webkit-box-shadow: 3px 2px 15px 5px rgba(0, 0, 0, 0.8);
+        box-shadow: 3px 2px 15px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .buyListBookInfo {
+        gap: 0.8rem;
+    }
+
+    .buyTitleBookNumberWrapper {
+        font-size: 0.8rem;
+    }
+
+    .buyTitleBook {
+        font-size: 1rem;
+    }
+
+    .buyAvailabilityItem {
+        font-size: 0.5rem;
+    }
+.buyTextArrowDiv {
+    font-size: 0.75rem;
+    gap: 0.3rem;
+}
 }
