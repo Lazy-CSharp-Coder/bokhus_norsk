@@ -197,7 +197,8 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
 
     };
-
+    const onFirst = lastIndexDisplaying == 0  || (lastIndexDisplaying == 1 && !tabletMode) ? true: false;
+    const onLast = lastIndexDisplaying == reviewArray.length-1 ? true: false;
 
     return (
         <article id="reviewArticle" className={`reviewArticle flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
@@ -206,11 +207,11 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
                 <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className="goToTopIcon" /></span>
                 <div className="reviewHeadingArrowContainer">
 
-                    <span style={{}} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className="leftSlider" size={"3rem"} /></span>
+                    <span style={{opacity : onFirst ? "0.3": "1"}} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className="leftSlider" size={"3rem"} /></span>
 
                     <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
 
-                    <span style={{}} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
+                    <span style={{opacity : onLast ? "0.3" : "1" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
 
 
                 </div>
