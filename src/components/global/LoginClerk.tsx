@@ -57,7 +57,7 @@ function LoginClerkContent()
                         </UserButton.MenuItems>
                     </UserButton>
 
-                    <Link className="signInButton" href="/Register">REGISTER</Link>
+                    <Link className="signInButton" href="/Register">PROFILE</Link>
                 </div>
 
             </Show>
