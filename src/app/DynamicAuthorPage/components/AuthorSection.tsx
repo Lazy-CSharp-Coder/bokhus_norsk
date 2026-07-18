@@ -26,7 +26,7 @@ export default async function AuthorSection({ author }: { author: Author; })
         <>
 
             <section className="authorSection flex">
-                <AuthorCard _id={_id} profileImage={profileImage} name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre} />
+                <AuthorCard _id={_id} profileImage={profileImage} name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre} shouldDisplayGuidance={false}/>
                 <AuthorSeriesHeading authorName={name} animationDelay={200} />
 
                 <ul className="seriesCardList flex">

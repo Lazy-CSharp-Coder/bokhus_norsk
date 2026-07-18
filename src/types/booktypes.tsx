@@ -162,9 +162,9 @@ export interface SeriesCardProps
     authors : string[],
     imageUrl: string,
     routeToGo: string,
-    animationDelay?: number;
+    animationDelay?: number,
+   
 }
-
 export interface SeriesHeadingProps
 {
     authorName: string,
@@ -174,7 +174,8 @@ export interface SeriesHeadingProps
 
 export interface AuthorCardProps extends Author
 {
-    animationDelay ? : string
-
+    animationDelay ? : string,
+     shouldDisplayGuidance: boolean
 }
+
 
