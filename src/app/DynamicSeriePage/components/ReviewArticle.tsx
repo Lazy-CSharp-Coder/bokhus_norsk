@@ -114,7 +114,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         {
             setReveiwDisplayHeight(heightOfReviewDisplay());
             if(window.innerWidth < tabletLimit && !tabletMode)
-                setDisplayOptions((prev) =>  ({...prev, tabletMode : true, arrayToView : arrayToView.slice(0, 1), lastIndexDisplaying : prev.lastIndexDisplaying-1}));
+                setDisplayOptions((prev) =>  ({...prev, tabletMode : true, arrayToView : prev.arrayToView.slice(0, 1), lastIndexDisplaying : prev.lastIndexDisplaying-1}));
             else if(tabletMode && (window.innerWidth >= tabletLimit)) 
                  setDisplayOptions((prev) =>  {
                     // get starting point, should be a % 2 == 0 number
