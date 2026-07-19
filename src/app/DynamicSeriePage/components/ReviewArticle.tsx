@@ -165,7 +165,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
             return ({
                 ...prev, arrayToView: reviewArray.slice(prev.lastIndexDisplaying + 1, sliceEnd),
                 lastIndexDisplaying: prev.lastIndexDisplaying + 1,
-                animationToUse: "fadeInFromLeftAnim"
+                animationToUse: "fadeInFromRightAnim"
             });
         });
 
