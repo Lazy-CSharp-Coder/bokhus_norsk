@@ -259,7 +259,9 @@ background-color: transparent;
 
 @media (max-width: 63.99em) {
  
-
+    .contactBackground {
+        background-position: 70% center;
+    }
 
   .contactUsSection {
     /* max-width: 65rem; */

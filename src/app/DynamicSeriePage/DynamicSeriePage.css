@@ -27,3 +27,11 @@
     z-index: -1;
 
 }
+@media (max-width: 63.99em) {
+
+    .seriePageBackgroundImage {
+
+        background-position: 70% center;
+
+    }
+}

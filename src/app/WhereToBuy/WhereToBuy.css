@@ -134,7 +134,11 @@ color: var(--borderIconColor)
 
 
 @media (max-width: 63.99em) {
-   
+   .whereToBuyBackground {
+ 
+        background-position: 70% center;
+
+   }
     .whereToBuySection{
         max-width: 90%;
     }

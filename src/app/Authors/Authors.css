@@ -130,6 +130,9 @@ margin-top: 4rem;
 
 @media (max-width: 63.99em) {
 
+    .authorsBackgroundImage {
+         background-position: 70% center;
+    }
     .authorsSection{
         width: 98%;
     }
