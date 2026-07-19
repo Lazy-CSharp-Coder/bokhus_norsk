@@ -13,3 +13,11 @@
     z-index: -1;
 
 }
+
+
+@media (max-width: 63.99em) {
+ 
+    .backgroundImageAuthorsPage {
+        background-position: 70% center;
+    }
+}

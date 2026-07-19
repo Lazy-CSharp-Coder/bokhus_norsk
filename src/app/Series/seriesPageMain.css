@@ -102,14 +102,19 @@
 
     .seriesPageSection {
         max-width: 65%;
-  
+
     }
 
-    
+
 }
 
 
 @media (max-width: 63.99em) {
+
+    .seriesPageBackgroundImage {
+
+        background-position: 70% center;
+    }
 
     .seriesPageSection {
         max-width: 100%;

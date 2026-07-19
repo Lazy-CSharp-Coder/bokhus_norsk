@@ -68,8 +68,11 @@
 
 .buyTextArrowDiv {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1.1rem;
+    width: fit-content;
+    text-align: center;
+    gap: 0.5rem;
     font-size: 0.8rem;
 }
 

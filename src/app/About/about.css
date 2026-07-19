@@ -104,6 +104,10 @@
 
 
 @media (max-width: 63.99em) {
+
+    .aboutBackground {
+        background-position: 40% center;
+    }
  
     .aboutPage {
         align-items: center;
