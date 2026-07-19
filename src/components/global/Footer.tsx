@@ -7,14 +7,26 @@ import Image from "next/image";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { LogoBPWebDev } from "./LogoBPWebDev";
 import "./Footer.module.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { PiArrowFatLinesUpFill } from "react-icons/pi";
 import { useRouter } from "next/navigation";
+import { useOutsideClick } from "@/functions/useOutsideClick";
 
 export function Footer()
 {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
     const router = useRouter();
+    const  mobileMenuRef= useRef<HTMLDivElement>(null);
+    
+    const handleOutsideClick = (e : MouseEvent) =>
+    {
+        let shallClose = false;
+        if (mobileMenuRef.current && mobileMenuRef.current.contains(e.target as Node)) shallClose = false;
+        else shallClose = true; 
+        if(shallClose && isMobileMenuOpen) setMobileMenuOpen(false);
+    };
+
+    useOutsideClick(handleOutsideClick);
 
     return (
         <footer>
@@ -74,7 +86,7 @@ export function Footer()
 
                 <PiArrowFatLinesUpFill className="mobileFooterEndIcon" size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
                 {isMobileMenuOpen &&
-                    <div className="footerEndMobileDiv">
+                    <div ref={mobileMenuRef} className="footerEndMobileDiv" onClick={() => setMobileMenuOpen(false)}>
 
                         <Link className="linkMobile" href="/Contact">
                             <IoMailOutline size="2rem" /> <span className="logoTextMobile">CONTACT</span></Link>
