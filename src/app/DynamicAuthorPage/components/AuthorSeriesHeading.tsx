@@ -6,8 +6,7 @@ export function AuthorSeriesHeading({authorName, animationDelay} : SeriesHeading
 {
     return(
     <div className="authorSeriesHeadingDiv fadeInFromBelowAnim" style={{animationDelay :`${animationDelay}ms`, animationDuration: "0.6s"}}>
-         <h3 className="authorSeriesHeading">Series from <span className="authorSeriesSectionText">{authorName}</span> available from </h3><
-        BokHusCom/>
+         <h3 className="authorSeriesHeading">Series from <span className="authorSeriesSectionText">{authorName}</span> available from <BokHusCom/></h3>
              
     </div>);
 }
