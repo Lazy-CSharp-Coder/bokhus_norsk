@@ -38,3 +38,12 @@
         /* padding-left: 12%; */
     
 }
+
+@media (max-width: 63.99em) {
+
+    .registerBackground {
+
+        background-position: 70% center;
+
+    }
+}

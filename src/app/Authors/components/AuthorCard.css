@@ -156,6 +156,8 @@
 
     .bigGoToArrowSpan {
         position: static;
+        font-size: 1.5rem;
+        font-family: var(--rob);
     }
 
 .bigGoToArrowSpan svg.bigGoToArrow {
