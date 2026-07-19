@@ -154,7 +154,9 @@ display: flex;
 
 @media (max-width: 63.99em) {
  
-
+.backgroundImageHero {
+    background-position: 40% center;
+}
 
   .descriptionDivHeroPage {
     /* max-width: 65rem; */
