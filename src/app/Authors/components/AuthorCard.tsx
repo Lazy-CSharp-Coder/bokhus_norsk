@@ -33,7 +33,7 @@ export function AuthorCard({ _id, profileImage, name, subTitle, genre, descripti
                 </ul>
                 {/* <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} /> */}
             </div>{shouldDisplayGuidance &&
-            <span className="bigGoToArrowSpan">READ MORE<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSize)" className="bigGotToArrow"/></span> }
+            <span className="bigGoToArrowSpan">CLICK FOR MORE<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSize)" className="bigGotToArrow"/></span> }
 
 
         </article>
