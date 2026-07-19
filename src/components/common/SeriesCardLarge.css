@@ -22,6 +22,7 @@
 
 
 .bigGoToArrowSpanSerie {
+    font-family: var(--robotoFont);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -29,7 +30,7 @@
     opacity: 0.4;
     top: 8%;
     right: 3%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     /* height: 100%; */
     /* transform: translateY(-50%); */
