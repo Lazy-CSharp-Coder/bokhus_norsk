@@ -1,5 +1,5 @@
 :root {
-    --arrowSizeSerie: 3.5rem;
+    --arrowSizeSerie: 3.2rem;
 }
 
 .seriesCardLarge {
@@ -30,7 +30,7 @@
     opacity: 0.4;
     top: 8%;
     right: 3%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     position: absolute;
     /* height: 100%; */
     /* transform: translateY(-50%); */
