@@ -10,7 +10,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
 {
     const imageSrc = urlFor(imageBook, 800);
     return (
-        <div className={`bookDiv ${animationName ? animationName : "fadeInFromLeftAnim"}`} style={{ animationDuration: "1.2s" }}>
+        <div className={`bookDiv`} style={{ animationDuration: "1.2s" }}>
             <div className="bookImage">
                 <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
             </div>
