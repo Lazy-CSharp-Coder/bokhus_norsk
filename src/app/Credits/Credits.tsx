@@ -45,6 +45,7 @@ export function Credits()
 
 
                         <li>Logo for <Link className="creditLicence" href="/">BP Web Development</Link> (WebDev) made by Avantella</li>
+                        <li>More credits will be applied later</li>
                     </ul>
 
 
