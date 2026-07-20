@@ -34,10 +34,10 @@
     /* width: 84%; */
     cursor: pointer;
     animation-name: fadeInFromLeft;
-  animation-duration: var(--defaultAnimDuration);
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-fill-mode: backwards; 
+    animation-duration: var(--defaultAnimDuration);
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-fill-mode: backwards;
 }
 
 .bookDivForSizing {
