@@ -231,8 +231,9 @@
         position: static;
         align-items: center;
         justify-content: top;
-        flex: 1;
+        /* flex: 1; */
         animation-name: fadeInFromBelow;
+        overflow: hidden;
 
 
     }
