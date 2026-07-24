@@ -177,14 +177,14 @@ border-top-color:  var(--buttonBorderBottomRightColor);
 
 /* max 640 */
 
-@media (max-width: 39.99em) {
+@media (max-width: 63.99em) {
     .modeDiv, .directionDiv {
         flex-direction: column;
         gap: 0.9rem;
     }
     .sortButton {
         width: 100%;
-       
+ 
     
     }
     .sortIconStatus {
