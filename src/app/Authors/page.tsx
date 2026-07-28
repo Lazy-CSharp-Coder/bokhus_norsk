@@ -16,9 +16,24 @@ export default async function Authors()
     const waitForMain: number = 800;
 
     const AUTOHRS_QUERY = `*[_type == "Author"] | order(name asc)`;
-    const authors: Author[] = await client.fetch<Author[]>(AUTOHRS_QUERY);
+    let authors : Author[] = [];
+    try {
+        
+        authors = await client.fetch<Author[]>(AUTOHRS_QUERY);
+        
 
-    // const authors = authorsFromServer;  // this works, but shows no image
+    }
+    catch (error)
+    {
+        console.error("Sanity fetch failed :", error);
+        throw new Error("Failed to fetch authors from Sanity");
+    }
+
+    if(!authors) 
+    {
+        return(<div className="entriesNotFoundText">No authors found in database. Please try again later.</div>)
+    }
+    
     const setRouteToGo = (author: Author) =>
     {
         const params = new URLSearchParams();
