@@ -8,6 +8,7 @@ import { client } from "@/sanity/client";
 import "./DynamicSeriePage.module.css";
 import type { PageProps } from "@/types/types";
 import { urlFor } from "@/functions/urlFor";
+import { ErrorBokhus } from "../ErrorBokhus";
 
 
 
@@ -21,6 +22,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    const params = await searchParams;
    const serieUid = params.message as string;
+   let series: Series[] = [];
 
 
    console.log("Serie id sendt to General Page is " + serieUid);
@@ -28,30 +30,32 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    const SERIES_QUERY = `*[_type == "Series" && _id == $serieUidFromParams]`;
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
+   try
+   {
+      series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
+   }
+   catch (error)
+   {
+      console.error("Sanity fetch failed :", error);
+      throw new Error("Failed to fetch authors from Sanity");
+   }
 
-
-   const series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
    const serie = series[0];
+   if(!serie) return(<ErrorBokhus msg="SERIE NOT FOUND."/>);
+
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
 
-   console.log("Serie : " + serie._id + serie.seriesName + serie.authorUids);
    serie.authorUids.forEach((item) => { console.log(item._ref); });
 
-   if (!serie)
-   {
-      console.log("series not loaded");
-      return <h2>Series not found i database</h2>;
-   }
-   console.log("Serie name " + serie.seriesName);
    const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
    if (authors.length < 1)
    {
       console.log("Error fetching : No author for series found.");
       return <h2>Author not found in database</h2>;
-    
+
    }
    // console.log(authors);
-   const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID : serie._id });
+   const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID: serie._id });
    if (bookList.length < 1)
    {
 
