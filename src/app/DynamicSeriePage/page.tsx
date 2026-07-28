@@ -37,7 +37,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    catch (error)
    {
       console.error("Sanity fetch failed :", error);
-      throw new Error("Failed to fetch authors from Sanity");
+      throw new Error("Failed to fetch series from Sanity");
    }
 
    const serie = series[0];
@@ -47,11 +47,24 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    serie.authorUids.forEach((item) => { console.log(item._ref); });
 
-   const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
+   let authors : Author[] = [];
+  
+
+  try
+   {
+      authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
+   }
+   catch (error)
+   {
+      console.error("Sanity fetch failed :", error);
+      throw new Error("Failed to fetch authors from Sanity");
+   }
+
+    
    if (authors.length < 1)
    {
       console.log("Error fetching : No author for series found.");
-      return <h2>Author not found in database</h2>;
+      return <ErrorBokhus msg="AUTHORS NOT FOUND IN DATABASE"/>;
 
    }
    // console.log(authors);
@@ -60,7 +73,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    {
 
       console.log("Error fetching : No books for series found.");
-      return <div className="notFoundDatabase"      >BOOKS FOR SERIE NOT FOUND IN DATABASE</div>;
+      return <ErrorBokhus msg= "BOOKS FOR SERIE NOT FOUND IN DATABASE"/>;
 
    }
 
