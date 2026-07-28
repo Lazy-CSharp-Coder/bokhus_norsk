@@ -36,7 +36,7 @@
 
 .aboutSection {
     flex-direction: column;
-    max-width: 70rem;
+    max-width: 50rem;
     align-items: left;
     margin: 3rem 0;
     margin-left: 5%;
@@ -74,7 +74,7 @@
 }
 @media (max-width: 159.99em) {
   .aboutSection {
-    max-width: 70%;
+    max-width: 50%;
     /* background: beige;  */
   }
 
