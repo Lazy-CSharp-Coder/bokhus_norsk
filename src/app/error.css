@@ -2,7 +2,22 @@
     display: flex;
     flex-direction: column;
     padding: 4rem 8rem;
-    align-items: left;
+    align-items: center;
     gap:2rem;
     background-color: transparent;
+    flex-grow: 1;
+    font-size: 2rem;
+    /* width: fit-content; */
+}
+
+.errorIcon {
+    color: darkred;
+}
+
+.errorButton {
+    width: fit-content;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: var(--robotoFont);
+
 }

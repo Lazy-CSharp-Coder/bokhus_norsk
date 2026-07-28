@@ -6,6 +6,13 @@ import { SanityReference } from 'next-sanity';
 //   _type: 'reference';
 //   _ref: string;
 // } 
+
+interface Availability {
+    availablitityNumber : number, 
+    isbnNumber : string
+}
+
+
 export interface Book
 {
 

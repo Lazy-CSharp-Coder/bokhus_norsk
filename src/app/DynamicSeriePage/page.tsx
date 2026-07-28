@@ -8,8 +8,7 @@ import { client } from "@/sanity/client";
 import "./DynamicSeriePage.module.css";
 import type { PageProps } from "@/types/types";
 import { urlFor } from "@/functions/urlFor";
-
-
+import { ErrorBokhus } from "../ErrorBokhus";
 
 // ******************
 
@@ -21,6 +20,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    const params = await searchParams;
    const serieUid = params.message as string;
+   let series: Series[] = [];
 
 
    console.log("Serie id sendt to General Page is " + serieUid);
@@ -29,39 +29,65 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
 
+   try
+   {
+      series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
+   }
+   catch (error)
+   {
+      console.error("Sanity fetch failed :", error);
+      throw new Error("Failed to fetch series from Sanity");
+   }
 
-   const series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
    const serie = series[0];
+   if (!serie) return (<ErrorBokhus msg="SERIE NOT FOUND." />);
+
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
 
-   console.log("Serie : " + serie._id + serie.seriesName + serie.authorUids);
    serie.authorUids.forEach((item) => { console.log(item._ref); });
 
-   if (!serie)
+   let authors: Author[] = [];
+
+
+   try
    {
-      console.log("series not loaded");
-      return <h2>Series not found i database</h2>;
+      authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
    }
-   console.log("Serie name " + serie.seriesName);
-   const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
+   catch (error)
+   {
+      console.error("Sanity fetch failed :", error);
+      throw new Error("Failed to fetch authors from Sanity");
+   }
+
+
    if (authors.length < 1)
    {
       console.log("Error fetching : No author for series found.");
-      return <h2>Author not found in database</h2>;
-    
+      return <ErrorBokhus msg="AUTHORS NOT FOUND IN DATABASE" />;
+
    }
+
+   let bookList: Book[] = [];
    // console.log(authors);
-   const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID : serie._id });
+
+   try
+   {
+      bookList = await client.fetch<Book[]>(BOOK_QUERY, { serieID: serie._id });
+   }
+   catch (error)
+   {
+      console.error("Sanity fetch failed :", error);
+      throw new Error("Failed to fetch authors from Sanity");
+   }
+
    if (bookList.length < 1)
    {
 
       console.log("Error fetching : No books for series found.");
-      return <div className="notFoundDatabase"      >BOOKS FOR SERIE NOT FOUND IN DATABASE</div>;
+      return <ErrorBokhus msg="BOOKS FOR SERIE NOT FOUND IN DATABASE" />;
 
    }
 
-   // const reviews = reviewsJsonEng;
-   // const showReviews : boolean = reviews == undefined || reviews == null ? false : true;
    return (
       <>
          <ScrollToTop />
