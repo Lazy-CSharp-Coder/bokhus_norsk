@@ -10,8 +10,6 @@ import type { PageProps } from "@/types/types";
 import { urlFor } from "@/functions/urlFor";
 import { ErrorBokhus } from "../ErrorBokhus";
 
-
-
 // ******************
 
 export default async function DynamicSeriePage({ searchParams }: PageProps)
@@ -30,7 +28,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    const SERIES_QUERY = `*[_type == "Series" && _id == $serieUidFromParams]`;
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
-   
+
    try
    {
       series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
