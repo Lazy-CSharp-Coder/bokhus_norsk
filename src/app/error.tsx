@@ -17,10 +17,10 @@ export default function Error({error, reset} : ErrorProps)
 
     return(
         <div className="errorDiv">
-            <BiSolidError size="5rem" className="errorIcon"/>
+            <BiSolidError size="8rem" className="errorIcon"/>
             <h2 className="errorHeading">Something went wrong!</h2>
-            <p>Bokhus had trouble connecting to the database.</p>
-            <button onClick={() => reset()} className="errorButton">Try again</button>
+            Bokhus had trouble connecting to the database.
+            <button onClick={() => reset()} className="submitButton errorButton">TRY AGAIN</button>
         </div>
     )
 

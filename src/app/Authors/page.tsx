@@ -19,6 +19,7 @@ export default async function Authors()
     const AUTOHRS_QUERY = `*[_type == "Author"] | order(name asc)`;
     let authors : Author[] = [];
     try {
+     
         
         authors = await client.fetch<Author[]>(AUTOHRS_QUERY);
         
