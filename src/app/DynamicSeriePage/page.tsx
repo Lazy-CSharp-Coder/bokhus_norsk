@@ -30,6 +30,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    const SERIES_QUERY = `*[_type == "Series" && _id == $serieUidFromParams]`;
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
+   
    try
    {
       series = await client.fetch<Series[]>(SERIES_QUERY, { serieUidFromParams: serieUid });
@@ -41,16 +42,16 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    }
 
    const serie = series[0];
-   if(!serie) return(<ErrorBokhus msg="SERIE NOT FOUND."/>);
+   if (!serie) return (<ErrorBokhus msg="SERIE NOT FOUND." />);
 
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
 
    serie.authorUids.forEach((item) => { console.log(item._ref); });
 
-   let authors : Author[] = [];
-  
+   let authors: Author[] = [];
 
-  try
+
+   try
    {
       authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
    }
@@ -60,25 +61,35 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
       throw new Error("Failed to fetch authors from Sanity");
    }
 
-    
+
    if (authors.length < 1)
    {
       console.log("Error fetching : No author for series found.");
-      return <ErrorBokhus msg="AUTHORS NOT FOUND IN DATABASE"/>;
+      return <ErrorBokhus msg="AUTHORS NOT FOUND IN DATABASE" />;
 
    }
+
+   let bookList: Book[] = [];
    // console.log(authors);
-   const bookList: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID: serie._id });
+
+   try
+   {
+      bookList = await client.fetch<Book[]>(BOOK_QUERY, { serieID: serie._id });
+   }
+   catch (error)
+   {
+      console.error("Sanity fetch failed :", error);
+      throw new Error("Failed to fetch authors from Sanity");
+   }
+
    if (bookList.length < 1)
    {
 
       console.log("Error fetching : No books for series found.");
-      return <ErrorBokhus msg= "BOOKS FOR SERIE NOT FOUND IN DATABASE"/>;
+      return <ErrorBokhus msg="BOOKS FOR SERIE NOT FOUND IN DATABASE" />;
 
    }
 
-   // const reviews = reviewsJsonEng;
-   // const showReviews : boolean = reviews == undefined || reviews == null ? false : true;
    return (
       <>
          <ScrollToTop />
