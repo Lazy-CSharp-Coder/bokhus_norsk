@@ -8,7 +8,7 @@ import { SanityReference } from 'next-sanity';
 // } 
 
 interface Availability {
-    availablitityNumber : number, 
+    bookType : string, 
     isbnNumber : string
 }
 
@@ -20,7 +20,7 @@ export interface Book
     seriesRef : SanityReference,
     commonId? : string,
     bookTitle: string,
-    availability: number[],   // lydbok, e-bok, paperbak - muligens legge inn isbn
+    availability: Availability[],   // lydbok, e-bok, paperbak - muligens legge inn isbn
     languages?: string[],
     bookInSeries: number,
     imageBook?: SanityImageSource,
