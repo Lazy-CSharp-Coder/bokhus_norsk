@@ -37,6 +37,7 @@
     animation-timing-function: ease-in;
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
+    cursor: auto;
 
 }
 
@@ -52,6 +53,7 @@
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     width: 100%;
+    
 }
 
 .buyLink {
@@ -62,6 +64,7 @@
     gap: 0.8rem;
     color: rgba(13, 25, 116);
     width: 100%;
+    cursor: pointer;
 }
 
 .amazonText {
