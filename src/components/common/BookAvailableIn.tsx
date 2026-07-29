@@ -2,7 +2,8 @@
 
 interface AvailabilityProps 
 {
-    availability : Availability[]
+    availability : Availability[],
+    
     classNameItem? : string,
     fontSize? :string
 }
