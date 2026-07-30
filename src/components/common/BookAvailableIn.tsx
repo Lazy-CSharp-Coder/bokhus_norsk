@@ -34,6 +34,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 {
 
     const [isPopupShowing, setPopupShowing] = useState<boolean>(false);
+    const [isCopied, setIsCopied] = useState<boolean>(false);
     const listRef = useRef<HTMLUListElement>(null);
 
     const handleOutSideClick = (e: MouseEvent) =>
@@ -48,6 +49,20 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
         if (shallClose) setPopupShowing(false);
 
     };
+  
+    const handleCopy = async (textToCopy: string) =>
+    {
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+            setIsCopied(true);
+            setTimeout(() => setIsCopied(false), 2000);
+        }
+        catch(error)
+        {
+            console.error("Failed to copy isbn : ", error);
+        }
+    }
+  
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
 
@@ -71,7 +86,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
                             {availability.map((item, index) =>
                                 <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn}</span>
-                                <button className="buttonCopy">
+                                <button className="buttonCopy" onClick={() => handleCopy(item.isbn)}>
 
                                       <BsCopy className="iconCopy" size={fontSize ? fontSize : "0.7rem"}/>
                                 </button>
