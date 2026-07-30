@@ -31,20 +31,19 @@ import { useOutsideClick } from "@/functions/useOutsideClick";
 export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink, bookTitle }: AvailabilityProps)
 {
 
-    const [itemShowing, setItemShowing] = useState<number>(-1);
-    const listRefs = useRef<(HTMLLIElement | null)[]>([]);
+    const [isPopupShowing, setPopupShowing] = useState<boolean>(false);
+    const listRef = useRef<HTMLUListElement>(null);
 
-    const handleOutSideClick = (e:MouseEvent) =>
+    const handleOutSideClick = (e: MouseEvent) =>
     {
-
         let shallClose = false;
-        const currentElement = listRefs.current[itemShowing];
-        if(currentElement) 
-            if(currentElement.contains(e.target as Node)) shallClose = false;
+        const currentElement = listRef.current;
+        if (currentElement)
+            if (currentElement.contains(e.target as Node)) shallClose = false;
             else shallClose = true;
         else return;
 
-               if(shallClose) setItemShowing(-1);
+        if (shallClose) setPopupShowing(false);
 
     };
 
@@ -52,22 +51,45 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
     return (
 
-        <ul className="availabilityList flex">
+        <ul ref={listRef}className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
             {
                 availability.map((item, index) =>
-                    <li ref={(element) => { listRefs.current[index] = element; }} key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} onClick={() => (itemShowing == index ? setItemShowing(-1) : setItemShowing(index))}>
+                    <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
                         {item.bookType}
 
-                        {itemShowing == index &&
-                            <span >
-                                <PopUpIsbnAndLink buyLink={buyLink} bookTitle={bookTitle} isbn={availability[itemShowing].isbn} bookType={availability[itemShowing].bookType} fontSize={fontSize} />
 
-                            </span>
-
-                        }
                     </li>
                 )
             }
+            {isPopupShowing &&
+                <div className="popUpIsbnDiv"  onClick={(e) => e.stopPropagation()}>
+                    <div className="isbnDiv">
+                            <span className="isbnText">ISBN NUMBERS :</span>
+                        <ul className="isbnList">
+                     
+                            {availability.map((item, index) =>
+                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn}</span></li>
+
+                            )}
+                        </ul>
+                    </div>
+                    <div className="buyLinkDiv">
+                        {buyLink ?
+                            <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available</p>}
+                        
+                    </div>
+                    <p className="amazonText">
+
+                            As an Amazon Associate we earn from qualifying purchases.
+                        </p>
+                </div>
+
+            }
+
+
+
+
+
 
         </ul>
 
