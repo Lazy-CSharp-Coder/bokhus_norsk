@@ -27,7 +27,8 @@
     flex-direction: column;
     gap: 0.2rem;
     width: max-content;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
+    color: black;
     border: 1px solid white;
     background-color: rgb(221, 221, 221);
     border-radius: 5px;
@@ -58,8 +59,11 @@
 .isbnList {
     list-style: none;
     border-top: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     padding: 0.3rem 0;
-    column-gap: 0.3rem;
+    gap: 0.2rem;
     color:black;
     cursor:auto;
     
@@ -71,9 +75,14 @@
 
 .isbnListItem {
     display: grid;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 30% auto 8%;
     padding-left: 0.1rem;
 }
+
+.iconCopy {
+    cursor: pointer;
+}
+
 
 .isbnDiv {
     display: flex;
@@ -105,7 +114,7 @@
         
 }
 
-.amazonText {
+.amazonTextPopup {
     font-weight: 600;
     color: black;
 }

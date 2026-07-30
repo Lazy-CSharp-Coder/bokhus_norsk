@@ -9,7 +9,7 @@ interface AvailabilityProps
     bookTitle?: string,
     classNameItem?: string,
     fontSize?: string,
-    shouldIsbnPopUpShow? : boolean
+    shouldIsbnPopUpShow?: boolean;
 }
 
 
@@ -28,6 +28,7 @@ import "./BookAvailableIn.module.css";
 import { Availability } from "@/types/booktypes";
 import Link from "next/link";
 import { useOutsideClick } from "@/functions/useOutsideClick";
+import { BsCopy } from "react-icons/bs";
 
 export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink, bookTitle, shouldIsbnPopUpShow }: AvailabilityProps)
 {
@@ -47,12 +48,12 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
         if (shallClose) setPopupShowing(false);
 
     };
-    const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true: false;
+    const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
 
     return (
 
-        <ul ref={listRef}className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
+        <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
             {
                 availability.map((item, index) =>
                     <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
@@ -63,13 +64,13 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                 )
             }
             {(isPopupShowing && showPopup) &&
-                <div className="popUpIsbnDiv"  onClick={(e) => e.stopPropagation()}>
+                <div className="popUpIsbnDiv" onClick={(e) => e.stopPropagation()}>
                     <div className="isbnDiv">
-                            <span className="isbnText">ISBN NUMBERS :</span>
+                        <span className="isbnText">ISBN NUMBERS :</span>
                         <ul className="isbnList">
-                     
+
                             {availability.map((item, index) =>
-                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn}</span></li>
+                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn}</span><BsCopy className="iconCopy" size={fontSize ? fontSize : "0.7rem"}/></li>
 
                             )}
                         </ul>
@@ -77,12 +78,11 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                     <div className="buyLinkDiv">
                         {buyLink ?
                             <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available</p>}
-                        
-                    </div>
-                    <p className="amazonText">
 
-                            As an Amazon Associate we earn from qualifying purchases.
-                        </p>
+                    </div>
+                    <p className="amazonTextPopup">
+                        As an Amazon Associate we earn from qualifying purchases.
+                    </p>
                 </div>
 
             }
