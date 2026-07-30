@@ -2,17 +2,17 @@
     flex-direction: row;
     gap: 1rem;
     list-style: none;
-    
-    }
+
+}
 
 .availabilityItem {
     display: flex;
     justify-content: center;
     align-items: center;
 
-
+    position: relative;
     padding: 0.3rem 0.7rem;
-    border : 1px solid white;
+    border: 1px solid white;
     width: max-content;
     border-radius: 3px;
     background-color: rgba(221, 221, 221, 0.5);
@@ -20,3 +20,68 @@
 
 }
 
+.popUpIsbnDiv {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: max-content;
+    padding: 0.5rem 0.5rem;
+    border: 1px solid white;
+    background-color: rgb(221, 221, 221);
+    border-radius: 5px;
+    top:120%;
+    left: 10%;
+    z-index: 20;
+    animation-name: fadeInFromLeftSmall;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    cursor: auto;
+}
+
+
+
+@keyframes fadeInFromLeftSmall {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.isbnDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.buyLinkDiv {
+    
+    padding: 0.3rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+  font-size: calc(1em + 0.1rem);
+    
+}
+
+.buyLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0.1rem;
+    gap: 0.8rem;
+    color: rgba(13, 25, 116);
+    width: 100%;
+    cursor: pointer;
+        
+}
+
+.amazonText {
+    font-weight: 600;
+}

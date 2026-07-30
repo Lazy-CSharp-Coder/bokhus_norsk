@@ -6,7 +6,7 @@ import { urlFor } from "@/functions/urlFor";
 import { BookInSerieText } from "./BookInSerieText";
 import "./BookCard.module.css";
 
-export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, animationName}: BookCardProps)
+export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink }: BookCardProps)
 {
     const imageSrc = urlFor(imageBook, 800);
     return (
@@ -22,12 +22,12 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                         <span className="headingAvailableSeparator">
 
-       <BookAvailableIn availability={availability}/>
+                            <BookAvailableIn availability={availability} bookTitle={bookTitle} buyLink={buyLink} />
                         </span>
-                 
+
                     </div>
-      
-                  
+
+
                     <p className="releaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book description / synopsis :</p>
                 </div>
@@ -70,11 +70,11 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
             <div className="bookFactsAndDescriptionDiv grid">
                 <div className="factsDiv flex">
 
-                       <div className="headingWrapper">
+                    <div className="headingWrapper">
                         <h3 className={`bookTitle`}>{bookTitle}</h3>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                     </div>
-                    <BookAvailableIn availability={availability} />
+                    <BookAvailableIn availability={availability} bookTitle={bookTitle} />
                     <p className="releaseInfo">RELEASED ORIGINALLY IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book Description / Synopsis :</p>
                 </div>
