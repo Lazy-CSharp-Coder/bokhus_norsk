@@ -83,6 +83,13 @@
     cursor: pointer;
 }
 
+.buttonCopy {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    
+}
+
 
 .isbnDiv {
     display: flex;
