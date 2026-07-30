@@ -92,7 +92,7 @@
 }
 
 .buttonCopy:active {
-    color: var(--bokhusRootsColor);
+    color: red;
   
 
 }
