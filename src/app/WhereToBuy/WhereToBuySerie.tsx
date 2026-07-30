@@ -86,7 +86,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
               <div className="buyTitleBookNumberWrapper">       <span className="buyTitleBook"> {item.bookTitle} </span>
                 <div className="">Book <span className="buyListBookNumber">{getBookNumberInString(item.bookInSeries)}</span> of the Series </div>
               </div>
-              <BookAvailableIn availability={item.availability} classNameItem="buyAvailabilityItem"  />
+              <BookAvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" shouldIsbnPopUpShow={false} />
             </div>
             {item.buyLink != undefined ? <GoLinkExternal className="buyLinkArrow" size="1.9rem" /> : <PiGlobeSimpleXLight className="noLinkArrow" size="2.1rem" />}
             <div className="buyAvailableDiv">

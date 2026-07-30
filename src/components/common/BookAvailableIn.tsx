@@ -8,7 +8,8 @@ interface AvailabilityProps
     buyLink?: string,
     bookTitle?: string,
     classNameItem?: string,
-    fontSize?: string;
+    fontSize?: string,
+    shouldIsbnPopUpShow? : boolean
 }
 
 
@@ -28,7 +29,7 @@ import { Availability } from "@/types/booktypes";
 import Link from "next/link";
 import { useOutsideClick } from "@/functions/useOutsideClick";
 
-export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink, bookTitle }: AvailabilityProps)
+export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink, bookTitle, shouldIsbnPopUpShow }: AvailabilityProps)
 {
 
     const [isPopupShowing, setPopupShowing] = useState<boolean>(false);
@@ -46,7 +47,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
         if (shallClose) setPopupShowing(false);
 
     };
-
+    const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true: false;
     useOutsideClick(handleOutSideClick);
 
     return (
@@ -61,7 +62,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                     </li>
                 )
             }
-            {isPopupShowing &&
+            {(isPopupShowing && showPopup) &&
                 <div className="popUpIsbnDiv"  onClick={(e) => e.stopPropagation()}>
                     <div className="isbnDiv">
                             <span className="isbnText">ISBN NUMBERS :</span>
