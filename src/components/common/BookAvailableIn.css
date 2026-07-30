@@ -87,7 +87,14 @@
     background-color: transparent;
     border: none;
     box-shadow: none;
-    
+    color: darkblue;
+
+}
+
+.buttonCopy:active {
+    color: var(--bokhusRootsColor);
+  
+
 }
 
 

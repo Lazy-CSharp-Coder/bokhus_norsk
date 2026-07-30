@@ -70,7 +70,12 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                         <ul className="isbnList">
 
                             {availability.map((item, index) =>
-                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn}</span><BsCopy className="iconCopy" size={fontSize ? fontSize : "0.7rem"}/></li>
+                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn}</span>
+                                <button className="buttonCopy">
+
+                                      <BsCopy className="iconCopy" size={fontSize ? fontSize : "0.7rem"}/>
+                                </button>
+                              </li>
 
                             )}
                         </ul>
