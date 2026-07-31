@@ -13,7 +13,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     const params = await searchParams;
     const bookUid = params.message as string;
     // const bookUid = "779ccbb4-8d96-4c30-aee9-65a54403e014";
-    const BOOK_QUERY = `*[_type == "BookX" && _id == $bookUidFromParams][0]`;
+    const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
     const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
     const SERIES_QUERY = `*[_type == "Series" && _id == $serieId ][0]`;
     let bookToShow: Book | undefined;
