@@ -147,3 +147,14 @@
      
     }
 }
+
+
+/* max 480px */
+@media (max-width: 39.99em) {
+    .isbnListItem {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: flex-start;
+    }
+}
