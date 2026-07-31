@@ -2,7 +2,8 @@
 
 import { auth, clerkClient} from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
-import { DeleteOptions } from "./components/deletetypes";
+
+import { redirect } from "next/navigation";
 
 
 
@@ -70,7 +71,12 @@ export async function handleDelete (formData: FormData): Promise<void>
         const profile = formData.get("profile") === "on";
         const clerk = formData.get("clerk") ===  "on";
         if (profile) await deleteSanityProfile();
-        if (clerk) await deleteClerkUser();
+        if (clerk) {
+
+            await deleteClerkUser(); 
+            redirect("/");
+         
+        }
 
     }
     catch (error)
