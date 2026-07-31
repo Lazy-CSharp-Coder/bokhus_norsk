@@ -223,7 +223,7 @@
         flex-direction: column;
         margin: 0;
         /* padding-top: 2rem; */
-        padding: 5.7% 0rem;
+        padding: 3rem 0rem;
 
         height: max-content;
         gap: 3rem;
@@ -278,7 +278,8 @@
         align-items: center;
         gap: 1.5rem;
         padding: 0 0.2rem;
-        width: 98%;
+        /* width: 98%; */
+        flex: 1;
     }
 
     .factsDiv {
