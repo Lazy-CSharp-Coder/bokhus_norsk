@@ -21,8 +21,9 @@ export function DeleteForm({ }: DeleteOptionsProps)
         setOptions((prev) => ({ ...prev, [name]: checked }));
     };
 
-    const handleSubmit = () =>
+    const handleDelete = () =>
     {
+
         
     };
 
