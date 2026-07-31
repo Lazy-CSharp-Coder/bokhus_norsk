@@ -18,11 +18,12 @@ export function DeleteForm({ }: DeleteOptionsProps)
     const handleChange = (event: ChangeEvent<HTMLInputElement>) =>
     {
         const { name, checked } = event.target;
-        setOptions((prev) => ({ ...prev, [name]: checked }));
+        setOptions((prev) => ( name == "clerk" ? prev.clerk == false ? { clerk : !prev.clerk, profile : true} : { ...prev, [name]: checked } : { ...prev, [name]: checked }));
     };
 
     const handleDelete = () =>
     {
+
 
         
     };
@@ -38,7 +39,7 @@ export function DeleteForm({ }: DeleteOptionsProps)
 
 
            
-            <label className="deleteLabel">  <input name="profile" className="deleteCheck" type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} /> Delete profile information at Bokhus  </label>
+            <label className="deleteLabel">  <input name="profile" className="deleteCheck" type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} disabled={options.clerk}/> Delete profile information at Bokhus  </label>
 
             <label className="deleteLabel" id="deleteClerk"><input name="clerk" className="deleteCheck" type="checkbox" id="deleteClerk" checked={options.clerk} onChange={handleChange}/>Delete login information at Clerk  </label>
             <div className="deleteButtonDiv">
