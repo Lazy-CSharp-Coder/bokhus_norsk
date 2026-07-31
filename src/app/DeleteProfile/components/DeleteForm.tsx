@@ -7,6 +7,8 @@ import { handleDelete } from "../actions";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import { useFormStatus } from "react-dom";
+import  ErrorUI  from "./../../error"
+import { handleBuildComplete } from "next/dist/build/adapter/build-complete";
 
 
 
@@ -16,6 +18,8 @@ export function DeleteForm()
 {
     const [options, setOptions] = useState<DeleteOptions>({ profile: true, clerk: false });
 
+    const [error, setCaughtError] = useState<Error |null>(null);
+
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) =>
     {
@@ -23,13 +27,35 @@ export function DeleteForm()
         setOptions((prev) => (name == "clerk" ? prev.clerk == false ? { clerk: !prev.clerk, profile: true } : { ...prev, [name]: checked } : { ...prev, [name]: checked }));
     };
 
+    const handleAction = async (formData : FormData) =>
+    {
+        try {
+            await handleDelete(formData);
+
+            window.location.href = "/";
+
+            
+        }
+        catch(error)
+        {
+            console.error("Deletion failed :" , error);
+            setCaughtError(error instanceof Error ? error : new Error("Failed to delete account"));
+            
+        }
+    }
+
     const { pending} = useFormStatus();;
     const noChecked = !options.clerk && !options.profile;
     const router = useRouter();
    
+    if(error) 
+    {
+        <ErrorUI error={error} reset={() => setCaughtError(null)}/>
+    }
+
     return (
 
-        <form className="deleteForm" action={handleDelete}>
+        <form className="deleteForm" action={handleAction}>
             <div className="deleteFormHeadingIconWrapper">
                 <h3 className="deleteFormHeading"> PLEASE CHOOSE DELETE OPTIONS</h3>
                 <RiDeleteBin6Line className="deleteFormIcon" size="1.5rem" />
