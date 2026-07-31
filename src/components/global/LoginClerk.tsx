@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { FaUserLarge } from "react-icons/fa6";
 import { PiSignOutBold } from "react-icons/pi";
+import { TiDelete } from "react-icons/ti";
 
 function LoginClerkContent()
 {
@@ -53,7 +54,12 @@ function LoginClerkContent()
                             }
                         }} ><UserButton.MenuItems>
                             <UserButton.Action label={"Your profile at BokHus"} labelIcon={<FaUserLarge size="16" />} onClick={handleProfileClick} />
+
+                            <UserButton.Action label="Delete profile" labelIcon={<TiDelete size="22" className="deleteProfileIcon"/>} onClick={() => router.push("/DeleteProfile")}/>
+                            
                             <UserButton.Action label="Sign Out" onClick={() => signOut({ redirectUrl: path || "/" })} labelIcon={<PiSignOutBold size="17" />} />
+                          
+                            
                         </UserButton.MenuItems>
                     </UserButton>
 
