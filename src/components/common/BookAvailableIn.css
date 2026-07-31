@@ -1,8 +1,15 @@
+.bookAvailableDiv {
+    width: fit-content;
+    height: fit-content;
+        position: relative;
+}
+
+
 .availabilityList {
     flex-direction: row;
     gap: 1rem;
     list-style: none;
-    position: relative;
+
 
 }
 
@@ -151,10 +158,18 @@
 
 
 @media (max-width: 39.99em) {
+    .bookAvailableDiv {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .popUpIsbnDiv {
       
-        max-width: 80vw;
-        left: -8vw;
+        max-width: 85%;
+        left: 7.5%;
+        
      
     }
 

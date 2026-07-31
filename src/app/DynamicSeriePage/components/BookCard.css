@@ -223,7 +223,7 @@
         flex-direction: column;
         margin: 0;
         /* padding-top: 2rem; */
-        padding: 5% 0rem;
+        padding: 5.7% 0rem;
 
         height: max-content;
         gap: 3rem;
@@ -234,14 +234,15 @@
         /* flex: 1; */
         animation-name: fadeInFromBelow;
         overflow: hidden;
+        max-width: 98%;
 
 
     }
 
 
     .bookImage {
-        max-width: 90%;
-        width: 90%;
+        max-width: 87%;
+        width: 87%;
         flex: 0 0 auto;
     }
 
@@ -251,12 +252,14 @@
 
     .headingWrapper {
         align-items: center;
+        width: 100%;
 
     }
 
     .bookTitle {
         font-size: 2.9rem;
         text-align: center;
+        max-width: 90%;
     }
 
     .bookInfoDiv {
@@ -275,7 +278,7 @@
         align-items: center;
         gap: 1.5rem;
         padding: 0 0.2rem;
-        width: 100%;
+        width: 98%;
     }
 
     .factsDiv {
