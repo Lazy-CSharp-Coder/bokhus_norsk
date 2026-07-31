@@ -1,8 +1,15 @@
+.bookAvailableDiv {
+    width: fit-content;
+    height: fit-content;
+        position: relative;
+}
+
+
 .availabilityList {
     flex-direction: row;
     gap: 1rem;
     list-style: none;
-    position: relative;
+
 
 }
 
@@ -137,4 +144,38 @@
     font-weight: 600;
     color: black;
     padding-top: 0.1rem;
+}
+
+
+@media (max-width: 63.99em) {
+    .popUpIsbnDiv {
+        left: -31%;
+     
+     
+    }
+}
+
+
+
+@media (max-width: 39.99em) {
+    .bookAvailableDiv {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popUpIsbnDiv {
+      
+        max-width: 85%;
+        left: 7.5%;
+        
+     
+    }
+
+    .isbnListItem {
+     grid-template-columns: 25% max-content auto;
+     column-gap: 0.3rem;
+     width: 100%;
+    }
 }

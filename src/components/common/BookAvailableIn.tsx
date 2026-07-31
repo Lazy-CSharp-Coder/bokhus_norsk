@@ -49,70 +49,76 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
         if (shallClose) setPopupShowing(false);
 
     };
-  
+
     const handleCopy = async (textToCopy: string) =>
     {
-        try {
+        try
+        {
             await navigator.clipboard.writeText(textToCopy);
             setIsCopied(true);
             setTimeout(() => setIsCopied(false), 2000);
         }
-        catch(error)
+        catch (error)
         {
             console.error("Failed to copy isbn : ", error);
         }
-    }
-  
+    };
+
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
 
     return (
+        <div className="bookAvailableDiv">
 
-        <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
-            {
-                availability.map((item, index) =>
-                    <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
-                        {item.bookType}
+            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
+                {
+                    availability.map((item, index) =>
+                        <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
+                            {item.bookType}
 
 
-                    </li>
-                )
-            }
-            {(isPopupShowing && showPopup) &&
-                <div className="popUpIsbnDiv" onClick={(e) => e.stopPropagation()}>
-                    <div className="isbnDiv">
-                        <span className="isbnText">ISBN NUMBERS :</span>
-                        <ul className="isbnList">
+                        </li>
+                    )
+                }
+                {(isPopupShowing && showPopup) &&
+                    <div className="popUpIsbnDiv" onClick={(e) => e.stopPropagation()}>
+                        <div className="isbnDiv">
+                            <span className="isbnText">ISBN NUMBERS :</span>
+                            <ul className="isbnList">
 
-                            {availability.map((item, index) =>
-                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn ? item.isbn : "No ISBN number available"}</span>
-                                <button className="buttonCopy" onClick={() => handleCopy(item.isbn)}>
+                                {availability.map((item, index) =>
+                                    <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn ? item.isbn : "No ISBN number available"}</span>
+                                        <button className="buttonCopy" onClick={() => handleCopy(item.isbn)}>
 
-                                      <BsCopy className="iconCopy" size={fontSize ? fontSize : "0.7rem"}/>
-                                </button>
-                              </li>
+                                            <BsCopy className="iconCopy" size={fontSize ? fontSize : "0.7rem"} />
+                                        </button>
+                                    </li>
 
-                            )}
-                        </ul>
+                                )}
+                            </ul>
+                        </div>
+                        <div className="buyLinkDiv">
+                            {buyLink ?
+                                <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available</p>}
+
+                        </div>
+                        <p className="amazonTextPopup">
+                            As an Amazon Associate we earn from qualifying purchases.
+                        </p>
                     </div>
-                    <div className="buyLinkDiv">
-                        {buyLink ?
-                            <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available</p>}
 
-                    </div>
-                    <p className="amazonTextPopup">
-                        As an Amazon Associate we earn from qualifying purchases.
-                    </p>
-                </div>
-
-            }
+                }
 
 
 
 
 
 
-        </ul>
+            </ul>
+
+
+        </div>
+
 
 
     );
