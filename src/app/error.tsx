@@ -19,7 +19,7 @@ export default function Error({error, reset} : ErrorProps)
         <div className="errorDiv">
             <BiSolidError size="8rem" className="errorIcon"/>
             <h2 className="errorHeading">Something went wrong!</h2>
-            Bokhus had trouble connecting to the database.
+             {error.message}
             <button onClick={() => reset()} className="submitButton errorButton">TRY AGAIN</button>
         </div>
     )
