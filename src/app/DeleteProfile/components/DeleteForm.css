@@ -55,9 +55,14 @@
 .deleteButton {
     flex:1;
     width: 100%;
+    transition: all 0.5 ease-in-out;
 }
 
 .cancelButton {
     flex: 1;
     width: 100%;
+}
+
+.disable {
+    opacity: 0.6;
 }
