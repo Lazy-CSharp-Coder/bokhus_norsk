@@ -145,7 +145,9 @@
     color: rgba(221, 221, 221, 1);
     font-size: 1.1rem;
     font-family: var(--libreFont);
-
+    text-align: center;
+    text-overflow: clip;
+     
     /* font-family: var(--descriptionFont); */
 }
 
@@ -234,7 +236,7 @@
         /* flex: 1; */
         animation-name: fadeInFromBelow;
         overflow: hidden;
-        max-width: 98%;
+        max-width: 90%;
 
 
     }
@@ -277,7 +279,7 @@
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
-        padding: 0 0.2rem;
+        /* padding: 0 0.2rem; */
         /* width: 98%; */
         flex: 1;
     }
@@ -301,7 +303,7 @@
 
     .descriptionSubWrapper {
         gap: 2rem;
-        padding: 0 1.5rem;
+        /* padding: 0 1.5rem; */
         align-items: center;
     }
 
