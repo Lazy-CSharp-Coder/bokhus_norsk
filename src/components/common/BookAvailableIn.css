@@ -159,7 +159,7 @@
     }
 
     .isbnListItem {
-     grid-template-columns: 25% auto auto;
+     grid-template-columns: 25% max-content auto;
      column-gap: 0.3rem;
      width: 100%;
     }
