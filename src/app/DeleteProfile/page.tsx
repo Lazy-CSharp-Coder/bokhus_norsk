@@ -2,13 +2,16 @@
 import { BokHusCom } from "@/components/common/BokHusCom";
 import Image from "next/image";
 import "./DeleteProfile.module.css";
-import { DeleteOptions } from "./components/deletetypes";
 import { DeleteForm } from "./components/DeleteForm";
 import { BokHus } from "@/components/common/BokHus";
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 
 export  default async function DeleteProfile()
 {
+    const user = await currentUser();
+    if(!user) redirect("/");
 
     return (
         <main className="deleteProfilePage">
