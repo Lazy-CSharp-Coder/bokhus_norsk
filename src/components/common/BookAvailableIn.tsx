@@ -85,7 +85,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                         <ul className="isbnList">
 
                             {availability.map((item, index) =>
-                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn}</span>
+                                <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn ? item.isbn : "No ISBN number available"}</span>
                                 <button className="buttonCopy" onClick={() => handleCopy(item.isbn)}>
 
                                       <BsCopy className="iconCopy" size={fontSize ? fontSize : "0.7rem"}/>
