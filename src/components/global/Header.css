@@ -141,9 +141,23 @@
 }
 
 .deleteProfileIcon {
-  color:red;
+  color: red;
 }
 
+.deleteProfileIcon svg {
+  
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.clerkButtonSpan {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
 
 .desktopMode {
 
