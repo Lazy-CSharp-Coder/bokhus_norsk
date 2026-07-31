@@ -56,9 +56,9 @@ export async function deleteClerkUser(): Promise<void>
         console.log("here I am");
         const client = await clerkClient();
         await client.users.deleteUser(userId);
-        const cookieStore = cookies();
-        (await cookieStore).delete("__session");
-        (await cookieStore).delete("__client_uat")
+        // const cookieStore = cookies();
+        // (await cookieStore).delete("__session");
+        // (await cookieStore).delete("__client_uat")
     
 
     }
@@ -72,7 +72,7 @@ export async function deleteClerkUser(): Promise<void>
                 console.log("User already deleted. (strict mode double)");
                 const cookieStore = await cookies();
                 cookieStore.delete("__session");
-                cookieStore.delete("__client_uat");
+                cookieStore.delete("__client_uat");d
 
             }
 
