@@ -21,7 +21,7 @@ export async function deleteSanityProfile(): Promise<void>
     {
         const USER_QUERY = `*[_type == "User" && userId == $clerkUserId][0]._id`;
         const documentId = await client.fetch(USER_QUERY, { clerkUserId: userId });
-
+        console.log("Document id :" + documentId);
         if (documentId)
         {
             await client.delete(documentId);

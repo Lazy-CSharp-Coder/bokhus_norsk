@@ -35,7 +35,7 @@ export function DeleteForm()
                 <RiDeleteBin6Line className="deleteFormIcon" size="1.5rem" />
             </div>
 
-            <label className="deleteLabel">  <input name="profile" className="deleteCheck" type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} disabled={options.clerk} /> Delete profile information at ...  </label>
+            <label className="deleteLabel">  <input name="profile" className="deleteCheck" type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} disabled={options.clerk} /> Delete profile information at Bokhus  </label>
 
             <label className="deleteLabel" id="deleteClerk"><input name="clerk" className="deleteCheck" type="checkbox" id="deleteClerk" checked={options.clerk} onChange={handleChange} />Delete login information at Clerk  </label>
             <div className="deleteButtonDiv">
