@@ -149,12 +149,18 @@
 }
 
 
-/* max 480px */
+
 @media (max-width: 39.99em) {
+    .popUpIsbnDiv {
+      
+        max-width: 80vw;
+        left: -8vw;
+     
+    }
+
     .isbnListItem {
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-        align-items: flex-start;
+     grid-template-columns: 25% auto auto;
+     column-gap: 0.3rem;
+     width: 100%;
     }
 }
