@@ -3,9 +3,7 @@
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { sanityWriteClient } from "@/sanity/client";
 
-import { redirect } from "next/navigation";
 import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
-import { useClerk } from "@clerk/nextjs";
 import { cookies } from "next/headers";
 
 
@@ -72,7 +70,7 @@ export async function deleteClerkUser(): Promise<void>
                 console.log("User already deleted. (strict mode double)");
                 const cookieStore = await cookies();
                 cookieStore.delete("__session");
-                cookieStore.delete("__client_uat");d
+                cookieStore.delete("__client_uat");
 
             }
 

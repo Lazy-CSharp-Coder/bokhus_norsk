@@ -138,3 +138,12 @@
     color: black;
     padding-top: 0.1rem;
 }
+
+
+@media (max-width: 63.99em) {
+    .popUpIsbnDiv {
+        left: -31%;
+     
+     
+    }
+}
