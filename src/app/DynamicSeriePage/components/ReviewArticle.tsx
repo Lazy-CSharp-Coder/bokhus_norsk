@@ -20,7 +20,8 @@ interface ReviewSlideShowProps
 {
     array: Review[],
     height: string,
-    animationToUse: AnimationToUse;
+    animationToUse: AnimationToUse,
+    bookName : string
 }
 
 
@@ -222,20 +223,20 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
             {reviewArray && reviewArray.map((item, index) =>
 
                 <div ref={(element) => { itemRefsForHeight.current[index] = element; }} key={index + "#HeightColletorDiv#"} className="reviewDisplayer flex" style={{ visibility: "hidden", position: "absolute" }}>
-                    <ReviewCard key={item._id + "#hidden" + index} _id={item._id} bookRef={item.bookRef} bookReviewed={item.bookReviewed} format={item.format} date={item.date} country={item.country}
+                    <ReviewCard key={item._id + "#hidden" + index} _id={item._id} bookReviewed={bookName} format={item.format} date={item.date} country={item.country}
                         stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
                         reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse="none" />
                 </div>
             )}
             {arrayToView && reviewDisplayHeight != 0 ?
-                <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} /> : <h3 className="reviewsNotFoundText">No reviews found</h3>
+                <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName}/> : <h3 className="reviewsNotFoundText">No reviews found</h3>
             }
         </article>);
 }
 
 
 
-export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideShowProps)
+export function ReviewSlideShow({ array, animationToUse, height, bookName }: ReviewSlideShowProps)
 {
     console.log(`ReviewSlideShowData : Array length : ${array.length}`);
     return (
@@ -249,7 +250,7 @@ export function ReviewSlideShow({ array, animationToUse, height }: ReviewSlideSh
 
                     return (
 
-                        <ReviewCard key={item._id} _id={item._id} bookRef={item.bookRef} bookReviewed={item.bookReviewed} format={item.format} date={item.date} country={item.country}
+                        <ReviewCard key={item._id} _id={item._id} bookReviewed={bookName} format={item.format} date={item.date} country={item.country}
                             stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
                             reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse={animationToUse} />);
 

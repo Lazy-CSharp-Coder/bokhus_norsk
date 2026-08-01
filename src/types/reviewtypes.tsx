@@ -4,8 +4,6 @@ export interface Review
 {
 
     _id: string,
-    bookRef: SanityReference,
-    bookReviewed: string,
     format?: string,
     date: string,
     reviewedOn: string,
@@ -22,6 +20,7 @@ export type AnimationToUse = "fadeInFromLeftAnim" | "fadeInFromRightAnim" | "non
 export type AsyncStatus = "loading" | "done" | "not started";
 export interface ReviewProps extends Review
 {
+    bookReviewed : string,
     doAnimateStars?: boolean;
     animationToUse: AnimationToUse,
 
