@@ -238,7 +238,7 @@ a {
 
 @media (max-width: 24rem) {
     html {
-        /* font-size: 50%; */
+        font-size: 60%;
     }
 }
 @media (prefers-color-scheme: dark) {

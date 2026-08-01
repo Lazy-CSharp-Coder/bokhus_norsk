@@ -130,9 +130,11 @@
     padding-left: 0.1rem;
 }
 
-.bookInfo {
+.bookInfoDiv {
     font-size: 1.3rem;
     font-style: oblique;
+
+    
 
 }
 
@@ -237,7 +239,7 @@
         /* flex: 1; */
         animation-name: fadeInFromBelow;
         overflow: hidden;
-        max-width: 90%;
+        max-width: 94%;
 
 
     }
@@ -267,6 +269,7 @@
 
     .bookInfoDiv {
         font-size: 1.4rem;
+        text-align: center;
     }
 
     .headingAvailableSeparator {
