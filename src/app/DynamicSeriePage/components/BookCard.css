@@ -146,7 +146,8 @@
     font-size: 1.1rem;
     font-family: var(--libreFont);
     text-align: center;
-    text-overflow: clip;
+    text-wrap: wrap;
+
      
     /* font-family: var(--descriptionFont); */
 }

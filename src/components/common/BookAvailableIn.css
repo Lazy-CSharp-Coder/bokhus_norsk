@@ -147,17 +147,17 @@
 }
 
 
-@media (max-width: 63.99em) {
+/* @media (max-width: 63.99em) {
     .popUpIsbnDiv {
         left: -31%;
      
      
     }
-}
+} */
 
 
 
-@media (max-width: 39.99em) {
+@media (max-width: 63.99em) {
     .bookAvailableDiv {
         width: 100vw;
         display: flex;
@@ -167,15 +167,15 @@
 
     .popUpIsbnDiv {
       
-        max-width: 85%;
-        left: 7.5%;
-        
+        /* left: 7.5%; */
+            background: red;
+            width: 100%;
      
     }
 
     .isbnListItem {
-     grid-template-columns: 25% max-content auto;
-     column-gap: 0.3rem;
-     width: 100%;
+     grid-template-columns: 15% fit-content auto;
+     background: blue;
+
     }
 }
