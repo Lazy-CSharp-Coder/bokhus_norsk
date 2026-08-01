@@ -140,6 +140,9 @@ font-size: var(--iconCopySize) !important;
 
 }
 
+.notThereLink {
+    color: darkred;
+}
 
 .buyLinkDiv {
     
@@ -151,16 +154,21 @@ font-size: var(--iconCopySize) !important;
     
 }
 
-.buyLink {
+.buyLink, .linkNotThereText {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: left;
     padding-left: 0.1rem;
     gap: 0.8rem;
     color: rgba(13, 25, 116);
     width: 100%;
     cursor: pointer;
         
+}
+
+.linkNotThereText{
+    gap: 2rem;
 }
 
 .amazonTextPopup {
