@@ -205,7 +205,7 @@ font-size: var(--iconCopySize) !important;
     .isbnListItem {
 
      font-size: 0.8rem;
-     background: lightgreen;
+     /* background: lightgreen; */
 
     }
 }
@@ -224,7 +224,7 @@ font-size: var(--iconCopySize) !important;
   .isbnListItem {
      /* grid-template-columns:repeat(3, auto); */
         
-     background: lightblue;
+     /* background: lightblue; */
 
   }
 

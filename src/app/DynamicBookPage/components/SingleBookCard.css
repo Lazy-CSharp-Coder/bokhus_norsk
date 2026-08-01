@@ -255,10 +255,12 @@
 
     .singleBookCardInfoDiv {
         align-items: center;
+        gap:2rem;
     }
 
     .singleBookCardHeadingWrapper {
         align-items: center;
+        gap:1rem;
     }
 
     .singleBookCardBookTitle {
@@ -270,6 +272,7 @@
     }
     .singleBookCardFactDiv {
         align-items: center;
+        gap:1.5rem;
     }
 
     .singleBookCardReleaseText {
