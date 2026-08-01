@@ -70,7 +70,7 @@
 .seriesList {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3.2rem;
     width: 100%;
     padding: 2rem 1rem;
     list-style: none;

@@ -1,6 +1,6 @@
 :root {
 
-    --singleBookDescriptionFontSize: 1.35rem;
+    --singleBookDescriptionFontSize: 1.1rem;
  --coverTitleColor: #ecc776;
 }
 
@@ -37,7 +37,7 @@
 .singleBookCard {
 
     display: grid;
-    grid-template-columns: 32% 65%;
+    grid-template-columns: auto 65%;
     column-gap: 3%;
 
 
@@ -67,10 +67,10 @@
 .singleBookCardImage {
     position: relative;
 
-    max-width: 50vw;
+    max-width: 40rem;
 
     height: auto;
-    align-self: center;
+
     flex: 0 0 auto;
     /* object-fit: contain; */
     aspect-ratio: 2/3;

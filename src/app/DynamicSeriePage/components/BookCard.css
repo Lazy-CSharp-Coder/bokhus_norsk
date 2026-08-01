@@ -130,9 +130,11 @@
     padding-left: 0.1rem;
 }
 
-.bookInfo {
+.bookInfoDiv {
     font-size: 1.3rem;
     font-style: oblique;
+
+    
 
 }
 
@@ -145,7 +147,10 @@
     color: rgba(221, 221, 221, 1);
     font-size: 1.1rem;
     font-family: var(--libreFont);
+    text-align: center;
+    text-wrap: wrap;
 
+     
     /* font-family: var(--descriptionFont); */
 }
 
@@ -223,7 +228,7 @@
         flex-direction: column;
         margin: 0;
         /* padding-top: 2rem; */
-        padding: 5.7% 0rem;
+        padding: 3rem 0rem;
 
         height: max-content;
         gap: 3rem;
@@ -234,7 +239,7 @@
         /* flex: 1; */
         animation-name: fadeInFromBelow;
         overflow: hidden;
-        max-width: 98%;
+        max-width: 94%;
 
 
     }
@@ -264,12 +269,14 @@
 
     .bookInfoDiv {
         font-size: 1.4rem;
+        text-align: center;
     }
 
     .headingAvailableSeparator {
 
         margin: 1rem;
         font-size: 1.1rem;
+        width: 100%;
     }
 
     .bookFactsAndDescriptionDiv {
@@ -277,8 +284,9 @@
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
-        padding: 0 0.2rem;
-        width: 98%;
+        /* padding: 0 0.2rem; */
+        /* width: 98%; */
+        flex: 1;
     }
 
     .factsDiv {
@@ -300,7 +308,7 @@
 
     .descriptionSubWrapper {
         gap: 2rem;
-        padding: 0 1.5rem;
+        /* padding: 0 1.5rem; */
         align-items: center;
     }
 

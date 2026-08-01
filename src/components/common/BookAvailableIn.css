@@ -1,12 +1,19 @@
+:root {
+    --iconCopySize: : 1rem;
+}
+
 .bookAvailableDiv {
     width: fit-content;
     height: fit-content;
         position: relative;
+        z-index: 100;
 }
 
 
 .availabilityList {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     list-style: none;
 
@@ -32,6 +39,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 0.2rem;
     width: max-content;
     padding: 0.6rem 0.6rem;
@@ -62,6 +70,20 @@
     opacity: 1;
   }
 }
+
+
+@keyframes fadeInFromAboveSmall {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 
 
@@ -95,12 +117,13 @@
 .isbnListItem {
     display: grid;
     grid-template-columns: 30% auto 8%;
-    padding-left: 0.1rem;
+    padding: 0 0.3rem;
     align-items: center;
 }
 
 .iconCopy {
     cursor: pointer;
+font-size: var(--iconCopySize) !important;
 }
 
 .buttonCopy {
@@ -147,19 +170,19 @@
 }
 
 
-@media (max-width: 63.99em) {
+/* @media (max-width: 63.99em) {
     .popUpIsbnDiv {
         left: -31%;
      
      
     }
-}
+} */
 
 
 
-@media (max-width: 39.99em) {
+@media (max-width: 63.99em) {
     .bookAvailableDiv {
-        width: 100vw;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -167,15 +190,43 @@
 
     .popUpIsbnDiv {
       
-        max-width: 85%;
-        left: 7.5%;
-        
+        /* left: 7.5%; */
+            /* background: red; */
+            width: 100%;
+            font-size:0.9rem;
+           left:0;
+           animation-name: fadeInFromAboveSmall;
      
+    }
+    .isbnList {
+        width: 100%;
     }
 
     .isbnListItem {
-     grid-template-columns: 25% max-content auto;
-     column-gap: 0.3rem;
-     width: 100%;
+
+     font-size: 0.8rem;
+     background: lightgreen;
+
     }
+}
+
+
+
+/* max 480px */
+@media (max-width: 29.99em) {
+
+  .popUpIsbnDiv {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    max-width: 100%;
+  }
+
+  .isbnListItem {
+     /* grid-template-columns:repeat(3, auto); */
+        
+     background: lightblue;
+
+  }
+
+
 }
