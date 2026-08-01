@@ -5,6 +5,7 @@ import { ErrorPage } from "@/components/common/ErrorPage";
 import { SingleBookCard } from "./components/SingleBookCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { urlFor } from "@/functions/urlFor";
+import { ErrorBokhus } from "../ErrorBokhus";
 
 export default async function DynamicBookPage({ searchParams }: PageProps)
 {
@@ -15,35 +16,74 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
     const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
     const SERIES_QUERY = `*[_type == "Series" && _id == $serieId ][0]`;
-    
+    let bookToShow: Book | undefined;
 
-    const bookToShow: Book = await client.fetch<Book>(BOOK_QUERY, { bookUidFromParams: bookUid });
-
-    if (!bookToShow)
+    try
     {
-        return (
-            <ErrorPage message="BOOKS FOR SERIE NOT FOUND IN DATABASE" />);
+        bookToShow = await client.fetch<Book>(BOOK_QUERY, { bookUidFromParams: bookUid });
     }
-   const authorsIds: string[] = bookToShow.authorUids.map((item) => item._ref) ;
-   console.log("author ids are " + authorsIds)
-    const authors: Author[] = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
+    catch (error)
+    {
+        console.error("Sanity fetch failed :", error);
+        throw new Error("Failed to fetch authors from Sanity");
+    }
+
+    if (!bookToShow) 
+    {
+        return (<ErrorBokhus msg="BOOK FOR SERIE NOT FOUND IN DATABASE." />);
+    }
+
+    const authorsIds: string[] = bookToShow.authorUids.map((item) => item._ref);
+    console.log("author ids are " + authorsIds);
+    let authors: Author[] = [];
+
+    try
+    {
+        authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
+
+    }
+    catch (error)
+    {
+        console.error("Sanity fetch failed :", error);
+        throw new Error("Failed to fetch authors from Sanity");
+    }
 
     if (!authors)
     {
         return (
-            <ErrorPage message="AUTHORS FOR BOOK NOT FOUND IN DATABASE" />);
+            <ErrorBokhus msg="AUTHORS FOR BOOK NOT FOUND IN DATABASE" />);
     }
+
     const authorNames: string[] = authors.map((item) => item.name);
 
     const serieId = bookToShow.seriesRef._ref;
 
-    const serieBelonging = await client.fetch<Series>(SERIES_QUERY, { serieId : serieId });
+    let serieBelonging: Series | undefined;
+    try
+    {
+
+        serieBelonging = await client.fetch<Series>(SERIES_QUERY, { serieId: serieId });
+
+    }
+    catch (error)
+    {
+        console.error("Sanity fetch failed :", error);
+        throw new Error("Failed to fetch authors from Sanity");
+    }
+
+    if (!serieBelonging) 
+    {
+        return (
+            <ErrorBokhus msg="SERIE FOR BOOK NOT FOUND IN DATABASE" />);
+    }
+
+
     const backgroundImage = urlFor(serieBelonging.imageSeriesBackground, 2000);
 
     return (
         <main className="singleBookPage">
-            <BackgroundImage className="singleBookPageBackgroundImage" src={backgroundImage}/>
-               <section className="singleBookCardSection">
+            <BackgroundImage className="singleBookPageBackgroundImage" src={backgroundImage} />
+            <section className="singleBookCardSection">
                 <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
                     description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
 

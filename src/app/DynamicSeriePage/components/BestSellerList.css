@@ -4,6 +4,7 @@
     /* margin-top: 0.45rem; */
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.42rem;
     font-size: 1.05rem;
     /* font-family: "Roboto", sans-serif; */
@@ -27,6 +28,6 @@
 @media (max-width: 63.99em) {
 
     .bestSellerList {
-        font-size: 1.2rem;
+        /* font-size: 1.2rem; */
     }
 }

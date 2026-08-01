@@ -9,6 +9,7 @@ import "./Authors.module.css";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import "./Authors.module.css";
+import { ErrorBokhus } from "../ErrorBokhus";
 
 export default async function Authors()
 {
@@ -16,9 +17,25 @@ export default async function Authors()
     const waitForMain: number = 800;
 
     const AUTOHRS_QUERY = `*[_type == "Author"] | order(name asc)`;
-    const authors: Author[] = await client.fetch<Author[]>(AUTOHRS_QUERY);
+    let authors : Author[] = [];
+    try {
+     
+        
+        authors = await client.fetch<Author[]>(AUTOHRS_QUERY);
+        
 
-    // const authors = authorsFromServer;  // this works, but shows no image
+    }
+    catch (error)
+    {
+        console.error("Sanity fetch failed :", error);
+        throw new Error("Failed to fetch authors from Sanity");
+    }
+
+    if(authors.length < 1) 
+    {
+        return(<ErrorBokhus msg="No authors found in database. Please try again later."/>)
+    }
+
     const setRouteToGo = (author: Author) =>
     {
         const params = new URLSearchParams();
@@ -43,7 +60,7 @@ export default async function Authors()
                         </div>
                         <p className="authorsPageText fadeInAnim">BokHus represents authors with a strong sense of story, place and history. From historical fiction and folklore to educational stories and local heritage, our writers create books that invite readers into worlds they can return to.
                         </p>
-                        <p className="clickText scaleInAnim" style={{ animationDelay: "2s" }}>(Click on <span className="authorCardClickText">Author Card</span> to explore available books and series)</p>
+                        <p className="clickText scaleInAnim" style={{ animationDelay: "2s" }}>Click on <span className="authorCardClickText">Author Card</span> to explore available books and series.</p>
 
 
 

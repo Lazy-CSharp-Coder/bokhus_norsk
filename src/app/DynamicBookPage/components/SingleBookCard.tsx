@@ -42,7 +42,7 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availab
                     <ul className={`singleBookCardDescriptionList flex`}>
                         {description.map((item, index) =>
                         (
-                            <p key={`description-${_id}-${index}`} className={`descriptionText`}>{item}</p>
+                            <p key={`description#single-${_id}-${index}`} className={`descriptionText`}>{item}</p>
 
                         ))}
                     </ul>
