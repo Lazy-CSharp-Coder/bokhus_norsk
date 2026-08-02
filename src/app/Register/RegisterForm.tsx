@@ -20,6 +20,8 @@ import { FaUserLarge } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 
 import { languageOptions } from "./registerSchema";
 
@@ -167,7 +169,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                         </div>
                         {isJoiningOurTeam && <RegisterARC />}
 
-                        <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
+                        <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ?<span className="submitMessage"><AiOutlineLoading3Quarters className="submitIcon" size="1em"/> Submitting data </span> : "Submit"}</button>
                   
                     </form>
 
