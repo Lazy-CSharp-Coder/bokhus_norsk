@@ -23,7 +23,6 @@ export function RegisterARC()
 {
     const { register, formState: { errors } } = useFormContext<{ arc: ARCData; }>();
 
-
     const formatOptions = arcSchema.shape.format.options;
     const howLongOptions = arcSchema.shape.howLong.options;
     const comfortableOptions = arcSchema.shape.comfortable.options;
