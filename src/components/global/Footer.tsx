@@ -1,16 +1,22 @@
 "use client";
 import { AffiliateButton, CookieButton, PrivacyButton, TermsButton } from "./ButtonsFooter";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { IoMailOutline } from "react-icons/io5";
+
 import Link from "next/link";
 import Image from "next/image";
-import { IoIosInformationCircleOutline } from "react-icons/io";
-import { LogoBPWebDev } from "./LogoBPWebDev";
-import "./Footer.module.css";
+
 import { useRef, useState } from "react";
-import { PiArrowFatLinesUpFill } from "react-icons/pi";
 import { useRouter } from "next/navigation";
 import { useOutsideClick } from "@/functions/useOutsideClick";
+
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { IoMailOutline } from "react-icons/io5";
+import { PiArrowFatLinesUpFill } from "react-icons/pi";
+
+import { IoDocumentTextOutline } from "react-icons/io5";
+
+import { LogoBPWebDev } from "./LogoBPWebDev";
+
+import "./Footer.module.css";
 
 export function Footer()
 {
@@ -62,7 +68,8 @@ export function Footer()
                 <div className="pageCreditsDiv">
 
                     <Link className="iconCreditDiv" href="/Credits">
-                        <IoIosInformationCircleOutline size="2.0rem" className="iconCreditIcon" />
+                        {/* <IoIosInformationCircleOutline size="2.0rem" className="iconCreditIcon" /> */}
+                        <IoDocumentTextOutline size="1.9rem" className="iconCreditIcon"/>
                         <span className="logoText">CREDITS
                         </span>
 
@@ -71,7 +78,10 @@ export function Footer()
 
 
                     <div className="logoBPDiv">
-                        <LogoBPWebDev />
+                          <Link href="https://bpwebdev.vercel.app" target="_blank">
+                          <LogoBPWebDev /> 
+                          </Link>
+                
                         <span className="logoText">WEBPAGE BY
                         </span>
 
@@ -106,14 +116,16 @@ export function Footer()
 
 
                         <Link href="/Credits" className="linkMobile">
-                            <IoIosInformationCircleOutline size="2rem" className="infoIcon" />                <span className="logoTextMobile">CREDITS</span>     </Link>
+                            <IoDocumentTextOutline size="1.8rem" className="iconCreditIcon"/>    
+                            <span className="logoTextMobile">CREDITS</span>     </Link>
 
 
 
 
-                        <Link href="/Credits" className="linkMobile">
+                        <Link href="https://bpwebdev.vercel.app" target="_blank" className="linkMobile">
                       <LogoBPWebDev />
-                        <span className="logoTextMobile">WEBPAGE BY         </span>  </Link>
+                        <span className="logoTextMobile">WEBPAGE BY         </span>  
+                        </Link>
 
 
 

@@ -78,15 +78,7 @@
 
 }
 
-.singleBookCardImageDiv {
-    /* grid-template-rows: auto fit-content; */
-    width: 80%;
-    justify-items: start;
-    /* background-color: blue; */
-    overflow: auto;
-
-}
-
+ 
 .singleBookCardInfoDiv {
     display: flex;
     flex-direction: column;

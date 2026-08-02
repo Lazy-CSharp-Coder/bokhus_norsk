@@ -1,5 +1,6 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Resolver } from "react-hook-form";
 import { z } from "zod/v4-mini";
 import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
@@ -21,10 +22,13 @@ import { IoMdClose } from "react-icons/io";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
 
+
+
 import { languageOptions } from "./registerSchema";
-import { FaExclamationCircle } from "react-icons/fa";
-import { RegErrorMessage} from "./RegErrorMessage";
+
+import { RegErrorMessage } from "./RegErrorMessage";
 import { isValid } from "zod/v3";
+import { SubmitButton } from "../../components/common/SubmitButton";
 
 type RegisterFormInput = z.input<typeof registerSchema>;
 
@@ -42,19 +46,35 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
     const noUserMessage = "No profile registered. Please submit info";
     const userFoundMessage = "Profile at BokHus retrieved from database";
+
+
+    
+    const myResolver : Resolver<RegisterFormInput, object, UserData> = async (values, context, options) => 
+    {
+        const normalized : RegisterFormInput = 
+        {
+            ...values, 
+            arc : values.arcInterest ? values.arc : undefined
+
+        } as RegisterFormInput;
+        return zodResolver(registerSchema)(normalized, context, options);
+    } 
+
     const methods = useForm<RegisterFormInput, object, UserData>(
         {
-            resolver: zodResolver(registerSchema),
+            resolver: myResolver,
             defaultValues: data
         }
     );
+
 
     const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting, isValid } } = methods;
     const [userInfo, setUserInfo] = useState<UserInfoHeaderDisplayState>(isNewUser ? "No user message" : "User found message");
 
     const onSubmit = async (data: UserData) =>
     {
-        const result = await submitUserData(data);
+ 
+       const result = await submitUserData(data);
 
         if (result.success)
         {
@@ -66,6 +86,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
     const userEmail = getValues("email");
     const isJoiningOurTeam = watch("arcInterest", false);
+
 
     return (
         <section className="registerSection">
@@ -104,11 +125,11 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 <IoEarthSharp className="inputRegIcon" size="1.9rem" />
                                 <label>Which country are you from (optional) :    {errors.country && <p className="errorRegisterForm">{errors.country.message}</p>} </label>
                                 <input className="registerInput" type="text" {...register("country")} placeholder="country" />
-                            
+
 
                             </div>
                             <div className="multipleChoicesDiv">
-                                <label className="languagesText">What languages do you prefer ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message}/>} </label>
+                                <label className="languagesText">What languages do you prefer ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
                                 <ul className="multipleChoicesList flex">
                                     <LuLetterText className="inputRegListIcon" size="2rem" />
                                     {languageOptions.map((item) => (
@@ -118,10 +139,10 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                         </li>
                                     ))}
 
-                                </ul>  
+                                </ul>
                             </div>
                             <div className="multipleChoicesDiv">
-                                <label className="languagesText">What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message}/>}</label>
+                                <label className="languagesText">What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
 
                                 <ul className="multipleChoicesList flex">
                                     <LiaSwatchbookSolid className="inputRegListIcon" size="2.1rem" />
@@ -131,15 +152,15 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                             <label htmlFor={item}>{item}</label>
                                         </li>
                                     ))}
-                             
-                                </ul>      
+
+                                </ul>
                             </div>
                             <div className="registerDiv">
                                 <TbWorldWww className="inputRegIcon" size="1.85rem" />
-                                <label>Do you have a profile page (optional) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message}/>}
- </label>
+                                <label>Do you have a profile page (optional) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message} />}
+                                </label>
                                 <input className="registerInput" type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
-                              
+
                             </div>
                         </div>
                         <div className="newsLetterArcOptionsWrapper flex">
@@ -150,7 +171,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                     <label>Do you wanna receive newsletters from us ? </label>
 
                                 </div>
-                                {errors.newsLetter && <RegErrorMessage message={errors.newsLetter.message}/>}
+                                {errors.newsLetter && <RegErrorMessage message={errors.newsLetter.message} />}
 
                             </div>
 
@@ -161,14 +182,12 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                     <label>Are you intereted in joining or Advanced Readers Team ? </label>
 
                                 </div>
-                                {errors.arcInterest && <RegErrorMessage message={errors.arcInterest.message}/>}
+                                {errors.arcInterest && <RegErrorMessage message={errors.arcInterest.message} />}
 
                             </div>
                         </div>
                         {isJoiningOurTeam && <RegisterARC />}
-
-                        <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? "Submitting data" : "Submit"}</button>
-                  
+                        <SubmitButton isSubmitting={isSubmitting} />
                     </form>
 
 

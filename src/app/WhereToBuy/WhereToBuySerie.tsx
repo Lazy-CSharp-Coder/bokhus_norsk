@@ -10,8 +10,7 @@ import { numberToWords } from "convert-number-to-words";
 import { BookAvailableIn } from "@/components/common/BookAvailableIn";
 
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
-import { PiGlobeSimpleXLight, PiArrowFatLineDownFill, PiArrowFatLineDownBold, PiArrowFatLineDownLight } from "react-icons/pi";
-import { PiArrowFatLinesDownBold } from "react-icons/pi";
+import { PiGlobeSimpleXLight, PiArrowFatLineDownLight } from "react-icons/pi";
 import { GoLinkExternal } from "react-icons/go";
 import "./WhereToBuySerie.module.css";
 

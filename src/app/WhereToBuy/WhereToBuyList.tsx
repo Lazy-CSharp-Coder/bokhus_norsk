@@ -59,7 +59,7 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const { mode, direction} = sortHandler;
     return (
         <ul className="buySeriesList">
-            <div className="sortDiv fadeInFromBelowAnim" style={{animationDelay: "1.1s"}}><div className="sortHeader">SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? "sortUp" : "sortDown"} sortCollapseIcon fadeInAnim`}/></span></div>
+            <div className="sortDiv fadeInFromBelowAnim" style={{animationDelay: "0.2s"}}><div className="sortHeader">SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? "sortUp" : "sortDown"} sortCollapseIcon fadeInAnim`}/></span></div>
               {isSortMenuOpen &&
                 <div className="sortButtonContainer">
                     <div className="modeDiv">

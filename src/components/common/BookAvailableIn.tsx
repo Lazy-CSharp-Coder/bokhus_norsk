@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { GoLinkExternal } from "react-icons/go";
+import { PiGlobeSimpleXLight} from "react-icons/pi";
 
 interface AvailabilityProps 
 {
@@ -99,7 +100,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                         </div>
                         <div className="buyLinkDiv">
                             {buyLink ?
-                                <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available</p>}
+                                <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available <PiGlobeSimpleXLight className="notThereLink" size={fontSize ? fontSize : "1.1rem"}/></p>}
 
                         </div>
                         <p className="amazonTextPopup">

@@ -12,6 +12,7 @@ export async function submitUserData(rawData: UserData)
 {
     const validateFields = registerSchema.safeParse(rawData);
 
+    if(!rawData) return( {success : false, message : "No user data recieved." })
     if (!validateFields.success)
     {
         return { success: false, error: "Invaild fields submitted" };
