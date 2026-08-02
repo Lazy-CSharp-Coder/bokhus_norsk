@@ -101,20 +101,15 @@ export function Credits()
 
                 <div className="creditVisualTextDiv">
                     <h3 className="creditVisualHeading">Images</h3>
-                    <ul className="creditListImages">
+                    <ul className="legalList">
 
                         <li className="creditListItem"> <strong>Fountain pen image </strong>used on Author page made by <Link className="creditLink" href="https://unsplash.com/photos/fountain-pen-on-black-lined-paper-y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Aaron Burden at Unsplash</Link>. </li>
-                        <li className="creditListItem"> <strong>Drawing of Vaterland </strong>used on <strong>She Rose</strong> serie page is a adaptation of the photograph <strong>"Farm Interior, Vaterland"</strong> by  <Link className="creditLink" href="https://digitaltmuseum.org/021036006410/heiberg-sverre-1912-1991">Sverre Heiberg / Oslo Museum,</Link> <br/> published on  <Link className="creditLink" href="https://digitaltmuseum.no/021018724023/gardsinterior-vaterland">DigitalMuseum</Link> under <Link href="https://creativecommons.org/licenses/by/4.0/" className="creditLicence">CC BY 4.0 Licence</Link>. The subject in the photograph has been redrawn, extended, and artistically modified using AI by BokHus.</li>
+                        <li className="creditListItem"> <strong>Drawing of Vaterland </strong>used on <strong>She Rose</strong> serie page is a adaptation of the photograph <strong>"Farm Interior, Vaterland"</strong> by  <Link className="creditLink" href="https://digitaltmuseum.org/021036006410/heiberg-sverre-1912-1991">Sverre Heiberg / Oslo Museum,</Link> published on  <Link className="creditLink" href="https://digitaltmuseum.no/021018724023/gardsinterior-vaterland">DigitalMuseum</Link> under <Link href="https://creativecommons.org/licenses/by/4.0/" className="creditLicence">CC BY 4.0 Licence</Link>. The subject in the photograph has been redrawn, extended, and artistically modified using AI by BokHus.</li>
                     </ul>
 
                 </div>
 
-
-
             </article>
-
-
-
 
         </section >);
 }
