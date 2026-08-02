@@ -21,13 +21,9 @@ import { FaUserLarge } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
-
-
-
 import { languageOptions } from "./registerSchema";
-
 import { RegErrorMessage } from "./RegErrorMessage";
-import { isValid } from "zod/v3";
+
 import { SubmitButton } from "../../components/common/SubmitButton";
 
 type RegisterFormInput = z.input<typeof registerSchema>;
