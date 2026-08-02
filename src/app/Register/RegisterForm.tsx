@@ -49,7 +49,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
 
     
-    const myResolver : Resolver<RegisterFormInput> = async (values, context, options) => 
+    const myResolver : Resolver<RegisterFormInput, object, UserData> = async (values, context, options) => 
     {
         const normalized : RegisterFormInput = 
         {
