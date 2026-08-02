@@ -13,6 +13,7 @@ import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 
 import { GoogleReCAPTCHA } from "../../components/common/GoogleReCAPTCHA";
 import Image from "next/image";
+import { SubmitButton } from "@/components/common/SubmitButton";
 
 
 //  added for importing recaptcha to fix turbopack fault

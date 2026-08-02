@@ -555,27 +555,6 @@ fieldset {
     /* margin-right: 0.5rem; */
 }
 
-.submitMessage {
-    display: flex;
-    flex-direction: row;
-    gap:1rem;
-    align-items: center;
-    justify-content: center;
-   
-}
-
-.submitIcon {
-    animation-name: submitRotate;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes submitRotate {
-    0% { transform :rotate(0deg) }
-    100% { transform : rotate(360deg)}
-}
 
 
 @media (max-width: 159.99em) {
