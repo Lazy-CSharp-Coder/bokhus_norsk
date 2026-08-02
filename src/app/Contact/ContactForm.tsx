@@ -13,6 +13,7 @@ import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 
 import { GoogleReCAPTCHA } from "../../components/common/GoogleReCAPTCHA";
 import Image from "next/image";
+import { SubmitButton } from "@/components/common/SubmitButton";
 
 
 //  added for importing recaptcha to fix turbopack fault
@@ -116,8 +117,9 @@ export function ContactUs()
                     {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message}  </p>}
 
                 </div>
-                <button className="submitButton" type="submit" disabled={isSubmitting} ><span>{isSubmitting ? "Submitting data" : "Submit"}</span></button>
 
+                {/* <button className="submitButton" type="submit" disabled={isSubmitting} ><span>{isSubmitting ? "Submitting data" : "Submit"}</span></button> */}
+                <SubmitButton buttonText="Send message" submitMessage="Sending message" isSubmitting={isSubmitting}/>
 
 
             </form>
