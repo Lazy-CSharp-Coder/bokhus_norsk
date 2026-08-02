@@ -104,7 +104,7 @@ export function Credits()
                     </h3>
                     <ul className="legalList">
 
-                        <li> Fountain pen image used on Author page made by <Link className="creditLink" href="https://unsplash.com/photos/fountain-pen-on-black-lined-paper-y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Aaron Burden at Unsplash</Link> </li>
+                        <li> <strong>Fountain pen image </strong>used on Author page made by <Link className="creditLink" href="https://unsplash.com/photos/fountain-pen-on-black-lined-paper-y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Aaron Burden at Unsplash</Link> </li>
 
                     </ul>
 
