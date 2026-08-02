@@ -7,18 +7,6 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
 import { SignIn } from "./SignIn";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
-// const defaultData: UserData =
-// {
-//   email: "",
-//   country: "",
-//   preferredLanguage: ["English"],
-//   genresInterestedIn: ["Historical novels"],
-//   linkProfilePage: "",
-//   newsLetter: true,
-//   arcInterest: false,
-
-
-// };
 
 
 export default async function Register() 

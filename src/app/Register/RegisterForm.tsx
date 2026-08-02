@@ -22,7 +22,7 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
 
 import { languageOptions } from "./registerSchema";
-import { FaExclamationCircle } from "react-icons/fa";
+
 import { RegErrorMessage} from "./RegErrorMessage";
 import { isValid } from "zod/v3";
 
