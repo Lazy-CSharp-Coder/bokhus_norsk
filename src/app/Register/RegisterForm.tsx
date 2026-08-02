@@ -1,5 +1,6 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Resolver } from "react-hook-form";
 import { z } from "zod/v4-mini";
 import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
@@ -45,12 +46,27 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
     const noUserMessage = "No profile registered. Please submit info";
     const userFoundMessage = "Profile at BokHus retrieved from database";
+
+
+    
+    const myResolver : Resolver<RegisterFormInput, object, UserData> = async (values, context, options) => 
+    {
+        const normalized : RegisterFormInput = 
+        {
+            ...values, 
+            arc : values.arcInterest ? values.arc : undefined
+
+        } as RegisterFormInput;
+        return zodResolver(registerSchema)(normalized, context, options);
+    } 
+
     const methods = useForm<RegisterFormInput, object, UserData>(
         {
-            resolver: zodResolver(registerSchema),
+            resolver: myResolver,
             defaultValues: data
         }
     );
+
 
     const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting, isValid } } = methods;
     const [userInfo, setUserInfo] = useState<UserInfoHeaderDisplayState>(isNewUser ? "No user message" : "User found message");

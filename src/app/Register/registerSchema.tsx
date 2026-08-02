@@ -87,22 +87,4 @@ export const registerSchema = z.object(
         arc: arcSchema.optional(),
 
     }
-).superRefine((data, ctx) =>
-{
-    if (data.arcInterest && !data.arc)
-    {
-        ctx.addIssue({
-            code: "custom",
-            path: ["arc"],
-            message: "ARC details are required when joining the Advanced Readers Team.",
-        });
-    }
-}).transform((data) =>
-{
-    if(!data.arcInterest)
-    {
-        return {
-            ...data, arc : undefined
-        };
-    }
-});
+);
