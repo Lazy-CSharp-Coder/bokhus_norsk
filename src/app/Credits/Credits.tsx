@@ -69,32 +69,30 @@ export function Credits()
 
                         <li><strong>Github Octicons Icons</strong> (go) by <Link href="https://primer.style/octicons/" className="creditLink">Primer</Link> under <Link href="https://opensource.org/license/MIT" className="creditLicence">MIT License</Link>. </li>
 
-
                         <li><strong>Ionicons 4 Icons</strong> (io) by <Link href="https://ionic.io/ionicons" className="creditLink">Ionic Icons</Link> under <Link href="https://github.com/ionic-team/ionicons/blob/master/LICENSE" className="creditLicence">MIT Licence</Link>. </li>
 
 
                         <li><strong>Ionicons 5 Icons</strong> (io5) by <Link href="https://ionic.io/ionicons" className="creditLink">Ionic Icons</Link> under <Link href="https://github.com/ionic-team/ionicons/blob/master/LICENSE" className="creditLicence">MIT Licence</Link>.  </li>
 
+                        <li><strong>Icons8 Line Awesome Icons</strong> (lia) by <Link href="https://icons8.com/line-awesome" className="creditLink">Line Awesome</Link> under <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLicence">MIT Licence</Link>.  </li>
+
                         <li><strong>Lucide Icons</strong> (lu) by <Link href="https://lucide.dev/" className="creditLink">Lucide</Link> under <Link href="https://github.com/lucide-icons/lucide/blob/main/LICENSE" className="creditLicence">ISC Licence</Link>.  </li>
 
+                        <li><strong>Material Design Icons</strong>  (md) by <Link href="https://developers.google.com/fonts/docs/material_icons" className="creditLink">Google Material Design</Link> under <Link href="https://github.com/google/material-design-icons/blob/master/LICENSE" className="creditLicence">Apache License 2.0</Link>. </li>
+
+                        <li><strong>Phosphor Icons</strong>  (pi) by <Link href="https://github.com/phosphor-icons/core" className="creditLink">@phosphor-icons/core</Link> under <Link href="https://github.com/phosphor-icons/core/blob/main/LICENSE" className="creditLicence">MIT Licence</Link> . </li>
+
+                        <li><strong>Remix Icons</strong>  (ri) by <Link href="https://github.com/Remix-Design/RemixIcon" className="creditLink">Remix Icon</Link> under <Link href="https://www.apache.org/licenses/" className="creditLicence">Apache Licence Version 2.0</Link>. </li>
+
+                        <li><strong>Tabler Icons</strong>  (tb) by <Link href="https://github.com/tabler/tabler-icons" className="creditLink">Tabler Icons</Link> under <Link href="https://opensource.org/license/MIT" className="creditLicence">MIT Licence</Link>. </li>
 
 
+                        <li><strong>Themify Icons</strong>  (tfi) by <Link href="https://github.com/lykmapipo/themify-icons" className="creditLink">Themify Icons</Link> under <Link href="https://github.com/thecreation/standard-icons/blob/master/modules/themify-icons/LICENSE" className="creditLicence">MIT Licence</Link>. </li>
 
+                        <li><strong>VS Code Icons</strong> (vsc) by <Link href="https://github.com/microsoft/vscode-codicons" className="creditLink">Codicons</Link> under <Link href="https://creativecommons.org/licenses/by/4.0/" className="creditLicence">CC BY 4.0 Licence</Link>. </li>
 
+                        <li><strong>BP WebDev </strong> logo made by <strong>Avantella</strong>.</li>
 
-                        <li><strong>Font Awesome 5 Icons</strong> (fa) by <Link href="https://fontawesome.com/" className="creditLink">Font Awesome</Link> under <Link href="https://creativecommons.org/licenses/by/4.0/" className="creditLicence">CC BY 4.0 Licence</Link>  </li>
-
-
-                        <li><strong>Io Icons</strong> (io and io5) by <Link href="https://creativecommons.org/" className="creditLink">Ionic Icons</Link> under <Link href="https://github.com/ionic-team/ionicons/blob/master/LICENSE" className="creditLicence">MIT Licence</Link>  </li>
-
-
-                        <li><strong>Material Design Icons</strong>  (md) by <Link href="https://google.com/" className="creditLink">Google Material Design Icons</Link> under <Link href="https://github.com/google/material-design-icons/blob/master/LICENSE" className="creditLicence">Apache License 2.0</Link>  </li>
-
-                        <li><strong>Icon8 Line Awesome</strong>  (la) by <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLink">Icons8</Link> under <Link href="https://github.com/icons8/line-awesome/blob/master/LICENSE.md" className="creditLicence">MIT Licence</Link>  </li>
-
-
-                        <li><strong>BP WebDev </strong> logo made by Avantella</li>
-                        <li>More credits will be applied later</li>
                     </ul>
 
 
@@ -106,7 +104,7 @@ export function Credits()
                     </h3>
                     <ul className="legalList">
 
-                        <li> Fouintain pen image used on Author page made by <Link className="creditLicence" href="https://unsplash.com/photos/fountain-pen-on-black-lined-paper-y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Aaron Burden at Unsplash</Link> </li>
+                        <li> Fountain pen image used on Author page made by <Link className="creditLink" href="https://unsplash.com/photos/fountain-pen-on-black-lined-paper-y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Aaron Burden at Unsplash</Link> </li>
 
                     </ul>
 
