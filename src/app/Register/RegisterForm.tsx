@@ -57,7 +57,8 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
     const onSubmit = async (data: UserData) =>
     {
-        const result = await submitUserData(data);
+ 
+       const result = await submitUserData(data);
 
         if (result.success)
         {
@@ -69,6 +70,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
     const userEmail = getValues("email");
     const isJoiningOurTeam = watch("arcInterest", false);
+
 
     return (
         <section className="registerSection">

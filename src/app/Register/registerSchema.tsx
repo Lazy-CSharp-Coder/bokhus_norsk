@@ -97,4 +97,12 @@ export const registerSchema = z.object(
             message: "ARC details are required when joining the Advanced Readers Team.",
         });
     }
+}).transform((data) =>
+{
+    if(!data.arcInterest)
+    {
+        return {
+            ...data, arc : undefined
+        };
+    }
 });
