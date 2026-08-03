@@ -39,7 +39,7 @@ export default async function WhereToBuy()
 
         <section className="whereToBuySection">
           <div className="headingLineWrapper">
-            <h2 className="whereToBuyHeading fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h2>
+            <h1 className="whereToBuyHeading fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h1>
             <ExpandingLine key={"BuyLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
           </div>
 
@@ -51,7 +51,7 @@ export default async function WhereToBuy()
           </div>
           <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground}ms`}}>
             <div className="amazonHeadingIconWrapper flex">
-              <h3 className="amazonHeading">BokHus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
+              <h2 className="amazonHeading">BokHus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h2>
 
               <GoLinkExternal size="1.9rem" className="amazonIconLink" />
             </div>

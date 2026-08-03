@@ -45,7 +45,7 @@ export default function WorkWithUsPage()
             <section className="workWithUsSection flex">
                 <article className="workWithUsTextArticle fadeInAnim" style={{ animationDelay: "0.5s" }}>
                     <div className="headingLineWrapper">
-                        <h3 className="workWithUsHeading"> Work with Bokhus </h3>
+                        <h1 className="workWithUsHeading"> Work with Bokhus </h1>
                         <ExpandingLine key={"WorkLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                     </div>
 
