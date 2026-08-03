@@ -15,9 +15,9 @@ export  function Header()
 
         <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }} >
 
-            <Link href={"/"} className="headerIcon fadeInAnim">
+            <Link href={"/"} className="fadeInAnim">
 
-                <Image src="/icons/logo.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                <Image src="/icons/logo.png" alt="bokhus header icon" width={128} height={128} loading="eager" className="logoHeader" />
             </Link>
             <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
 

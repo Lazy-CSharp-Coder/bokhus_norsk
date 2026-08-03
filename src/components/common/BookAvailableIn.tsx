@@ -69,7 +69,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
     useOutsideClick(handleOutSideClick);
 
     return (
-        <div className="bookAvailableDiv" style={{width: shouldIsbnPopUpShow ? "100%" : "fit-content"}}>
+        <div className="bookAvailableDiv" style={{width: showPopup ? "100%" : "fit-content"}}>
 
             <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
                 {
