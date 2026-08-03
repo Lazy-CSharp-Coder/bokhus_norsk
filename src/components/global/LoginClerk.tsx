@@ -1,4 +1,3 @@
-"use client";
 import { Suspense } from "react";
 import { Show, SignInButton, useClerk, UserButton } from "@clerk/nextjs";
 import { usePathname,  useSearchParams } from "next/navigation";
