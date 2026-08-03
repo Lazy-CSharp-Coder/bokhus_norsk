@@ -40,13 +40,13 @@ export function Footer()
                 <div className="logoFooterWrapper">
                     <Image className="logoFooterImg" src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                 </div>
-                <div className="termsGroup">
+                <nav className="termsGroup">
 
                     <TermsButton />
                     <PrivacyButton />
                     <CookieButton />
                     <AffiliateButton />
-                </div>
+                </nav>
             </div>
 
             <div className="footerEndDiv desktopModeFooter">
