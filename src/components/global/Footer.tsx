@@ -38,7 +38,7 @@ export function Footer()
         <footer>
             <div className="logoTermsWrapper">
                 <div className="logoFooterWrapper">
-                    <Image className="logoFooterImg" src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                    <Image className="logoFooterImg" src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                 </div>
                 <nav className="termsGroup">
 
