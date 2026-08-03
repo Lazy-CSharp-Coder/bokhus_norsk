@@ -7,8 +7,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { HeaderMenuItem } from "./HeaderMenuItem";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { useOutsideClick } from "@/functions/useOutsideClick";
-import { usePathname } from "next/navigation";
-
 
 
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
@@ -53,7 +51,7 @@ export function HamburgerMenu()
 
                     {menuItems.map((_, index) =>
 
-                       <HeaderMenuItem key={"#HamItem" + index} index={index} className="hamburgerItem" iconClassName="hamburgerIcon" onClick={handleClick}/>
+                       <HeaderMenuItem key={"#HamItem" + index} index={index} className="hamburgerItem" iconClassName="hamburgerIcon" />
                     )}
                 </nav>}
 

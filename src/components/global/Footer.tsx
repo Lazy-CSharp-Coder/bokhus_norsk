@@ -40,18 +40,18 @@ export function Footer()
                 <div className="logoFooterWrapper">
                     <Image className="logoFooterImg" src="/icons/logosvart.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                 </div>
-                <div className="termsGroup">
+                <nav className="termsGroup">
 
                     <TermsButton />
                     <PrivacyButton />
                     <CookieButton />
                     <AffiliateButton />
-                </div>
+                </nav>
             </div>
 
             <div className="footerEndDiv desktopModeFooter">
-                <div className="contactUsDiv">   <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="2rem" /></Link>
-                    <span className="logoText">CONTACT</span>
+                <div className="contactUsDiv">   <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="2rem" aria-label="Contact us" />CONTACT</Link>
+                 
 
 
                 </div>
@@ -78,9 +78,9 @@ export function Footer()
 
 
                     <div className="logoBPDiv">
-                          <Link href="https://bpwebdev.vercel.app" target="_blank">
+                          <a href="https://bpwebdev.vercel.app" target="_blank">
                           <LogoBPWebDev /> 
-                          </Link>
+                          </a>
                 
                         <span className="logoText">WEBPAGE BY
                         </span>

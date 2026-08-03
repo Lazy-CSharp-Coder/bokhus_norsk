@@ -17,16 +17,16 @@ export  function Header()
 
             <Link href={"/"} className="headerIcon fadeInAnim">
 
-                <Image src="/icons/logotest.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                <Image src="/icons/logo.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
             </Link>
             <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
 
 
-                <div className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
+                <nav className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItems.map((_, index) =>
                         <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className="headerMenuItem" iconClassName="headerIcon"/>)
                     }
-                </div>
+                </nav>
             </div>
             <div className="loginBurgerWrapper">
                 <LoginClerk />

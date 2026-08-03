@@ -4,9 +4,10 @@ import { AuthorCard } from "@/app/Authors/components/AuthorCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { client } from "@/sanity/client";
 import Link from "next/link";
+
 // css specific import for this page
 import "./Authors.module.css";
-import { BokHusCom } from "@/components/common/BokHusCom";
+
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import "./Authors.module.css";
 import { ErrorBokhus } from "../ErrorBokhus";
@@ -55,7 +56,7 @@ export default async function Authors()
                     <div className="authorsHeadingWrapper flex">
 
                         <div className="authorsHeadingLineWrapper">
-                            <h2 className="authorsPageHeading fadeInAnim">Meet the <span className="voicesText">voices</span> behind our books</h2>
+                            <h1 className="authorsPageHeading fadeInAnim">Meet the <span className="voicesText">voices</span> behind our books</h1>
                             <ExpandingLine key={"AuthorLine"} lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s" />
                         </div>
                         <p className="authorsPageText fadeInAnim">BokHus represents authors with a strong sense of story, place and history. From historical fiction and folklore to educational stories and local heritage, our writers create books that invite readers into worlds they can return to.
