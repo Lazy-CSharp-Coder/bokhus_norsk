@@ -31,7 +31,7 @@ export default function About()
         <main className="aboutPage flex">
             <BackgroundImage className="aboutBackground" src="/images/backgrounds/authorBackground2.png" />
             <section className="aboutSection flex fadeInAnim">
-                <h2 className="aboutHeading fadeInAnim" style={{ animationDelay: "0.6s" }}>{aboutUs.aboutHeading.toUpperCase()}</h2>
+                <h1 className="aboutHeading fadeInAnim" style={{ animationDelay: "0.6s" }}>{aboutUs.aboutHeading.toUpperCase()}</h1>
                 <ExpandingLine key={"AboutLine1"} lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
                 <div className="aboutTextDiv flex fadeInAnim" style={{ animationDelay: "0.8s" }}>
                     {aboutUs.aboutText.map((item, index) =>

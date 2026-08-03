@@ -17,7 +17,7 @@ export  function Header()
 
             <Link href={"/"} className="headerIcon fadeInAnim">
 
-                <Image src="/icons/logotest.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                <Image src="/icons/logo.png" alt="bokhus header icon" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
             </Link>
             <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
 
