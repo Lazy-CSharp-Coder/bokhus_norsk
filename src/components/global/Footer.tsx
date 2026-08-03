@@ -78,9 +78,9 @@ export function Footer()
 
 
                     <div className="logoBPDiv">
-                          <Link href="https://bpwebdev.vercel.app" target="_blank">
+                          <a href="https://bpwebdev.vercel.app" target="_blank">
                           <LogoBPWebDev /> 
-                          </Link>
+                          </a>
                 
                         <span className="logoText">WEBPAGE BY
                         </span>
