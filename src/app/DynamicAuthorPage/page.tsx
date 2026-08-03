@@ -12,17 +12,15 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
     const params = await searchParams;
     const authorUid = params.message as string;
 
+    // fetch author from Sanity using searhParams
+
     const AUTOHRS_QUERY = `*[_type == "Author" && _id == $authorUid]`;
     let authors: Author[] = [];
-
 
     try
     {
 
-
         authors = await await client.fetch<Author[]>(AUTOHRS_QUERY, { authorUid: authorUid });
-
-
     }
     catch (error)
     {
