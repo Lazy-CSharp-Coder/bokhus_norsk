@@ -4,9 +4,10 @@ import { AuthorCard } from "@/app/Authors/components/AuthorCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { client } from "@/sanity/client";
 import Link from "next/link";
+
 // css specific import for this page
 import "./Authors.module.css";
-import { BokHusCom } from "@/components/common/BokHusCom";
+
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import "./Authors.module.css";
 import { ErrorBokhus } from "../ErrorBokhus";

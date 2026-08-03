@@ -185,11 +185,14 @@ footer {
 }
 
 .contactUsLink {
-    /* display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    align-items: center; */
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     cursor: pointer;
+        color: var(--myWhiteColor);
+    font-size: 0.6rem;
+    gap: 0.2rem;
    
 }
 

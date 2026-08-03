@@ -1,7 +1,5 @@
-"use client";
-
 import { SeriesCardProps } from "@/types/booktypes";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { ByAuthor } from "@/components/common/ByAuthor";
 
@@ -19,11 +17,11 @@ interface Category
 
 export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, animationDelay }: SeriesCardProps)
 {
-    const router = useRouter();
+
     const imageSrc = imageUrl.length == 0 ? "/images/placeholderSeriesCard.png" : imageUrl;
     const { seriesName, seriesFact } = seriesSelected;
     return (
-        <div className="seriesCardLarge flex fadeInFromBelowAnim" onClick={() => router.push(routeToGo)} style={{ animationDelay: `${animationDelay}ms` }}>
+        <Link className="seriesCardLarge flex fadeInFromBelowAnim" href={routeToGo} style={{ animationDelay: `${animationDelay}ms` }}>
             <div className="seriesCardLargeImageDiv">
                 <Image className="seriesCardLargeImage" src={imageSrc} alt="Series Card Image" fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
             </div>
@@ -51,6 +49,6 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
             </div>
                <span className="bigGoToArrowSpanSerie">CLICK FOR MORE<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className="bigGotToArrowSerie"/></span>
 
-        </div>
+        </Link>
     );
 }

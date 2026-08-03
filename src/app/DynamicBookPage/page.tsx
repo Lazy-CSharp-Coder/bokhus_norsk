@@ -1,7 +1,6 @@
 import { client } from "@/sanity/client";
 import type { PageProps } from "@/types/types";
 import type { Author, Book, Series } from "@/types/booktypes";
-import { ErrorPage } from "@/components/common/ErrorPage";
 import { SingleBookCard } from "./components/SingleBookCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { urlFor } from "@/functions/urlFor";
