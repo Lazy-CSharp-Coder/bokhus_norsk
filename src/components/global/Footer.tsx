@@ -50,8 +50,8 @@ export function Footer()
             </div>
 
             <div className="footerEndDiv desktopModeFooter">
-                <div className="contactUsDiv">   <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="2rem" aria-label="Contact us" /></Link>
-                    <span className="logoText">CONTACT</span>
+                <div className="contactUsDiv">   <Link className="contactUsLink" href="/Contact"><IoMailOutline className="mailIcon" size="2rem" aria-label="Contact us" />CONTACT</Link>
+                 
 
 
                 </div>
