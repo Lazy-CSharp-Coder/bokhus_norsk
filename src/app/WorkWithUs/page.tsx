@@ -41,7 +41,7 @@ export default function WorkWithUsPage()
 
     return (
         <main className="workWithUsPage">
-            <BackgroundImage src="/images/backgrounds/workWithUsBackground.png" className="workWithUsBackground" />
+            <BackgroundImage src="/images/backgrounds/workWithUsBackground.png" alt="WorkWithUsBackground" className="workWithUsBackground" preload={false}/>
             <section className="workWithUsSection flex">
                 <article className="workWithUsTextArticle fadeInAnim" style={{ animationDelay: "0.5s" }}>
                     <div className="headingLineWrapper">
