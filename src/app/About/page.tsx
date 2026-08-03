@@ -1,7 +1,5 @@
 import "./About.module.css";
 import aboutJson from "@/json/about.json";
-import type { LanguageText } from "@/types/languagetypes";
-import languagesJson from "@/json/languages.json";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import type { About } from "@/types/types";
 import { BokHusCom } from "@/components/common/BokHusCom";
@@ -14,18 +12,7 @@ export default function About()
     const aboutUs: About = aboutJson;
     const animInc: number = 200;
 
-    const languageArray: LanguageText[] = languagesJson;
-    const { heroPage } = languageArray[0];
-
-    const colorCodes: string[] =
-        [
-            "rgb(178, 126, 29)", "#B8AEA3", "lightblue"
-        ];
-
-    const animIncQuotesBottom = 1700;
-    const waitForMain = 300;
-    const waitForDescription = 800;
-    const colorLine: string = "rgb(221, 221, 221)";
+      const colorLine: string = "rgb(221, 221, 221)";
 
     return (
         <main className="aboutPage flex">
