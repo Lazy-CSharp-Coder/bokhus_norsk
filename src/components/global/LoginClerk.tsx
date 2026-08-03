@@ -1,6 +1,7 @@
+"use client";
 import { Suspense } from "react";
 import { Show, SignInButton, useClerk, UserButton } from "@clerk/nextjs";
-import { usePathname,  useSearchParams } from "next/navigation";
+// import { usePathname,  useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { FaUserLarge } from "react-icons/fa6";
 import { PiSignOutBold } from "react-icons/pi";
@@ -8,10 +9,10 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 function LoginClerkContent()
 {
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
+    // const pathname = usePathname();
+    // const searchParams = useSearchParams();
 
-    const path = `${pathname}${searchParams ? `?${searchParams.toString()}` : ""}`;
+    // const path = `${pathname}${searchParams ? `?${searchParams.toString()}` : ""}`;
     // const { signOut } = useClerk();
 
     return (
@@ -19,7 +20,7 @@ function LoginClerkContent()
         <div className="clerkButtons">
 
             <Show when="signed-out">
-                <SignInButton fallbackRedirectUrl={path}>
+                <SignInButton fallbackRedirectUrl={"/Register"}>
                     <button className="signInButton">SIGN IN <span className="signInRegisterSpan"> / </span> REGISTER</button>
                 </SignInButton>
                 {/* <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
