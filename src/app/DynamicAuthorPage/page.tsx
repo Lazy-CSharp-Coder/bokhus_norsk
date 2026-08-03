@@ -14,13 +14,13 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
 
     // fetch author from Sanity using searhParams
 
-    const AUTOHRS_QUERY = `*[_type == "Author" && _id == $authorUid]`;
-    let authors: Author[] = [];
+    const AUTOHRS_QUERY = `*[_type == "Author" && _id == $authorUid][0]`;
+    let author: Author;
 
     try
     {
 
-        authors = await await client.fetch<Author[]>(AUTOHRS_QUERY, { authorUid: authorUid });
+        author = await await client.fetch<Author>(AUTOHRS_QUERY, { authorUid: authorUid });
     }
     catch (error)
     {
@@ -28,9 +28,9 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
         throw new Error("Failed to fetch authors from Sanity");
     }
 
-    if (authors.length < 1) 
+    if (!author) 
     {
-        return (<ErrorBokhus msg="No authors found in database. Please try again later." />);
+        return (<ErrorBokhus msg="No author found in database. Please try again later." />);
     }
 
 
@@ -39,7 +39,7 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
             <BackgroundImage className="backgroundImageAuthorsPage" src={"/images/backgrounds/pen.jpg"} />
             <main className="authorsPage flex">
 
-                <AuthorSection author={authors[0]} />
+                <AuthorSection author={author} />
             </main>
         </>
 
