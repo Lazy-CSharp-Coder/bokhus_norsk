@@ -74,7 +74,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
     useEffect(() =>     
     {
         if(asyncStatus == "done") return;
-        
+        const abortController = new Ao
         if (!bookId) return;
         const tabletMode = window.innerWidth < tabletLimit ? true : false;
         const getThemReviews = async () =>             
