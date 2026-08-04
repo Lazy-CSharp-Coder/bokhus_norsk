@@ -36,12 +36,13 @@
   gap: 5rem;
 }
 
-.headerIcon {
-  position: relative;
-  display: inline-block;
+.logoHeader{
+ 
+
   height: 4.7rem;
+  width: auto;
   aspect-ratio: 1 /1;
-  color: var(--myWhiteColor);
+  background-color: transparent;
 }
 
 .menuItemsContainer {

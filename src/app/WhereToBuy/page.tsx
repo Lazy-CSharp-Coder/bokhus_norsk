@@ -29,17 +29,17 @@ export default async function WhereToBuy()
 
   );
 
-  const waitForBackground = 0;
+  const waitForBackground = 500;
 
   return (
  
 
       <main className="whereToBuyPage flex">
-        <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy5.png" />
+        <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy.avif" alt="WhereToBuy Page Image"/>
 
         <section className="whereToBuySection">
           <div className="headingLineWrapper">
-            <h2 className="whereToBuyHeading fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h2>
+            <h1 className="whereToBuyHeading fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h1>
             <ExpandingLine key={"BuyLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
           </div>
 
@@ -49,9 +49,9 @@ export default async function WhereToBuy()
             <p className="whereToBuyText">Should you experience some trouble with the links or other issues, please use the contact form to tell us about it.</p>
 
           </div>
-          <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground}ms`}}>
+          <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground + 200}ms`}}>
             <div className="amazonHeadingIconWrapper flex">
-              <h3 className="amazonHeading">BokHus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h3>
+              <h2 className="amazonHeading">BokHus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h2>
 
               <GoLinkExternal size="1.9rem" className="amazonIconLink" />
             </div>

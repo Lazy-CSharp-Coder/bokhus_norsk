@@ -8,11 +8,7 @@ import { GoLinkExternal } from "react-icons/go";
 export function ReviewCard({ _id, format, bookReviewed, date, country, stars, reviewerName, titleReview, reviewDescription, linkReview, reviewedOn, animationToUse }: ReviewProps)
 {
 
-    const animInc = 50;
-    const waitForMain = 0;
-
-
-    return (
+      return (
         <div id={_id} className={`reviewCardLinkWrapper flex  ${animationToUse}`}>
             <div className={`reviewCardDiv flex`}>
                 <h3 className="titleReviewText">{titleReview.toUpperCase()}</h3>

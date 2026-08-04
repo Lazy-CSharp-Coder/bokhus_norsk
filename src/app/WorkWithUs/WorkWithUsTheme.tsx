@@ -87,7 +87,7 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
 {
     const IconToUse = reactIconsArray[subject.iconNumber].icon;
     const size = reactIconsArray[subject.iconNumber].size;
-    const { theme, list, iconNumber } = subject;
+    const { theme, list} = subject;
     return (
         <div className="workWithUsThemeDiv fadeInFromLeftAnim" id={`#SCROLL#ID#${theme}`}>
             <div className="themeIconWrapper">

@@ -5,8 +5,10 @@
 .bookAvailableDiv {
     width: fit-content;
     height: fit-content;
+
         position: relative;
         z-index: 100;
+        
 }
 
 

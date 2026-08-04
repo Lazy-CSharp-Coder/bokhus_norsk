@@ -91,7 +91,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    return (
       <>
          <ScrollToTop />
-         <BackgroundImage className="seriePageBackgroundImage" src={urlFor(serie.imageSeriesBackground, 1920)} />
+         <BackgroundImage className="seriePageBackgroundImage" src={urlFor(serie.imageSeriesBackground, 1920)} alt={`${serie.seriesName} Page Image`} />
          <main className="seriesPage">
             {(serie && authors) &&
                <div className="presentationReviewHrefWrapper">

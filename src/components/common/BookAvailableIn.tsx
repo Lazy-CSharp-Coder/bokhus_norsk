@@ -30,6 +30,7 @@ import { Availability } from "@/types/booktypes";
 import Link from "next/link";
 import { useOutsideClick } from "@/functions/useOutsideClick";
 import { BsCopy } from "react-icons/bs";
+import { useWindowWidth } from "../hooks/useWindowWidth";
 
 export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink, bookTitle, shouldIsbnPopUpShow }: AvailabilityProps)
 {
@@ -67,9 +68,13 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
+    
+    const winWidth = useWindowWidth();
+    const tabletMode : boolean = winWidth != null ? winWidth < 1024 ? true : false : false;
+
 
     return (
-        <div className="bookAvailableDiv" style={{width: shouldIsbnPopUpShow ? "100%" : "fit-content"}}>
+        <div className="bookAvailableDiv" style={{width: showPopup && tabletMode ? "100%" : "fit-content"}}>
 
             <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
                 {
