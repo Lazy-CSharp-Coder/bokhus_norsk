@@ -5,7 +5,7 @@ export function SignIn()
 {
     return (
         <main className="signInMain">
-            <BackgroundImage className="signInBackground" src="/images/backgrounds/contact.png" />
+            <BackgroundImage className="signInBackground" src="/images/backgrounds/contact.png" alt="SignIn Background Image" />
             <div className="signInSignDiv flex fadeInAnim" style={{ animationDelay: "0.8s" }}>
                 <h2 className="signInText"> Sign in to <BokHusCom fontSize="2rem" /></h2>
 
