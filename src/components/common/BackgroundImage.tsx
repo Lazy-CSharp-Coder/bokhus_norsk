@@ -1,7 +1,7 @@
 
 "use client";
 import Image from "next/image";
-import "./BackgroundImage.module.css";
+import styles from "./BackgroundImage.module.css";
 import { useState } from "react";
 
 type AnimTypes = "No Animation" | "RotateIn" | "FadeIn" | "ScaleIn";
@@ -37,12 +37,14 @@ export function BackgroundImage({ className, src, alt, preload, animType, animDu
         default: animCSSClass += " fadeInAnim";
             break;
     }
-
+    const shouldPreload = preload == undefined ? false : preload;
+        
     return (
-        <div className={`backgrounImageWrapper ${className ? className : ""} ${isLoaded ? animCSSClass : "hiddenFromView"}`}
+        <div className={`${styles.backgroundImageWrapper} ${className ? className : ""} ${isLoaded ? animCSSClass : "hiddenFromView"}`}
             style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s" }}>
-
-            <Image src={src} className="backgroundImage" alt={alt} fill preload={preload ? true : false} fetchPriority={preload ? "auto" : "high"} onLoad={() => setIsLoaded(true)} />
+   
+            <Image className={styles.backgroundImage} src={src} sizes="100vw" alt={alt} fill priority={shouldPreload} loading={shouldPreload ? "eager" : "lazy"}  onLoad={() => setIsLoaded(true)} /> :
+        
         </div>
     );
 }
