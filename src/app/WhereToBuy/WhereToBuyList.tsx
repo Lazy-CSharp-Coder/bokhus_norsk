@@ -29,6 +29,7 @@ interface SortHandler
 export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
 {
     const [sortHandler, setSortHandler] = useState<SortHandler>({ mode: "Serie", list: buyArray, direction: "Ascending" });
+    const [waitForMainAnim, setWaitForMainAnim] = useState<number>(800);
     const [isSortMenuOpen, setSortMenuOpen] = useState<boolean>(false);
     const animInc = 200;
   
@@ -59,7 +60,7 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const { mode, direction} = sortHandler;
     return (
         <ul className="buySeriesList">
-            <div className="sortDiv fadeInFromBelowAnim" style={{animationDelay: "0.2s"}}><div className="sortHeader">SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? "sortUp" : "sortDown"} sortCollapseIcon fadeInAnim`}/></span></div>
+            <div className="sortDiv fadeInFromBelowAnim" style={{animationDelay: `${waitForMainAnim}ms`}} ><div className="sortHeader">SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? "sortUp" : "sortDown"} sortCollapseIcon fadeInAnim`}/></span></div>
               {isSortMenuOpen &&
                 <div className="sortButtonContainer">
                     <div className="modeDiv">
@@ -86,7 +87,7 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
             {
                 sortHandler.list.map((item, index) =>
                     <WhereToBuySerie key={index + "WhereToBuySerieComponent" + sortHandler.mode + sortHandler.direction} serieSelected={item.serieSelected}
-                        authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={`${animInc * index}ms`} />
+                        authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={(animInc * index)+waitForMainAnim} setWaitForMainAnim={setWaitForMainAnim}/>
 
                 )
             }

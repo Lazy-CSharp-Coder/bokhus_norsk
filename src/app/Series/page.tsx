@@ -15,7 +15,7 @@ export default async function Series()
 
   return (
     <>
-      <BackgroundImage className="seriesPageBackgroundImage" src={"/images/backgrounds/authorBackground1.png"} />
+      <BackgroundImage className="seriesPageBackgroundImage" src={"/images/backgrounds/authors.avif"} alt="Series Page Image" />
       <main className="seriesPage flex">
 
         <section className="seriesPageSection">

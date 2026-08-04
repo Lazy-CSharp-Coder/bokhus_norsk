@@ -87,6 +87,10 @@ body {
 
 }
 
+main {
+  z-index: 5;
+}
+
 .flex {
   display: flex;
 }

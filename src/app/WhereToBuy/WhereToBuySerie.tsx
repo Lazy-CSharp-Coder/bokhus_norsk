@@ -16,9 +16,10 @@ import "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 
-export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay }: WhereToBuySeriesProps)
+export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay, setWaitForMainAnim }: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
+
 
   const listHeaderRef = useRef<HTMLDivElement>(null);
   const handleHeaderClick = () =>
@@ -53,14 +54,20 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   };
 
   const animInc = 200;
+
+  const handleListAnimEnd = (index: number, arrayLength : number) =>
+  {
+      if(index >= arrayLength - 1 && setWaitForMainAnim != undefined) setWaitForMainAnim(0);
+  }
+
   return (
-    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? animationDelay : "" }} >
+    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
       <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef} onClick={handleHeaderClick}>
         <div className="whereToBuyIconInfoWrapper">
           <ImBooks size="4.4rem" className="buyBooksIcon" />
           <div className="buyHeadingAuthorWrapper">
 
-            <h4 className="buyHeadingSerie">  {serieSelected.seriesName}</h4>
+            <h3 className="buyHeadingSerie">  {serieSelected.seriesName}</h3>
             <ByAuthor authors={authorsStrArray} />
           </div>
 
@@ -75,8 +82,9 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
       </div>
 
       <ul className="whereToBuyBooksList">
-        {seriesListState == "Open" && bookList.map((item, index) =>
-          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${animInc * index}ms` }} onClick={() => handleLinkClick(item.buyLink)} >
+        {seriesListState == "Open" && bookList.map((item, index, array) =>
+          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${(animInc * index) + (animationDelay ? animationDelay : 0)}}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
+          onAnimationEnd={() => handleListAnimEnd(index, array.length)}>
             <div className="buyListItemImageDiv">
               <Image className="buyImageBook" src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
             </div>

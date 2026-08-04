@@ -1,3 +1,4 @@
+"use server";
 import type { Series, Author, Book } from "@/types/booktypes";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { client } from "@/sanity/client";
@@ -6,7 +7,7 @@ const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsUids]`;
    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
 
 
-export function getWhereToBuyPropsArray(serieArray: Series[]): Promise<WhereToBuySeriesProps[]>
+export async function getWhereToBuyPropsArray(serieArray: Series[]): Promise<WhereToBuySeriesProps[]>
 {
   return Promise.all(
     // fetch authors and books here.
