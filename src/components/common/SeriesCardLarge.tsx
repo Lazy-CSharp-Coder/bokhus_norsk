@@ -13,7 +13,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
     const imageSrc = imageUrl.length == 0 ? "/images/placeholderSeriesCard.png" : imageUrl;
     const { seriesName, seriesFact } = seriesSelected;
     return (
-        <Link className="seriesCardLarge flex fadeInFromBelowAnim" href={fallbackRouteNoBooks == undefined ? routeToGo: fallbackRouteNoBooks} style={{ animationDelay: `${animationDelay}ms` }}>
+        <Link className="seriesCardLarge flex fadeInFromBelowAnim" href={booksAvailable ? routeToGo: fallbackRouteNoBooks ?? "/"} style={{ animationDelay: `${animationDelay}ms` }}>
             <div className="seriesCardLargeImageDiv">
                 <Image className="seriesCardLargeImage" src={imageSrc} alt="Series Card Image" fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
             </div>
