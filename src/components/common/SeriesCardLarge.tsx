@@ -7,7 +7,7 @@ import { GiBookCover } from "react-icons/gi";
 import "./SeriesCardLarge.css";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
-export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, animationDelay }: SeriesCardProps)
+export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, fallbackRouteNoBooks, booksAvailable,  animationDelay }: SeriesCardProps)
 {
 
     const imageSrc = imageUrl.length == 0 ? "/images/placeholderSeriesCard.png" : imageUrl;
@@ -39,7 +39,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
 
                 {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
             </div>
-               <span className="bigGoToArrowSpanSerie">CLICK FOR MORE<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className="bigGotToArrowSerie"/></span>
+               <span className="bigGoToArrowSpanSerie">{booksAvailable ? "CLICK FOR MORE" : "NO BOOKS AVAILABLE"}<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className="bigGotToArrowSerie"/></span>
 
         </Link>
     );

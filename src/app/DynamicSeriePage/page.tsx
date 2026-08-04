@@ -60,12 +60,6 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    }
 
 
-   if (authors.length < 1)
-   {
-      console.log("Error fetching : No author for series found.");
-      return <ErrorBokhus msg="AUTHORS NOT FOUND IN DATABASE" />;
-
-   }
 
    let bookList: Book[] = [];
    // console.log(authors);
@@ -78,6 +72,13 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    {
       console.error("Sanity fetch failed :", error);
       throw new Error("Failed to fetch authors from Sanity");
+   }
+   
+   if (authors.length < 1)
+   {
+      console.log("Error fetching : No author for series found.");
+      return <ErrorBokhus msg="AUTHORS NOT FOUND IN DATABASE" />;
+
    }
 
    if (bookList.length < 1)
