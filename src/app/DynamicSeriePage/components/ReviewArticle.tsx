@@ -7,6 +7,7 @@ import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
 
 import "./ReviewArticle.module.css";
+import { abortOnSynchronousPlatformIOAccess } from "next/dist/server/app-render/dynamic-rendering";
 
 interface ReviewArticleProps
 {
@@ -74,7 +75,8 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
     useEffect(() =>     
     {
         if(asyncStatus == "done") return;
-        const abortController = new Ao
+        const abortController = new AbortController();
+    
         if (!bookId) return;
         const tabletMode = window.innerWidth < tabletLimit ? true : false;
         const getThemReviews = async () =>             
@@ -90,13 +92,13 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
             if (!res.ok) throw new Error("Fetch of reviews failed");
 
             const reviewArray: Review[] = await res.json() as Review[];
-
-            setAsyncStatus("done");
+            if(!abortController.signal.aborted) setAsyncStatus("done");
 
             if (reviewArray) setDisplayOptions({ reviewArray: reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
         };
         getThemReviews();
         console.log("Get them reviews called");
+        return () => { abortController.abort()}
 
 
   
