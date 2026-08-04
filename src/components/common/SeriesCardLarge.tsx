@@ -5,15 +5,7 @@ import { ByAuthor } from "@/components/common/ByAuthor";
 
 import { GiBookCover } from "react-icons/gi";
 import "./SeriesCardLarge.css";
-
-import { Icon } from "next/dist/lib/metadata/types/metadata-types";
-import {MdOutlineKeyboardDoubleArrowRight} from "react-icons/md";
-
-interface Category 
-{
-    name: string,
-    icon: Icon;
-}
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, animationDelay }: SeriesCardProps)
 {

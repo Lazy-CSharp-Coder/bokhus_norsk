@@ -7,6 +7,7 @@ import { QuotesBottom } from "@/components/common/QuotesBottom";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 
 
+
 export default function About()
 {
     const aboutUs: About = aboutJson;
@@ -16,7 +17,7 @@ export default function About()
 
     return (
         <main className="aboutPage flex">
-            <BackgroundImage className="aboutBackground" src="/images/backgrounds/about.avif" />
+            <BackgroundImage className="aboutBackground" src="/images/backgrounds/about.webp"/>
             <section className="aboutSection flex fadeInAnim">
                 <h1 className="aboutHeading fadeInAnim" style={{ animationDelay: "0.6s" }}>{aboutUs.aboutHeading.toUpperCase()}</h1>
                 <ExpandingLine key={"AboutLine1"} lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
