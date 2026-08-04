@@ -12,13 +12,13 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
     return (
         <div className={`bookDiv`} style={{ animationDuration: "1.2s" }}>
             <div className="bookImage">
-                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
+                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
             </div>
             <div className="bookFactsAndDescriptionDiv grid">
                 <div className="factsDiv flex">
 
                     <div className="headingWrapper">
-                        <h3 className="bookTitle">{bookTitle}</h3>
+                        <h2 className="bookTitle">{bookTitle}</h2>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                         <span className="headingAvailableSeparator">
 

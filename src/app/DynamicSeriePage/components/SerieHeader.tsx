@@ -15,7 +15,7 @@ export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerLi
         <article key={"01" + "Description"} className="serieHeader flex fadeInAnim">
 
             <div className="headingAndAuthorInfoDiv" onClick={() => setIsDescriptionShowing(true)}>
-                <div className="serieNameArrowWrapper flex">                <h2 className="serieName">{seriesName}</h2>
+                <div className="serieNameArrowWrapper flex">                <h1 className="serieName">{seriesName}</h1>
                     {!isDescriptionShowing && <HiOutlineArrowSmallLeft className="arrowToDescription scaleInAnim" />}
                 </div>
                 <div className="authorNameBestsellerWrapper flex">

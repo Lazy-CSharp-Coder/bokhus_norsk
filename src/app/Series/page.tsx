@@ -22,7 +22,7 @@ export default async function Series()
           <article className="seriesPageDescriptionArticle">
             <div className="seriesPageHeadingLineWrapper">
 
-              <h2 className="seriesPageHeading">Series from BokHus </h2>
+              <h1 className="seriesPageHeading">Series from BokHus </h1>
               <ExpandingLine key={"AuthorLine"} lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s" />
             </div>
 
