@@ -1,20 +1,29 @@
-
 import { getSeriesCardPropsArray } from "./getSeriesCardPropsArray";
 import { SeriesCardLarge } from "../../components/common/SeriesCardLarge";
+import { ErrorPage } from "@/components/common/ErrorPage";
 
 import type { SeriesCardProps } from "@/types/booktypes";
 import { SeriesPageListProps } from "./SeriesPageTypes";
 
 export async function SeriesPageList({ seriesArray }: SeriesPageListProps)
-{
-    const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesArray);
+{   let seriesToDisplay : SeriesCardProps[] = []
+    try {
+      seriesToDisplay = await getSeriesCardPropsArray(seriesArray);
+    }
+    catch(error)
+    {
+        console.error("Error fetching from Sanity : ", error);
+        return <ErrorPage message="Could not load series data from the database." linkBack="/Series" />;
+    }
+    
+
     const animDelay = 200;
     return (
         <article className="seriesPageListArticle">
             <ul className="seriesList">
                 {seriesToDisplay.map((item, index) => (
                     <li key={`${item.seriesSelected.seriesName + index}`}>
-                        <SeriesCardLarge {...item} animationDelay={index * animDelay} />
+                        <SeriesCardLarge {...item} animationDelay={index * animDelay} fallbackRouteNoBooks="/"/>
                     </li>
                 ))}
             </ul>

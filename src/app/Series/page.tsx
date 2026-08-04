@@ -7,12 +7,23 @@ import { SeriesPageList } from "./SeriesPageList";
 import { ErrorPage } from "@/components/common/ErrorPage";
 export default async function Series() 
 {
+
+  
   const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
 
-  const series = await client.fetch<Series[]>(SERIES_QUERY);
+  let series : Series[] = [];
+  try {
+     series = await client.fetch<Series[]>(SERIES_QUERY);
+  }
+  catch(error)
+  {
+     console.error("Error fecthing series : ", error)
+     throw error;
+
+  }
 
   if (!series) return (<ErrorPage message="No series found in database" />);
-
+  
   return (
     <>
       <BackgroundImage className="seriesPageBackgroundImage" src={"/images/backgrounds/authors.webp"}  />
