@@ -30,6 +30,7 @@ import { Availability } from "@/types/booktypes";
 import Link from "next/link";
 import { useOutsideClick } from "@/functions/useOutsideClick";
 import { BsCopy } from "react-icons/bs";
+import { useWindowWidth } from "../hooks/useWindowWidth";
 
 export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink, bookTitle, shouldIsbnPopUpShow }: AvailabilityProps)
 {
@@ -67,6 +68,8 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
+    const width = useWindowWidth();
+    
 
     return (
         <div className="bookAvailableDiv" style={{width: showPopup ? "100%" : "fit-content"}}>

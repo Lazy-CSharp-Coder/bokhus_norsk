@@ -3,19 +3,6 @@
 
 .backgroundImageHero {
 
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    background-image: var(--defaultBackgroundImage);
-    background-size: cover;
-    position: fixed;
-    background-repeat: no-repeat;
-    /* filter: blur(0px) brightness(60%); */
-    z-index: -1;
-
 }
 
 .heroPage {
@@ -156,6 +143,7 @@ display: flex;
  
 .backgroundImageHero {
     background-position: 40% center;
+
 }
 
   .descriptionDivHeroPage {
