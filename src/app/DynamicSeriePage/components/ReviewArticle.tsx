@@ -74,6 +74,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
     useEffect(() =>     
     {
         if(asyncStatus == "done") return;
+        
         if (!bookId) return;
         const tabletMode = window.innerWidth < tabletLimit ? true : false;
         const getThemReviews = async () =>             
@@ -90,7 +91,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
             const reviewArray: Review[] = await res.json() as Review[];
 
-            // setAsyncStatus("done");
+            setAsyncStatus("done");
 
             if (reviewArray) setDisplayOptions({ reviewArray: reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
         };
@@ -98,7 +99,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         console.log("Get them reviews called");
 
 
-        setAsyncStatus("done");
+  
     }, [bookId]);
 
     // useEffect(() =>
