@@ -15,7 +15,7 @@ export default function Home()
 
   return (
     <>
-      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero.avif"/>
+      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero.webp"/>
 
       <main className="heroPage flex">
 

@@ -14,7 +14,7 @@ interface BackgroundImageProps
 
 export function BackgroundImage({ className, src, animType, animDuration, animDelay }: BackgroundImageProps)
 {
-    let animCSSClass: string = className ? className : styles.backgroundImage;
+    let animCSSClass: string = `${styles.backgroundImage}${className ? ` ${className}` : ""}`;
 
     switch (animType)
     {
@@ -32,8 +32,16 @@ export function BackgroundImage({ className, src, animType, animDuration, animDe
     }
 
     return (
-        <div className={animCSSClass} style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s", backgroundImage: src?  `url(${src}` : "" }}>
-
-        </div>
+        <div
+            className={animCSSClass}
+            style={{
+                animationDuration: animDuration ? animDuration : "1s",
+                animationDelay: animDelay ? animDelay : "0s",
+                backgroundImage: src ? `url("${src}")` : undefined,
+                width: "100vw",
+                height: "100vh",
+                position: "fixed"
+            }}
+        />
     );
 }

@@ -45,7 +45,7 @@ export default async function Register()
 
     <main className="registerPage flex">
 
-      <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.avif"/>
+      <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.webp"/>
       <RegisterForm data={dataToSend} isNewUser={!userData[0] ? true : false} />
     </main>
 

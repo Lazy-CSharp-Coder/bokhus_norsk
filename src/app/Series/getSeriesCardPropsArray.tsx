@@ -2,6 +2,7 @@ import type { Series, Author, SeriesCardProps, Book } from "@/types/booktypes";
 import { client } from "@/sanity/client";
 import { urlFor } from "@/functions/urlFor";
 import { setRouteToGo } from "@/functions/setRouteToGo";
+import { ErrorBokhus } from "../ErrorBokhus";
 
 const AUTHORS_QUERY = `*[_type == "Author" && _id in $authorsIds]`;
 const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID]`;
@@ -19,12 +20,15 @@ export async function getSeriesCardPropsArray(seriesArray: Series[]): Promise<Se
             {
                 console.log("Error fetching : No author for series found.");
                 
+     
+                
             }
 
             const books: Book[] = await client.fetch<Book[]>(BOOK_QUERY, { serieID: item._id });
             if (books.length < 1) 
             {
                 console.log("Books not found");
+
 
             }
             return {
