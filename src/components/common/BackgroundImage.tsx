@@ -32,7 +32,8 @@ export function BackgroundImage({ className, src, animType, animDuration, animDe
     }
 
     return (
-        <div className={animCSSClass} style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s", backgroundImage: src?  `url(${src}` : "" }}>
+        <div className={animCSSClass} style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s", backgroundImage: src?  `url(${src}` : "", width: "100vw", height: "100vh",
+        position: "fixed" }}>
 
         </div>
     );
