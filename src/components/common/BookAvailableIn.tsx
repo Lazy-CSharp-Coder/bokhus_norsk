@@ -68,11 +68,13 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
-    const width = useWindowWidth();
     
+    const winWidth = useWindowWidth();
+    const tabletMode : boolean = winWidth != null ? winWidth < 1024 ? true : false : false;
+
 
     return (
-        <div className="bookAvailableDiv" style={{width: showPopup ? "100%" : "fit-content"}}>
+        <div className="bookAvailableDiv" style={{width: showPopup && tabletMode ? "100%" : "fit-content"}}>
 
             <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
                 {
