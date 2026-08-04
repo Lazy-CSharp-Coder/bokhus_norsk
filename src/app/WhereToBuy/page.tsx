@@ -35,7 +35,7 @@ export default async function WhereToBuy()
  
 
       <main className="whereToBuyPage flex">
-        <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy5.png" alt="WhereToBuyBackgroundImage"/>
+        <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy5.png" alt="WhereToBuyPageImage"/>
 
         <section className="whereToBuySection">
           <div className="headingLineWrapper">
