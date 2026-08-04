@@ -1,5 +1,5 @@
 
-import "./BackgroundImage.module.css";
+import styles from   "./BackgroundImage.module.css";
 
 type AnimTypes = "No Animation"| "RotateIn" | "FadeIn" | "ScaleIn";
 
@@ -14,7 +14,7 @@ interface BackgroundImageProps
 
 export function BackgroundImage({ className, src, animType, animDuration, animDelay }: BackgroundImageProps)
 {
-    let animCSSClass: string = className ? className : "backgroundImage";
+    let animCSSClass: string = className ? className : styles.backgroundImage;
 
     switch (animType)
     {
