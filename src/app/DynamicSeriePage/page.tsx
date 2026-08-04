@@ -48,7 +48,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    let authors: Author[] = [];
 
-
+   if(authorsIds.length > 0)
    try
    {
       authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
@@ -58,6 +58,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
       console.error("Sanity fetch failed :", error);
       throw new Error("Failed to fetch authors from Sanity");
    }
+
 
 
 
