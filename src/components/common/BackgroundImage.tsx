@@ -1,51 +1,39 @@
 
-"use client";
-import Image from "next/image";
-import styles from "./BackgroundImage.module.css";
-import { useState } from "react";
+import "./BackgroundImage.module.css";
 
-type AnimTypes = "No Animation" | "RotateIn" | "FadeIn" | "ScaleIn";
+type AnimTypes = "No Animation"| "RotateIn" | "FadeIn" | "ScaleIn";
 
 interface BackgroundImageProps 
 {
-    className?: string,
-    alt: string,
-    src: string,
-    preload?: boolean,
+    className? : string,
+    src? : string,
     animType?: AnimTypes,
-    animDuration?: string,
-    animDelay?: string;
+    animDuration? : string,
+    animDelay? : string
 }
 
-export function BackgroundImage({ className, src, alt, preload, animType, animDuration, animDelay }: BackgroundImageProps)
+export function BackgroundImage({ className, src, animType, animDuration, animDelay }: BackgroundImageProps)
 {
-    const [isLoaded, setIsLoaded] = useState<boolean>(false);
+    let animCSSClass: string = className ? className : "backgroundImage";
 
-    let animCSSClass: string = "";
-  
     switch (animType)
     {
-        case "RotateIn": animCSSClass = " rotateInAnim";
+        case "RotateIn": animCSSClass += " rotateInAnim";
             break;
 
-        case "FadeIn": animCSSClass = " fadeInAnim";
+        case "FadeIn": animCSSClass += " fadeInAnim";
             break;
 
-        case "ScaleIn": animCSSClass = " scaleInAnim";
+        case "ScaleIn": animCSSClass += " scaleInAnim";
             break;
 
         default: animCSSClass += " fadeInAnim";
             break;
     }
-    const shouldPreload = preload == undefined ? false : preload;
-        
+
     return (
-        <div className={`${styles.backgroundImageWrapper} ${className ? className : ""} ${isLoaded ? animCSSClass : "hiddenFromView"}`}
-            style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s" }}>
-   
-            <Image className={styles.backgroundImage} src={src} sizes="100vw" alt={alt} fill priority={shouldPreload} loading={shouldPreload ? "eager" : "lazy"}  onLoad={() => setIsLoaded(true)} /> :
-        
+        <div className={animCSSClass} style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s", backgroundImage: src?  `url(${src}` : "" }}>
+
         </div>
     );
 }
-
