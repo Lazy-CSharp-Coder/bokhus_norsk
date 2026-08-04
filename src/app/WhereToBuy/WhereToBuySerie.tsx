@@ -16,10 +16,10 @@ import "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 
-export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay }: WhereToBuySeriesProps)
+export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay, setWaitForMainAnim }: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
-  const [waitForMainAnim, setWaitForMainAnim] = useState<number>(animationDelay ? animationDelay : 0)
+
 
   const listHeaderRef = useRef<HTMLDivElement>(null);
   const handleHeaderClick = () =>
@@ -57,11 +57,11 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
   const handleListAnimEnd = (index: number, arrayLength : number) =>
   {
-      if(index == arrayLength - 1) setWaitForMainAnim(0);
+      if(index >= arrayLength - 1 && setWaitForMainAnim != undefined) setWaitForMainAnim(0);
   }
 
   return (
-    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? `${waitForMainAnim}ms` : "" }} >
+    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
       <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef} onClick={handleHeaderClick}>
         <div className="whereToBuyIconInfoWrapper">
           <ImBooks size="4.4rem" className="buyBooksIcon" />
@@ -83,7 +83,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
       <ul className="whereToBuyBooksList">
         {seriesListState == "Open" && bookList.map((item, index, array) =>
-          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${(animInc * index) + waitForMainAnim}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
+          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${(animInc * index) + (animationDelay ? animationDelay : 0)}}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
           onAnimationEnd={() => handleListAnimEnd(index, array.length)}>
             <div className="buyListItemImageDiv">
               <Image className="buyImageBook" src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />

@@ -49,7 +49,7 @@ export default async function WhereToBuy()
             <p className="whereToBuyText">Should you experience some trouble with the links or other issues, please use the contact form to tell us about it.</p>
 
           </div>
-          <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground}ms`}}>
+          <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground + 200}ms`}}>
             <div className="amazonHeadingIconWrapper flex">
               <h2 className="amazonHeading">BokHus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h2>
 

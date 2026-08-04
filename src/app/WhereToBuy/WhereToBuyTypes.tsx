@@ -6,5 +6,5 @@ export interface WhereToBuySeriesProps
   authorsStrArray: string[];
   bookList : Book[]
   animationDelay? : number,
-  setWaitForMainAnim : () => void
+  setWaitForMainAnim? : (value: number) => void
 }

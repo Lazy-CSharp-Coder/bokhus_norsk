@@ -87,7 +87,7 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
             {
                 sortHandler.list.map((item, index) =>
                     <WhereToBuySerie key={index + "WhereToBuySerieComponent" + sortHandler.mode + sortHandler.direction} serieSelected={item.serieSelected}
-                        authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={(animInc * index)+waitForMainAnim} />
+                        authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={(animInc * index)+waitForMainAnim} setWaitForMainAnim={setWaitForMainAnim}/>
 
                 )
             }
