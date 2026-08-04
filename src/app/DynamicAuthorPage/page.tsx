@@ -36,7 +36,7 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
 
     return (
         <>
-            <BackgroundImage className="backgroundImageAuthorsPage" src={"/images/backgrounds/pen.jpg"} />
+            <BackgroundImage className="backgroundImageAuthorsPage" src="/images/backgrounds/pen.avif" alt="Author Page Image" />
             <main className="authorsPage flex">
 
                 <AuthorSection author={author} />

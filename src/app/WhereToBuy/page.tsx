@@ -29,13 +29,13 @@ export default async function WhereToBuy()
 
   );
 
-  const waitForBackground = 0;
+  const waitForBackground = 500;
 
   return (
  
 
       <main className="whereToBuyPage flex">
-        <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy5.png" alt="WhereToBuyPageImage"/>
+        <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy.avif" alt="WhereToBuy Page Image"/>
 
         <section className="whereToBuySection">
           <div className="headingLineWrapper">
