@@ -24,7 +24,7 @@ export default function Home()
 
   return (
     <>
-      <BackgroundImage key={"#herobackground#"} preload={true} src="/images/backgrounds/hero.png" alt="heroPageImage" animDelay="0s" animDuration="1s" />
+      <BackgroundImage key={"#herobackground#"} preload={true} src="/images/backgrounds/hero.avif" alt="heroPageImage" animDelay="0s" animDuration="1s" />
 
       <main className="heroPage flex">
 
