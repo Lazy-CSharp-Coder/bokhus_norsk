@@ -73,11 +73,12 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
     // useEffect to get Reviews 
     useEffect(() =>     
     {
+        if(asyncStatus == "done") return;
         if (!bookId) return;
         const tabletMode = window.innerWidth < tabletLimit ? true : false;
         const getThemReviews = async () =>             
         {
-            // setAsyncStatus("loading");
+            setAsyncStatus("loading");
 
             const res = await fetch("/api/reviews",
                 {
@@ -97,7 +98,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         console.log("Get them reviews called");
 
 
-        // setAsyncStatus("done");
+        setAsyncStatus("done");
     }, [bookId]);
 
     // useEffect(() =>
