@@ -7,7 +7,7 @@ export default function ContactPage()
 
 
         <main className="contactPage">
-            <BackgroundImage className="contactBackground" src="/images/backgrounds/contact.avif" alt="Contact Page Image"/>
+            <BackgroundImage className="contactBackground" src="/images/backgrounds/contact.avif"/>
 
             <ContactUs />
         </main>

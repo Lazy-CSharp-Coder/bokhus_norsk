@@ -1,21 +1,12 @@
 "use client";
 
 import { BackgroundImage } from "@/components/common/BackgroundImage";
-
-
 import "./Heropage.module.css";
 import { useLanguageChosen } from "@/globalStates";
 import { QuotesBottom } from "@/components/common/QuotesBottom";
 
 export default function Home() 
 {
-
-  const colorCodes: string[] =
-    [
-      "rgb(178, 126, 29)", "#B8AEA3", "lightblue"
-    ];
-
-  const animInc = 0;
 
   const waitForMain = 300;
   const { heroPage } = useLanguageChosen();
@@ -24,7 +15,7 @@ export default function Home()
 
   return (
     <>
-      <BackgroundImage key={"#herobackground#"} preload={true} src="/images/backgrounds/hero.avif" alt="heroPageImage" animDelay="0s" animDuration="1s" />
+      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero.avif"/>
 
       <main className="heroPage flex">
 
@@ -39,7 +30,7 @@ export default function Home()
           </div>
           <div className="descriptionDivHeroPage flex">
             {descriptionBokhus.map((item, index) =>
-              <p key={index + "#HP#DESCRIPTION"} className="fadeInAnimQuotesx" style={{ animationDelay: `${(index * animInc) + waitForMain}ms` }}>{item}</p>
+              <p key={index + "#HP#DESCRIPTION"} className="fadeInAnimQuotesx" style={{ animationDelay: `${(index) + waitForMain}ms` }}>{item}</p>
             )}
 
           </div>

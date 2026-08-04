@@ -1,37 +1,30 @@
 
-"use client";
-import Image from "next/image";
-import "./BackgroundImage.module.css";
-import { useState } from "react";
+import styles from   "./BackgroundImage.module.css";
 
-type AnimTypes = "No Animation" | "RotateIn" | "FadeIn" | "ScaleIn";
+type AnimTypes = "No Animation"| "RotateIn" | "FadeIn" | "ScaleIn";
 
 interface BackgroundImageProps 
 {
-    className?: string,
-    alt: string,
-    src: string,
-    preload?: boolean,
+    className? : string,
+    src? : string,
     animType?: AnimTypes,
-    animDuration?: string,
-    animDelay?: string;
+    animDuration? : string,
+    animDelay? : string
 }
 
-export function BackgroundImage({ className, src, alt, preload, animType, animDuration, animDelay }: BackgroundImageProps)
+export function BackgroundImage({ className, src, animType, animDuration, animDelay }: BackgroundImageProps)
 {
-    const [isLoaded, setIsLoaded] = useState<boolean>(false);
+    let animCSSClass: string = className ? className : styles.backgroundImage;
 
-    let animCSSClass: string = "";
-  
     switch (animType)
     {
-        case "RotateIn": animCSSClass = " rotateInAnim";
+        case "RotateIn": animCSSClass += " rotateInAnim";
             break;
 
-        case "FadeIn": animCSSClass = " fadeInAnim";
+        case "FadeIn": animCSSClass += " fadeInAnim";
             break;
 
-        case "ScaleIn": animCSSClass = " scaleInAnim";
+        case "ScaleIn": animCSSClass += " scaleInAnim";
             break;
 
         default: animCSSClass += " fadeInAnim";
@@ -39,11 +32,8 @@ export function BackgroundImage({ className, src, alt, preload, animType, animDu
     }
 
     return (
-        <div className={`backgrounImageWrapper ${className ? className : ""} ${isLoaded ? animCSSClass : "hiddenFromView"}`}
-            style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s" }}>
+        <div className={animCSSClass} style={{ animationDuration: animDuration ? animDuration : "1s", animationDelay: animDelay ? animDelay : "0s", backgroundImage: src?  `url(${src}` : "" }}>
 
-            <Image src={src} className="backgroundImage" alt={alt} fill preload={preload ? true : false} fetchPriority={preload ? "auto" : "high"} onLoad={() => setIsLoaded(true)} />
         </div>
     );
 }
-
