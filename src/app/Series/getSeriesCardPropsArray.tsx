@@ -49,7 +49,7 @@ export async function getSeriesCardPropsArray(seriesArray: Series[]): Promise<Se
                     authors: authorsStrings,
                     seriesSelected: item,
                     imageUrl: urlFor(item.imageSeries, 800),
-                    routeToGo: setRouteToGo(books.length > 1 ? books[0]: item),
+                    routeToGo: setRouteToGo(books.length > 1 ? item: books[0]),
                     booksAvailable : books.length < 1 ? false: true
                 };
 
