@@ -17,7 +17,7 @@ export default function About()
 
     return (
         <main className="aboutPage flex">
-            <BackgroundImage className="aboutBackground" src="/images/about.webp"/>
+            <BackgroundImage className="aboutBackground" src="/images/backgrounds/about.webp"/>
             <section className="aboutSection flex fadeInAnim">
                 <h1 className="aboutHeading fadeInAnim" style={{ animationDelay: "0.6s" }}>{aboutUs.aboutHeading.toUpperCase()}</h1>
                 <ExpandingLine key={"AboutLine1"} lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />

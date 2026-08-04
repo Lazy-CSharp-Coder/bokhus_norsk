@@ -49,7 +49,7 @@ export default async function Authors()
 
     return (
         <>
-            <BackgroundImage className="authorsBackgroundImage" src={"/images/backgrounds/authors.avif"}/>
+            <BackgroundImage className="authorsBackgroundImage" src={"/images/backgrounds/authors.webp"}/>
             <main className="authorsPage flex">
                 <div className="authorsSection flex">
 
