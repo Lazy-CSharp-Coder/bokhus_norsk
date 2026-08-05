@@ -7,6 +7,7 @@ import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
 
 import "./ReviewArticle.module.css";
+import { useWindowWidth } from "@/components/hooks/useWindowWidth";
 
 
 interface ReviewArticleProps
@@ -35,7 +36,7 @@ export interface ReviewCardDisplayOptions
     animationToUse: AnimationToUse;
 }
 
-export function ReviewArticle({ reviewsForBook }: ReviewArticleProps)
+export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
@@ -51,10 +52,8 @@ export function ReviewArticle({ reviewsForBook }: ReviewArticleProps)
 
     const [reviewDisplayHeight, setReveiwDisplayHeight] = useState<number>(0);
 
-
-setDisplayOptions({ reviewArray: reviewsForBook, arrayToView: reviewsForBook.length > 0 ? reviewsForBook.slice(0, tabletMode || reviewsForBook.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
-
-   
+    const width = useWindowWidth();
+    const isTabletMode = width ? width < tabletLimit ? true : false : false;
 
     const heightOfReviewDisplay = () =>
     {
@@ -71,22 +70,15 @@ setDisplayOptions({ reviewArray: reviewsForBook, arrayToView: reviewsForBook.len
 
     };
 
-
-    // useEffect(() =>
-    // {
-    //     if (!bookId) return;
-    //     setAsyncStatus("loading");
-
-    // }, [bookId]);
-
     useLayoutEffect(() => 
     {
         const handleResize = () =>
         {
+    
             setReveiwDisplayHeight(heightOfReviewDisplay());
-            if (window.innerWidth < tabletLimit && !tabletMode)
+            if (window.innerWidth < tabletLimit)
                 setDisplayOptions((prev) => ({ ...prev, tabletMode: true, arrayToView: prev.arrayToView.slice(0, 1), lastIndexDisplaying: prev.arrayToView.length == 1 ? prev.lastIndexDisplaying : prev.lastIndexDisplaying - 1 }));
-            else if (tabletMode && (window.innerWidth >= tabletLimit))
+            else if (window.innerWidth >= tabletLimit)
                 setDisplayOptions((prev) =>
                 {
                     // get starting point, should be a % 2 == 0 number
@@ -124,7 +116,7 @@ setDisplayOptions({ reviewArray: reviewsForBook, arrayToView: reviewsForBook.len
 
     }, []);
 
-    const { reviewArray, arrayToView, animationToUse, lastIndexDisplaying, tabletMode } = displayOptions;
+    const { reviewArray, arrayToView, animationToUse, lastIndexDisplaying , tabletMode} = displayOptions;
 
     const handleRightSliderClick = () =>
     {

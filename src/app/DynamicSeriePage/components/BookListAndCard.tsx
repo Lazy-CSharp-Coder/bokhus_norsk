@@ -47,7 +47,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
         
             if (!bookToShow?._id) return;
             const bookId = bookToShow._id;
-            const tabletMode = window.innerWidth < tabletLimit ? true : false;
+
             const getThemReviews = async () =>             
             {
                 setAsyncStatus("loading");
