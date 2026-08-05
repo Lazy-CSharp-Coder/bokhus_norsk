@@ -45,8 +45,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                if (!bookToShow?._id) return;
 
             const abortController = new AbortController();
-        
-     
+             
             const bookId = bookToShow._id;
 
             const getThemReviews = async () =>             
@@ -63,7 +62,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
     
                 const reviewArray: Review[] = await res.json() as Review[];
                 if(!abortController.signal.aborted) setAsyncStatus("done");
-    
+                console.log("Array length "  + reviewArray.length);
                 if (reviewArray) setBookInfo((prev) => ({...prev, reviewsForBook : reviewArray, hasTriedFetchReviews: true }))
                     else setBookInfo((prev) => ({...prev, hasTriedFetchReviews : true}));
             };
