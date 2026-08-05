@@ -24,7 +24,7 @@
   overflow-y: auto;
   padding-right: 1.2rem;
   /* padding-left: 1rem; */
-  z-index: 10;
+  z-index: 20;
 }
 
 .bookThumbnail {

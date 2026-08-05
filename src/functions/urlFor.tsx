@@ -5,7 +5,7 @@ const builder = createImageUrlBuilder(client);
 
 export function urlFor(source: SanityImageSource | undefined, width: number) 
 {
-  if(source == undefined) return "";
+  if(source == undefined) return "/images/placeholderSeriesCard.png";
   return builder.image(source).width(width).auto("format").quality(85).url();
   
 }
