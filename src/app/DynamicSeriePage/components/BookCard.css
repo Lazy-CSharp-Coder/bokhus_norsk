@@ -222,7 +222,7 @@
 
 @media (max-width: 63.99em) {
 
-    .bookDiv {
+    .bookCard {
 
         display: flex;
         flex-direction: column;
@@ -289,7 +289,7 @@
         flex: 1;
     }
 
-    .factsDiv {
+    .bookFactsDiv {
         display: flex;
         justify-content: center;
         gap: 2rem;
