@@ -55,7 +55,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
 }
 
 
-export function BookCardSizer({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName }: BookCardProps)
+export function BookCardSizer({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink }: BookCardProps)
 {
     const numStr = numberToWords(bookInSeries);
     const withCapital = numStr.charAt(0).toUpperCase() + numStr.slice(1);
@@ -65,20 +65,26 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
 
     return (
         <div className={`bookDivForSizing`}>
-            <div className="bookImage">
-                <Image className="image" src={imageSrc} alt="book image" fill={true} />   </div>
+              <div className="bookImage">
+                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
+            </div>
             <div className="bookFactsAndDescriptionWrapper grid">
                 <div className="bookFactsDiv flex">
 
                     <div className="bookHeadingWrapper">
-                        <h3 className={`bookTitle`}>{bookTitle}</h3>
+                        <h2 className="bookTitle">{bookTitle}</h2>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
-                    </div>
-                    <BookAvailableIn availability={availability} bookTitle={bookTitle} />
-                    <p className="bookReleaseInfo">RELEASED ORIGINALLY IN <span className="releaseYear">{releaseYear}</span></p>
-                    <p className="bookSynopsisText">Book Description / Synopsis :</p>
-                </div>
+                        <span className="bookHeadingAvailableSeparator">
 
+                            <BookAvailableIn availability={availability} bookTitle={bookTitle} buyLink={buyLink} />
+                        </span>
+
+                    </div>
+
+
+                    <p className="bookReleaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="bookSynopsisText">Book description / synopsis :</p>
+                </div>
                 <div className="bookDescriptionSubWrapper flex">
 
                     {subTitle &&
@@ -95,6 +101,7 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
                     </div>
                 </div>
             </div>
+
 
         </div>
 
