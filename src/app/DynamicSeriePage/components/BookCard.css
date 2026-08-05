@@ -134,6 +134,12 @@
     font-style: italic;
 }
 
+.bookHeadingAvailableSeparator {
+    padding-top: 0.7rem;
+    padding-left: 0.1rem;
+}
+
+
 .bookReleaseInfo {
     color: rgba(221, 221, 221, 1);
     font-size: 1.1rem;

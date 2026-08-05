@@ -20,7 +20,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                     <div className="bookHeadingWrapper">
                         <h2 className="bookTitle">{bookTitle}</h2>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
-                        <span className="headingAvailableSeparator">
+                        <span className="bookHeadingAvailableSeparator">
 
                             <BookAvailableIn availability={availability} bookTitle={bookTitle} buyLink={buyLink} />
                         </span>
