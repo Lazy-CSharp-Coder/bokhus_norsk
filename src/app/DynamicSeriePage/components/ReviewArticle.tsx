@@ -39,7 +39,7 @@ export function ReviewArticle({ reviewsForBook }: ReviewArticleProps)
 {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
-   
+     const tabletLimit = 1024;-
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
@@ -52,7 +52,7 @@ export function ReviewArticle({ reviewsForBook }: ReviewArticleProps)
     const [reviewDisplayHeight, setReveiwDisplayHeight] = useState<number>(0);
 
 
-setDisplayOptions({ reviewArray: reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
+setDisplayOptions({ reviewArray: reviewsForBook, arrayToView: reviewsForBook.length > 0 ? reviewsForBook.slice(0, tabletMode || reviewsForBook.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
 
    
 
