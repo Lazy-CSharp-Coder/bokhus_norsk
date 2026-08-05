@@ -41,11 +41,12 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
         // useEffect to get Reviews 
         useEffect(() =>     
         {
-            if(hasTriedFetchReviews || bookToShow == undefined)  return;
+            if(hasTriedFetchReviews )  return;
+               if (!bookToShow?._id) return;
 
             const abortController = new AbortController();
         
-            if (!bookToShow?._id) return;
+     
             const bookId = bookToShow._id;
 
             const getThemReviews = async () =>             
