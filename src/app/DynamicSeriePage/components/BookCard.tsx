@@ -34,7 +34,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                 <div className="bookDescriptionSubWrapper flex">
 
                     {subTitle &&
-                        <h4 className={`subTitle`}>{`${subTitle}`}</h4>
+                        <h4 className="bookSubTitle">{`${subTitle}`}</h4>
                     }
 
 
@@ -82,7 +82,7 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
                 <div className="bookDescriptionSubWrapper flex">
 
                     {subTitle &&
-                        <h4 className={`subTitle`}>{`${subTitle}`}</h4>
+                        <h4 className="bookSubTitle">{`${subTitle}`}</h4>
                     }
 
 

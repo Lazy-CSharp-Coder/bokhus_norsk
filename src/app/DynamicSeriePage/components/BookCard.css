@@ -177,7 +177,7 @@
 
 }
 
-.subTitle {
+.bookSubTitle {
     font-size: calc(var(--bookDescriptionFontSize) + 0.06rem);
 
     font-weight: bold;
@@ -312,7 +312,7 @@
         align-items: center;
     }
 
-    .subTitle {
+    .bookSubTitle {
         font-size: 1.5rem;
         text-align: center;
     }
