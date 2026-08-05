@@ -70,6 +70,13 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     };
 
+    useEffect(() =>
+    {
+        if(reviewsForBook)
+        {
+            if()
+        }
+    })
     useLayoutEffect(() => 
     {
         const handleResize = () =>
