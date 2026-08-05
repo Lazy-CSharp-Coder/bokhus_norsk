@@ -105,7 +105,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
             <article className="generalInfoArticle flex fadeInFromBelowAnim" style={{ animationDelay: "0.5s" }}>
 
                 <div className="headingLogoTextWrapper flex">
-                    <h2 className="registerHeading">YOUR PROFILE </h2>
+                    <h1 className="registerHeading">YOUR PROFILE </h1>
                     <div className="logoRegWrapper">
                         <Image className="logoRegImg rotateInYAnim" style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                     </div>

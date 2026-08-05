@@ -12,7 +12,7 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
             {/* <BackgroundImage className="descriptionBackground" src={imageUrl} animDelay="0s" /> */}
             <div className="seriesIconHeadingWrapper flex">
                 <div className="seriesImage fadeInAnim" style={{ animationDuration: "1.2s", animationDelay: "0.4s" }}>
-                    <Image className="image" src={imageUrl} alt="series image" fill={true} sizes="(max-width: 350px) 100vw, 50vw" />
+                    <Image className="image" src={imageUrl} alt="series image" fill={true} sizes="(max-width: 350px) 100vw, 50vw" loading="eager" />
                 </div>
 
 

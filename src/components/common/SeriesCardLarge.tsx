@@ -7,13 +7,13 @@ import { GiBookCover } from "react-icons/gi";
 import "./SeriesCardLarge.css";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
-export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, animationDelay }: SeriesCardProps)
+export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, fallbackRouteNoBooks, booksAvailable,  animationDelay }: SeriesCardProps)
 {
 
     const imageSrc = imageUrl.length == 0 ? "/images/placeholderSeriesCard.png" : imageUrl;
     const { seriesName, seriesFact } = seriesSelected;
     return (
-        <Link className="seriesCardLarge flex fadeInFromBelowAnim" href={routeToGo} style={{ animationDelay: `${animationDelay}ms` }}>
+        <Link className="seriesCardLarge flex fadeInFromBelowAnim" href={booksAvailable ? routeToGo: fallbackRouteNoBooks ?? "/"} style={{ animationDelay: `${animationDelay}ms` }}>
             <div className="seriesCardLargeImageDiv">
                 <Image className="seriesCardLargeImage" src={imageSrc} alt="Series Card Image" fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
             </div>
@@ -39,7 +39,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
 
                 {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
             </div>
-               <span className="bigGoToArrowSpanSerie">CLICK FOR MORE<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className="bigGotToArrowSerie"/></span>
+               <span className="bigGoToArrowSpanSerie">{booksAvailable ? "CLICK FOR MORE" : "NO BOOKS AVAILABLE"}<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className="bigGotToArrowSerie"/></span>
 
         </Link>
     );

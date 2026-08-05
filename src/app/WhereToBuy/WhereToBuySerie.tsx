@@ -67,7 +67,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
           <ImBooks size="4.4rem" className="buyBooksIcon" />
           <div className="buyHeadingAuthorWrapper">
 
-            <h3 className="buyHeadingSerie">  {serieSelected.seriesName}</h3>
+            <h2 className="buyHeadingSerie">  {serieSelected.seriesName}</h2>
             <ByAuthor authors={authorsStrArray} />
           </div>
 

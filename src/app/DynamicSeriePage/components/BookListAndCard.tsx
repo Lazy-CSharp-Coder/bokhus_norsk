@@ -49,7 +49,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                         }
                     </div>
                 </article>
-                {!isDescriptionShowing && bookToShow && <ReviewScrollButton />}
+                {(!isDescriptionShowing && bookToShow) && <ReviewScrollButton />}
             </div>
             {bookToShow && !isDescriptionShowing && <ReviewArticle bookId={bookToShow._id} bookName={bookToShow.bookTitle} />}
         </section>

@@ -11,7 +11,7 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
       return (
         <div id={_id} className={`reviewCardLinkWrapper flex  ${animationToUse}`}>
             <div className={`reviewCardDiv flex`}>
-                <h3 className="titleReviewText">{titleReview.toUpperCase()}</h3>
+                <h2 className="titleReviewText">{titleReview.toUpperCase()}</h2>
                 <div className="starsDiv flex">
                     {[...Array(stars)].map((_, index) =>
                         <IoStarSharp key={"StarIconReview" + index} className="starIcon" size="1.5rem" />)

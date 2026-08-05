@@ -168,10 +168,13 @@ export interface RecommendedForProps
 export interface SeriesCardProps
 {
     seriesSelected: Series,
-    authors: string[],
+    authors: string[] ,
     imageUrl: string,
     routeToGo: string,
+    booksAvailable : boolean, 
+    fallbackRouteNoBooks?  : string,
     animationDelay?: number,
+
 
 }
 export interface SeriesHeadingProps
