@@ -70,13 +70,6 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     };
 
-    useEffect(() =>
-    {
-        if(reviewsForBook)
-        {
-            if()
-        }
-    })
     useLayoutEffect(() => 
     {
         const handleResize = () =>
@@ -102,6 +95,17 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
         return () => window.removeEventListener("resize", handleResize);
     }, [reviewDisplayHeight, displayOptions.reviewArray.length]);
+
+    // set arrayToView
+
+    useEffect(() =>
+    {
+        if(reviewsForBook)
+        {
+             setDisplayOptions({ reviewArray: reviewsForBook, arrayToView: reviewsForBook ? reviewsForBook.slice(0, isTabletMode || reviewsForBook.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: isTabletMode });
+        }
+    },[]);
+
 
     useEffect(() =>
     {
