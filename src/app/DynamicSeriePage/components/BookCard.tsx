@@ -29,7 +29,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
 
 
                     <p className="bookReleaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
-                    <p className="synopsisText">Book description / synopsis :</p>
+                    <p className="bookSynopsisText">Book description / synopsis :</p>
                 </div>
                 <div className="descriptionSubWrapper flex">
 
@@ -76,7 +76,7 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
                     </div>
                     <BookAvailableIn availability={availability} bookTitle={bookTitle} />
                     <p className="bookReleaseInfo">RELEASED ORIGINALLY IN <span className="releaseYear">{releaseYear}</span></p>
-                    <p className="synopsisText">Book Description / Synopsis :</p>
+                    <p className="bookSynopsisText">Book Description / Synopsis :</p>
                 </div>
 
                 <div className="descriptionSubWrapper flex">

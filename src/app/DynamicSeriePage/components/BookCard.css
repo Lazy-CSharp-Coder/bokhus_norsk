@@ -154,7 +154,7 @@
     /* font-family: var(--descriptionFont); */
 }
 
-.synopsisText {
+.bookSynopsisText {
     font-style: italic;
     font-family: var(--robotoFont);
 
@@ -301,7 +301,7 @@
         text-align: center;
     }
 
-    .synopsisText {
+    .bookSynopsisText {
         font-size: 1.52rem;
         text-align: center;
     }
