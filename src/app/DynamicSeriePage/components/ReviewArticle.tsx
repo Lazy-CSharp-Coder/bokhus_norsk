@@ -39,7 +39,7 @@ export function ReviewArticle({ reviewsForBook }: ReviewArticleProps)
 {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
-     const tabletLimit = 1024;-
+     const tabletLimit = 1024;
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
