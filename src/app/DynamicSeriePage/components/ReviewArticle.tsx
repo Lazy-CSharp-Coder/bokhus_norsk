@@ -44,7 +44,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
-        reviewArray: reviewsForBook, arrayToView: [], lastIndexDisplaying: -1, animationToUse: "fadeInFromRightAnim", tabletMode: false
+        reviewArray: reviewsForBook, arrayToView: reviewsForBook, lastIndexDisplaying: -1, animationToUse: "fadeInFromRightAnim", tabletMode: false
     });
 
 
@@ -100,12 +100,11 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     useEffect(() =>
     {
-        if(reviewsForBook)
-        {
-             setDisplayOptions({ reviewArray: reviewsForBook, arrayToView: reviewsForBook ? reviewsForBook.slice(0, isTabletMode || reviewsForBook.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: isTabletMode });
-        }
+        
+  if(reviewsForBook.length > 0)  setDisplayOptions((prev) => ({ ...prev, arrayToView: reviewArray ? reviewArray.slice(0, isTabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: isTabletMode }));
+
         console.log("arrayToView length : " + arrayToView.length) 
-    },[]);
+    },[reviewsForBook]);
 
 
     useEffect(() =>
@@ -196,7 +195,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
 
             </div>
-            {reviewArray && reviewArray.map((item, index) =>
+            {reviewArray.map((item, index) =>
 
                 <div ref={(element) => { itemRefsForHeight.current[index] = element; }} key={index + "#HeightColletorDiv#"} className="reviewDisplayer flex" style={{ visibility: "hidden", position: "absolute" }}>
                     <ReviewCard key={item._id + "#hidden" + index} _id={item._id} bookReviewed={bookName} format={item.format} date={item.date} country={item.country}
