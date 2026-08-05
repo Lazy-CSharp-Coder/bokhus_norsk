@@ -38,13 +38,13 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                     }
 
 
-                    <ul className={`descriptionList flex`}>
+                    <div className={`bookDescriptionList flex`}>
                         {description.map((item, index) =>
                         (
                             <p key={`description-${_id}-${index}`} className={`descriptionText`}>{item}</p>
 
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
 
@@ -86,13 +86,13 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
                     }
 
 
-                    <ul className={`descriptionList flex`}>
+                    <div className={`bookDescriptionList flex`}>
                         {description.map((item, index) =>
                         (
                             <p key={`description-${_id}-${index}`} className={`descriptionText`}>{item}</p>
 
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
 
