@@ -17,10 +17,10 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
             <div className="bookFactsAndDescriptionWrapper grid">
                 <div className="bookFactsDiv flex">
 
-                    <div className="headingWrapper">
+                    <div className="bookHeadingWrapper">
                         <h2 className="bookTitle">{bookTitle}</h2>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
-                        <span className="headingAvailableSeparator">
+                        <span className="bookHeadingAvailableSeparator">
 
                             <BookAvailableIn availability={availability} bookTitle={bookTitle} buyLink={buyLink} />
                         </span>
@@ -28,23 +28,23 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                     </div>
 
 
-                    <p className="releaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
-                    <p className="synopsisText">Book description / synopsis :</p>
+                    <p className="bookReleaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="bookSynopsisText">Book description / synopsis :</p>
                 </div>
-                <div className="descriptionSubWrapper flex">
+                <div className="bookDescriptionSubWrapper flex">
 
                     {subTitle &&
-                        <h4 className={`subTitle`}>{`${subTitle}`}</h4>
+                        <h4 className="bookSubTitle">{`${subTitle}`}</h4>
                     }
 
 
-                    <ul className={`descriptionList flex`}>
+                    <div className={`bookDescriptionList flex`}>
                         {description.map((item, index) =>
                         (
                             <p key={`description-${_id}-${index}`} className={`descriptionText`}>{item}</p>
 
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
 }
 
 
-export function BookCardSizer({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName }: BookCardProps)
+export function BookCardSizer({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink }: BookCardProps)
 {
     const numStr = numberToWords(bookInSeries);
     const withCapital = numStr.charAt(0).toUpperCase() + numStr.slice(1);
@@ -65,36 +65,43 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
 
     return (
         <div className={`bookDivForSizing`}>
-            <div className="bookImage">
-                <Image className="image" src={imageSrc} alt="book image" fill={true} />   </div>
+              <div className="bookImage">
+                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
+            </div>
             <div className="bookFactsAndDescriptionWrapper grid">
                 <div className="bookFactsDiv flex">
 
-                    <div className="headingWrapper">
-                        <h3 className={`bookTitle`}>{bookTitle}</h3>
+                    <div className="bookHeadingWrapper">
+                        <h2 className="bookTitle">{bookTitle}</h2>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
-                    </div>
-                    <BookAvailableIn availability={availability} bookTitle={bookTitle} />
-                    <p className="releaseInfo">RELEASED ORIGINALLY IN <span className="releaseYear">{releaseYear}</span></p>
-                    <p className="synopsisText">Book Description / Synopsis :</p>
-                </div>
+                        <span className="bookHeadingAvailableSeparator">
 
-                <div className="descriptionSubWrapper flex">
+                            <BookAvailableIn availability={availability} bookTitle={bookTitle} buyLink={buyLink} />
+                        </span>
+
+                    </div>
+
+
+                    <p className="bookReleaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="bookSynopsisText">Book description / synopsis :</p>
+                </div>
+                <div className="bookDescriptionSubWrapper flex">
 
                     {subTitle &&
-                        <h4 className={`subTitle`}>{`${subTitle}`}</h4>
+                        <h4 className="bookSubTitle">{`${subTitle}`}</h4>
                     }
 
 
-                    <ul className={`descriptionList flex`}>
+                    <div className={`bookDescriptionList flex`}>
                         {description.map((item, index) =>
                         (
                             <p key={`description-${_id}-${index}`} className={`descriptionText`}>{item}</p>
 
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
+
 
         </div>
 

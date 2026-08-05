@@ -67,7 +67,7 @@
 
    width: fit-content;
 
-    height: 40rem;
+    height: 44rem;
 
     flex: 0 1 auto;
     /* object-fit: contain; */
@@ -223,8 +223,10 @@
 
     }
 
-    
-
+    .singleBookCardImage {
+        height: 40rem;
+        
+    }
 } 
 /* 1440px */
 
