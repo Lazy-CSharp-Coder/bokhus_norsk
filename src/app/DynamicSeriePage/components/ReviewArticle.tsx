@@ -104,6 +104,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
         {
              setDisplayOptions({ reviewArray: reviewsForBook, arrayToView: reviewsForBook ? reviewsForBook.slice(0, isTabletMode || reviewsForBook.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: isTabletMode });
         }
+        console.log("arrayToView length : " + arrayToView.length) 
     },[]);
 
 
