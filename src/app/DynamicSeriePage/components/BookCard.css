@@ -102,7 +102,7 @@
 
 }
 
-.headingWrapper {
+.bookHeadingWrapper {
     display: flex;
     flex-direction: column;
     font-size: 0.7rem;
@@ -143,7 +143,7 @@
     font-style: italic;
 }
 
-.releaseInfo {
+.bookReleaseInfo {
     color: rgba(221, 221, 221, 1);
     font-size: 1.1rem;
     font-family: var(--libreFont);
@@ -255,7 +255,7 @@
         display: none;
     }
 
-    .headingWrapper {
+    .bookHeadingWrapper {
         align-items: center;
         width: 100%;
 
@@ -296,7 +296,7 @@
         align-items: center;
     }
 
-    .releaseInfo {
+    .bookReleaseInfo {
         font-size: 1.4rem;
         text-align: center;
     }

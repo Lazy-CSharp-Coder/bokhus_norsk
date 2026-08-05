@@ -17,7 +17,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
             <div className="bookFactsAndDescriptionWrapper grid">
                 <div className="bookFactsDiv flex">
 
-                    <div className="headingWrapper">
+                    <div className="bookHeadingWrapper">
                         <h2 className="bookTitle">{bookTitle}</h2>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                         <span className="headingAvailableSeparator">
@@ -28,7 +28,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                     </div>
 
 
-                    <p className="releaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="bookReleaseInfo">ORIGINALLY RELEASED IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book description / synopsis :</p>
                 </div>
                 <div className="descriptionSubWrapper flex">
@@ -70,12 +70,12 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
             <div className="bookFactsAndDescriptionWrapper grid">
                 <div className="bookFactsDiv flex">
 
-                    <div className="headingWrapper">
+                    <div className="bookHeadingWrapper">
                         <h3 className={`bookTitle`}>{bookTitle}</h3>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
                     </div>
                     <BookAvailableIn availability={availability} bookTitle={bookTitle} />
-                    <p className="releaseInfo">RELEASED ORIGINALLY IN <span className="releaseYear">{releaseYear}</span></p>
+                    <p className="bookReleaseInfo">RELEASED ORIGINALLY IN <span className="releaseYear">{releaseYear}</span></p>
                     <p className="synopsisText">Book Description / Synopsis :</p>
                 </div>
 
