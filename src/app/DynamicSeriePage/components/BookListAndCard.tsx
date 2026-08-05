@@ -33,7 +33,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
  // set limit to when to not display second card
     const tabletLimit = 1024;
     const { sanityTag } = useLanguageChosen();
-    const { bookToShow, reviewsForBook} = bookInfo ;
+    const { bookToShow, reviewsForBook} = bookInfo;
     const bookForSizing: Book = bookList[0];
     // console.log("Sanity tag for language is  : " + sanityTag);
 
