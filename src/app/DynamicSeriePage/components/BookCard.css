@@ -168,7 +168,7 @@
     color: lightblue;
 }
 
-.descriptionSubWrapper {
+.bookDescriptionSubWrapper {
 
 
     flex-direction: column;
@@ -306,7 +306,7 @@
         text-align: center;
     }
 
-    .descriptionSubWrapper {
+    .bookDescriptionSubWrapper {
         gap: 2rem;
         /* padding: 0 1.5rem; */
         align-items: center;
