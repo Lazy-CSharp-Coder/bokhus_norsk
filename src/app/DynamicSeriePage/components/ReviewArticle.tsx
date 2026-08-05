@@ -1,18 +1,18 @@
 "use client";
-import type { AnimationToUse } from "../../../types/reviewtypes";
-import { AsyncStatus, type Review } from "../../../types/reviewtypes";
+import type { AnimationToUse, Review } from "../../../types/reviewtypes";
+
 import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import { ReviewCard } from "./ReviewCard";
 import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
 
 import "./ReviewArticle.module.css";
-import { abortOnSynchronousPlatformIOAccess } from "next/dist/server/app-render/dynamic-rendering";
+
 
 interface ReviewArticleProps
-{
-    bookId: string,
-    bookName: string,
+{    
+    reviewsForBook: Review[],
+    bookName : string
 
     // reviewArray: Review[];
 }
@@ -35,15 +35,15 @@ export interface ReviewCardDisplayOptions
     animationToUse: AnimationToUse;
 }
 
-export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
+export function ReviewArticle({ reviewsForBook }: ReviewArticleProps)
 {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
-    const [asyncStatus, setAsyncStatus] = useState<AsyncStatus>("not started");
+   
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
-        reviewArray: [], arrayToView: [], lastIndexDisplaying: -1, animationToUse: "fadeInFromRightAnim", tabletMode: false
+        reviewArray: reviewsForBook, arrayToView: [], lastIndexDisplaying: -1, animationToUse: "fadeInFromRightAnim", tabletMode: false
     });
 
 
@@ -54,8 +54,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
 
 
 
-    // set limit to when to not display second card
-    const tabletLimit = 1024;
+   
 
     const heightOfReviewDisplay = () =>
     {
@@ -71,38 +70,7 @@ export function ReviewArticle({ bookId, bookName }: ReviewArticleProps)
         return height;
 
     };
-    // useEffect to get Reviews 
-    useEffect(() =>     
-    {
-        if(asyncStatus == "done") return;
-        const abortController = new AbortController();
-    
-        if (!bookId) return;
-        const tabletMode = window.innerWidth < tabletLimit ? true : false;
-        const getThemReviews = async () =>             
-        {
-            setAsyncStatus("loading");
 
-            const res = await fetch("/api/reviews",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ bookId }),
-                });
-            if (!res.ok) throw new Error("Fetch of reviews failed");
-
-            const reviewArray: Review[] = await res.json() as Review[];
-            if(!abortController.signal.aborted) setAsyncStatus("done");
-
-            if (reviewArray) setDisplayOptions({ reviewArray: reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
-        };
-        getThemReviews();
-        console.log("Get them reviews called");
-        return () => { abortController.abort()}
-
-
-  
-    }, [bookId]);
 
     // useEffect(() =>
     // {

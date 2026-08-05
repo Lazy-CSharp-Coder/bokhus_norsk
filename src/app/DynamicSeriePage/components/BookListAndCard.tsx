@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import type { Book, BooksArticleProps } from "@/types/booktypes";
 import { BookList } from "./BookList";
 import { BookCard, BookCardSizer } from "./BookCard";
@@ -10,22 +10,65 @@ import { useLanguageChosen } from "@/globalStates";
 import { ReviewScrollButton } from "./ReviewScrollButton";
 import { ReviewArticle } from "./ReviewArticle";
 import "./BookListAndCard.module.css";
+import { AsyncStatus, Review } from "@/types/reviewtypes";
+
+interface BookAndReviews {
+    bookToShow? : Book, 
+    reviewsForBook? : Review[],
+    hasTriedFetchReviews? : boolean
+}
+
 
 export function BookListAndCard({ authors, series, bookList }: BooksArticleProps)
 {
-    const [bookToShow, setBookToShow] = useState<Book | undefined>(undefined);
-
+    const [bookInfo, setBookInfo] = useState<BookAndReviews | undefined>(undefined);
+ const [asyncStatus, setAsyncStatus] = useState<AsyncStatus>("not started");
     const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
 
     const handleClick = (item: Book) =>
     {
-        setBookToShow(item);
+        setBookInfo((prev) => {return {...prev, bookToShow : item}});
         if (isDescriptionShowing) setIsDescriptionShowing(false);
     };
-
+ // set limit to when to not display second card
+    const tabletLimit = 1024;
     const { sanityTag } = useLanguageChosen();
+    const { bookToShow, reviewsForBook} = bookInfo ;
     const bookForSizing: Book = bookList[0];
     // console.log("Sanity tag for language is  : " + sanityTag);
+
+        // useEffect to get Reviews 
+        useEffect(() =>     
+        {
+            if(asyncStatus == "done") return;
+            const abortController = new AbortController();
+        
+            if (!bookToShow?._id) return;
+            const tabletMode = window.innerWidth < tabletLimit ? true : false;
+            const getThemReviews = async () =>             
+            {
+                setAsyncStatus("loading");
+    
+                const res = await fetch("/api/reviews",
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ bookId }),
+                    });
+                if (!res.ok) throw new Error("Fetch of reviews failed");
+    
+                const reviewArray: Review[] = await res.json() as Review[];
+                if(!abortController.signal.aborted) setAsyncStatus("done");
+    
+                if (reviewArray) setDisplayOptions({ reviewArray: reviewArray, arrayToView: reviewArray ? reviewArray.slice(0, tabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: tabletMode });
+            };
+            getThemReviews();
+            console.log("Get them reviews called");
+            return () => { abortController.abort()}
+    
+    
+      
+        }, [bookToShow]);
 
 
     return (
@@ -51,7 +94,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                 </article>
                 {(!isDescriptionShowing && bookToShow) && <ReviewScrollButton />}
             </div>
-            {bookToShow && !isDescriptionShowing && <ReviewArticle bookId={bookToShow._id} bookName={bookToShow.bookTitle} />}
+            {bookToShow && !isDescriptionShowing && <ReviewArticle reviewsForBook={} bookName={bookToShow.bookTitle} />}
         </section>
 
     );
