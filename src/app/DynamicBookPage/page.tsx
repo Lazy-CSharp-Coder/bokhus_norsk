@@ -7,6 +7,7 @@ import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { urlFor } from "@/functions/urlFor";
 import { ErrorBokhus } from "../ErrorBokhus";
 import { ReviewArticle } from "../DynamicSeriePage/components/ReviewArticle";
+import { ReviewScrollButton } from "../DynamicSeriePage/components/ReviewScrollButton";
 
 export default async function DynamicBookPage({ searchParams }: PageProps)
 {
@@ -95,9 +96,12 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
         <main className="singleBookPage">
             <BackgroundImage className="singleBookPageBackgroundImage" src={backgroundImage} />
             <section className="singleBookCardSection">
-                <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
+                <article className="singleBookCardArticle flex">
+ <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
                     description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
-
+      {bookToShow && <ReviewScrollButton />}
+                </article>
+               
 
             { reviewsForBook.length > 0 &&
                 <ReviewArticle reviewsForBook={reviewsForBook} bookName={bookToShow.bookTitle}/>
