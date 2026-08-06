@@ -69,8 +69,6 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
     
-    const winWidth = useWindowWidth();
-    const tabletMode : boolean = winWidth != null ? winWidth < 1024 ? true : false : false;
 
 
     return (
