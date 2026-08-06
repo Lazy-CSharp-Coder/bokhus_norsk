@@ -1,7 +1,7 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { GoLinkExternal } from "react-icons/go";
-import { PiGlobeSimpleXLight} from "react-icons/pi";
+import { PiGlobeSimpleXLight } from "react-icons/pi";
 
 interface AvailabilityProps 
 {
@@ -37,8 +37,13 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
     const [isPopupShowing, setPopupShowing] = useState<boolean>(false);
     const [isCopied, setIsCopied] = useState<boolean>(false);
-    const listRef = useRef<HTMLUListElement>(null);
 
+    const listRef = useRef<HTMLUListElement>(null);
+    
+    const currentWidth = useWindowWidth();
+    const tabletMode = currentWidth ? currentWidth < 1024 ? true : false : false;
+
+    
     const handleOutSideClick = (e: MouseEvent) =>
     {
         let shallClose = false;
@@ -68,13 +73,14 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
-    
-
 
     return (
-        <div className="bookAvailableDiv" >
+        <div className="bookAvailableDiv" style={{width: showPopup ? "100%": "fitContent", justifyContent: tabletMode? "center" : "start"
 
-            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))} >
+        }} >
+
+            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}
+            style={{justifyContent: showPopup && tabletMode ? "center" : "start"}} >
                 {
                     availability.map((item, index) =>
                         <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
@@ -94,7 +100,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                                     <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn ? item.isbn : "No ISBN number available"}</span>
                                         <button className="buttonCopy" onClick={() => handleCopy(item.isbn)}>
 
-                                            <BsCopy className="iconCopy" size="0.8rem"/>
+                                            <BsCopy className="iconCopy" size="0.8rem" />
                                         </button>
                                     </li>
 
@@ -103,7 +109,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                         </div>
                         <div className="buyLinkDiv">
                             {buyLink ?
-                                <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available <PiGlobeSimpleXLight className="notThereLink" size={fontSize ? fontSize : "1.1rem"}/></p>}
+                                <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available <PiGlobeSimpleXLight className="notThereLink" size={fontSize ? fontSize : "1.1rem"} /></p>}
 
                         </div>
                         <p className="amazonTextPopup">
