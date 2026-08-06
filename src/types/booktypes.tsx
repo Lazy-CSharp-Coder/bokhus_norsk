@@ -135,14 +135,15 @@ export interface SingleBookCardProps extends Book
 export interface BookListProps
 {
     bookList: Book[],
-    handleClick: (item: Book) => void,
+    handleClick: (itemNumber : number) => void,
 }
 
 
 export interface BookListItemProps
 {
-    item: Book,
-    handleClick: (item: Book) => void;
+    imageUrl : string,
+    itemNumber : number,
+    handleClick: (itemNumber : number) => void;
 }
 
 export interface BookCardProps extends Book
