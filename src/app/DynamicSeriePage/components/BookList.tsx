@@ -1,7 +1,7 @@
 import { BookListItem } from "./BookListItem";
 import type { BookListProps, Book } from "@/types/booktypes";
 import { urlFor } from "@/functions/urlFor";
-import "./BookList.module.css";
+import styles from  "./BookList.module.css";
 
 export function BookList({ bookList, handleClick }: BookListProps)
 {   
