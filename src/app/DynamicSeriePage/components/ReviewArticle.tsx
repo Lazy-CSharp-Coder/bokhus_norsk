@@ -15,7 +15,7 @@ interface ReviewArticleProps
     reviewsForBook: Review[],
     bookName : string
 
-    // reviewArray: Review[];
+    // reviewsForBook: Review[];
 }
 
 interface ReviewSlideShowProps
@@ -29,7 +29,7 @@ interface ReviewSlideShowProps
 
 export interface ReviewCardDisplayOptions
 {
-    reviewArray: Review[],
+
     arrayToView: Review[],
     lastIndexDisplaying: number,
     tabletMode: boolean,
@@ -44,7 +44,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
-        reviewArray: reviewsForBook, arrayToView: reviewsForBook, lastIndexDisplaying: -1, animationToUse: "fadeInFromRightAnim", tabletMode: false
+       arrayToView: reviewsForBook, lastIndexDisplaying: 1, animationToUse: "fadeInFromRightAnim", tabletMode: false
     });
 
 
@@ -53,7 +53,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
     const [reviewDisplayHeight, setReveiwDisplayHeight] = useState<number>(0);
 
     const width = useWindowWidth();
-    const isTabletMode = width ? width < tabletLimit ? true : false : false;
+    // const isTabletMode = width ? width < tabletLimit ? true : false : false;
 
     const heightOfReviewDisplay = () =>
     {
@@ -79,13 +79,16 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
             if (window.innerWidth < tabletLimit)
                 setDisplayOptions((prev) => ({ ...prev, tabletMode: true, arrayToView: prev.arrayToView.slice(0, 1), lastIndexDisplaying: prev.arrayToView.length == 1 ? prev.lastIndexDisplaying : prev.lastIndexDisplaying - 1 }));
             else if (window.innerWidth >= tabletLimit)
+            {
+                console.log("Slicing reviews for destop mode.");
                 setDisplayOptions((prev) =>
                 {
                     // get starting point, should be a % 2 == 0 number
                     const startPoint = prev.lastIndexDisplaying % 2 ? prev.lastIndexDisplaying - 1 : prev.lastIndexDisplaying;
-                    const endPoint = startPoint < reviewArray.length - 2 ? startPoint + 2 : startPoint + 1;
-                    return { ...prev, tabletMode: false, arrayToView: reviewArray.slice(startPoint, endPoint), lastIndexDisplaying: endPoint - 1 };
+                    const endPoint = startPoint < reviewsForBook.length - 2 ? startPoint + 2 : startPoint + 1;
+                    return { ...prev, tabletMode: false, arrayToView: reviewsForBook.slice(startPoint, endPoint), lastIndexDisplaying: endPoint - 1 };
                 });
+            }
         };
 
         // hvis det ikke er en høyde fra før, kjør handleResize();
@@ -94,18 +97,9 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
         window.addEventListener("resize", handleResize);
 
         return () => window.removeEventListener("resize", handleResize);
-    }, [reviewDisplayHeight, displayOptions.reviewArray.length]);
+    }, [reviewDisplayHeight, reviewsForBook]);
 
     // set arrayToView
-
-    useEffect(() =>
-    {
-        
-  if(reviewsForBook.length > 0)  setDisplayOptions((prev) => ({ ...prev, arrayToView: reviewArray ? reviewArray.slice(0, isTabletMode || reviewArray.length == 1 ? 1 : 2) : [], lastIndexDisplaying: tabletMode ? 0 : 1, animationToUse: "fadeInFromRightAnim", tabletMode: isTabletMode }));
-
-        console.log("arrayToView length : " + arrayToView.length) 
-    },[reviewsForBook]);
-
 
     useEffect(() =>
     {
@@ -127,19 +121,19 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     }, []);
 
-    const { reviewArray, arrayToView, animationToUse, lastIndexDisplaying , tabletMode} = displayOptions;
+    const { arrayToView, animationToUse, lastIndexDisplaying , tabletMode} = displayOptions;
 
     const handleRightSliderClick = () =>
     {
-        if (reviewArray == undefined || lastIndexDisplaying >= reviewArray.length - 1) return;
+        if (reviewsForBook == undefined || lastIndexDisplaying >= reviewsForBook.length - 1) return;
         setDisplayOptions((prev) =>
         {
-            console.log("Slicing Right in reviews. Amount of reviews : " + reviewArray.length);
+            console.log("Slicing Right in reviews. Amount of reviews : " + reviewsForBook.length);
 
-            const sliceEnd = tabletMode || lastIndexDisplaying == reviewArray.length - 3 ? prev.lastIndexDisplaying + 2 : prev.lastIndexDisplaying + 3;
+            const sliceEnd = tabletMode || lastIndexDisplaying == reviewsForBook.length - 3 ? prev.lastIndexDisplaying + 2 : prev.lastIndexDisplaying + 3;
             console.log("Slice end is : " + sliceEnd + " LastIndexDisplaying is : " + lastIndexDisplaying);
             return ({
-                ...prev, arrayToView: reviewArray.slice(prev.lastIndexDisplaying + 1, sliceEnd),
+                ...prev, arrayToView: reviewsForBook.slice(prev.lastIndexDisplaying + 1, sliceEnd),
                 lastIndexDisplaying: prev.lastIndexDisplaying + 1,
                 animationToUse: "fadeInFromRightAnim"
             });
@@ -150,18 +144,18 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     const handleLeftSliderClick = () =>
     {
-        if (reviewArray == undefined || lastIndexDisplaying == 0 || (lastIndexDisplaying == 1 && !tabletMode)) return;
+        if (reviewsForBook == undefined || lastIndexDisplaying == 0 || (lastIndexDisplaying == 1 && !tabletMode)) return;
 
         setDisplayOptions((prev) =>
         {
-            console.log("Slicing Left in reviews. Amount of reviews : " + reviewArray.length);
+            console.log("Slicing Left in reviews. Amount of reviews : " + reviewsForBook.length);
 
             const sliceStart = tabletMode ? lastIndexDisplaying - 1 : lastIndexDisplaying - 2;
             const sliceEnd = tabletMode ? sliceStart + 1 : sliceStart + 2;
 
             console.log("Slice start is : " + sliceStart + " LastIndexDisplaying is : " + lastIndexDisplaying);
             return ({
-                ...prev, arrayToView: reviewArray.slice(sliceStart, sliceEnd),
+                ...prev, arrayToView: reviewsForBook.slice(sliceStart, sliceEnd),
                 lastIndexDisplaying: sliceEnd - 1,
                 animationToUse: "fadeInFromLeftAnim"
             });
@@ -171,7 +165,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     };
     const onFirst = lastIndexDisplaying == 0  || (lastIndexDisplaying == 1 && !tabletMode) ? true: false;
-    const onLast = lastIndexDisplaying == reviewArray.length-1 ? true: false;
+    const onLast = lastIndexDisplaying == reviewsForBook.length-1 ? true: false;
 
     return (
         <article id="reviewArticle" className={`reviewArticle flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
@@ -195,7 +189,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
 
             </div>
-            {reviewArray.map((item, index) =>
+            {reviewsForBook.map((item, index) =>
 
                 <div ref={(element) => { itemRefsForHeight.current[index] = element; }} key={index + "#HeightColletorDiv#"} className="reviewDisplayer flex" style={{ visibility: "hidden", position: "absolute" }}>
                     <ReviewCard key={item._id + "#hidden" + index} _id={item._id} bookReviewed={bookName} format={item.format} date={item.date} country={item.country}
