@@ -3,11 +3,12 @@
 }
 
 .bookAvailableDiv {
+  
+
+    width:100%;
     display: flex;
-flex-direction: column;
-align-items: left;
-    width: 100%;
-    height: fit-content;
+    justify-content: flex-start;
+  
         position: relative;
         z-index: 100;
         
@@ -17,9 +18,10 @@ align-items: left;
 .availabilityList {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:left;
+    justify-content:start;
     gap: 1rem;
     list-style: none;
+    width: 100%;
 
 
 }
@@ -198,6 +200,10 @@ font-size: var(--iconCopySize) !important;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .availabilityList {
+      justify-content: center;
     }
 
     .popUpIsbnDiv {
