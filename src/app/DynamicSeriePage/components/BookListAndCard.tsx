@@ -9,7 +9,8 @@ import { urlFor } from "@/functions/urlFor";
 import { useLanguageChosen } from "@/globalStates";
 import { ReviewScrollButton } from "./ReviewScrollButton";
 import { ReviewArticle } from "./ReviewArticle";
-import "./BookListAndCard.module.css";
+import styles from "./BookListAndCard.module.css";
+
 import { AsyncStatus, Review } from "@/types/reviewtypes";
 
 interface BookAndReviews
@@ -20,27 +21,24 @@ interface BookAndReviews
 }
 
 
-
-
 export function BookListAndCard({ authors, series, bookList }: BooksArticleProps)
 {
     const [bookInfoArray, setBookInfoArray] = useState<BookAndReviews[]>(bookList.map((item) => ({ bookToShow: item, reviewsForBook: [], hasTriedFetchReviews: false })));
-    const [bookIndex, setBookIndex] = useState<number>(-1)
+    const [bookIndex, setBookIndex] = useState<number>(-1);
 
     const [asyncStatus, setAsyncStatus] = useState<AsyncStatus>("not started");
 
-    const { isDescriptionShowing, setIsDescriptionShowing} = useDescriptionShowingState();
+    const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
     const handleClick = (itemNumber: number) =>
     {
-    
-            setBookIndex(itemNumber);
-           if(isDescriptionShowing) setIsDescriptionShowing(false);
-       
+        setBookIndex(itemNumber);
+        if (isDescriptionShowing) setIsDescriptionShowing(false);
+
     };
-    
+
     const { sanityTag } = useLanguageChosen();
 
-    const { bookToShow, reviewsForBook, hasTriedFetchReviews } = bookIndex == -1 ? { bookToShow : undefined, reviewsForBook : [], hasTriedFetchReviews : false} : bookInfoArray[bookIndex];
+    const { bookToShow, reviewsForBook, hasTriedFetchReviews } = bookIndex == -1 ? { bookToShow: undefined, reviewsForBook: [], hasTriedFetchReviews: false } : bookInfoArray[bookIndex];
 
     const bookForSizing: Book = bookList[0];
     // console.log("Sanity tag for language is  : " + sanityTag);
@@ -70,32 +68,30 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
             const reviewArray: Review[] = await res.json() as Review[];
             if (!abortController.signal.aborted) setAsyncStatus("done");
             console.log("Array length from getThemReviews() :  " + reviewArray.length);
-        
-            const newArray : BookAndReviews[] = bookInfoArray.map((item) => 
-                       item.bookToShow?._id == bookId ? { bookToShow: bookInfoArray[bookIndex].bookToShow, reviewsForBook:reviewArray,  hasTriedFetchReviews: true } : item);
-                   
-           setBookInfoArray(newArray);
+
+            const newArray: BookAndReviews[] = bookInfoArray.map((item) =>
+                item.bookToShow?._id == bookId ? { bookToShow: bookInfoArray[bookIndex].bookToShow, reviewsForBook: reviewArray, hasTriedFetchReviews: true } : item);
+
+            setBookInfoArray(newArray);
         };
         getThemReviews();
         console.log("Get them reviews called");
         return () => { abortController.abort(); };
 
-
-
     }, [bookToShow]);
 
 
     return (
-        <section className="bookSection flex">
-            <div className="bookArticleReviewButtonWrapper flex">
-                <article className="booksArticle">
+        <section className={styles.booksSection}>
+            <div className={styles.bookArticleReviewButtonWrapper}>
+                <article className={styles.booksArticle}>
                     <BookList bookList={bookList} handleClick={handleClick} />
                     <BookCardSizer key={bookForSizing._id + "#sizerCard#"} availability={bookForSizing.availability} bookInSeries={bookForSizing.bookInSeries} seriesRef={bookForSizing.seriesRef}
                         _id={bookForSizing._id} imageBook={bookForSizing.imageBook} releaseYear={bookForSizing.releaseYear} authorUids={bookForSizing.authorUids}
                         bookTitle={bookForSizing.bookTitle} subTitle={bookForSizing.subTitle} description={bookForSizing.description} seriesName={series.seriesName}
                         saintyTagLanguage={sanityTag} />
 
-                    <div className="bookCardWrapper">
+                    <div className={styles.bookCardWrapper}>
                         {
                             bookToShow && !isDescriptionShowing ?
                                 <BookCard key={bookToShow._id} availability={bookToShow.availability} bookInSeries={bookToShow.bookInSeries} seriesRef={bookToShow.seriesRef}

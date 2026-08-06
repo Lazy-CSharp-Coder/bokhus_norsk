@@ -1,1 +1,73 @@
-@import "./BookListAndCard.css";
+/* Parent container - NO scrolling */
+
+.bookSection {
+    flex-direction: column;
+    align-items: center;
+    /* height: fit-content; */
+
+}
+
+.booksArticle {
+    display: flex;
+    justify-content: flex-start;
+
+
+    width: 100%;
+    position: relative;
+    height: auto;
+
+    gap: 1.4rem;
+
+    align-items: center;
+    /* background-color: red; */
+    padding: 0rem 1.22rem;
+    /* flex:1; */
+    /* z-index: 5; */
+    /* margin: 0rem 1rem; */
+
+
+}
+
+.bookArticleReviewButtonWrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 90vh;
+    /* background: red; */
+}
+
+@media (max-width: 63.99em) {
+   
+   .booksArticle {
+    /* width: 11.3rem; */
+    /* background: blue; */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 0;
+    position:static;
+    max-width: 100%;
+    align-items: center;
+    gap:2rem;
+    overflow-y:hidden;
+    /* justify-content: center; */
+    /* overflow-x: scroll; */
+   }
+
+   .bookSection {
+    gap:5rem;
+    margin: 0;
+    max-width: 100%;
+    /* overflow-x: auto; */
+
+   }
+
+   .bookCardWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    
+   }
+
+   
+}
