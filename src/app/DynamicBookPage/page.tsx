@@ -1,6 +1,7 @@
 import { client } from "@/sanity/client";
 import type { PageProps } from "@/types/types";
-import type { Author, Book, Series } from "@/types/booktypes";
+import type { Author, Book, Series} from "@/types/booktypes";
+import type { Review } from "@/types/reviewtypes";
 import { SingleBookCard } from "./components/SingleBookCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { urlFor } from "@/functions/urlFor";
@@ -15,6 +16,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
     const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
     const SERIES_QUERY = `*[_type == "Series" && _id == $serieId ][0]`;
+    const REVIEW_QUERY = `*[_type == "Review &&  _bookRef._id == $bookId]`;
     let bookToShow: Book | undefined;
 
     try
@@ -75,8 +77,17 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
         return (
             <ErrorBokhus msg="SERIE FOR BOOK NOT FOUND IN DATABASE" />);
     }
-
-
+    let reviewsForBook : Review[] = []
+    try {
+        reviewsForBook  = await client.fetch(REVIEW_QUERY, { bookId : bookUid});
+    }
+    catch (error)
+    {
+      
+        console.error("Sanity fetch failed :", error);
+        throw new Error("Failed to find review document from Sanity");
+    }
+    console.log("Reviws" + reviewsForBook[0].reviewDescription )
     const backgroundImage = urlFor(serieBelonging.imageSeriesBackground, 1920);
 
     return (
