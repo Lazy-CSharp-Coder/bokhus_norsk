@@ -69,12 +69,10 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
     const showPopup = shouldIsbnPopUpShow == undefined || shouldIsbnPopUpShow == true ? true : false;
     useOutsideClick(handleOutSideClick);
     
-
-
     return (
-        <div className="bookAvailableDiv" >
+        <div className="bookAvailableDiv"  >
 
-            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))} >
+            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
                 {
                     availability.map((item, index) =>
                         <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
