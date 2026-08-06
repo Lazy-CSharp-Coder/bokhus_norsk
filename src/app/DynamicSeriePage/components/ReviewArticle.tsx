@@ -44,7 +44,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
-       arrayToView: reviewsForBook, lastIndexDisplaying: 1, animationToUse: "fadeInFromRightAnim", tabletMode: false
+       arrayToView: reviewsForBook, lastIndexDisplaying: -1, animationToUse: "fadeInFromRightAnim", tabletMode: false
     });
 
 
@@ -84,7 +84,8 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
                 setDisplayOptions((prev) =>
                 {
                     // get starting point, should be a % 2 == 0 number
-                    const startPoint = prev.lastIndexDisplaying % 2 ? prev.lastIndexDisplaying - 1 : prev.lastIndexDisplaying;
+                    const lastIndexTemp = prev.lastIndexDisplaying % 2 ? prev.lastIndexDisplaying-1 : prev.lastIndexDisplaying;
+                    const startPoint = lastIndexTemp-1;
                     const endPoint = startPoint < reviewsForBook.length - 2 ? startPoint + 2 : startPoint + 1;
                     return { ...prev, tabletMode: false, arrayToView: reviewsForBook.slice(startPoint, endPoint), lastIndexDisplaying: endPoint - 1 };
                 });
@@ -197,7 +198,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
                         reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse="none" />
                 </div>
             )}
-            {arrayToView && reviewDisplayHeight != 0 ?
+            {arrayToView && lastIndexDisplaying != -1 && reviewDisplayHeight != 0 ?
                 <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName}/> : <h3 className="reviewsNotFoundText">No reviews found</h3>
             }
         </article>);
