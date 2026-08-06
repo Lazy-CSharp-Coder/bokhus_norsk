@@ -6,6 +6,7 @@ import { SingleBookCard } from "./components/SingleBookCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { urlFor } from "@/functions/urlFor";
 import { ErrorBokhus } from "../ErrorBokhus";
+import { ReviewArticle } from "../DynamicSeriePage/components/ReviewArticle";
 
 export default async function DynamicBookPage({ searchParams }: PageProps)
 {
@@ -16,7 +17,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
     const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
     const SERIES_QUERY = `*[_type == "Series" && _id == $serieId ][0]`;
-    const REVIEW_QUERY = `*[_type == "Review" &&  bookRef._id == $bookId]`;
+    const REVIEW_QUERY = `*[_type == "Review" &&  bookRef._ref == $bookId]`;
     let bookToShow: Book | undefined;
 
     try
@@ -98,9 +99,11 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
                     description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
 
 
+            { reviewsForBook.length > 0 &&
+                <ReviewArticle reviewsForBook={reviewsForBook} bookName={bookToShow.bookTitle}/>
+            }
 
             </section>
-
 
         </main>
 
