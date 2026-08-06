@@ -1,10 +1,13 @@
 import { client } from "@/sanity/client";
 import type { PageProps } from "@/types/types";
-import type { Author, Book, Series } from "@/types/booktypes";
+import type { Author, Book, Series} from "@/types/booktypes";
+import type { Review } from "@/types/reviewtypes";
 import { SingleBookCard } from "./components/SingleBookCard";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { urlFor } from "@/functions/urlFor";
 import { ErrorBokhus } from "../ErrorBokhus";
+import { ReviewArticle } from "../DynamicSeriePage/components/ReviewArticle";
+import { ReviewScrollButton } from "../DynamicSeriePage/components/ReviewScrollButton";
 
 export default async function DynamicBookPage({ searchParams }: PageProps)
 {
@@ -15,6 +18,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
     const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
     const SERIES_QUERY = `*[_type == "Series" && _id == $serieId ][0]`;
+    const REVIEW_QUERY = `*[_type == "Review" &&  bookRef._ref == $bookId]`;
     let bookToShow: Book | undefined;
 
     try
@@ -75,7 +79,16 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
         return (
             <ErrorBokhus msg="SERIE FOR BOOK NOT FOUND IN DATABASE" />);
     }
-
+    let reviewsForBook : Review[] = []
+    try {
+        reviewsForBook  = await client.fetch(REVIEW_QUERY, { bookId : bookUid});
+    }
+    catch (error)
+    {
+      
+        console.error("Sanity fetch failed :", error);
+        throw new Error("Failed to find review document from Sanity");
+    }
 
     const backgroundImage = urlFor(serieBelonging.imageSeriesBackground, 1920);
 
@@ -83,13 +96,18 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
         <main className="singleBookPage">
             <BackgroundImage className="singleBookPageBackgroundImage" src={backgroundImage} />
             <section className="singleBookCardSection">
-                <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
+                <article className="singleBookCardArticle flex">
+ <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
                     description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
+      {bookToShow && <ReviewScrollButton />}
+                </article>
+               
 
-
+             
+                <ReviewArticle reviewsForBook={reviewsForBook} bookName={bookToShow.bookTitle}/>
+            
 
             </section>
-
 
         </main>
 
