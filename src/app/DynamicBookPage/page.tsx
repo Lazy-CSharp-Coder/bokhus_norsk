@@ -89,7 +89,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
         console.error("Sanity fetch failed :", error);
         throw new Error("Failed to find review document from Sanity");
     }
-    console.log("Reviws" + reviewsForBook[0].reviewDescription )
+
     const backgroundImage = urlFor(serieBelonging.imageSeriesBackground, 1920);
 
     return (
@@ -103,9 +103,9 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
                 </article>
                
 
-            { reviewsForBook.length > 0 &&
+             
                 <ReviewArticle reviewsForBook={reviewsForBook} bookName={bookToShow.bookTitle}/>
-            }
+            
 
             </section>
 
