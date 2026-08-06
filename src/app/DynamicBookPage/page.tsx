@@ -16,7 +16,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     const BOOK_QUERY = `*[_type == "Book" && _id == $bookUidFromParams][0]`;
     const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
     const SERIES_QUERY = `*[_type == "Series" && _id == $serieId ][0]`;
-    const REVIEW_QUERY = `*[_type == "Review &&  _bookRef._id == $bookId]`;
+    const REVIEW_QUERY = `*[_type == "Review" &&  bookRef._id == $bookId]`;
     let bookToShow: Book | undefined;
 
     try
