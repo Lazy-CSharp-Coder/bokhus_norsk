@@ -13,15 +13,16 @@ import "./BookListAndCard.module.css";
 import { AsyncStatus, Review } from "@/types/reviewtypes";
 
 interface BookAndReviews {
-    bookToShow? : Book, 
+    bookIndex : number, 
     reviewsForBook : Review[],
     hasTriedFetchReviews : boolean
 }
 
 
+
 export function BookListAndCard({ authors, series, bookList }: BooksArticleProps)
 {
-    const [bookInfo, setBookInfo] = useState<BookAndReviews>({bookToShow : undefined, reviewsForBook: [], hasTriedFetchReviews : false});
+    const [bookInfo, setBookInfo] = useState<BookAndReviews[]>(bookList.map((item) => ({bookToShow : -1, reviewsForBook: [], hasTriedFetchReviews : false})) );
  const [asyncStatus, setAsyncStatus] = useState<AsyncStatus>("not started");
     const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
 
@@ -64,7 +65,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                 if(!abortController.signal.aborted) setAsyncStatus("done");
                 console.log("Array length from getThemReviews() :  "  + reviewArray.length);
                 if (reviewArray.length > 0) setBookInfo((prev) => ({...prev, reviewsForBook : reviewArray, hasTriedFetchReviews: true }))
-                    else setBookInfo((prev) => ({...prev, hasTriedFetchReviews : true}));
+                    else setBookInfo((prev) => ({...prev, reviewsForBook : [], hasTriedFetchReviews : true}));
             };
             getThemReviews();
             console.log("Get them reviews called");
