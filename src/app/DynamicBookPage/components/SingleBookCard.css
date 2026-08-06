@@ -64,11 +64,8 @@
 
 .singleBookCardImage {
     position: relative;
-
-   width: fit-content;
-
-    height: 44rem;
-
+width: 27.5rem;
+height: auto;
     flex: 0 1 auto;
     /* object-fit: contain; */
     aspect-ratio: 2/3;
@@ -223,11 +220,7 @@
 
     }
 
-    .singleBookCardImage {
-        height: 40rem;
-        
-    }
-} 
+
 /* 1440px */
 
 @media (max-width: 89.99em) {
