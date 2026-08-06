@@ -280,7 +280,7 @@
         justify-content: center;
     }
 
-    .bookFactsAndDescriptionDiv {
+    .bookFactsAndDescriptionWrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
