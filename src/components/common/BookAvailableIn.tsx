@@ -74,9 +74,9 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
 
     return (
-        <div className="bookAvailableDiv" style={{alignItems : showPopup && tabletMode? "center" : "left"}} >
+        <div className="bookAvailableDiv" >
 
-            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
+            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))} >
                 {
                     availability.map((item, index) =>
                         <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
