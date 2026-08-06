@@ -62,7 +62,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
     
                 const reviewArray: Review[] = await res.json() as Review[];
                 if(!abortController.signal.aborted) setAsyncStatus("done");
-                console.log("Array length "  + reviewArray.length);
+                console.log("Array length from getThemReviews() :  "  + reviewArray.length);
                 if (reviewArray.length > 0) setBookInfo((prev) => ({...prev, reviewsForBook : reviewArray, hasTriedFetchReviews: true }))
                     else setBookInfo((prev) => ({...prev, hasTriedFetchReviews : true}));
             };
