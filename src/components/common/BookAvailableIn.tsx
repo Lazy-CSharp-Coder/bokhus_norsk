@@ -74,7 +74,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
 
 
     return (
-        <div className="bookAvailableDiv" style={{width: showPopup && tabletMode ? "100%" : "fit-content"}}>
+        <div className="bookAvailableDiv" style={{alignItems : showPopup && tabletMode? "center" : "left"}} >
 
             <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}>
                 {

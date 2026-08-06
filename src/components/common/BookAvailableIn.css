@@ -3,7 +3,7 @@
 }
 
 .bookAvailableDiv {
-    width: fit-content;
+    width: 100%;
     height: fit-content;
 
         position: relative;
