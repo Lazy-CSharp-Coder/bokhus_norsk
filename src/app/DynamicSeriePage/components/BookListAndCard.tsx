@@ -82,7 +82,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
 
 
     return (
-        <section className={styles.booksSection}>
+        <section className={styles.bookSection}>
             <div className={styles.bookArticleReviewButtonWrapper}>
                 <article className={styles.booksArticle}>
                     <BookList bookList={bookList} handleClick={handleClick} />
