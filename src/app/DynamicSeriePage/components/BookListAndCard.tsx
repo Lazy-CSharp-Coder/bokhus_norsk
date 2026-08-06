@@ -21,8 +21,6 @@ interface BookAndReviews
 }
 
 
-
-
 export function BookListAndCard({ authors, series, bookList }: BooksArticleProps)
 {
     const [bookInfoArray, setBookInfoArray] = useState<BookAndReviews[]>(bookList.map((item) => ({ bookToShow: item, reviewsForBook: [], hasTriedFetchReviews: false })));
@@ -33,7 +31,6 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
     const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
     const handleClick = (itemNumber: number) =>
     {
-
         setBookIndex(itemNumber);
         if (isDescriptionShowing) setIsDescriptionShowing(false);
 
@@ -80,8 +77,6 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
         getThemReviews();
         console.log("Get them reviews called");
         return () => { abortController.abort(); };
-
-
 
     }, [bookToShow]);
 
