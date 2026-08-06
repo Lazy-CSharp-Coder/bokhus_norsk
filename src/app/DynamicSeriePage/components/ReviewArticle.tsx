@@ -33,6 +33,7 @@ export interface ReviewCardDisplayOptions
     arrayToView: Review[],
     lastIndexDisplaying: number,
     tabletMode: boolean,
+    animationToUse: string
 
 }
 
@@ -44,7 +45,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     const reviewSectionRef = useRef<HTMLDivElement>(null);
     const [displayOptions, setDisplayOptions] = useState<ReviewCardDisplayOptions>({
-        arrayToView: reviewsForBook.slice(0, 2), lastIndexDisplaying: -1, tabletMode: false
+        arrayToView: [], lastIndexDisplaying: -1, tabletMode: false, animationToUse : "fadeInFromRightAnim"
     });
 
 
@@ -83,12 +84,14 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
             }
             else
             {
-
-
-                // 
-                // if (window.innerWidth < tabletLimit)
+                if(tabletMode)
+                {
+                    
+                }
+               
+                // if (tabletMode)
                 //     setDisplayOptions((prev) => ({ ...prev, tabletMode: true, arrayToView: prev.arrayToView.slice(0, 1), lastIndexDisplaying: prev.arrayToView.length == 1 ? prev.lastIndexDisplaying : prev.lastIndexDisplaying - 1 }));
-                // else if (window.innerWidth >= tabletLimit)
+                // else 
                 // {
                 //     console.log("Slicing reviews for destop mode.");
                 //     setDisplayOptions((prev) =>
@@ -134,7 +137,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     }, []);
 
-    const { arrayToView, lastIndexDisplaying, tabletMode } = displayOptions;
+    const { arrayToView, lastIndexDisplaying, tabletMode , animationToUse } = displayOptions;
 
     const handleRightSliderClick = () =>
     {
