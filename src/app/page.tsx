@@ -2,14 +2,13 @@ import { BackgroundImage } from "@/components/common/BackgroundImage";
 import "./Heropage.module.css";
 import { QuotesBottom } from "@/components/common/QuotesBottom";
 import languageJson from "@/json/languages.json"
-import { LanguageChosen } from "@/types/languagetypes";
 
 export default function Home() 
 {
 
   const waitForMain = 300;
 
-  const Language : LanguageChosen[] = languageJson;
+
   const { quotesHeading, descriptionBokhus} = languageJson[0].heroPage;
 
 
