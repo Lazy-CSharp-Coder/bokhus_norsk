@@ -7,7 +7,7 @@ import { handleDelete } from "../actions";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import { useFormStatus } from "react-dom";
-import  ErrorUI  from "./../../error"
+import  ErrorUI  from "../../test"
 import { handleBuildComplete } from "next/dist/build/adapter/build-complete";
 
 
