@@ -1,30 +1,12 @@
 "use client";
 
 import { createContext, type PropsWithChildren, useContext, useState } from "react";
-import type {DescriptionShowing } from "./types/booktypes";
-import { LanguageChosen, LanguageText } from "./types/languagetypes";
-import languageTextFromJson from "@/json/languages.json";
-
-
-const languagesAvailable : LanguageText[] = languageTextFromJson;
-const startup : LanguageText = languagesAvailable[0];
-
-
-const startupLanguage: LanguageChosen =
-{
-    languageNumber: 0,
-    language : "english",
-    sanityTag: "ENG",
-
-
-    heroPage : startup.heroPage,
-  
-}
+import type { DescriptionShowing } from "./types/booktypes";
 
 // state provider 
-const DescriptionShowingContext = createContext<DescriptionShowing>({ isDescriptionShowing: true, setIsDescriptionShowing : (value: boolean) => {}});
+const DescriptionShowingContext = createContext<DescriptionShowing>({ isDescriptionShowing: true, setIsDescriptionShowing: (value: boolean) => { } });
 
-const LanguageContext = createContext<LanguageChosen>(startupLanguage);
+
 // hook to handle the Intro to series
 
 export function useDescriptionShowingState()
@@ -35,31 +17,16 @@ export function useDescriptionShowingState()
     return context;
 }
 
-export function useLanguageChosen()
-{
-    const context = useContext(LanguageContext);
-    if (context == undefined)
-        throw new Error("useIntroState must be used inside a StateProvider");
-    return context;
-}
-
-
 
 export function StateProvider({ children }: PropsWithChildren)
 {
 
     const [isDescriptionShowing, setIsDescriptionShowing] = useState<boolean>(true);
 
+    return <DescriptionShowingContext.Provider value={{ isDescriptionShowing, setIsDescriptionShowing }}>
 
-    
-    const { languageNumber, heroPage,  language, sanityTag} = startupLanguage;
+        {children}
 
-
-
-    return <DescriptionShowingContext.Provider value={{  isDescriptionShowing, setIsDescriptionShowing }}>
-        <LanguageContext.Provider value={{ languageNumber, heroPage,  language, sanityTag }}>
-            {children}
-        </LanguageContext.Provider>
     </DescriptionShowingContext.Provider>;
 }
 

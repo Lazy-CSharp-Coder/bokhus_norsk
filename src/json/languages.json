@@ -2,43 +2,8 @@
     {
         "language": "English",
         "sanityTag": "ENG",
-        "iconUrl": "/icons/english.png",
-        "menuItemsHeader": [
-            {
-                "name": "HOME",
-                "pageLink": "/"
-            },
-            {
-                "name": "AUTHORS",
-                "pageLink": "/Authors"
-            },
-            {
-                "name": "SERIES",
-                "pageLink": "/Series"
-            },
-            {
-                "name": "REGISTER",
-                "pageLink": "/Register"
-            },
-            {
-                "name": "WHERE TO BUY",
-                "pageLink": "/WhereToBuy"
-            },
-                           {
-                "name": "WORK WITH US",
-                "pageLink": "/WorkWithUs"
-            }, {
-                "name": "CONTACT",
-                "pageLink": "/Contact"
-            },
-            {
-                "name": "ABOUT",
-                "pageLink": "/About"
-            }
-              
-   
-        ],
-        "heroPage": {
+
+         "heroPage": {
             "quotesHeading": [
                 {
                     "start": "Stories with ",
@@ -64,33 +29,6 @@
     {
         "language": "Norwegian",
         "sanityTag": "NO",
-        "iconUrl": "/icons/norway.png",
-        "menuItemsHeader": [
-            {
-                "name": "HJEM",
-                "pageLink": "/"
-            },
-            {
-                "name": "FORFATTERE",
-                "pageLink": "/Authors"
-            },
-            {
-                "name": "SERIER",
-                "pageLink": "/Series"
-            },
-            {
-                "name": "REGISTERING",
-                "pageLink": "/Register"
-            },
-            {
-                "name": "KJØP",
-                "pageLink": "/WhereToBuy"
-            },
-            {
-                "name": "OM",
-                "pageLink": "/About"
-            }
-        ],
         "heroPage": {
             "quotesHeading": [
                 {

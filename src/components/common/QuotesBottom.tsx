@@ -1,7 +1,7 @@
-import languagesJson from "@/json/languages.json";
-import type { LanguageText } from "@/types/languagetypes";
+import languageJson from "@/json/languages.json"
 import type { QuoteBottomProps } from "@/types/types";
 import "./QuotesBottom.module.css";
+import { LanguageChosen } from "@/types/languagetypes";
 
 export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
 {
@@ -10,10 +10,9 @@ export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
             "rgb(178, 126, 29)", "#B8AEA3", "lightblue"
         ];
 
-    const languageArray: LanguageText[] = languagesJson;
-    const { heroPage } = languageArray[0];
+  const language : LanguageChosen[] = languageJson;
+    const { heroPage } = language[0];
     const animIncQuotesBottom = 1700;
-    const waitForMain = 300;
     const waitForDescription = 800;
 
     return (
