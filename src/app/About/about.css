@@ -34,6 +34,7 @@
 }
 
 .aboutSection {
+    display: flex;
     flex-direction: column;
     max-width: 50rem;
     align-items: left;
@@ -52,6 +53,7 @@
 }
 
 .aboutTextDiv {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 2rem 1rem;
