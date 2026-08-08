@@ -35,7 +35,8 @@ export function Credits()
                     <p className="legalText">
                         Bokhus will like to say thanks and credit the following people/companies for some of the visual elements, icons and images, on this web-page.
 
-                    </p>          <p className="legalText">
+                    </p>
+                    <p className="legalText">
                         The time and effort spendt by these creators are well appreciated !
 
                     </p>
