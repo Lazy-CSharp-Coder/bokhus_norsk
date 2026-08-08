@@ -124,7 +124,7 @@ export function ContactUs()
 
             </form>
 
-            <div className={`${styles.bokhusComWrapperAbout} flex`}>
+            <div className={`${styles.bokhusComWrapperContact} flex`}>
                 {serverMessage != "nomessage" ?
                     <div className={`${styles.serverMessageDiv} scaleInAnim`}>{serverMessage}</div> :
                     <span className="scaleInAnim"><BokHusCom fontSize="1.2rem" />  </span>}
