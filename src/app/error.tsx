@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import "./error.module.css";
+import styles from "./error.module.css";
 
 interface ErrorProps {
     error : Error & { digest?: string},
@@ -16,11 +16,11 @@ export default function Error({error, reset} : ErrorProps)
     },[error]);
 
     return(
-        <div className="errorDiv">
-            <BiSolidError size="8rem" className="errorIcon"/>
-            <h2 className="errorHeading">Something went wrong!</h2>
+        <div className={styles.errorDiv}>
+            <BiSolidError size="8rem" className={styles.errorIcon}/>
+            <h2 className={styles.errorHeading}>Something went wrong!</h2>
              {error.message}
-            <button onClick={() => reset()} className="submitButton errorButton">TRY AGAIN</button>
+            <button onClick={() => reset()} className={`submitButton ${styles.errorButton}`} >TRY AGAIN</button>
         </div>
     )
 
