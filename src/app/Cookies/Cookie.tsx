@@ -83,7 +83,7 @@ export function CookiePolicy()
                     </ul>
                     <p className="legalText">The information collected is typically anonymized and used only for statistical purposes.</p>
 
-                         <p className="legalTextSmallHeading"> Functional Cookies</p>
+                    <p className="legalTextSmallHeading"> Functional Cookies</p>
 
                     <p className="legalText">Functional cookies allow the website to remember user preferences, such as::</p>
                     <ul className="legalList">
@@ -91,15 +91,31 @@ export function CookiePolicy()
                         <li>language settings</li>
                         <li> display preferences</li>
                         <li>saved options</li>
-                
+
                     </ul>
                     <p className="legalText">These improve the user experience but are not strictly necessary.</p>
-                 
+
                 </div>
 
             </article>
 
+            <article className="legalArticle">
+                <h3 className="legalHeading">Marketing Cookies</h3>
 
+                <div className="textDiv">
+                    <p className="legalText">If BokHus.com uses marketing or social media integrations, cookies may be set by services such as:</p>
+
+                    <ul className="legalList">
+
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>advertising platforms</li>
+
+                    </ul>
+                    These cookies may track browsing behaviour to deliver relevant content or advertisements.
+                    BokHus does not directly control these third-party cookies.
+                </div>
+            </article>
 
             <article className="legalArticle">
                 <h3 className="legalHeading">Third-Party Cookies</h3>
@@ -114,7 +130,7 @@ export function CookiePolicy()
                         <li>analytics provider</li>
                         <li>embedded media</li>
                         <li>social media platforms</li>
-              
+
                     </ul>
                     These providers may process data according to their own privacy policies.
                 </div>
@@ -130,16 +146,16 @@ export function CookiePolicy()
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">You can manage or disable cookies through your browser settings.
-Most browsers allow you to:</p>
-                
+                        Most browsers allow you to:</p>
+
                     <ul className="legalList">
 
                         <li>block cookies</li>
                         <li>delete stored cookies</li>
                         <li>receive warnings before cookies are stored</li>
-              
+
                     </ul>                  <p className="legalText">Instructions are usually available in your browser’s help section.
-Please note that disabling cookies may affect the functionality of the website.</p>
+                        Please note that disabling cookies may affect the functionality of the website.</p>
                 </div>
             </article>
             <article className="legalArticle">
@@ -155,36 +171,36 @@ Please note that disabling cookies may affect the functionality of the website.<
 
 
                     </ul>
-                  
+
 
                     <p className="legalText">Your preferences can be changed at any time.</p>
-   
+
                 </div>
 
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
-           Data Protection
+                    Data Protection
 
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-               Cookies that process personal data are handled in accordance with our Privacy Policy and applicable data protection laws.
+                        Cookies that process personal data are handled in accordance with our Privacy Policy and applicable data protection laws.
                     </p>
-        
+
                 </div>
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
-     Updates to This Cookie Policy
+                    Updates to This Cookie Policy
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">We may update this Cookie Policy to reflect changes in legal requirements or website functionality.
-Updated versions will be published on this page with a revised date.     </p>
-                
+                        Updated versions will be published on this page with a revised date.     </p>
+
                 </div>
             </article>
-      
+
             <article className="legalArticle">
                 <h3 className="legalHeading">
                     Contact

@@ -132,13 +132,14 @@ a {
 
 .errorBokhusDiv{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 7rem;
+  padding-bottom: 14rem;
   gap:2rem;
   flex-grow: 1;
   font-size: 2rem;
+  color: var(--myWhiteColor);
 
 }
 

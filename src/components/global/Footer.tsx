@@ -78,7 +78,7 @@ export function Footer()
 
 
                     <div className="logoBPDiv">
-                          <a href="https://bpwebdev.vercel.app" target="_blank">
+                          <a href="https://bpwebdev.no" target="_blank">
                           <LogoBPWebDev /> 
                           </a>
                 
