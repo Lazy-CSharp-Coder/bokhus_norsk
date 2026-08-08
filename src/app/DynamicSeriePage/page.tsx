@@ -67,6 +67,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    try
    {
+      
       bookList = await client.fetch<Book[]>(BOOK_QUERY, { serieID: serie._id });
    }
    catch (error)

@@ -6,7 +6,6 @@ import { BookCard, BookCardSizer } from "./BookCard";
 import { SerieDescription } from "./SerieDescription";
 import { useDescriptionShowingState } from "@/globalStates";
 import { urlFor } from "@/functions/urlFor";
-import { useLanguageChosen } from "@/globalStates";
 import { ReviewScrollButton } from "./ReviewScrollButton";
 import { ReviewArticle } from "./ReviewArticle";
 import styles from "./BookListAndCard.module.css";
@@ -36,7 +35,6 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
 
     };
 
-    const { sanityTag } = useLanguageChosen();
 
     const { bookToShow, reviewsForBook, hasTriedFetchReviews } = bookIndex == -1 ? { bookToShow: undefined, reviewsForBook: [], hasTriedFetchReviews: false } : bookInfoArray[bookIndex];
 
@@ -89,7 +87,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                     <BookCardSizer key={bookForSizing._id + "#sizerCard#"} availability={bookForSizing.availability} bookInSeries={bookForSizing.bookInSeries} seriesRef={bookForSizing.seriesRef}
                         _id={bookForSizing._id} imageBook={bookForSizing.imageBook} releaseYear={bookForSizing.releaseYear} authorUids={bookForSizing.authorUids}
                         bookTitle={bookForSizing.bookTitle} subTitle={bookForSizing.subTitle} description={bookForSizing.description} seriesName={series.seriesName}
-                        saintyTagLanguage={sanityTag} />
+                        saintyTagLanguage={"ENG"} />
 
                     <div className={styles.bookCardWrapper}>
                         {
@@ -97,7 +95,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                                 <BookCard key={bookToShow._id} availability={bookToShow.availability} bookInSeries={bookToShow.bookInSeries} seriesRef={bookToShow.seriesRef}
                                     _id={bookToShow._id} imageBook={bookToShow.imageBook} releaseYear={bookToShow.releaseYear} authorUids={bookToShow.authorUids}
                                     bookTitle={bookToShow.bookTitle} subTitle={bookToShow.subTitle} description={bookToShow.description} seriesName={series.seriesName}
-                                    saintyTagLanguage={sanityTag} buyLink={bookToShow.buyLink} /> :
+                                    saintyTagLanguage={"ENG"} buyLink={bookToShow.buyLink} /> :
                                 <SerieDescription seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
                         }
                     </div>

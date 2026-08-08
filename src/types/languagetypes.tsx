@@ -12,19 +12,10 @@ export interface HeroPageText
     quotesBottom : string[]
 }
 
-export interface LanguageText
-{
-    language: string,
-    sanityTag: string,
-    iconUrl: string,
-    heroPage : HeroPageText
-
-
-}
 
 export interface LanguageChosen 
 {
-    languageNumber: number,
+
     language: string,
     sanityTag: string,
     heroPage : HeroPageText,
