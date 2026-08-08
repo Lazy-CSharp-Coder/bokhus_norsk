@@ -14,7 +14,7 @@ import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 import { GoogleReCAPTCHA } from "../../components/common/GoogleReCAPTCHA";
 import Image from "next/image";
 import { SubmitButton } from "@/components/common/SubmitButton";
-
+import styles from "./Contact.module.css";
 
 //  added for importing recaptcha to fix turbopack fault
 
@@ -67,70 +67,70 @@ export function ContactUs()
     return (
 
 
-        <section className="contactUsSection flex fadeInFromBelowAnim" style={{ animationDelay: "0.8s" }}>
-            {/* <article className="contactUsArticle flex"> */}
-            <div className="logoHeadingWrapper flex">
-                <h2 className="contactUsHeading flex">
+        <section className={`${styles.contactUsSection} flex fadeInFromBelowAnim`} style={{ animationDelay: "0.8s" }}>
+    
+            <div className={`${styles.logoHeadingWrapper} flex`}>
+                <h2 className={`${styles.contactHeading} flex`}>
                     Contact Us
                 </h2>
-                <div className="logoRegWrapper">
-                    <Image className="logoRegImg rotateInYAnim" style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                <div className={`${styles.logoRegWrapper} flex`}>
+                    <Image className={`${styles.logoRegImg} flex rotateInYAnim`} style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                 </div>
 
             </div>
-            <p className="contactUsText">
+            <p className={`${styles.contactUsText}`}>
                 If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
             </p>
 
-            <form className="contactUsForm flex" onSubmit={handleSubmit(onSubmit)}>
+            <form className={`${styles.contactUsForm} flex` }onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="inputDiv">
+                <div className={`${styles.inputDiv}`}>
                     <label>Your email address : </label>
                     <IoMailOutline size="1.95rem" className="inputIcon" />
-                    <input className="contactInput" type="email" {...register("email")} />
-                    {errors.email && <p className="errorRegisterForm">{errors.email.message}</p>}
+                    <input className={`${styles.contactInput}`} type="email" {...register("email")} />
+                    {errors.email && <p className={`${styles.errorRegisterForm}`}>{errors.email.message}</p>}
 
 
                 </div>
 
-                <div className="inputDiv">
+                <div className={`${styles.inputDiv}`}>
                     <label>Subject : </label>
-                    <MdOutlineSubject className="inputIcon" size="2rem" />
-                    <input className="contactInput" type="text" {...register("subject")} />
-                    {errors.subject && <p className="errorRegisterForm">{errors.subject.message}</p>}
+                    <MdOutlineSubject className={`${styles.input}`} size="2rem" />
+                    <input className={`${styles.contactInput}`} type="text" {...register("subject")} />
+                    {errors.subject && <p className={`${styles.errorRegisterForm}`}>{errors.subject.message}</p>}
 
 
                 </div>
 
 
-                <div className="inputDiv">
+                <div className={`${styles.inputDiv}`}>
                     <label>Your comment : </label>
-                    <MdOutlineInsertComment className="inputIcon" size="1.95rem" />
-                    <textarea className="contactInput" {...register("comment")} rows={7} />
-                    {errors.comment && <p className="errorRegisterForm">{errors.comment.message}</p>}
+                    <MdOutlineInsertComment className={`${styles.inputIcon}`} size="1.95rem" />
+                    <textarea className={`${styles.contactInput}`} {...register("comment")} rows={7} />
+                    {errors.comment && <p className={`${styles.errorRegisterForm}`}>{errors.comment.message}</p>}
 
 
                 </div>
-                <div className="recaptchaWrapper">
-                    <FaUserCheck className="inputIconRecaptcha" size="1.9rem" />
+                <div className={`${styles.recaptchaWrapper}`}>
+                    <FaUserCheck className={`${styles.inputIconRecaptcha}`} size="1.9rem" />
                     <GoogleReCAPTCHA ref={(el) => { recaptchaRef.current = el; }} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" />
-                    {errors.recaptchaToken && <p className="errorRegisterForm">{errors.recaptchaToken.message}  </p>}
+                    {errors.recaptchaToken && <p className={`${styles.errorRegisterForm}`}>{errors.recaptchaToken.message}  </p>}
 
                 </div>
 
-                {/* <button className="submitButton" type="submit" disabled={isSubmitting} ><span>{isSubmitting ? "Submitting data" : "Submit"}</span></button> */}
+      
                 <SubmitButton buttonText="Send message" submitMessage="Sending message" isSubmitting={isSubmitting}/>
 
 
             </form>
 
-            <div className="bokhusComWrapperContact flex">
+            <div className={`${styles.bokhusComWrapperAbout} flex`}>
                 {serverMessage != "nomessage" ?
-                    <div className="serverMessageDiv scaleInAnim">{serverMessage}</div> :
+                    <div className={`${styles.serverMessageDiv} scaleInAnim`}>{serverMessage}</div> :
                     <span className="scaleInAnim"><BokHusCom fontSize="1.2rem" />  </span>}
             </div>
 
-            {/* </article> */}
+      
 
         </section>
     );

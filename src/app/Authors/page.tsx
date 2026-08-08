@@ -6,7 +6,6 @@ import { client } from "@/sanity/client";
 import Link from "next/link";
 
 // css specific import for this page
-import "./Authors.module.css";
 
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import styles from "./Authors.module.css";
