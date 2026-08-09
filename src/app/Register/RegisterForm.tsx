@@ -23,7 +23,7 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
 import { languageOptions } from "./registerSchema";
 import { RegErrorMessage } from "./RegErrorMessage";
-
+import styles from "./RegisterForm.module.css";
 import { SubmitButton } from "../../components/common/SubmitButton";
 
 type RegisterFormInput = z.input<typeof registerSchema>;
@@ -85,51 +85,51 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
 
     return (
-        <section className="registerSection">
+        <section className={styles.registerSection}>
 
-            <div className="userEmailDiv fadeInAnim">
+            <div className={`${styles.userEmailDiv} fadeInAnim`}>
 
-                <div className="mailIconAdressWrapper flex">
+                <div className={`${styles.mailIconAdressWrapper} flex`}>
                     <FaUserLarge size="3rem" className="userIcon" />
                     {userInfo != "Display email" ?
-                        <div key={userInfo} className="userInfoDiv" >
-                            {userInfo == "No user message" ? <IoMdClose size="1.5rem" className="userInfoIcon userIconAnim" /> : <IoCheckmarkSharp size="1.4rem" className="userInfoIcon userIconAnim" />}
-                            <span className="userTextAnim" onAnimationEnd={() => setUserInfo("Display email")}>{userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
+                        <div key={userInfo} className={styles.userInfoDiv} >
+                            {userInfo == "No user message" ? <IoMdClose size="1.5rem" className= {`${styles.userInfoIcon} userIconAnim`}/> : <IoCheckmarkSharp size="1.4rem" className={`${styles.userInfoIcon} userIconAnim`} />}
+                            <span className={styles.userTextAnim} onAnimationEnd={() => setUserInfo("Display email")}>{userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
                         </div> :
-                        <div className="mailIconUserEmailWrapper"><IoMailOutline size="1.8rem" className="regMailIcon scaleInAnim" />  <p key={userInfo + "#userEmail"} className="userEmailText scaleInAnim" style={{ animationDuration: "2s" }}>{userEmail}</p>
+                        <div className={styles.mailIconUserEmailWrapper}><IoMailOutline size="1.8rem" className={`${styles.regMailIcon} scaleInAnim`} />  <p key={userInfo + "#userEmail"} className={`${styles.userEmailText} scaleInAnim`} style={{ animationDuration: "2s" }}>{userEmail}</p>
                         </div>
                     }
                 </div>
             </div>
 
-            <article className="generalInfoArticle flex fadeInFromBelowAnim" style={{ animationDelay: "0.5s" }}>
+            <article className={`${styles.generalInfoArticle} flex fadeInFromBelowAnim`} style={{ animationDelay: "0.5s" }}>
 
-                <div className="headingLogoTextWrapper flex">
-                    <h1 className="registerHeading">YOUR PROFILE </h1>
-                    <div className="logoRegWrapper">
-                        <Image className="logoRegImg rotateInYAnim" style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
+                <div className={styles.headingLogoTextWrapper}>
+                    <h1 className={styles.registerHeading}>YOUR PROFILE </h1>
+                    <div className={styles.logoRegWrapper}>
+                        <Image className={`${styles.logoRegImg} rotateInYAnim`} style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                     </div>
 
                 </div>
 
                 <FormProvider {...methods}>
-                    <form onSubmit={handleSubmit(onSubmit)} className="registerForm flex">
+                    <form onSubmit={handleSubmit(onSubmit)} className={styles.registerForm}>
 
-                        <div className="regUpperHalfWrapper flex">
+                        <div className={styles.regUpperHalfWrapper}>
 
-                            <div className="registerDiv">
-                                <IoEarthSharp className="inputRegIcon" size="1.9rem" />
-                                <label>Which country are you from (optional) :    {errors.country && <p className="errorRegisterForm">{errors.country.message}</p>} </label>
-                                <input className="registerInput" type="text" {...register("country")} placeholder="country" />
+                            <div className={styles.registerDiv}>
+                                <IoEarthSharp className={styles.inputRegIcon} size="1.9rem" />
+                                <label>Which country are you from (optional) :    {errors.country && <p className={styles.errorRegisterForm}>{errors.country.message}</p>} </label>
+                                <input className={styles.registerInput} type="text" {...register("country")} placeholder="country" />
 
 
                             </div>
-                            <div className="multipleChoicesDiv">
-                                <label className="languagesText">What languages do you prefer ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
-                                <ul className="multipleChoicesList flex">
-                                    <LuLetterText className="inputRegListIcon" size="2rem" />
+                            <div className={styles.multipleChoicesDiv}>
+                                <label className={styles.languagesText}>What languages do you prefer ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
+                                <ul className={styles.multipleChoicesList}>
+                                    <LuLetterText className={styles.inputRegListIcon} size="2rem" />
                                     {languageOptions.map((item) => (
-                                        <li key={item} className="languagePreferredDiv">
+                                        <li key={item} className={styles.languagePreferredDiv}>
                                             <input type="radio" id={item} value={item} {...register("preferredLanguage")} />
                                             <label htmlFor={item}>{item}</label>
                                         </li>
@@ -137,13 +137,13 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                                 </ul>
                             </div>
-                            <div className="multipleChoicesDiv">
-                                <label className="languagesText">What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
+                                  <div className={styles.multipleChoicesDiv}>
+                                 <label className={styles.languagesText}>What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
 
-                                <ul className="multipleChoicesList flex">
-                                    <LiaSwatchbookSolid className="inputRegListIcon" size="2.1rem" />
+                                  <ul className={styles.multipleChoicesList}>
+                                    <LiaSwatchbookSolid className={styles.inputRegListIcon} size="2.1rem" />
                                     {genresDef.map((item) => (
-                                        <li key={item} className="languagePreferredDiv">
+                                        <li key={item} className={styles.languagePreferredDiv}>
                                             <input type="checkbox" id={item} value={item} {...register("genresInterestedIn")} />
                                             <label htmlFor={item}>{item}</label>
                                         </li>
@@ -151,19 +151,19 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                                 </ul>
                             </div>
-                            <div className="registerDiv">
-                                <TbWorldWww className="inputRegIcon" size="1.85rem" />
+                            <div className={styles.registerDiv}>
+                                <TbWorldWww className={styles.inputRegIcon} size="1.85rem" />
                                 <label>Do you have a profile page (optional) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message} />}
                                 </label>
-                                <input className="registerInput" type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
+                                <input className={styles.registerInput} type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
 
                             </div>
                         </div>
-                        <div className="newsLetterArcOptionsWrapper flex">
-                            <div className="oneLineDiv">
-                                <GiNewspaper className="inputRegSingleIcon" size="1.9rem" />
-                                <div className="labelInputWrapperOneLineFirst flex">
-                                    <input className="registerInput" type="checkbox" {...register("newsLetter")} />
+                        <div className={styles.newsLetterArcOptionsWrapper}>
+                            <div className={styles.oneLineDiv}>
+                                <GiNewspaper className={styles.inputRegSingleIcon} size="1.9rem" />
+                                <div className={styles.labelInputWrapperOneLineFirst}>
+                                    <input className={styles.registerInput} type="checkbox" {...register("newsLetter")} />
                                     <label>Do you wanna receive newsletters from us ? </label>
 
                                 </div>
@@ -171,9 +171,9 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                             </div>
 
-                            <div className="oneLineDiv">
-                                <FaBookOpenReader className="inputRegSingleIcon" size="1.8rem" />
-                                <div className="labelInputWrapperOneLineSecond flex">
+                            <div className={styles.oneLineDiv}>
+                                <FaBookOpenReader className={styles.inputRegSingleIcon} size="1.8rem" />
+                                <div className={styles.labelInputWrapperOneLineSecond}>
                                     <input className="registerInput" type="checkbox" {...register("arcInterest")} />
                                     <label>Are you intereted in joining or Advanced Readers Team ? </label>
 
@@ -189,7 +189,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
 
                 </FormProvider>
-                <div className="bokhusComWrapper flex">
+                <div className={styles.bokhusComWrapper}>
                     <span className="scaleInAnim"  style={{animationDelay: "2s"}}>   <BokHusCom fontSize="1.1rem" /></span>
                  
                 </div>

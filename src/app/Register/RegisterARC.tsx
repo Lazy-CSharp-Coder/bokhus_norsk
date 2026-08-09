@@ -12,6 +12,7 @@ import { FaRegCopy } from "react-icons/fa";
 
 import { LuScrollText } from "react-icons/lu";
 import { RegErrorMessage } from "./RegErrorMessage";
+import styles from "./RegisterForm.module.css";
 
 interface ARCFormProps
 {
@@ -28,19 +29,19 @@ export function RegisterARC()
     const comfortableOptions = arcSchema.shape.comfortable.options;
     const errorRules: string = "You have to accept this term to continues";
     return (
-        <article key={"#ARCTeam#"} className="arcArticle flex fadeInFromBelowAnim">
-            <div className="arcHeadingIconWrapper flex">
-                <h2 className="registerARC">ADVANCED READERS TEAM QUESTIONS</h2>
-                <AiOutlineTeam className="teamIcon" size="2.5rem" />
+        <article key={"#ARCTeam#"} className={`${styles.arcArticle} flex fadeInFromBelowAnim`}>
+            <div className={styles.arcHeadingIconWrapper}>
+                <h2 className={styles.registerARC}>ADVANCED READERS TEAM QUESTIONS</h2>
+                <AiOutlineTeam className={styles.teamIcon} size="2.5rem" />
             </div>
 
-            <fieldset className="arcForm flex">
+            <fieldset className={styles.arcForm}>
 
 
-                <div className="multipleChoicesARCDiv flex">
-                    <FaRegCopy className="inputRegListARCIcon" size="1.7rem" />
-                    <label className="languagesText">What format do you prefer for ARC copy ?   {errors.arc?.format && <RegErrorMessage message={errors.arc?.format.message} />}</label>
-                    <ul className="multipleChoicesARCList flex">
+                <div className={styles.multipleChoicesARCList}>
+                    <FaRegCopy className={styles.inputRegListARCIcon} size="1.7rem" />
+                    <label className={styles.languagesText}>What format do you prefer for ARC copy ?   {errors.arc?.format && <RegErrorMessage message={errors.arc?.format.message} />}</label>
+                    <ul className={styles.multipleChoicesARCList}>
                         {formatOptions.map((item) => (
 
                             <li key={item} className="languagePreferredDiv">

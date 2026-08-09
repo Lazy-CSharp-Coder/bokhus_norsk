@@ -13,11 +13,11 @@ export function SerieSection({ seriesSelected, booksBelonging, authors }: Series
 
     return (
         <section className={styles.serieSection}>
+
             <SerieHeader key={seriesSelected._id} seriesName={seriesSelected.seriesName} authors={authorsStrArray}
                 bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
             <BookListAndCard key={seriesSelected._id + "#BookArticle#"} authors={authorsStrArray} series={seriesSelected} bookList={booksBelonging} />
-
-
+            
         </section>
     );
 

@@ -1,4 +1,35 @@
-@import "./RegisterForm.css";
-@import "./Register.css";
-@import "./SignIn.css";
+.registerBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
 
+
+
+  background-image: var(--defaultBackgroundImage);
+  background-size: cover;
+    position: fixed;
+  background-repeat: no-repeat;
+  filter: blur(5px) brightness(98%);
+  z-index: -1;
+
+
+}
+
+.registerPage {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+        /* padding-left: 12%; */
+    
+}
+
+@media (max-width: 63.99em) {
+
+    .registerBackground {
+
+        background-position: 70% center;
+
+    }
+}
