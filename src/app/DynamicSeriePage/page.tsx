@@ -5,7 +5,7 @@ import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { client } from "@/sanity/client";
 
 // css module import
-import "./DynamicSeriePage.module.css";
+import styles from "./DynamicSeriePage.module.css";
 import type { PageProps } from "@/types/types";
 import { urlFor } from "@/functions/urlFor";
 import { ErrorBokhus } from "../ErrorBokhus";
@@ -56,11 +56,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
       throw new Error("Failed to fetch authors from Sanity");
    }
 
-
-
-
    let bookList: Book[] = [];
-
 
    try
    {
@@ -91,10 +87,10 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    return (
       <>
          <ScrollToTop />
-         <BackgroundImage className="seriePageBackgroundImage" src={urlFor(serie.imageSeriesBackground, 1920)} />
-         <main className="seriesPage">
+         <BackgroundImage className={styles.seriePageBackgroundImage} src={urlFor(serie.imageSeriesBackground, 1920)} />
+         <main className={styles.seriesPage}>
             {(serie && authors) &&
-               <div className="presentationReviewHrefWrapper">
+               <div className={styles.presentationReviewHrefWrapper}>
                   <SerieSection seriesSelected={serie} booksBelonging={bookList} authors={authors} />
                </div>}
 
