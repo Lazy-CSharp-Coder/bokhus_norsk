@@ -23,8 +23,6 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    let serie: Series;
 
 
-   console.log("Serie id sendt to General Page is " + serieUid);
-
    const SERIES_QUERY = `*[_type == "Series" && _id == $serieUidFromParams][0]`;
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID] | order(bookInSeries asc)`;
@@ -44,8 +42,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
 
-   serie.authorUids.forEach((item) => { console.log(item._ref); });
-
+ 
    let authors: Author[] = [];
 
    if(authorsIds.length > 0)
@@ -63,7 +60,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
 
    let bookList: Book[] = [];
-   // console.log(authors);
+
 
    try
    {

@@ -27,12 +27,12 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
 
             </div>
             {/* <h4 className="descriptionSeriesHeading">{descriptionStr}</h4> */}
-            <ul className={`${styles.descriptionSeriesList} flex fadeInAnim`} style={{ animationDelay: "1.3s", animationDuration: "1.5s" }}>
+            <div className={`${styles.descriptionSeriesList} flex fadeInAnim`} style={{ animationDelay: "1.3s", animationDuration: "1.5s" }}>
                 {description.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <p key={index}>{item}</p>
                 ))}
 
-            </ul>
+            </div>
 
             <SerieRecommendedFor ageGroup={ageGroup} />
 
