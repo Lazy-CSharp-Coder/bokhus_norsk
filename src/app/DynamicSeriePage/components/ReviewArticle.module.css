@@ -1,1 +1,125 @@
-@import "./ReviewArticle.css";
+.reviewArticle {
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--robotoFont);
+    /* height: 100%; */
+    /* margin-bottom: 10rem; */
+    gap: 1rem;
+    height: max-content;
+
+    position: relative;
+}
+
+
+.reviewsNotFoundText {
+    margin: 3rem 0rem;
+    font-size: 2rem;
+}
+
+
+.reviewHeadingArrowContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: fit-content;
+    align-items: center;
+}
+
+.headingToTopWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+
+    align-items: center;
+    padding: 0 3rem;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgba(20, 20, 20, 0.4);
+}
+
+.reviewTitle {
+
+    font-size: 1.3rem;
+    color: white;
+    width: 100%;
+
+    text-align: center;
+
+    padding: 2rem;
+    /* border: 1px solid rgba(221, 221, 221, 0.6); */
+    /* border-bottom: none; */
+}
+
+.reviewSlideContainer {
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.4);
+    /* padding: 3.5rem 1.5rem; */
+    /* border: 1px solid rgba(221, 221, 221, 0.6); */
+    overflow-x: hidden;
+    border-radius: 5px;
+    /* border-top: none; */
+}
+
+.reviewDisplayer {
+    display: flex;
+    flex-direction: row;
+
+    align-items: stretch;
+    justify-content: space-around;
+    height: max-content;
+    width: 100%;
+
+}
+
+
+/*     slider classes     */
+
+.leftSlider,
+.rightSlider,
+.goToTopIcon {
+    cursor: pointer;
+    z-index: 20;
+
+    /* transform: translateY(-50%); */
+
+}
+
+
+/* end slider classes     */
+
+
+@media (max-width: 63.99em) {
+
+
+    .reviewTitle {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+
+    }
+
+    .goToTopIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .reviewHeadingArrowContainer {
+        gap: 0.5rem;
+    }
+
+    .leftSlider,
+    .rightSlider {
+        width: 3.5rem;
+        height: 3.5rem;
+        /* transform: translateY(-50%); */
+
+    }
+
+
+}
