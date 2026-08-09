@@ -1,5 +1,5 @@
 "use client";
-import "./ReviewScrollButton.module.css";
+import styles from "./ReviewScrollButton.module.css";
 export function ReviewScrollButton() 
 {
 
@@ -10,9 +10,11 @@ export function ReviewScrollButton()
 
     }
         
+    const { reviewClicker, clickHereSeries, scrollSeries} = styles;
+    
     return(
         
-         <button onClick={handleScrollToReviews} className={`reviewClicker fadeInAnim desktopModeBlock` } ><span className="clickHereSeries"> CLICK</span> OR 
-                             <span className="scrollSeries"> SCROLL</span> TO READ REVIEWS</button>
+         <button onClick={handleScrollToReviews} className={`${reviewClicker} fadeInAnim desktopModeBlock` } ><span className={clickHereSeries}> CLICK</span> OR 
+                             <span className={scrollSeries}> SCROLL</span> TO READ REVIEWS</button>
     )
 }
