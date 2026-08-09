@@ -12,7 +12,7 @@ export function SerieSection({ seriesSelected, booksBelonging, authors }: Series
     const authorsStrArray = authors.map(item => item.name);
 
     return (
-        <section className={styles.SeriesSection}>
+        <section className={styles.serieSection}>
             <SerieHeader key={seriesSelected._id} seriesName={seriesSelected.seriesName} authors={authorsStrArray}
                 bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} />
             <BookListAndCard key={seriesSelected._id + "#BookArticle#"} authors={authorsStrArray} series={seriesSelected} bookList={booksBelonging} />
