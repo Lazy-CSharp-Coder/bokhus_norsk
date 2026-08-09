@@ -15,7 +15,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                 <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
             </div>
             <div className={styles.bookFactsAndDescriptionWrapper}>
-                <div className={styles.booksFactDiv}>
+                <div className={styles.booksFactsDiv}>
 
                     <div className={styles.bookHeadingWrapper}>
                         <h2 className={styles.bookTitle}>{bookTitle}</h2>
@@ -69,7 +69,7 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
                 <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
             </div>
             <div className={styles.bookFactsAndDescriptionWrapper}>
-                <div className={styles.bookFactDiv}>
+                <div className={styles.bookFactsDiv}>
 
                     <div className={styles.bookHeadingWrapper}>
                         <h2 className={styles.bookTitle}>{bookTitle}</h2>
