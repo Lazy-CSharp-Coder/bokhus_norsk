@@ -13,7 +13,6 @@ import styles from "./SingleBookPage.module.css";
 
 export default async function DynamicBookPage({ searchParams }: PageProps)
 {
-
     const params = await searchParams;
     const bookUid = params.message as string;
     // const bookUid = "779ccbb4-8d96-4c30-aee9-65a54403e014";

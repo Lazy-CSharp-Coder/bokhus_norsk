@@ -190,7 +190,8 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                 </FormProvider>
                 <div className="bokhusComWrapper flex">
-                    <BokHusCom fontSize="1.1rem" />
+                    <span className="scaleInAnim"  style={{animationDelay: "2s"}}>   <BokHusCom fontSize="1.1rem" /></span>
+                 
                 </div>
             </article>
 

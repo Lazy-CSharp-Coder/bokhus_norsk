@@ -30,8 +30,7 @@ export default function About()
                 </div>
                 <ExpandingLine key={"AboutLine2"} lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
 
-                <div className={`${styles.bokhusComWrapperAbout} fadeInAnim`} style={{ animationDelay: "0.6s" }}>
-                    <BokHusCom fontSize="1.2rem" />
+                <div className={`${styles.bokhusComWrapperAbout} fadeInAnim`} style={{ animationDelay: "0.8s" }}> <BokHusCom fontSize="1.2rem" />
                 </div>
             </section>
 

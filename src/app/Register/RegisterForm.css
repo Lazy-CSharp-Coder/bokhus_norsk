@@ -56,9 +56,8 @@
 
 .logoRegWrapper {
 
-    width: 3.5rem;
+    width: 4rem;
     aspect-ratio: 1/1;
-    filter: invert();
     position: relative;
 }
 
