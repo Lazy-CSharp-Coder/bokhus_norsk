@@ -4,18 +4,18 @@ import Image from "next/image";
 import { BookAvailableIn } from "../../../components/common/BookAvailableIn";
 import { urlFor } from "@/functions/urlFor";
 import { BookInSerieText } from "./BookInSerieText";
-import "./BookCard.module.css";
+import styles from "./BookCard.module.css";
 
 export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink }: BookCardProps)
 {
     const imageSrc = urlFor(imageBook, 800);
     return (
-        <div className={`bookCard`} style={{ animationDuration: "1.2s" }}>
-            <div className="bookImage">
+        <div className={styles.bookCard} style={{ animationDuration: "1.2s" }}>
+            <div className={styles.bookImage}>
                 <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
             </div>
-            <div className="bookFactsAndDescriptionWrapper grid">
-                <div className="bookFactsDiv flex">
+            <div className={styles.bookFactsAndDescriptionWrapper}>
+                <div className={styles.booksFactDiv}>
 
                     <div className="bookHeadingWrapper">
                         <h2 className="bookTitle">{bookTitle}</h2>
