@@ -23,9 +23,7 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
 
                 <div className={styles.reviewerNameIconWrapper}>
 
-
                     <LuUserPen size="1.6rem" className={styles.userIcon} />
-
                     <p className={styles.reviewerNameText}>{reviewerName}</p>
 
                 </div>
