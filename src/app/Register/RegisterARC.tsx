@@ -14,11 +14,6 @@ import { LuScrollText } from "react-icons/lu";
 import { RegErrorMessage } from "./RegErrorMessage";
 import styles from "./RegisterForm.module.css";
 
-interface ARCFormProps
-{
-    arcData: ARCData,
-    onFinished: (data: ARCData) => void;
-}
 
 export function RegisterARC()
 {
@@ -44,7 +39,7 @@ export function RegisterARC()
                     <ul className={styles.multipleChoicesARCList}>
                         {formatOptions.map((item) => (
 
-                            <li key={item} className="languagePreferredDiv">
+                            <li key={item} className={styles.languagePreferredDiv}>
                                 <input type="radio" id={item} value={item} {...register("arc.format")} />
                                 <label htmlFor={item}>{item}</label>
 
@@ -56,18 +51,18 @@ export function RegisterARC()
                     </ul>
 
                 </div>
-                <div className="registerTextArea">
-                    <FaQuestion className="inputRegIcon" size="1.6rem" />
+                <div className={styles.registerTextArea}>
+                    <FaQuestion className={styles.inputRegIcon} size="1.6rem" />
                     <label>Why do you wanna join the Advanced Readers Team ? </label>
-                    <textarea className="registerTextAreaInput" rows={4} {...register("arc.why")} placeholder="tell us why" />
+                    <textarea className={styles.registerTextAreaInput} rows={4} {...register("arc.why")} placeholder="tell us why" />
 
                 </div>
-                <div className="multipleChoicesARCDiv flex">
+                <div className={styles.multipleChoicesARCDiv}>
                     <FaRegClock size="1.8rem" className="inputRegListARCIcon" />
-                    <label className="languagesText">How long does it usually take you to read a book ?   {errors.arc?.howLong && <RegErrorMessage message={errors.arc.howLong.message} />}</label>
-                    <ul className="multipleChoicesARCList flex">
+                    <label className={styles.languagesText}>How long does it usually take you to read a book ?   {errors.arc?.howLong && <RegErrorMessage message={errors.arc.howLong.message} />}</label>
+                    <ul className={styles.multipleChoicesARCList}>
                         {howLongOptions.map((item) => (
-                            <li key={item} className="languagePreferredDiv">
+                            <li key={item} className={styles.languagePreferredDiv}>
                                 <input type="radio" id={item} value={item} {...register("arc.howLong")} />
                                 <label htmlFor={item}>{item}</label>
                             </li>
@@ -75,7 +70,7 @@ export function RegisterARC()
 
                     </ul>
 
-                </div> <div className="multipleChoicesARCDiv flex">
+                   <div className={styles.multipleChoicesARCDiv}>
                     <TbEyeEdit size="2rem" className="inputRegListARCIcon" />
                     <label className="languagesText">What do you notice when you read books  ?   {errors.arc?.notice && <RegErrorMessage message={errors.arc.notice.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
@@ -89,7 +84,7 @@ export function RegisterARC()
                     </ul>
 
                 </div>
-                <div className="multipleChoicesARCDiv flex">
+                       <div className={styles.multipleChoicesARCDiv}>
                     <TbUserQuestion size="1.9rem" className="inputRegListARCIcon" />
                     <label className="languagesText">Are you comfortable with giving an honest review ?  {errors.arc?.comfortable && <RegErrorMessage message={errors.arc.comfortable.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
@@ -103,7 +98,7 @@ export function RegisterARC()
                     </ul>
 
                 </div>
-                <div className="multipleChoicesARCDiv flex">
+                  <div className={styles.multipleChoicesARCDiv}>
                     <BsFileEarmarkPost size="1.8rem" className="inputRegListARCIcon" />
                     <label className="languagesText">Where do you post reviews  ?   {errors.arc?.reviewSites && <RegErrorMessage message={errors.arc.reviewSites.message} />}</label>
                     <ul className="multipleChoicesARCList flex">
