@@ -3,18 +3,14 @@ import { getSeriesCardPropsArray } from "@/app/Series/getSeriesCardPropsArray";
 import { AuthorCard } from "../../Authors/components/AuthorCard";
 import { AuthorSeriesHeading } from "./AuthorSeriesHeading";
 import { client } from "@/sanity/client";
-import { urlFor } from "@/functions/urlFor";
-import "./AuthorSection.module.css";
-import { setRouteToGo } from "@/functions/setRouteToGo";
 import { SeriesCardLarge } from "@/components/common/SeriesCardLarge";
-import "./AuthorSection.module.css";
+import styles from "./AuthorSection.module.css";
 
 export default async function AuthorSection({ author }: { author: Author; })
 {
     // set a placeholder if not found 
     const { _id, name, profileImage, subTitle, bestSellerIntro, bestSellerList, description } = author;
     const SERIES_QUERY = `*[_type == "Series" && references($authorUid)]`;
-    const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID]`;
 
     const seriesAuthor: Series[] = await client.fetch<Series[]>(SERIES_QUERY, { authorUid: _id });
 
@@ -23,13 +19,13 @@ export default async function AuthorSection({ author }: { author: Author; })
     const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesAuthor);
     const animDelayInc: number = 200;
     return (
-        <>
+     
 
-            <section className="authorSection flex">
+            <section className={styles.authorSection}>
                 <AuthorCard _id={_id} profileImage={profileImage} name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre} shouldDisplayGuidance={false}/>
                 <AuthorSeriesHeading authorName={name} animationDelay={200} />
 
-                <ul className="seriesCardList flex">
+                <ul className={styles.seriesCardList}>
                     {seriesToDisplay.length > 0 &&
                         seriesToDisplay.map((item, index) =>
                             <SeriesCardLarge key={`#SCAUTHOR + ${index}`} {...item} animationDelay={index * animDelayInc} />)
@@ -37,6 +33,6 @@ export default async function AuthorSection({ author }: { author: Author; })
 
                     } </ul>
             </section>
-        </>
+       
     );
 }
