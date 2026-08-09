@@ -130,6 +130,21 @@ a {
   
 }
 
+fieldset {
+    border: none;
+}
+
+
+input[type="checkbox"] {
+    accent-color: var(--inputBackground);
+    /* Replace with your desired color name, hex, or rgb */
+    border: 1px solid var(--borderIconColor);
+    width: 1rem;
+    height: 1rem;
+
+
+}
+
 /* classes for component ErrorBokhus - internal error for Bokhus */
 
 .errorBokhusDiv{
