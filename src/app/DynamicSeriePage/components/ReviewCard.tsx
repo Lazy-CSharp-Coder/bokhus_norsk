@@ -31,12 +31,12 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
                 </div>
                 <p className={styles.reviewedInText}>Reviewed in <span className={styles.reviewCountry}>{country}</span> on {date}</p>
 
-                <ul className={styles.reviewlist}>
+                <div className={styles.reviewList}>
                     {
                         reviewDescription != undefined &&
-                        reviewDescription.map((item, index) => <li key={index} className={styles.reviewDescription}>{item} </li>)
+                        reviewDescription.map((item, index) => <p key={index} className={styles.reviewDescription}>{item} </p>)
                     }
-                </ul>
+                </div>
 
 
             </div>

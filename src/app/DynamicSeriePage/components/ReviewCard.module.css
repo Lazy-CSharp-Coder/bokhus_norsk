@@ -119,7 +119,7 @@
 }
 
 .reviewList {
-    list-style: none;
+
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -130,6 +130,7 @@
     padding: 0rem 0.2rem;
     padding-bottom: 1rem;
     padding-top: 1.2rem;
+
 
 
 
