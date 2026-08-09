@@ -23,8 +23,6 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
 
                 </div>
 
-
-
             </div>
             {/* <h4 className="descriptionSeriesHeading">{descriptionStr}</h4> */}
             <div className={`${styles.descriptionSeriesList} flex fadeInAnim`} style={{ animationDelay: "1.3s", animationDuration: "1.5s" }}>
@@ -35,9 +33,6 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
             </div>
 
             <SerieRecommendedFor ageGroup={ageGroup} />
-
-
-
 
         </div>);
 
