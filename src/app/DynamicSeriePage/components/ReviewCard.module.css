@@ -1,1 +1,206 @@
-@import "./ReviewCard.css";
+.reviewCardLinkWrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    /* height: 100%; */
+    border-radius: 5px;
+    padding: 2rem 4rem;
+    background-color: rgb(20, 20, 20, 0.7);
+    margin: 3.5rem 3.8rem;
+}
+
+
+.reviewCardDiv {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1; */
+    justify-content: top;
+    align-items: flex-start;
+    /* background-color: rgb(20, 20, 20, 0.7); */
+    width: 100%;
+    ;
+    /* border: 1px solid var(--myWhiteColor); */
+    gap: 0.68rem;
+    font-size: 1rem;
+
+
+
+
+
+
+
+}
+
+.reviewHeading {
+    font-size: 1.5rem;
+    color: white;
+
+}
+
+.titleReviewText {
+    width: fit-content;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--myWhiteColor);
+
+    /* border-top: 1px solid white; */
+    /* border-bottom: 1px solid white; */
+    /* border-bottom: 1px solid var(--myWhiteColor); */
+
+}
+
+.bookReviewed {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: white;
+}
+
+
+.reviewerNameIconWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 0.2rem;
+}
+
+
+.reviewerNameText {
+    font-size: 1.1rem;
+}
+
+.onText {
+    /* font-style: normal; */
+    color: var(--myWhiteColor);
+}
+
+.formatText {
+    color: var(--coverTitleColor);
+}
+
+.reviewHeadingSeriesName {
+    color: lightblue;
+}
+
+.starsDiv {
+    /* margin-top: 0.1rem; */
+    /* margin-left: 0.2rem; */
+    gap: 0.5rem;
+    margin-left: 0.1rem;
+    margin-bottom: 0.3rem;
+
+}
+
+.starIcon {
+    color: #ddb76e;
+    ;
+}
+
+.reviewedInText {
+    color: var(--myWhiteColor);
+    padding-left: 0.2rem;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.reviewCountry {
+    color: lightblue;
+    font-style: inherit;
+    font-size: inherit;
+}
+
+.userIcon {
+    color: var(--myWhiteColor)
+}
+
+.reviewList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-top: 1px solid var(--myWhiteColor);
+    font-size: var(--reviewDescriptionFontSize);
+    font-size: normal;
+    margin-top: 0.8rem;
+    padding: 0rem 0.2rem;
+    padding-bottom: 1rem;
+    padding-top: 1.2rem;
+
+
+
+}
+
+.reviewSiteText {
+    color: var(--bokhusFutureColor);
+}
+
+.linkToReview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.8rem 0.3rem;
+    color: #ddb76e;
+    border-top: 1px solid var(--myWhiteColor);
+    border-bottom: 1px solid var(--myWhiteColor);
+    cursor: pointer;
+
+}
+
+
+@media (max-width: 63.99em) {
+    .reviewCardLinkWrapper {
+        width: 100%;
+        /* flex: 1; */
+        margin: 1rem 1rem;
+        /* padding: 2.8rem 1rem; */
+    }
+
+
+    .titleReviewText {
+        font-size: 1.5rem;
+    }
+
+    .bookReviewed {
+        font-size: 1.1rem;
+    }
+
+    .reviewerNameText {
+        font-size: 1.2rem;
+    }
+
+    .reviewedInText {
+        font-size: 1.2rem;
+    }
+
+    .reviewList {
+
+
+        --reviewDescriptionFontSize: 1.2rem;
+        /* background: red; */
+        padding: 0rem 0.2rem;
+        padding-bottom: 1.5rem;
+        padding-top: 1.7rem;
+        width: 100%;
+    }
+
+    .userIcon {
+        width: 1.8em;
+        height: 1.8rem;
+    }
+
+    .starIcon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .linkToReview {
+        font-size: 1.2rem;
+    }
+}
