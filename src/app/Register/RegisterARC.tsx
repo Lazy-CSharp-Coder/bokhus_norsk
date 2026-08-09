@@ -58,7 +58,7 @@ export function RegisterARC()
 
                 </div>
                 <div className={styles.multipleChoicesARCDiv}>
-                    <FaRegClock size="1.8rem" className="inputRegListARCIcon" />
+                    <FaRegClock size="1.8rem" className={styles.inputRegListARCIcon} />
                     <label className={styles.languagesText}>How long does it usually take you to read a book ?   {errors.arc?.howLong && <RegErrorMessage message={errors.arc.howLong.message} />}</label>
                     <ul className={styles.multipleChoicesARCList}>
                         {howLongOptions.map((item) => (
@@ -71,9 +71,9 @@ export function RegisterARC()
                     </ul>
                 </div>
                 <div className={styles.multipleChoicesARCDiv}>
-                    <TbEyeEdit size="2rem" className="inputRegListARCIcon" />
+                    <TbEyeEdit size="2rem" className={styles.inputRegListARCIcon} />
                     <label className={styles.languagesText}>What do you notice when you read books  ?   {errors.arc?.notice && <RegErrorMessage message={errors.arc.notice.message} />}</label>
-             <ul className={styles.multipleChoicesARCList}>
+                    <ul className={styles.multipleChoicesARCList}>
                         {noticeDef.map((item) => (
                             <li key={item} className={styles.languagePreferredDiv}>
                                 <input type="checkbox" id={`#notice#${item}`} value={item} {...register("arc.notice")} />
