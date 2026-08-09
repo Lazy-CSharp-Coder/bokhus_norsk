@@ -15,7 +15,6 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                     <Image className="image" src={imageUrl} alt="series image" fill={true} sizes="(max-width: 350px) 100vw, 50vw" loading="eager" />
                 </div>
 
-
                 <div className={`${styles.serieNameFactDiv} fadeInAnim`} style={{ animationDelay: "0.9s", animationDuration: "1.5s" }}>
                     <h2 className={styles.seriesName}> {seriesName} </h2>
                     <ByAuthor key={authors + "#Description"} authors={authors} />
