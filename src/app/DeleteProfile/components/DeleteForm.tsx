@@ -1,18 +1,13 @@
 "use client";
 
 import { ChangeEvent, useState } from "react";
-import "./DeleteForm.module.css";
 import type { DeleteOptions } from "./deletetypes";
 import { handleDelete } from "../actions";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import { useFormStatus } from "react-dom";
 import  ErrorUI  from "../../error"
-import { handleBuildComplete } from "next/dist/build/adapter/build-complete";
-
-
-
-
+import styles from "./DeleteForm.module.css";
 
 export function DeleteForm()
 {
@@ -34,7 +29,7 @@ export function DeleteForm()
 
             window.location.href = "/";
 
-            
+           
         }
         catch(error)
         {
@@ -55,18 +50,19 @@ export function DeleteForm()
 
     return (
 
-        <form className="deleteForm" action={handleAction}>
-            <div className="deleteFormHeadingIconWrapper">
-                <h3 className="deleteFormHeading"> PLEASE CHOOSE DELETE OPTIONS</h3>
-                <RiDeleteBin6Line className="deleteFormIcon" size="1.5rem" />
+        <form className={styles.deleteForm} action={handleAction}>
+            <div className={styles.deleteFormHeadingIconWrapper}>
+                <h3 className={styles.deleteFormHeading}> PLEASE CHOOSE DELETE OPTIONS</h3>
+                <RiDeleteBin6Line className={styles.deleteFormIcon} size="1.5rem" />
             </div>
 
-            <label className="deleteLabel">  <input name="profile" className="deleteCheck" type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} disabled={options.clerk} /> Delete profile information at Bokhus  </label>
+            <label className={styles.deleteLabel} htmlFor="deleteProfile">
+                  <input name="profile" className={styles.deleteCheck} type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} disabled={options.clerk} /> Delete profile information at Bokhus  </label>
 
-            <label className="deleteLabel" id="deleteClerk"><input name="clerk" className="deleteCheck" type="checkbox" id="deleteClerk" checked={options.clerk} onChange={handleChange} />Delete login information at Clerk  </label>
-            <div className="deleteButtonDiv">
-                <button type="submit" className={`submitButton deleteButton ${noChecked ? "disable": ""}`} disabled={noChecked || pending}>{pending ? "Deleting data..." : "Delete"}</button>
-                <button type="button" className="submitButton cancelButton" onClick={() => router.back()}>Cancel</button>
+            <label className={styles.deleteLabel} htmlFor="deleteClerk"><input name="clerk" className={styles.deleteCheck} type="checkbox" id="deleteClerk" checked={options.clerk} onChange={handleChange} />Delete login information at Clerk  </label>
+            <div className={styles.deleteButtonDiv}>
+                <button type="submit" className={`submitButton ${styles.deleteButton} ${noChecked ? styles.disable : ""}`} disabled={noChecked || pending}>{pending ? "Deleting data..." : "Delete"}</button>
+                <button type="button" className={`submitButton ${styles.cancelButton}`} onClick={() => router.back()}>Cancel</button>
             </div>
 
         </form>
