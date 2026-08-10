@@ -12,7 +12,7 @@ import { BookAvailableIn } from "@/components/common/BookAvailableIn";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { PiGlobeSimpleXLight, PiArrowFatLineDownLight } from "react-icons/pi";
 import { GoLinkExternal } from "react-icons/go";
-import "./WhereToBuySerie.module.css";
+import styles from "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 
@@ -61,7 +61,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   }
 
   return (
-    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
+    <article className={`${styles.whereToBuySerieArticle} fadeInFromBelowAnim`} style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
       <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef} onClick={handleHeaderClick}>
         <div className="whereToBuyIconInfoWrapper">
           <ImBooks size="4.4rem" className="buyBooksIcon" />
