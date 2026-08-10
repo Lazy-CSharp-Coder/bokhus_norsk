@@ -1,6 +1,6 @@
 :root {
-  
-        --arrowSize : 3rem;
+
+    --arrowSize: 3rem;
 }
 
 .authorCard {
@@ -12,7 +12,6 @@
     gap: 3rem;
     position: relative;
     font-family: var(--robotoFont);
-    /* background-color: rgba(221, 221, 221, 0.6); */
     background-color: var(--regBackground);
     border: 2px solid var(--borderIconColor);
     border-radius: 5px;
@@ -24,7 +23,7 @@
     box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.5);
 }
 
-.bigGoToArrowSpan{
+.bigGoToArrowSpan {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -36,14 +35,13 @@
     width: fit-content;
     height: fit-content;
     position: absolute;
-/* height: 100%; */
-    /* transform: translateY(-50%); */
+
 }
 
 .bigGoToArrowSpan svg.bigGoToArrow {
-   width: var(--arrowSize);
-   height: var(--arrowSize);
-  
+    width: var(--arrowSize);
+    height: var(--arrowSize);
+
 }
 
 .authorNameAndDescriptionDiv {
@@ -59,12 +57,11 @@
 .authorImageDiv {
 
     position: relative;
-    /* height: auto; */
+
     height: 27.65rem;
-  width: auto;
+    width: auto;
     aspect-ratio: 1 / 1;
-    /* width: 15vw; */
-    /* width: 27.65rem; */
+
 
 }
 
@@ -74,7 +71,7 @@
     border: 1px solid var(--borderIconColor);
     -webkit-box-shadow: 5px 4px 15px 5px rgba(50, 50, 50, 0.8);
     box-shadow: 5px 4px 15px 5px rgba(50, 50, 50, 0.8);
-  flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 
@@ -136,18 +133,11 @@
 
 }
 
-@media (max-width: 199.99em) {}
-
-@media (max-width: 159.99em) {}
-
-@media (max-width: 119.99em) {}
-
-
 @media (max-width: 63.99em) {
 
 
     .authorCard {
-         --arrowSize : 3.5rem;
+        --arrowSize: 3.5rem;
         flex-direction: column;
         align-items: center;
         /* width: 80%; */
@@ -161,16 +151,16 @@
         font-family: var(--rob);
     }
 
-.bigGoToArrowSpan svg.bigGoToArrow {
-   
-    width: var(--arrowSize);
-   height: var(--arrowSize);
-   position: static;
-  
-}
+    .bigGoToArrowSpan svg.bigGoToArrow {
+
+        width: var(--arrowSize);
+        height: var(--arrowSize);
+        position: static;
+
+    }
 
     .authorImageDiv {
-        width:  85%;
+        width: 85%;
         height: auto;
         flex: 0 0 auto;
     }
@@ -209,5 +199,3 @@
 
 
 }
-
-@media (max-width: 39.99em) {}
