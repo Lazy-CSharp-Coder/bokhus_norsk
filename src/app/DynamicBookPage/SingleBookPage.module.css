@@ -42,7 +42,31 @@
 
 }
 
+@media (max-width: 159.99em) {
 
+    .singleBookCardSection {
+    width: 70%;
+  
+  }
+
+}
+
+/* max 1920 */
+
+@media (max-width: 119.99em) {
+
+    .singleBookCardSection {
+    width: 73%;
+  }
+} 
+
+/* 1440px */
+
+@media (max-width: 89.99em) {
+    .singleBookCardSection {
+        width: 75.5%;
+    }
+}
 
 @media (max-width: 63.99em) {
 

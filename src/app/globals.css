@@ -180,12 +180,6 @@ input[type="checkbox"] {
   text-align: center;
 } 
 
-@media (max-width: 240em)
-{
-  html {
-    /* font-size: 100%; */
-  }
-}
 
 @media (max-width: 199.99em) /* usikker */
 {
@@ -214,10 +208,6 @@ input[type="checkbox"] {
   font-size: 60%;
   /* font-size: 70%; */
 }
-
-}
-/* max 1280 */
-@media (max-width: 79.99em) {
 
 }
 
@@ -260,16 +250,11 @@ input[type="checkbox"] {
         font-size: 60%;
     }
 }
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
 
-/* 
-@media (max-width: 1920px)
-{
-    html {
-        font-size: 75%;
-    }
-} */
