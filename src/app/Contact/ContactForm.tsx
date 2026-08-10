@@ -127,7 +127,7 @@ export function ContactUs()
             <div className={`${styles.bokhusComWrapperContact} flex`}>
                 {serverMessage != "nomessage" ?
                     <div className={`${styles.serverMessageDiv} scaleInAnim`}>{serverMessage}</div> :
-                    <span className="scaleInAnim" style={{animationDelay: "2s"}}><BokHusCom fontSize="1.2rem" />  </span>}
+                    <span className="scaleInAnim" style={{animationDelay: "1s"}}><BokHusCom fontSize="1.2rem" />  </span>}
             </div>
 
       

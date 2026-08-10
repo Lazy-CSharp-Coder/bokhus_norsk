@@ -2,7 +2,7 @@
 
 import { ComponentProps, ComponentType, Ref } from "react";
 import dynamic from "next/dynamic";
-import "./GoogleReCAPTCHA.module.css";
+import styles from "./GoogleReCAPTCHA.module.css";
 
 import type ReCAPTCHA from "react-google-recaptcha";
 
@@ -19,7 +19,7 @@ interface RecaptchaWrapperProps extends ComponentProps<typeof ReCAPTCHA>
 export function GoogleReCAPTCHA({...props }: RecaptchaWrapperProps)
 {
     return(
-    <div className="recaptchaDiv">
+    <div className={styles.recaptchaDiv}>
         <DynamicReCaptcha {...props} />
     </div>
     );

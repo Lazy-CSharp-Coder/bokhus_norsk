@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
 import { HeaderMenuItem } from "./HeaderMenuItem";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { useOutsideClick } from "@/functions/useOutsideClick";
-
+import styles from "./HamburgerMenu.module.css";
 
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
 
@@ -43,15 +43,15 @@ export function HamburgerMenu()
 
     return (
         <>
-            <span className="burgerSpan" onClick={handleClick}>
+            <span className={styles.burgerSpan} onClick={handleClick}>
                 <GiHamburgerMenu size="2.5rem" />
             </span>
             {menuState!= "hiding" &&
-                <nav ref={headerRef} onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`menuItemsHamburgerDiv flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
+                <nav ref={headerRef} onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`${styles.menuItemsHamburgerDiv} flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
 
                     {menuItems.map((_, index) =>
 
-                       <HeaderMenuItem key={"#HamItem" + index} index={index} className="hamburgerItem" iconClassName="hamburgerIcon" />
+                       <HeaderMenuItem key={"#HamItem" + index} index={index} className={styles.hamburgerItem} iconClassName={styles.hamburgerIcon} />
                     )}
                 </nav>}
 

@@ -1,1 +1,21 @@
-@import "./GoogleReCAPTCHA.css";
+
+.recaptchaDiv {
+   display: inline-block !important;
+  position: relative !important;
+  overflow: hidden !important; 
+
+  /* Hard limits that force-crop the outer 3 pixels */
+
+  width: 298px !important;  
+  height: 72px !important;  
+  
+  /* Creates a new clean border to mask the cropped artifact */
+  border: 1px solid rgb(34, 34, 34);
+
+  border-radius: 4px !important; 
+}
+
+.recaptchaDiv iframe {
+    margin: -3px 0 0 -3px !important; 
+  pointer-events: auto !important; 
+}

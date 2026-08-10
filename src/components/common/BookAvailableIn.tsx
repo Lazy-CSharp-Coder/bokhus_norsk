@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { GoLinkExternal } from "react-icons/go";
 import { PiGlobeSimpleXLight } from "react-icons/pi";
 
@@ -24,7 +24,7 @@ interface PopUpIsbnAndLink
 }
 
 
-import "./BookAvailableIn.module.css";
+import styles from "./BookAvailableIn.module.css";
 
 import { Availability } from "@/types/booktypes";
 import Link from "next/link";
@@ -39,11 +39,11 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
     const [isCopied, setIsCopied] = useState<boolean>(false);
 
     const listRef = useRef<HTMLUListElement>(null);
-    
+
     const currentWidth = useWindowWidth();
     const tabletMode = currentWidth ? currentWidth < 1024 ? true : false : false;
 
-    
+
     const handleOutSideClick = (e: MouseEvent) =>
     {
         let shallClose = false;
@@ -75,15 +75,16 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
     useOutsideClick(handleOutSideClick);
 
     return (
-        <div className="bookAvailableDiv" style={{width: showPopup ? "100%": "fitContent", justifyContent: tabletMode? "center" : "start"
+        <div className={styles.bookAvailableDiv} style={{
+            width: showPopup ? "100%" : "fitContent", justifyContent: tabletMode ? "center" : "start"
 
         }} >
 
-            <ul ref={listRef} className="availabilityList flex" onClick={() => (setPopupShowing(prev => !prev))}
-            style={{justifyContent: showPopup && tabletMode ? "center" : "start"}} >
+            <ul ref={listRef} className={`${styles.availabilityList} flex`} onClick={() => (setPopupShowing(prev => !prev))}
+                style={{ justifyContent: showPopup && tabletMode ? "center" : "start" }} >
                 {
                     availability.map((item, index) =>
-                        <li key={index + "#AV"} className={classNameItem ? classNameItem : "availabilityItem"} style={{ fontSize: fontSize ? fontSize : "" }} >
+                        <li key={index + "#AV"} className={classNameItem ? classNameItem : styles.availabilityItem} style={{ fontSize: fontSize ? fontSize : "" }} >
                             {item.bookType}
 
 
@@ -91,28 +92,28 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                     )
                 }
                 {(isPopupShowing && showPopup) &&
-                    <div className="popUpIsbnDiv" onClick={(e) => e.stopPropagation()}>
-                        <div className="isbnDiv">
-                            <span className="isbnText">ISBN NUMBERS :</span>
-                            <ul className="isbnList">
+                    <div className={styles.popUpIsbnDiv} onClick={(e) => e.stopPropagation()}>
+                        <div className={styles.isbnDiv}>
+                            <span className={styles.isbnText}>ISBN NUMBERS :</span>
+                            <ul className={styles.isbnList}>
 
                                 {availability.map((item, index) =>
-                                    <li className="isbnListItem" key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className="isbnNumber">{item.isbn ? item.isbn : "No ISBN number available"}</span>
-                                        <button className="buttonCopy" onClick={() => handleCopy(item.isbn)}>
+                                    <li className={styles.isbnListItem} key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className={styles.isbnNumber}>{item.isbn ? item.isbn : "No ISBN number available"}</span>
+                                        <button className={styles.buttonCopy} onClick={() => handleCopy(item.isbn)}>
 
-                                            <BsCopy className="iconCopy" size="0.8rem" />
+                                            <BsCopy className={styles.iconCopy} size="0.8rem" />
                                         </button>
                                     </li>
 
                                 )}
                             </ul>
                         </div>
-                        <div className="buyLinkDiv">
+                        <div className={styles.buyLinkDiv}>
                             {buyLink ?
-                                <Link className="buyLink" href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className="popUpLink" />  </Link> : <p className="linkNotThereText">No link to buy page available <PiGlobeSimpleXLight className="notThereLink" size={fontSize ? fontSize : "1.1rem"} /></p>}
+                                <Link className={styles.buyLink} href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className={styles.popUpLink} />  </Link> : <p className={styles.linkNotThereText}>No link to buy page available <PiGlobeSimpleXLight className={styles.notThereLink} size={fontSize ? fontSize : "1.1rem"} /></p>}
 
                         </div>
-                        <p className="amazonTextPopup">
+                        <p className={styles.amazonTextPopup}>
                             As an Amazon Associate we earn from qualifying purchases.
                         </p>
                     </div>

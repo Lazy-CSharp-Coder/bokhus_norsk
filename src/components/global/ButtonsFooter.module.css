@@ -1,0 +1,19 @@
+.termsLink, .privacyLink, .affiliateLink, .cookieLink {
+    border: none;
+    color:var(--myWhiteColor);
+    font-family : var(--robotoFont);
+    /* font-size: 1rem; */
+    transition: all 0.4s ease-in;
+    background-color: transparent;
+    text-decoration: none;
+    height: fit-content;
+
+}
+
+
+
+.termsLink:hover, .privacyLink:hover, .affiliateLink:hover, .cookieLink:hover{
+
+    color: white;
+    scale: 1.02;
+}

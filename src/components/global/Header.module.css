@@ -1,3 +1,134 @@
-@import "./Header.css";
-@import "./HamburgerMenu.css";
+:root {
+  --headerFontFamily: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
+}
+
+.headerBokhus {
+  display: flex;
+  background-color: var(--commonBackgroundColor);
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 5%;
+  /* gap: 5rem; */
+  /* border: 1px solid rgba(20, 20, 20, 1); */
+  position: sticky;
+
+  min-height: 6rem;
+  max-height: 6rem;
+  width: 100%;
+  max-width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.4s ease-in;
+  font-family: var(--headerFontFamily);
+
+}
+
+.logoMenuWrapper {
+display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.logoHeader{
+ 
+
+  height: 4.7rem;
+  width: auto;
+  aspect-ratio: 1 /1;
+  background-color: transparent;
+}
+
+.menuItemsContainer {
+  flex-direction: row;
+  gap: 2.8rem;
+  align-items: center;
+}
+
+.headerMenuItem {
+
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: var(--myWhiteColor);
+  transition: color 0.3s ease-in;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.headerMenuItem:hover {
+  color: var(--bokhusFutureColor);
+}
+
+
+.headerIcon svg,
+.headerIcon path {
+  color: inherit;
+  fill: currentColor;
+  stroke: currentColor;
+  transition: color 0.3s ease-in, fill 0.3s ease-in, stroke 0.3s ease-in;
+}
+
+.headerMenuItem:hover .headerIcon {
+  color: var(--bokhusRootsColor);
+
+}
+
+
+.loginBurgerWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: center;
+  width: fit-content;
+
+}
+
+
+
+.desktopMode {
+
+  display: flex;
+}
+
+.desktopModeBlock {
+  display: block;
+}
+
+.mobileMode {
+  display: none;
+}
+
+
+@media (max-width: 63.99em) {
+
+  .headerBokhus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+  }
+
+
+  .desktopMode,
+  .desktopModeBlock {
+    display: none;
+  }
+
+  .mobileMode {
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+
+
+}

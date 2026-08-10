@@ -1,5 +1,4 @@
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import "./SubmitButton.module.css";
 
 interface SubmitButtonProps
 {
