@@ -40,9 +40,8 @@ export default async function Series()
               <p className={styles.seriesPageText}>
 
                 Many BokHus books are built as series, giving readers a world to return to. Characters, places and historical themes can grow from book to book, whether the stories are rooted in fiction, folklore, local history or cultural memory.
-              </p>   <p className={styles.seriesPageText}>
-
-
+              </p>   
+              <p className={styles.seriesPageText}>
                 Here you can explore current and upcoming BokHus series.
               </p>
             </div>
