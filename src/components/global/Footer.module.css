@@ -102,10 +102,6 @@
 }
 
 
-
-
-.fadeInFromBelowAnim {}
-
 @keyframes fadeInFromBelowFooter {
     0% {
 
@@ -119,7 +115,6 @@
         opacity: 1;
     }
 }
-
 
 
 .creditsLink {
