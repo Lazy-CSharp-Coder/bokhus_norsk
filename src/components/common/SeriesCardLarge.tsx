@@ -15,7 +15,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
     return (
         <Link className="seriesCardLarge flex fadeInFromBelowAnim" href={booksAvailable ? routeToGo: fallbackRouteNoBooks ?? "/"} style={{ animationDelay: `${animationDelay}ms` }}>
             <div className="seriesCardLargeImageDiv">
-                <Image className="seriesCardLargeImage" src={imageSrc} alt="Series Card Image" fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
+                <Image className="seriesCardLargeImage" src={imageSrc} alt={`series card image ${seriesSelected.seriesName}`} fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
             </div>
 
             <div className="seriesCardLargeInfoWrapper flex">
