@@ -5,10 +5,13 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Libre_Baskerville, Roboto } from "next/font/google";
 import { Footer } from "@/components/global/Footer";
 import { StateProvider } from "@/globalStates";
+import { CookieBanner } from "@/components/global/CookiesBanner";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--libreFont",
   subsets: ["latin"],
+ 
+  
 
 
 });
@@ -39,6 +42,7 @@ export default function RootLayout({
         <ClerkProvider>
           <StateProvider>
             <Header />
+            <CookieBanner/>
             {children}
             <Footer />
           </StateProvider>
