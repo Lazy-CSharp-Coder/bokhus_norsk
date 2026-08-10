@@ -22,7 +22,7 @@ export  function Header()
             <div key={"#headermenuitems#"} className={styles.logoMenuWrapper}>
 
 
-                <nav className={`${styles.menuItemsContainer} desktopMode fadeInAnim`} style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
+                <nav className={`${styles.menuItemsContainer} ${styles.desktopMode} fadeInAnim`} style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItems.map((_, index) =>
                         <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className={styles.headerMenuItem} iconClassName={styles.headerIcon}/>)
                     }
@@ -30,7 +30,7 @@ export  function Header()
             </div>
             <div className={styles.loginBurgerWrapper}>
                 <LoginClerk />
-                <span className="mobileMode">  <HamburgerMenu /></span>
+                <span className={styles.mobileMode}>  <HamburgerMenu /></span>
 
             </div>
 

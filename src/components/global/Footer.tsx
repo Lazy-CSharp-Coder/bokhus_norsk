@@ -49,11 +49,9 @@ export function Footer()
                 </nav>
             </div>
 
-            <div className={`${styles.footerEndDiv} desktopModeFooter`}>
+            <div className={`${styles.footerEndDiv} ${styles.desktopModeFooter}`}>
                 <div className={styles.contactUsDiv}>   <Link className={styles.contactUsLink} href="/Contact"><IoMailOutline className={styles.mailIcon} size="2rem" aria-label="Contact us" />CONTACT</Link>
                  
-
-
                 </div>
                 <div className={styles.socialMediaDiv}>
 
@@ -62,7 +60,6 @@ export function Footer()
                         <FaInstagram className={styles.instagramIcon} size={"1.8rem"} />
                         <FaFacebook className={styles.facebookIcon} size={"1.7rem"} /></div>
                     <span className={styles.logoText}>SOCIAL MEDIA BOKHUS </span>
-
 
                 </div>
                 <div className={styles.pageCreditsDiv}>
@@ -91,7 +88,7 @@ export function Footer()
                 </div>
 
             </div>
-            <div className={`${styles.arrowMenuWrapper} mobileModeFooter`}>
+            <div className={`${styles.arrowMenuWrapper} ${styles.mobileModeFooter}`}>
 
 
                 <PiArrowFatLinesUpFill className={styles.mobileFooterEndIcon} size="2rem" onClick={() => setMobileMenuOpen((prev) => !prev)} />
@@ -110,21 +107,13 @@ export function Footer()
                             <FaFacebook className={styles.facebookIcon} size="1.7rem" />
                             <span className={styles.logoTextMobile}>FACEBOOK</span></Link>
 
-
-
-
-
-
                         <Link href="/Credits" className={styles.linkMobile}>
                             <IoDocumentTextOutline size="1.8rem" className={styles.iconCreditIcon}/>    
                             <span className={styles.logoTextMobile}>CREDITS</span>     </Link>
 
-
-
-
                         <Link href="https://bpwebdev.vercel.app" target="_blank" className={styles.linkMobile}>
-                      <LogoBPWebDev />
-                        <span className={styles.logoTextMobile}>WEBPAGE BY         </span>  
+                          <LogoBPWebDev />
+                        <span className={styles.logoTextMobile}>WEBPAGE BY</span>  
                         </Link>
 
 

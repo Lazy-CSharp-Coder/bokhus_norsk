@@ -92,6 +92,22 @@ display: flex;
 
 }
 
+
+
+.desktopMode {
+
+  display: flex;
+}
+
+.desktopModeBlock {
+  display: block;
+}
+
+.mobileMode {
+  display: none;
+}
+
+
 @media (max-width: 63.99em) {
 
   .headerBokhus {
@@ -101,6 +117,18 @@ display: flex;
     justify-content: space-between;
     padding: 0rem 3rem;
   }
+
+
+  .desktopMode,
+  .desktopModeBlock {
+    display: none;
+  }
+
+  .mobileMode {
+    display: block;
+    margin-top: 0.2rem;
+  }
+
 
 
 }

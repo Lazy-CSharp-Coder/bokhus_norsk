@@ -181,35 +181,6 @@ input[type="checkbox"] {
 } 
 
 
-.desktopMode {
-
-  display: flex;
-}
-
-.desktopModeBlock {
-  display: block;
-}
-
-.mobileMode {
-  display: none;
-}
-
-
-
-.desktopModeFooter {
-
-    display: flex;
-}
-
-.desktopModeBlockFooter {
-    display: block;
-}
-
-.mobileModeFooter {
-    display: none;
-}
-
-
 @media (max-width: 199.99em) /* usikker */
 {
   html {
@@ -249,23 +220,6 @@ input[type="checkbox"] {
     font-size:105%;
   }
 
-  .desktopMode,
-  .desktopModeBlock {
-    display: none;
-  }
-
-  .mobileMode {
-    display: block;
-    margin-top: 0.2rem;
-  }
-
-   .desktopModeFooter {
-        display: none;
-    }
-
-    .mobileModeFooter {
-        display: grid;
-    }
 
 }
 

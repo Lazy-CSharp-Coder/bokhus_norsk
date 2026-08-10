@@ -1,6 +1,3 @@
-@import "./ButtonsFooter.css";
-
-
 .footerBokhus {
     display: flex;
     flex-direction: row;
@@ -61,10 +58,6 @@
 
 }
 
-.contactUsDiv {
-    /* gap: 0.1rem; */
-}
-
 .socialMediaDiv {
     gap: 0.3rem;
 }
@@ -107,6 +100,8 @@
     /* width: max-content; */
 
 }
+
+
 
 
 .fadeInFromBelowAnim {}
@@ -203,7 +198,30 @@
     align-items: center;
 
 }
+
+
+.desktopModeFooter {
+
+    display: flex;
+}
+
+.desktopModeBlockFooter {
+    display: block;
+}
+
+.mobileModeFooter {
+    display: none;
+}
+
 @media (max-width: 63.99em) {
+
+   .desktopModeFooter {
+        display: none;
+    }
+
+    .mobileModeFooter {
+        display: grid;
+    }
 
     .logoTermsWrapper {
         display: flex;
