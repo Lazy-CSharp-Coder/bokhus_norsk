@@ -1,19 +1,37 @@
 .cookieDialogContainer {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right:0;
-    background-color: rgb(20, 20, 20, 0.7);
+
+    width: 100%;
+    height: 100vh;
+ 
+    /* transform: translate(-50%, -50%); */
+    
     color: var(--myWhiteColor);
     z-index: 120;
-        
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+   background-color: rgba(20, 20, 20, 0.6);
 }
 
-.cookeDialog {
-        
+.cookieDialog {
+    width: 35rem;    
+    gap: 1rem;
+    height:max-content;
     padding: 2rem 4rem;
-    border : 1px solid var(--borderIconColor);
-    border-radius: var(--regBorderRadius);
-    
+      background-color: rgb(20, 20, 20, 1);
+    border : var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1rem;
 }
 
+.cookieText {
+    line-height: 1.4;
+}
+
+.linkPrivacy {
+    color: var(--bokhusFutureColor);
+}

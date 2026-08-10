@@ -26,9 +26,9 @@ export function CookieBanner()
     if (!showDialog) return null;
 
     return (
-        <div className={styles.cookieDialogContainer}>
+        <div className={`${styles.cookieDialogContainer} fadeInFromBelowAnim`}>
             <div className={styles.cookieDialog}>
-                We use necessary cookies to ensure login and security function properly via Clerk.{' '}
+             <p className={styles.cookieText}>   We use necessary cookies to ensure login and security function properly via Clerk.{' '}</p>
                 <Link href="/Cookies" className={styles.linkPrivacy}>
                     Read more in our Cookie Policy.
                 </Link>
