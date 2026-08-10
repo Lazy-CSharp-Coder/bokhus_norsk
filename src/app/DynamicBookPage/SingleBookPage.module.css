@@ -41,3 +41,19 @@
     padding-bottom: 12.5rem;
 
 }
+
+
+
+@media (max-width: 63.99em) {
+
+    .singleBookPageBackgroundImage {
+
+        background-position: 70% center;
+
+    }
+
+    .singleBookCardSection {
+        width: 90%;
+        --singleBookDescriptionFontSize: 1.4rem;
+    }
+}
