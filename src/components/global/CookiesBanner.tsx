@@ -12,7 +12,7 @@ export function CookieBanner()
     useEffect(() => 
     {
         const hasAcceptedCookies = localStorage.getItem("cookieConsent");
-        if (!hasAcceptedCookies) setShowDialog(true);
+        if (hasAcceptedCookies != "true") setShowDialog(true);
 
     }, []);
 
