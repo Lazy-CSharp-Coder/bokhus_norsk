@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./CookieBanner.module.css";
-import { SubmitButton } from "../common/SubmitButton";
 
 export function CookieBanner()
 {
@@ -18,7 +17,7 @@ export function CookieBanner()
 
     const handleClick = () =>
     {
-        localStorage.setItem("cookeiConsent", "true");
+        localStorage.setItem("cookieConsent", "true");
         setShowDialog(false);
 
     };
