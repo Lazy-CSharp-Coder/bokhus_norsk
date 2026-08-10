@@ -5,7 +5,7 @@ import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { client } from "@/sanity/client";
 
 // css module import
-import "./DynamicSeriePage.module.css";
+import styles from "./DynamicSeriePage.module.css";
 import type { PageProps } from "@/types/types";
 import { urlFor } from "@/functions/urlFor";
 import { ErrorBokhus } from "../ErrorBokhus";
@@ -22,8 +22,6 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    const serieUid = params.message as string;
    let serie: Series;
 
-
-   console.log("Serie id sendt to General Page is " + serieUid);
 
    const SERIES_QUERY = `*[_type == "Series" && _id == $serieUidFromParams][0]`;
    const AUTHORS_QUERY = `*[_type == "Author" &&  _id in $authorsIds]`;
@@ -44,8 +42,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    const authorsIds: string[] = serie.authorUids ? serie.authorUids.map((item) => item._ref) : [];
 
-   serie.authorUids.forEach((item) => { console.log(item._ref); });
-
+ 
    let authors: Author[] = [];
 
    if(authorsIds.length > 0)
@@ -59,11 +56,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
       throw new Error("Failed to fetch authors from Sanity");
    }
 
-
-
-
    let bookList: Book[] = [];
-   // console.log(authors);
 
    try
    {
@@ -94,10 +87,10 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    return (
       <>
          <ScrollToTop />
-         <BackgroundImage className="seriePageBackgroundImage" src={urlFor(serie.imageSeriesBackground, 1920)} />
-         <main className="seriesPage">
+         <BackgroundImage className={styles.seriePageBackgroundImage} src={urlFor(serie.imageSeriesBackground, 1920)} />
+         <main className={styles.seriesPage}>
             {(serie && authors) &&
-               <div className="presentationReviewHrefWrapper">
+               <div className={styles.presentationReviewHrefWrapper}>
                   <SerieSection seriesSelected={serie} booksBelonging={bookList} authors={authors} />
                </div>}
 

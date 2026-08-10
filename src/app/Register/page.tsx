@@ -1,6 +1,6 @@
 "use server";
 
-import "./Register.module.css";
+import styles from  "./Register.module.css";
 import { RegisterForm } from "@/app/Register/RegisterForm";
 import { clerkUserId, UserData } from "@/app/Register/registerSchema";
 import { auth, currentUser } from "@clerk/nextjs/server";
@@ -43,9 +43,9 @@ export default async function Register()
 
   return (
 
-    <main className="registerPage flex">
+    <main className={styles.registerPage}>
 
-      <BackgroundImage className="registerBackground" src="/images/backgrounds/contact.webp"/>
+      <BackgroundImage className={styles.registerBackground} src="/images/backgrounds/contact.webp"/>
       <RegisterForm data={dataToSend} isNewUser={!userData[0] ? true : false} />
     </main>
 

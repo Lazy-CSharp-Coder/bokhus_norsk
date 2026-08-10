@@ -1,1 +1,155 @@
-@import "./Authors.css";
+.authorsBackgroundImage {
+  
+    position: fixed;
+    top: 0;
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    filter: blur(5px) brightness(45%);
+    z-index: -1;
+
+}
+
+.authorsPage {
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 1rem;
+    width: 100%;
+margin-top: 4rem;
+    /* min-height: 100%; */
+    height: fit-content;
+    font-family: var(--libreFont);
+    padding-bottom: 5rem;
+
+}
+
+.authorsSection {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100rem;
+    gap:2rem;
+}
+
+.authorsHeadingWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 80%;
+    gap: 2rem;
+    /* padding: 2rem 0; */
+
+}
+
+.authorsPageHeading {
+    font-size: var(--pageHeadingFontSize);
+    color: var(--myWhiteColor);
+    padding-bottom: 1rem;
+    text-align: center;
+     
+
+}
+
+.voicesText {
+    /* color :white; */
+}
+
+.bokhusText {
+    color: var(--bokhusFutureColor);
+}
+
+
+.authorsPageText {
+    line-height: 1.4;
+    font-size: var(--pageDescriptionFontSize);
+}
+
+.linkAuthor {
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    background-color: rgba(221, 221, 221, 0.5);
+}
+
+.linkList {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    width: 100%;
+    gap: 6rem;
+    margin-bottom: 6rem;
+}
+
+.clickText {
+    line-height: 1.4;
+    font-size: var(--pageDescriptionFontSize);
+    /* font-size: 1.1rem; */
+    text-align: left; 
+    /* font-style : italic; */
+    width: 100%;
+}
+.authorCardClickText {
+
+    color: var(--bokhusFutureColor);
+    padding-bottom: 0.1rem;
+    border-bottom: 1px solid var(--bokhusRootsColor);
+}
+
+
+
+@media (max-width: 199.99em)
+{
+ 
+}
+
+@media (max-width: 159.99em) {
+    
+}
+
+ @media (max-width: 119.99em) {
+
+    .authorsSection {
+        width: 80%;
+    }
+
+} 
+
+@media (max-width: 89.99em) {
+  html {
+  /* font-size: 70%; */
+}
+   .authorsSection {
+        /* max-width: 80rem; */
+    }
+
+}
+
+@media (max-width: 63.99em) {
+
+    .authorsBackgroundImage {
+         background-position: 70% center;
+    }
+    .authorsSection{
+        width: 98%;
+    }
+    .authorsHeadingWrapper {
+        max-width: 92%;
+    }
+    .linkList {
+        max-width: 95%;
+    }
+
+}
+@media (max-width: 39.99em) {
+
+}
+
+
+@media (max-width: 24rem) {
+  
+}

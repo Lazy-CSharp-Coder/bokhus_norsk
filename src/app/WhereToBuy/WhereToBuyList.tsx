@@ -8,7 +8,7 @@ import { TbBooks } from "react-icons/tb";
 import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
 import { PiArrowFatLineDownFill} from "react-icons/pi";
 // muligens release date og genere senere
-import "./WhereToBuyList.module.css";
+import styles from "./WhereToBuyList.module.css";
 
 type SortMode = "Serie" | "Author";
 type SortDirection = "Ascending" | "Descending";
@@ -59,24 +59,24 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
 
     const { mode, direction} = sortHandler;
     return (
-        <ul className="buySeriesList">
-            <div className="sortDiv fadeInFromBelowAnim" style={{animationDelay: `${waitForMainAnim}ms`}} ><div className="sortHeader">SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? "sortUp" : "sortDown"} sortCollapseIcon fadeInAnim`}/></span></div>
+        <ul className={styles.buySeriesList}>
+            <div className={`${styles.sortDiv} fadeInFromBelowAnim`} style={{animationDelay: `${waitForMainAnim}ms`}} ><div className={styles.sortHeader}>SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? styles.sortUp : styles.sortDown} ${styles.sortCollapseIcon} fadeInAnim`}/></span></div>
               {isSortMenuOpen &&
-                <div className="sortButtonContainer">
-                    <div className="modeDiv">
-                        <button className={`sortButton ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className="sortIcon"/> by Serie</button>
-                        <button className={`sortButton ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className="sortIcon"/> by Author</button>
+                <div className={styles.sortButtonContainer}>
+                    <div className={styles.modeDiv}>
+                        <button className={`${styles.sortButton} ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className={styles.sortIcon}/> by Serie</button>
+                        <button className={`${styles.sortButton} ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className={`${styles.sortIcon}`}/> by Author</button>
                         </div>
-                        <div className="sortStatusDiv">
+                        <div className={styles.sortStatusDiv}>
                             {/* <span className="sortTag">CURRENT : </span> */}
-                            <span key={mode} className="sortCurrentMode sortModeAnim">{mode == "Serie" ? <TbBooks size="1.5rem" className="sortIconStatus"/> :<BsPersonFill size="1.5rem" className="sortIconStatus"/> }</span>
-                            <span key={direction} className="sortCurrentDirection sortModeAnim"> {direction == "Ascending" ? <AiOutlineSortAscending size="1.5rem"className="sortIconStatus"/> :<AiOutlineSortDescending size="1.5rem" className="sortIconStatus"/>  }</span>
+                            <span key={mode} className={`${styles.sortCurrentMode} ${styles.sortModeAnim}`}>{mode == "Serie" ? <TbBooks size="1.5rem" className={styles.sortIconStatus}/> :<BsPersonFill size="1.5rem" className={styles.sortIconStatus}/> }</span>
+                            <span key={direction} className={`${styles.sortCurrentDirection} ${styles.sortModeAnim}`}> {direction == "Ascending" ? <AiOutlineSortAscending size="1.5rem"className={styles.sortIconStatus}/> :<AiOutlineSortDescending size="1.5rem" className={styles.sortIconStatus}/>  }</span>
 
 
                         </div>
-                    <div className="directionDiv">
-                        <button className={`sortButton  ${direction == "Ascending" && "isActive"}`} onClick={() => direction != "Ascending" && handleSortClick(mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className="sortIcon"/> Ascending</button>
-                        <button className={`sortButton ${direction == "Descending" && "isActive"}`} onClick={() => direction != "Descending" && handleSortClick(mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Descending</button>
+                    <div className={styles.directionDiv}>
+                        <button className={`${styles.sortButton} ${direction == "Ascending" && styles.isActive}`} onClick={() => direction != "Ascending" && handleSortClick(mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className={styles.sortIcon}/> Ascending</button>
+                        <button className={`${styles.sortButton} ${direction == "Descending" && styles.isActive}`} onClick={() => direction != "Descending" && handleSortClick(mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Descending</button>
                     </div>
 
                 </div>

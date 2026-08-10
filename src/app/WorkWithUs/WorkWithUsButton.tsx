@@ -1,6 +1,7 @@
 "use client";
 
 import { WorkWithUs } from "./page";
+import styles from "./WorkWithUsButton.module.css";
 
 interface WorkWithUsButtonProps 
 {
@@ -12,7 +13,7 @@ interface WorkWithUsButtonProps
 export function WorkWithUsButton({subject, handleClick, anmiationDelay} : WorkWithUsButtonProps)
 {
     return(
-        <button className="workWithUsButton fadeInFromLeftAnim" onClick={() => handleClick(subject)} style={{animationDelay : anmiationDelay ? anmiationDelay : "0s" }}>
+        <button className={`${styles.workWithUsButton} fadeInFromLeftAnim`} onClick={() => handleClick(subject)} style={{animationDelay : anmiationDelay ? anmiationDelay : "0s" }}>
             {subject.theme}
         </button>
     )

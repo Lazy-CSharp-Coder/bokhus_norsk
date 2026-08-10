@@ -9,54 +9,57 @@ const BOOK_QUERY = `*[_type == "Book" && seriesRef._ref == $serieID]`;
 
 export async function getSeriesCardPropsArray(seriesArray: Series[]): Promise<SeriesCardProps[]>
 {
-    
-  
-        return await Promise.all(
 
-     seriesArray.map(async (item) =>
+
+    return await Promise.all(
+
+        seriesArray.map(async (item) =>
         {
             let authors: Author[] = [];
-                const authorsIds: string[] = item?.authorUids && Array.isArray(item.authorUids) ? item.authorUids.map((authorRef) => authorRef?._ref).filter((ref): ref is string  => typeof ref === "string" && ref.length > 0) : [];
-                
-                if(authorsIds.length > 0)
-                try {
-                  authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds });
+            const authorsIds: string[] = item?.authorUids && Array.isArray(item.authorUids) ? item.authorUids.map((authorRef) => authorRef?._ref).filter((ref): ref is string => typeof ref === "string" && ref.length > 0) : [];
+
+            if (authorsIds.length > 0)
+                try
+                {
+                    authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds });
                 }
-                catch(error)
+                catch (error)
                 {
                     console.error("Error fetching authors", error);
                     authors = [];
                 }
-            
-                const authorsStrings : string[] = authors.length < 1 || !authors ? ["No author for serie found"] : authors.map((author) => author.name);
-                let books :  Book[] = [];
-                try {
 
-                 books= await client.fetch<Book[]>(BOOK_QUERY, { serieID: item._id });
-                }
-                catch(error) {
-                    console.error("Error fetching books : ", error);
-                    books = [];
-                }
+            const authorsStrings: string[] = authors.length < 1 || !authors ? ["No author for serie found"] : authors.map((author) => author.name);
+            let books: Book[] = [];
+            try
+            {
 
-                if (books.length < 1) 
-                {
-                    console.log("Books not found");
-                }
-                
+                books = await client.fetch<Book[]>(BOOK_QUERY, { serieID: item._id });
+            }
+            catch (error)
+            {
+                console.error("Error fetching books : ", error);
+                books = [];
+            }
 
-                return {
-                    authors: authorsStrings,
-                    seriesSelected: item,
-                    imageUrl: urlFor(item.imageSeries, 800),
-                    routeToGo: books.length < 1 ? "/" : setRouteToGo(books.length == 1 ? books[0] : item) ,
-                    booksAvailable : books.length < 1 ? false: true
-                };
-
+            if (books.length < 1) 
+            {
+                console.log("Books not found");
             }
 
 
+            return {
+                authors: authorsStrings,
+                seriesSelected: item,
+                imageUrl: urlFor(item.imageSeries, 800),
+                routeToGo: books.length < 1 ? "/" : setRouteToGo(books.length == 1 ? books[0] : item),
+                booksAvailable: books.length < 1 ? false : true
+            };
+
+        }
+
+
         ));
-    
+
 
 } 

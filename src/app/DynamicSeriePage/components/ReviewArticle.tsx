@@ -6,8 +6,8 @@ import { ReviewCard } from "./ReviewCard";
 import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import { GoMoveToTop } from "react-icons/go";
 
-import "./ReviewArticle.module.css";
-import { useWindowWidth } from "@/components/hooks/useWindowWidth";
+import styles from "./ReviewArticle.module.css";
+
 
 
 interface ReviewArticleProps
@@ -176,38 +176,39 @@ const handleLeftSliderClick = () =>
 const onFirst = arrayToView[0] == reviewsForBook[0] ? true : false;
 const onLast =  lastIndexDisplaying == reviewsForBook.length-1 ? true : false;
 
+
 return (
-    <article id="reviewArticle" className={`reviewArticle flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
-        <div className="headingToTopWrapper flex">
+    <article id="reviewArticle" className={`${styles.reviewArticle} flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
+        <div className={`${styles.headingToTopWrapper} flex`}>
 
-            <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className="goToTopIcon" /></span>
-            <div className="reviewHeadingArrowContainer">
+            <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className={styles.goToTopIcon} /></span>
+            <div className={styles.reviewHeadingArrowContainer}>
 
-                <span style={{ opacity: onFirst ? "0.3" : "1" }} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className="leftSlider" size={"3rem"} /></span>
+                <span style={{ opacity: onFirst ? "0.3" : "1" }} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className={styles.leftSlider} size={"3rem"} /></span>
 
-                <h4 className="reviewTitle">READERS REVIEWS OF <span className="reviewHeadingSeriesName">{bookName.toLocaleUpperCase()}</span></h4>
+                <h4 className={styles.reviewTitle}>READERS REVIEWS OF <span className={styles.reviewHeadingSeriesName}>{bookName.toLocaleUpperCase()}</span></h4>
 
-                <span style={{ opacity: onLast ? "0.3" : "1" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className="rightSlider" /></span>
+                <span style={{ opacity: onLast ? "0.3" : "1" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className={styles.rightSlider}/></span>
 
 
             </div>
 
 
-            <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className="goToTopIcon" /></span>
+            <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className={styles.goToTopIcon} /></span>
 
 
 
         </div>
         {reviewsForBook.map((item, index) =>
 
-            <div ref={(element) => { itemRefsForHeight.current[index] = element; }} key={index + "#HeightColletorDiv#"} className="reviewDisplayer flex" style={{ visibility: "hidden", position: "absolute" }}>
+            <div ref={(element) => { itemRefsForHeight.current[index] = element; }} key={index + "#HeightColletorDiv#"} className={`${styles.reviewDisplayer} flex`} style={{ visibility: "hidden", position: "absolute" }}>
                 <ReviewCard key={item._id + "#hidden" + index} _id={item._id} bookReviewed={bookName} format={item.format} date={item.date} country={item.country}
                     stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
                     reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse="none" />
             </div>
         )}
         {arrayToView && lastIndexDisplaying != -1 && reviewDisplayHeight != 0 ?
-            <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName} /> : <h3 className="reviewsNotFoundText">No reviews found</h3>
+            <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName} /> : <h3 className={styles.reviewsNotFoundText}>No reviews found</h3>
         }
     </article>);
 }
@@ -216,13 +217,13 @@ return (
 
 export function ReviewSlideShow({ array, animationToUse, height, bookName }: ReviewSlideShowProps)
 {
-    console.log(`ReviewSlideShowData : Array length : ${array.length}`);
+
     return (
 
-        <div className="reviewSlideContainer flex">
+        <div className={styles.reviewSlideContainer}>
 
 
-            <div className="reviewDisplayer flex" style={{ height: height }}>
+            <div className={styles.reviewDisplayer} style={{ height: height }}>
                 {array.map((item, index) =>
                 {
 

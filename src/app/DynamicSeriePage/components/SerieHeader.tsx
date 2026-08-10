@@ -4,7 +4,7 @@ import { BestSellerList } from "./BestSellerList";
 import { SeriesInfoProps } from "@/types/booktypes";
 import { useDescriptionShowingState } from "@/globalStates";
 import { HiOutlineArrowSmallLeft } from "react-icons/hi2";
-import "./SerieHeader.module.css";
+import styles from "./SerieHeader.module.css";
 
 export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerList }: SeriesInfoProps)
 {
@@ -12,13 +12,14 @@ export function SerieHeader({ seriesName, authors, bestSellerIntro, bestSellerLi
 
     const { isDescriptionShowing, setIsDescriptionShowing } = useDescriptionShowingState();
     return (
-        <article key={"01" + "Description"} className="serieHeader flex fadeInAnim">
+        <article key={"01" + "Description"} className={`${styles.serieHeader} flex fadeInAnim`}>
 
-            <div className="headingAndAuthorInfoDiv" onClick={() => setIsDescriptionShowing(true)}>
-                <div className="serieNameArrowWrapper flex">                <h1 className="serieName">{seriesName}</h1>
-                    {!isDescriptionShowing && <HiOutlineArrowSmallLeft className="arrowToDescription scaleInAnim" />}
+            <div className={styles.headingAndAuthorInfoDiv} onClick={() => setIsDescriptionShowing(true)}>
+                <div className={`${styles.serieNameArrowWrapper} flex`}>                
+                    <h1 className={styles.serieName}>{seriesName}</h1>
+                    {!isDescriptionShowing && <HiOutlineArrowSmallLeft className={`${styles.arrowToDescription} scaleInAnim`} />}
                 </div>
-                <div className="authorNameBestsellerWrapper flex">
+                <div className={styles.authorNameBestsellerWrapper}>
                     <ByAuthor key={authors + "#SeriesInfo"} authors={authors} />
                     <span style={{ opacity: bestSellerIntro != "not found" ? "1" : "0" }}>
 

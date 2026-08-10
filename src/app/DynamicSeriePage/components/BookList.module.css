@@ -1,1 +1,91 @@
-@import "./BookList.css";
+/* BookList CSS classes */
+
+.bookList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  /* justify-content: center; 
+  /* Enable scrolling */
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  /* border : 1px solid red; */
+  cursor: pointer;
+  /* Hide scrollbar - Works on all browsers */
+  /* scrollbar-width: none;           Firefox */
+  /* -ms-overflow-style: none;       /* IE and Edge */
+  /* margin-bottom: 200px; */
+  transition: all 0.3s ease-in;
+  list-style: none;
+  /* background-color: olive; */
+  overflow-y: auto;
+  padding-right: 1.2rem;
+  /* padding-left: 1rem; */
+  z-index: 20;
+}
+
+.bookThumbnail {
+  position: relative;
+  aspect-ratio: 2/3;
+
+  /* max-width: 7vw; */
+  /* min-width: 7vw; */
+  width: 9.2rem;
+
+  height: fit-content;
+
+  flex: 0 0 auto;
+
+}
+
+.imageThumbnail {
+  object-fit: contain;
+
+
+
+}
+
+
+@media (max-width: 63.99em) {
+  .bookThumbnail {
+    width: 19rem;
+    flex: 0 0 auto;
+  }
+
+  .bookList {
+    position: static;
+    display: flex;
+    width: 95%;
+    max-width: 90vw;
+    height: 32.4rem;
+    margin: 0;
+    padding: 0 0 1.2rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    scroll-snap-type: x proximity;
+
+    /* scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+    cursor: grab; */
+  }
+
+  /* 
+  .bookList::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .bookList::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 999px;
+  } */
+}

@@ -12,7 +12,7 @@ import { BookAvailableIn } from "@/components/common/BookAvailableIn";
 import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { PiGlobeSimpleXLight, PiArrowFatLineDownLight } from "react-icons/pi";
 import { GoLinkExternal } from "react-icons/go";
-import "./WhereToBuySerie.module.css";
+import styles from "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 
@@ -61,42 +61,42 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   }
 
   return (
-    <article className="whereToBuySerieArticle fadeInFromBelowAnim" style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
-      <div className="whereToBuySerieHeadingDiv" ref={listHeaderRef} onClick={handleHeaderClick}>
-        <div className="whereToBuyIconInfoWrapper">
-          <ImBooks size="4.4rem" className="buyBooksIcon" />
-          <div className="buyHeadingAuthorWrapper">
+    <article className={`${styles.whereToBuySerieArticle} fadeInFromBelowAnim`} style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
+      <div className={styles.whereToBuySerieHeadingDiv} ref={listHeaderRef} onClick={handleHeaderClick}>
+        <div className={styles.whereToBuyIconInfoWrapper}>
+          <ImBooks size="4.4rem" className={styles.buyBooksIcon} />
+          <div className={styles.buyHeadingAuthorWrapper}>
 
-            <h2 className="buyHeadingSerie">  {serieSelected.seriesName}</h2>
+            <h2 className={styles.buyHeadingSerie}>  {serieSelected.seriesName}</h2>
             <ByAuthor authors={authorsStrArray} />
           </div>
 
         </div>
 
  
-      <div key={seriesListState} className="buyTextArrowDiv fadeInAnim" style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
+      <div key={seriesListState} className={`${styles.buyTextArrowDiv} fadeInAnim`} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
              {seriesListState == "Closed" && "CLICK TO EXPAND"}
-        <PiArrowFatLineDownLight size="2rem" className="buyOpenCloseArrow" /></div>
+        <PiArrowFatLineDownLight size="2rem" className={styles.buyOpenCloseArrow} /></div>
 
 
       </div>
 
-      <ul className="whereToBuyBooksList">
+      <ul className={styles.whereToBuyBooksList}>
         {seriesListState == "Open" && bookList.map((item, index, array) =>
-          <li key={item._id + "whereToBuy"} className="whereToBuyBookListItem fadeInFromBelowAnim" style={{ animationDelay: `${(animInc * index) + (animationDelay ? animationDelay : 0)}}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
+          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index) + (animationDelay ? animationDelay : 0)}}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
           onAnimationEnd={() => handleListAnimEnd(index, array.length)}>
-            <div className="buyListItemImageDiv">
-              <Image className="buyImageBook" src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
+            <div className={styles.buyListItemImageDiv}>
+              <Image className={styles.buyImageBook} src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
             </div>
-            <div className="buyListBookInfo">
+            <div className={styles.buyListBookInfo}>
 
-              <div className="buyTitleBookNumberWrapper">       <span className="buyTitleBook"> {item.bookTitle} </span>
-                <div className="">Book <span className="buyListBookNumber">{getBookNumberInString(item.bookInSeries)}</span> of the Series </div>
+              <div className={styles.buyTitleBookNumberWrapper}>       <span className={styles.buyTitleBook}> {item.bookTitle} </span>
+                <div className="">Book <span className={styles.buyListBookNumber}>{getBookNumberInString(item.bookInSeries)}</span> of the Series </div>
               </div>
-              <BookAvailableIn availability={item.availability} classNameItem="buyAvailabilityItem" shouldIsbnPopUpShow={false} />
+              <BookAvailableIn availability={item.availability} classNameItem={styles.buyAvailabilityItem} shouldIsbnPopUpShow={false} />
             </div>
-            {item.buyLink != undefined ? <GoLinkExternal className="buyLinkArrow" size="1.9rem" /> : <PiGlobeSimpleXLight className="noLinkArrow" size="2.1rem" />}
-            <div className="buyAvailableDiv">
+            {item.buyLink != undefined ? <GoLinkExternal className={styles.buyLinkArrow} size="1.9rem" /> : <PiGlobeSimpleXLight className={styles.noLinkArrow} size="2.1rem" />}
+            <div className={styles.buyAvailableDiv}>
             </div>
           </li>
 

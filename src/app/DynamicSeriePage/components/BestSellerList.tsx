@@ -1,5 +1,5 @@
 
-import "./BestSellerList.module.css";
+import styles from "./BestSellerList.module.css";
 export interface BestSellerListProps
 {
 
@@ -12,9 +12,9 @@ export function BestSellerList({ bestSellerIntro, bestSellerList, fontSize }: Be
 {
     
     return (
-        <ul className="bestSellerList" style={{fontSize: fontSize}}>{bestSellerIntro}
+        <ul className={styles.bestSellerList} style={{fontSize: fontSize}}>{bestSellerIntro}
             {bestSellerList?.map((item, index, array) =>
-                <li key={index + "BS"} className="bestSellerText">{item}<span className="bestSellerSeparator">{`${index == array.length - 2 ? " and" : (index == array.length - 1) ? "" : ","}`}</span></li>
+                <li key={index + "BS"} className={styles.bestSellerText}>{item}<span className={styles.bestSellerSeparator}>{`${index == array.length - 2 ? " and" : (index == array.length - 1) ? "" : ","}`}</span></li>
             )}
         </ul>
     );

@@ -32,6 +32,7 @@
 }
 
 .headingLogoTextWrapper {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -56,9 +57,8 @@
 
 .logoRegWrapper {
 
-    width: 3.5rem;
+    width: 4rem;
     aspect-ratio: 1/1;
-    filter: invert();
     position: relative;
 }
 
@@ -77,6 +77,7 @@
 }
 
 .registerForm {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: start;
@@ -87,6 +88,7 @@
 }
 
 .regUpperHalfWrapper {
+    display: flex;
     flex-direction: column;
     gap: 1.1rem;
     padding: 1.5rem 0;
@@ -141,22 +143,6 @@
 
     color: white;
 
-}
-
-
-
-.userTextAnim,
-.userIconAnim {
-    animation-name: slideInAndOut;
-    animation-duration: 4.8s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: backwards;
-    animation-delay: 1s;
-    font-size: 1.4rem;
-}
-
-.userIconAnim {
-    animation-delay: 0.8s;
 }
 
 
@@ -279,16 +265,18 @@
 
 .labelInputWrapperOneLineFirst {
     gap: 1rem;
-
+    display: flex;
     align-items: center;
 }
 
 .labelInputWrapperOneLineSecond {
     gap: 1rem;
+    display: flex;
     align-items: center;
 }
 
 .newsLetterArcOptionsWrapper {
+    display: flex;
     flex-direction: column;
 
     /* border-bottom: 1px solid black; */
@@ -317,6 +305,7 @@
 }
 
 .multipleChoicesList {
+    display: flex;
     flex-direction: column;
     width: max-content;
     justify-content: top;
@@ -332,7 +321,7 @@
 
 
 .multipleChoicesARCList {
-
+display: flex;
     flex-direction: column;
     width: max-content;
     justify-content: top;
@@ -419,17 +408,9 @@ textarea {
     padding: 0.2rem 0.2rem;
 } */
 
-input[type="checkbox"] {
-    accent-color: var(--inputBackground);
-    /* Replace with your desired color name, hex, or rgb */
-    border: 1px solid var(--borderIconColor);
-    width: 1rem;
-    height: 1rem;
-
-
-}
 
 .arcArticle {
+    display: flex;
     flex-direction: column;
     width: max-content;
     /* padding: 2rem 4rem; */
@@ -440,11 +421,9 @@ input[type="checkbox"] {
     padding-bottom: 1rem;
 }
 
-fieldset {
-    border: none;
-}
 
 .arcForm {
+    display: flex;
     flex-direction: column;
     gap: 1.2rem;
     padding: 1.5rem 0;
@@ -455,6 +434,7 @@ fieldset {
 }
 
 .arcHeadingIconWrapper {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 
@@ -464,6 +444,7 @@ fieldset {
 }
 
 .arcRulesForm {
+    display: flex;
     flex-direction: column;
     width: 100%;
     padding-bottom: 0.5rem;
@@ -548,6 +529,7 @@ fieldset {
 
 
 .bokhusComWrapper {
+    display: flex;
     justify-content: center;
     padding-top: 1.2rem;
     border-top: 1px solid var(--borderIconColor);

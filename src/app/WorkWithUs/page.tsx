@@ -3,8 +3,7 @@ import worWithUsJson from "@/json//workWithUs.json";
 import { WorkWithUsButton } from "./WorkWithUsButton";
 import { useState, useEffect } from "react";
 import { WorkWithUsStartup, WorkWithUsTheme } from "./WorkWithUsTheme";
-// import { is } from "zod/locales";
-import "./WorkWithUs.module.css";
+import styles from  "./WorkWithUs.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import Link from "next/link";
@@ -40,33 +39,33 @@ export default function WorkWithUsPage()
     }, [isDisplayingTheme])
 
     return (
-        <main className="workWithUsPage">
-            <BackgroundImage src="/images/backgrounds/workWithUs.webp" className="workWithUsBackground" />
-            <section className="workWithUsSection flex">
-                <article className="workWithUsTextArticle fadeInAnim" style={{ animationDelay: "0.5s" }}>
-                    <div className="headingLineWrapper">
-                        <h1 className="workWithUsHeading"> Work with Bokhus </h1>
+        <main className={styles.workWithUsPage}>
+            <BackgroundImage src="/images/backgrounds/workWithUs.webp" className={styles.workWithUsBackground} />
+            <section className={styles.workWithUsSection}>
+                <article className={`${styles.workWithUsTextArticle} fadeInAnim`} style={{ animationDelay: "0.5s" }}>
+                    <div className={styles.headingLineWrapper}>
+                        <h1 className={styles.workWithUsHeading}> Work with Bokhus </h1>
                         <ExpandingLine key={"WorkLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                     </div>
 
 
-                    <div className="workWithUsTextDiv">
-                        <p className="workWithUsIntroText">
+                    <div className={styles.workWithUsTextDiv}>
+                        <p className={styles.workWithUsIntroText}>
 
                             BokHus works with writers, editors, translators, illustrators, local historians and creative partners who care about strong stories and well-crafted books.
                         </p>
-                        <p className="workWithUsIntroText">
+                        <p className={styles.workWithUsIntroText}>
                             We are especially interested in historical fiction, local history, folklore, cultural heritage and book projects with a clear sense of place. If you have a manuscript, an idea, archival material or a project that may fit BokHus, we would be happy to hear from you.
 
                         </p>
-                        <p className="workWithUsIntroText fadeInAnim" >Here is a list of what we can help you with :</p>
+                        <p className={`${styles.workWithUsIntroText} fadeInAnim`} >Here is a list of what we can help you with :</p>
 
                     </div>
 
                 </article>
-                <article className="workWithUsListArticle flex">
+                <article className={styles.workWithUsListArticle}>
 
-                    <ul className="workList">
+                    <ul className={styles.workList}>
                         {workWithUsArray.map((item, index) =>
                             <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} anmiationDelay={`${animDelay * index + waitForMainAnim}ms`} /> </li>
 
@@ -78,7 +77,7 @@ export default function WorkWithUsPage()
                         {isDisplayingTheme ? <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} /> : <WorkWithUsStartup/> }
                     </div>
                 </article>
-                <p className="workWithUsIntroText fadeInAnim" style={{ animationDelay: "2.8s" }} >If your are interested in working with us, click <Link href="/Contact" className="linkContact">here</Link> to fill out contact information.</p>
+                <p className={`${styles.workWithUsIntroText} fadeInAnim`} style={{ animationDelay: "2.8s" }} >If your are interested in working with us, click <Link href="/Contact" className={styles.linkContact}>here</Link> to fill out contact information.</p>
             </section>
         </main>
     );

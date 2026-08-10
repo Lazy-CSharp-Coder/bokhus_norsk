@@ -9,7 +9,7 @@ import { BackgroundImage } from "@/components/common/BackgroundImage";
 import type { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { getWhereToBuyPropsArray } from "./getWhereToBuyPropsArray";
 import { WhereToBuyList } from "./WhereToBuyList";
-import "./WhereToBuy.module.css";
+import styles from "./WhereToBuy.module.css";
 
 export default async function WhereToBuy() 
 {
@@ -34,43 +34,43 @@ export default async function WhereToBuy()
   return (
  
 
-      <main className="whereToBuyPage flex">
-        <BackgroundImage className="whereToBuyBackground" src="/images/backgrounds/whereToBuy.webp" />
+      <main className={styles.whereToBuyPage}>
+        <BackgroundImage className={styles.whereToBuyBackground} src="/images/backgrounds/whereToBuy.webp" />
 
-        <section className="whereToBuySection">
-          <div className="headingLineWrapper">
-            <h1 className="whereToBuyHeading fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h1>
+        <section className={styles.whereToBuySection}>
+          <div className={styles.headingLineWrapper}>
+            <h1 className={`${styles.whereToBuyHeading} fadeInAnim`} style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h1>
             <ExpandingLine key={"BuyLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
           </div>
 
-          <div className="buyIntroContainer fadeInAnim" style={{animationDelay : `${waitForBackground}ms`}}>
+          <div className={`${styles.buyIntroContainer} fadeInAnim`} style={{animationDelay : `${waitForBackground}ms`}}>
 
-            <p className="whereToBuyText"> Here are links to websites where you can purchase books and series from us. </p>
-            <p className="whereToBuyText">Should you experience some trouble with the links or other issues, please use the contact form to tell us about it.</p>
+            <p className={styles.whereToBuyText}> Here are links to websites where you can purchase books and series from us. </p>
+            <p className={styles.whereToBuyText}>Should you experience some trouble with the links or other issues, please use the contact form to tell us about it.</p>
 
           </div>
-          <div className="amazonDiv fadeInAnim"  style={{animationDelay : `${waitForBackground + 200}ms`}}>
-            <div className="amazonHeadingIconWrapper flex">
-              <h2 className="amazonHeading">BokHus is an <span className="amazonAffiliateSpan">Affiliate of Amazon</span></h2>
+          <div className={`${styles.amazonDiv} fadeInAnim`} style={{animationDelay : `${waitForBackground + 200}ms`}}>
+            <div className={`${styles.amazonHeadingIconWrapper} flex`}>
+              <h2 className={styles.amazonHeading}>BokHus is an <span className={styles.amazonAffiliateSpan}>Affiliate of Amazon</span></h2>
 
-              <GoLinkExternal size="1.9rem" className="amazonIconLink" />
+              <GoLinkExternal size="1.9rem" className={styles.amazonIconLink} />
             </div>
 
 
-            <div className="amazonTextContainer">
-              <p className="amazonText">
+            <div className={styles.amazonTextContainer}>
+              <p className={styles.amazonText}>
                 This page contains links to books published by our company and sold through Amazon.
               </p>
               <strong>As an Amazon Associate we earn from qualifying purchases.</strong>
-              <p className="amazonText">
+              <p className={styles.amazonText}>
                 If you purchase one of our books through an Amazon link on this website, we may receive both the normal proceeds from the sale of the book and an Amazon Associates commission, at no additional cost to you.
               </p>
-              <p className="amazonlText">
+              <p className={styles.amazonlText}>
                 We include these links to make it easy for readers to purchase our books through their preferred Amazon marketplace.
               </p>
 
             </div>
-            <p className="amazonTextBottom">
+            <p className={styles.amazonTextBottom}>
               Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
             </p>
           </div>

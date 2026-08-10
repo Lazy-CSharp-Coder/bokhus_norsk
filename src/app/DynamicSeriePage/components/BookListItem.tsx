@@ -3,7 +3,7 @@
 import type { BookListItemProps } from "@/types/booktypes";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { urlFor } from "@/functions/urlFor";
+import styles from "./BookList.module.css"
 
 export function BookListItem({ imageUrl, itemNumber,  handleClick }: BookListItemProps)
 {
@@ -25,12 +25,13 @@ export function BookListItem({ imageUrl, itemNumber,  handleClick }: BookListIte
 
   }, []);
 
+  const { bookThumbnail, imageThumbnail} = styles;
 
   return (
-    <li className={`bookListItem bookThumbnail ${isVisible ? "fadeInAnim" : "fadeOutAnim"}`} ref={listItemRef}
+    <li className={`${bookThumbnail} ${isVisible ? "fadeInAnim" : "fadeOutAnim"}`} ref={listItemRef}
       onClick={() => handleClick(itemNumber)} style={{ animationDuration: "0.5s" }}>
 
-      <Image className="bookThumbnail" src={imageUrl} alt="book list image" fill={true} sizes="(max-width: 150px) 100vw, 50vw" loading="eager" />;
+      <Image className={imageThumbnail} src={imageUrl} alt="book list image" fill={true} sizes="(max-width: 150px) 100vw, 50vw" loading="eager" />;
 
 
     </li>);
