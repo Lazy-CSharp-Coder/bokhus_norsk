@@ -5,7 +5,7 @@
     justify-content: center;
     gap: 2.5rem;
     align-items:center;
-      
+    padding:0;
     /* width: 74%; */
     max-width: 103.4rem;
     height:fit-content;
@@ -23,7 +23,7 @@
 @media (max-width: 63.99em) {
 
 .authorSection {
-    max-width: 88% ;
+    max-width: 88%;
 }
 
 .seriesCardList {

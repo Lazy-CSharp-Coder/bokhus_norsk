@@ -3,50 +3,6 @@
     --singleBookDescriptionFontSize: 1.2rem;
     --coverTitleColor: #ecc776;
 }
-
-.singleBookPageBackgroundImage {
-
-    position: fixed;
-    top: 0px;
-    background-image: var(--defaultBackgroundImage);
-    background-size: cover;
-    position: fixed;
-    background-repeat: no-repeat;
-    filter: blur(5px) brightness(58%);
-    z-index: -1;
-
-}
-
-
-.singleBookPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex: 1;
-}
-
-.singleBookCardSection {
-    max-width: 100rem;
-    width: 60%;
-    display: flex;
-    /* padding-top: 10rem; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12rem;
-}
-
-.singleBookCardArticle {
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem;
-    min-height: 100vh;
-    ;
-    padding-bottom: 12.5rem;
-
-}
-
 .singleBookCard {
 
     display: flex;
@@ -229,17 +185,6 @@
 
 
 @media (max-width: 63.99em) {
-
-    .singleBookPageBackgroundImage {
-
-        background-position: 70% center;
-
-    }
-
-    .singleBookCardSection {
-        width: 90%;
-        --singleBookDescriptionFontSize: 1.4rem;
-    }
 
     .singleBookCard {
         margin: 3rem 0;

@@ -1,4 +1,4 @@
-.seriesPage {
+.seriePage {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,6 @@
     margin-top: 3rem;
     min-width: 100%;
     max-width: 100%;
-
     gap: 3rem;
     overflow-x: hidden;
     height: max-content;
@@ -26,6 +25,12 @@
     filter: blur(5px) brightness(58%);
     z-index: -1;
 
+}
+
+.presentationReviewHrefWrapper {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
 }
 @media (max-width: 63.99em) {
 

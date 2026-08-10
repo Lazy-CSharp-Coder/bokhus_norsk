@@ -4,6 +4,7 @@ import { ErrorPage } from "@/components/common/ErrorPage";
 
 import type { SeriesCardProps } from "@/types/booktypes";
 import { SeriesPageListProps } from "./SeriesPageTypes";
+import styles from "./Series.module.css";
 
 export async function SeriesPageList({ seriesArray }: SeriesPageListProps)
 {   let seriesToDisplay : SeriesCardProps[] = []
@@ -19,8 +20,8 @@ export async function SeriesPageList({ seriesArray }: SeriesPageListProps)
 
     const animDelay = 200;
     return (
-        <article className="seriesPageListArticle">
-            <ul className="seriesList">
+        <article className={styles.seriesPageListArticle}>
+            <ul className={styles.seriesList}>
                 {seriesToDisplay.map((item, index) => (
                     <li key={`${item.seriesSelected.seriesName + index}`}>
                         <SeriesCardLarge {...item} animationDelay={index * animDelay} fallbackRouteNoBooks="/"/>

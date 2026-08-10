@@ -236,7 +236,7 @@
         align-items: center;
         justify-content: top;
         /* flex: 1; */
-        animation-name: fadeInFromBelow;
+  
         overflow: hidden;
         max-width: 94%;
 
