@@ -237,23 +237,6 @@ background-color: transparent;
 }
 
 
-/* max 1920 */
-@media (max-width: 119.99em) {
-    .contactUsSection {
-        /* max-width: 38%; */
-    }
-    
-}
-
-/* 1440px */
-
-@media (max-width: 89.99em) {
-   
-   .contactUsSection {
-    /* max-width: 38%; */
-   }
-}
-
 
 @media (max-width: 63.99em) {
  
