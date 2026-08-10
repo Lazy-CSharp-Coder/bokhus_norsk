@@ -35,7 +35,7 @@ export function Footer()
     useOutsideClick(handleOutsideClick);
 
     return (
-        <footer>
+        <footer className={styles.footerBokhus}>
             <div className={styles.logoTermsWrapper}>
                 <div className={styles.logoFooterWrapper}>
                     <Image className={styles.logoFooterImg} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />

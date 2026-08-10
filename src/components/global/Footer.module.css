@@ -1,7 +1,7 @@
 @import "./ButtonsFooter.css";
-@import "./legal/legal.css";
 
-footer {
+
+.footerBokhus {
     display: flex;
     flex-direction: row;
     align-items: center;

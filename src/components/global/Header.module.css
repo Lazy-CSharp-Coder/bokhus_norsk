@@ -3,7 +3,7 @@
 
 }
 
-.headerBokHus {
+.headerBokhus {
   display: flex;
   background-color: var(--commonBackgroundColor);
 
@@ -83,9 +83,18 @@ display: flex;
 }
 
 
+.loginBurgerWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: center;
+  width: fit-content;
+
+}
+
 @media (max-width: 63.99em) {
 
-  header {
+  .headerBokhus {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -93,14 +102,5 @@ display: flex;
     padding: 0rem 3rem;
   }
 
-  .desktopMode,
-  .desktopModeBlock {
-    display: none;
-  }
-
-  .mobileMode {
-    display: block;
-    margin-top: 0.2rem;
-  }
 
 }

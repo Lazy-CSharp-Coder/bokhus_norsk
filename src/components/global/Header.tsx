@@ -13,7 +13,7 @@ export  function Header()
    
     return (
 
-        <header className={`${styles.headerBokHus} fadeInAnim`} style={{ animationDuration: "0.2s" }} >
+        <header className={`${styles.headerBokhus} fadeInAnim`} style={{ animationDuration: "0.2s" }} >
 
             <Link href={"/"} className="fadeInAnim">
 
@@ -30,7 +30,7 @@ export  function Header()
             </div>
             <div className={styles.loginBurgerWrapper}>
                 <LoginClerk />
-                <span className={styles.mobileMode}>  <HamburgerMenu /></span>
+                <span className="mobileMode">  <HamburgerMenu /></span>
 
             </div>
 

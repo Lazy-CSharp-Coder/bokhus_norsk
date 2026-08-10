@@ -232,6 +232,15 @@ input[type="checkbox"] {
     font-size:105%;
   }
 
+  .desktopMode,
+  .desktopModeBlock {
+    display: none;
+  }
+
+  .mobileMode {
+    display: block;
+    margin-top: 0.2rem;
+  }
 }
 
 /* max 768 */
