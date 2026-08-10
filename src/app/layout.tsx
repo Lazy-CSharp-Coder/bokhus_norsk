@@ -21,6 +21,9 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Bokhus",
   description: "Bokhus Web Page English",
+  icons: {
+    icon: '/icon.png'
+  }
 };
 
 export default function RootLayout({
