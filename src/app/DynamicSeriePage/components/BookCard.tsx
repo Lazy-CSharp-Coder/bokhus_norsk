@@ -15,7 +15,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
     return (
         <div className={`${styles.bookCard} ${tabletMode ? "fadeInFromBelowAnim" : "fadeInFromLeftAnim"}`} style={{ animationDuration: "1.2s" }}>
             <div className={styles.bookImage}>
-                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
+                <Image className="image" src={imageSrc} alt={`book image ${bookTitle}`} fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
             </div>
             <div className={styles.bookFactsAndDescriptionWrapper}>
                 <div className={styles.bookFactsDiv}>

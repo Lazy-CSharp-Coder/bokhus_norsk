@@ -13,7 +13,7 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availab
     return (
         <div className={`${styles.singleBookCard} fadeInFromBelowAnim`} style={{ animationDuration: "1.2s", animationDelay: "0.8s" }}>
             <div className={styles.singleBookCardImage} >
-                <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
+                <Image className="image" src={imageSrc} alt={`book image ${bookTitle}`} fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
             </div>
             <div className={styles.singleBookCardInfoDiv}>
                 <div className={styles.singleBookCardFactDiv}>
