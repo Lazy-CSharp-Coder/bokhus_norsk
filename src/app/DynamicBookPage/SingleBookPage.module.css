@@ -43,7 +43,8 @@
 }
 
 @media (max-width: 159.99em) {
-  .singleBookCardSection {
+
+    .singleBookCardSection {
     width: 70%;
   
   }
@@ -53,7 +54,8 @@
 /* max 1920 */
 
 @media (max-width: 119.99em) {
-  .singleBookCardSection {
+
+    .singleBookCardSection {
     width: 73%;
   }
 } 
