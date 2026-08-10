@@ -33,7 +33,7 @@ export interface ReviewCardDisplayOptions
     arrayToView: Review[],
     lastIndexDisplaying: number,
     tabletMode: boolean,
-    animationToUse: AnimationToUse
+    animationToUse: AnimationToUse;
 }
 
 export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
@@ -54,8 +54,8 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     useEffect(() => 
     {
-        setDisplayOptions((prev)=> ({...prev, lastIndexDisplaying : -1}));
-},[bookName])
+        setDisplayOptions((prev) => ({ ...prev, lastIndexDisplaying: -1 }));
+    }, [bookName]);
 
     const heightOfReviewDisplay = () =>
     {
@@ -93,127 +93,127 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
                 else 
                 {
                     console.log("in desktop mode");
-                    const newStartPos = lastIndexDisplaying % 2 ? lastIndexDisplaying == reviewsForBook.length - 1 ? lastIndexDisplaying  : lastIndexDisplaying-1 : lastIndexDisplaying;
-                    const startPoint = newStartPos-1;
+                    const newStartPos = lastIndexDisplaying % 2 ? lastIndexDisplaying == reviewsForBook.length - 1 ? lastIndexDisplaying : lastIndexDisplaying - 1 : lastIndexDisplaying;
+                    const startPoint = newStartPos - 1;
                     const endPoint = newStartPos < reviewsForBook.length - 1 ? newStartPos + 2 : newStartPos + 1;
                     setDisplayOptions((prev) => ({ ...prev, arrayToView: reviewsForBook.slice(startPoint, endPoint), lastIndexDisplaying: newStartPos, tabletMode: false }));
                 }
 
 
         };
- 
 
-    // hvis det ikke er en høyde fra før, kjør handleResize();
-    handleResize();
 
-    window.addEventListener("resize", handleResize);
+        // hvis det ikke er en høyde fra før, kjør handleResize();
+        handleResize();
 
-    return () => window.removeEventListener("resize", handleResize);
-}, [reviewDisplayHeight, reviewsForBook]);
+        window.addEventListener("resize", handleResize);
 
-// set arrayToView
+        return () => window.removeEventListener("resize", handleResize);
+    }, [reviewDisplayHeight, reviewsForBook]);
 
-useEffect(() =>
-{
-    // important -> get a snapshot of the current ref - needed for cleanup
-    const element = reviewSectionRef.current;
+    // set arrayToView
 
-    if (!element) return;
-
-    const observer = new IntersectionObserver((entries) =>
+    useEffect(() =>
     {
-        setIsVisible(entries[0].isIntersecting);
+        // important -> get a snapshot of the current ref - needed for cleanup
+        const element = reviewSectionRef.current;
 
-    }, { threshold: 0.1 });
+        if (!element) return;
 
-    observer.observe(element);
+        const observer = new IntersectionObserver((entries) =>
+        {
+            setIsVisible(entries[0].isIntersecting);
 
-    return (() => { observer.unobserve(element); });
+        }, { threshold: 0.1 });
+
+        observer.observe(element);
+
+        return (() => { observer.unobserve(element); });
 
 
-}, []);
+    }, []);
 
-const { arrayToView, lastIndexDisplaying, tabletMode, animationToUse } = displayOptions;
+    const { arrayToView, lastIndexDisplaying, tabletMode, animationToUse } = displayOptions;
 
-const handleRightSliderClick = () =>
-{
-    if (reviewsForBook == undefined || lastIndexDisplaying >= reviewsForBook.length - 1) return;
-    setDisplayOptions((prev) =>
+    const handleRightSliderClick = () =>
     {
-        console.log("Slicing Right in reviews. Amount of reviews : " + reviewsForBook.length);
+        if (reviewsForBook == undefined || lastIndexDisplaying >= reviewsForBook.length - 1) return;
+        setDisplayOptions((prev) =>
+        {
+            console.log("Slicing Right in reviews. Amount of reviews : " + reviewsForBook.length);
 
-        const sliceEnd = tabletMode || lastIndexDisplaying == reviewsForBook.length - 3 ? prev.lastIndexDisplaying + 2 : prev.lastIndexDisplaying + 3;
-        console.log("Slice end is : " + sliceEnd + " LastIndexDisplaying is : " + lastIndexDisplaying);
-        return ({
-            ...prev, arrayToView: reviewsForBook.slice(prev.lastIndexDisplaying + 1, sliceEnd),
-            lastIndexDisplaying: prev.lastIndexDisplaying + 1,
-            animationToUse: "fadeInFromRightAnim"
+            const sliceEnd = tabletMode || lastIndexDisplaying == reviewsForBook.length - 3 ? prev.lastIndexDisplaying + 2 : prev.lastIndexDisplaying + 3;
+            console.log("Slice end is : " + sliceEnd + " LastIndexDisplaying is : " + lastIndexDisplaying);
+            return ({
+                ...prev, arrayToView: reviewsForBook.slice(prev.lastIndexDisplaying + 1, sliceEnd),
+                lastIndexDisplaying: prev.lastIndexDisplaying + 1,
+                animationToUse: "fadeInFromRightAnim"
+            });
         });
-    });
 
 
-};
+    };
 
-const handleLeftSliderClick = () =>
-{
-    if (reviewsForBook == undefined || lastIndexDisplaying == 0 || (lastIndexDisplaying == 1 && !tabletMode)) return;
-
-    setDisplayOptions((prev) =>
+    const handleLeftSliderClick = () =>
     {
-        console.log("Slicing Left in reviews. Amount of reviews : " + reviewsForBook.length);
+        if (reviewsForBook == undefined || lastIndexDisplaying == 0 || (lastIndexDisplaying == 1 && !tabletMode)) return;
 
-        const sliceStart = tabletMode ? lastIndexDisplaying - 1 : lastIndexDisplaying - 2;
-        const sliceEnd = tabletMode ? sliceStart + 1 : sliceStart + 2;
+        setDisplayOptions((prev) =>
+        {
+            console.log("Slicing Left in reviews. Amount of reviews : " + reviewsForBook.length);
 
-        console.log("Slice start is : " + sliceStart + " LastIndexDisplaying is : " + lastIndexDisplaying);
-        return ({
-            ...prev, arrayToView: reviewsForBook.slice(sliceStart, sliceEnd),
-            lastIndexDisplaying: sliceEnd - 1,
-            animationToUse: "fadeInFromLeftAnim"
+            const sliceStart = tabletMode ? lastIndexDisplaying - 1 : lastIndexDisplaying - 2;
+            const sliceEnd = tabletMode ? sliceStart + 1 : sliceStart + 2;
+
+            console.log("Slice start is : " + sliceStart + " LastIndexDisplaying is : " + lastIndexDisplaying);
+            return ({
+                ...prev, arrayToView: reviewsForBook.slice(sliceStart, sliceEnd),
+                lastIndexDisplaying: sliceEnd - 1,
+                animationToUse: "fadeInFromLeftAnim"
+            });
         });
-    });
 
 
 
-};
-const onFirst = arrayToView[0] == reviewsForBook[0] ? true : false;
-const onLast =  lastIndexDisplaying == reviewsForBook.length-1 ? true : false;
+    };
+    const onFirst = arrayToView[0] == reviewsForBook[0] ? true : false;
+    const onLast = lastIndexDisplaying == reviewsForBook.length - 1 ? true : false;
 
 
-return (
-    <article id="reviewArticle" className={`${styles.reviewArticle} flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
-        <div className={`${styles.headingToTopWrapper} flex`}>
+    return (
+        <article id="reviewArticle" className={`${styles.reviewArticle} flex ${isVisible && "fadeInFromBelowAnim"}`} ref={reviewSectionRef} style={{ animationDuration: "0.5s" }}>
+            <div className={`${styles.headingToTopWrapper} flex`}>
 
-            <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className={styles.goToTopIcon} /></span>
-            <div className={styles.reviewHeadingArrowContainer}>
+                <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className={styles.goToTopIcon} /></span>
+                <div className={styles.reviewHeadingArrowContainer}>
 
-                <span style={{ opacity: onFirst ? "0.3" : "1" }} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className={styles.leftSlider} size={"3rem"} /></span>
+                    <span style={{ opacity: onFirst ? "0.3" : "1" }} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className={styles.leftSlider} size={"3rem"} /></span>
 
-                <h4 className={styles.reviewTitle}>READERS REVIEWS OF <span className={styles.reviewHeadingSeriesName}>{bookName.toLocaleUpperCase()}</span></h4>
+                    <h4 className={styles.reviewTitle}>READERS REVIEWS OF <span className={styles.reviewHeadingSeriesName}>{bookName.toLocaleUpperCase()}</span></h4>
 
-                <span style={{ opacity: onLast ? "0.3" : "1" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className={styles.rightSlider}/></span>
+                    <span style={{ opacity: onLast ? "0.3" : "1" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className={styles.rightSlider} /></span>
+
+
+                </div>
+
+
+                <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className={styles.goToTopIcon} /></span>
+
 
 
             </div>
+            {reviewsForBook.map((item, index) =>
 
-
-            <span onClick={() => { window.scrollTo(0, 0); }}> <GoMoveToTop size="1.8rem" className={styles.goToTopIcon} /></span>
-
-
-
-        </div>
-        {reviewsForBook.map((item, index) =>
-
-            <div ref={(element) => { itemRefsForHeight.current[index] = element; }} key={index + "#HeightColletorDiv#"} className={`${styles.reviewDisplayer} flex`} style={{ visibility: "hidden", position: "absolute" }}>
-                <ReviewCard key={item._id + "#hidden" + index} _id={item._id} bookReviewed={bookName} format={item.format} date={item.date} country={item.country}
-                    stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
-                    reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse="none" />
-            </div>
-        )}
-        {arrayToView && lastIndexDisplaying != -1 && reviewDisplayHeight != 0 ?
-            <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName} /> : <h3 className={styles.reviewsNotFoundText}>No reviews found</h3>
-        }
-    </article>);
+                <div ref={(element) => { itemRefsForHeight.current[index] = element; }} key={index + "#HeightColletorDiv#"} className={`${styles.reviewDisplayer} flex`} style={{ visibility: "hidden", position: "absolute" }}>
+                    <ReviewCard key={item._id + "#hidden" + index} _id={item._id} bookReviewed={bookName} format={item.format} date={item.date} country={item.country}
+                        stars={item.stars} reviewerName={item.reviewerName} titleReview={item.titleReview} reviewedOn={item.reviewedOn}
+                        reviewDescription={item.reviewDescription} linkReview={item.linkReview} animationToUse="none" />
+                </div>
+            )}
+            {arrayToView && lastIndexDisplaying != -1 && reviewDisplayHeight != 0 ?
+                <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName} /> : <h3 className={styles.reviewsNotFoundText}>No reviews found</h3>
+            }
+        </article>);
 }
 
 
