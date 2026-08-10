@@ -9,6 +9,8 @@ import { StateProvider } from "@/globalStates";
 const libreBaskerville = Libre_Baskerville({
   variable: "--libreFont",
   subsets: ["latin"],
+ 
+  
 
 
 });
