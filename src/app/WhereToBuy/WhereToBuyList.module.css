@@ -89,6 +89,14 @@
     width: 100%;
 }
 
+.buySeriesList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+
 /* .sortButton {
     font-size: 1rem;
 } */
