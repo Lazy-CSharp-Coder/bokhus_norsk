@@ -88,7 +88,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
       <>
          <ScrollToTop />
          <BackgroundImage className={styles.seriePageBackgroundImage} src={urlFor(serie.imageSeriesBackground, 1920)} />
-         <main className={styles.seriesPage}>
+         <main className={styles.seriePage}>
             {(serie && authors) &&
                <div className={styles.presentationReviewHrefWrapper}>
                   <SerieSection seriesSelected={serie} booksBelonging={bookList} authors={authors} />

@@ -5,12 +5,15 @@ import { BookAvailableIn } from "../../../components/common/BookAvailableIn";
 import { urlFor } from "@/functions/urlFor";
 import { BookInSerieText } from "./BookInSerieText";
 import styles from "./BookCard.module.css";
+import { useWindowWidth } from "@/components/hooks/useWindowWidth";
 
 export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink }: BookCardProps)
 {
+    const width = useWindowWidth();
+    const tabletMode = width ? width < 1024 ? true : false : false;
     const imageSrc = urlFor(imageBook, 800);
     return (
-        <div className={`${styles.bookCard} fadeInFromLeftAnim`} style={{ animationDuration: "1.2s" }}>
+        <div className={`${styles.bookCard} ${tabletMode ? "fadeInFromBelowAnim" : "fadeInFromLeftAnim"}`} style={{ animationDuration: "1.2s" }}>
             <div className={styles.bookImage}>
                 <Image className="image" src={imageSrc} alt="book image" fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager"/>
             </div>
