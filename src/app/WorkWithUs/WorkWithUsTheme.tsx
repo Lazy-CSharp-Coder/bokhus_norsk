@@ -13,7 +13,7 @@ import { GiTeacher } from "react-icons/gi";
 import { FaFileCircleQuestion } from "react-icons/fa6";
 import { TfiWrite } from "react-icons/tfi";
 import type { ReactIcons } from "@/types/types";
-
+import styles from "./WorkWithUsTheme.module.css"
 
 
 const reactIconsArray: ReactIcons[] =
@@ -88,15 +88,16 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
     const IconToUse = reactIconsArray[subject.iconNumber].icon;
     const size = reactIconsArray[subject.iconNumber].size;
     const { theme, list} = subject;
+    
     return (
-        <div className="workWithUsThemeDiv fadeInFromLeftAnim" id={`#SCROLL#ID#${theme}`}>
-            <div className="themeIconWrapper">
-                <h3 className="themeHeading">{theme}</h3>
-                <IconToUse size={size} className="iconWorkWithUs"/>
+        <div className={`${styles.workWithUsThemeDiv} fadeInFromLeftAnim`} id={`#SCROLL#ID#${theme}`}>
+            <div className={styles.themeIconWrapper}>
+                <h3 className={styles.themeHeading}>{theme}</h3>
+                <IconToUse size={size} className={styles.iconWorkWithUs}/>
             </div>
-            <ul className="themeList">
+            <ul className={styles.themeList}>
                 {list.map((item, index) =>
-                    <li key={"themeList" + index}className="themeListItem">{item}</li>
+                    <li key={"themeList" + index} className={styles.themeListItem}>{item}</li>
                 )}
 
             </ul>
@@ -110,12 +111,12 @@ export function WorkWithUsStartup()
 {
 
     return (
-        <div className="workWithUsThemeDiv fadeInFromLeftAnim" style={{animationDelay:"2.3s"}}>
-            <div className="themeIconWrapper">
-                <h3 className="themeHeading">Work with us</h3>
-                <TfiWrite size="2rem" className="iconWorkWithUs"/>
+        <div className={`${styles.workWithUsThemeDiv} fadeInFromLeftAnim`} style={{animationDelay:"2.3s"}}>
+            <div className={styles.themeIconWrapper}>
+                <h3 className={styles.themeHeading}>Work with us</h3>
+                <TfiWrite size="2rem" className={styles.iconWorkWithUs}/>
             </div>
-            <p className="workWithUsSubTitle">Click on category in list for more information</p>
+            <p className={styles.workWithUsSubTitle}>Click on category in list for more information</p>
 
         </div>
 

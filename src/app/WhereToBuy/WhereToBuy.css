@@ -125,13 +125,6 @@ color: var(--borderIconColor)
     border-top: 1px solid var(--myWhiteColor);
 }
 
-.buySeriesList {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-}
-
 
 
 @media (max-width: 63.99em) {

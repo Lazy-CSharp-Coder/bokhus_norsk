@@ -1,2 +1,44 @@
-@import "./../../components/global/legal/legal.css";
-@import "./credits.css";
+
+.creditLink {
+
+       color: var(--bokhusFutureColor);
+}
+
+.creditLicence {
+
+     color:var(--bokhusRootsColor);
+}
+
+.creditVisualElements {
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1.5rem;
+
+    
+}
+
+.creditVisualTextDiv {
+       display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: fit-content;
+
+}
+
+.creditVisualHeading {
+     font-weight: bold;
+    font-size: 1.2rem;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid white;
+    width: 100%;
+
+    padding-bottom: 0.8rem;
+}
+
+
+.creditListItem {
+    line-height: 1.6;
+ 
+}

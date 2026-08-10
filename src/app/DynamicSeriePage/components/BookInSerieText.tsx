@@ -1,6 +1,6 @@
 
 import { numberToWords } from "convert-number-to-words";
-import "./BookInSerieText.module.css"
+import styles from  "./BookInSerieText.module.css"
 
 export interface BookInSeriesTextProps 
 {
@@ -15,9 +15,9 @@ export function BookInSerieText({ bookInSerie, serieName }: BookInSeriesTextProp
     const numStr = numTemp.charAt(0).toUpperCase() + numTemp.slice(1);
 
     return (   
-                <p className="bookInfoDiv">
-                   Book <span className="bookNumberText"> {numStr} </span>
-                     of the <span className="bookNumberText">{serieName} </span> Series
+                <p className={styles.bookInfoDiv}>
+                   Book <span className={styles.bookNumberText}> {numStr} </span>
+                     of the <span className={styles.bookNumberText}>{serieName} </span> Series
                 </p>
       
     );

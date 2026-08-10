@@ -1,1 +1,48 @@
-@import "./ReviewScrollButton.css";
+
+.presentationReviewHrefWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    min-height: 100vh;
+  
+
+}
+
+.reviewSectionWrapper {
+    /* height: 100vh; */
+    /* background-color: red; */
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    overflow: hidden;
+}
+
+.reviewClicker {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    text-align: center;
+    z-index:20;
+    background-color: transparent;
+    border: none;
+    color: lightgray;
+    /* background-color: red; */
+    /* border: 1px solid var(--myWhiteColor); */
+    transition: all 0.4 ease-in-out;
+    cursor:pointer;
+}
+
+.diffuseClicker {
+    opacity: 0.6;
+}
+
+.normalClicker {
+    opacity: 1;
+}
+
+.clickHereSeries,
+.scrollSeries {
+    color: #d99d57;
+}
+

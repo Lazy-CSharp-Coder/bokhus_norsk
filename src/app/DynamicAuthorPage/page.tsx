@@ -2,7 +2,7 @@ import type { PageProps } from "@/types/types";
 import type { Author } from "@/types/booktypes";
 import { client } from "@/sanity/client";
 import AuthorSection from "@/app/DynamicAuthorPage/components/AuthorSection";
-import "./DynamicAuthorPage.module.css";
+import styles from "./DynamicAuthorPage.module.css";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { ErrorBokhus } from "../ErrorBokhus";
 
@@ -36,8 +36,8 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
 
     return (
         <>
-            <BackgroundImage className="backgroundImageAuthorsPage" src="/images/backgrounds/pen.webp" />
-            <main className="authorsPage flex">
+            <BackgroundImage className={styles.backgroundImageAuthorsPage}   src="/images/backgrounds/pen.webp" />
+            <main className={styles.authorPage}>
 
                 <AuthorSection author={author} />
             </main>

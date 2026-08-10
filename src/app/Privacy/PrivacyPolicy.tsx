@@ -1,5 +1,4 @@
 import Link from "next/link";
-import "./PrivacyPolicy.module.css";
 
 export function PrivacyPolicy()
 {
@@ -15,8 +14,7 @@ export function PrivacyPolicy()
             <article className="legalArticle">
 
                 <div className="textDiv">
-                    <p className="legalText">This Privacy Policy explains how BokHus.com collects, uses, and
-                        protects personal information in accordance with the EU General Data
+                    <p className="legalText">This Privacy Policy explains how BokHus.com collects, uses, and protects personal information in accordance with the EU General Data
                         Protection Regulation (GDPR) and relevant Norwegian privacy laws.</p>
                     <p className="legalText">   By using BokHus.com, you agree to the practices described in this
                         policy.     </p>
