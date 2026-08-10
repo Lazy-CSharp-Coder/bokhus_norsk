@@ -1,6 +1,6 @@
 import languageJson from "@/json/languages.json"
 import type { QuoteBottomProps } from "@/types/types";
-import "./QuotesBottom.module.css";
+import styles from "./QuotesBottom.module.css";
 import { LanguageChosen } from "@/types/languagetypes";
 
 export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
@@ -16,10 +16,10 @@ export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
     const waitForDescription = 800;
 
     return (
-        <div className="quotesDivBottom flex" style={{fontFamily: fontFamily ? fontFamily : ""}}>
+        <div className={`${styles.quotesDivBottom} flex`} style={{fontFamily: fontFamily ? fontFamily : ""}}>
             {
                 heroPage.quotesBottom.map((item, index) =>
-                    <h3 key={index + "#HP#HERO_QUOTES#ABOUT"} className="quotesTextBottom fadeInAnimQuotes" style={{ color: colorCodes[index], animationDelay: noAnim ? "0" :  `${(index * animIncQuotesBottom) + waitForDescription}ms`, animationIterationCount : noAnim ? "0" : "1" ,  fontSize: fontSize  }}>{item}</h3>)
+                    <h3 key={index + "#HP#HERO_QUOTES#ABOUT"} className={`${styles.quotesTextBottom} fadeInAnimQuotes`} style={{ color: colorCodes[index], animationDelay: noAnim ? "0" :  `${(index * animIncQuotesBottom) + waitForDescription}ms`, animationIterationCount : noAnim ? "0" : "1" ,  fontSize: fontSize  }}>{item}</h3>)
 
             }
 

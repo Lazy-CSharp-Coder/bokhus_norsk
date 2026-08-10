@@ -1,5 +1,5 @@
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import "./SubmitButton.module.css";
+import styles from  "./SubmitButton.module.css";
 
 interface SubmitButtonProps
 {
@@ -15,6 +15,6 @@ export function SubmitButton({ buttonText, submitMessage, isSubmitting }: Submit
 
     return (
 
-        <button className="submitButton" type="submit" disabled={isSubmitting} >{isSubmitting ? <span className="submitMessage"><AiOutlineLoading3Quarters className="submitIcon" size="1em" /> {submitText} </span> : text}</button>
+        <button className={styles.submitButton} type="submit" disabled={isSubmitting} >{isSubmitting ? <span className={styles.submitMessage}><AiOutlineLoading3Quarters className={styles.submitIcon} size="1em" /> {submitText} </span> : text}</button>
     );
 }
