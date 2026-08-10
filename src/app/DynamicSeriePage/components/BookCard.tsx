@@ -39,7 +39,6 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                         <h4 className={styles.bookSubTitle}>{`${subTitle}`}</h4>
                     }
 
-
                     <div className={styles.bookDescriptionList}>
                         {description.map((item, index) =>
                         (
