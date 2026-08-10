@@ -52,7 +52,10 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
     const [reviewDisplayHeight, setReveiwDisplayHeight] = useState<number>(0);
 
-  
+    useEffect(() => 
+    {
+        setDisplayOptions((prev)=> ({...prev, lastIndexDisplaying : -1}));
+},[bookName])
 
     const heightOfReviewDisplay = () =>
     {
