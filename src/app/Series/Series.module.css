@@ -78,16 +78,7 @@
 
 }
 
-@media (max-width: 199.99em) {
-    .seriesPageSection {
-        /* max-width: 90rem; */
-    }
-}
 
-@media (max-width: 159.99em) {
-
-    .seriesPageSection {}
-}
 
 /* 1920px grense */
 
@@ -128,8 +119,6 @@
 
 
 
-    @media (max-width: 47.99em) {}
+
 
 }
-
-@media (max-width: 39.99em) {}

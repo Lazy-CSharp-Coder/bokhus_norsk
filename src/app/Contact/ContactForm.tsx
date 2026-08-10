@@ -14,7 +14,7 @@ import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 import { GoogleReCAPTCHA } from "../../components/common/GoogleReCAPTCHA";
 import Image from "next/image";
 import { SubmitButton } from "@/components/common/SubmitButton";
-import styles from "./Contact.module.css";
+import styles from "./ContactForm.module.css";
 
 //  added for importing recaptcha to fix turbopack fault
 
