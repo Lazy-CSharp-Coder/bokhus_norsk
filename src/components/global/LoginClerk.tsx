@@ -4,7 +4,7 @@ import { Show, SignInButton, useClerk, UserButton } from "@clerk/nextjs";
 // import { usePathname,  useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { FaUserLarge } from "react-icons/fa6";
-import { PiSignOutBold } from "react-icons/pi";
+import styles from "./LoginClerk.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 function LoginClerkContent()
@@ -17,11 +17,11 @@ function LoginClerkContent()
 
     return (
 
-        <div className="clerkButtons">
+        <div className={styles.clerkButtons}>
 
             <Show when="signed-out">
                 <SignInButton fallbackRedirectUrl={"/Register"}>
-                    <button className="signInButton">SIGN IN <span className="signInRegisterSpan"> / </span> REGISTER</button>
+                    <button className={styles.signInButton}>SIGN IN <span className={styles.signInRegisterSpan}> / </span> REGISTER</button>
                 </SignInButton>
                 {/* <SignUpButton mode="modal" fallbackRedirectUrl="/Register">
                     <button className="signUpButton">
@@ -29,7 +29,7 @@ function LoginClerkContent()
                 </SignUpButton> */}
             </Show>
             <Show when="signed-in">
-                <div className="userButtonDiv">
+                <div className={styles.userButtonDiv}>
 
                     <UserButton
                         appearance={{
@@ -48,21 +48,17 @@ function LoginClerkContent()
                             }
                         }} ><UserButton.MenuItems>
                             <UserButton.Link label={"Your profile at BokHus"}
-                                labelIcon={<span className="clerkButtonSpan"><FaUserLarge size="1rem" /></span>} href="/Register" />
+                                labelIcon={<span className={styles.clerkButtonSpan}><FaUserLarge size="1rem" /></span>} href="/Register" />
 
                             <UserButton.Link label="Delete profile"
-                                labelIcon={<span className="clerkButtonSpan"><RiDeleteBin6Line size="1rem" className="deleteProfileIcon" />
+                                labelIcon={<span className={styles.clerkButtonSpan}><RiDeleteBin6Line size="1rem" className={styles.deleteProfileIcon} />
 
                                 </span>} href="/DeleteProfile" />
-
-                            {/* <UserButton.Action label="Sign Out" onClick={() => signOut({ redirectUrl: path || "/" })} 
-                                labelIcon={<span className="clerkButtonSpan"><PiSignOutBold size="1.2rem" /></span>} /> */}
-
 
                         </UserButton.MenuItems>
                     </UserButton>
 
-                    <Link className="signInButton" href="/Register">PROFILE</Link>
+                    <Link className={styles.signInButton} href="/Register">PROFILE</Link>
                 </div>
 
             </Show>
@@ -73,7 +69,7 @@ function LoginClerkContent()
 export function LoginClerk()
 {
     return (
-        <Suspense fallback={<div className="clerkButtons"><button className="signInButton">SIGN IN</button></div>}>
+        <Suspense fallback={<div className={styles.clerkButtons}><button className={styles.signInButton}>SIGN IN</button></div>}>
             <LoginClerkContent />
         </Suspense>
     );

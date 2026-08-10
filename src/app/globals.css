@@ -211,12 +211,15 @@ input[type="checkbox"] {
 
 }
 
+
+
 /* max 1024 */
 
 @media (max-width: 63.99em) {
   html {
     font-size:105%;
   }
+
 
 }
 

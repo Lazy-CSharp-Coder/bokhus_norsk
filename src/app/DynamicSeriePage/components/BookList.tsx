@@ -13,7 +13,7 @@ export function BookList({ bookList, handleClick }: BookListProps)
             {
                 bookList.map((item, index) =>
                     // <BookListItem key={item.uid} item={item}  />
-                    <BookListItem key={item._id + "#list#"} imageUrl={urlFor(item.imageBook, 150)} itemNumber={index} handleClick={handleClick} />
+                    <BookListItem key={item._id + "#list#"} imageUrl={urlFor(item.imageBook, 150)} itemNumber={index} handleClick={handleClick} bookTitle={item.bookTitle} />
 
                 )}
 

@@ -143,6 +143,7 @@ export interface BookListItemProps
 {
     imageUrl : string,
     itemNumber : number,
+    bookTitle : string,
     handleClick: (itemNumber : number) => void;
 }
 

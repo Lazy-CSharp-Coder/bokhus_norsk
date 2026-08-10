@@ -15,7 +15,7 @@ export function AuthorCard({ _id, profileImage, name, subTitle, genre, descripti
     return (
         <article className={`${styles.authorCard} flex fadeInFromBelowAnim`} style={{ animationDelay: animDelay }}>
             <div className={`${styles.authorImageDiv}`}>
-                <Image className={`${styles.imageAuthor}`} src={imageSrc} alt="author image" fill={true} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px" />
+                <Image className={`${styles.imageAuthor}`} src={imageSrc} alt={`author image ${name}`} fill={true} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px" />
             </div>
             <div className={`${styles.authorNameAndDescriptionDiv} flex`}>
                 <div className={`${styles.authorNameSubTitleWrapper} flex`}>

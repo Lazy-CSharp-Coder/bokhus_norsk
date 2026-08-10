@@ -4,7 +4,7 @@ import { HamburgerMenu } from "./HamburgerMenu";
 import { LoginClerk } from "./LoginClerk";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { HeaderMenuItem } from "./HeaderMenuItem";
-import "./Header.module.css";
+import styles from  "./Header.module.css";
 
 
 
@@ -13,24 +13,24 @@ export  function Header()
    
     return (
 
-        <header className="headerBokHus fadeInAnim" style={{ animationDuration: "0.2s" }} >
+        <header className={`${styles.headerBokhus} fadeInAnim`} style={{ animationDuration: "0.2s" }} >
 
             <Link href={"/"} className="fadeInAnim">
 
-                <Image src="/icons/logo.png" alt="bokhus header icon" width={128} height={128} loading="eager" className="logoHeader" />
+                <Image src="/icons/logo.png" alt="bokhus header icon" width={128} height={128} loading="eager" className={styles.logoHeader} />
             </Link>
-            <div key={"#headermenuitems#"} className="logoMenuWrapper flex">
+            <div key={"#headermenuitems#"} className={styles.logoMenuWrapper}>
 
 
-                <nav className="menuItemsContainer desktopMode fadeInAnim" style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
+                <nav className={`${styles.menuItemsContainer} ${styles.desktopMode} fadeInAnim`} style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItems.map((_, index) =>
-                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className="headerMenuItem" iconClassName="headerIcon"/>)
+                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className={styles.headerMenuItem} iconClassName={styles.headerIcon}/>)
                     }
                 </nav>
             </div>
-            <div className="loginBurgerWrapper">
+            <div className={styles.loginBurgerWrapper}>
                 <LoginClerk />
-                <span className="mobileMode">  <HamburgerMenu /></span>
+                <span className={styles.mobileMode}>  <HamburgerMenu /></span>
 
             </div>
 
