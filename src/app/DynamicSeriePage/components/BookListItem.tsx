@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./BookList.module.css"
 
-export function BookListItem({ imageUrl, itemNumber,  handleClick }: BookListItemProps)
+export function BookListItem({ imageUrl, itemNumber, bookTitle, handleClick }: BookListItemProps)
 {
   const listItemRef = useRef<HTMLLIElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -31,7 +31,7 @@ export function BookListItem({ imageUrl, itemNumber,  handleClick }: BookListIte
     <li className={`${bookThumbnail} ${isVisible ? "fadeInAnim" : "fadeOutAnim"}`} ref={listItemRef}
       onClick={() => handleClick(itemNumber)} style={{ animationDuration: "0.5s" }}>
 
-      <Image className={imageThumbnail} src={imageUrl} alt="book list image" fill={true} sizes="(max-width: 150px) 100vw, 50vw" loading="eager" />;
+      <Image className={imageThumbnail} src={imageUrl} alt={`book list image ${bookTitle}`}fill={true} sizes="(max-width: 150px) 100vw, 50vw" loading="eager" />;
 
 
     </li>);
