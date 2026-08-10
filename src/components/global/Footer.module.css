@@ -203,20 +203,6 @@
     align-items: center;
 
 }
-
-.desktopModeFooter {
-
-    display: flex;
-}
-
-.desktopModeBlockFooter {
-    display: block;
-}
-
-.mobileModeFooter {
-    display: none;
-}
-
 @media (max-width: 63.99em) {
 
     .logoTermsWrapper {
@@ -246,18 +232,6 @@
 
 }
 
-@media (max-width: 63.99em) {
-
-    .desktopModeFooter {
-        display: none;
-    }
-
-    .mobileModeFooter {
-        display: grid;
-    }
-
-}
-
 @media (max-width: 44em) {
 
     .termsGroup {
@@ -269,4 +243,3 @@
 
 }
 
-@media (max-width: 39.99em) {}

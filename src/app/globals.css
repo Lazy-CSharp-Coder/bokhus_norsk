@@ -195,6 +195,21 @@ input[type="checkbox"] {
 }
 
 
+
+.desktopModeFooter {
+
+    display: flex;
+}
+
+.desktopModeBlockFooter {
+    display: block;
+}
+
+.mobileModeFooter {
+    display: none;
+}
+
+
 @media (max-width: 199.99em) /* usikker */
 {
   html {
@@ -225,6 +240,8 @@ input[type="checkbox"] {
 
 }
 
+
+
 /* max 1024 */
 
 @media (max-width: 63.99em) {
@@ -241,6 +258,15 @@ input[type="checkbox"] {
     display: block;
     margin-top: 0.2rem;
   }
+
+   .desktopModeFooter {
+        display: none;
+    }
+
+    .mobileModeFooter {
+        display: grid;
+    }
+
 }
 
 /* max 768 */
