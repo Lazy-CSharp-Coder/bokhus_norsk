@@ -1,1 +1,209 @@
-@import "./WhereToBuyList.css";
+.sortDiv {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+    /* padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem; */
+    border: 1px solid var(--borderIconColor);
+    border-radius: 5px;;
+    background-color: var(--inputBackground);
+    font-family: var(--robotoFont);
+
+}
+
+.sortHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position:relative;
+    border-bottom: 1px solid var(--borderIconColor);
+    border-radius: 5px;
+    align-items: center;
+    padding: 1rem 1rem;
+    background-color: var(--regBackground);
+    width: 100%;
+}
+
+.sortCollapseIcon {
+    position: absolute;
+    right:2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.sortButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+
+
+.sortStatusDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.sortUp {
+    transform: rotate(180deg) translateY(50%);
+    /* bottom: 50%; */
+}
+
+
+.sortCurrentMode {
+    color: var(--myWhiteColor);
+}
+.sortCurrentDirection {
+ color: var(--myWhiteColor);
+}
+
+.sortModeAnim {
+    animation-name: scaleIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.modeDiv {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+}
+.directionDiv {
+  display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* .sortButton {
+    font-size: 1rem;
+} */
+
+/* .sortButton {
+    padding : 1rem 2rem;
+    width: 10rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+} */
+
+.sortIcon {
+    color: var(--myWhiteColor);
+       
+
+}
+
+.sortIconStatus {
+ width: var(--sortIconDirectionSize);
+        height: var(--sortIconDirectionSize);
+color: var(--myWhiteColor);
+}
+
+.sortButton {
+    --sortIconModeSize : 1.2rem;
+    --sortIconDirectionSize: 1.5rem;
+       padding : 0.5rem 0rem;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    justify-content:center;
+    align-items: center;
+    font-size: 0.82rem;
+color: var(--buttonColor);
+    border-width: 3px;
+    /* border: 2px outset red; */
+    background-color: var(--buttonBackgroundColor);
+    border-top-color:var(--buttonBorderTopLeftColor);
+  border-left-color: var(--buttonBorderTopLeftColor);
+  
+border-radius: 2px;
+
+  /* Shadow on Bottom and Right */
+border-bottom-color: var(--buttonBorderBottomRightColor);
+  border-right-color: var(--buttonBorderBottomRightColor);
+}
+
+.submitButton:active{
+    /* border: 2px inset var(--borderIconColor); */
+    /* Shadow on Top and Left */
+border-top-color:  var(--buttonBorderBottomRightColor);
+  border-left-color:  var(--buttonBorderBottomRightColor);
+  
+  /* Highlight on Bottom and Right */
+  border-bottom-color: var(--buttonBorderTopLeftColor);
+  border-right-color: var(--buttonBorderTopLeftColor);
+}
+
+.submitButton:active span {
+    display: inline-block;
+    transform: translate(2px, 2px);
+}
+
+.isActive {
+        /* border: 2px inset var(--borderIconColor); */
+    /* Shadow on Top and Left */
+border-top-color:  var(--buttonBorderBottomRightColor);
+  border-left-color:  var(--buttonBorderBottomRightColor);
+  
+  /* Highlight on Bottom and Right */
+  border-bottom-color: var(--buttonBorderTopLeftColor);
+  border-right-color: var(--buttonBorderTopLeftColor);
+}
+
+.isActive span {
+     display: inline-block;
+    transform: translate(2px, 2px);
+}
+
+
+/* max 640 */
+
+@media (max-width: 63.99em) {
+    .modeDiv, .directionDiv {
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+    .sortButton {
+        width: 100%;
+
+    
+    }
+    .sortIconStatus {
+     --sortIconDirectionSize: 3rem;
+    }
+}
+
+/* max 480px */
+@media (max-width: 29.99em) {
+
+    .modeDiv, .directionDiv {
+        gap: 0.7rem;
+    }
+    .sortButton {
+        padding: 0.2rem 0;
+    }
+    .sortIconStatus {
+        --sortIconDirectionSize: 2rem;
+    }
+  
+}
+

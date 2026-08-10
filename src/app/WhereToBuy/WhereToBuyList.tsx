@@ -8,7 +8,7 @@ import { TbBooks } from "react-icons/tb";
 import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
 import { PiArrowFatLineDownFill} from "react-icons/pi";
 // muligens release date og genere senere
-import "./WhereToBuyList.module.css";
+import styles from "./WhereToBuyList.module.css";
 
 type SortMode = "Serie" | "Author";
 type SortDirection = "Ascending" | "Descending";
@@ -59,11 +59,11 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
 
     const { mode, direction} = sortHandler;
     return (
-        <ul className="buySeriesList">
-            <div className="sortDiv fadeInFromBelowAnim" style={{animationDelay: `${waitForMainAnim}ms`}} ><div className="sortHeader">SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? "sortUp" : "sortDown"} sortCollapseIcon fadeInAnim`}/></span></div>
+        <ul className={styles.buySeriesList}>
+            <div className={`${styles.sortDiv} fadeInFromBelowAnim`} style={{animationDelay: `${waitForMainAnim}ms`}} ><div className={styles.sortHeader}>SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? styles.sortUp : styles.sortDown} ${styles.sortCollapseIcon} fadeInAnim`}/></span></div>
               {isSortMenuOpen &&
-                <div className="sortButtonContainer">
-                    <div className="modeDiv">
+                <div className={styles.sortButtonContainer}>
+                    <div className={styles.modeDiv}>
                         <button className={`sortButton ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className="sortIcon"/> by Serie</button>
                         <button className={`sortButton ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className="sortIcon"/> by Author</button>
                         </div>
