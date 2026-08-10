@@ -181,6 +181,20 @@ input[type="checkbox"] {
 } 
 
 
+.desktopMode {
+
+  display: flex;
+}
+
+.desktopModeBlock {
+  display: block;
+}
+
+.mobileMode {
+  display: none;
+}
+
+
 @media (max-width: 199.99em) /* usikker */
 {
   html {
