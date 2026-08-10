@@ -5,9 +5,9 @@ import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { SeriesPageList } from "./SeriesPageList";
 import { ErrorPage } from "@/components/common/ErrorPage";
+
 export default async function Series() 
 {
-
   
   const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
 
