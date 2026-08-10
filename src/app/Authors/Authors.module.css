@@ -54,11 +54,6 @@ padding:0;
      
 
 }
-
-.voicesText {
-    /* color :white; */
-}
-
 .bokhusText {
     color: var(--bokhusFutureColor);
 }
@@ -104,32 +99,7 @@ padding:0;
 
 
 
-@media (max-width: 199.99em)
-{
- 
-}
 
-@media (max-width: 159.99em) {
-    
-}
-
- @media (max-width: 119.99em) {
-
-    .authorsSection {
-        width: 80%;
-    }
-
-} 
-
-@media (max-width: 89.99em) {
-  html {
-  /* font-size: 70%; */
-}
-   .authorsSection {
-        /* max-width: 80rem; */
-    }
-
-}
 
 @media (max-width: 63.99em) {
 
@@ -146,12 +116,4 @@ padding:0;
         max-width: 95%;
     }
 
-}
-@media (max-width: 39.99em) {
-
-}
-
-
-@media (max-width: 24rem) {
-  
 }
