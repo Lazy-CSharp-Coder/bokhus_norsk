@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import type { UserData } from "../Register/registerSchema";
 import styles from "./admin.module.css"
 import { CopyButton } from "./CopyButton";
+import { BokHusCom } from "@/components/common/BokHusCom";
 
 export default async function Admin()
 {
@@ -29,6 +30,9 @@ export default async function Admin()
 
     return (
         <main className={styles.adminPage}>
+                    <div className={styles.backgroundDeletePage}>
+                <BokHusCom fontSize="14rem" />
+            </div>
             <section className={styles.adminSection}>
                <h1 className={styles.adminPageHeading}>Email adresses to send newsletters to :</h1> 
                 <div className={styles.emailDiv}>
