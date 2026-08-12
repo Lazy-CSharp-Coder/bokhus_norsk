@@ -29,11 +29,11 @@ export default async function Admin()
     const copyString = emailAdressesToSendTo.join(" ;");
 
     return (
-        <main className={styles.adminPage}>
+        <main className={`${styles.adminPage}`}>
                     <div className={styles.backgroundAdminPage}>
                 <BokHusCom fontSize="14rem" />
             </div>
-            <section className={styles.adminSection}>
+            <section className={`${styles.adminSection} fadeInAnim`}>
                <h1 className={styles.adminPageHeading}>Email adresses to send newsletters to :</h1> 
                 <div className={styles.emailDiv}>
                     {emailAdressesToSendTo.map((item, index, array) =>

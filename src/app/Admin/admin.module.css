@@ -39,7 +39,6 @@
     border-radius: var(--borderRadiusReg);
     overflow-y: hidden;
     background-color: rgba(0, 0, 0, 0.9);
-    ;
 }
 
 .adminPageHeading {
