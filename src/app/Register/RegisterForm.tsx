@@ -25,6 +25,7 @@ import { languageOptions } from "./registerSchema";
 import { RegErrorMessage } from "./RegErrorMessage";
 import styles from "./RegisterForm.module.css";
 import { SubmitButton } from "../../components/common/SubmitButton";
+import { submitToClerk } from "./submitToClerk";
 
 type RegisterFormInput = z.input<typeof registerSchema>;
 
@@ -70,7 +71,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
     const onSubmit = async (data: UserData) =>
     {
  
-       const result = await submitUserData(data);
+       const result = await submitToClerk(data);
 
         if (result.success)
         {
