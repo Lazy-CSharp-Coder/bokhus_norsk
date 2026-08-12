@@ -15,7 +15,7 @@ export default async function Admin()
         return { success: false, error: "Not authorized" };
     }
 
-    if (userId != process.env.ADMIN_USER_ID) { redirect("/"); }
+    if (userId != process.env.NEXT_PUBLIC_MHUSER_ID ) { redirect("/"); }
 
     const client = await clerkClient();
 
@@ -30,7 +30,7 @@ export default async function Admin()
 
     return (
         <main className={styles.adminPage}>
-                    <div className={styles.backgroundDeletePage}>
+                    <div className={styles.backgroundAdminPage}>
                 <BokHusCom fontSize="14rem" />
             </div>
             <section className={styles.adminSection}>
