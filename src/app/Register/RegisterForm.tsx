@@ -7,7 +7,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { useState } from "react";
 import { BokHusCom } from "../../components/common/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
-import { submitUserData } from "./submitToSanity";
+
 import Image from "next/image";
 // react icons
 import { genresDef } from "./registerSchema";

@@ -14,7 +14,7 @@ function LoginClerkContent()
 
     // const path = `${pathname}${searchParams ? `?${searchParams.toString()}` : ""}`;
     // const { signOut } = useClerk();
-
+    const isAdmin = true;
     return (
 
         <div className={styles.clerkButtons}>
@@ -54,7 +54,10 @@ function LoginClerkContent()
                                 labelIcon={<span className={styles.clerkButtonSpan}><RiDeleteBin6Line size="1rem" className={styles.deleteProfileIcon} />
 
                                 </span>} href="/DeleteProfile" />
-
+                        {isAdmin &&
+                            <UserButton.Link label="Go to newletter page" href="/Admin"  labelIcon={<span className={styles.clerkButtonSpan}><RiDeleteBin6Line size="1rem" className={styles.deleteProfileIcon}/> </span> }/>
+                            
+                        }
                         </UserButton.MenuItems>
                     </UserButton>
 
