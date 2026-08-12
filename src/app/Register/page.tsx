@@ -22,10 +22,10 @@ export default async function Register()
     return "Unauthorized user";
   }
 
-  const get = `User.${userId}`;
+  const myId = `User.${userId}`;
 
   const USER_QUERY = `*[_type == "User" && _id == $userIdFromClerk][0]`;
-  const userData: UserData = await client.fetch<UserData>(USER_QUERY, { _id : get });
+  const userData: UserData = await client.fetch<UserData>(USER_QUERY, { userIdFromClerk : myId });
   const dataToSend: UserData =
     userData ? userData :
       {
