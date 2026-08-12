@@ -6,6 +6,8 @@ import Link from "next/link";
 import { FaUserLarge } from "react-icons/fa6";
 import styles from "./LoginClerk.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { GiNewspaper } from "react-icons/gi";
+import { useAuth } from '@clerk/nextjs'
 
 function LoginClerkContent()
 {
@@ -14,7 +16,10 @@ function LoginClerkContent()
 
     // const path = `${pathname}${searchParams ? `?${searchParams.toString()}` : ""}`;
     // const { signOut } = useClerk();
+     const { userId } = useAuth();
+     
 
+    const isAdmin = userId == process.env.NEXT_PUBLIC_MHUSER_ID ? true : false;
     return (
 
         <div className={styles.clerkButtons}>
@@ -54,7 +59,10 @@ function LoginClerkContent()
                                 labelIcon={<span className={styles.clerkButtonSpan}><RiDeleteBin6Line size="1rem" className={styles.deleteProfileIcon} />
 
                                 </span>} href="/DeleteProfile" />
-
+                        {isAdmin &&
+                            <UserButton.Link label="Newsletter subscribers" href="/Admin"  labelIcon={<span className={styles.clerkButtonSpan}><GiNewspaper size="1rem"/> </span> }/>
+                            
+                        }
                         </UserButton.MenuItems>
                     </UserButton>
 
