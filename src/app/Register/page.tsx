@@ -2,7 +2,7 @@
 
 import styles from  "./Register.module.css";
 import { RegisterForm } from "@/app/Register/RegisterForm";
-import { clerkUserId, UserData } from "@/app/Register/registerSchema";
+import {registerSchema, UserData } from "@/app/Register/registerSchema";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
 import { SignIn } from "./SignIn";
@@ -22,14 +22,15 @@ export default async function Register()
     return "Unauthorized user";
   }
 
+  const rawData = user.publicMetadata?.userData;
 
-  const USER_QUERY = `*[_type == "User" && userId == $userIdFromClerk]`;
-  const userData: UserData[] = await client.fetch<UserData[]>(USER_QUERY, { userIdFromClerk: userId });
+  const validatedData = registerSchema.safeParse(rawData);
+  const userData: UserData|null = validatedData.success ? validatedData.data : null;
+
   const dataToSend: UserData =
-    userData[0] ? userData[0] :
+    userData ? userData :
       {
-        userId: clerkUserId.parse(userId),
-        email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
+       email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
         country: "",
         preferredLanguage: "English",
         genresInterestedIn: [],
@@ -44,9 +45,8 @@ export default async function Register()
   return (
 
     <main className={styles.registerPage}>
-
       <BackgroundImage className={styles.registerBackground} src="/images/backgrounds/contact.webp"/>
-      <RegisterForm data={dataToSend} isNewUser={!userData[0] ? true : false} />
+      <RegisterForm data={dataToSend} isNewUser={!userData ? true : false} />
     </main>
 
 

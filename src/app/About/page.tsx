@@ -5,18 +5,16 @@ import type { About } from "@/types/types";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { QuotesBottom } from "@/components/common/QuotesBottom";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
-import styles from "./About.module.css";
-
+import styles from "./About.module.css"
 
 export default function About()
 {
     const aboutUs: About = aboutJson;
     const animInc: number = 200;
-
     const colorLine: string = "rgb(221, 221, 221)";
 
     return (
-        <main className={`${styles.aboutPage}`}>
+        <main className={styles.aboutPage}>
             <BackgroundImage className={styles.aboutBackground} src="/images/backgrounds/about.webp" />
             <section className={`${styles.aboutSection} fadeInAnim`}>
                 <h1 className={`${styles.aboutHeading} fadeInAnim`} style={{ animationDelay: "0.6s" }}>{aboutUs.aboutHeading.toUpperCase()}</h1>
