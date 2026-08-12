@@ -1,0 +1,29 @@
+.adminPage {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow:1;
+    width:100%;
+    height:100%;
+}
+
+.adminSection {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap:1rem;
+     width:50rem;
+    
+}
+
+.adminPageHeading {
+    font-size:2rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid white;
+}
+
+.emailDiv {
+    display: flex;
+    flex-wrap: wrap;
+}

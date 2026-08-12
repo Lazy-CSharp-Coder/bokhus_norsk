@@ -14,7 +14,7 @@ export default async function Admin()
         return { success: false, error: "Not authorized" };
     }
 
-    if (userId != process.env.MYID) { redirect("/"); }
+    if (userId != process.env.ADMIN_USER_ID) { redirect("/"); }
 
     const client = await clerkClient();
 
@@ -27,20 +27,15 @@ export default async function Admin()
 
     const copyString = emailAdressesToSendTo.join(" ;");
 
-    const handleCopy = () =>
-    {
-        console.log("copy pressed");
-    }
-
     return (
         <main className={styles.adminPage}>
             <section className={styles.adminSection}>
-                Email adresseses to send newsletters to :
+               <h1 className={styles.adminPageHeading}>Email adresses to send newsletters to :</h1> 
                 <div className={styles.emailDiv}>
-                    {emailAdressesToSendTo.map((item, index) =>
-                        <p key={"adresses" + index}>{item}</p>)}
+                    {emailAdressesToSendTo.map((item, index, array) =>
+                        <p key={"adresses" + index}>{item} {index < array.length-1 ? ",": ""} </p>)}
                 </div>
-                <CopyButton copyToClipboard={handleCopy}/>
+                <CopyButton copyString={copyString}/>
             </section>
         </main>
 
