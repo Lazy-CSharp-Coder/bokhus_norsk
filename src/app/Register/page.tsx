@@ -22,8 +22,10 @@ export default async function Register()
     return "Unauthorized user";
   }
 
-  const rawData = 
-  const userData = registerSchema()
+  const rawData = user.publicMetadata?.userData;
+
+  const validatedData = registerSchema.safeParse(rawData);
+  const userData: UserData|null = validatedData.success ? validatedData.data : null;
 
   const dataToSend: UserData =
     userData ? userData :
