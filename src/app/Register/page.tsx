@@ -2,7 +2,7 @@
 
 import styles from  "./Register.module.css";
 import { RegisterForm } from "@/app/Register/RegisterForm";
-import {UserData } from "@/app/Register/registerSchema";
+import {registerSchema, UserData } from "@/app/Register/registerSchema";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
 import { SignIn } from "./SignIn";
@@ -22,10 +22,9 @@ export default async function Register()
     return "Unauthorized user";
   }
 
-  const myId = `User.${userId}`;
+  const rawData = 
+  const userData = registerSchema()
 
-  const USER_QUERY = `*[_type == "User" && _id == $userIdFromClerk][0]`;
-  const userData: UserData = await client.fetch<UserData>(USER_QUERY, { userIdFromClerk : myId });
   const dataToSend: UserData =
     userData ? userData :
       {
