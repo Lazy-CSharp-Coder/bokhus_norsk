@@ -44,7 +44,6 @@ export default async function Register()
   return (
 
     <main className={styles.registerPage}>
-
       <BackgroundImage className={styles.registerBackground} src="/images/backgrounds/contact.webp"/>
       <RegisterForm data={dataToSend} isNewUser={!userData ? true : false} />
     </main>
