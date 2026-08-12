@@ -19,15 +19,16 @@ export async function submitUserData(rawData: UserData)
     }
 
     const result = await auth();
-    if(!result.userId) return { success : false, message : "Not signed in."};
+    if (!result.userId) return { success: false, message: "Not signed in." };
 
     const authUserId = clerkUserId.parse(result.userId);
 
-    if (rawData.userId !== authUserId)
-        return { success: false, message: "User id authorized and id recieved do not match. User data not submitted." };
+    // if (rawData.userId !== authUserId)
+    //     return { success: false, message: "User id authorized and id recieved do not match. User data not submitted." };
 
-    
-    const payload : UserData = { ...rawData, userId :  authUserId};
+
+    const payload: UserData = { ...rawData };
+    const newId = `User.${result.userId}`;  //make it private, need read token
 
     const arcInfo = rawData.arcInterest ? "User has registered an ARC profile for you to consider." : "User has not applied for ARC copies.";
 
@@ -37,30 +38,39 @@ export async function submitUserData(rawData: UserData)
 
     };
 
-    const query = `*[_type == "User" && userId == $userId][0]._id`;
-    const existingId = await sanityWriteClient.fetch<string | null>(query, { userId: authUserId });
+    // const query = `*[_type == "User" && userId == $userId][0]._id`;
+    // const existingId = await sanityWriteClient.fetch<string | null>(query, { userId: authUserId });
 
     try
     {
-        if (existingId)
-        {
-            // Update existing document - don't include _type as it's immutable
-            await sanityWriteClient.patch(existingId).set({
-              
-                ...payload,
-                _updatedAt: new Date().toISOString()
-            }).commit();
-        } else
-        {
-            // Create new document
-            await sanityWriteClient.create({
-                _type: "User",
-                ...payload,
-                _createdAt: new Date().toISOString()
-            });
+        await sanityWriteClient.createOrReplace(
+            {
+                _id : newId, 
+                _type : "User",
+                ...payload
+
+            }
+        );
+        // if (existingId)
+        // {
+        //     // Update existing document - don't include _type as it's immutable
+        //     await sanityWriteClient.patch(existingId).set({
+
+        //         ...payload,
+        //         _updatedAt: new Date().toISOString()
+        //     }).commit();
+        // } else
+        // {
+        //     // Create new document
+        //     await sanityWriteClient.create({
+        //         _type: "User",
+        //         _id : 
+        //         ...payload,
+        //         _createdAt: new Date().toISOString()
+        //     });
 
 
-        }
+        // }
         const response = await sendNewUserAlert(newUserData);
         if (!response.success) console.error("There was an error sending new user alert : " + response.message);
         return ({ success: true });

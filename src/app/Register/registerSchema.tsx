@@ -74,7 +74,7 @@ export const arcSchema = z.object(
 
 export const registerSchema = z.object(
     {
-        userId: clerkUserId,
+        // userId: clerkUserId,
         email: emailSchema,
         country: z.string().optional(),
         preferredLanguage: preferredLanguageDef,
