@@ -22,14 +22,14 @@ export default async function Register()
     return "Unauthorized user";
   }
 
+  const get = `User.${userId}`;
 
-  const USER_QUERY = `*[_type == "User" && userId == $userIdFromClerk]`;
-  const userData: UserData[] = await client.fetch<UserData[]>(USER_QUERY, { userIdFromClerk: userId });
+  const USER_QUERY = `*[_type == "User" && _id == $userIdFromClerk][0]`;
+  const userData: UserData = await client.fetch<UserData>(USER_QUERY, { _id : get });
   const dataToSend: UserData =
-    userData[0] ? userData[0] :
+    userData ? userData :
       {
-        userId: clerkUserId.parse(userId),
-        email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
+       email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
         country: "",
         preferredLanguage: "English",
         genresInterestedIn: [],
@@ -46,7 +46,7 @@ export default async function Register()
     <main className={styles.registerPage}>
 
       <BackgroundImage className={styles.registerBackground} src="/images/backgrounds/contact.webp"/>
-      <RegisterForm data={dataToSend} isNewUser={!userData[0] ? true : false} />
+      <RegisterForm data={dataToSend} isNewUser={!userData ? true : false} />
     </main>
 
 
