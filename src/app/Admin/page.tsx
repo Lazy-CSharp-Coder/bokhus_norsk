@@ -10,12 +10,11 @@ export default async function AdminPage()
 {
     const { userId } = await auth();
 
-    if (!userId) 
+    if (userId != process.env.NEXT_PUBLIC_MHUSER_ID)
     {
-        return { success: false, error: "Not authorized" };
+        console.log("Not authorized");
+        redirect("/");
     }
-
-    if (userId != process.env.NEXT_PUBLIC_MHUSER_ID) { redirect("/"); }
 
     const client = await clerkClient();
 
