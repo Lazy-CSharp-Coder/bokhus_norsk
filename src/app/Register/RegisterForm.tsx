@@ -95,7 +95,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                     {userInfo != "Display email" ?
                         <div key={userInfo} className={styles.userInfoDiv} >
                             {userInfo == "No user message" ? <IoMdClose size="1.5rem" className= {`${styles.userInfoIcon} userIconAnim`}/> : <IoCheckmarkSharp size="1.4rem" className={`${styles.userInfoIcon} userIconAnim`} />}
-                            <span className={styles.userTextAnim} onAnimationEnd={() => setUserInfo("Display email")}>{userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
+                            <span className="userTextAnim" onAnimationEnd={() => setUserInfo("Display email")}>{userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
                         </div> :
                         <div className={styles.mailIconUserEmailWrapper}><IoMailOutline size="1.8rem" className={`${styles.regMailIcon} scaleInAnim`} />  <p key={userInfo + "#userEmail"} className={`${styles.userEmailText} scaleInAnim`} style={{ animationDuration: "2s" }}>{userEmail}</p>
                         </div>
