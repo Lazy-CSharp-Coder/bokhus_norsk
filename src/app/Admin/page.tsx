@@ -2,11 +2,11 @@ import { clerkClient } from "@clerk/nextjs/server";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import type { UserData } from "../Register/registerSchema";
-import styles from "./admin.module.css"
+import styles from "./admin.module.css";
 import { CopyButton } from "./CopyButton";
 import { BokHusCom } from "@/components/common/BokHusCom";
 
-export default async function Admin()
+export default async function AdminPage()
 {
     const { userId } = await auth();
 
@@ -15,7 +15,7 @@ export default async function Admin()
         return { success: false, error: "Not authorized" };
     }
 
-    if (userId != process.env.NEXT_PUBLIC_MHUSER_ID ) { redirect("/"); }
+    if (userId != process.env.NEXT_PUBLIC_MHUSER_ID) { redirect("/"); }
 
     const client = await clerkClient();
 
@@ -30,16 +30,16 @@ export default async function Admin()
 
     return (
         <main className={`${styles.adminPage}`}>
-                    <div className={styles.backgroundAdminPage}>
+            <div className={styles.backgroundAdminPage}>
                 <BokHusCom fontSize="14rem" />
             </div>
             <section className={`${styles.adminSection} fadeInAnim`}>
-               <h1 className={styles.adminPageHeading}>Email adresses to send newsletters to :</h1> 
+                <h1 className={styles.adminPageHeading}>Email adresses to send newsletters to :</h1>
                 <div className={styles.emailDiv}>
                     {emailAdressesToSendTo.map((item, index, array) =>
-                        <p key={"adresses" + index}>{item} {index < array.length-1 ? ",": ""} </p>)}
+                        <p key={"adresses" + index}>{item} {index < array.length - 1 ? "," : ""} </p>)}
                 </div>
-                <CopyButton copyString={copyString}/>
+                <CopyButton copyString={copyString} />
             </section>
         </main>
 
