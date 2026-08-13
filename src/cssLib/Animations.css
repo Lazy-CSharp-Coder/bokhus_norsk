@@ -289,3 +289,27 @@
     animation-delay: 0.8s;
 }
 
+
+
+@keyframes slideInAndOut {
+    0% {
+        transform: scale(0, 0);
+    }
+
+    1% {
+        transform: scale(0.2, 0.2);
+    }
+
+    10% {
+        transform: scale(1, 0);
+    }
+
+    30% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+
+}
