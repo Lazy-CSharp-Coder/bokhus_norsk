@@ -63,7 +63,7 @@ export default function WorkWithUsPage()
 
                         </p>
                         <p className={styles.workWithUsIntroText}>We are always interested in hearing from skilled people who would like to work with us on individual projects or build a long-term collaboration with BokHus.</p>
-                        <QuotesWorkWithUs fontSize="1.4rem"/>
+                        <QuotesWorkWithUs fontSize="1.5rem"/>
               
                     </div>
                 </article>
