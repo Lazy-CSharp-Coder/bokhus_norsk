@@ -1,14 +1,15 @@
 "use client";
 import worWithUsJson from "@/json//workWithUs.json";
-import { WorkWithUsButton } from "./WorkWithUsButton";
 import { useState, useEffect } from "react";
-import { WorkWithUsStartup, WorkWithUsTheme } from "./WorkWithUsTheme";
 import styles from "./WorkWithUs.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import Link from "next/link";
 import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
-
+import type { ReactIcons } from "@/types/types";
+import { GiBookCover } from "react-icons/gi";
+import { TfiPencilAlt } from "react-icons/tfi";
+import { WorkWithUsTheme } from "./WorkWithUsTheme";
 
 // export interface WorkWithUs
 // {
@@ -25,9 +26,12 @@ export interface WorkWithUs
     themeHeading: string,
     descriptionHeading: string,
     descriptionList: string[],
-    experience: string;
+    experience: string,
+    iconNumber : number
 
 }
+
+
 
 
 export default function WorkWithUsPage()
@@ -54,6 +58,7 @@ export default function WorkWithUsPage()
             <section className={styles.workWithUsSection}>
                 <article className={`${styles.workWithUsTextArticle} fadeInAnim`} style={{ animationDelay: "0.5s" }}>
                     <div className={styles.headingLineWrapper}>
+
                         <h1 className={styles.workWithUsHeading}> Help Us Bring Books to New Readers </h1>
                         <ExpandingLine key={"WorkLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                     </div>
@@ -75,33 +80,16 @@ export default function WorkWithUsPage()
 
                     </div>
                 </article>
-                <article className={styles.workWithUsListArticle}>
+                <section className={styles.workWithUsSection}>
                     <h2 className={styles.whoWeAreLookingForHeading}>
                         Who we are looking for :
                     </h2>
-
-                    <ul className={styles.whoWeAreLookingForList}>
-                        {workWithUsArray.map((theme, index) =>
-                            <li key={theme.themeHeading + index} className={styles.themeListItem} >
-                                <h3>{theme.themeHeading}</h3>
-                                <p>{theme.theme}</p>
-                                <p>{theme.descriptionHeading}</p>
-                                <ul className={styles.descriptionList}>
-                                    {theme.descriptionList.map((item, index) =>
-                                        <li key={"themeDescriptionItemKey" + index}>{item}</li>
-                                    )}
-
-                                </ul>
-
-                                <p>{theme.experience}</p>
-
-                            </li>
-
-                        )}
-
-                    </ul>
-
-                </article>
+                    <ExpandingLine lineSize={1} animationDelay="1.5s" animationDuration="2.5s" />
+                    {workWithUsArray.map((item, index) =>
+                    <WorkWithUsTheme key={index + "workwithusTheme"} subject={item}/>
+                    )}
+                           
+                </section>
                 <p className={`${styles.workWithUsIntroText} fadeInAnim`} style={{ animationDelay: "2.8s" }} >If your are interested in working with us, click <Link href="/Contact" className={styles.linkContact}>here</Link> to fill out contact information.</p>
             </section>
         </main >

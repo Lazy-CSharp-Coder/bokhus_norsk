@@ -10,14 +10,18 @@
     border: 2px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
     height: fit-content;
-  
+ 
 }
 
-.themeIconWrapper {
+.themeHeadingIconWrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+   padding : 2rem 4rem ;
+    font-size: 1.5rem;
+    border: 1px solid var(--borderIconColor);
+    background-color: var(--regBackground);
 }
 
 .themeHeading {
@@ -39,3 +43,18 @@
     padding-left: 2rem;
     font-size: 1.1rem;
 }
+
+
+
+.descriptionList {
+    display: flex;
+    flex-direction: column;
+    gap:0.3rem;
+    margin-left: 1rem;
+}
+
+.descriptionList li::marker{
+    content: "📓";
+    font-size: 1.2rem;
+}
+

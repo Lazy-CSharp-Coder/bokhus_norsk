@@ -11,7 +11,8 @@
             "Facsimile and restored historical editions",
             "Series requiring a consistent visual identity"
         ],
-        "experience": "Experience with Amazon KDP, print-on-demand publishing or international book markets is an advantage."
+        "experience": "Experience with Amazon KDP, print-on-demand publishing or international book markets is an advantage.",
+        "iconNumber" : 0
     },
     {
         "theme": "Book Designers & Adobe InDesign Specialists",
@@ -30,6 +31,7 @@
             "Reformatting older books for modern editions",
             "Preparing books for different print-on-demand platforms"
         ],
-        "experience": "Experience preparing files for Amazon KDP, IngramSpark, BoD or similar publishing platforms is especially useful."
-    }
+        "experience": "Experience preparing files for Amazon KDP, IngramSpark, BoD or similar publishing platforms is especially useful.",
+        "iconNumber" : 1
+     }
 ]
