@@ -21,11 +21,11 @@ import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
 
 export interface WorkWithUs 
 {
-        theme : string,
-        themeHeading  : string,
-        descriptionHeading : string,
-        descriptionList : string[],
-        experience : string
+    theme: string,
+    themeHeading: string,
+    descriptionHeading: string,
+    descriptionList: string[],
+    experience: string;
 
 }
 
@@ -71,38 +71,35 @@ export default function WorkWithUsPage()
 
                         </p>
                         <p className={styles.workWithUsIntroText}>We are always interested in hearing from skilled people who would like to work with us on individual projects or build a long-term collaboration with BokHus.</p>
-                        <QuotesWorkWithUs fontSize="1.5rem"/>
-              
+                        <QuotesWorkWithUs fontSize="1.5rem" />
+
                     </div>
                 </article>
                 <article className={styles.workWithUsListArticle}>
                     <h2 className="whatWeAreLookingForHeading">
                         Who we are looking for :
                     </h2>
-                    
+
                     <ul className="whatWeAreLookingForList">
                         {workWithUsArray.map((theme, index) =>
-                         <div className="workWithUsThemeArticle">
-                            <h3>{theme.themeHeading}</h3>
-                            <p>{theme.theme}</p>
-                            <p>{theme.descriptionHeading}</h4>
-                            <ul className="descriptionList">
-                                {theme.descriptionList.map((item, index) =>
-                                <li>{item}</li>
-                                )}
-                            
-                            </ul>
-                             
-                <p>{theme.experience}</p>
+                            <div className="workWithUsThemeArticle">
+                                <h3>{theme.themeHeading}</h3>
+                                <p>{theme.theme}</p>
+                                <p>{theme.descriptionHeading}</h4>
+                                <ul className="descriptionList">
+                                    {theme.descriptionList.map((item, index) =>
+                                        <li>{item}</li>
+                                    )}
 
-                         </div>
-                        
+                                </ul>
+
+                                <p>{theme.experience}</p>
+
+                            </div>
+
                         )}
 
                     </ul>
-                    
-
-
 
                     <ul className={styles.workList}>
                         {workWithUsArray.map((item, index) =>
