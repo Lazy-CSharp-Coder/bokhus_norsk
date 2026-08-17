@@ -10,15 +10,24 @@ import Link from "next/link";
 import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
 
 
-export interface WorkWithUs
-{
-    theme: string,
-    subTitle?: string,
-    description?: string[],
-    list: string[],
-    iconNumber: number;
-}
+// export interface WorkWithUs
+// {
+//     theme: string,
+//     subTitle?: string,
+//     description?: string[],
+//     list: string[],
+//     iconNumber: number;
+// }
 
+export interface WorkWithUs 
+{
+        theme : string,
+        themeHeading  : string,
+        descriptionHeading : string,
+        descriptionList : string[],
+        experience : string
+
+}
 
 
 export default function WorkWithUsPage()
@@ -49,7 +58,6 @@ export default function WorkWithUsPage()
                         <ExpandingLine key={"WorkLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                     </div>
 
-
                     <div className={styles.workWithUsTextDiv}>
                         <p className={styles.workWithUsIntroText}>
 
@@ -68,6 +76,33 @@ export default function WorkWithUsPage()
                     </div>
                 </article>
                 <article className={styles.workWithUsListArticle}>
+                    <h2 className="whatWeAreLookingForHeading">
+                        Who we are looking for :
+                    </h2>
+                    
+                    <ul className="whatWeAreLookingForList">
+                        {workWithUsArray.map((theme, index) =>
+                         <div className="workWithUsThemeArticle">
+                            <h3>{theme.themeHeading}</h3>
+                            <p>{theme.theme}</p>
+                            <p>{theme.descriptionHeading}</h4>
+                            <ul className="descriptionList">
+                                {theme.descriptionList.map((item, index) =>
+                                <li>{item}</li>
+                                )}
+                            
+                            </ul>
+                             
+                <p>{theme.experience}</p>
+
+                         </div>
+                        
+                        )}
+
+                    </ul>
+                    
+
+
 
                     <ul className={styles.workList}>
                         {workWithUsArray.map((item, index) =>

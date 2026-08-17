@@ -1,118 +1,35 @@
 [
     {
-        "theme": "Writing & Editing",
-        "list": [
-            "Manus review",
-            "Structural editing",
-            "Copy editing",
-            "Proofreading",
-            "Writing coaching",
-            "AI writing assistance"
+        "themeHeading": "Cover Designers",
+        "theme": "We are looking for designers who can create professional, commercially appealing book covers for both print and digital editions.",
+        "descriptionHeading": "Project may include :",
+        "descriptionList": [
+            "Fiction and historical fiction",
+            "Non-fiction",
+            "Local history and genealogy",
+            "Educational books",
+            "Facsimile and restored historical editions",
+            "Series requiring a consistent visual identity"
         ],
-        "iconNumber": 1
+        "experience": "Experience with Amazon KDP, print-on-demand publishing or international book markets is an advantage."
     },
     {
-        "theme": "Publishing",
-        "list": [
-            "Self-publishing support",
-            "Traditional publishing guidance",
-            "ISBN assistance",
-            "Print & eBook publishing",
-            "Audiobook publishing"
+        "theme": "Book Designers & Adobe InDesign Specialists",
+        "themeHeading": "We regularly need help preparing books for professional publication.",
+        "descriptionHeading": "Typical assignments include :",
+        "descriptionList": [
+            "Adobe InDesign book layout",
+            "Interior book design",
+            "Typography",
+            "Chapter and heading styles",
+            "Image placement",
+            "Tables and illustrations",
+            "Footnotes and references",
+            "Print-ready PDF production",
+            "EPUB preparation",
+            "Reformatting older books for modern editions",
+            "Preparing books for different print-on-demand platforms"
         ],
-        "iconNumber": 2
-    },
-    {
-        "theme": "Design",
-        "list": [
-            "Book cover design",
-            "Interior layout",
-            "Illustrations",
-            "Image restoration",
-            "Maps & diagrams"
-        ],
-        "iconNumber": 3
-    },
-    {
-        "theme": "Translation",
-        "list": [
-            "Norwegian ↔ English",
-            "American English",
-            "British English",
-            "Localization"
-        ],
-        "iconNumber": 4
-    },
-    {
-        "theme": "Social media",
-        "list": [
-            "Book launch planning"
-        ],
-        "iconNumber": 5
-    },
-    {
-        "theme": "AI Services",
-        "list": [
-            "AI for authors",
-            "Plot development",
-            "Character development",
-            "Book planning"
-        ],
-        "iconNumber": 6
-    },
-    {
-        "theme": "Research assistance",
-        "list": [
-            "Marketing content",
-            "Historical publications"
-        ],
-        "iconNumber": 7
-    },
-    {
-        "theme": "OCR correction",
-        "list": [
-            "Modern language adaptation",
-            "Historical editing",
-            "Source verification",
-            "Archive restoration",
-            "Digital Products",
-            "Templates",
-            "Checklists",
-            "Writing tools",
-            "AI prompts",
-            "Author resources"
-        ],
-        "iconNumber": 8
-    },
-    {
-        "theme": "Courses",
-        "list": [
-            "How to write a book",
-            "Self-publishing",
-            "AI for writers",
-            "Amazon publishing",
-            "Book marketing"
-        ],
-        "iconNumber": 9
-    },
-    {
-        "theme": "Consulting",
-        "list": [
-            "Author coaching",
-            "Publisher consulting",
-            "Writing strategy",
-            "Publishing strategy",
-            "Future Features",
-            "Author dashboard",
-            "Manuscript upload",
-            "Project management",
-            "Manuscript upload",
-            "Project management",
-            "AI manuscript analysis",
-            "Collaboration tools",
-            "Progress tracking",
-            "Client portal"
-        ],
-        "iconNumber": 10
+        "experience": "Experience preparing files for Amazon KDP, IngramSpark, BoD or similar publishing platforms is especially useful."
     }
 ]
