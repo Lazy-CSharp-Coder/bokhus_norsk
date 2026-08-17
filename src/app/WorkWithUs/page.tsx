@@ -76,45 +76,34 @@ export default function WorkWithUsPage()
                     </div>
                 </article>
                 <article className={styles.workWithUsListArticle}>
-                    <h2 className="whatWeAreLookingForHeading">
+                    <h2 className={styles.whoWeAreLookingForHeading}>
                         Who we are looking for :
                     </h2>
 
-                    <ul className="whatWeAreLookingForList">
+                    <ul className={styles.whoWeAreLookingForList}>
                         {workWithUsArray.map((theme, index) =>
-                            <div className="workWithUsThemeArticle">
+                            <li key={theme.themeHeading + index} className={styles.themeListItem} >
                                 <h3>{theme.themeHeading}</h3>
                                 <p>{theme.theme}</p>
-                                <p>{theme.descriptionHeading}</h4>
-                                <ul className="descriptionList">
+                                <p>{theme.descriptionHeading}</p>
+                                <ul className={styles.descriptionList}>
                                     {theme.descriptionList.map((item, index) =>
-                                        <li>{item}</li>
+                                        <li key={"themeDescriptionItemKey" + index}>{item}</li>
                                     )}
 
                                 </ul>
 
                                 <p>{theme.experience}</p>
 
-                            </div>
+                            </li>
 
                         )}
 
                     </ul>
 
-                    <ul className={styles.workList}>
-                        {workWithUsArray.map((item, index) =>
-                            <li key={`"workButton + ${index}`}> <WorkWithUsButton subject={item} handleClick={setDisplayingTheme} anmiationDelay={`${animDelay * index + waitForMainAnim}ms`} /> </li>
-
-                        )}
-
-                    </ul>
-
-                    <div style={{ flex: "2", width: "100%", height: "auto" }}>
-                        {isDisplayingTheme ? <WorkWithUsTheme key={isDisplayingTheme.theme} subject={isDisplayingTheme} /> : <WorkWithUsStartup />}
-                    </div>
                 </article>
                 <p className={`${styles.workWithUsIntroText} fadeInAnim`} style={{ animationDelay: "2.8s" }} >If your are interested in working with us, click <Link href="/Contact" className={styles.linkContact}>here</Link> to fill out contact information.</p>
             </section>
-        </main>
+        </main >
     );
 }
