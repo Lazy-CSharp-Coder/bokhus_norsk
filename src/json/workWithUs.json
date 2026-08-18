@@ -1,7 +1,7 @@
 [
     {
         "themeHeading": "Cover Designers",
-        "theme": "We are looking for designers who can create professional, commercially appealing book covers for both print and digital editions.",
+        "themeDescription": "We are looking for designers who can create professional, commercially appealing book covers for both print and digital editions.",
         "descriptionHeading": "Project may include :",
         "descriptionList": [
             "Fiction and historical fiction",
@@ -15,8 +15,8 @@
         "iconNumber" : 0
     },
     {
-        "theme": "Book Designers & Adobe InDesign Specialists",
-        "themeHeading": "We regularly need help preparing books for professional publication.",
+        "themeHeading": "Book Designers & Adobe InDesign Specialists",
+        "themeDescription": "We regularly need help preparing books for professional publication.",
         "descriptionHeading": "Typical assignments include :",
         "descriptionList": [
             "Adobe InDesign book layout",

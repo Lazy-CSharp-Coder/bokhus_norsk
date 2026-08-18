@@ -22,7 +22,7 @@ import { WorkWithUsTheme } from "./WorkWithUsTheme";
 
 export interface WorkWithUs 
 {
-    theme: string,
+    themeDescription: string,
     themeHeading: string,
     descriptionHeading: string,
     descriptionList: string[],

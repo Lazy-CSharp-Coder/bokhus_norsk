@@ -93,7 +93,7 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
 {
     const IconToUse = reactIconsArray[subject.iconNumber].icon;
     const size = reactIconsArray[subject.iconNumber].size;
-    const { themeHeading, theme, descriptionHeading, descriptionList, experience } = subject;
+    const { themeHeading, themeDescription, descriptionHeading, descriptionList, experience } = subject;
 
     return (
         <article className={styles.workWithUsThemeDiv}>
@@ -101,19 +101,17 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
                 <h3 className={styles.themeHeading}>{themeHeading}</h3>
                 <IconToUse size={size} />
             </div>
-            
-            <p className={styles.}>{theme}</p>
-            <p>{descriptionHeading}</p>
-            <ul className={styles.descriptionList}>
-                {descriptionList.map((item, index) =>
-                    <li key={"themeDescriptionItemKey" + index}>{item}</li>
-                )}
+            <div className={styles.themeSubjectDiv}>
+                <p className={styles.themeDescription}>{themeDescription}</p>
+                <p className={styles.descriptionHeading}> {descriptionHeading}</p>
+                <ul className={styles.descriptionList}>
+                    {descriptionList.map((item, index) =>
+                        <li className={styles.descriptionListItem} key={"themeDescriptionItemKey" + index}>{item}</li>
+                    )}
 
-            </ul>
-
-            <p>{experience}</p>
-
-
+                </ul>
+                <p>{experience}</p>
+            </div>
         </article>
 
 
