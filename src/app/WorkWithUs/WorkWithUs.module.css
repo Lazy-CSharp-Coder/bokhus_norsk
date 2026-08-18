@@ -39,7 +39,8 @@
 .workWithUsSection {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    align-items: center;
+    gap: 5rem;
     padding-bottom: 3rem;
     /* width: 50%; */
     width: 80rem;
@@ -48,7 +49,6 @@
 .workWithUsTextArticle {
     width: 100%;
     gap: 2rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,12 +56,13 @@
     font-family: var(--libreFont);
 }
 
-.workWithUsHeading {
-    color: white;
-    font-size: var(--pageHeadingFontSize);
-    padding: 1rem 0;
-
+.workWithUsThemeDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
+
 
 .workWithUsTextDiv {
     display: flex;
@@ -90,11 +91,64 @@
     margin-bottom: 1rem;
 }
 
-.whoWeAreLookingForHeading {
-
-    font-size: 2rem;
+.workWithUsHeading {
+           font-size: var(--pageHeadingFontSize);
+    color: var(--myWhiteColor);
+    padding-bottom: 1rem;
+    text-align: center;
 }
 
+.whoIconHeadingWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: var(--pageHeadingFontSize);
+ border: 2px solid var(--borderIconColor);
+        font-size: 1.5rem;
+    padding:2rem 2.8rem;
+       background-color: var(--commonBackgroundColor);
+}
+
+
+
+.headingLineWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.whoWeAreLookingForHeading {
+
+   font-size: 1.8rem;
+    width: fit-content;
+    text-align: center;
+
+ 
+
+}
+
+.weSpan {
+    color: var(--bokhusFutureColor);
+    padding-bottom: 0.01rem;
+    border-bottom: 1px solid var(--bokhusRootsColor);
+
+}
+
+.weSpan2 {
+    /* color: var(--bokhusFutureColor); */
+}
+
+.whoArticle {
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    width: 100%;
+   
+}
 
 .whoWeAreLookingForList {
 
@@ -123,10 +177,6 @@
     margin-left: 1rem;
 }
 
-.descriptionList li::marker{
-    content: "📓";
-    font-size: 1.2rem;
-}
 
 
 .themeHeading {

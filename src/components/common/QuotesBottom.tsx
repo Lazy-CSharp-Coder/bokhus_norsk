@@ -34,14 +34,14 @@ export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
 
 export function QuotesWorkWithUs({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
 {
-    const quotesText = ["Remote work.", "Interational projects.", "Flexible collaboration"];
+    const quotesText = ["Remote work.", "Interational projects.", "Flexible collaboration."];
     const animIncQuotesBottom = 1700;
     const waitForDescription = 800;
     return (
         <div className={`${styles.quotesDivBottom} flex`} style={{ fontFamily: fontFamily ? fontFamily : "" }}>
             {
                 quotesText.map((item, index) =>
-                    <h3 key={index + "#HP#HERO_QUOTES#ABOUT"} className={`${styles.quotesTextBottom} fadeInAnimQuotes`} style={{ color: colorCodes[index], animationDelay: noAnim ? "0" : `${(index * animIncQuotesBottom) + waitForDescription}ms`, animationIterationCount: noAnim ? "0" : "1", fontSize: fontSize }}>{item}</h3>)
+                    <h3 key={index + "#HP#HERO_QUOTES#WORK"} className={`${styles.quotesTextBottom} fadeInAnimQuotes`} style={{ color: colorCodes[index], animationDelay: noAnim ? "0" : `${(index * animIncQuotesBottom) + waitForDescription}ms`, animationIterationCount: noAnim ? "0" : "1", fontSize: fontSize }}>{item}</h3>)
 
             }
 

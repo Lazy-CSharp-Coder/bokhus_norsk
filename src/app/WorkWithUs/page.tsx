@@ -1,15 +1,14 @@
 "use client";
 import worWithUsJson from "@/json//workWithUs.json";
-import { useState, useEffect } from "react";
 import styles from "./WorkWithUs.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import Link from "next/link";
 import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
-import type { ReactIcons } from "@/types/types";
-import { GiBookCover } from "react-icons/gi";
-import { TfiPencilAlt } from "react-icons/tfi";
 import { WorkWithUsTheme } from "./WorkWithUsTheme";
+import { HiMagnifyingGlass } from "react-icons/hi2";
+import { IoTelescopeOutline } from "react-icons/io5";
+import { FaQuestion } from "react-icons/fa6";
 
 // export interface WorkWithUs
 // {
@@ -27,30 +26,19 @@ export interface WorkWithUs
     descriptionHeading: string,
     descriptionList: string[],
     experience: string,
-    iconNumber : number
+    iconNumber: number;
 
 }
-
-
 
 
 export default function WorkWithUsPage()
 {
 
-    const workWithUsArray: WorkWithUs[] = worWithUsJson;
-    const [isDisplayingTheme, setDisplayingTheme] = useState<WorkWithUs | null>(null);
-    const animDelay = 200;
+    const workWithUsArray: WorkWithUs[] = worWithUsJson; const animDelay = 200;
     const waitForMainAnim = 600;
 
     const tabletLimit = 1024;
-    useEffect(() =>
-    {
-        if (isDisplayingTheme != null)
-        {
-            const elementToScrollTo = document.getElementById(`#SCROLL#ID#${isDisplayingTheme.theme}`);
-            if (elementToScrollTo && window.innerWidth < tabletLimit) elementToScrollTo.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-    }, [isDisplayingTheme]);
+
 
     return (
         <main className={styles.workWithUsPage}>
@@ -60,7 +48,7 @@ export default function WorkWithUsPage()
                     <div className={styles.headingLineWrapper}>
 
                         <h1 className={styles.workWithUsHeading}> Help Us Bring Books to New Readers </h1>
-                        <ExpandingLine key={"WorkLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
+                        <ExpandingLine key={"WorkLine"} lineSize={3} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
                     </div>
 
                     <div className={styles.workWithUsTextDiv}>
@@ -76,20 +64,25 @@ export default function WorkWithUsPage()
 
                         </p>
                         <p className={styles.workWithUsIntroText}>We are always interested in hearing from skilled people who would like to work with us on individual projects or build a long-term collaboration with BokHus.</p>
-                        <QuotesWorkWithUs fontSize="1.5rem" />
+                        <QuotesWorkWithUs fontSize="1.6rem" />
 
                     </div>
                 </article>
-                <section className={styles.workWithUsSection}>
-                    <h2 className={styles.whoWeAreLookingForHeading}>
-                        Who we are looking for :
-                    </h2>
-                    <ExpandingLine lineSize={1} animationDelay="1.5s" animationDuration="2.5s" />
+                <article className={styles.whoArticle}>
+
+                    <div className={`${styles.whoIconHeadingWrapper} fadeInAnim`} style={{animationDelay: "1.2s"}}>
+                        <IoTelescopeOutline size="2rem" />
+
+                        <h2 className={styles.whoWeAreLookingForHeading}> WHO <span className={styles.weSpan}>WE</span> ARE LOOKING FOR </h2>
+                        <FaQuestion size="1.6rem" />
+                    </div>
+
+
                     {workWithUsArray.map((item, index) =>
-                    <WorkWithUsTheme key={index + "workwithusTheme"} subject={item}/>
+                        <WorkWithUsTheme key={index + "workwithusTheme"} subject={item} />
                     )}
-                           
-                </section>
+
+                </article>
                 <p className={`${styles.workWithUsIntroText} fadeInAnim`} style={{ animationDelay: "2.8s" }} >If your are interested in working with us, click <Link href="/Contact" className={styles.linkContact}>here</Link> to fill out contact information.</p>
             </section>
         </main >

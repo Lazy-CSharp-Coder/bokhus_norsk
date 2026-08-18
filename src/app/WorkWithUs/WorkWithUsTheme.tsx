@@ -71,19 +71,18 @@ const reactIconsArray: ReactIcons[] =
         {
             name: "Pencil",
             icon: TfiPencilAlt,
-            size: "2rem"
+            size: "1.6rem"
 
         },
 
         {
             name: "Book Cover",
             icon: GiBookCover,
-            size: "2.3rem"
+            size: "1.7rem"
         },
 
     ];
-
-
+    
 interface WorkWithUsThemeProps 
 {
     subject: WorkWithUs;
@@ -96,9 +95,9 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
     const { themeHeading, themeDescription, descriptionHeading, descriptionList, experience } = subject;
 
     return (
-        <article className={styles.workWithUsThemeDiv}>
+        <article className={`${styles.workWithUsThemeDiv} fadeInFromBelowAnim`} style={{animationDelay: "1.4s"}}>
             <div className={styles.themeHeadingIconWrapper} >
-                <h3 className={styles.themeHeading}>{themeHeading}</h3>
+                <h3 className={styles.themeHeading}>{themeHeading.toUpperCase()}</h3>
                 <IconToUse size={size} />
             </div>
             <div className={styles.themeSubjectDiv}>
@@ -118,10 +117,8 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
     );
 }
 
-
 export function WorkWithUsStartup()
 {
-
     return (
         <div className={`${styles.workWithUsThemeDiv} fadeInFromLeftAnim`} style={{ animationDelay: "2.3s" }}>
             <div className={styles.themeIconWrapper}>
