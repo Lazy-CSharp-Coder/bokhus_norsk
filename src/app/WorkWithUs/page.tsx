@@ -6,7 +6,6 @@ import { BackgroundImage } from "@/components/common/BackgroundImage";
 import Link from "next/link";
 import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
 import { WorkWithUsTheme } from "./WorkWithUsTheme";
-import { HiMagnifyingGlass } from "react-icons/hi2";
 import { IoTelescopeOutline } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
 

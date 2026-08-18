@@ -6,66 +6,6 @@ import styles from "./WorkWithUsTheme.module.css";
 import { GiBookCover } from "react-icons/gi";
 import { TfiPencilAlt } from "react-icons/tfi";
 
-// const reactIconsArray: ReactIcons[] =
-//     [
-//         {
-//             name : "default",
-//             icon: FaBook,
-//             size : "2rem"
-
-//         },
-
-//         {
-//              name : "Writing & Editing",
-//             icon: CiEdit,
-//             size: "2.3rem"
-//         },
-
-//         {
-//              name : "Publishing",
-//             icon: GoStack,
-//             size: "2rem"
-//         },
-
-//         {
-//             name : "Design",
-//             icon: GiPencilBrush,
-//             size: "1.8rem"
-//         },
-//            {
-//             name : "Translation",
-//             icon: FaRegCopy,
-//             size: "2rem"
-//         },
-//            {
-//             name : "Social media",
-//             icon: IoShareSocialOutline,
-//             size: "2rem"
-//         },
-//            {
-//             name : "AI services",
-//             icon: RiComputerLine,
-//             size: "2rem"
-//         },   {
-//             name : "Research",
-//             icon: PiMagnifyingGlassBold,
-//             size: "1.8rem"
-//         },   {
-//             name : "OCR correction",
-//             icon: PiFloppyDisk,
-//             size: "2rem"
-//         },   {
-//             name : "Courses",
-//             icon: GiTeacher,
-//             size: "2rem"
-//         },   {
-//             name : "Consulting",
-//             icon: FaFileCircleQuestion,
-//             size: "1.8rem"
-//         }
-//     ];
-
-
 const reactIconsArray: ReactIcons[] =
     [
         {
