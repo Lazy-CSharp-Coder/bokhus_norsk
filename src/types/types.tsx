@@ -33,7 +33,7 @@ export interface ExpandingLineProps
     lineType? : string,
     color? : string,
     animationDelay? : string,
-    animationDuration? : string, 
+    animationDuration? : string
 }
 
 export interface ReactIcons 
