@@ -31,11 +31,8 @@
 }
 
 .themeDescription {
-    font-size: 1.3rem;
-    font-weight: 500;
-    font-weight: 500;
-    
-
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 .iconWorkWithUs {
@@ -54,19 +51,28 @@
 .descriptionHeading {
     font-size:1.2rem;
     padding-bottom: 1rem;
-    border-bottom : 1px solid white;
+    /* margin-left: 1.5rem; */
+    border-bottom : 1px solid var(--myWhiteColor);
 }
 
 .descriptionList {
+
     display: flex;
     flex-direction: column;
     gap:0.7rem;
     list-style: disc;
-    margin-left: 2rem;
+    padding: 2rem 0;
+    margin-left:2rem;
+   
+}
+.experience {
+    border-top: 1px solid var(--myWhiteColor);
+    padding-top:1rem;
+
 }
 
 .descriptionListItem {
-    /* font-size: 1.2rem; */
+
 }
 /* 
 .descriptionListItem::before {

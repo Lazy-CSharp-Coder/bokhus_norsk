@@ -110,7 +110,7 @@ export function WorkWithUsTheme({ subject }: WorkWithUsThemeProps)
                     )}
 
                 </ul>
-                <p>{experience}</p>
+                <p className={styles.experience}>{experience}</p>
             </div>
         </article>
 
