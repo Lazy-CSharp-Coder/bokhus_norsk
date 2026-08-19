@@ -86,7 +86,7 @@ export function ContactUs()
 
                 <div className={`${styles.inputDiv}`}>
                     <label>Your email address : </label>
-                    <IoMailOutline size="1.95rem" className="inputIcon" />
+                    <IoMailOutline size="1.95rem" className={styles.inputIcon} />
                     <input className={`${styles.contactInput}`} type="email" {...register("email")} />
                     {errors.email && <p className={`${styles.errorRegisterForm}`}>{errors.email.message}</p>}
 
@@ -95,7 +95,7 @@ export function ContactUs()
 
                 <div className={`${styles.inputDiv}`}>
                     <label>Subject : </label>
-                    <MdOutlineSubject className={`${styles.input}`} size="2rem" />
+                    <MdOutlineSubject className={styles.inputIcon} size="2rem" />
                     <input className={`${styles.contactInput}`} type="text" {...register("subject")} />
                     {errors.subject && <p className={`${styles.errorRegisterForm}`}>{errors.subject.message}</p>}
 
