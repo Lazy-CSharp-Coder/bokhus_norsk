@@ -33,7 +33,6 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const [isSortMenuOpen, setSortMenuOpen] = useState<boolean>(false);
     const animInc = 300;
   
-
     const handleSortClick = (mode: SortMode, direction?: SortDirection) =>
     {
         const directionToUse: SortDirection = direction ? direction : sortHandler.direction;

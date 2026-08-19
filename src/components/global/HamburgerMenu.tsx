@@ -52,7 +52,7 @@ export function HamburgerMenu()
                 <GiHamburgerMenu size="2.5rem" />
             </span>
             {menuState!= "hiding" &&
-                <nav ref={headerRef} onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`${styles.menuItemsHamburgerDiv} flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`}>
+                <nav ref={headerRef} onAnimationEnd={() => menuState == "animatingOut" && setMenuState("hiding")} className={`${styles.menuItemsHamburgerDiv} flex ${menuState == "showing" ? "slideInRightAnim" : "slideOutRightAnim"}`} onClick={handleClick}>
 
                     {menuItems.map((_, index) =>
 
