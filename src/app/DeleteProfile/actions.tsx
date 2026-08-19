@@ -5,38 +5,39 @@ import { sanityWriteClient } from "@/sanity/client";
 
 import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
 import { cookies } from "next/headers";
+import { publicDecrypt } from "crypto";
+import { revalidatePath } from "next/cache";
 
 
 
 export async function deleteSanityProfile(): Promise<void>
 {
     const { userId } = await auth();
-    const client = sanityWriteClient;
+    const client = await clerkClient();
     if (!userId)
     {
         throw new Error("Unauthorized : No active user session found");
     }
 
     try
-    {
-        const USER_QUERY = `*[_type == "User" && userId == $clerkUserId][0]._id`;
-        const documentId = await client.fetch(USER_QUERY, { clerkUserId: userId });
-        console.log("Document id :" + documentId);
+    {              
+            await client.users.updateUserMetadata(userId, 
+                {
+                    publicMetadata: {
+                        userData : null
+                    }
+                }
 
-        if (documentId)
-        {
-            await client.delete(documentId);
-        }
-
-
-
-
+            );
+            revalidatePath("/");
     }
+
+    
     catch (error)
     {
 
-        console.error("Sainty deletion error", error);
-        throw new Error("Failed to delete profile in Sanity database. Please try again later.");
+        console.error("Clerk metadata deletion error", error);
+        throw new Error("Failed to delete profile in Clerk. Please try again later.");
     }
 
 }
