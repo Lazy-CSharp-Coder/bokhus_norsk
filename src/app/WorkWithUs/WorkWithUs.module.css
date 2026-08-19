@@ -80,7 +80,7 @@
 }
 
 .workWithUsListArticle {
-  
+
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -92,7 +92,7 @@
 }
 
 .workWithUsHeading {
-           font-size: var(--pageHeadingFontSize);
+    font-size: var(--pageHeadingFontSize);
     color: var(--myWhiteColor);
     padding-bottom: 1rem;
     text-align: center;
@@ -105,10 +105,10 @@
     align-items: center;
     color: white;
     font-size: var(--pageHeadingFontSize);
- border: 2px solid var(--borderIconColor);
-        font-size: 1.5rem;
-    padding:2rem 2.8rem;
-       background-color: var(--commonBackgroundColor);
+    border: 2px solid var(--borderIconColor);
+    font-size: 1.5rem;
+    padding: 2rem 2.6rem;
+    background-color: var(--commonBackgroundColor);
 }
 
 
@@ -123,11 +123,11 @@
 
 .whoWeAreLookingForHeading {
 
-   font-size: 1.8rem;
+    font-size: 1.8rem;
     width: fit-content;
     text-align: center;
 
- 
+
 
 }
 
@@ -145,15 +145,15 @@
 .whoArticle {
     display: flex;
     flex-direction: column;
-    gap:2rem;
+    gap: 2rem;
     width: 100%;
-   
+
 }
 
 .whoWeAreLookingForList {
 
     display: flex;
-    padding : 2rem 2rem;
+    padding: 2rem 2rem;
     flex-direction: column;
     font-size: 1.2rem;
     align-items: left;
@@ -173,7 +173,7 @@
 .descriptionList {
     display: flex;
     flex-direction: column;
-    gap:0.3rem;
+    gap: 0.3rem;
     margin-left: 1rem;
 }
 
@@ -210,6 +210,8 @@
 
     }
 
+   
+
     .workWithUsListArticle {
         flex-direction: column;
         gap: 4rem;
@@ -223,5 +225,8 @@
         width: 100%;
 
     }
+     .whoWeAreLookingForHeading {
+        font-size: 1.5rem;
+     }
 
 }

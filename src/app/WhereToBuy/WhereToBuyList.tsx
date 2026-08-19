@@ -31,7 +31,7 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const [sortHandler, setSortHandler] = useState<SortHandler>({ mode: "Serie", list: buyArray, direction: "Ascending" });
     const [waitForMainAnim, setWaitForMainAnim] = useState<number>(800);
     const [isSortMenuOpen, setSortMenuOpen] = useState<boolean>(false);
-    const animInc = 200;
+    const animInc = 300;
   
 
     const handleSortClick = (mode: SortMode, direction?: SortDirection) =>

@@ -18,7 +18,7 @@ const reactIconsArray: ReactIcons[] =
         {
             name: "Book Cover",
             icon: GiBookCover,
-            size: "1.7rem"
+            size: "2.1rem"
         },
 
     ];

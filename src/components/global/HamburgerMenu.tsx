@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
@@ -16,14 +16,19 @@ export function HamburgerMenu()
     const [menuState, setMenuState] = useState<HamburgerMenuState>("hiding");
 
      const headerRef = useRef<HTMLDivElement>(null);
-    // const path = usePathname();
+   
+    useEffect(() =>
+    {
+        if(menuState == "showing")
+            document.body.classList.add(styles.hamMenuOpen);
+        else document.body.classList.remove(styles.hamMenuOpen);
 
-    // useEffect(() =>
-    // {
-    //     handleClick();
+        return () => { document.body.classList.remove(styles.hamMenuOpen)};
 
-    // },[path]);
-     
+        
+    }, [menuState]);
+
+
     const handleOutsideClick = (e : MouseEvent) =>
     {
         let shallClose = false;
