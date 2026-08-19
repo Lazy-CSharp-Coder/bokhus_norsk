@@ -19,6 +19,8 @@
     /* border : 1px solid white; */
     background-color: rgba(20, 20, 20, 0.8);
     padding: 0.3rem 0.3rem;
+    overflow: auto;
+    z-index: 100;
 }
 
 .hamburgerItem {
