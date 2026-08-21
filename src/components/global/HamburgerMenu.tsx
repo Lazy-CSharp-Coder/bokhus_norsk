@@ -19,8 +19,9 @@ export function HamburgerMenu()
    
     useEffect(() =>
     {
-        if(menuState == "showing")
-            document.body.classList.add(styles.hamMenuOpen);
+        if(headerRef.current)  
+            if(menuState == "showing" && window.innerHeight < headerRef.current.offsetHeight)
+            document.body.classList.add(styles.hamMenuOpen); 
         else document.body.classList.remove(styles.hamMenuOpen);
 
         return () => { document.body.classList.remove(styles.hamMenuOpen)};
