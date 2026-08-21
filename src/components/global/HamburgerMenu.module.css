@@ -24,7 +24,7 @@
     justify-content: flex-start;
     top: 6rem;
     right: 0;
-    height: max-content;  
+    bottom:0;
     font-size: 2rem;
     font-weight: 500;
     gap:0.3rem;
