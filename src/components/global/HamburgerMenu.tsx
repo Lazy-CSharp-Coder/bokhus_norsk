@@ -31,9 +31,9 @@ export function HamburgerMenu()
                 document.body.classList.remove(styles.hamMenuOpen);
              
             }
-        return () => { document.body.classList.remove(styles.hamMenuOpen); };
+        return () =>  document.body.classList.remove(styles.hamMenuOpen); 
 
-        return () => document.body.classList.remove(styles.hamMenuOpen);
+
     }, [menuState]);
 
 

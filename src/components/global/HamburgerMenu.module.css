@@ -5,7 +5,7 @@
 
  body.hamMenuOpen {
     overflow: hidden;
-    position: fixed;
+    /* position: fixed; */
     inset:0;
     width: 100%;
     max-width: 100%;
