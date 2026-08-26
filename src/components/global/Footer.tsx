@@ -75,7 +75,7 @@ export function Footer()
 
 
                     <div className={styles.logoBPDiv}>
-                          <a href="https://bpwebdev.no" target="_blank">
+                          <a href="https://www.bpwebdev.no" target="_blank">
                           <LogoBPWebDev /> 
                           </a>
                 
@@ -111,7 +111,7 @@ export function Footer()
                             <IoDocumentTextOutline size="1.8rem" className={styles.iconCreditIcon}/>    
                             <span className={styles.logoTextMobile}>CREDITS</span>     </Link>
 
-                        <Link href="https://bpwebdev.vercel.app" target="_blank" className={styles.linkMobile}>
+                        <Link href="https://www.bpwebdev.no" target="_blank" className={styles.linkMobile}>
                           <LogoBPWebDev />
                         <span className={styles.logoTextMobile}>WEBPAGE BY</span>  
                         </Link>

@@ -17,7 +17,7 @@ export function Credits()
                     <p className="legalText">
 
                         Web UI design and code development by
-                        <a className={styles.creditLink} href="https://bpwebdev.no" target="_blank"> BP WebDev</a>.
+                        <a className={styles.creditLink} href="https://www.bpwebdev.no" target="_blank"> BP WebDev</a>.
                     </p>
                     <p className="legalText">Except where otherwise noted below, all site content is provided and maintained by <BokHus />.
 
