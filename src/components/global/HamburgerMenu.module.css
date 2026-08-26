@@ -1,56 +1,54 @@
-
 .burgerSpan {
-    z-index: 20;
+  z-index: 20;
 }
 
- body.hamMenuOpen {
-    overflow: hidden;
-    /* position: fixed; */
-    inset:0;
-    width: 100%;
-    max-width: 100%;
-     
-  }
+body.hamMenuOpen {
+  overflow: hidden;
+  /* position: fixed; */
+  /* inset:0; */
+  width: 100%;
+  max-width: 100%;
 
-  .mobileMenuOverlay {
-    position: fixed;
-    inset: 0;
-    z-index: 99;
-  }
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
 
 
 .menuItemsHamburgerDiv {
-    position:fixed;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    top: 6rem;
-    right: 0;
+  position: fixed;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  top: 6rem;
+  right: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  gap: 0.3rem;
+  max-height: calc(100vh - 6rem);
+  /* border : 1px solid white; */
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 0.3rem 0.3rem;
+  z-index: 100;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 
-    font-size: 2rem;
-    font-weight: 500;
-    gap:0.3rem;
-      max-height: calc(100vh - 6rem);
-    /* border : 1px solid white; */
-    background-color: rgba(20, 20, 20, 0.8);
-    padding: 0.3rem 0.3rem;
-    z-index: 100;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-  
 }
 
 .hamburgerItem {
-    display: flex;
-    flex-direction: row;
-        justify-content: flex-start;
-    gap: 1.8rem;
-    padding: 0rem;
-    align-items: center;
-        padding : 0.5rem 3rem;
-        width: 100%;
-        transition: all 0.3s ease-in;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.8rem;
+  padding: 0rem;
+  align-items: center;
+  padding: 0.5rem 3rem;
+  width: 100%;
+  transition: all 0.3s ease-in;
 }
 
 .menuItemsContainer {
@@ -63,20 +61,20 @@
 .hamburgerItem:hover {
   color: var(--bokhusFutureColor);
   scale: 1.01;
-  background-color: rgb(70,70, 70)
+  background-color: rgb(70, 70, 70)
 }
 
 .hamburgerIcon {
-    transform: scale(1.3);
-    color: var(--myWhiteColor);
+  transform: scale(1.3);
+  color: var(--myWhiteColor);
 }
 
-.hamburgerIcon svg, 
+.hamburgerIcon svg,
 .hamburgerIcon path {
-    color: inherit;
-    fill: currentColor;
-    stroke: currentColor;
-    transition: color 0.3s ease, fill 0.5s ease, stroke 0.3s ease;
+  color: inherit;
+  fill: currentColor;
+  stroke: currentColor;
+  transition: color 0.3s ease, fill 0.5s ease, stroke 0.3s ease;
 }
 
 .hamburgerItem:hover .hamburgerIcon {
