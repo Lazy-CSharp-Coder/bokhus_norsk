@@ -16,12 +16,12 @@ import styles from "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 
-export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay}: WhereToBuySeriesProps)
+export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList}: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
 
-
-  const listHeaderRef = useRef<HTMLDivElement>(null);
+const animationDelay = 1200;
+  const listHeaderRef = useRef<HTMLDivElement>(null); 
   const handleHeaderClick = () =>
   {
     setSeriesListState((prev) =>
@@ -57,7 +57,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
 
   return (
-    <article className={`${styles.whereToBuySerieArticle} fadeInFromBelowAnim`} style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
+    <article className={`${styles.whereToBuySerieArticle}`}>
       <div className={styles.whereToBuySerieHeadingDiv} ref={listHeaderRef} onClick={handleHeaderClick}>
         <div className={styles.whereToBuyIconInfoWrapper}>
           <ImBooks size="4.4rem" className={styles.buyBooksIcon} />
