@@ -16,7 +16,7 @@ import styles from "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 
-export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay}: WhereToBuySeriesProps)
+export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay, setWaitForMainAnim }: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
 
@@ -54,10 +54,15 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   };
 
   const animInc = 200;
+  const animDelayExtra = animationDelay ?? 0;
 
+  const handleListAnimEnd = () =>
+  {
+      if(setWaitForMainAnim != undefined) setWaitForMainAnim(0);
+  }
 
   return (
-    <article className={`${styles.whereToBuySerieArticle} fadeInFromBelowAnim`} style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
+    <article className={`${styles.whereToBuySerieArticle} fadeInFromBelowAnim`} style={{ animationDelay: `${animDelayExtra}ms`}} onAnimationEnd={handleListAnimEnd} >
       <div className={styles.whereToBuySerieHeadingDiv} ref={listHeaderRef} onClick={handleHeaderClick}>
         <div className={styles.whereToBuyIconInfoWrapper}>
           <ImBooks size="4.4rem" className={styles.buyBooksIcon} />
@@ -70,7 +75,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
         </div>
 
  
-      <div key={seriesListState} className={`${styles.buyTextArrowDiv} fadeInAnim`} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s" }}>
+      <div key={seriesListState} className={`${styles.buyTextArrowDiv} fadeInAnim`} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s", animationDelay: `${animDelayExtra+200}ms` }}>
              {seriesListState == "Closed" && "CLICK TO EXPAND"}
         <PiArrowFatLineDownLight size="2rem" className={styles.buyOpenCloseArrow} /></div>
 
@@ -79,7 +84,8 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
       <ul className={styles.whereToBuyBooksList}>
         {seriesListState == "Open" && bookList.map((item, index, array) =>
-          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index) + (animationDelay ? animationDelay : 0)}}ms` }} onClick={() => handleLinkClick(item.buyLink)} >
+          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index) + animDelayExtra+400}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
+          >
             <div className={styles.buyListItemImageDiv}>
               <Image className={styles.buyImageBook} src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
             </div>
