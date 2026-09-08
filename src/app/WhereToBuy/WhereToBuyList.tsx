@@ -29,7 +29,7 @@ interface SortHandler
 export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
 {
     const [sortHandler, setSortHandler] = useState<SortHandler>({ mode: "Serie", list: buyArray, direction: "Ascending" });
-    const [waitForMainAnim, setWaitForMainAnim] = useState<number>(800);
+    const [waitForMainAnim, setWaitForMainAnim] = useState<number>(1200);
     const [isSortMenuOpen, setSortMenuOpen] = useState<boolean>(false);
     const animInc = 300;
   
@@ -84,9 +84,9 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
             </div>
 
             {
-                sortHandler.list.map((item, index) =>
+                sortHandler.list.map((item, index, array) =>
                     <WhereToBuySerie key={index + "WhereToBuySerieComponent" + sortHandler.mode + sortHandler.direction} serieSelected={item.serieSelected}
-                        authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={(animInc * index)+waitForMainAnim} setWaitForMainAnim={setWaitForMainAnim}/>
+                        authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={(animInc * index)+waitForMainAnim} setWaitForMainAnim={index== array.length-1 ? setWaitForMainAnim : undefined}/>
 
                 )
             }
