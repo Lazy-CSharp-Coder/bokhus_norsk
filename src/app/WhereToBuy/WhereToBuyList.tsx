@@ -6,7 +6,7 @@ import "./WhereToBuyList.module.css";
 import { BsPersonFill } from "react-icons/bs";
 import { TbBooks } from "react-icons/tb";
 import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
-import { PiArrowFatLineDownFill} from "react-icons/pi";
+import { PiArrowFatLineDownFill } from "react-icons/pi";
 // muligens release date og genere senere
 import styles from "./WhereToBuyList.module.css";
 
@@ -32,7 +32,7 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const [waitForMainAnim, setWaitForMainAnim] = useState<number>(800);
     const [isSortMenuOpen, setSortMenuOpen] = useState<boolean>(false);
     const animInc = 300;
-  
+
     const handleSortClick = (mode: SortMode, direction?: SortDirection) =>
     {
         const directionToUse: SortDirection = direction ? direction : sortHandler.direction;
@@ -56,37 +56,39 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     };
 
 
-    const { mode, direction} = sortHandler;
+    const { mode, direction } = sortHandler;
     return (
         <ul className={styles.buySeriesList}>
-            <div className={`${styles.sortDiv} fadeInFromBelowAnim`} style={{animationDelay: `${waitForMainAnim}ms`}} ><div className={styles.sortHeader}>SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? styles.sortUp : styles.sortDown} ${styles.sortCollapseIcon} fadeInAnim`}/></span></div>
-              {isSortMenuOpen &&
-                <div className={styles.sortButtonContainer}>
-                    <div className={styles.modeDiv}>
-                        <button className={`${styles.sortButton} ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className={styles.sortIcon}/> by Serie</button>
-                        <button className={`${styles.sortButton} ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className={`${styles.sortIcon}`}/> by Author</button>
+            <div className={`${styles.sortDiv} fadeInFromBelowAnim`} style={{ animationDelay: `${waitForMainAnim}ms` }} ><div className={styles.sortHeader}>SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? styles.sortUp : styles.sortDown} ${styles.sortCollapseIcon} fadeInAnim`} /></span></div>
+                {isSortMenuOpen &&
+                    <div className={styles.sortButtonContainer}>
+                        <div className={styles.modeDiv}>
+                            <button className={`${styles.sortButton} ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className={styles.sortIcon} /> by Serie</button>
+                            <button className={`${styles.sortButton} ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className={`${styles.sortIcon}`} /> by Author</button>
                         </div>
                         <div className={styles.sortStatusDiv}>
                             {/* <span className="sortTag">CURRENT : </span> */}
-                            <span key={mode} className={`${styles.sortCurrentMode} ${styles.sortModeAnim}`}>{mode == "Serie" ? <TbBooks size="1.5rem" className={styles.sortIconStatus}/> :<BsPersonFill size="1.5rem" className={styles.sortIconStatus}/> }</span>
-                            <span key={direction} className={`${styles.sortCurrentDirection} ${styles.sortModeAnim}`}> {direction == "Ascending" ? <AiOutlineSortAscending size="1.5rem"className={styles.sortIconStatus}/> :<AiOutlineSortDescending size="1.5rem" className={styles.sortIconStatus}/>  }</span>
+                            <span key={mode} className={`${styles.sortCurrentMode} ${styles.sortModeAnim}`}>{mode == "Serie" ? <TbBooks size="1.5rem" className={styles.sortIconStatus} /> : <BsPersonFill size="1.5rem" className={styles.sortIconStatus} />}</span>
+                            <span key={direction} className={`${styles.sortCurrentDirection} ${styles.sortModeAnim}`}> {direction == "Ascending" ? <AiOutlineSortAscending size="1.5rem" className={styles.sortIconStatus} /> : <AiOutlineSortDescending size="1.5rem" className={styles.sortIconStatus} />}</span>
 
 
                         </div>
-                    <div className={styles.directionDiv}>
-                        <button className={`${styles.sortButton} ${direction == "Ascending" && styles.isActive}`} onClick={() => direction != "Ascending" && handleSortClick(mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className={styles.sortIcon}/> Ascending</button>
-                        <button className={`${styles.sortButton} ${direction == "Descending" && styles.isActive}`} onClick={() => direction != "Descending" && handleSortClick(mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Descending</button>
-                    </div>
+                        <div className={styles.directionDiv}>
+                            <button className={`${styles.sortButton} ${direction == "Ascending" && styles.isActive}`} onClick={() => direction != "Ascending" && handleSortClick(mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className={styles.sortIcon} /> Ascending</button>
+                            <button className={`${styles.sortButton} ${direction == "Descending" && styles.isActive}`} onClick={() => direction != "Descending" && handleSortClick(mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon" />Descending</button>
+                        </div>
 
-                </div>
-}
+                    </div>
+                }
 
             </div>
 
             {
-                sortHandler.list.map((item, index) =>
-                    <WhereToBuySerie key={index + "WhereToBuySerieComponent" + sortHandler.mode + sortHandler.direction} serieSelected={item.serieSelected}
-                        authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={(animInc * index)+waitForMainAnim} setWaitForMainAnim={setWaitForMainAnim}/>
+                sortHandler.list.map((item, index, array) =>
+                    <div key={index + "WhereToBuySerieComponent" + sortHandler.mode + sortHandler.direction} onAnimationEnd={() => index == array.length - 1 ? setWaitForMainAnim(0) : {}}>
+                        <WhereToBuySerie  serieSelected={item.serieSelected}
+                            authorsStrArray={item.authorsStrArray} bookList={item.bookList} animationDelay={(animInc * index) + waitForMainAnim} />
+                    </div>
 
                 )
             }

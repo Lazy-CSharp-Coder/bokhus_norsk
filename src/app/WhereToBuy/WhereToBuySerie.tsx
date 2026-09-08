@@ -16,7 +16,7 @@ import styles from "./WhereToBuySerie.module.css";
 
 type SerieListState = "Open" | "Closed";
 
-export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay, setWaitForMainAnim }: WhereToBuySeriesProps)
+export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay}: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
 
@@ -55,10 +55,6 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
   const animInc = 200;
 
-  const handleListAnimEnd = (index: number, arrayLength : number) =>
-  {
-      if(index >= arrayLength - 1 && setWaitForMainAnim != undefined) setWaitForMainAnim(0);
-  }
 
   return (
     <article className={`${styles.whereToBuySerieArticle} fadeInFromBelowAnim`} style={{ animationDelay: animationDelay ? `${animationDelay}ms` : "0" }} >
@@ -83,8 +79,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
       <ul className={styles.whereToBuyBooksList}>
         {seriesListState == "Open" && bookList.map((item, index, array) =>
-          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index) + (animationDelay ? animationDelay : 0)}}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
-          onAnimationEnd={() => handleListAnimEnd(index, array.length)}>
+          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index) + (animationDelay ? animationDelay : 0)}}ms` }} onClick={() => handleLinkClick(item.buyLink)} >
             <div className={styles.buyListItemImageDiv}>
               <Image className={styles.buyImageBook} src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
             </div>
