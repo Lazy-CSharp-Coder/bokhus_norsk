@@ -1,10 +1,121 @@
-@import "./../app/heropage.css";
+.heroPageBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: var(--defaultBackgroundImage);
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+    filter: blur(1px) brightness(58%);
+    z-index: -1;
 
-/* 
-@media (min-width: 1920px) and (max-width: 2326px) {
+}
 
-    html {
-        font-size:90%;
+.heroPage {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    background-color: transparent;
+    height: 100%;
+    flex-grow: 1;
+    min-width: 100%;
+    padding: 3rem 0;
+
+    /* padding-top: 1%; */
+
+
+
+}
+
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding-left: 5%;
+    justify-content: top;
+    width: 100%;
+
+    gap: 4rem;
+
+}
+
+.headingQuoteDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 2.5rem;
+
+}
+
+.heroHeading {
+    font-size: 4rem;
+    color: rgb(178, 126, 29);
+    width: fit-content;
+
+}
+
+.heroHeadingSpan {
+    color: lightskyblue;
+}
+
+.quotesDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 0.5rem;
+    width: fit-content;
+}
+
+.quoteText {
+    font-size: 2.4rem;
+}
+
+.quoteText2 {
+    font-size: 2.4rem;
+
+}
+
+.rootsText {
+    color: rgb(178, 126, 29);
+
+}
+
+.futureText {
+    color: lightskyblue;
+
+}
+
+.descriptionDivHeroPage {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    max-width: 70rem;
+    text-align: left;
+    gap: 3rem;
+    justify-content: space-evenly;
+    color: rgba(221, 221, 221, 1);
+    line-height: 1.5;
+
+}
+
+
+@media (max-width: 63.99em) {
+
+    .backgroundImageHero {
+        background-position: 40% center;
 
     }
-} */
+
+    .descriptionDivHeroPage {
+
+        max-width: 85%;
+    }
+
+
+}

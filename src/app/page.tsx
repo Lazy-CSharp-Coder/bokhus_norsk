@@ -1,5 +1,5 @@
 import { BackgroundImage } from "@/components/common/BackgroundImage";
-import "./Heropage.module.css";
+import styles from "./Heropage.module.css";
 import { QuotesBottom } from "@/components/common/QuotesBottom";
 import languageJson from "@/json/languages.json"
 
@@ -14,22 +14,22 @@ export default function Home()
 
   return (
     <>
-      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero.webp"/>
+      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero2.webp" className={styles.heroPageBackground}/>
 
-      <main className="heroPage flex">
+      <main className={styles.heroPage}>
 
-        <section className="heroSection flex fadeInAnim" style={{ animationDelay: "0.6s" }}>
+        <section className={`${styles.heroSection} flex fadeInAnim`} style={{ animationDelay: "0.6s" }}>
 
-          <div className="headingQuoteDiv flex">
-            <h1 className="heroHeading">Bok<span className="heroHeadingSpan">Hus</span></h1>
-            <div className="quotesDiv flex">
-              <h2 className="quoteText fadeInAnimQuotesx">{quotesHeading[0].start}<span className="rootsText fadeInAnimx">{quotesHeading[0].end}</span></h2>
-              <h2 className="quoteText2 fadeInAnimQuotesx">{quotesHeading[1].start} <span className="futureText fadeInAnimx">{quotesHeading[1].end}</span></h2>
+          <div className={styles.headingQuoteDiv}>
+            <h1 className={styles.heroHeading}>Bok<span className={styles.heroHeadingSpan}>Hus</span></h1>
+            <div className={styles.quotesDiv}>
+              <h2 className={styles.quoteText}>{quotesHeading[0].start}<span className={styles.rootsText}>{quotesHeading[0].end}</span></h2>
+              <h2 className={styles.quoteText2}>{quotesHeading[1].start} <span className={styles.futureText}>{quotesHeading[1].end}</span></h2>
             </div>
           </div>
-          <div className="descriptionDivHeroPage flex">
+          <div className={styles.descriptionDivHeroPage}>
             {descriptionBokhus.map((item, index) =>
-              <p key={index + "#HP#DESCRIPTION"} className="fadeInAnimQuotesx" style={{ animationDelay: `${(index) + waitForMain}ms` }}>{item}</p>
+              <p key={index + "#HP#DESCRIPTION"} >{item}</p>
             )}
 
           </div>
@@ -37,7 +37,6 @@ export default function Home()
         </section>
 
 
-        {/* <p>To be updated......</p> */}
 
       </main>
     </>
