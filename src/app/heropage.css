@@ -1,7 +1,18 @@
 
 
 
-.backgroundImageHero {
+.heroPageBackground {
+      position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--defaultBackgroundImage);
+  background-size: cover;
+  position: fixed;
+  background-repeat: no-repeat;
+  filter: blur(1px) brightness(58%);
+  z-index: -1;
 
 }
 

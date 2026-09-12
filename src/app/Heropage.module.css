@@ -1,10 +1,164 @@
-@import "./../app/heropage.css";
 
-/* 
-@media (min-width: 1920px) and (max-width: 2326px) {
 
-    html {
-        font-size:90%;
 
-    }
+.heroPageBackground {
+      position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--defaultBackgroundImage);
+  background-size: cover;
+  position: fixed;
+  background-repeat: no-repeat;
+  filter: blur(1px) brightness(58%);
+  z-index: -1;
+
+}
+
+.heroPage {
+display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    background-color: transparent;
+    height: 100%;
+    flex-grow: 1;
+    min-width: 100%;
+    padding: 3rem 0;
+   
+    /* padding-top: 1%; */
+
+
+
+}
+
+.heroSection {
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding-left: 5%;
+    justify-content: top;
+    width:100%;
+    /* height: 80%; */
+    gap: 4rem;
+    /* background-color: rgba(20, 20, 20, 0.7); */
+    /* background: linear-gradient(90deg,
+            rgba(10, 8, 6, 0.70) 0%,
+            rgba(10, 8, 6, 0.58) 32%,
+            rgba(10, 8, 6, 0.38) 60%,
+            rgba(10, 8, 6, 0.28) 100%),
+        linear-gradient(180deg,
+            rgba(10, 8, 6, 0.20) 0%,
+            rgba(10, 8, 6, 0.42) 100%);
+
 } */
+}
+
+.headingQuoteDiv {
+    flex-direction: column;
+    align-items: left;
+    gap: 2.5rem;
+
+    /* color:white; */
+}
+
+.heroHeading {
+    font-size: 4rem;
+    color: rgb(178, 126, 29);
+    /* border-bottom: 1px solid white; */
+    width: fit-content;
+    /* margin-bottom: 0.8rem; */
+    /* text-decoration: underline; */
+    /* line-height: 1.5; */
+}
+
+.heroHeadingSpan {
+    color: lightskyblue;
+}
+
+.quotesDiv {
+
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 0.5rem;
+    width: fit-content;
+}
+
+.quoteText {
+    font-size: 2.4rem;
+}
+
+.quoteText2 {
+    font-size: 2.4rem;
+    /* margin-left: 0.2rem; */
+}
+
+.rootsText {
+    color: rgb(178, 126, 29);
+
+}
+
+.futureText {
+    color: lightskyblue;
+
+}
+
+.descriptionDivHeroPage {
+    flex-direction: column;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    /* max-width: 55%; */
+    max-width: 70rem;
+    text-align: left;
+    gap: 3rem;
+    justify-content: space-evenly;
+    color: rgba(221, 221, 221, 1);
+    line-height: 1.5;
+    /* color:black; */
+    /* color: white; */
+}
+
+.quotesDivBottom {
+    flex-direction: row;
+    gap: 1.2rem;
+   
+}
+
+@media (max-width: 63.99em) {
+ 
+.backgroundImageHero {
+    background-position: 40% center;
+
+}
+
+  .descriptionDivHeroPage {
+    /* max-width: 65rem; */
+    max-width: 85%;
+  }
+
+
+} 
+/* 
+@media (max-width: 63.99em) and (orientation: landscape) 
+{
+
+     do test this on tablet
+   .backgroundImageHero {
+     background-size: contain;
+   }
+
+} */
+
+@media (max-width: 47.99em)
+{
+ .descriptionDivHeroPage {
+        /* width: 30%; */
+    }
+}
+
+@media (max-width : 39.99em)
+{
+   
+}

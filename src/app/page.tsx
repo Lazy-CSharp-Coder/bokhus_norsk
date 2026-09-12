@@ -1,5 +1,5 @@
 import { BackgroundImage } from "@/components/common/BackgroundImage";
-import "./Heropage.module.css";
+import styles from "./Heropage.module.css";
 import { QuotesBottom } from "@/components/common/QuotesBottom";
 import languageJson from "@/json/languages.json"
 
@@ -14,9 +14,9 @@ export default function Home()
 
   return (
     <>
-      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero.webp"/>
+      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero2.webp" className={styles.heroPageBackground}/>
 
-      <main className="heroPage flex">
+      <main className={styles.heroPage}>
 
         <section className="heroSection flex fadeInAnim" style={{ animationDelay: "0.6s" }}>
 
