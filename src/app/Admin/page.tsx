@@ -1,4 +1,4 @@
-import { clerkClient } from "@clerk/nextjs/server";
+import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import type { UserData } from "../Register/registerSchema";
@@ -7,12 +7,14 @@ import { CopyButton } from "./CopyButton";
 import { BokHusCom } from "@/components/common/BokHusCom";
 
 export default async function AdminPage()
-{
-    const { userId } = await auth();
+{ 
+   
+    const  user = await currentUser();
+    const isAdmin = user?.publicMetadata?.role === "admin";
 
-    if (userId != process.env.NEXT_PUBLIC_MHUSER_ID)
+    if(!isAdmin)
     {
-        console.log("Not authorized");
+        console.log("Not authorized : User is not admin.")
         redirect("/");
     }
 
@@ -43,6 +45,5 @@ export default async function AdminPage()
         </main>
 
     );
-
 
 }
