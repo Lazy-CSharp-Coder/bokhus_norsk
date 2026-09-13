@@ -5,10 +5,8 @@ export default function ContactPage()
 {
     return (
 
-
         <main className={`${styles.contactPage}`}>
             <BackgroundImage className={`${styles.contactBackground}`}src="/images/backgrounds/contact.webp"/>
-
             <ContactUs />
         </main>
 
