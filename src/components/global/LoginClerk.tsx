@@ -20,11 +20,11 @@ export function LoginClerkContent()
            
             </Show>
             <Show when="signed-in">
+              
                <AccountMenu/>
-            <Link className={styles.signInButton} href="/Register">PROFILE</Link>     
+            <Link className={styles.signInButton} href="/Register">PROFILE</Link>   
                </Show>
-
-                      
+       
 
         
         </div>);
