@@ -96,7 +96,7 @@ export async function sendNewUserAlert(data : NewUserAlert) : Promise<ServerResp
             subject : `User has registered profile information at BokHus.com`,
             html : `<p>${email} has registered/updated profile information at your web-page.</p>
             <p>${arcInterest}</p> <br>
-            <p>Please refer to Sanity Studio database for more information</p>`
+            <p>Please refer to Clerk metadata for more information</p>`
         });
         if(error)
         {
