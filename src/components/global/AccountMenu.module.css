@@ -1,0 +1,70 @@
+
+/* clerk button div and classes  */
+
+.clerkButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+
+.signInButton {
+
+  font-family: var(--headerFontFamily);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  /* padding: 0.4rem 1.5rem; */
+  background-color: transparent;
+  /* border: 2px outset var(--bokhusRootsColor); */
+  /* border-radius:  1px; */
+  border: none;
+  /* font-family: sans-serif; */
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--bokhusRootsColor);
+  /* font-family : var(--headerFontFamily); */
+  color: var(--bokhusFutureColor);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.signInRegisterSpan {
+  color: var(--bokhusRootsColor);
+  transition: all 0.4s ease-in;
+}
+
+.signInButton:hover {
+  color: var(--bokhusRootsColor);
+  border-color: var(--bokhusFutureColor);
+
+}
+.signInButton:hover .signInRegisterSpan {
+  color:var(--bokhusFutureColor);
+}
+
+.userButtonDiv {
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.deleteProfileIcon {
+  color: red;
+}
+
+.deleteProfileIcon svg {
+  
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.clerkButtonSpan {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
