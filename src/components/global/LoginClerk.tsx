@@ -30,10 +30,10 @@ export function LoginClerkContent()
             </Show>
             <Show when="signed-in">
                <AccountMenu/>
-               
+            <Link className={styles.signInButton} href="/Register">PROFILE</Link>     
                </Show>
 
-                    <Link className={styles.signInButton} href="/Register">PROFILE</Link>
+                  
            
 
         
