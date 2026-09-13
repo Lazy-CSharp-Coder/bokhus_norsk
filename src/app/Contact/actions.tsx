@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { ContactInfo,ServerResponse, contactSchema } from "./contactSchema";
 import type { NewUserAlert } from "@/types/types";
+import { UserData } from "../Register/registerSchema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -85,7 +86,7 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
 }
 
 
-export async function sendNewUserAlert(data : NewUserAlert) : Promise<ServerResponse>
+export async function sendNewUserAlert(data : UserData) : Promise<ServerResponse>
 {
     const { email, arcInterest} = data;
       try {

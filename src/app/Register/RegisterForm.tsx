@@ -26,6 +26,7 @@ import { RegErrorMessage } from "./RegErrorMessage";
 import styles from "./RegisterForm.module.css";
 import { SubmitButton } from "../../components/common/SubmitButton";
 import { submitToClerk } from "./submitToClerk";
+import { sendNewUserAlert } from "../Contact/actions";
 
 type RegisterFormInput = z.input<typeof registerSchema>;
 
@@ -76,6 +77,13 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
         if (result.success)
         {
             alert("Your profile have been submitted to bokhus. Thank you.");
+            
+            const result = await sendNewUserAlert(data);
+            if(result.success == false)
+            {
+                console.log("Could not send new/updated user altert.");
+            }
+        
 
         }
         else alert(`Error : ${result.error}`);
