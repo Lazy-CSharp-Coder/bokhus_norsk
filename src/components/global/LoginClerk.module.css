@@ -9,7 +9,7 @@
 
 
 .signInButton {
-
+ display: flex;
   font-family: var(--headerFontFamily);
   justify-content: center;
   align-items: center;
@@ -40,31 +40,4 @@
 }
 .signInButton:hover .signInRegisterSpan {
   color:var(--bokhusFutureColor);
-}
-
-.userButtonDiv {
-
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-
-}
-
-.deleteProfileIcon {
-  color: red;
-}
-
-.deleteProfileIcon svg {
-  
-  margin-top: auto;
-  margin-bottom: auto;
-
-}
-
-.clerkButtonSpan {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: blue; */
 }
