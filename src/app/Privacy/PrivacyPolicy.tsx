@@ -39,7 +39,7 @@ export function PrivacyPolicy()
             </article>
 
             <article className="legalArticle">
-                <h3 className="legalHeading">Personal Data We Collect</h3>
+                <h3 className="legalHeading">Information We May Process</h3>
 
                 <div className="textDiv">
                     <p className="legalTextSmallHeading">Information you provide </p>
