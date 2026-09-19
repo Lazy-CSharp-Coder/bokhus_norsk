@@ -44,8 +44,7 @@ export function Footer()
 
                     <TermsButton />
                     <PrivacyButton />
-                    <CookieButton />
-                    <AffiliateButton />
+                     <AffiliateButton />
                 </nav>
             </div>
 
