@@ -42,15 +42,18 @@ export function PrivacyPolicy()
                 <h3 className="legalHeading">Information We May Process</h3>
 
                 <div className="textDiv">
-                    <p className="legalTextSmallHeading">Information you provide </p>
-                    <p className="legalText"> When you interact with the website you may provide: </p>
+                    <p className="legalTextSmallHeading"> Information We May Process</p>
+                    <p className="legalText">   The information processed depends on how you use the website. </p>
 
-
+                    <p className="legalText">
+                          Account and Login Information
+  If you create an account or sign in, information may include:
+                    </p>
                     <ul className="legalList">
 
                         <li>name</li>
                         <li> email address</li>
-                        <li>messages sent through contact forms</li>
+                        <li>authentication and session information</li>
                         <li>newsletters</li>
                         <li> newsletter subscriptions</li>
                         <li> author or contributor information</li>
