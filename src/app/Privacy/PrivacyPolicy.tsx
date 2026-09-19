@@ -185,5 +185,4 @@ export function PrivacyPolicy()
             </article>
         </section>
     );
-});
-};
+}
