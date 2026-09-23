@@ -228,21 +228,16 @@
         margin: 0;
         /* padding-top: 2rem; */
         padding: 3rem 0rem;
-
         height: max-content;
         gap: 3rem;
-
         position: static;
         align-items: center;
         justify-content: top;
         /* flex: 1; */
-  
         overflow: hidden;
         max-width: 94%;
 
-
     }
-
 
     .bookImage {
         max-width: 87%;
