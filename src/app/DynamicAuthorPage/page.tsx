@@ -20,7 +20,7 @@ export default async function DynamicAuthorPage({ searchParams }: PageProps)
     try
     {
 
-        author = await await client.fetch<Author>(AUTOHRS_QUERY, { authorUid: authorUid });
+        author = await await client.fetch<Author>(AUTOHRS_QUERY, { authorUid: authorUid }, {next : { tags :["Author"]}});
     }
     catch (error)
     {

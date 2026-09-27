@@ -24,7 +24,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
 
     try
     {
-        bookToShow = await client.fetch<Book>(BOOK_QUERY, { bookUidFromParams: bookUid });
+        bookToShow = await client.fetch<Book>(BOOK_QUERY, { bookUidFromParams: bookUid }, {next : { tags :["Book"]}});
     }
     catch (error)
     {
@@ -43,8 +43,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
 
     try
     {
-        authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
-
+        authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds }, {next : { tags :["Author"]}});
     }
     catch (error)
     {
@@ -66,7 +65,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     try
     {
 
-        serieBelonging = await client.fetch<Series>(SERIES_QUERY, { serieId: serieId });
+        serieBelonging = await client.fetch<Series>(SERIES_QUERY, { serieId: serieId }, {next : { tags :["Serie"]}});
 
     }
     catch (error)
@@ -83,7 +82,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     let reviewsForBook: Review[] = [];
     try
     {
-        reviewsForBook = await client.fetch(REVIEW_QUERY, { bookId: bookUid });
+        reviewsForBook = await client.fetch(REVIEW_QUERY, { bookId: bookUid }, {next : { tags :["Review"]}});
     }
     catch (error)
     {
