@@ -29,7 +29,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
 
    try
    {
-      serie = await client.fetch<Series>(SERIES_QUERY, { serieUidFromParams: serieUid });
+      serie = await client.fetch<Series>(SERIES_QUERY, { serieUidFromParams: serieUid }, {next : { tags :["Series"]}});
    }
    catch (error)
    {
@@ -48,7 +48,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    if(authorsIds.length > 0)
    try
    {
-      authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds });
+      authors = await client.fetch<Author[]>(AUTHORS_QUERY, { authorsIds: authorsIds },{next : { tags :["Author"]}});
    }
    catch (error)
    {
@@ -61,7 +61,7 @@ export default async function DynamicSeriePage({ searchParams }: PageProps)
    try
    {
       
-      bookList = await client.fetch<Book[]>(BOOK_QUERY, { serieID: serie._id });
+      bookList = await client.fetch<Book[]>(BOOK_QUERY, { serieID: serie._id }, {next : { tags :["Book"]}});
    }
    catch (error)
    {
