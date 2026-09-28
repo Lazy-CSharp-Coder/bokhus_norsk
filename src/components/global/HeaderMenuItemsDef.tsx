@@ -27,7 +27,7 @@ export const menuItems: ReactIcons[] =
         },
 
         {
-            name: "SERIES",
+            name: "BOOKS",
             icon: TbBooks,
             size: "1.5rem",
             pageLink: "/Series"
