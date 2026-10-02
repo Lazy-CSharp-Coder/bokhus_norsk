@@ -2,17 +2,28 @@
 import { CopyButton } from "./CopyButton";
 import { useState } from "react";
 import styles from "./AdminTabs.module.css";
+
+
+interface ARCUserInfo
+{
+    email : string,
+    recievedBooks : string[],
+    howLong : string
+    genresInterstedIn : string[]
+
+}
+
 interface AdminData
 {
     newsLetterEmails: string[],
-    arcEmails: string[],
+    arcUsers : ARCUserInfo, 
     registerBooksEmail: (book: string, emails: string[]) => Promise<void> 
 }
 
 
 type Tabs = "Newsletters" | "ARC Sendout";
 
-export function AdminTabs({ newsLetterEmails, arcEmails, registerBooksEmail }: AdminData)
+export function AdminTabs({ newsLetterEmails, arcUsers, registerBooksEmail }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     return (
