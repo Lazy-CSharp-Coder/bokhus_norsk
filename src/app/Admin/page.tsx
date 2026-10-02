@@ -1,14 +1,17 @@
+"use client"
+
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import type { UserData } from "../Register/registerSchema";
 import styles from "./admin.module.css";
-import { CopyButton } from "./CopyButton";
+
 import { BokHusCom } from "@/components/common/BokHusCom";
+import { useState } from "react";
+import { AdminTabs } from "./AdminTabs";
+
 
 export default async function AdminPage()
 { 
-   
     const  user = await currentUser();
     const isAdmin = user?.publicMetadata?.role === "admin";
 
@@ -17,6 +20,8 @@ export default async function AdminPage()
         console.log("Not authorized : User is not admin.")
         redirect("/");
     }
+
+ 
 
     const client = await clerkClient();
 
@@ -29,19 +34,22 @@ export default async function AdminPage()
 
     const copyString = emailAdressesToSendTo.join(" ;");
 
+    const handleUpdateUsers = (book: string, emails: string[])
+    {
+        // this function updates user public meta data, that they have recieved book
+        // is this ok ?
+    }
+
     return (
         <main className={`${styles.adminPage}`}>
             <div className={styles.backgroundAdminPage}>
                 <BokHusCom fontSize="14rem" />
             </div>
-            <section className={`${styles.adminSection} fadeInAnim`}>
-                <h1 className={styles.adminPageHeading}>Email adresses to send newsletters to :</h1>
-                <div className={styles.emailDiv}>
-                    {emailAdressesToSendTo.map((item, index, array) =>
-                        <p key={"adresses" + index}>{item} {index < array.length - 1 ? "," : ""} </p>)}
-                </div>
-                <CopyButton copyString={copyString} />
-            </section>
+         
+<AdminTabs newsLetterEmails={emailAdressesToSendTo} arcEmails={emailAdressesToSendTo} registerBooksEmail={handleUpdateUsers}/>
+
+       
+
         </main>
 
     );
