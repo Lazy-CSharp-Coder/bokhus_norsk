@@ -9,7 +9,7 @@ interface ARCUserInfo
     email : string,
     recievedBooks : string[],
     howLong : string
-    genresInterstedIn : string[]
+    genresInterestedIn : string[]
 
 }
 
