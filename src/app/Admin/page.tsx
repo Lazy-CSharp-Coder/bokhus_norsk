@@ -59,7 +59,7 @@ export default async function AdminPage()
         confortable : user.data?.arc?.confortable ?? "not defined"
     }));
 
-    const newsLetterEmails = response.data.filter((user) => user.publicMetadata?.newsLetter === true).map((user) => user.emailAddresses[0]?.emailAddress);
+    const newsLetterEmails : string[] = profiles.filter((user) => user.data && user.data.newsLetter == true).map((user) => user.email);
 
 
     return (
