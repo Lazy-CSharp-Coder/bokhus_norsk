@@ -12,9 +12,15 @@ export interface AdminData
     updateUsersARCBook: (book: string, emails: string[]) => Promise<void> 
 }
 
-interface ARCSendoutOptions
-{
+type Genres =  typeof genresDef[number];
 
+interface ARCSendoutOptions
+{   
+    genereOfSendout : Genres,
+    comfortable : boolean,
+    prioritizeSpeedRead : boolean,
+    disableFormerSendout: boolean,
+    
 }
 
 
@@ -23,10 +29,17 @@ type Tabs = "Newsletters" | "ARC Sendout";
 export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
-
+    const [options, setOptions]
+    const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout} = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
-    const previousSendouts : string[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))];
+
+    const handleGenreChange = (genre : Genres) =>
+    {
+
+    }
     
+
+
     return (
         <section className={styles.adminTabSection}>
             <div className={styles.tabsDiv}>
@@ -49,9 +62,16 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                 :
                 <article className={`${styles.arcSendoutSection} fadeInAnim`}>
                     <h1 className={styles.newsLetterHeading}>ARC Canditates:</h1>
-                    <form className={styles.selectionForm}>
-                        <label 
+                    <form className={styles.candidatesForm}>
+                        <div className={styles.genreSelection}>
+                            {genresDef.map((genre, index) =>
+                            <label key={`${genre} + ${index} key`}>
+                                <input type="checkbox" checked={genereOfSendout} value={genre} onChange={ () => handleGenreChange(genre)}/>
+                            </label>)
+                            }
 
+                        </div>
+                    
 
                     </form>
                 </article>
