@@ -105,9 +105,9 @@
     gap: 1.5rem;
     min-height: 5rem;
   
-
+    background-color: var(--regBackground);
     width: 100%;
-        padding: 2rem 4rem;
+        padding: 2rem 2rem;
         border: 1px solid var(--borderIconColor);
 }
 

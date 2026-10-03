@@ -120,7 +120,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                 </div>
 
 
-                                <button type="button" onClick={() => { console.log("button clicked"); }} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>Find previos sendout</button>
+                                <button type="button" onClick={() => { console.log("button clicked"); }} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>Find previos</button>
                             </div>
                             <div className={styles.optionsDiv}>
 
