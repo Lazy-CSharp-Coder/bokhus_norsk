@@ -30,3 +30,37 @@
     overflow-y: auto;
     gap: 0.5rem;
 }
+
+.arcSendoutSection
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.candidatesForm {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.genreSelection {
+    padding: 1rem 2rem;
+    border: 1px solid var(--borderIconColor);
+    border-radius:var(--borderRadiusReg);
+    background-color: var(--inputBackground);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+
+
+}
+
+.genreLabel {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap:1rem;
+  
+    
+}

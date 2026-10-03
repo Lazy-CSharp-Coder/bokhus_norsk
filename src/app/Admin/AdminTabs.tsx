@@ -16,20 +16,27 @@ type Genres =  typeof genresDef[number];
 
 interface ARCSendoutOptions
 {   
-    genereOfSendout : Genres,
+    genereOfSendout : Genres[],
     comfortable : boolean,
     prioritizeSpeedRead : boolean,
     disableFormerSendout: boolean,
     
 }
 
+const defaultsSendouts : ARCSendoutOptions =
+{
+    genereOfSendout : ["Historical novels"],
+    comfortable: false,
+    prioritizeSpeedRead : false,
+    disableFormerSendout: false
+}
 
 type Tabs = "Newsletters" | "ARC Sendout";
 
 export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
-    const [options, setOptions]
+    const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
     const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout} = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
 
@@ -65,8 +72,8 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                     <form className={styles.candidatesForm}>
                         <div className={styles.genreSelection}>
                             {genresDef.map((genre, index) =>
-                            <label key={`${genre} + ${index} key`}>
-                                <input type="checkbox" checked={genereOfSendout} value={genre} onChange={ () => handleGenreChange(genre)}/>
+                            <label className={styles.genreLabel} key={`${genre} + ${index} key`}>
+                                <input type="checkbox" checked={genereOfSendout.includes(genre)} value={genre} onChange={ () => handleGenreChange(genre)}/>{genre}
                             </label>)
                             }
 
