@@ -1,54 +1,49 @@
-"use client"
-
-import { clerkClient, currentUser } from "@clerk/nextjs/server";
+import { clerkClient, auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import type { UserData } from "../Register/registerSchema";
 import styles from "./admin.module.css";
-
 import { BokHusCom } from "@/components/common/BokHusCom";
-import { useState } from "react";
 import { AdminTabs } from "./AdminTabs";
+import { updateUserMetadata } from "./actions";
 
 
 export default async function AdminPage()
-{ 
-    const  user = await currentUser();
-    const isAdmin = user?.publicMetadata?.role === "admin";
+{
+    const { userId, sessionClaims } = await auth();
 
-    if(!isAdmin)
+    if (!userId)
     {
-        console.log("Not authorized : User is not admin.")
+        console.log("Not authorized.");
+    }
+    const role = sessionClaims?.privileges;
+
+    if (role !== "admin") 
+    {
+
+        console.log("Not authorized : User is not admin.");
         redirect("/");
     }
 
- 
-
     const client = await clerkClient();
+    const response = await client.users.getUserList();
 
-    const usersFromClerk = await client.users.getUserList({ limit: 500 });
-    const emailAdressesToSendTo: string[] = usersFromClerk.data.filter((user) =>
-    {
-        const metadata = user.publicMetadata as { userData?: UserData; };
-        return metadata.userData?.newsLetter == true;
-    }).map((item) => item.emailAddresses[0].emailAddress);
+    const arcUsers = response.data.filter((user) => user.publicMetadata?.arcInterest === true).map((user) =>
+    ({
+        email: user.emailAddresses[0]?.emailAddress,
+        howLong: user.publicMetadata?.howLong as string,
+        recievedBooks: (user.publicMetadata?.recievedBooks as string[]),
+        genresInterestedIn: (user.publicMetadata?.genresInterestedIn as string[])
+    }));
 
-    const copyString = emailAdressesToSendTo.join(" ;");
+    const newsLetterEmails = response.data.filter((user) => user.publicMetadata?.newsLetter === true).map((user) => user.emailAddresses[0]?.emailAddress);
 
-    const handleUpdateUsers = (book: string, emails: string[])
-    {
-        // this function updates user public meta data, that they have recieved book
-        // is this ok ?
-    }
 
     return (
         <main className={`${styles.adminPage}`}>
             <div className={styles.backgroundAdminPage}>
                 <BokHusCom fontSize="14rem" />
             </div>
-         
-<AdminTabs newsLetterEmails={emailAdressesToSendTo} arcEmails={emailAdressesToSendTo} registerBooksEmail={handleUpdateUsers}/>
 
-       
+            <AdminTabs newsLetterEmails={newsLetterEmails} arcUsers={arcUsers} updateUsersARCBook={updateUserMetadata} />
 
         </main>
 

@@ -16,14 +16,14 @@ interface ARCUserInfo
 interface AdminData
 {
     newsLetterEmails: string[],
-    arcUsers : ARCUserInfo, 
-    registerBooksEmail: (book: string, emails: string[]) => Promise<void> 
+    arcUsers : ARCUserInfo[], 
+    updateUsersARCBook: (book: string, emails: string[]) => Promise<void> 
 }
 
 
 type Tabs = "Newsletters" | "ARC Sendout";
 
-export function AdminTabs({ newsLetterEmails, arcUsers, registerBooksEmail }: AdminData)
+export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     return (
@@ -49,13 +49,11 @@ export function AdminTabs({ newsLetterEmails, arcUsers, registerBooksEmail }: Ad
                 <article className={`${styles.arcSendoutSection} fadeInAnim`}>
                     <h1 className={styles.newsLetterHeading}>Email adresses to send newsletters to :</h1>
                     <div className={styles.emailDiv}>
-                        {arcEmails.map((item, index, array) =>
-                            <p key={"adresses" + index}>{item} {index < array.length - 1 ? "," : ""} </p>)}
+                        {arcUsers.map((item, index, array) =>
+                            <p key={"adresses" + index}>{item.howLong} {index < array.length - 1 ? "," : ""} </p>)}
                     </div>
                 </article>
             }
-
-
 
         </section>);
 
