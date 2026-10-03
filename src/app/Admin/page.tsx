@@ -5,6 +5,23 @@ import { BokHusCom } from "@/components/common/BokHusCom";
 import { AdminTabs } from "./AdminTabs";
 import { updateUserMetadata } from "./actions";
 
+interface ProfileDataNeeded 
+{
+    arcInterest?: boolean,
+    newsLetter?: boolean,
+    recievedBooks?: string[],
+    genresInterestedIn?:string[],
+    arc?: { howLong?:string, confortable? : string}
+}
+export interface ARCUserInfo
+{
+    email : string,
+    recievedBooks : string[],
+    howLong : string
+    genresInterestedIn : string[]
+    confortable : string
+}
+
 
 export default async function AdminPage()
 {
@@ -26,12 +43,20 @@ export default async function AdminPage()
     const client = await clerkClient();
     const response = await client.users.getUserList();
 
-    const arcUsers = response.data.filter((user) => user.publicMetadata?.arcInterest === true).map((user) =>
+    const profiles = response.data.map((user) => (
+        {   email : user.emailAddresses[0]?.emailAddress ?? "",
+            data: user.publicMetadata?.userData as ProfileDataNeeded | undefined
+        }
+
+    ))
+    
+    const arcUsers : ARCUserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true).map((user) =>
     ({
-        email: user.emailAddresses[0]?.emailAddress,
-        howLong: user.publicMetadata?.howLong as string,
-        recievedBooks: (user.publicMetadata?.recievedBooks as string[]),
-        genresInterestedIn: (user.publicMetadata?.genresInterestedIn as string[])
+        email: user.email,
+        howLong: user.data?.arc?.howLong ?? "not defined",
+        recievedBooks: user.data?.recievedBooks as string[] ?? [],
+        genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
+        confortable : user.data?.arc?.confortable ?? "not defined"
     }));
 
     const newsLetterEmails = response.data.filter((user) => user.publicMetadata?.newsLetter === true).map((user) => user.emailAddresses[0]?.emailAddress);
