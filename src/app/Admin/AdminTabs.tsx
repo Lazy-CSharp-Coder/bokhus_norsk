@@ -40,22 +40,17 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
     const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout} = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
 
-    const handleGenreChange = (genre : Genres) =>
+    const handleGenreChange = (e :React.ChangeEvent<HTMLInputElement>, genre : Genres) =>
     {
-
+            e.target.checked ? setOptions((prev) => ({...prev, genereOfSendout: [...prev.genereOfSendout, genre]})) : setOptions((prev) =>({...prev, genereOfSendout :prev.genereOfSendout.filter((item) => item != genre)})) ;
     }
     
-
-
     return (
         <section className={styles.adminTabSection}>
             <div className={styles.tabsDiv}>
                 <button onClick={() => setTab("Newsletters")} className={styles.tabButton}>NewsLetter</button>
                 <button onClick={() => setTab("ARC Sendout")} className={styles.tabButton}>ARC Sendouts</button>
             </div>
-
-
-
             {tab === "Newsletters" ?
 
                 <article className={`${styles.newsLetterSection} fadeInAnim`}>
@@ -73,7 +68,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                         <div className={styles.genreSelection}>
                             {genresDef.map((genre, index) =>
                             <label className={styles.genreLabel} key={`${genre} + ${index} key`}>
-                                <input type="checkbox" checked={genereOfSendout.includes(genre)} value={genre} onChange={ () => handleGenreChange(genre)}/>{genre}
+                                <input type="checkbox" checked={genereOfSendout.includes(genre)} value={genre} onChange={(e) => handleGenreChange(e, genre)} />{genre}
                             </label>)
                             }
 
