@@ -57,7 +57,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
                 {tab === "Newsletters" ?
 
-                    <article key={tab + "newsletterkey"}  className={`${styles.newsLetterSection} ${tab== "Newsletters" && "fadeInFromLeftSmallAnim"}`} style={{animationDuration:"0.6s"}}>
+                    <article key={tab + "newsletterkey"} className={`${styles.newsLetterSection} ${tab == "Newsletters" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
                         <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
                         <div className={styles.emailDiv}>
                             {newsLetterEmails.map((item, index, array) =>
@@ -66,7 +66,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                         {/* <CopyButton copyString={copyString} /> */}
                     </article>
                     :
-                    <article key={tab + "arckey"}  className={`${styles.arcSendoutSection} ${tab== "ARC Sendout" && "fadeInFromLeftSmallAnim"}`} style={{animationDuration:"0.6s"}}>
+                    <article key={tab + "arckey"} className={`${styles.arcSendoutSection} ${tab == "ARC Sendout" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
                         <h1 className={styles.newsLetterHeading}>ARC canditates and sendouts</h1>
                         <form className={styles.candidatesForm}>
                             <div className={styles.genreSelection}>     <h3 className={styles.selectHeading}>Select book genre/category :   </h3>
@@ -87,7 +87,20 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                         checked={format == "pdf"} />pdf </label>
 
                             </div>
+                            <div className={styles.genreSelection}>     <h3 className={styles.selectHeading}>Other options :   </h3>
 
+                                <label className={styles.genreLabel}>
+                                    <input type="checkbox" checked={prioritizeSpeedRead} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, prioritizeSpeedRead: !prev.prioritizeSpeedRead }))} />Prioritize fast readers
+                                </label>
+
+                                <label className={styles.genreLabel}>
+                                    <input type="checkbox" checked={comfortable} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, comfortable: !prev.comfortable }))} />User should be comfortable giving reviews </label>
+                                <label className={styles.genreLabel}>
+                                    <input type="checkbox" checked={disableFormerSendout} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, disableFormerSendout: !prev.disableFormerSendout }))} />Disable earlier sendout filtering </label>
+
+
+
+                            </div>
 
                         </form>
                     </article>}
