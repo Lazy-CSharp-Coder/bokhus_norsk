@@ -2,10 +2,12 @@
     display: flex;
     flex-direction: column;
     gap:0;
+    width: 100rem;
 }
 
 .tabsDiv {
     display: flex;
+    width: 100%;
  
 }
 
@@ -19,7 +21,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 
-    border-bottom: none;
+    /* border-bottom: 2px solid transparent; */
     transition: all 0.2s ease-out;
 
 }
@@ -40,7 +42,8 @@
 .tabButtonActive {
 
     border: 2px solid var(--borderIconColor);
-        border-bottom: none;
+  border-bottom : 2px solid transparent;
+  
     
 }
 
@@ -48,16 +51,28 @@
     opacity: 0.7;
 }
 
+.tabButtonLineDiv {
+    border-bottom: 2px solid var(--borderIconColor);
+     /* padding: 0.8rem 1rem; */
+     width: 100%;
+     /* background: red; */
+}
+
 .tabsContainer {
+    display: flex;
+    align-items: center;
       padding: 2rem 4rem;
         max-height: 70%;
     border: var(--borderReg);
     border-radius: var(--borderRadiusReg);
-    overflow-y: hidden;
+    overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.9);
     border-top:none;
-    height: 40rem;
-    width: 60vw;
+    min-height: 70vh;
+    height:100%;
+
+    min-width: 100rem;
+    width: 100%;
 
 }
 
@@ -66,7 +81,7 @@
     flex-direction: column;
     align-items: left;
     gap: 1rem;
-    width: 50rem;
+    width: 100%;
   
 
     height: fit-content;
@@ -83,26 +98,36 @@
 
 .emailDiv {
     display: flex;
+    flex-direction: column;
     height: fit-content;
     flex-wrap: wrap;
     overflow-y: auto;
-    gap: 0.5rem;
+    gap: 1.5rem;
+    min-height: 5rem;
+  
+
+    width: 100%;
+        padding: 2rem 4rem;
+        border: 1px solid var(--borderIconColor);
 }
 
-.arcSendoutSection {
+.arcSendoutArticle {
     display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.9);
     flex-direction: column;
     gap: 2rem;
-  
+    width: 100%;
+      padding: 2rem 4rem;
 }
 
 .candidatesForm {
     display: flex;
-    padding: 2rem 4rem;
+    flex-direction: column;
+
     /* background-color: var(--regBackground); */
-    flex-direction: row;
-    gap: 2rem;
+     gap: 2rem;
+     width: 100%;
     /* border: 2px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg); */
 
@@ -111,19 +136,72 @@
 
 .selectHeading {
     padding-bottom: 1rem;
+    border-bottom: 1px solid var(--myWhiteColor);
     color: var(--myWhiteColor);
 }
 
-.genreSelection {
+.bookNameDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    gap:1rem;
+    width: 100%;
     padding: 1rem 2rem;
+    background-color: var(--inputBackground);
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+}
+
+.bookNameInputDiv {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    line-break: none;
+    width: max-content;
+}
+
+.sendOutBookNameLabel {
+    
+    width: 100%;
+    min-width: max-content;
+    line-break: none;
+
+
+}
+
+.sendOutBookNameInput {
+ font-size: 1.2rem;
+ 
+}
+
+.findPreviosSendoutNameButton {
+width: fit-content;
+padding:  0.5rem  2rem;
+
+    
+}
+
+.optionsDiv {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    height: 20rem;
+width: 100%;
+    gap: 1rem;
+
+}
+
+.genreSelection {
+    padding: 2rem 2rem;
     border: 1px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
     background-color: var(--inputBackground);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     align-items: start;
-    height: fit-content
+    height: 100%;
 }
 
 .genreLabel {
@@ -141,10 +219,10 @@
     flex-direction: column;
     gap: 1rem;
     background-color: var(--inputBackground);
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     border: 1px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
-    height: fit-content;
+    height: 100%;
 }
 
 .bookFormatLabel {
@@ -156,3 +234,17 @@
 }
 
 .bookFormatInput {}
+
+.emailListARC {
+    list-style: none;
+    padding: 0 0.5rem;
+  padding-bottom: 1rem;
+
+    border-bottom: 1px solid var(--myWhiteColor);
+    color: var(--myWhiteColor);
+    max-height: 8rem;
+    height: 8rem;
+    overflow-y: auto;
+
+}
+

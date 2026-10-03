@@ -11,7 +11,7 @@ interface ProfileDataNeeded
     newsLetter?: boolean,
     recievedBooks?: string[],
     genresInterestedIn?:string[],
-    arc?: { howLong?:string, confortable? : string}
+    arc?: { howLong?:string, comfortable? : string, format : string}
 }
 export interface ARCUserInfo
 {
@@ -19,7 +19,8 @@ export interface ARCUserInfo
     recievedBooks : string[],
     howLong : string
     genresInterestedIn : string[]
-    confortable : string
+    comfortable : string,
+    format : string
 }
 
 
@@ -50,13 +51,14 @@ export default async function AdminPage()
 
     ))
     
-    const arcUsers : ARCUserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true).map((user) =>
+    const arcUsers : ARCUserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true && data.arc).map((user) =>
     ({
         email: user.email,
         howLong: user.data?.arc?.howLong ?? "not defined",
         recievedBooks: user.data?.recievedBooks as string[] ?? [],
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
-        confortable : user.data?.arc?.confortable ?? "not defined"
+        comfortable : user.data?.arc?.comfortable ?? "not defined",
+        format : user.data?.arc?.format ?? "ePub"
     }));
 
 
