@@ -3,7 +3,7 @@ import { CopyButton } from "./CopyButton";
 import { useState } from "react";
 import styles from "./AdminTabs.module.css";
 import { type ARCUserInfo } from "./page";
-
+import { genresDef } from "../Register/registerSchema";
 
 export interface AdminData
 {
@@ -12,11 +12,21 @@ export interface AdminData
     updateUsersARCBook: (book: string, emails: string[]) => Promise<void> 
 }
 
+interface ARCSendoutOptions
+{
+
+}
+
+
 type Tabs = "Newsletters" | "ARC Sendout";
 
 export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
+
+    // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
+    const previousSendouts : string[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))];
+    
     return (
         <section className={styles.adminTabSection}>
             <div className={styles.tabsDiv}>
@@ -38,11 +48,12 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                 </article>
                 :
                 <article className={`${styles.arcSendoutSection} fadeInAnim`}>
-                    <h1 className={styles.newsLetterHeading}>Email adresses to send newsletters to :</h1>
-                    <div className={styles.emailDiv}>
-                        {arcUsers.map((item, index, array) =>
-                            <p key={"adresses" + index}>{item.howLong} {index < array.length - 1 ? "," : ""} </p>)}
-                    </div>
+                    <h1 className={styles.newsLetterHeading}>ARC Canditates:</h1>
+                    <form className={styles.selectionForm}>
+                        <label 
+
+
+                    </form>
                 </article>
             }
 

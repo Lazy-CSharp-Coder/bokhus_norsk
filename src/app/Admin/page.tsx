@@ -59,6 +59,8 @@ export default async function AdminPage()
         confortable : user.data?.arc?.confortable ?? "not defined"
     }));
 
+
+
     const newsLetterEmails : string[] = profiles.filter((user) => user.data && user.data.newsLetter == true).map((user) => user.email);
 
 

@@ -7,7 +7,9 @@
     gap: 1rem;
     width: 50rem;
     padding: 2rem 4rem;
+
     height: fit-content;
+    max-height: 70%;
     border: var(--borderReg);
     border-radius: var(--borderRadiusReg);
     overflow-y: hidden;
@@ -23,7 +25,8 @@
 
 .emailDiv {
     display: flex;
+    height: fit-content;
     flex-wrap: wrap;
-    overflow-y: scroll;
+    overflow-y: auto;
     gap: 0.5rem;
 }
