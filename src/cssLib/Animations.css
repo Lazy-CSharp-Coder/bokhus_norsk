@@ -167,6 +167,29 @@
   }
 }
 
+
+
+.fadeInFromLeftSmallAnim  {
+  animation-name: fadeInFromLeftSmall;
+  animation-duration: var(--defaultAnimDuration);
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-fill-mode: backwards; 
+}
+
+@keyframes fadeInFromLeftSmall {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 .fadeInFromRightAnim  {
   animation-name: fadeInFromRight;
   animation-duration: var(--defaultAnimDuration);
