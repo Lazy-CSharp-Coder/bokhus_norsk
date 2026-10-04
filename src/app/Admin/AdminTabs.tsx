@@ -30,6 +30,13 @@ interface ARCSendoutOptions
 
 }
 
+interface CopyToClipboardUserInfo
+{
+    email :string,
+    userName : string,
+    genresInterestedIn : string[]
+
+}
 
 
 const defaultsSendouts: ARCSendoutOptions =
@@ -90,18 +97,20 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
             return aIndex - bIndex;
         }) : filterOnPrevSendouts;
 
-        const emailsToGet: string[] = filterOnPrioritySpeed.map((user) => user.email) ?? [] as string[];
-        return emailsToGet;
+        return filterOnPrioritySpeed;
+    
+        return userInfoToGet;
+    
+        // const emailsToGet: string[] = filterOnPrioritySpeed.map((user) => user.email) ?? [] as string[];
+        // return emailsToGet;
     };
 
-    const arcEmails: string[] = filterEmails();
-    const allEmails: string[] = arcUsers.map((user) => user.email);
+        const arcUserInfo: CopyToClipboardUserInfo[] = filterEmails() as CopyToClipboardUserInfo[];
+        const userInfoToGet : string[] = arcUserInfo.map((user) => `${user.userName},${user.email},${user.genresInterestedIn.join(";")}`);
+        const finalStringHeading = `ARC Sendout user reciever info for book ${bookName}\nname, email, book interests|\n`;
 
-    console.log("user email  " + arcEmails);
-    arcUsers.forEach((user) => 
-    {
-        console.log("user data " + user.email + user.comfortable + user.format + user.genresInterestedIn.length + user.howLong + user.recievedBooks.length);
-    });
+
+
 
     const registerSendout = async (bookName: string, arcEmails: string[]) =>
     {
@@ -122,6 +131,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
     };
 
+        
     const selectorOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
 
 
@@ -230,22 +240,17 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                         <div className={styles.emailDiv}>
                             <h3 className={styles.selectHeading}>Users filtered : </h3>
                             <ul className={styles.emailListARC}>
-                                {arcEmails.length > 0 &&
-                                    arcEmails.map((emailadr, index) =>
+                                {arcUserInfo.length > 0 &&
+                                    arcUserInfo.map((info, index) =>
 
-                                        <li key={"arcKeyEmail" + index}>{emailadr}</li>)
-
-
-
+                                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{`${info.userName } - ${info.email}`}</li>)
 
                                 }
 
-
-
                             </ul>
                             <div className={styles.arcButtonDiv}>
-                                <CopyButton copyString={arcEmails.join("; ")} />
-                                <button onClick={() => registerSendout(bookName, arcEmails)} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>
+                                <CopyButton copyString={finalStringHeading.concat(userInfoToGet.join("\n"))} />
+                                <button onClick={() => registerSendout(bookName,arcUserInfo.map((user)=> user.email))} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>
 
 
                             </div>

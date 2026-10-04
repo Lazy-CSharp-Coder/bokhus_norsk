@@ -268,13 +268,19 @@ width: 100%;
     list-style: none;
     padding: 0 0.5rem;
   padding-bottom: 1rem;
-
+    width: 100%;
     border-bottom: 1px solid var(--myWhiteColor);
     color: var(--myWhiteColor);
     max-height: 8rem;
     height: 8rem;
     overflow-y: auto;
 
+}
+
+.arcUserListItem {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
 }
 
 .arcButtonDiv {

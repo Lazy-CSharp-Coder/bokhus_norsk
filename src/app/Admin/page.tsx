@@ -7,6 +7,7 @@ import { updateUserMetadata } from "./actions";
 
 interface ProfileDataNeeded 
 {
+    userName : string,
     arcInterest?: boolean,
     newsLetter?: boolean,
     recievedBooks?: string[],
@@ -16,6 +17,7 @@ interface ProfileDataNeeded
 export interface ARCUserInfo
 {
     email : string,
+    userName : string,
     recievedBooks : string[],
     howLong : string
     genresInterestedIn : string[]
@@ -54,6 +56,7 @@ export default async function AdminPage()
     const arcUsers : ARCUserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true && data.arc).map((user) =>
     ({
         email: user.email,
+        userName : user.data?.userName ?? "NONAME",
         howLong: user.data?.arc?.howLong ?? "not defined",
         recievedBooks: user.data?.recievedBooks as string[] ?? [],
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
@@ -62,9 +65,7 @@ export default async function AdminPage()
     }));
 
 
-
     const newsLetterEmails : string[] = profiles.filter((user) => user.data && user.data.newsLetter == true).map((user) => user.email);
-
 
     return (
         <main className={`${styles.adminPage}`}>
