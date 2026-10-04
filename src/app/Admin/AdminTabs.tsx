@@ -164,12 +164,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
                                         <li key={"newsLetterEmailKey" + index}>{emailadr}</li>)
 
-
-
-
                                 }
-
-
 
                             </ul>
                             <CopyButton copyString={newsLetterEmails.join("; ")} />
