@@ -31,6 +31,7 @@ export default async function Register()
     userData ? userData :
       {
        email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
+       userName : user.firstName ? user.fullName ?? "" : "",
         country: "",
         preferredLanguage: "English",
         genresInterestedIn: [],
