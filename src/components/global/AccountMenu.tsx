@@ -39,7 +39,7 @@ export function AccountMenu()
 
                 </span>} href="/DeleteProfile" />
             {isAdmin &&
-                <UserButton.Link label="Newsletter subscribers" href="/Admin" labelIcon={<span className={styles.clerkButtonSpan}><GiNewspaper size="1rem" /> </span>} />
+                <UserButton.Link label="Newsletters & ARC" href="/Admin" labelIcon={<span className={styles.clerkButtonSpan}><GiNewspaper size="1rem" /> </span>} />
 
             }
         </UserButton.MenuItems>
