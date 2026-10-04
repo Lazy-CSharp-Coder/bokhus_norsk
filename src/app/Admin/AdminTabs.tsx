@@ -169,13 +169,17 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                     <input className={styles.sendOutBookNameInput} type="text" id="bookName" value={bookName} onChange={(e) => setOptions((prev) => ({ ...prev, bookName: e.target.value }))} />
                                 </div>
 
-<div className={styles.usePrevSendoutButtons}>
+                                <div className={styles.usePrevSendoutButtons}>
 
-                                <button type="button" onClick={() => { console.log("button clicked"); }} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
-                                <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={selectOption} onChange={setSelectOption} options={selectorOptions} placeholder={"Select a previous sendout"} styles={{option : (prev) => ({...prev, backgroundColor: "var(--regBackground)", color : "var(--myWhiteColor)"})}} />
+                                    <button type="button" onClick={() => { console.log("button clicked"); }} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
+                                    <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={selectOption} onChange={setSelectOption} options={selectorOptions} placeholder={"Select a previous sendout"} 
+                                    styles={{ menu: (prev) => ({ ...prev,  backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)"}),
+                                        option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)",color:  state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)"  }),
+                                        singleValue: (prev) => ({...prev, backgroundColor : "var(--regBackground)", color: "white"}),
+                                        control: (prev, state) => ({...prev, backgroundColor: "var(--regBackground)"}) }} />
 
 
-</div>
+                                </div>
                             </div>
                             <div className={styles.optionsDiv}>
 
