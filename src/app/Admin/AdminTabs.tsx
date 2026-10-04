@@ -107,7 +107,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
         const arcUserInfo: CopyToClipboardUserInfo[] = filterEmails() as CopyToClipboardUserInfo[];
         const userInfoToGet : string[] = arcUserInfo.map((user) => `${user.userName},${user.email},${user.genresInterestedIn.join(";")}`);
-        const finalStringHeading = `ARC Sendout user reciever info for book ${bookName}\nname, email, book interests\n`;
+        const finalStringHeading = `ARC Sendout user reciever info for book ${bookName}\nname, email, book interests|\n`;
 
 
 
