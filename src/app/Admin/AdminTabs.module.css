@@ -162,9 +162,10 @@
 
 .bookNameDiv {
     display: grid;
-    grid-template-columns: 60% 38%;
-    
-    gap:1rem;
+    grid-template-columns: 50% 15% 30%;
+    align-items: center;
+    column-gap:2rem;
+
     width: 100%;
     padding: 1rem 2rem;
     background-color: var(--inputBackground);
@@ -192,12 +193,14 @@
 
 .sendOutBookNameInput {
  font-size: 1.2rem;
+ padding: 0.3rem 0.4rem;
  
 }
 
 .findPreviosSendoutNameButton {
 width: fit-content;
 padding:  0.5rem  2rem;
+width: 100%;
 
     
 }
