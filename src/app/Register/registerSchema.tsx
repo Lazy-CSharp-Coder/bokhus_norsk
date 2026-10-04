@@ -67,7 +67,7 @@ export const arcSchema = z.object(
         comfortable: z.enum(["Yes", "No", "Not sure"], { error: () => "You have to choose one of the alternatives" }),
         reviewSites: reviewSitesSchema,
         notice: noticeSchema,
-        rules: rulesSchema,
+        rules: rulesSchema
 
     }
 );
@@ -85,6 +85,7 @@ export const registerSchema = z.object(
         newsLetter: z.boolean(),
         arcInterest: z.boolean(),
         arc: arcSchema.optional(),
-
+        recievedBooks: z.array(z.string()).default([])
+        
     }
 );
