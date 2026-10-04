@@ -1,30 +1,42 @@
-"use server"
+"use server";
 
-import { auth, clerkClient} from "@clerk/nextjs/server";
+import { auth, clerkClient } from "@clerk/nextjs/server";
 import { success } from "zod";
 
 
-export async function updateUserMetadata(book: string, recieverEmails : string[]) : Promise<void>
+export async function updateUserMetadata(book: string, recieverEmails: string[]): Promise<void>
 {
-    const { userId, sessionClaims} = await auth();
+    const { userId, sessionClaims } = await auth();
 
-    if(!userId)
+    if (!userId)
     {
-        throw new Error ("Unauthorized");
+        throw new Error("Unauthorized");
     }
     const role = sessionClaims?.privileges;
 
-    if(role !== "admin") 
+    if (role !== "admin") 
     {
         throw new Error("Unauthorized user");
     }
+    try
+    {
+        const client = await clerkClient();
+        const response = await client.users.getUserList();
 
-    
-    
-    // return  { success : true}
+        for (const user of response.data)
+        {
+            const currentBooksRecieved = user.publicMetadata?.recievedBooks
 
-    
-    
+        }
+
+    }
+    catch (error)
+    {
+        console.error("An error accessing clerk users data occured", error);
+
+    }
+
+
 
 
 }

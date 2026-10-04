@@ -4,6 +4,9 @@ import { useState } from "react";
 import styles from "./AdminTabs.module.css";
 import { type ARCUserInfo } from "./page";
 import { genresDef } from "../Register/registerSchema";
+import { BokHusCom } from "@/components/common/BokHusCom";
+import { ErrorBokhus } from "../ErrorBokhus";
+import { success } from "zod";
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
@@ -46,6 +49,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
 
+
     const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
 
@@ -53,6 +57,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
     {
         e.target.checked ? setOptions((prev) => ({ ...prev, genereOfSendout: [...prev.genereOfSendout, genre] })) : setOptions((prev) => ({ ...prev, genereOfSendout: prev.genereOfSendout.filter((item) => item != genre) }));
     };
+
 
     const filterEmails = () => 
     {
@@ -90,13 +95,33 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
         console.log("user data " + user.email + user.comfortable + user.format + user.genresInterestedIn.length + user.howLong + user.recievedBooks.length);
     });
 
+    const registerSendout = async (bookName : string, arcEmails : string[]) =>
+    {
+        if(bookName.length == 0 || arcEmails.length == 0) return;
+
+        try {
+            const response = await updateUsersARCBook(bookName, arcEmails);
+            setOptions(defaultsSendouts);
+           
+        }
+        catch(error)
+        {
+            console.error("An error occured updating user data." , error);
+            <ErrorBokhus msg={"Could not update user data width sendout data."}/>
+        }
+            
+        
+    }
+
     return (
         <section className={styles.adminTabSection}>
+
             <div className={styles.tabsDiv}>
                 <button onClick={() => setTab("Newsletters")} className={`${styles.tabButtonLeft} ${tab == "Newsletters" ? styles.tabButtonActive : styles.tabButtonInactive}`}>NEWSLETTER</button>
                 <button onClick={() => setTab("ARC Sendout")} className={`${styles.tabButtonRight} ${tab == "ARC Sendout" ? styles.tabButtonActive : styles.tabButtonInactive}`}>ARC SENDOUTS</button>
-                <div className={styles.tabButtonLineDiv}></div>
+               <span className="scaleInAnim" style={{animationDelay: "0.8s"}}>  <BokHusCom fontSize="1.4rem" /></span>
             </div>
+
             <div className={styles.tabsContainer}>
 
                 {tab === "Newsletters" ?
@@ -104,10 +129,24 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                     <article key={tab + "newsletterkey"} className={`${styles.newsLetterSection} ${tab == "Newsletters" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
                         <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
                         <div className={styles.emailDiv}>
-                            {newsLetterEmails.map((item, index, array) =>
-                                <p key={"adresses" + index}>{item} {index < array.length - 1 ? "," : ""} </p>)}
+                                 <h3 className={styles.selectHeading}>Emails filtered : </h3>
+                            <ul className={styles.emailListARC}>
+                                {newsLetterEmails.length > 0 &&
+                                    newsLetterEmails.map((emailadr, index) =>
+
+                                        <li key={"newsLetterEmailKey" + index}>{emailadr}</li>)
+
+
+
+
+                                }
+
+
+
+                            </ul>
+                            <CopyButton copyString={newsLetterEmails.join("; ")}/>
                         </div>
-                        {/* <CopyButton copyString={copyString} /> */}
+
                     </article>
                     :
                     <article key={tab + "arckey"} className={`${styles.arcSendoutArticle} ${tab == "ARC Sendout" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
@@ -163,24 +202,30 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
                         </form>
 
-                <div className={styles.emailDiv}>
-                    <h3 className={styles.selectHeading}>Emails filtered : </h3>
-                    <ul className={styles.emailListARC}>
-                        {arcEmails.length > 0 &&
-                            arcEmails.map((emailadr, index) =>
+                        <div className={styles.emailDiv}>
+                            <h3 className={styles.selectHeading}>Emails filtered : </h3>
+                            <ul className={styles.emailListARC}>
+                                {arcEmails.length > 0 &&
+                                    arcEmails.map((emailadr, index) =>
 
-                                <li key={"arcKeyEmail" + index}>{emailadr}</li>)
-
-
-
-
-                        }
+                                        <li key={"arcKeyEmail" + index}>{emailadr}</li>)
 
 
 
-                    </ul>
-                    <CopyButton copyString={arcEmails.join("; ")} />
-                </div>
+
+                                }
+
+
+
+                            </ul>
+                            <div className={styles.arcButtonDiv}>
+  <CopyButton copyString={arcEmails.join("; ")} />
+                            <button onClick={()=> registerSendout(bookName, arcEmails)} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>        
+
+
+                            </div>
+                          
+                        </div>
                     </article>}
 
             </div>

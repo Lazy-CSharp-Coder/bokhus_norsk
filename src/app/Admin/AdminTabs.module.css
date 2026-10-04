@@ -1,3 +1,8 @@
+:root {
+    --adminBorder: 2px solid rgb(125, 88, 33);
+}
+
+
 .adminTabSection {
     display: flex;
     flex-direction: column;
@@ -6,44 +11,56 @@
 }
 
 .tabsDiv {
+    position: relative;
+    justify-content: end;
     display: flex;
+    align-items: center;
+    padding-right: 2rem;
     width: 100%;
+    height: 5rem;
  
 }
 
 .tabButtonLeft,
 .tabButtonRight {
-    padding: 0.8rem 1rem;
-  background-color: rgba(0, 0, 0, 0.9);
+
+    position: absolute;
+    top: 0;
+    width: 15rem;
+    height: 4.95rem;
+    background-color: rgba(0, 0, 0, 0.9);
     color: var(--myWhiteColor);
     font-size: 1.5rem;
     border: 2px solid var(--borderIconColor);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-
-    /* border-bottom: 2px solid transparent; */
+/* position:absolute; */
+    border-bottom: 2px solid transparent;
     transition: all 0.2s ease-out;
 
 }
 
 .tabButtonLeft {
-    border-right: 2px solid transparent;
+   
       /* border-top-right-radius: 0; */
-       
+    left: 0;
 }
 
 
 .tabButtonRight {
-    border-left: 2px solid transparent;
- 
+
+    left:14.99rem;
 }
 
 
 .tabButtonActive {
 
-    border: 2px solid var(--borderIconColor);
-  border-bottom : 2px solid transparent;
-  
+    border-bottom: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0.9);
+    
+
+
+    height: calc(100% + 2px);
     
 }
 
@@ -51,23 +68,16 @@
     opacity: 0.7;
 }
 
-.tabButtonLineDiv {
-    border-bottom: 2px solid var(--borderIconColor);
-     /* padding: 0.8rem 1rem; */
-     width: 100%;
-     /* background: red; */
-}
-
 .tabsContainer {
     display: flex;
     align-items: center;
       padding: 2rem 4rem;
         max-height: 70%;
-    border: var(--borderReg);
+    border: var(--adminBorder);
     border-radius: var(--borderRadiusReg);
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.9);
-    border-top:none;
+ border-top-left-radius: 0;
     min-height: 70vh;
     height:100%;
 
@@ -236,6 +246,11 @@ width: 100%;
 .bookFormatInput {}
 
 .emailListARC {
+
+    display: flex;
+    flex-direction: column;
+    gap:0.3rem;
+    align-items: start;
     list-style: none;
     padding: 0 0.5rem;
   padding-bottom: 1rem;
@@ -248,3 +263,13 @@ width: 100%;
 
 }
 
+.arcButtonDiv {
+    display: flex;
+    width: 100%;
+    gap:2rem;
+}
+
+.sendOutText {
+    color: white;
+    font-weight: bold;
+}
