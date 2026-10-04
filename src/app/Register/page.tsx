@@ -37,7 +37,8 @@ export default async function Register()
         linkProfilePage: "",
         newsLetter: true,
         arcInterest: false,
-        arc: undefined
+        arc: undefined,
+        recievedBooks : []
 
       };
 
