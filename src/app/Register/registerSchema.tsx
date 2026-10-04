@@ -76,6 +76,7 @@ export const registerSchema = z.object(
     {
         // userId: clerkUserId,
         email: emailSchema,
+        userName : z.string().min(1, { message : "Please supply a user name"}),
         country: z.string().optional(),
         preferredLanguage: preferredLanguageDef,
               
