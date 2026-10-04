@@ -18,13 +18,15 @@
     "next": "^16.3.4",
     "next-sanity": "^13.3.4",
     "numbers-to-words": "^2.0.0",
-    "react": "^19.2.8",
+    "react": "^19.3.0",
     "react-dom": "^19.2.8",
     "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.80.0",
     "react-icons": "^5.7.0",
+    "react-select": "^5.10.2",
     "resend": "^6.16.0",
     "sanity": "^6.12.0",
+    "select": "^1.1.2",
     "zod": "^4.4.3"
   },
   "overrides": {
