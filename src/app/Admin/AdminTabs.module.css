@@ -1,0 +1,277 @@
+:root {
+    --adminBorder: 2px solid rgb(125, 88, 33);
+}
+
+
+.adminTabSection {
+    display: flex;
+    flex-direction: column;
+    gap:0;
+    width: 100rem;
+}
+
+.tabsDiv {
+    position: relative;
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+    width: 100%;
+    height: 5rem;
+ 
+}
+
+.tabButtonLeft,
+.tabButtonRight {
+
+    position: absolute;
+    top: 0;
+    width: 15rem;
+    height: 4.95rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: var(--myWhiteColor);
+    font-size: 1.5rem;
+    border: 2px solid var(--borderIconColor);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+/* position:absolute; */
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-out;
+
+}
+
+.tabButtonLeft {
+   
+      /* border-top-right-radius: 0; */
+    left: 0;
+}
+
+
+.tabButtonRight {
+
+    left:14.99rem;
+}
+
+
+.tabButtonActive {
+
+    border-bottom: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0.9);
+    
+
+
+    height: calc(100% + 2px);
+    
+}
+
+.tabButtonInactive {
+    opacity: 0.7;
+}
+
+.tabsContainer {
+    display: flex;
+    align-items: center;
+      padding: 2rem 4rem;
+        max-height: 70%;
+    border: var(--adminBorder);
+    border-radius: var(--borderRadiusReg);
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+ border-top-left-radius: 0;
+    min-height: 70vh;
+    height:100%;
+
+    min-width: 100rem;
+    width: 100%;
+
+}
+
+.newsLetterSection {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1rem;
+    width: 100%;
+  
+
+    height: fit-content;
+  
+}
+
+.newsLetterHeading {
+    font-size: 2rem;
+    padding-bottom: 0.3rem;
+    color: var(--myWhiteColor);
+    /* border-bottom: 1px solid white; */
+
+}
+
+.emailDiv {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 1.5rem;
+    min-height: 5rem;
+  
+    background-color: var(--regBackground);
+    width: 100%;
+        padding: 2rem 2rem;
+        border: 1px solid var(--borderIconColor);
+}
+
+.arcSendoutArticle {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+      padding: 2rem 4rem;
+}
+
+.candidatesForm {
+    display: flex;
+    flex-direction: column;
+
+    /* background-color: var(--regBackground); */
+     gap: 2rem;
+     width: 100%;
+    /* border: 2px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg); */
+
+
+}
+
+.selectHeading {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--myWhiteColor);
+    color: var(--myWhiteColor);
+}
+
+.bookNameDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    gap:1rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--inputBackground);
+    border: var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+}
+
+.bookNameInputDiv {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    line-break: none;
+    width: max-content;
+}
+
+.sendOutBookNameLabel {
+    
+    width: 100%;
+    min-width: max-content;
+    line-break: none;
+
+
+}
+
+.sendOutBookNameInput {
+ font-size: 1.2rem;
+ 
+}
+
+.findPreviosSendoutNameButton {
+width: fit-content;
+padding:  0.5rem  2rem;
+
+    
+}
+
+.optionsDiv {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    height: 20rem;
+width: 100%;
+    gap: 1rem;
+
+}
+
+.genreSelection {
+    padding: 2rem 2rem;
+    border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    background-color: var(--inputBackground);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
+    height: 100%;
+}
+
+.genreLabel {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+
+
+}
+
+
+.bookFormatRadioInputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--inputBackground);
+    padding: 2rem 2rem;
+    border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    height: 100%;
+}
+
+.bookFormatLabel {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
+
+}
+
+.bookFormatInput {
+    color: white;
+}
+
+.emailListARC {
+
+    display: flex;
+    flex-direction: column;
+    gap:0.3rem;
+    align-items: start;
+    list-style: none;
+    padding: 0 0.5rem;
+  padding-bottom: 1rem;
+
+    border-bottom: 1px solid var(--myWhiteColor);
+    color: var(--myWhiteColor);
+    max-height: 8rem;
+    height: 8rem;
+    overflow-y: auto;
+
+}
+
+.arcButtonDiv {
+    display: flex;
+    width: 100%;
+    gap:2rem;
+}
+
+.sendOutText {
+    color: white;
+    font-weight: bold;
+}
