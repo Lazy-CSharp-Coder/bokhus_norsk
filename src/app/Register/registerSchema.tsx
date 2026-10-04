@@ -31,7 +31,7 @@ const preferredLanguageDef =  z.enum(["English", "Norwegian", "German", ""], { e
 const preferredArc = z.enum(["English", "Norwegian", "German"], { error: "You have to select one language" });
 
 export const reviewSitesDef = [
-    "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other", "Don't post reviews yet"
+    "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"
 ] as const;
 
 export const noticeDef = [
