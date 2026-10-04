@@ -243,7 +243,9 @@ width: 100%;
 
 }
 
-.bookFormatInput {}
+.bookFormatInput {
+    color: white;
+}
 
 .emailListARC {
 

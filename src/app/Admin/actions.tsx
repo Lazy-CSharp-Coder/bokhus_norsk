@@ -1,7 +1,8 @@
 "use server";
 
 import { auth, clerkClient } from "@clerk/nextjs/server";
-import { success } from "zod";
+
+
 
 
 export async function updateUserMetadata(book: string, recieverEmails: string[]): Promise<void>
@@ -25,7 +26,7 @@ export async function updateUserMetadata(book: string, recieverEmails: string[])
 
         for (const user of response.data)
         {
-            const currentBooksRecieved = user.publicMetadata?.recievedBooks
+            // const currentBooksRecieved = user.publicMetadata?.userData?.recievedBooks;
 
         }
 

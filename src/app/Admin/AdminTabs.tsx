@@ -95,23 +95,24 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
         console.log("user data " + user.email + user.comfortable + user.format + user.genresInterestedIn.length + user.howLong + user.recievedBooks.length);
     });
 
-    const registerSendout = async (bookName : string, arcEmails : string[]) =>
+    const registerSendout = async (bookName: string, arcEmails: string[]) =>
     {
-        if(bookName.length == 0 || arcEmails.length == 0) return;
+        if (bookName.length == 0 || arcEmails.length == 0) return;
 
-        try {
+        try
+        {
             const response = await updateUsersARCBook(bookName, arcEmails);
             setOptions(defaultsSendouts);
-           
+
         }
-        catch(error)
+        catch (error)
         {
-            console.error("An error occured updating user data." , error);
-            <ErrorBokhus msg={"Could not update user data width sendout data."}/>
+            console.error("An error occured updating user data.", error);
+            <ErrorBokhus msg={"Could not update user data width sendout data."} />;
         }
-            
-        
-    }
+
+
+    };
 
     return (
         <section className={styles.adminTabSection}>
@@ -119,7 +120,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
             <div className={styles.tabsDiv}>
                 <button onClick={() => setTab("Newsletters")} className={`${styles.tabButtonLeft} ${tab == "Newsletters" ? styles.tabButtonActive : styles.tabButtonInactive}`}>NEWSLETTER</button>
                 <button onClick={() => setTab("ARC Sendout")} className={`${styles.tabButtonRight} ${tab == "ARC Sendout" ? styles.tabButtonActive : styles.tabButtonInactive}`}>ARC SENDOUTS</button>
-               <span className="scaleInAnim" style={{animationDelay: "0.8s"}}>  <BokHusCom fontSize="1.4rem" /></span>
+                <span className="scaleInAnim" style={{ animationDelay: "0.8s" }}>  <BokHusCom fontSize="1.4rem" /></span>
             </div>
 
             <div className={styles.tabsContainer}>
@@ -129,7 +130,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                     <article key={tab + "newsletterkey"} className={`${styles.newsLetterSection} ${tab == "Newsletters" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
                         <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
                         <div className={styles.emailDiv}>
-                                 <h3 className={styles.selectHeading}>Emails filtered : </h3>
+                            <h3 className={styles.selectHeading}>Emails filtered : </h3>
                             <ul className={styles.emailListARC}>
                                 {newsLetterEmails.length > 0 &&
                                     newsLetterEmails.map((emailadr, index) =>
@@ -144,7 +145,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
 
                             </ul>
-                            <CopyButton copyString={newsLetterEmails.join("; ")}/>
+                            <CopyButton copyString={newsLetterEmails.join("; ")} />
                         </div>
 
                     </article>
@@ -219,12 +220,12 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
                             </ul>
                             <div className={styles.arcButtonDiv}>
-  <CopyButton copyString={arcEmails.join("; ")} />
-                            <button onClick={()=> registerSendout(bookName, arcEmails)} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>        
+                                <CopyButton copyString={arcEmails.join("; ")} />
+                                <button onClick={() => registerSendout(bookName, arcEmails)} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>
 
 
                             </div>
-                          
+
                         </div>
                     </article>}
 
