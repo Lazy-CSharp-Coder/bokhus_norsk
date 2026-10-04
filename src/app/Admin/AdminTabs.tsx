@@ -211,7 +211,8 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                             checked={format == "pdf"} />pdf </label>
 
                                 </div>
-                                <div className={styles.genreSelection}>     <h3 className={styles.selectHeading}>Other options :   </h3>
+                                <div className={styles.genreSelection}>     
+                                    <h3 className={styles.selectHeading}>Other options :   </h3>
 
                                     <label className={styles.genreLabel}>
                                         <input type="checkbox" checked={prioritizeSpeedRead} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, prioritizeSpeedRead: !prev.prioritizeSpeedRead }))} />Prioritize fast readers
