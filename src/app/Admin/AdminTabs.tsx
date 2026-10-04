@@ -6,7 +6,7 @@ import { type ARCUserInfo } from "./page";
 import { genresDef } from "../Register/registerSchema";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
-import { success } from "zod";
+
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
