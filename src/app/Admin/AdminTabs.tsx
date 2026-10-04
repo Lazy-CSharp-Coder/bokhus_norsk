@@ -6,7 +6,7 @@ import { type ARCUserInfo } from "./page";
 import { genresDef } from "../Register/registerSchema";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
-
+import Select from "react-select";
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
@@ -42,13 +42,21 @@ const defaultsSendouts: ARCSendoutOptions =
     bookName: ""
 
 };
+
+interface SelectorOption  
+{
+    value: string,
+    label: string;
+
+}
+
 type Tabs = "Newsletters" | "ARC Sendout";
 
 export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
-
+    const [selectOption, setSelectOption] = useState<SelectorOption | null>(null);
 
     const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
@@ -114,6 +122,8 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
     };
 
+    const selectorOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
+
     return (
         <section className={styles.adminTabSection}>
 
@@ -159,8 +169,13 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                     <input className={styles.sendOutBookNameInput} type="text" id="bookName" value={bookName} onChange={(e) => setOptions((prev) => ({ ...prev, bookName: e.target.value }))} />
                                 </div>
 
+<div className={styles.usePrevSendoutButtons}>
 
-                                <button type="button" onClick={() => { console.log("button clicked"); }} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>Find previos</button>
+                                <button type="button" onClick={() => { console.log("button clicked"); }} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
+                                <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={selectOption} onChange={setSelectOption} options={selectorOptions} placeholder={"Select a previous sendout"} styles={{option : (prev) => ({...prev, backgroundColor: "var(--regBackground)", color : "var(--myWhiteColor)"})}} />
+
+
+</div>
                             </div>
                             <div className={styles.optionsDiv}>
 
