@@ -228,7 +228,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                         </form>
 
                         <div className={styles.emailDiv}>
-                            <h3 className={styles.selectHeading}>Emails filtered : </h3>
+                            <h3 className={styles.selectHeading}>Users filtered : </h3>
                             <ul className={styles.emailListARC}>
                                 {arcEmails.length > 0 &&
                                     arcEmails.map((emailadr, index) =>
