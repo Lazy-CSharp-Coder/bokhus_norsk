@@ -6,7 +6,7 @@ import { type ARCUserInfo } from "./page";
 import { genresDef } from "../Register/registerSchema";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
-import { success } from "zod";
+import Select from "react-select";
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
@@ -42,13 +42,21 @@ const defaultsSendouts: ARCSendoutOptions =
     bookName: ""
 
 };
+
+interface SelectorOption  
+{
+    value: string,
+    label: string;
+
+}
+
 type Tabs = "Newsletters" | "ARC Sendout";
 
 export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
-
+    const [selectOption, setSelectOption] = useState<SelectorOption | null>(null);
 
     const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
@@ -114,6 +122,15 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
     };
 
+    const selectorOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
+
+
+    const transferFromSelector = () =>
+    {
+        if(selectOption) setOptions((prev) => ({...prev, bookName : selectOption.value}));
+        else alert("Please choose book from dropdown list first.")
+    }
+
     return (
         <section className={styles.adminTabSection}>
 
@@ -159,8 +176,16 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                     <input className={styles.sendOutBookNameInput} type="text" id="bookName" value={bookName} onChange={(e) => setOptions((prev) => ({ ...prev, bookName: e.target.value }))} />
                                 </div>
 
+       
 
-                                <button type="button" onClick={() => { console.log("button clicked"); }} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>Find previos</button>
+                                    <button type="button" disabled={selectOption?.value ? false : true} onClick={transferFromSelector} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
+                                    <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={selectOption} onChange={setSelectOption} options={selectorOptions} placeholder={"Select a previous sendout"} 
+                                    styles={{ menu: (prev) => ({ ...prev,  backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)"}),
+                                        option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)",color:  state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)"  }),
+                                        singleValue: (prev) => ({...prev, backgroundColor : "var(--regBackground)", color: "white"}),
+                                        control: (prev, state) => ({...prev, backgroundColor: "var(--regBackground)"}) }} />
+
+                          
                             </div>
                             <div className={styles.optionsDiv}>
 
@@ -175,7 +200,6 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                 <div className={styles.bookFormatRadioInputDiv}>
                                     <h3 className={styles.selectHeading}>Select format to send out :   </h3>
                                     <label className={styles.bookFormatLabel} >               <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "ePub" }))} name="format" type="radio" value="ePub" checked={format == "ePub"} />e-Pub </label>
-
 
                                     <label className={styles.bookFormatLabel} >
                                         <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "pdf" }))} name="format" type="radio" value="pdf"

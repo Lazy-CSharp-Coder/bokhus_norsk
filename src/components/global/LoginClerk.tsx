@@ -7,26 +7,25 @@ import { AccountMenu } from "./AccountMenu";
 
 export function LoginClerkContent()
 {
-     
+
 
     return (
 
         <div className={styles.clerkButtons}>
 
             <Show when="signed-out">
+
                 <SignInButton fallbackRedirectUrl={"/Register"}>
                     <button className={styles.signInButton}>SIGN IN <span className={styles.signInRegisterSpan}> / </span> REGISTER</button>
                 </SignInButton>
-           
-            </Show>
-            <Show when="signed-in">
-              
-               <AccountMenu/>
-            <Link className={styles.signInButton} href="/Register">PROFILE</Link>   
-               </Show>
-       
 
-        
+            </Show>
+
+            <Show when="signed-in">
+                <AccountMenu />
+                <Link className={styles.signInButton} href="/Register">PROFILE</Link>
+            </Show>
+
         </div>);
 
 };
