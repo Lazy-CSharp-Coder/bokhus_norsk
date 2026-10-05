@@ -1,6 +1,6 @@
 .noBooksDiv {
     display: flex;
-       flex-direction: column;
+    flex-direction: column;
     align-items: center;
     position: relative;
     /* justify-content: stretch; */
@@ -26,44 +26,46 @@
     gap: 1rem;
     height: 22rem;
     width: 70rem;
+   
 }
 
 .headingIconWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-between;
-    gap:1rem;
+    justify-content: space-between;
+  
     padding: 0 1rem;
     padding-bottom: 1rem;
-    
+
     color: var(--myWhiteColor);
     width: 100%;
     border-bottom: 1px solid var(--bokhusRootsColor);
 }
 
-.noBooksHeading {
+.noBooksHeading, .arcHeading {
     font-size: 2rem;
     font-weight: 500;
-
     text-align: center;
- 
+
 }
 
 .newsLetterArcWrapper {
     display: flex;
     flex-direction: column;
-     align-items: start;
-    
+    align-items: start;
+
 }
 
 .newsLetterDiv {
     display: flex;
     flex-direction: column;
     align-items: left;
-    gap:1rem;
+    gap: 1rem;
     width: 60%;
     line-height: 1.4;
+   
+
 
 
 }
@@ -71,7 +73,8 @@
 .newsLetterLogDiv {
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
+    padding: 0.5rem 0.2rem;
 
 }
 
@@ -87,21 +90,12 @@
     border-bottom: 1px solid var(--bokhusRootsColor);
 }
 
-.whatIsARCHeading {
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--myWhiteColor);
-    width: fit-content;
-}
-
-
 
 .backButton {
     display: flex;
-align-items: center;
-gap:1rem;
-    color:var(--bokhusRootsColor);
+    align-items: center;
+    gap:1rem;
+    color: var(--bokhusRootsColor);
     background-color: transparent;
     padding: 0.5rem 1rem;
     border: none;
@@ -111,13 +105,76 @@ gap:1rem;
 
 .dontKnowSpan {
     display: flex;
-    gap:1rem;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    gap: 1rem;
 }
 
 .arcBackDiv {
     display: flex;
     flex-direction: row;
-gap:1.5rem;
+    gap: 1.5rem;
     align-items: center;
+
+}
+
+@media (max-width: 63.99em) {
+
+    
+    .newsLetterDiv {
+        width: 95%;
+    }
+.dontKnowSpan {
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5rem;
+    }
+}
+
+
+
+/* max 768 */
+
+@media (max-width: 47.99em){
+  .noBooksHeading {
+        font-size: 1.4rem;
+    }
+
+    .arcHeading {
+        font-size: 1.2rem;
+    }
+    .backButton {
+        font-size: 0.9rem;
+    }
+
+    .arrowIcon {
+        font-size: 1rem;
+    }
+    
+}
+
+/* max 640 */
+
+@media (max-width: 39.99em) {
+
+  .noBooksHeading {
+        font-size: 1.2rem;
+    }
+    .arcHeading {
+        font-size: 1rem;
+    }
+    
+}
+
+/* max 480px */
+@media (max-width: 29.99em) {
+ 
+}
+
+@media (max-width: 24rem) {
+    .noBooksHeading {
+        font-size: 1rem;
+    }
 
 }
