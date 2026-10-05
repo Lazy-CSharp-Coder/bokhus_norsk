@@ -16,7 +16,7 @@ export async function NoBooksYet({ authorName }: NoBooksYetProps)
 
     
     return (
-        <div className={styles.noBooksDiv}>
+        <div className={`${styles.noBooksDiv} fadeInFromBelowAnim`} style={{animationDelay: "0.4s"}}>
 
             <NoBooksDescription isLoggedIn={!!userId} />
         </div>
