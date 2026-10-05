@@ -5,6 +5,7 @@ import { AuthorSeriesHeading } from "./AuthorSeriesHeading";
 import { client } from "@/sanity/client";
 import { SeriesCardLarge } from "@/components/common/SeriesCardLarge";
 import styles from "./AuthorSection.module.css";
+import { NoBooksYet } from "./NoBooksYet";
 
 export default async function AuthorSection({ author }: { author: Author; })
 {
@@ -19,20 +20,24 @@ export default async function AuthorSection({ author }: { author: Author; })
     const seriesToDisplay: SeriesCardProps[] = await getSeriesCardPropsArray(seriesAuthor);
     const animDelayInc: number = 200;
     return (
-     
 
-            <section className={styles.authorSection}>
-                <AuthorCard _id={_id} profileImage={profileImage} name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre} shouldDisplayGuidance={false}/>
-                <AuthorSeriesHeading authorName={name} animationDelay={200} />
+
+        <section className={styles.authorSection}>
+            <AuthorCard _id={_id} profileImage={profileImage} name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre} shouldDisplayGuidance={false} />
+            <AuthorSeriesHeading authorName={name} animationDelay={200} />
+            {seriesAuthor.length < 1 ?
+
+                <NoBooksYet authorName={author.name} isLoggedIn={false} /> :
 
                 <ul className={styles.seriesCardList}>
                     {seriesToDisplay.length > 0 &&
                         seriesToDisplay.map((item, index) =>
                             <SeriesCardLarge key={`#SCAUTHOR + ${index}`} {...item} animationDelay={index * animDelayInc} />)
-                           
+
 
                     } </ul>
-            </section>
-       
+            }
+        </section>
+
     );
 }
