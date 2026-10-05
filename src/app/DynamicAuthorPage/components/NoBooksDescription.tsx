@@ -6,7 +6,6 @@ import Link from "next/link";
 import { SignInButton } from "@clerk/nextjs";
 import { ImBooks } from "react-icons/im";
 import { FaBookOpenReader } from "react-icons/fa6";
-import { PiClockAfternoon } from "react-icons/pi";
 import { GiNewspaper } from "react-icons/gi";
 export function NoBooksDescription({ isLoggedIn }: { isLoggedIn: boolean; })
 {

@@ -27,7 +27,7 @@ export default async function AuthorSection({ author }: { author: Author; })
             <AuthorSeriesHeading authorName={name} animationDelay={200} />
             {seriesAuthor.length < 1 ?
 
-                <NoBooksYet authorName={author.name} isLoggedIn={false} /> :
+                <NoBooksYet authorName={author.name} /> :
 
                 <ul className={styles.seriesCardList}>
                     {seriesToDisplay.length > 0 &&
