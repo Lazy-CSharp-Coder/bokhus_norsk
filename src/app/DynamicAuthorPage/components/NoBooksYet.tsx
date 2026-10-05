@@ -2,15 +2,19 @@ import { ImBooks } from "react-icons/im";
 import styles from "./NoBooksYet.module.css";
 
 import { NoBooksDescription } from "./NoBooksDescription";
+import { auth } from "@clerk/nextjs/server";
 
 interface NoBooksYetProps
 {
-    authorName: string,
-    isLoggedIn: boolean;
+    authorName: string
+  
 }
 
-export function NoBooksYet({ authorName, isLoggedIn }: NoBooksYetProps)
+export async function NoBooksYet({ authorName }: NoBooksYetProps)
 {
+    const { userId } = await auth();
+
+    
     return (
         <div className={styles.noBooksDiv}>
 
@@ -21,7 +25,7 @@ export function NoBooksYet({ authorName, isLoggedIn }: NoBooksYetProps)
 
             </div>
 
-            <NoBooksDescription />
+            <NoBooksDescription isLoggedIn={!!userId} />
         </div>
 
 

@@ -22,7 +22,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    gap: 1rem;
+    height: 20rem;
+    width: 70rem;
 }
 
 .headingIconWrapper {
@@ -43,11 +46,19 @@
  
 }
 
+.newsLetterArcWrapper {
+    display: flex;
+    flex-direction: column;
+     align-items: start;
+    
+}
+
 .newsLetterDiv {
     display: flex;
     flex-direction: column;
     gap:1rem;
-    width: 70%;
+    width: 60%;
+    line-height: 1.4;
 
 
 }
