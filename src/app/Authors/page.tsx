@@ -69,7 +69,7 @@ export default async function Authors()
                         <ul className={`${styles.linkList}`}>
                             {authors.map((item, index) =>
                                 <Link key={item.name + index} href={setRouteToGo(item)}>
-                                    <AuthorCard _id={item._id} profileImage={item.profileImage} name={item.name} subTitle={item.subTitle} genre={item.genre} description={item.description} animationDelay={`${index * animDelayInc + waitForMain}ms`} shouldDisplayGuidance={true}/>
+                                    <AuthorCard _id={item._id} profileImage={item.profileImage} name={item.name} subTitle={item.subTitle} genre={item.genre} description={item.description} animationDelay={`${index * animDelayInc + waitForMain}ms`} shouldDisplayGuidance={true} forLanguagePage={item.forLanguagePage}/>
                                 </Link>
                             )}
 
