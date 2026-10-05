@@ -15,7 +15,7 @@ export function LoginClerkContent()
 
             <Show when="signed-out">
 
-                <SignInButton fallbackRedirectUrl={"/Register"}>
+                <SignInButton forceRedirectUrl= "/Register">
                     <button className={styles.signInButton}>SIGN IN <span className={styles.signInRegisterSpan}> / </span> REGISTER</button>
                 </SignInButton>
 
