@@ -18,13 +18,6 @@ export async function NoBooksYet({ authorName }: NoBooksYetProps)
     return (
         <div className={styles.noBooksDiv}>
 
-            <div className={styles.headingIconWrapper}>
-                <ImBooks size="5rem"></ImBooks>
-                <h3 className={styles.noBooksHeading}>Books coming soon !</h3>
-
-
-            </div>
-
             <NoBooksDescription isLoggedIn={!!userId} />
         </div>
 
