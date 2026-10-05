@@ -10,7 +10,7 @@ import { NoBooksYet } from "./NoBooksYet";
 export default async function AuthorSection({ author }: { author: Author; })
 {
     // set a placeholder if not found 
-    const { _id, name, profileImage, subTitle, bestSellerIntro, bestSellerList, description } = author;
+    const { _id, name, profileImage, subTitle, bestSellerIntro, bestSellerList, description, forLanguagePage } = author;
     const SERIES_QUERY = `*[_type == "Series" && references($authorUid)]`;
 
     const seriesAuthor: Series[] = await client.fetch<Series[]>(SERIES_QUERY, { authorUid: _id });
@@ -23,7 +23,7 @@ export default async function AuthorSection({ author }: { author: Author; })
 
 
         <section className={styles.authorSection}>
-            <AuthorCard _id={_id} profileImage={profileImage} name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre} shouldDisplayGuidance={false} />
+            <AuthorCard _id={_id} profileImage={profileImage} forLanguagePage={forLanguagePage}  name={name} description={description} bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} subTitle={subTitle} genre={author.genre} shouldDisplayGuidance={false} />
             <AuthorSeriesHeading authorName={name} animationDelay={200} />
             {seriesAuthor.length < 1 ?
 
