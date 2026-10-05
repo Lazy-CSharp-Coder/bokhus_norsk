@@ -14,15 +14,13 @@ export function NoBooksDescription({ isLoggedIn }: { isLoggedIn: boolean; })
         <div className={styles.noBooksDescription}>
             {!showARCInfo ?
                 <div className={styles.newLetterArcWrapper}>
-                    <div className={styles.newsLetterDiv}>
+                    <div className={`${styles.newsLetterDiv} fadeInFromBelowAnim`}>
                         {isLoggedIn ?
-
-
-                            <div>
+                            <div className={styles.newsLetterLogDiv}>
                                 <p>Books by this author are coming soon. Subscribe to our newsletter to stay updated on upcoming books and releases.</p>
                                 <Link className={styles.newsLetterLink} href="/Register">Subscribe to our newsletter</Link>
                             </div> :
-                            <div>
+                            <div className={styles.newsLetterLogDiv}>
                                 <p>Books by this author are coming soon. Register at BokHus and subscribe to our newsletter to stay updated on upcoming books and releases.</p>
                                 <SignInButton fallbackRedirectUrl={"/Authors"}>
                                     <span className={styles.newsLetterLink}>Register and subscribe to our newsletter</span>
@@ -40,7 +38,7 @@ export function NoBooksDescription({ isLoggedIn }: { isLoggedIn: boolean; })
 
 
 
-                <div className={styles.newsLetterDiv}>
+                <div className={`${styles.newsLetterDiv} fadeInFromBelowAnim`}>
                     <h4 className={styles.whatIsARCHeading}>What is an ARC reader ?</h4>
                     <p>
 
@@ -55,16 +53,17 @@ export function NoBooksDescription({ isLoggedIn }: { isLoggedIn: boolean; })
 
                     <p>   You don't need to be a professional reviewer. What matters is your own reading experience and honest feedback.</p>
 
-             
-                        <p>   Interested ?
+
+                    <p>   Interested ?
                         {isLoggedIn ?
                             <Link className={styles.newsLetterLink} href="/Register"> Sign up as as ARC reader at Bokhus</Link> :
 
-                                                        <SignInButton fallbackRedirectUrl={"/Authors"}>
+                            <SignInButton fallbackRedirectUrl={"/Authors"}>
                                 <span className={styles.newsLetterLink}>Register and sign up as an ARC reader at BokHus.</span>
-                                </SignInButton>
-                        } 
-                        </p>
+                            </SignInButton>
+                        }
+                    </p>
+                    <button onClick={()=> setShowARCInfo(false)}>Back</button>
                 </div>}
         </div>
 
