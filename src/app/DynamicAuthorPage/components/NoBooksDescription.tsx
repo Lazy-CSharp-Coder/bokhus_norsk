@@ -26,7 +26,7 @@ export function NoBooksDescription({ isLoggedIn }: { isLoggedIn: boolean; })
 
                         <div className={styles.newsLetterLogDiv}>
                             <p>Books by this author are coming soon. Subscribe to our newsletter to stay updated on upcoming books and releases.</p>
-              <span>Wanna be notified when that happens ?  <Link className={styles.newsLetterLink} href="/Register">Subscribe to our newsletter</Link></span>             
+              <span className={styles.dontKnowSpan} >Wanna be notified when that happens ?  <Link className={styles.newsLetterLink} href="/Register">Subscribe to our newsletter</Link></span>             
                         </div> :
                         <div className={styles.newsLetterLogDiv}>
                             <p>Books by this author are coming soon. Register at BokHus and subscribe to our newsletter to stay updated on upcoming books and releases.</p>
