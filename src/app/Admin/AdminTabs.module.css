@@ -162,7 +162,7 @@
 
 .bookNameDiv {
     display: grid;
-    grid-template-columns: 50% 15% 30%;
+    grid-template-columns: 50% 45%;
     align-items: center;
     column-gap: 2rem;
     height: fit-content;
@@ -188,6 +188,8 @@
     min-width: max-content;
     line-break: none;
 
+  
+
 
 }
 
@@ -196,6 +198,22 @@
     padding: 0.3rem 0.4rem;
 
 }
+.selectorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+}
+
+.selectorButtonInputWrapper {
+    display: grid;
+    grid-template-columns: 30% 60%;
+    align-items: center;
+    gap:2rem;
+    width: 100%;
+}
+
 
 .findPreviosSendoutNameButton {
     width: fit-content;

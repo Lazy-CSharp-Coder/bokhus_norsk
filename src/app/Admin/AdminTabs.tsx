@@ -68,7 +68,8 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, book
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
     const [prevSendout, setPrevSendout] = useState<SelectorOption | null>(null);
-    
+    const [bookFromDatabase, setBookFromDatabase] = useState<SelectorOption | null>(null);
+
 
     const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName, preferredLanguage } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
@@ -142,11 +143,10 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, book
 
 
     const prevSendoutOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
+    const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
 
-    const booksFromDatabaseOotions : SelectorOption[] = booksInDatabase.map((item) => ({value: item, label : item}))
-    const selectorOptions = booksFromDatabaseOotions;
 
-    const transferFromSelector = (option : SelectorOption|null) =>
+    const transferFromSelector = (option: SelectorOption | null) =>
     {
         if (option) setOptions((prev) => ({ ...prev, bookName: option.value }));
         else alert("Please choose book from dropdown list first.");
@@ -188,21 +188,38 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, book
                         <form className={styles.candidatesForm}>
                             <div className={styles.bookNameDiv}>
                                 <div className={styles.bookNameInputDiv}>
-                                    <label className={styles.sendoutBookNameLabel} htmlFor="bookName">Name of book to send out ARC copies of :   </label>
+                                    <label className={styles.sendOutBookNameLabel} htmlFor="bookName">Name of book to send out ARC copies of :   </label>
                                     <input className={styles.sendOutBookNameInput} type="text" id="bookName" value={bookName} onChange={(e) => setOptions((prev) => ({ ...prev, bookName: e.target.value }))} />
                                 </div>
 
 
+                                <div className={styles.selectorContainer}>
+                                    <div className={styles.selectorButtonInputWrapper}>
 
-                                <button type="button" disabled={prevSendout?.value ? false : true} onClick={() => transferFromSelector(prevSendout)} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
-                                <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={prevSendout} onChange={setPrevSendout} options={prevSendoutOptions} placeholder={"Select a previous sendout"}
-                                    styles={{
-                                        menu: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)" }),
-                                        option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)", color: state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)" }),
-                                        singleValue: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "white" }),
-                                        control: (prev, state) => ({ ...prev, backgroundColor: "var(--regBackground)" })
-                                    }} />
+                                        <button type="button" disabled={prevSendout?.value ? false : true} onClick={() => transferFromSelector(prevSendout)} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
+                                        <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={prevSendout} onChange={setPrevSendout} options={prevSendoutOptions} placeholder={"Select a previous sendout"}
+                                            styles={{
+                                                menu: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)" }),
+                                                option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)", color: state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)" }),
+                                                singleValue: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "white" }),
+                                                control: (prev, state) => ({ ...prev, backgroundColor: "var(--regBackground)" })
+                                            }} />
+                                    </div>
 
+                                    <div className={styles.selectorButtonInputWrapper}>
+
+                                        <button type="button" disabled={bookFromDatabase?.value ? false : true} onClick={() => transferFromSelector(bookFromDatabase)} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
+                                        <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={bookFromDatabase} onChange={setBookFromDatabase} options={booksFromDatabaseOptions} placeholder={"Select a book registered i Sanity"}
+                                            styles={{
+                                                menu: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)" }),
+                                                option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)", color: state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)" }),
+                                                singleValue: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "white" }),
+                                                control: (prev, state) => ({ ...prev, backgroundColor: "var(--regBackground)" })
+                                            }} />
+                                    </div>
+
+
+                                </div>
 
                             </div>
                             <div className={styles.optionsDiv}>
