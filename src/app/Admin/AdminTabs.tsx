@@ -120,8 +120,6 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, book
     const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
 
 
-
-
     const registerSendout = async (bookName: string, arcEmails: string[]) =>
     {
         if (bookName.length == 0 || arcEmails.length == 0) return;
@@ -141,6 +139,8 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, book
 
     };
 
+
+    // Selector options for sendout and update function
 
     const prevSendoutOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
