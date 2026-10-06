@@ -15,6 +15,7 @@ interface ProfileDataNeeded
     recievedBooks?: string[],
     genresInterestedIn?:string[],
     preferredLanguage : string,
+    shouldNotReciveARCAnymore: boolean,
     arc?: { howLong?:string, comfortable? : string, format : string}
 }
 export interface ARCUserInfo
@@ -65,6 +66,7 @@ export default async function AdminPage()
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
         comfortable : user.data?.arc?.comfortable ?? "not defined",
         preferredLanguage :  user.data?.preferredLanguage,
+        shouldNotReciveARCAnymore : user.data?.shouldNotReciveARCAnymore,
         format : user.data?.arc?.format ?? "ePub"
     }));
     const BOOK_QUERY = `*[_type == "Book"] | order(bookTitle asc)`;
