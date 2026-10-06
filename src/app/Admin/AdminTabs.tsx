@@ -8,6 +8,7 @@ import { BokHusCom } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
 import Select from "react-select";
 import { languageOptions } from "../Register/registerSchema";
+import { updateUserMetadata } from "./actions";
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
@@ -16,7 +17,7 @@ export interface AdminData
     newsLetterEmails: string[],
     arcUsers: ARCUserInfo[],
     booksInDatabase: string[],
-    updateUsersARCBook: (book: string, emails: string[]) => Promise<void>;
+
 }
 
 type Genres = typeof genresDef[number];
@@ -63,7 +64,7 @@ interface SelectorOption
 
 type Tabs = "Newsletters" | "ARC Sendout";
 
-export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, booksInDatabase }: AdminData)
+export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
@@ -126,7 +127,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, book
 
         try
         {
-            const response = await updateUsersARCBook(bookName, arcEmails);
+            const response = await updateUserMetadata(bookName, arcEmails);
             setOptions(defaultsSendouts);
 
         }

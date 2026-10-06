@@ -96,7 +96,7 @@ export default async function AdminPage()
                 <BokHusCom fontSize="14rem" />
             </div>
 
-            <AdminTabs newsLetterEmails={newsLetterEmails} arcUsers={arcUsers} updateUsersARCBook={updateUserMetadata} booksInDatabase={bookNameArray}/>
+            <AdminTabs newsLetterEmails={newsLetterEmails} arcUsers={arcUsers} booksInDatabase={bookNameArray}/>
 
         </main>
 
