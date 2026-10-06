@@ -79,14 +79,14 @@ export const registerSchema = z.object(
         userName : z.string().min(1, { message : "Please supply a user name"}),
         country: z.string().optional(),
         preferredLanguage: preferredLanguageDef,
-              
         genresInterestedIn: z.array(z.enum(genresDef))
             .min(1, { error: () => "You have to choose one of the alternatives" }),
         linkProfilePage: z.url({ message: "Invalid URL" }).or(z.literal("")).optional(),
         newsLetter: z.boolean(),
         arcInterest: z.boolean(),
         arc: arcSchema.optional(),
-        recievedBooks: z.array(z.string()).default([])
+        // recievedBooks: z.array(z.string()).default([]),
+        shouldNotReciveARCAnymore: z.boolean().default(false)
         
     }
 );

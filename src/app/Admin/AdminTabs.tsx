@@ -7,6 +7,8 @@ import { genresDef } from "../Register/registerSchema";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
 import Select from "react-select";
+import { languageOptions } from "../Register/registerSchema";
+import { updateUserMetadata } from "./actions";
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
@@ -14,7 +16,8 @@ export interface AdminData
 {
     newsLetterEmails: string[],
     arcUsers: ARCUserInfo[],
-    updateUsersARCBook: (book: string, emails: string[]) => Promise<void>;
+    booksInDatabase: string[],
+
 }
 
 type Genres = typeof genresDef[number];
@@ -25,6 +28,7 @@ interface ARCSendoutOptions
     comfortable: boolean,
     prioritizeSpeedRead: boolean,
     disableFormerSendout: boolean,
+    preferredLanguage: string[],
     format: "ePub" | "pdf",
     bookName: string;
 
@@ -32,9 +36,9 @@ interface ARCSendoutOptions
 
 interface CopyToClipboardUserInfo
 {
-    email :string,
-    userName : string,
-    genresInterestedIn : string[]
+    email: string,
+    userName: string,
+    genresInterestedIn: string[];
 
 }
 
@@ -46,6 +50,7 @@ const defaultsSendouts: ARCSendoutOptions =
     prioritizeSpeedRead: false,
     disableFormerSendout: false,
     format: "ePub",
+    preferredLanguage: ["English"],
     bookName: ""
 
 };
@@ -59,13 +64,15 @@ interface SelectorOption
 
 type Tabs = "Newsletters" | "ARC Sendout";
 
-export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: AdminData)
+export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
-    const [selectOption, setSelectOption] = useState<SelectorOption | null>(null);
+    const [prevSendout, setPrevSendout] = useState<SelectorOption | null>(null);
+    const [bookFromDatabase, setBookFromDatabase] = useState<SelectorOption | null>(null);
 
-    const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName } = options;
+
+    const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName, preferredLanguage } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
 
     const handleGenreChange = (e: React.ChangeEvent<HTMLInputElement>, genre: Genres) =>
@@ -73,6 +80,10 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
         e.target.checked ? setOptions((prev) => ({ ...prev, genereOfSendout: [...prev.genereOfSendout, genre] })) : setOptions((prev) => ({ ...prev, genereOfSendout: prev.genereOfSendout.filter((item) => item != genre) }));
     };
 
+    const handleLanguageChange = (e: React.ChangeEvent<HTMLInputElement>, language: string) =>
+    {
+        e.target.checked ? setOptions((prev) => ({ ...prev, preferredLanguage: [...prev.preferredLanguage, language] })) : setOptions((prev) => ({ ...prev, preferredLanguage: prev.preferredLanguage.filter((item) => item != language) }));
+    };
 
     const filterEmails = () => 
     {
@@ -97,19 +108,20 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
             return aIndex - bIndex;
         }) : filterOnPrevSendouts;
 
-        return filterOnPrioritySpeed;
-    
+
+        const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage))
+
+        return filterOnLanguage;
+
         return userInfoToGet;
-    
+
         // const emailsToGet: string[] = filterOnPrioritySpeed.map((user) => user.email) ?? [] as string[];
         // return emailsToGet;
     };
 
-        const arcUserInfo: CopyToClipboardUserInfo[] = filterEmails() as CopyToClipboardUserInfo[];
-        const userInfoToGet : string[] = arcUserInfo.map((user) => `${user.userName}\t${user.email}\t${user.genresInterestedIn.join(",")}`);
-        const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
-
-
+    const arcUserInfo: CopyToClipboardUserInfo[] = filterEmails() as CopyToClipboardUserInfo[];
+    const userInfoToGet: string[] = arcUserInfo.map((user) => `${user.userName}\t${user.email}\t${user.genresInterestedIn.join(",")}`);
+    const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
 
 
     const registerSendout = async (bookName: string, arcEmails: string[]) =>
@@ -118,28 +130,32 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
 
         try
         {
-            const response = await updateUsersARCBook(bookName, arcEmails);
-            setOptions(defaultsSendouts);
+            const response = await updateUserMetadata(bookName, arcEmails);
+            if(response.success) setOptions(defaultsSendouts);
+            else return(<ErrorBokhus msg={`Server action failed. Error : ${response.error}`}/>)
 
         }
         catch (error)
         {
             console.error("An error occured updating user data.", error);
-            <ErrorBokhus msg={"Could not update user data width sendout data."} />;
+            return( <ErrorBokhus msg={"Could not update user data width sendout data."} />);
         }
 
 
     };
 
-        
-    const selectorOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
+
+    // Selector options for sendout and update function
+
+    const prevSendoutOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
+    const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
 
 
-    const transferFromSelector = () =>
+    const transferFromSelector = (option: SelectorOption | null) =>
     {
-        if(selectOption) setOptions((prev) => ({...prev, bookName : selectOption.value}));
-        else alert("Please choose book from dropdown list first.")
-    }
+        if (option) setOptions((prev) => ({ ...prev, bookName: option.value }));
+        else alert("Please choose book from dropdown list first.");
+    };
 
     return (
         <section className={styles.adminTabSection}>
@@ -177,20 +193,39 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                         <form className={styles.candidatesForm}>
                             <div className={styles.bookNameDiv}>
                                 <div className={styles.bookNameInputDiv}>
-                                    <label className={styles.sendoutBookNameLabel} htmlFor="bookName">Name of book to send out ARC copies of :   </label>
+                                    <label className={styles.sendOutBookNameLabel} htmlFor="bookName">Name of book to send out ARC copies of :   </label>
                                     <input className={styles.sendOutBookNameInput} type="text" id="bookName" value={bookName} onChange={(e) => setOptions((prev) => ({ ...prev, bookName: e.target.value }))} />
                                 </div>
 
-       
 
-                                    <button type="button" disabled={selectOption?.value ? false : true} onClick={transferFromSelector} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
-                                    <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={selectOption} onChange={setSelectOption} options={selectorOptions} placeholder={"Select a previous sendout"} 
-                                    styles={{ menu: (prev) => ({ ...prev,  backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)"}),
-                                        option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)",color:  state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)"  }),
-                                        singleValue: (prev) => ({...prev, backgroundColor : "var(--regBackground)", color: "white"}),
-                                        control: (prev, state) => ({...prev, backgroundColor: "var(--regBackground)"}) }} />
+                                <div className={styles.selectorContainer}>
+                                    <div className={styles.selectorButtonInputWrapper}>
 
-                          
+                                        <button type="button" disabled={prevSendout?.value ? false : true} onClick={() => transferFromSelector(prevSendout)} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
+                                        <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={prevSendout} onChange={setPrevSendout} options={prevSendoutOptions} placeholder={"Select a previous sendout"}
+                                            styles={{
+                                                menu: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)" }),
+                                                option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)", color: state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)" }),
+                                                singleValue: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "white" }),
+                                                control: (prev, state) => ({ ...prev, backgroundColor: "var(--regBackground)" })
+                                            }} />
+                                    </div>
+
+                                    <div className={styles.selectorButtonInputWrapper}>
+
+                                        <button type="button" disabled={bookFromDatabase?.value ? false : true} onClick={() => transferFromSelector(bookFromDatabase)} className={`submitButton ${styles.findPreviosSendoutNameButton}`}>{`<<`}</button>
+                                        <Select className={styles.prevSelector} classNamePrefix="prevSelector" value={bookFromDatabase} onChange={setBookFromDatabase} options={booksFromDatabaseOptions} placeholder={"Select a book registered i Sanity"}
+                                            styles={{
+                                                menu: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "var(--myWhiteColor)" }),
+                                                option: (prev, state) => ({ ...prev, backgroundColor: state.isSelected || state.isFocused ? "var(--bokhusRootsColor)" : "var(--regBackground)", color: state.isSelected || state.isFocused ? "white" : "var(--myWhiteColor)" }),
+                                                singleValue: (prev) => ({ ...prev, backgroundColor: "var(--regBackground)", color: "white" }),
+                                                control: (prev, state) => ({ ...prev, backgroundColor: "var(--regBackground)" })
+                                            }} />
+                                    </div>
+
+
+                                </div>
+
                             </div>
                             <div className={styles.optionsDiv}>
 
@@ -202,16 +237,32 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                     }
 
                                 </div>
-                                <div className={styles.bookFormatRadioInputDiv}>
-                                    <h3 className={styles.selectHeading}>Select format to send out :   </h3>
-                                    <label className={styles.bookFormatLabel} >               <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "ePub" }))} name="format" type="radio" value="ePub" checked={format == "ePub"} />e-Pub </label>
+                                <div className={styles.bookFormatLanguageContainer}>
+                                    <div className={styles.bookFormatRadioInputDiv}>
+                                        <h3 className={styles.selectHeading}>Select format to send out :   </h3>
+                                        <label className={styles.bookFormatLabel} >               <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "ePub" }))} name="format" type="radio" value="ePub" checked={format == "ePub"} />e-Pub </label>
 
-                                    <label className={styles.bookFormatLabel} >
-                                        <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "pdf" }))} name="format" type="radio" value="pdf"
-                                            checked={format == "pdf"} />pdf </label>
+                                        <label className={styles.bookFormatLabel} >
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "pdf" }))} name="format" type="radio" value="pdf"
+                                                checked={format == "pdf"} />pdf </label>
+
+                                    </div>
+                                    <div className={styles.languageSelectionInputDiv}>
+                                        <h3 className={styles.selectHeading}>Include users with preferred language :   </h3>
+                                        {languageOptions.map((item, index) =>
+                                            <label className={styles.genreLabel} key={`${item} + ${index} key`}>
+                                                <input type="checkbox" checked={preferredLanguage.includes(item)} value={item} onChange={(e) => handleLanguageChange(e, item)} />{item}
+                                            </label>)
+                                        }
+
+
+                                    </div>
+
+
 
                                 </div>
-                                <div className={styles.genreSelection}>     
+
+                                <div className={styles.genreSelection}>
                                     <h3 className={styles.selectHeading}>Other options :   </h3>
 
                                     <label className={styles.genreLabel}>
@@ -239,14 +290,14 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook }: Ad
                                 {arcUserInfo.length > 0 &&
                                     arcUserInfo.map((info, index) =>
 
-                                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{`${info.userName } - ${info.email}`}</li>)
+                                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{info.userName}<span> {info.email}</span></li>)
 
                                 }
 
                             </ul>
                             <div className={styles.arcButtonDiv}>
                                 <CopyButton copyString={finalStringHeading.concat(userInfoToGet.join("\n"))} />
-                                <button onClick={() => registerSendout(bookName,arcUserInfo.map((user)=> user.email))} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>
+                                <button onClick={() => registerSendout(bookName, arcUserInfo.map((user) => user.email))} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>
 
 
                             </div>

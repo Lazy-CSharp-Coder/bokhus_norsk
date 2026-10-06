@@ -39,7 +39,7 @@ export default async function Register()
         newsLetter: true,
         arcInterest: false,
         arc: undefined,
-        recievedBooks : []
+        shouldNotReciveARCAnymore : false
 
       };
 
