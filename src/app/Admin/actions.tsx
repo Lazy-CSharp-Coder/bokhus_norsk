@@ -26,7 +26,12 @@ export async function updateUserMetadata(book: string, recieverEmails: string[])
 
         for (const user of response.data)
         {
-        
+             const currentBooks : string[] = user.publicMetadata?.recievedBooks as string[] | [];
+             if(!currentBooks.includes(book))
+             {
+                const updatedBooks : string[] = [...currentBooks, book];
+                // update user metadata
+             }
 
         }
 

@@ -16,7 +16,7 @@ interface ProfileDataNeeded
     genresInterestedIn?:string[],
     preferredLanguage : string,
     shouldNotReciveARCAnymore: boolean,
-    arc?: { howLong?:string, comfortable? : string, format : string}
+    arc?: { howLong?:string, comfortable? : string, format : string, rules : { reminder : boolean}}
 }
 export interface ARCUserInfo
 {
@@ -26,7 +26,9 @@ export interface ARCUserInfo
     howLong : string
     genresInterestedIn : string[]
     comfortable : string,
-    format : string
+    format : string,
+    reminder: boolean
+    
 }
 
 
@@ -67,7 +69,8 @@ export default async function AdminPage()
         comfortable : user.data?.arc?.comfortable ?? "not defined",
         preferredLanguage :  user.data?.preferredLanguage,
         shouldNotReciveARCAnymore : user.data?.shouldNotReciveARCAnymore,
-        format : user.data?.arc?.format ?? "ePub"
+        format : user.data?.arc?.format ?? "ePub",
+        reminder : user.data?.arc?.rules.reminder ?? false
     }));
     const BOOK_QUERY = `*[_type == "Book"] | order(bookTitle asc)`;
          let bookList: Book[] = [];
