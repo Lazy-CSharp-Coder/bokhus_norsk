@@ -14,6 +14,7 @@ export interface AdminData
 {
     newsLetterEmails: string[],
     arcUsers: ARCUserInfo[],
+    booksInDatabase : string[],
     updateUsersARCBook: (book: string, emails: string[]) => Promise<void>;
 }
 
@@ -25,6 +26,7 @@ interface ARCSendoutOptions
     comfortable: boolean,
     prioritizeSpeedRead: boolean,
     disableFormerSendout: boolean,
+    preferredLanguage : string,
     format: "ePub" | "pdf",
     bookName: string;
 
@@ -46,6 +48,7 @@ const defaultsSendouts: ARCSendoutOptions =
     prioritizeSpeedRead: false,
     disableFormerSendout: false,
     format: "ePub",
+    preferredLanguage : "english",
     bookName: ""
 
 };

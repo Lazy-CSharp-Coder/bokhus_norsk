@@ -1,9 +1,11 @@
 import { clerkClient, auth } from "@clerk/nextjs/server";
+import { client } from "@/sanity/client";
 import { redirect } from "next/navigation";
 import styles from "./admin.module.css";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { AdminTabs } from "./AdminTabs";
 import { updateUserMetadata } from "./actions";
+import { Book } from "@/types/booktypes";
 
 interface ProfileDataNeeded 
 {
@@ -12,6 +14,7 @@ interface ProfileDataNeeded
     newsLetter?: boolean,
     recievedBooks?: string[],
     genresInterestedIn?:string[],
+    preferredLanguage : string,
     arc?: { howLong?:string, comfortable? : string, format : string}
 }
 export interface ARCUserInfo
@@ -43,8 +46,8 @@ export default async function AdminPage()
         redirect("/");
     }
 
-    const client = await clerkClient();
-    const response = await client.users.getUserList();
+    const cclient = await clerkClient();
+    const response = await cclient.users.getUserList();
 
     const profiles = response.data.map((user) => (
         {   email : user.emailAddresses[0]?.emailAddress ?? "",
@@ -61,9 +64,24 @@ export default async function AdminPage()
         recievedBooks: user.data?.recievedBooks as string[] ?? [],
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
         comfortable : user.data?.arc?.comfortable ?? "not defined",
+        preferredLanguage :  user.data?.preferredLanguage,
         format : user.data?.arc?.format ?? "ePub"
     }));
+    const BOOK_QUERY = `*[_type == "Book"] | order(bookTitle asc)`;
+         let bookList: Book[] = [];
+    
+       try
+       {
+          
+          bookList = await client.fetch<Book[]>(BOOK_QUERY);
+       }
+       catch (error)
+       {
+          console.error("Sanity fetch failed :", error);
+          throw new Error("Failed to fetch authors from Sanity");
+       }
 
+    const bookNameArray : string[] = bookList.length < 1 ? [] : bookList.map((book) => book.bookTitle);
 
     const newsLetterEmails : string[] = profiles.filter((user) => user.data && user.data.newsLetter == true).map((user) => user.email);
 
@@ -73,7 +91,7 @@ export default async function AdminPage()
                 <BokHusCom fontSize="14rem" />
             </div>
 
-            <AdminTabs newsLetterEmails={newsLetterEmails} arcUsers={arcUsers} updateUsersARCBook={updateUserMetadata} />
+            <AdminTabs newsLetterEmails={newsLetterEmails} arcUsers={arcUsers} updateUsersARCBook={updateUserMetadata} booksInDatabase={bookNameArray}/>
 
         </main>
 
