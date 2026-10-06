@@ -23,7 +23,6 @@
   top: 0;
   left: 0;
   z-index: 100;
-  transition: all 0.4s ease-in;
   font-family: var(--headerFontFamily);
 
 }
