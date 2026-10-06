@@ -128,13 +128,14 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
         try
         {
             const response = await updateUserMetadata(bookName, arcEmails);
-            setOptions(defaultsSendouts);
+            if(response.success) setOptions(defaultsSendouts);
+            else return(<ErrorBokhus msg={`Server action failed. Error : ${response.error}`}/>)
 
         }
         catch (error)
         {
             console.error("An error occured updating user data.", error);
-            <ErrorBokhus msg={"Could not update user data width sendout data."} />;
+            return( <ErrorBokhus msg={"Could not update user data width sendout data."} />);
         }
 
 

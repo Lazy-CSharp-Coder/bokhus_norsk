@@ -14,6 +14,7 @@ export async function updateUserMetadata(book: string, recieverEmails: string[])
 
     if (role !== "admin") 
     {
+        
         throw new Error("Unauthorized user");
     }
     try
@@ -23,6 +24,7 @@ export async function updateUserMetadata(book: string, recieverEmails: string[])
 
         for (const user of response.data)
         {
+        
              const currentBooks : string[] = user.publicMetadata?.recievedBooks as string[] | [];
              if(!currentBooks.includes(book))
              {
