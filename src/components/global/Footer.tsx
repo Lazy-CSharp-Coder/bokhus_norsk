@@ -73,14 +73,12 @@ export function Footer()
 
                     </Link>
 
-
                     <div className={styles.logoBPDiv}>
                         <a href="https://www.bpwebdev.no" target="_blank">
                             <LogoBPWebDev />
                         </a>
 
-                        <span className={styles.logoText}>WEBPAGE BY
-                        </span>
+                        <span className={styles.logoText}>WEBPAGE BY </span>
 
                     </div>
 
