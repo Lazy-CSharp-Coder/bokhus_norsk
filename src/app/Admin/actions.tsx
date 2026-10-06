@@ -1,8 +1,8 @@
 "use server";
-import { UserData } from "../Register/registerSchema";
+
 import { auth, clerkClient } from "@clerk/nextjs/server";
 
-export async function updateUserMetadata(book: string, recieverEmails: string[]): Promise<{ success: boolean, error?: string; }>
+export async function updateUserMetadata(book: string, recieverEmails: string[]): Promise<{ success : boolean, error? : string}>
 {
     const { userId, sessionClaims } = await auth();
 
@@ -14,7 +14,7 @@ export async function updateUserMetadata(book: string, recieverEmails: string[])
 
     if (role !== "admin") 
     {
-
+        
         throw new Error("Unauthorized user");
     }
     try
@@ -24,34 +24,32 @@ export async function updateUserMetadata(book: string, recieverEmails: string[])
 
         for (const user of response.data)
         {
-
-            const currentBooks: string[] = user.publicMetadata?.recievedBooks as string[] ?? [];
-            const userData : UserData = user.publicMetadata?.userData;
-            if (!currentBooks.includes(book) &&  recieverEmails.includes(userData.email ?? ""))
-            {
-                const updatedBooks: string[] = [...currentBooks, book];
-                console.log("should update user ");
+        
+             const currentBooks : string[] = user.publicMetadata?.recievedBooks as string[] ?? [];
+             if(!currentBooks.includes(book))
+             {
+                const updatedBooks : string[] = [...currentBooks, book];
+                console.log("should update user " );
                 // update user metadata
-                await client.users.updateUserMetadata(user.id,
+                await client.users.updateUserMetadata(user.id, 
                     {
-                        publicMetadata: {
+                        publicMetadata : {
 
                             ...user.publicMetadata,
-                            userData : {
-                                    recievedBooks: updatedBooks }
+                            recievedBooks : updatedBooks
                         }
 
-                    });
-            }
+                })
+             }
 
         }
-        return { success: true };
+        return { success : true}
 
     }
     catch (error)
     {
         console.error("An error accessing clerk users data occured", error);
-        return { success: false, error: "Failed to update users with sendout" };
+        return  { success: false, error : "Failed to update users with sendout"}
     }
 
 

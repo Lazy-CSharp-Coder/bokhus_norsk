@@ -85,7 +85,7 @@ export const registerSchema = z.object(
         newsLetter: z.boolean(),
         arcInterest: z.boolean(),
         arc: arcSchema.optional(),
-        recievedBooks: z.array(z.string()).default([]),
+        // recievedBooks: z.array(z.string()).default([]),
         shouldNotReciveARCAnymore: z.boolean().default(false)
         
     }

@@ -54,7 +54,8 @@ export default async function AdminPage()
 
     const profiles = response.data.map((user) => (
         {   email : user.emailAddresses[0]?.emailAddress ?? "",
-            data: user.publicMetadata?.userData as ProfileDataNeeded | undefined
+            data: user.publicMetadata?.userData as ProfileDataNeeded | undefined,
+            recievedBooks : user.publicMetadata.recievedBooks as string[] ?? []
         }
 
     ))
@@ -64,7 +65,7 @@ export default async function AdminPage()
         email: user.email,
         userName : user.data?.userName ?? "NONAME",
         howLong: user.data?.arc?.howLong ?? "not defined",
-        recievedBooks: user.data?.recievedBooks as string[] ?? [],
+        recievedBooks: user.recievedBooks,
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
         comfortable : user.data?.arc?.comfortable ?? "not defined",
         preferredLanguage :  user.data?.preferredLanguage,
