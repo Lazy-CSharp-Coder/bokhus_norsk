@@ -1,7 +1,7 @@
 "use server";
 
 import { auth, clerkClient } from "@clerk/nextjs/server";
-
+import { UserData } from "../Register/registerSchema";
 
 
 
@@ -26,7 +26,7 @@ export async function updateUserMetadata(book: string, recieverEmails: string[])
 
         for (const user of response.data)
         {
-            // const currentBooksRecieved = user.publicMetadata?.userData?.recievedBooks;
+        
 
         }
 
