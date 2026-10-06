@@ -82,7 +82,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
 
     const handleLanguageChange = (e: React.ChangeEvent<HTMLInputElement>, language: string) =>
     {
-        e.target.checked ? setOptions((prev) => ({ ...prev, preferredLanguage: [...prev.preferredLanguage, language] })) : setOptions((prev) => ({ ...prev, genereOfSendout: prev.genereOfSendout.filter((item) => item != language) }));
+        e.target.checked ? setOptions((prev) => ({ ...prev, preferredLanguage: [...prev.preferredLanguage, language] })) : setOptions((prev) => ({ ...prev, preferredLanguage: prev.preferredLanguage.filter((item) => item != language) }));
     };
 
     const filterEmails = () => 
@@ -108,7 +108,10 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
             return aIndex - bIndex;
         }) : filterOnPrevSendouts;
 
-        return filterOnPrioritySpeed;
+
+        const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage))
+
+        return filterOnLanguage;
 
         return userInfoToGet;
 

@@ -27,7 +27,8 @@ export interface ARCUserInfo
     genresInterestedIn : string[]
     comfortable : string,
     format : string,
-    reminder: boolean
+    reminder: boolean,
+    preferredLanguage : string
     
 }
 
@@ -68,10 +69,11 @@ export default async function AdminPage()
         recievedBooks: user.recievedBooks,
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
         comfortable : user.data?.arc?.comfortable ?? "not defined",
-        preferredLanguage :  user.data?.preferredLanguage,
+        preferredLanguage :  user.data?.preferredLanguage ?? "English",
         shouldNotReciveARCAnymore : user.data?.shouldNotReciveARCAnymore,
         format : user.data?.arc?.format ?? "ePub",
-        reminder : user.data?.arc?.rules.reminder ?? false
+        reminder : user.data?.arc?.rules.reminder ?? false,
+
     }));
     const BOOK_QUERY = `*[_type == "Book"] | order(bookTitle asc)`;
          let bookList: Book[] = [];
