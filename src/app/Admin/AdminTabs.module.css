@@ -314,7 +314,7 @@
 
 .arcUserListItem {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 30% 40%;
     width: 100%;
 }
 

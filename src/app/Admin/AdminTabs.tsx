@@ -285,7 +285,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, updateUsersARCBook, book
                                 {arcUserInfo.length > 0 &&
                                     arcUserInfo.map((info, index) =>
 
-                                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{`${info.userName} - ${info.email}`}</li>)
+                                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{info.userName}<span> {info.email}</span></li>)
 
                                 }
 
