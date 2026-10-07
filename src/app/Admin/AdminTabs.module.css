@@ -328,4 +328,72 @@
 .sendOutText {
     color: white;
     font-weight: bold;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid white;
+}
+
+.registerPleaseTextContainer
+{
+  height:12rem;
+}
+
+.registerDiv {
+     display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-items:start;
+    width: 100%;
+    column-gap: 1rem;
+    /* gap: 1rem; */
+    background-color: var(--inputBackground);
+    padding: 2rem 2rem;
+    border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+  height: 100%;
+}
+
+.registerInfoDiv {
+    flex:1;
+    display: grid;
+    grid-template-columns: 50% 48%;
+
+width: 100%;
+    row-gap: 1rem;
+
+}
+
+.registerBookName {
+    color: var(--bokhusRootsColor);
+}
+
+.registerNumberOfSendouts, .registerNumberOfPrevSendouts{
+    color: var(--bokhusFutureColor);
+}
+
+.registerButton {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:0.4rem;
+    width: 100%;
+    flex:1;
+
+}
+
+.pleaseRegisterBook {
+        background-color: var(--inputBackground);
+    padding: 2rem 2rem;
+    border: 1px solid var(--borderIconColor);
+    border-radius: var(--borderRadiusReg);
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--myWhiteColor);
 }

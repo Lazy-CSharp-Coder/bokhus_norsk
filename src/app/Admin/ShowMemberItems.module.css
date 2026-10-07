@@ -10,7 +10,7 @@
     background-color: var(--regBackground);
     width: 100%;
     padding: 2rem 2rem;
-    border: 1px solid var(--borderIconColor);
+    /* border: 1px solid var(--borderIconColor); */
 }
 
 
@@ -62,8 +62,7 @@
     gap: 0.5rem;
     align-items: start;
     list-style: none;
-    padding: 0 0.5rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0.5rem;
     width: 100%;
     border-bottom: 1px solid var(--myWhiteColor);
     color: var(--myWhiteColor);

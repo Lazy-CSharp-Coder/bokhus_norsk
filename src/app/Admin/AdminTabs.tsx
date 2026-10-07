@@ -10,7 +10,7 @@ import Select from "react-select";
 import { languageOptions } from "../Register/registerSchema";
 import { updateUserMetadata } from "./actions";
 import { Includes, ShowMemberItems } from "./ShowMemberItems";
-
+import { useRouter } from "next/navigation";
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
 export interface AdminData
@@ -82,6 +82,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const [prevSendout, setPrevSendout] = useState<SelectorOption | null>(null);
     const [bookFromDatabase, setBookFromDatabase] = useState<SelectorOption | null>(null);
 
+    const router = useRouter();
 
     const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName, preferredLanguage } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
@@ -136,6 +137,9 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
         // return emailsToGet;
     };
 
+    const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
+    const numberOfSendoutsOnCurrentBook: number = users.filter((user) => user.recievedBooks.every((book) => previousSendouts.includes(bookName))).length;
+
     const arcUserInfo: UserInfo[] = filterEmails() as UserInfo[];
     const userInfoToGet: string[] = arcUserInfo.map((user) => `${user.userName}\t${user.email}\t${user.genresInterestedIn.join(",")}`);
     const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
@@ -148,7 +152,12 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
         try
         {
             const response = await updateUserMetadata(bookName, arcEmails);
-            if (response.success) setOptions(defaultsSendouts);
+            if (response.success){
+                 setOptions(defaultsSendouts);
+                 alert("ARC sendout registered for users.");
+                 router.refresh();
+
+            }
             else return (<ErrorBokhus msg={`Server action failed. Error : ${response.error}`} />);
 
         }
@@ -186,8 +195,8 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
             <div className={styles.tabsContainer}>
 
                 {tab === "Newsletters" ? <section className={`${styles.newsLetterSection} fadeInFromLeftSmallAnim`}>
-                                 <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
-                    <div className={styles.languageSelectionInputDiv} style={{width: "fit-content"}}>
+                    <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
+                    <div className={styles.languageSelectionInputDiv} style={{ width: "fit-content" }}>
                         <h3 className={styles.selectHeading}>Include users with preferred language :   </h3>
                         {languageOptions.map((item, index) =>
                             <label className={styles.genreLabel} key={`${item} + ${index} key newsLetterLanguageOptions`}>
@@ -198,7 +207,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
                     </div>
                     <article key={tab + "newsletterkey"} className={`${styles.newsLetterSection} ${tab == "Newsletters" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
-           
+
                         <ShowMemberItems heading={"Users filtered that wants to recived newsletters"} memberArray={newsLetterUsers} includesDefaults={includesForNewsletter} />
 
                     </article>
@@ -301,6 +310,30 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                         </form>
                         <ShowMemberItems heading={`User info filtered for ARC sendout : ${bookName} in ${format
                             } format`} memberArray={arcUserInfo} />
+                        <div className={styles.registerPleaseTextContainer}>
+                            {bookName && bookName.length != 0 ?
+
+                                <div  className={`${styles.registerDiv} fadeInAnim`}>
+
+
+                                    <div className={styles.registerInfoDiv}>
+                                        <p>ARC sendout book name :</p> <span className={`${styles.registerBookName} scaleInAnim`}>{bookName}</span>
+                                        <p>Number of user selected :</p> <span className={styles.registerNumberOfSendouts}>{arcUserInfo.length} </span>
+                                        <p>Number of previous sendouts :</p> <span className={styles.registerNumberPrevSendouts}>{`${numberOfSendoutsOnCurrentBook}`}</span>
+                                    </div>
+
+
+
+                                    <button className={`submitButton ${styles.registerButton} ${bookName && bookName.length > 0 ? "fadeInFromBelownAnim" : "hiddenFromView"}`} style={{animationDelay:"0.8s"}} onClick={() => registerSendout(bookName, arcUserInfo.map((user) => user.email))}>{`REGISTER`}<span className={styles.sendOutText}>{bookName}</span>{`SENDOUT`}</button>
+
+
+
+                                </div> :
+
+                                <div className={styles.pleaseRegisterBook}>Please enter ARC book name and select users for sendout </div>}
+                        </div>
+
+
                     </article>}
 
             </div>
