@@ -283,7 +283,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
 
                         </form>
-                        <ShowMemberItems heading="test" memberArray={arcUserInfo} copyHeading="test" />
+                        <ShowMemberItems heading={`User info filtered for ARC sendout : ${bookName}`} memberArray={arcUserInfo} copyHeading="test" />
                     </article>}
 
             </div>
