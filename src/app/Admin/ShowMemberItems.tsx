@@ -70,7 +70,7 @@ export function ShowMemberItems({ heading, memberArray, includesDefaults }: Show
 
             </ul>
             <div className={styles.arcButtonDiv}>
-                <CopyButton buttonText="Copy to Clipboard" copyString={emailsOnly.join("; ")} />
+                <CopyButton buttonText="Copy to Clipboard (Excel)" copyString={emailsOnly.join("; ")} />
                 <CopyButton buttonText="Copy emails only" copyString={emailsOnly.join(";")} />
 
 
