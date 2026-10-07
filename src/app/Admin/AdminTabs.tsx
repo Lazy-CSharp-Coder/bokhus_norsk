@@ -2,20 +2,20 @@
 import { CopyButton } from "./CopyButton";
 import { useState } from "react";
 import styles from "./AdminTabs.module.css";
-import { type ARCUserInfo } from "./page";
+import { type UserInfo } from "./page";
 import { genresDef } from "../Register/registerSchema";
 import { BokHusCom } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
 import Select from "react-select";
 import { languageOptions } from "../Register/registerSchema";
 import { updateUserMetadata } from "./actions";
+import { ShowMemberItems } from "./ShowMemberItems";
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
 export interface AdminData
 {
-    newsLetterEmails: string[],
-    arcUsers: ARCUserInfo[],
+    users: UserInfo[],
     booksInDatabase: string[],
 
 }
@@ -64,7 +64,7 @@ interface SelectorOption
 
 type Tabs = "Newsletters" | "ARC Sendout";
 
-export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: AdminData)
+export function AdminTabs({ users, booksInDatabase }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
@@ -87,14 +87,14 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
 
     const filterEmails = () => 
     {
-        const filterOnGenre = arcUsers.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
+        const filterOnGenre = users.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
         if (filterOnGenre.length == 0) console.log("filter on genre failed");
 
         const filterOnComfortable = comfortable ? filterOnGenre.filter((user) => user.comfortable == "Yes") : filterOnGenre;
         if (filterOnComfortable.length == 0) console.log("filter on confortable failed");
 
         const filterOnFormat = filterOnComfortable.filter((user) => user.format == format);
-        const previousSendouts: string[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))];
+        const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
 
         const filterOnPrevSendouts = disableFormerSendout ? filterOnFormat : filterOnFormat.filter((user) =>
             user.recievedBooks.every((book) => !previousSendouts.includes(bookName)));
@@ -109,7 +109,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
         }) : filterOnPrevSendouts;
 
 
-        const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage))
+        const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage));
 
         return filterOnLanguage;
 
@@ -119,7 +119,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
         // return emailsToGet;
     };
 
-    const arcUserInfo: CopyToClipboardUserInfo[] = filterEmails() as CopyToClipboardUserInfo[];
+    const arcUserInfo: UserInfo[] = filterEmails() as UserInfo[];
     const userInfoToGet: string[] = arcUserInfo.map((user) => `${user.userName}\t${user.email}\t${user.genresInterestedIn.join(",")}`);
     const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
 
@@ -131,14 +131,14 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
         try
         {
             const response = await updateUserMetadata(bookName, arcEmails);
-            if(response.success) setOptions(defaultsSendouts);
-            else return(<ErrorBokhus msg={`Server action failed. Error : ${response.error}`}/>)
+            if (response.success) setOptions(defaultsSendouts);
+            else return (<ErrorBokhus msg={`Server action failed. Error : ${response.error}`} />);
 
         }
         catch (error)
         {
             console.error("An error occured updating user data.", error);
-            return( <ErrorBokhus msg={"Could not update user data width sendout data."} />);
+            return (<ErrorBokhus msg={"Could not update user data width sendout data."} />);
         }
 
 
@@ -147,9 +147,9 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
 
     // Selector options for sendout and update function
 
-    const prevSendoutOptions: SelectorOption[] = [...new Set(arcUsers.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
+    const prevSendoutOptions: SelectorOption[] = [...new Set(users.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
-
+    const newsLetterEmails: string[] = users.filter((user) => user.newsLetter == true).map((user) => user.email);
 
     const transferFromSelector = (option: SelectorOption | null) =>
     {
@@ -183,7 +183,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
                                 }
 
                             </ul>
-                            <CopyButton copyString={newsLetterEmails.join("; ")} />
+                            <CopyButton buttonText="<<" copyString={newsLetterEmails.join("; ")} />
                         </div>
 
                     </article>
@@ -283,26 +283,7 @@ export function AdminTabs({ newsLetterEmails, arcUsers, booksInDatabase }: Admin
 
 
                         </form>
-
-                        <div className={styles.emailDiv}>
-                            <h3 className={styles.selectHeading}>Users filtered : </h3>
-                            <ul className={styles.emailListARC}>
-                                {arcUserInfo.length > 0 &&
-                                    arcUserInfo.map((info, index) =>
-
-                                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{info.userName}<span> {info.email}</span></li>)
-
-                                }
-
-                            </ul>
-                            <div className={styles.arcButtonDiv}>
-                                <CopyButton copyString={finalStringHeading.concat(userInfoToGet.join("\n"))} />
-                                <button onClick={() => registerSendout(bookName, arcUserInfo.map((user) => user.email))} className="submitButton">Register <span className={styles.sendOutText}>"{bookName}"</span> sendout</button>
-
-
-                            </div>
-
-                        </div>
+                        <ShowMemberItems heading="test" memberArray={arcUserInfo} copyHeading="test" />
                     </article>}
 
             </div>
