@@ -18,10 +18,11 @@ interface ProfileDataNeeded
     shouldNotReciveARCAnymore: boolean,
     arc?: { howLong?:string, comfortable? : string, format : string, rules : { reminder : boolean}}
 }
-export interface ARCUserInfo
+export interface UserInfo
 {
     email : string,
     userName : string,
+    newsLetter: boolean,
     recievedBooks : string[],
     howLong : string
     genresInterestedIn : string[]
@@ -61,10 +62,11 @@ export default async function AdminPage()
 
     ))
     
-    const arcUsers : ARCUserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true && data.arc).map((user) =>
+    const arcUsers : UserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true && data.arc).map((user) =>
     ({
         email: user.email,
         userName : user.data?.userName ?? "NONAME",
+        newsLetter : user.data?.newsLetter ?? false,
         howLong: user.data?.arc?.howLong ?? "not defined",
         recievedBooks: user.recievedBooks,
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
@@ -99,7 +101,7 @@ export default async function AdminPage()
                 <BokHusCom fontSize="14rem" />
             </div>
 
-            <AdminTabs newsLetterEmails={newsLetterEmails} arcUsers={arcUsers} booksInDatabase={bookNameArray}/>
+            <AdminTabs users={arcUsers} booksInDatabase={bookNameArray}/>
 
         </main>
 
