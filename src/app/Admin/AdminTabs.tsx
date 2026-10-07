@@ -34,6 +34,11 @@ interface ARCSendoutOptions
 
 }
 
+interface NewsLetterOptions
+{
+    preferredLanguage: string[];
+}
+
 interface CopyToClipboardUserInfo
 {
     email: string,
@@ -64,8 +69,8 @@ interface SelectorOption
 
 type Tabs = "Newsletters" | "ARC Sendout";
 
-const includesForNewsletter : Includes = 
-          { email: true, name: true, interests: false, preferredLanguage: false }
+const includesForNewsletter: Includes =
+    { email: true, name: true, interests: false, preferredLanguage: false };
 
 
 
@@ -73,6 +78,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
+    const [newsLetterOptions, setNewsLetterOptions] = useState<NewsLetterOptions>({ preferredLanguage: defaultsSendouts.preferredLanguage });
     const [prevSendout, setPrevSendout] = useState<SelectorOption | null>(null);
     const [bookFromDatabase, setBookFromDatabase] = useState<SelectorOption | null>(null);
 
@@ -88,6 +94,12 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const handleLanguageChange = (e: React.ChangeEvent<HTMLInputElement>, language: string) =>
     {
         e.target.checked ? setOptions((prev) => ({ ...prev, preferredLanguage: [...prev.preferredLanguage, language] })) : setOptions((prev) => ({ ...prev, preferredLanguage: prev.preferredLanguage.filter((item) => item != language) }));
+    };
+
+
+    const handleNewsLetterLanguageChange = (e: React.ChangeEvent<HTMLInputElement>, language: string) =>
+    {
+        e.target.checked ? setNewsLetterOptions((prev) => ({ ...prev, preferredLanguage: [...prev.preferredLanguage, language] })) : setNewsLetterOptions((prev) => ({ ...prev, preferredLanguage: prev.preferredLanguage.filter((item) => item != language) }));
     };
 
     const filterEmails = () => 
@@ -154,7 +166,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
     const prevSendoutOptions: SelectorOption[] = [...new Set(users.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
-    const newsLetterUsers: UserInfo[] = users.filter((user) => user.newsLetter == true) ;
+    const newsLetterUsers: UserInfo[] = users.filter((user) => user.newsLetter == true && newsLetterOptions.preferredLanguage.includes(user.preferredLanguage));
 
     const transferFromSelector = (option: SelectorOption | null) =>
     {
@@ -163,7 +175,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     };
 
     return (
-        <section className={styles.adminTabSection}>
+        <section className={`${styles.adminTabSection}`}>
 
             <div className={styles.tabsDiv}>
                 <button onClick={() => setTab("Newsletters")} className={`${styles.tabButtonLeft} ${tab == "Newsletters" ? styles.tabButtonActive : styles.tabButtonInactive}`}>NEWSLETTER</button>
@@ -173,13 +185,24 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
             <div className={styles.tabsContainer}>
 
-                {tab === "Newsletters" ?
+                {tab === "Newsletters" ? <section className={`${styles.newsLetterSection} fadeInFromLeftSmallAnim`}>
+                                 <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
+                    <div className={styles.languageSelectionInputDiv} style={{width: "fit-content"}}>
+                        <h3 className={styles.selectHeading}>Include users with preferred language :   </h3>
+                        {languageOptions.map((item, index) =>
+                            <label className={styles.genreLabel} key={`${item} + ${index} key newsLetterLanguageOptions`}>
+                                <input type="checkbox" checked={newsLetterOptions.preferredLanguage.includes(item)} value={item} onChange={(e) => handleNewsLetterLanguageChange(e, item)} />{item}
+                            </label>)
+                        }
 
+
+                    </div>
                     <article key={tab + "newsletterkey"} className={`${styles.newsLetterSection} ${tab == "Newsletters" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
-                        <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
-                      <ShowMemberItems heading={"Users filtered that wants to recived newsletters"} memberArray={newsLetterUsers} includesDefaults={includesForNewsletter} />
+           
+                        <ShowMemberItems heading={"Users filtered that wants to recived newsletters"} memberArray={newsLetterUsers} includesDefaults={includesForNewsletter} />
 
                     </article>
+                </section>
                     :
                     <article key={tab + "arckey"} className={`${styles.arcSendoutArticle} ${tab == "ARC Sendout" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
                         <h1 className={styles.newsLetterHeading}>ARC canditates and sendouts</h1>
@@ -276,8 +299,8 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
 
                         </form>
-                        <ShowMemberItems heading={`User info filtered for ARC sendout : ${bookName} in ${format                       
-                        } format`} memberArray={arcUserInfo} />
+                        <ShowMemberItems heading={`User info filtered for ARC sendout : ${bookName} in ${format
+                            } format`} memberArray={arcUserInfo} />
                     </article>}
 
             </div>
