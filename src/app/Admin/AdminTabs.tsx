@@ -9,7 +9,7 @@ import { ErrorBokhus } from "../ErrorBokhus";
 import Select from "react-select";
 import { languageOptions } from "../Register/registerSchema";
 import { updateUserMetadata } from "./actions";
-import { ShowMemberItems } from "./ShowMemberItems";
+import { Includes, ShowMemberItems } from "./ShowMemberItems";
 
 const howLongArray = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
@@ -63,6 +63,11 @@ interface SelectorOption
 }
 
 type Tabs = "Newsletters" | "ARC Sendout";
+
+const includesForNewsletter : Includes = 
+          { email: true, name: true, interests: false, preferredLanguage: false }
+
+
 
 export function AdminTabs({ users, booksInDatabase }: AdminData)
 {
@@ -149,7 +154,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
     const prevSendoutOptions: SelectorOption[] = [...new Set(users.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
-    const newsLetterEmails: string[] = users.filter((user) => user.newsLetter == true).map((user) => user.email);
+    const newsLetterUsers: UserInfo[] = users.filter((user) => user.newsLetter == true) ;
 
     const transferFromSelector = (option: SelectorOption | null) =>
     {
@@ -172,19 +177,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
                     <article key={tab + "newsletterkey"} className={`${styles.newsLetterSection} ${tab == "Newsletters" && "fadeInFromLeftSmallAnim"}`} style={{ animationDuration: "0.6s" }}>
                         <h1 className={styles.newsLetterHeading}>Newsletter subscribers</h1>
-                        <div className={styles.emailDiv}>
-                            <h3 className={styles.selectHeading}>Emails filtered : </h3>
-                            <ul className={styles.emailListARC}>
-                                {newsLetterEmails.length > 0 &&
-                                    newsLetterEmails.map((emailadr, index) =>
-
-                                        <li key={"newsLetterEmailKey" + index}>{emailadr}</li>)
-
-                                }
-
-                            </ul>
-                            <CopyButton buttonText="<<" copyString={newsLetterEmails.join("; ")} />
-                        </div>
+                      <ShowMemberItems heading={"Users filtered that wants to recived newsletters"} memberArray={newsLetterUsers} includesDefaults={includesForNewsletter} />
 
                     </article>
                     :
@@ -283,7 +276,8 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
 
                         </form>
-                        <ShowMemberItems heading={`User info filtered for ARC sendout : ${bookName}`} memberArray={arcUserInfo} copyHeading="test" />
+                        <ShowMemberItems heading={`User info filtered for ARC sendout : ${bookName} in ${format                       
+                        } format`} memberArray={arcUserInfo} />
                     </article>}
 
             </div>

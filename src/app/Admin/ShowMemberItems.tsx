@@ -8,11 +8,11 @@ interface ShowMemberItemsProps
 {
     heading: string,
     memberArray: UserInfo[],
-    copyHeading: string,
+    copyHeading?: string,
     includesDefaults?: Includes;
 }
 
-interface Includes
+export interface Includes
 {
     email: boolean,
     name: boolean,
@@ -61,9 +61,9 @@ export function ShowMemberItems({ heading, memberArray, includesDefaults }: Show
                 {memberArray.length > 0 &&
                     memberArray.map((info, index) =>
 
-                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{info.email}<span> {info.userName}</span>
+                        <li className={styles.arcUserListItem} key={"arcKeyEmail" + index}>{includes.email && info.email}<span> {includes.name && info.userName}</span>
                         
-                        <span>{info.genresInterestedIn.join(", ")}</span><span className={styles.languageInfo}>{info.preferredLanguage}</span>
+                        <span>{includes.interests && info.genresInterestedIn.join(", ")}</span><span className={styles.languageInfo}>{includes.preferredLanguage && info.preferredLanguage}</span>
                         </li>)
 
                 }
