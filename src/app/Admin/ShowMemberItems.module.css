@@ -82,6 +82,10 @@
     column-gap: 0.7rem;
 }
 
+.includesSpan {
+    width: 100%;
+}
+
 .arcButtonDiv {
     display: flex;
     width: 100%;
