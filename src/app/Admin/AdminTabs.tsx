@@ -345,7 +345,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                     </article>
                 }
                 {tab == "Reminders" &&
-                    <article className={styles.reminderArticle}>
+                    <article className={`${styles.reminderArticle} fadeInFromBelowAnim`}>
                         <h2 className={styles.newsLetterHeading}>Review reminders email</h2>
                         <div className={styles.reminderSelectorContainer}>
                             <h3 className={styles.selectHeading}>Select book sendout to email review reminder for : </h3>
