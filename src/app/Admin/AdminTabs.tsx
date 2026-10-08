@@ -309,7 +309,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                         <input type="checkbox" checked={comfortable} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, comfortable: !prev.comfortable }))} />User should be comfortable giving reviews </label>
 
                                     <label className={styles.genreLabel}>
-                                        <input type="checkbox" checked={true} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, disablprev.disableFormerSendouteFormerSendout: ! }))} />Disable earlier sendout filtering </label>
+                                        <input type="checkbox" checked={true} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, disablprev.disableFormerSendouteFormerSendout: ! }))} />Include former recivers of book </label>
 
                                     <div className={`$styles.bookFormatRadioInputDiv`}>
                               
