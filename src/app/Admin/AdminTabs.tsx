@@ -362,7 +362,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
                         <div key={"reminderkey" + reminderSendout} className={`${reminderSendout == null ? "hiddenFromView" : "show"}`}>    
                         
-                            <ShowMemberItems heading={`Users that have revieved ${reminderSendout?.value} and agreed for a review reminder email`} memberArray={reminderSendoutArray} />
+                            <ShowMemberItems heading={`Users that have recieved ${reminderSendout?.value} and agreed for a review reminder email`} memberArray={reminderSendoutArray} />
 </div>
                     
 
