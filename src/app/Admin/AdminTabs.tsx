@@ -276,8 +276,8 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                 <div className={styles.bookFormatLanguageContainer}>
                                     <div className={styles.bookFormatRadioInputDiv}>
                                         <h3 className={styles.selectHeading}>Select format to send out :   </h3>
-                                        <label className={styles.bookFormatLabel} >               <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "ePub" }))} name="format" type="radio" value="ePub" checked={format == "ePub"} />e-Pub </label>
-
+                                        <label className={styles.bookFormatLabel} >
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "ePub" }))} name="format" type="radio" value="ePub" checked={format == "ePub"} />e-Pub </label>
                                         <label className={styles.bookFormatLabel} >
                                             <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "pdf" }))} name="format" type="radio" value="pdf"
                                                 checked={format == "pdf"} />pdf </label>
@@ -309,7 +309,19 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                         <input type="checkbox" checked={comfortable} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, comfortable: !prev.comfortable }))} />User should be comfortable giving reviews </label>
 
                                     <label className={styles.genreLabel}>
-                                        <input type="checkbox" checked={disableFormerSendout} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, disableFormerSendout: !prev.disableFormerSendout }))} />Disable earlier sendout filtering </label>
+                                        <input type="checkbox" checked={true} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, disablprev.disableFormerSendouteFormerSendout: ! }))} />Disable earlier sendout filtering </label>
+
+                                    <div className={`$styles.bookFormatRadioInputDiv`}>
+                              
+                                        <label className={styles.bookFormatLabel} >
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "ARC Candidates" }))} name="includeFormerSEndout" type="radio" value="ARC Candidates" />curent ARC candidates</label>
+                                        <label className={styles.bookFormatLabel} >
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "All" }))} name="includeFormerSendout" type="radio" value="All" />all previous recievers </label>""
+
+                                    </div>
+
+
+
 
                                 </div>
 
