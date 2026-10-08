@@ -143,7 +143,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
     const arcUserInfo: UserInfo[] = filterEmails() as UserInfo[];
     const userInfoToGet: string[] = arcUserInfo.map((user) => `${user.userName}\t${user.email}\t${user.genresInterestedIn.join(",")}`);
-    const reminderSendoutArray : UserInfo[] = users.filter((user) => user.reminder == true && user.recievedBooks.includes(reminderSendout?.value ?? "none"));
+    const reminderSendoutArray: UserInfo[] = users.filter((user) => user.reminder == true && user.recievedBooks.includes(reminderSendout?.value ?? "none"));
     const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
 
 
@@ -360,11 +360,11 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
                         </div>
 
-                        <div key={"reminderkey" + reminderSendout} className={`${reminderSendout == null ? "hiddenFromView" : "show"}`}>    
-                        
+                        <div key={"reminderkey" + reminderSendout} className={`${reminderSendout == null ? "hiddenFromView" : "show"}`}>
+
                             <ShowMemberItems heading={`Users that have recieved ${reminderSendout?.value} and agreed for a review reminder email`} memberArray={reminderSendoutArray} />
-</div>
-                    
+                        </div>
+
 
                     </article>
 
