@@ -31,7 +31,7 @@ export function ShowMemberItems({ heading, memberArray, includesDefaults }: Show
     const clipboardHeadeing = heading.concat(`\n${includes.email && "email\t"}${includes.name && "name\t"}${includes.interests && "book interests\t"}${includes.email && "language chosen"}`);
     const table = memberArray.map((user) => `\n${includes.email && `${user.email}\t`}${includes.name && `${user.userName}\t`}${includes.interests && `${user.genresInterestedIn.join(", ")}\t`}${includes.preferredLanguage && user.preferredLanguage}`);
     return (
-        <div className={`${styles.memberItemsDiv} fadeInAnim`}>
+        <div key={heading + memberArray[0]} className={`${styles.memberItemsDiv} fadeInAnim`}>
             <h3 className={styles.heading}>{heading}</h3>
             <h4 className={styles.includesHeading}>Select items to include for copying </h4>
             <div className={styles.includesDiv}>
