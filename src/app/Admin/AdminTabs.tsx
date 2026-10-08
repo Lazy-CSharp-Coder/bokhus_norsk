@@ -309,10 +309,10 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                         <input type="checkbox" checked={comfortable} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, comfortable: !prev.comfortable }))} />User should be comfortable giving reviews </label>
 
                                     <label className={styles.genreLabel}>
-                                        <input type="checkbox" checked={true} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, disablprev.disableFormerSendouteFormerSendout: ! }))} />Include former recivers of book </label>
+                                        <input type="checkbox" checked={includeFormer} value={"false"} onChange={(e) => setIncludeFormer((prev) => !prev)} />Include former recivers of book </label>
 
                                     <div className={`$styles.bookFormatRadioInputDiv`}>
-                              
+
                                         <label className={styles.bookFormatLabel} >
                                             <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "ARC Candidates" }))} name="includeFormerSEndout" type="radio" value="ARC Candidates" />curent ARC candidates</label>
                                         <label className={styles.bookFormatLabel} >
