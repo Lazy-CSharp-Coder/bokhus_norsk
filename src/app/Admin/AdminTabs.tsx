@@ -21,13 +21,14 @@ export interface AdminData
 }
 
 type Genres = typeof genresDef[number];
+type IncludeFormerSendouts = "ARC Candidates" | "All";
 
 interface ARCSendoutOptions
 {
     genereOfSendout: Genres[],
     comfortable: boolean,
     prioritizeSpeedRead: boolean,
-    disableFormerSendout: boolean,
+    includeFormerSendout: IncludeFormerSendouts,
     preferredLanguage: string[],
     format: "ePub" | "pdf",
     bookName: string;
@@ -48,12 +49,13 @@ interface CopyToClipboardUserInfo
 }
 
 
+
 const defaultsSendouts: ARCSendoutOptions =
 {
     genereOfSendout: ["Historical novels"],
     comfortable: false,
     prioritizeSpeedRead: false,
-    disableFormerSendout: false,
+    includeFormerSendout: "ARC Candidates",
     format: "ePub",
     preferredLanguage: ["English"],
     bookName: ""
@@ -81,11 +83,12 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const [newsLetterOptions, setNewsLetterOptions] = useState<NewsLetterOptions>({ preferredLanguage: defaultsSendouts.preferredLanguage });
     const [prevSendout, setPrevSendout] = useState<SelectorOption | null>(null);
     const [reminderSendout, setReminderSendout] = useState<SelectorOption | null>(null);
+    const [includeFormer, setIncludeFormer] = useState<boolean>(false);
     const [bookFromDatabase, setBookFromDatabase] = useState<SelectorOption | null>(null);
 
     const router = useRouter();
 
-    const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName, preferredLanguage } = options;
+    const { genereOfSendout, comfortable, prioritizeSpeedRead, includeFormerSendout, format, bookName, preferredLanguage } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
 
     const handleGenreChange = (e: React.ChangeEvent<HTMLInputElement>, genre: Genres) =>
