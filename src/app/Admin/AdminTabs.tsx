@@ -177,11 +177,13 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
     const newsLetterUsers: UserInfo[] = users.filter((user) => user.newsLetter == true && newsLetterOptions.preferredLanguage.includes(user.preferredLanguage));
 
+    
     const transferFromSelector = (option: SelectorOption | null) =>
     {
         if (option) setOptions((prev) => ({ ...prev, bookName: option.value }));
         else alert("Please choose book from dropdown list first.");
     };
+
 
     return (
         <section className={`${styles.adminTabSection}`}>
