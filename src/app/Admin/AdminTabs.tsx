@@ -111,19 +111,25 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
     const filterEmails = () => 
     {
-        const filterOnGenre = users.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
+        if(bookName == null || bookName == undefined) return;
+         const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
+        const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users: users.filter((user) => user.arcInterest))  : users.filter((user) => user.recievedBooks.every((book) =>!previousSendouts.includes(book)));
+
+        const filterOnGenre = filterOnIncludeFormer.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
+
         if (filterOnGenre.length == 0) console.log("filter on genre failed");
 
         const filterOnComfortable = comfortable ? filterOnGenre.filter((user) => user.comfortable == "Yes") : filterOnGenre;
+
         if (filterOnComfortable.length == 0) console.log("filter on confortable failed");
 
         const filterOnFormat = filterOnComfortable.filter((user) => user.format == format);
-        const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
+     
         console.log("Before filter on include lenght is " + filterOnFormat.length);
-        const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? filterOnFormat: filterOnFormat.filter((user) => user.arcInterest))  : filterOnFormat.filter((user) => user.recievedBooks.some((book) => !previousSendouts.includes(book)));
+     
         console.log("After filter on include length is " + filterOnFormat.length)
         // prioritize on how fast you read
-        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnIncludeFormer.sort((a, b) => 
+        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnFormat.sort((a, b) => 
         {
             const aIndex = howLongArray.findIndex((item) => item == a.howLong);
             const bIndex = howLongArray.findIndex((item) => item == b.howLong);
