@@ -113,8 +113,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     {
         if(bookName == null || bookName == undefined) return;
         
-
-        const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
+        // const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
         
         const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users : users.filter((user) => user.arcInterest))  : users.filter((user) => !user.recievedBooks.includes((bookName)));
 
