@@ -64,7 +64,7 @@ export default async function AdminPage()
 
     ))
     
-    const arcUsers : UserInfo[] = profiles.filter((user) => user.arcInterest || user.recievedBooks.length > 0).map((user) =>
+    const arcUsers : UserInfo[] = profiles.filter((user) => user.arcInterest || user.recievedBooks).map((user) =>
     ({
         email: user.email,
         userName : user.data?.userName ?? "NONAME",
@@ -80,6 +80,8 @@ export default async function AdminPage()
         reminder : user.data?.arc?.rules.reminder ?? false,
 
     }));
+
+
     const BOOK_QUERY = `*[_type == "Book"] | order(bookTitle asc)`;
          let bookList: Book[] = [];
     
