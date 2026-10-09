@@ -21,13 +21,14 @@ export interface AdminData
 }
 
 type Genres = typeof genresDef[number];
+type IncludeFormerSendouts = "ARC Candidates" | "All";
 
 interface ARCSendoutOptions
 {
     genereOfSendout: Genres[],
     comfortable: boolean,
     prioritizeSpeedRead: boolean,
-    disableFormerSendout: boolean,
+    includeFormerSendout: IncludeFormerSendouts,
     preferredLanguage: string[],
     format: "ePub" | "pdf",
     bookName: string;
@@ -48,12 +49,13 @@ interface CopyToClipboardUserInfo
 }
 
 
+
 const defaultsSendouts: ARCSendoutOptions =
 {
     genereOfSendout: ["Historical novels"],
     comfortable: false,
     prioritizeSpeedRead: false,
-    disableFormerSendout: false,
+    includeFormerSendout: "ARC Candidates",
     format: "ePub",
     preferredLanguage: ["English"],
     bookName: ""
@@ -81,11 +83,14 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const [newsLetterOptions, setNewsLetterOptions] = useState<NewsLetterOptions>({ preferredLanguage: defaultsSendouts.preferredLanguage });
     const [prevSendout, setPrevSendout] = useState<SelectorOption | null>(null);
     const [reminderSendout, setReminderSendout] = useState<SelectorOption | null>(null);
+    const [includeFormer, setIncludeFormer] = useState<boolean>(false);
     const [bookFromDatabase, setBookFromDatabase] = useState<SelectorOption | null>(null);
 
     const router = useRouter();
 
-    const { genereOfSendout, comfortable, prioritizeSpeedRead, disableFormerSendout, format, bookName, preferredLanguage } = options;
+    users.forEach((user) => console.log("ARC user : " + user.arcInterest))
+
+    const { genereOfSendout, comfortable, prioritizeSpeedRead, includeFormerSendout, format, bookName, preferredLanguage } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
 
     const handleGenreChange = (e: React.ChangeEvent<HTMLInputElement>, genre: Genres) =>
@@ -106,26 +111,33 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
     const filterEmails = () => 
     {
-        const filterOnGenre = users.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
+        if(bookName == null || bookName == undefined) return;
+        
+        // const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
+        
+        const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users : users.filter((user) => user.arcInterest))  : users.filter((user) => !user.recievedBooks.includes((bookName)));
+
+        const filterOnGenre = filterOnIncludeFormer.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
+
         if (filterOnGenre.length == 0) console.log("filter on genre failed");
 
         const filterOnComfortable = comfortable ? filterOnGenre.filter((user) => user.comfortable == "Yes") : filterOnGenre;
+
         if (filterOnComfortable.length == 0) console.log("filter on confortable failed");
 
         const filterOnFormat = filterOnComfortable.filter((user) => user.format == format);
-        const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
-
-        const filterOnPrevSendouts = disableFormerSendout ? filterOnFormat : filterOnFormat.filter((user) =>
-            user.recievedBooks.every((book) => !previousSendouts.includes(bookName)));
-
+     
+        console.log("Before filter on include lenght is " + filterOnFormat.length);
+     
+        console.log("After filter on include length is " + filterOnFormat.length)
         // prioritize on how fast you read
-        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnPrevSendouts.sort((a, b) => 
+        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnFormat.sort((a, b) => 
         {
             const aIndex = howLongArray.findIndex((item) => item == a.howLong);
             const bIndex = howLongArray.findIndex((item) => item == b.howLong);
 
             return aIndex - bIndex;
-        }) : filterOnPrevSendouts;
+        }) : filterOnIncludeFormer;
 
 
         const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage));
@@ -179,7 +191,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const prevSendoutOptions: SelectorOption[] = [...new Set(users.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
     const newsLetterUsers: UserInfo[] = users.filter((user) => user.newsLetter == true && newsLetterOptions.preferredLanguage.includes(user.preferredLanguage));
-
+    console.log("Include former sendout value is :" + includeFormerSendout);
 
     const transferFromSelector = (option: SelectorOption | null) =>
     {
@@ -273,8 +285,8 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                 <div className={styles.bookFormatLanguageContainer}>
                                     <div className={styles.bookFormatRadioInputDiv}>
                                         <h3 className={styles.selectHeading}>Select format to send out :   </h3>
-                                        <label className={styles.bookFormatLabel} >               <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "ePub" }))} name="format" type="radio" value="ePub" checked={format == "ePub"} />e-Pub </label>
-
+                                        <label className={styles.bookFormatLabel} >
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "ePub" }))} name="format" type="radio" value="ePub" checked={format == "ePub"} />e-Pub </label>
                                         <label className={styles.bookFormatLabel} >
                                             <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, format: "pdf" }))} name="format" type="radio" value="pdf"
                                                 checked={format == "pdf"} />pdf </label>
@@ -306,7 +318,19 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                         <input type="checkbox" checked={comfortable} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, comfortable: !prev.comfortable }))} />User should be comfortable giving reviews </label>
 
                                     <label className={styles.genreLabel}>
-                                        <input type="checkbox" checked={disableFormerSendout} value={"false"} onChange={(e) => setOptions((prev) => ({ ...prev, disableFormerSendout: !prev.disableFormerSendout }))} />Disable earlier sendout filtering </label>
+                                        <input type="checkbox" checked={includeFormer} value={"false"} onChange={(e) => setIncludeFormer((prev) => !prev)} />Include former recivers of book </label>
+
+                                    <div className={`${styles.prevRecieversRadioInputDiv} ${includeFormer ? "" : "grayedOut"}`}>
+
+                                        <label className={styles.bookFormatLabel} >
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "ARC Candidates" }))} name="includeFormerSendout" type="radio" checked={includeFormerSendout == "ARC Candidates"} value="ARC Candidates" />current ARC candidates</label>
+                                        <label className={styles.bookFormatLabel} >
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "All" }))} name="includeFormerSendout" type="radio" checked={includeFormerSendout == "All"} value="All" />all previous recievers </label>
+
+                                    </div>
+
+
+
 
                                 </div>
 

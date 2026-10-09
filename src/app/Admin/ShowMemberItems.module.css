@@ -64,11 +64,12 @@
     list-style: none;
     padding: 1rem 0.5rem;
     width: 100%;
-    border-bottom: 1px solid var(--myWhiteColor);
+
     color: var(--myWhiteColor);
-    max-height: 8rem;
-    height: 8rem;
+    max-height: 10rem;
+    height:10rem;
     overflow-y: auto;
+
 
 }
 
@@ -80,6 +81,9 @@
     justify-items: left;
     width: 100%;
     column-gap: 0.7rem;
+    line-height: 1.5;
+  
+
 }
 
 .includesSpan {
@@ -87,7 +91,11 @@
 }
 
 .arcButtonDiv {
+    
+    border-top: 1px solid var(--myWhiteColor);
+    padding-top: 1rem;
     display: flex;
+    align-items: center;
     width: 100%;
     gap: 2rem;
 }
