@@ -112,6 +112,9 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const filterEmails = () => 
     {
         if(bookName == null || bookName == undefined) return;
+        
+        const filterOnPrevSendouts = disableFormerSendout ? filterOnFormat : filterOnFormat.filter((user) =>
+            user.recievedBooks.every((book) => !previousSendouts.includes(bookName)));
          const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
         const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users: users.filter((user) => user.arcInterest))  : users.filter((user) => user.recievedBooks.every((book) =>!previousSendouts.includes(book)));
 
