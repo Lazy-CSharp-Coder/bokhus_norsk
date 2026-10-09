@@ -67,7 +67,7 @@
 
     color: var(--myWhiteColor);
     max-height: 10rem;
-    height:fit-content;
+    height:10rem;
     overflow-y: auto;
 
 
