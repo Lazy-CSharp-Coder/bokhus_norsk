@@ -111,7 +111,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
     const filterEmails = () => 
     {
-        if(bookName == null || bookName == undefined) return;
+        if(bookName == null || bookName == undefined || bookName == "") return [];
         
         // const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
         
@@ -144,7 +144,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
         return filterOnLanguage;
 
-        return userInfoToGet;
+
 
         // const emailsToGet: string[] = filterOnPrioritySpeed.map((user) => user.email) ?? [] as string[];
         // return emailsToGet;
@@ -154,9 +154,8 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const numberOfSendoutsOnCurrentBook: number = users.filter((user) => user.recievedBooks.every((book) => previousSendouts.includes(bookName))).length;
 
     const arcUserInfo: UserInfo[] = filterEmails() as UserInfo[];
-    const userInfoToGet: string[] = arcUserInfo.map((user) => `${user.userName}\t${user.email}\t${user.genresInterestedIn.join(",")}`);
     const reminderSendoutArray: UserInfo[] = users.filter((user) => user.reminder == true && user.recievedBooks.includes(reminderSendout?.value ?? "none"));
-    const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
+    // const finalStringHeading = `ARC Sendout user reciever info for book ${bookName} in format : ${format}\nname\temail\tbook interests\n`;
 
 
     const registerSendout = async (bookName: string, arcEmails: string[]) =>
@@ -191,7 +190,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const prevSendoutOptions: SelectorOption[] = [...new Set(users.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
     const newsLetterUsers: UserInfo[] = users.filter((user) => user.newsLetter == true && newsLetterOptions.preferredLanguage.includes(user.preferredLanguage));
-    console.log("Include former sendout value is :" + includeFormerSendout);
+
 
     const transferFromSelector = (option: SelectorOption | null) =>
     {
