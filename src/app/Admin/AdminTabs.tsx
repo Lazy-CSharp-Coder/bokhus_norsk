@@ -118,9 +118,10 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
         const filterOnFormat = filterOnComfortable.filter((user) => user.format == format);
         const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
 
-        const filterOnPrevSendouts = disableFormerSendout ? filterOnFormat : filterOnFormat.filter((user) =>
-            user.recievedBooks.every((book) => !previousSendouts.includes(bookName)));
+        // const filterOnPrevSendouts = disableFormerSendout ? filterOnFormat : filterOnFormat.filter((user) =>
+        //     user.recievedBooks.every((book) => !previousSendouts.includes(bookName)));
 
+        const filterOnPrevSendouts = filterOnFormat;
         // prioritize on how fast you read
         const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnPrevSendouts.sort((a, b) => 
         {
@@ -311,12 +312,12 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                     <label className={styles.genreLabel}>
                                         <input type="checkbox" checked={includeFormer} value={"false"} onChange={(e) => setIncludeFormer((prev) => !prev)} />Include former recivers of book </label>
 
-                                    <div className={`$styles.bookFormatRadioInputDiv`}>
+                                    <div className={`${styles.prevRecieversRadioInputDiv} ${includeFormer ? "" : "grayedOut"}`}>
 
                                         <label className={styles.bookFormatLabel} >
-                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "ARC Candidates" }))} name="includeFormerSEndout" type="radio" value="ARC Candidates" />curent ARC candidates</label>
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "ARC Candidates" }))} name="includeFormerSendout" type="radio" checked={includeFormerSendout == "ARC Candidates"} value="ARC Candidates" />curent ARC candidates</label>
                                         <label className={styles.bookFormatLabel} >
-                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "All" }))} name="includeFormerSendout" type="radio" value="All" />all previous recievers </label>""
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "All" }))} name="includeFormerSendout" type="radio" checked={includeFormerSendout == "All"} value="All" />all previous recievers </label>
 
                                     </div>
 

@@ -113,7 +113,9 @@ main {
   flex-grow: 1;
 }
 
-
+.grayedOut {
+  opacity: 0.5;
+}
 
 .hiddenFromView {
   opacity: 0;
