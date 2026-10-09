@@ -119,19 +119,17 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
         const filterOnFormat = filterOnComfortable.filter((user) => user.format == format);
         const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
-
-        const filterOnIncludeFormer = includeFormer ? filterOnFormat.filter((user) => user.recievedBooks.every((book) => previousSendouts.includes(bookName))) : filterOnFormat;
-
-        const filterOnStillARC = includeFormer ? includeFormerSendout == "All" ? filterOnIncludeFormer : filterOnIncludeFormer.filter((user) => user.arcInterest) : filterOnIncludeFormer;
-
+        console.log("Before filter on include lenght is " + filterOnFormat.length);
+        const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? filterOnFormat: filterOnFormat.filter((user) => user.arcInterest))  : filterOnFormat.filter((user) => user.recievedBooks.some((book) => !previousSendouts.includes(book)));
+        console.log("After filter on include length is " + filterOnFormat.length)
         // prioritize on how fast you read
-        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnStillARC.sort((a, b) => 
+        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnIncludeFormer.sort((a, b) => 
         {
             const aIndex = howLongArray.findIndex((item) => item == a.howLong);
             const bIndex = howLongArray.findIndex((item) => item == b.howLong);
 
             return aIndex - bIndex;
-        }) : filterOnStillARC;
+        }) : filterOnIncludeFormer;
 
 
         const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage));
@@ -185,7 +183,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     const prevSendoutOptions: SelectorOption[] = [...new Set(users.flatMap((user) => user.recievedBooks))].map((item) => ({ value: item, label: item })) ?? [];
     const booksFromDatabaseOptions: SelectorOption[] = booksInDatabase.map((item) => ({ value: item, label: item }));
     const newsLetterUsers: UserInfo[] = users.filter((user) => user.newsLetter == true && newsLetterOptions.preferredLanguage.includes(user.preferredLanguage));
-
+    console.log("Include former sendout value is :" + includeFormerSendout);
 
     const transferFromSelector = (option: SelectorOption | null) =>
     {
@@ -317,7 +315,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                     <div className={`${styles.prevRecieversRadioInputDiv} ${includeFormer ? "" : "grayedOut"}`}>
 
                                         <label className={styles.bookFormatLabel} >
-                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "ARC Candidates" }))} name="includeFormerSendout" type="radio" checked={includeFormerSendout == "ARC Candidates"} value="ARC Candidates" />curent ARC candidates</label>
+                                            <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "ARC Candidates" }))} name="includeFormerSendout" type="radio" checked={includeFormerSendout == "ARC Candidates"} value="ARC Candidates" />current ARC candidates</label>
                                         <label className={styles.bookFormatLabel} >
                                             <input className={styles.bookFormatInput} onChange={() => setOptions((prev) => ({ ...prev, includeFormerSendout: "All" }))} name="includeFormerSendout" type="radio" checked={includeFormerSendout == "All"} value="All" />all previous recievers </label>
 

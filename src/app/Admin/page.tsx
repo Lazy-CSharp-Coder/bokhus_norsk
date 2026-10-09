@@ -64,7 +64,7 @@ export default async function AdminPage()
 
     ))
     
-    const arcUsers : UserInfo[] = profiles.filter(({data}) =>  data?.recievedBooks && data?.recievedBooks?.length > 0 ).map((user) =>
+    const arcUsers : UserInfo[] = profiles.filter((user) => user.arcInterest || user.recievedBooks.length > 0).map((user) =>
     ({
         email: user.email,
         userName : user.data?.userName ?? "NONAME",
