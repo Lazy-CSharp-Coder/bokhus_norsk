@@ -6,8 +6,7 @@
 .adminTabSection {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    width: 100rem;
+      width: 100rem;
 }
 
 .tabsDiv {
@@ -85,7 +84,6 @@
     border-top-left-radius: 0;
     min-height: 70vh;
     height: 100%;
-
     min-width: 100rem;
     width: 100%;
 
