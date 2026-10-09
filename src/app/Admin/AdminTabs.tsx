@@ -113,7 +113,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     {
         if(bookName == null || bookName == undefined || bookName == "") return [];
         
-        // const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
+        // filter away user that have recived book from before, if supposed to include them (includeFormer), choose between "All" or only users who are currently applying for more ARC books
         
         const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users : users.filter((user) => user.arcInterest))  : users.filter((user) => !user.recievedBooks.includes((bookName)));
 
