@@ -113,10 +113,10 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
     {
         if(bookName == null || bookName == undefined) return;
         
-        const filterOnPrevSendouts = disableFormerSendout ? filterOnFormat : filterOnFormat.filter((user) =>
-            user.recievedBooks.every((book) => !previousSendouts.includes(bookName)));
-         const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
-        const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users: users.filter((user) => user.arcInterest))  : users.filter((user) => user.recievedBooks.every((book) =>!previousSendouts.includes(book)));
+
+        const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
+        
+        const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users : users.filter((user) => user.arcInterest))  : users.filter((user) => !user.recievedBooks.includes((bookName)));
 
         const filterOnGenre = filterOnIncludeFormer.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
 
