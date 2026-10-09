@@ -29,7 +29,8 @@ export interface UserInfo
     comfortable : string,
     format : string,
     reminder: boolean,
-    preferredLanguage : string
+    preferredLanguage : string,
+    arcInterest: boolean
     
 }
 
@@ -57,16 +58,18 @@ export default async function AdminPage()
     const profiles = response.data.map((user) => (
         {   email : user.emailAddresses[0]?.emailAddress ?? "",
             data: user.publicMetadata?.userData as ProfileDataNeeded | undefined,
-            recievedBooks : user.publicMetadata.recievedBooks as string[] ?? []
+            recievedBooks : user.publicMetadata.recievedBooks as string[] ?? [],
+            arcInterest : user.publicMetadata.arcInterest
         }
 
     ))
     
-    const arcUsers : UserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true && data.arc).map((user) =>
+    const arcUsers : UserInfo[] = profiles.filter(({data}) =>  data?.recievedBooks && data?.recievedBooks?.length > 0 ).map((user) =>
     ({
         email: user.email,
         userName : user.data?.userName ?? "NONAME",
         newsLetter : user.data?.newsLetter ?? false,
+        arcInterest : user.data?.arcInterest ?? false,
         howLong: user.data?.arc?.howLong ?? "not defined",
         recievedBooks: user.recievedBooks,
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
@@ -93,7 +96,6 @@ export default async function AdminPage()
 
     const bookNameArray : string[] = bookList.length < 1 ? [] : bookList.map((book) => book.bookTitle);
 
-    const newsLetterEmails : string[] = profiles.filter((user) => user.data && user.data.newsLetter == true).map((user) => user.email);
 
     return (
         <main className={`${styles.adminPage}`}>

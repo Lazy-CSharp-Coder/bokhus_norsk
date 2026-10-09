@@ -88,6 +88,8 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 
     const router = useRouter();
 
+    users.forEach((user) => console.log("ARC user : " + user.arcInterest))
+
     const { genereOfSendout, comfortable, prioritizeSpeedRead, includeFormerSendout, format, bookName, preferredLanguage } = options;
     // flatMap takes all recievedBooks and gets them into an array. Set removes duplicates
 
@@ -118,18 +120,18 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
         const filterOnFormat = filterOnComfortable.filter((user) => user.format == format);
         const previousSendouts: string[] = [...new Set(users.flatMap((user) => user.recievedBooks))];
 
-        // const filterOnPrevSendouts = disableFormerSendout ? filterOnFormat : filterOnFormat.filter((user) =>
-        //     user.recievedBooks.every((book) => !previousSendouts.includes(bookName)));
+        const filterOnIncludeFormer = includeFormer ? filterOnFormat.filter((user) => user.recievedBooks.every((book) => previousSendouts.includes(bookName))) : filterOnFormat;
 
-        const filterOnPrevSendouts = filterOnFormat;
+        const filterOnStillARC = includeFormer ? includeFormerSendout == "All" ? filterOnIncludeFormer : filterOnIncludeFormer.filter((user) => user.arcInterest) : filterOnIncludeFormer;
+
         // prioritize on how fast you read
-        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnPrevSendouts.sort((a, b) => 
+        const filterOnPrioritySpeed = prioritizeSpeedRead ? filterOnStillARC.sort((a, b) => 
         {
             const aIndex = howLongArray.findIndex((item) => item == a.howLong);
             const bIndex = howLongArray.findIndex((item) => item == b.howLong);
 
             return aIndex - bIndex;
-        }) : filterOnPrevSendouts;
+        }) : filterOnStillARC;
 
 
         const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage));
