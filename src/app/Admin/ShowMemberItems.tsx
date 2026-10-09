@@ -30,8 +30,11 @@ export function ShowMemberItems({ heading, memberArray, includesDefaults }: Show
     const emailsOnly: string[] = memberArray.map((user) => user.email);
     const clipboardHeadeing = heading.concat(`\n${includes.email && "email\t"}${includes.name && "name\t"}${includes.interests && "book interests\t"}${includes.email && "language chosen"}`);
     const table = memberArray.map((user) => `\n${includes.email && `${user.email}\t`}${includes.name && `${user.userName}\t`}${includes.interests && `${user.genresInterestedIn.join(", ")}\t`}${includes.preferredLanguage && user.preferredLanguage}`);
+
+    const listKey = memberArray.map((member) => member.userName);
+
     return (
-        <div key={heading + memberArray[0]} className={`${styles.memberItemsDiv} fadeInAnim`}>
+        <div className={`${styles.memberItemsDiv} fadeInAnim`}>
             <h3 className={styles.heading}>{heading}</h3>
             <h4 className={styles.includesHeading}>Select items to include for copying </h4>
             <div className={styles.includesDiv}>
@@ -55,7 +58,7 @@ export function ShowMemberItems({ heading, memberArray, includesDefaults }: Show
                     <input type="checkbox" checked={includes.preferredLanguage} onChange={(e) => setIncludes((prev) => ({ ...prev, preferredLanguage: !prev.preferredLanguage }))} />Language chosen
                 </label>
             </div>
-            <ul className={styles.memberList}>
+            <ul key={heading + listKey} className={`${styles.memberList} fadeInAnim`} style={{animationDuration :"0.6s"}}>
                 {memberArray.length > 0 &&
                     memberArray.map((info, index) =>
 
