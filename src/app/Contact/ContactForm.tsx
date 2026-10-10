@@ -11,10 +11,10 @@ import { IoMailOutline } from "react-icons/io5";
 import { FaUserCheck } from "react-icons/fa6";
 import { MdOutlineInsertComment, MdOutlineSubject } from "react-icons/md";
 
-import { GoogleReCAPTCHA } from "../../components/common/GoogleReCAPTCHA";
 import Image from "next/image";
 import { SubmitButton } from "@/components/common/SubmitButton";
 import styles from "./ContactForm.module.css";
+import { useWindowWidth } from "@/components/hooks/useWindowWidth";
 
 //  added for importing recaptcha to fix turbopack fault
 
@@ -63,6 +63,11 @@ export function ContactUs()
 
     };
 
+
+
+    const windowWidth = useWindowWidth();
+
+    const captcahSize = windowWidth != null && windowWidth < 440 ? "compact" : "normal";
 
     return (
 
@@ -113,8 +118,9 @@ export function ContactUs()
                 </div>
                 <div className={`${styles.recaptchaWrapper}`}>
                     <FaUserCheck className={`${styles.inputIconRecaptcha}`} size="1.9rem" />
-                    <GoogleReCAPTCHA ref={(el) => { recaptchaRef.current = el; }} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" />
+                    <ReCAPTCHA key={captcahSize} className={styles.recaptchaDiv} ref={(el) => { recaptchaRef.current = el; }} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} onChange={handleCaptchaChange} theme="dark" size={captcahSize}/>
                     {errors.recaptchaToken && <p className={`${styles.errorRegisterForm}`}>{errors.recaptchaToken.message}  </p>}
+
 
                 </div>
 

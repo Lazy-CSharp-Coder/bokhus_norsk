@@ -148,7 +148,7 @@ box-shadow: 10px 10px 23px 3px #000000; */
     position: absolute;
     right: 0.8rem;
     top: 1.2rem;
-
+    z-index: 11;
     pointer-events: none;
     color: rgb(125, 88, 33)
   
@@ -208,6 +208,28 @@ background-color: transparent;
 
 }
 
+
+.recaptchaDiv {
+   display: inline-block !important;
+  position: relative !important;
+  overflow: hidden !important;
+
+  /* Hard limits that force-crop the outer 3 pixels */
+
+  width: 298px !important;
+  height: 72px !important;
+
+  /* Creates a new clean border to mask the cropped artifact */
+  border: 1px solid rgb(34, 34, 34);
+
+  border-radius: 4px !important;
+}
+
+.recaptchaDiv iframe {
+    margin: -3px 0 0 -3px !important;
+  pointer-events: auto !important;
+}
+
 .errorRegisterForm {
     position: absolute;
     left: 105%;
@@ -252,3 +274,14 @@ background-color: transparent;
       max-width: 96%;
     }
 }
+
+
+@media (max-width: 27.5em) {
+
+    .recaptchaDiv {
+     
+  width: 154px !important;
+  height: 134px !important;
+    }
+}
+
