@@ -16,7 +16,7 @@ export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
         ];
 
     const language: LanguageChosen[] = languageJson;
-    const { heroPage } = language[0];
+    const { heroPage } = language[1];
     const animIncQuotesBottom = 1700;
     const waitForDescription = 800;
 

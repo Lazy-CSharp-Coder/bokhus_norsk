@@ -16,14 +16,14 @@ export function LoginClerkContent()
             <Show when="signed-out">
 
                 <SignInButton >
-                    <button className={styles.signInButton}>SIGN IN <span className={styles.signInRegisterSpan}> / </span> REGISTER</button>
+                    <button className={styles.signInButton}>SIGN IN <span className={styles.signInRegisterSpan}> / </span> REGISTER/LOGG INN</button>
                 </SignInButton>
 
             </Show>
 
             <Show when="signed-in">
                 <AccountMenu />
-                <Link className={styles.signInButton} href="/Register">REGISTER/EDIT PROFILE</Link>
+                <Link className={styles.signInButton} href="/Register">REGISTER/REDIGER PROFIL</Link>
             </Show>
 
         </div>);

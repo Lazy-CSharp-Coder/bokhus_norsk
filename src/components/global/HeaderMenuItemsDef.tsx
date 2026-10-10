@@ -12,7 +12,7 @@ import { CgShoppingCart } from "react-icons/cg";
 export const menuItems: ReactIcons[] =
     [
         {
-            name: "HOME",
+            name: "HJEM",
             icon: RiHome4Line,
             size: "1.5rem",
             pageLink: "/"
@@ -20,39 +20,39 @@ export const menuItems: ReactIcons[] =
         },
 
         {
-            name: "AUTHORS",
+            name: "FORFATTERE",
             icon: BsPersonFill,
             size: "1.5rem",
             pageLink: "/Authors"
         },
 
         {
-            name: "BOOKS",
+            name: "BØKER",
             icon: TbBooks,
             size: "1.5rem",
             pageLink: "/Series"
         },
 
                {
-            name: "WHERE TO BUY",
+            name: "HVOR HANDLER JEG ?",
             icon: CgShoppingCart,
             size: "1.5rem",
             pageLink: "/WhereToBuy"
         },
         {
-            name: "WORK WITH US",
+            name: "ARBEID MED OSS",
             icon: FaHandshake,
             size: "1.5rem",
             pageLink: "/WorkWithUs"
         },
         {
-            name: "CONTACT",
+            name: "KONTAKT",
             icon: IoMailOutline,
             size: "1.4rem",
             pageLink: "/Contact"
         },
         {
-            name: "ABOUT",
+            name: "OM OSS",
             icon: VscInfo,
             size: "1.5rem",
             pageLink: "/About"

@@ -49,7 +49,7 @@ export function Footer()
             </div>
 
             <div className={`${styles.footerEndDiv} ${styles.desktopModeFooter}`}>
-                <div className={styles.contactUsDiv}>   <Link className={styles.contactUsLink} href="/Contact"><IoMailOutline className={styles.mailIcon} size="2rem" aria-label="Contact us" />CONTACT</Link>
+                <div className={styles.contactUsDiv}>   <Link className={styles.contactUsLink} href="/Contact"><IoMailOutline className={styles.mailIcon} size="2rem" aria-label="Contact us" />KONTAKT</Link>
 
                 </div>
                 {/* <div className={styles.socialMediaDiv}>
@@ -67,7 +67,7 @@ export function Footer()
                     <Link className={styles.iconCreditDiv} href="/Credits">
                         {/* <IoIosInformationCircleOutline size="2.0rem" className="iconCreditIcon" /> */}
                         <IoDocumentTextOutline size="1.9rem" className={styles.iconCreditIcon} />
-                        <span className={styles.logoText}>CREDITS
+                        <span className={styles.logoText}>KREDITERINGER
                         </span>
 
 
@@ -78,7 +78,7 @@ export function Footer()
                             <LogoBPWebDev />
                         </a>
 
-                        <span className={styles.logoText}>WEBPAGE BY </span>
+                        <span className={styles.logoText}>WEB-SIDE LAGET AV</span>
 
                     </div>
 
