@@ -213,7 +213,7 @@ background-color: transparent;
    display: inline-block !important;
   position: relative !important;
   overflow: hidden !important;
-
+    background-color: rgb(34, 34, 34);
   /* Hard limits that force-crop the outer 3 pixels */
 
   width: 298px !important;
