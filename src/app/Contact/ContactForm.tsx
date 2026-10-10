@@ -67,7 +67,7 @@ export function ContactUs()
 
     const windowWidth = useWindowWidth();
 
-    const captcahSize = windowWidth != null && windowWidth < 480 ? "compact" : "normal";
+    const captcahSize = windowWidth != null && windowWidth < 440 ? "compact" : "normal";
 
     return (
 
