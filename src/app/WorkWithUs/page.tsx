@@ -8,6 +8,7 @@ import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
 import { WorkWithUsTheme } from "./WorkWithUsTheme";
 import { IoTelescopeOutline } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
+import { WorkWithUsWriter } from "./WorkWithUsWriter";
 
 // export interface WorkWithUs
 // {
@@ -43,6 +44,7 @@ export default function WorkWithUsPage()
         <main className={styles.workWithUsPage}>
             <BackgroundImage src="/images/backgrounds/workWithUs.webp" className={styles.workWithUsBackground} />
             <section className={styles.workWithUsSection}>
+                <WorkWithUsWriter/>
                 <article className={`${styles.workWithUsTextArticle} fadeInAnim`} style={{ animationDelay: "0.5s" }}>
                     <div className={styles.headingLineWrapper}>
 
