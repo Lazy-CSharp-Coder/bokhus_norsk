@@ -9,7 +9,6 @@ import { menuItems } from "./HeaderMenuItemsDef";
 import { useOutsideClick } from "@/functions/useOutsideClick";
 import styles from "./HamburgerMenu.module.css";
 import { BokHusCom } from "../common/BokHusCom";
-import Link from "next/link";
 import { ExpandingLine } from "../common/ExpandingLine";
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
 
