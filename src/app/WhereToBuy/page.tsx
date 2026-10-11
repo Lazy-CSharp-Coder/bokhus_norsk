@@ -39,19 +39,19 @@ export default async function WhereToBuy()
 
         <section className={styles.whereToBuySection}>
           <div className={styles.headingLineWrapper}>
-            <h1 className={`${styles.whereToBuyHeading} fadeInAnim`} style={{animationDelay : `${waitForBackground}ms`}}>Where to buy books from Bokhus</h1>
+            <h1 className={`${styles.whereToBuyHeading} fadeInAnim`} style={{animationDelay : `${waitForBackground}ms`}}>Hvor kan du kjøpe bøker fra BokHus?</h1>
             <ExpandingLine key={"BuyLine"} lineSize={2} color="var(--bokhusRootsColor)" animationDuration="2s" animationDelay="0.7s" />
           </div>
 
           <div className={`${styles.buyIntroContainer} fadeInAnim`} style={{animationDelay : `${waitForBackground}ms`}}>
 
-            <p className={styles.whereToBuyText}> Here are links to websites where you can purchase books and series from us. </p>
-            <p className={styles.whereToBuyText}>Should you experience some trouble with the links or other issues, please use the contact form to tell us about it.</p>
+            <p className={styles.whereToBuyText}> Her finner du lenker til nettbutikker hvor du kan kjøpe bøker og bokserier fra BokHus. </p>
+            <p className={styles.whereToBuyText}>Hvis du opplever problemer med lenkene eller har andre spørsmål, kan du kontakte oss via kontaktskjemaet.</p>
 
           </div>
           <div className={`${styles.amazonDiv} fadeInAnim`} style={{animationDelay : `${waitForBackground + 200}ms`}}>
             <div className={`${styles.amazonHeadingIconWrapper} flex`}>
-              <h2 className={styles.amazonHeading}>BokHus is an <span className={styles.amazonAffiliateSpan}>Affiliate of Amazon</span></h2>
+              <h2 className={styles.amazonHeading}>BokHus er en  <span className={styles.amazonAffiliateSpan}>Amazon-partner</span></h2>
 
               <GoLinkExternal size="1.9rem" className={styles.amazonIconLink} />
             </div>
@@ -59,19 +59,19 @@ export default async function WhereToBuy()
 
             <div className={styles.amazonTextContainer}>
               <p className={styles.amazonText}>
-                This page contains links to books published by our company and sold through Amazon.
+               Denne siden inneholder lenker til bøker utgitt av BokHus og solgt gjennom Amazon.
               </p>
-              <strong>As an Amazon Associate we earn from qualifying purchases.</strong>
+              <strong>Som Amazon-partner tjener vi provisjon på kvalifiserende kjøp.</strong>
               <p className={styles.amazonText}>
-                If you purchase one of our books through an Amazon link on this website, we may receive both the normal proceeds from the sale of the book and an Amazon Associates commission, at no additional cost to you.
+               Hvis du kjøper en av bøkene våre gjennom en Amazon-lenke på denne nettsiden, kan vi motta både ordinære inntekter fra boksalget og provisjon gjennom Amazon Associates-programmet. Dette medfører ingen ekstra kostnader for deg.
               </p>
               <p className={styles.amazonlText}>
-                We include these links to make it easy for readers to purchase our books through their preferred Amazon marketplace.
+              Vi tilbyr disse lenkene for å gjøre det enkelt for leserne å kjøpe bøkene våre gjennom den Amazon-butikken de foretrekker.
               </p>
 
             </div>
             <p className={styles.amazonTextBottom}>
-              Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
+              Amazon og Amazon-logoen er varemerker som tilhører Amazon.com, Inc. eller selskapets tilknyttede selskaper.
             </p>
           </div>
           <WhereToBuyList buyArray={buyArray}/>

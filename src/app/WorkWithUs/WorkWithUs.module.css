@@ -98,6 +98,11 @@
     text-align: center;
 }
 
+.workWithUsSubHeading {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
 .whoIconHeadingWrapper {
     display: flex;
     flex-direction: row;

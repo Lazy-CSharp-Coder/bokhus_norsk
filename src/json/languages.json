@@ -32,20 +32,20 @@
         "heroPage": {
             "quotesHeading": [
                 {
-                    "start": "Historier med ",
+                    "start":"Fortellinger med",
                     "end": "Røtter"
                 },
                 {
-                    "start": "Bøker for ",
+                    "start": "Bøker med en",
                     "end": "Fremtiden"
                 }
             ],
             "descriptionBokhus": [
-                "BokHus er et hjem for kraftfull historiefortelling, historisk fiksjon, lokal kulturarv, barnebøker og fornyede litterære stemmer.",
-                "Vi utgir bøker formet av minner, sted, språk og menneskelig erfaring -  fra fjordene i Norge til lesere over hele verden."
+                "BokHus er et hjem for sterke fortellinger, historiske romaner, lokalhistorie, barnebøker og litterære stemmer som får nytt liv.",
+                "Vi gir ut bøker preget av minner, steder, språk og menneskelige erfaringer - fra de norske fjordene til lesere over hele verden."
             ],
             "quotesBottom": [
-                "Norske historier.",
+                "Norske fortellinger.",
                 "Internasjonale lesere.",
                 "Tidløse stemmer."
             ]

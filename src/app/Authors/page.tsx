@@ -55,12 +55,12 @@ export default async function Authors()
                     <div className={`${styles.authorsHeadingWrapper}`}>
 
                         <div className={`${styles.authorsHeadingLineWrapper}`}>
-                            <h1 className={`${styles.authorsPageHeading} fadeInAnim`}>Meet the <span className={`${styles.voicesText}`}>voices</span> behind our books</h1>
+                            <h1 className={`${styles.authorsPageHeading} fadeInAnim`}>Møt <span className={`${styles.voicesText}`}>forfatterne</span> bak bøkene våre</h1>
                             <ExpandingLine key={"AuthorLine"} lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s" />
                         </div>
-                        <p className={`${styles.authorsPageText} fadeInAnim`}>BokHus represents authors with a strong sense of story, place and history. From historical fiction and folklore to educational stories and local heritage, our writers create books that invite readers into worlds they can return to.
+                        <p className={`${styles.authorsPageText} fadeInAnim`}>BokHus representerer forfattere med et sterkt engasjement for fortellinger, steder og historie. Fra historiske romaner og folketro til lærerike fortellinger og lokalhistorie skaper våre forfattere bøker som inviterer leserne inn i verdener de kan vende tilbake til.
                         </p>
-                        <p className={`${styles.clickText} scaleInAnim`} style={{ animationDelay: "2s" }}>Click on <span className={`${styles.authorCardClickText}`}>Author Card</span> to explore available books and series.</p>
+                        <p className={`${styles.clickText} scaleInAnim`} style={{ animationDelay: "2s" }}>Klikk på et<span className={`${styles.authorCardClickText}`}> forfatterkort</span> for å utforske tilgjengelige bøker og bokserier.</p>
 
                     </div>
 
@@ -73,7 +73,7 @@ export default async function Authors()
                                 </Link>
                             )}
 
-                        </ul> : <ErrorBokhus msg="No authors found or accesible from server"/>
+                        </ul> : <ErrorBokhus msg="Ingen forfattere funnet i databasen."/>
                     }
 
                 </div>
