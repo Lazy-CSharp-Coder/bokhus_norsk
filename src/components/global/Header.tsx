@@ -38,3 +38,10 @@ export  function Header()
     );
 
 }
+
+
+// attributions 
+/*
+<a href="https://www.flaticon.com/free-icons/norway" title="norway icons">Norway icons created by Magnific - Flaticon</a> 
+<a href="https://www.flaticon.com/free-icons/flag" title="flag icons">Flag icons created by Magnific - Flaticon</a>
+*/
