@@ -2,7 +2,7 @@ import { clerkClient, auth } from "@clerk/nextjs/server";
 import { client } from "@/sanity/client";
 import { redirect } from "next/navigation";
 import styles from "./admin.module.css";
-import { BokHusCom } from "@/components/common/BokHusCom";
+import { BokHusNo } from "@/components/common/BokHusCom";
 import { AdminTabs } from "./AdminTabs";
 import { updateUserMetadata } from "./actions";
 import { Book } from "@/types/booktypes";
@@ -102,7 +102,7 @@ export default async function AdminPage()
     return (
         <main className={`${styles.adminPage}`}>
             <div className={styles.backgroundAdminPage}>
-                <BokHusCom fontSize="14rem" />
+                <BokHusNo fontSize="14rem" />
             </div>
 
             <AdminTabs users={arcUsers} booksInDatabase={bookNameArray}/>

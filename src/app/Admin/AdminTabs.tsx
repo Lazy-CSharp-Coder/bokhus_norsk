@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./AdminTabs.module.css";
 import { type UserInfo } from "./page";
 import { genresDef } from "../Register/registerSchema";
-import { BokHusCom } from "@/components/common/BokHusCom";
+import { BokHusNo } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
 import Select from "react-select";
 import { languageOptions } from "../Register/registerSchema";
@@ -206,7 +206,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                 <button onClick={() => setTab("Newsletters")} className={`${styles.tabButtonLeft} ${tab == "Newsletters" ? styles.tabButtonActive : styles.tabButtonInactive}`}>NEWSLETTER</button>
                 <button onClick={() => setTab("ARC Sendout")} className={`${styles.tabButtonRight} ${tab == "ARC Sendout" ? styles.tabButtonActive : styles.tabButtonInactive}`}>ARC SENDOUTS</button>
                 <button onClick={() => setTab("Reminders")} className={`${styles.tabButtonThird} ${tab == "Reminders" ? styles.tabButtonActive : styles.tabButtonInactive}`}>REMINDERS</button>
-                <span className="scaleInAnim" style={{ animationDelay: "0.8s" }}>  <BokHusCom fontSize="1.4rem" /></span>
+                <span className="scaleInAnim" style={{ animationDelay: "0.8s" }}>  <BokHusNo fontSize="1.4rem" /></span>
             </div>
 
             <div className={styles.tabsContainer}>
