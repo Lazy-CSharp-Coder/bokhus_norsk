@@ -31,7 +31,7 @@ export function Header()
             </div>
             <div className={styles.loginBurgerWrapper}>
                 <LoginClerk />
-                 <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com"> 
+                 <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com" target="_blank"> 
                               <img className={`${styles.flagIcon} fadeInAnim`} src="icons/ENG.png" />
                 <BokHusCom /> </a>
                 <span className={styles.mobileMode}>  <HamburgerMenu /></span>

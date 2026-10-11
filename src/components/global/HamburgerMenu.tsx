@@ -72,7 +72,7 @@ export function HamburgerMenu()
                         <HeaderMenuItem key={"#HamItem" + index} index={index} className={styles.hamburgerItem} iconClassName={styles.hamburgerIcon} />
                     )}
                     <ExpandingLine lineSize={1} animationDuration="0s"/>
-                    <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com">
+                    <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com" target="_blank">
                         <img className={`${styles.flagIcon} fadeInAnim`} src="icons/ENG.png" />
                         <BokHusCom /> 
                     </a>
