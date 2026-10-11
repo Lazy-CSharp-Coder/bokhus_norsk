@@ -1,0 +1,35 @@
+{
+        "themeHeading": "BLI FORFATTER HOS BOKHUS",
+        "themeSubHHeading" : "Har du en bokidé, et ferdig manuskript eller et forfatterskap du ønsker å nå nye lesere med?",
+        "themeDescription": [ "BokHus er et internasjonalt orientert forlag som ønsker å gi gode historier og verdifull kunnskap et større publikum. Vi er interessert i å komme i kontakt med både nye og etablerte forfattere som ønsker å utgi bøker i Norge eller internasjonalt.",
+         "Vi arbeider med både nye utgivelser og eldre litteratur som fortjener å bli tilgjengelig for nye generasjoner."],
+        "descriptionHeading": "HVA SLAGS BØKER SER VI ETTER?",
+        "listHeading" : "Vi er særlig interessert i:",
+        "descriptionList": [
+            "Skjønnlitteratur og historiske romaner",
+            "Krim, spenning og eventyr",
+            "Barne- og ungdomsbøker",
+            "Lokalhistorie, kulturhistorie og slektshistorie",
+            "Biografier og dokumentarlitteratur",
+            "Faglitteratur og praktiske håndbøker",
+            "Eldre litterære verk som kan få nytt liv gjennom nye utgaver eller oversettelser",
+            
+        ],
+        "listFooter": "Erfaring med å klargjøre filer for Amazon KDP, IngramSpark, BoD eller lignende publiseringsplattformer er spesielt nyttig.",
+        "endChapters" :[
+        {
+            "heading" : "FRA MANUSKRIPT TIL LESER",
+            "description" : ["BokHus ønsker å utvikle bøker som kan nå lesere på tvers av landegrenser.", "Avhengig av prosjektet kan samarbeidet omfatte redaksjonell bearbeiding, språkvask, oversettelse, omslagsdesign og tilrettelegging for trykte bøker og e-bøker.", "Vi legger vekt på kvalitet, tydelig kommunikasjon og et godt samarbeid med forfatteren."]
+
+
+        },
+         {
+            "heading" : "SEND OSS DIN BOKID",
+            "description" : ["Du trenger ikke å ha et ferdig manuskript for å ta kontakt.", "Fortell oss gjerne litt om deg selv, hva boken handler om, hvilken målgruppe du ønsker å nå, og hvor langt du har kommet med prosjektet.", "Dersom prosjektet er aktuelt for BokHus, tar vi kontakt for å diskutere mulighetene videre."]
+
+
+        } ],
+
+        "endQuote" : "Vil du bli forfatter hos BokHus ?",
+        "iconNumber": 1
+    }
