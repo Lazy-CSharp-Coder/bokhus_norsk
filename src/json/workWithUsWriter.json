@@ -1,6 +1,6 @@
 {
         "themeHeading": "BLI FORFATTER HOS BOKHUS",
-        "themeSubHHeading" : "Har du en bokidé, et ferdig manuskript eller et forfatterskap du ønsker å nå nye lesere med?",
+        "themeSubHeading" : "Har du en bokidé, et ferdig manuskript eller et forfatterskap du ønsker å nå nye lesere med?",
         "themeDescription": [ "BokHus er et internasjonalt orientert forlag som ønsker å gi gode historier og verdifull kunnskap et større publikum. Vi er interessert i å komme i kontakt med både nye og etablerte forfattere som ønsker å utgi bøker i Norge eller internasjonalt.",
          "Vi arbeider med både nye utgivelser og eldre litteratur som fortjener å bli tilgjengelig for nye generasjoner."],
         "descriptionHeading": "HVA SLAGS BØKER SER VI ETTER?",
@@ -31,5 +31,6 @@
         } ],
 
         "endQuote" : "Vil du bli forfatter hos BokHus ?",
-        "iconNumber": 1
+        "iconNumber": 1,
+        "experience" : "test"
     }

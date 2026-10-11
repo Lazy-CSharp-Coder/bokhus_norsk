@@ -1,5 +1,5 @@
 
-import { WorkWithUs } from "./page";
+import { WorkWithUs, WorkWithUsWriter } from "./page";
 import { TfiWrite } from "react-icons/tfi";
 import type { ReactIcons } from "@/types/types";
 import styles from "./WorkWithUsTheme.module.css";
@@ -23,16 +23,13 @@ const reactIconsArray: ReactIcons[] =
 
     ];
     
-interface WorkWithUsThemeProps 
-{
-    subject: WorkWithUs;
-}
 
-export function WorkWithUsWriter({ subject }: WorkWithUsThemeProps)
+
+export function WorkWithUsAuthor({ subject }: {subject: WorkWithUsWriter})
 {
     const IconToUse = reactIconsArray[subject.iconNumber].icon;
     const size = reactIconsArray[subject.iconNumber].size;
-    const { themeHeading, themeDescription, descriptionHeading, descriptionList, experience } = subject;
+    const { themeHeading, themeSubHeading, themeDescription, descriptionHeading, descriptionList, experience } = subject;
 
     return (
         <article className={`${styles.workWithUsThemeDiv} fadeInFromBelowAnim`} style={{animationDelay: "1.4s"}}>
@@ -40,8 +37,11 @@ export function WorkWithUsWriter({ subject }: WorkWithUsThemeProps)
                 <h3 className={styles.themeHeading}>{themeHeading.toUpperCase()}</h3>
                 <IconToUse size={size} />
             </div>
+           
             <div className={styles.themeSubjectDiv}>
-                <p className={styles.themeDescription}>{themeDescription}</p>
+                 <h4 className={styles.themeSubHeading}>{themeSubHeading}</h4>
+                { themeDescription
+                .map((chapter) =>  <p className={styles.themeDescription}>{chapter}</p>) }
                 <p className={styles.descriptionHeading}> {descriptionHeading}</p>
                 <ul className={styles.descriptionList}>
                     {descriptionList.map((item, index) =>
