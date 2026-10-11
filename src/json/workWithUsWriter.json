@@ -4,7 +4,7 @@
         "themeDescription": [ "BokHus er et internasjonalt orientert forlag som ønsker å gi gode historier og verdifull kunnskap et større publikum. Vi er interessert i å komme i kontakt med både nye og etablerte forfattere som ønsker å utgi bøker i Norge eller internasjonalt.",
          "Vi arbeider med både nye utgivelser og eldre litteratur som fortjener å bli tilgjengelig for nye generasjoner."],
         "descriptionHeading": "HVA SLAGS BØKER SER VI ETTER?",
-        "listHeading" : "Vi er særlig interessert i:",
+        "listHeading" : "Vi er særlig interessert i :",
         "descriptionList": [
             "Skjønnlitteratur og historiske romaner",
             "Krim, spenning og eventyr",
@@ -12,7 +12,7 @@
             "Lokalhistorie, kulturhistorie og slektshistorie",
             "Biografier og dokumentarlitteratur",
             "Faglitteratur og praktiske håndbøker",
-            "Eldre litterære verk som kan få nytt liv gjennom nye utgaver eller oversettelser",
+            "Eldre litterære verk som kan få nytt liv gjennom nye utgaver eller oversettelser"
             
         ],
         "listFooter": "Erfaring med å klargjøre filer for Amazon KDP, IngramSpark, BoD eller lignende publiseringsplattformer er spesielt nyttig.",
