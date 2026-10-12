@@ -39,6 +39,7 @@ export interface WorkWithUsWriter
     descriptionHeading: string,
     descriptionList: string[],
     experience: string,
+    listFooter : string,
     iconNumber: number;
 
 }

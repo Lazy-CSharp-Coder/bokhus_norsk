@@ -3,7 +3,7 @@
         "themeSubHeading" : "Har du en bokidé, et ferdig manuskript eller et forfatterskap du ønsker å nå nye lesere med?",
         "themeDescription": [ "BokHus er et internasjonalt orientert forlag som ønsker å gi gode historier og verdifull kunnskap et større publikum. Vi er interessert i å komme i kontakt med både nye og etablerte forfattere som ønsker å utgi bøker i Norge eller internasjonalt.",
          "Vi arbeider med både nye utgivelser og eldre litteratur som fortjener å bli tilgjengelig for nye generasjoner."],
-        "descriptionHeading": "HVA SLAGS BØKER SER VI ETTER?",
+        "descriptionHeading": "Hva slags bøker ser vi etter ?",
         "listHeading" : "Vi er særlig interessert i :",
         "descriptionList": [
             "Skjønnlitteratur og historiske romaner",
@@ -15,7 +15,7 @@
             "Eldre litterære verk som kan få nytt liv gjennom nye utgaver eller oversettelser"
             
         ],
-        "listFooter": "Erfaring med å klargjøre filer for Amazon KDP, IngramSpark, BoD eller lignende publiseringsplattformer er spesielt nyttig.",
+        "listFooter": "Vi er også åpne for andre sjangre og originale bokprosjekter.",
         "endChapters" :[
         {
             "heading" : "FRA MANUSKRIPT TIL LESER",
