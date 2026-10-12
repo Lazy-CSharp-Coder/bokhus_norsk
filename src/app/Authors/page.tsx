@@ -21,7 +21,7 @@ export default async function Authors()
     try {
      
         
-        authors = await client.fetch<Author[]>(AUTOHRS_QUERY),{next : { tags :["Author"]}};
+              authors = await client.fetch<Author[]>(AUTOHRS_QUERY,{}, {next : { tags :["Author"]}});
         
 
     }
