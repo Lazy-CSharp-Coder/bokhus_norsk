@@ -93,9 +93,15 @@
 
 .workWithUsHeading {
     font-size: var(--pageHeadingFontSize);
-    color: var(--myWhiteColor);
+    /* color: var(--myWhiteColor); */
+    color: white;
     padding-bottom: 1rem;
     text-align: center;
+}
+
+.workWithUsSubHeading {
+    font-weight: bold;
+    font-size: 1.6rem;
 }
 
 .whoIconHeadingWrapper {

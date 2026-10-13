@@ -99,7 +99,7 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
             <BackgroundImage className={styles.singleBookCardBackgroundImaage} src={backgroundImage} />
             <section className={styles.singleBookCardSection}>
                 <article className={styles.singleBookCardArticle}>
-                    <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle}
+                    <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle} forLanguagePage={bookToShow.forLanguagePage}
                         description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
                     {bookToShow && <ReviewScrollButton />}
                 </article>

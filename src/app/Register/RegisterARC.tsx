@@ -100,7 +100,7 @@ export function RegisterARC()
                 </div>
                 <div className={styles.multipleChoicesARCDiv}>
                     <BsFileEarmarkPost size="1.8rem" className={styles.inputRegListARCIcon} />
-                    <label className={styles.languagesText}>Where do you post reviews  ?   {errors.arc?.reviewSites && <RegErrorMessage message={errors.arc.reviewSites.message} />}</label>
+                    <label className={styles.languagesText}>Where do you post or plan to post reviews  ?   {errors.arc?.reviewSites && <RegErrorMessage message={errors.arc.reviewSites.message} />}</label>
                     <ul className={styles.multipleChoicesARCList}>
                         {reviewSitesDef.map((item) => (
                             <li key={item} className={styles.languagePreferredDiv}>

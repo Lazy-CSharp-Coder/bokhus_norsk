@@ -9,7 +9,7 @@ export default function Home()
   const waitForMain = 300;
 
 
-  const { quotesHeading, descriptionBokhus} = languageJson[0].heroPage;
+  const { quotesHeading, descriptionBokhus} = languageJson[1].heroPage;
 
 
   return (

@@ -1,26 +1,37 @@
 import { clerkClient, auth } from "@clerk/nextjs/server";
+import { client } from "@/sanity/client";
 import { redirect } from "next/navigation";
 import styles from "./admin.module.css";
-import { BokHusCom } from "@/components/common/BokHusCom";
+import { BokHusNo } from "@/components/common/BokHusCom";
 import { AdminTabs } from "./AdminTabs";
 import { updateUserMetadata } from "./actions";
+import { Book } from "@/types/booktypes";
 
 interface ProfileDataNeeded 
 {
+    userName : string,
     arcInterest?: boolean,
     newsLetter?: boolean,
     recievedBooks?: string[],
     genresInterestedIn?:string[],
-    arc?: { howLong?:string, comfortable? : string, format : string}
+    preferredLanguage : string,
+    shouldNotReciveARCAnymore: boolean,
+    arc?: { howLong?:string, comfortable? : string, format : string, rules : { reminder : boolean}}
 }
-export interface ARCUserInfo
+export interface UserInfo
 {
     email : string,
+    userName : string,
+    newsLetter: boolean,
     recievedBooks : string[],
     howLong : string
     genresInterestedIn : string[]
     comfortable : string,
-    format : string
+    format : string,
+    reminder: boolean,
+    preferredLanguage : string,
+    arcInterest: boolean
+    
 }
 
 
@@ -41,38 +52,60 @@ export default async function AdminPage()
         redirect("/");
     }
 
-    const client = await clerkClient();
-    const response = await client.users.getUserList();
+    const cclient = await clerkClient();
+    const response = await cclient.users.getUserList();
 
     const profiles = response.data.map((user) => (
         {   email : user.emailAddresses[0]?.emailAddress ?? "",
-            data: user.publicMetadata?.userData as ProfileDataNeeded | undefined
+            data: user.publicMetadata?.userData as ProfileDataNeeded | undefined,
+            recievedBooks : user.publicMetadata.recievedBooks as string[] ?? [],
+            arcInterest : user.publicMetadata.arcInterest
         }
 
     ))
     
-    const arcUsers : ARCUserInfo[] = profiles.filter(({data}) => data &&  data.arcInterest === true && data.arc).map((user) =>
+    const arcUsers : UserInfo[] = profiles.filter((user) => user.arcInterest || user.recievedBooks).map((user) =>
     ({
         email: user.email,
+        userName : user.data?.userName ?? "NONAME",
+        newsLetter : user.data?.newsLetter ?? false,
+        arcInterest : user.data?.arcInterest ?? false,
         howLong: user.data?.arc?.howLong ?? "not defined",
-        recievedBooks: user.data?.recievedBooks as string[] ?? [],
+        recievedBooks: user.recievedBooks,
         genresInterestedIn: user.data?.genresInterestedIn as [] ?? [],
         comfortable : user.data?.arc?.comfortable ?? "not defined",
-        format : user.data?.arc?.format ?? "ePub"
+        preferredLanguage :  user.data?.preferredLanguage ?? "English",
+        shouldNotReciveARCAnymore : user.data?.shouldNotReciveARCAnymore,
+        format : user.data?.arc?.format ?? "ePub",
+        reminder : user.data?.arc?.rules.reminder ?? false,
+
     }));
 
 
+    const BOOK_QUERY = `*[_type == "Book"] | order(bookTitle asc)`;
+         let bookList: Book[] = [];
+    
+       try
+       {
+          
+          bookList = await client.fetch<Book[]>(BOOK_QUERY);
+       }
+       catch (error)
+       {
+          console.error("Sanity fetch failed :", error);
+          throw new Error("Failed to fetch authors from Sanity");
+       }
 
-    const newsLetterEmails : string[] = profiles.filter((user) => user.data && user.data.newsLetter == true).map((user) => user.email);
+    const bookNameArray : string[] = bookList.length < 1 ? [] : bookList.map((book) => book.bookTitle);
 
 
     return (
         <main className={`${styles.adminPage}`}>
             <div className={styles.backgroundAdminPage}>
-                <BokHusCom fontSize="14rem" />
+                <BokHusNo fontSize="14rem" />
             </div>
 
-            <AdminTabs newsLetterEmails={newsLetterEmails} arcUsers={arcUsers} updateUsersARCBook={updateUserMetadata} />
+            <AdminTabs users={arcUsers} booksInDatabase={bookNameArray}/>
 
         </main>
 

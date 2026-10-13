@@ -2,7 +2,7 @@ import "./About.module.css";
 import aboutJson from "@/json/about.json";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import type { About } from "@/types/types";
-import { BokHusCom } from "@/components/common/BokHusCom";
+import { BokHusNo } from "@/components/common/BokHusCom";
 import { QuotesBottom } from "@/components/common/QuotesBottom";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import styles from "./About.module.css"
@@ -28,7 +28,7 @@ export default function About()
                 </div>
                 <ExpandingLine key={"AboutLine2"} lineSize={2} color={colorLine} animationDelay="1s" animationDuration="3.5s" />
 
-                <div className={`${styles.bokhusComWrapperAbout} fadeInAnim`} style={{ animationDelay: "0.8s" }}> <BokHusCom fontSize="1.2rem" />
+                <div className={`${styles.bokhusComWrapperAbout} fadeInAnim`} style={{ animationDelay: "0.8s" }}> <BokHusNo fontSize="1.2rem" />
                 </div>
             </section>
 

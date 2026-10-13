@@ -8,14 +8,14 @@ import { HeaderMenuItem } from "./HeaderMenuItem";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { useOutsideClick } from "@/functions/useOutsideClick";
 import styles from "./HamburgerMenu.module.css";
-import { useWindowHeight } from "../hooks/useWindowHeight";
-
+import { BokHusCom } from "../common/BokHusCom";
+import { ExpandingLine } from "../common/ExpandingLine";
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
 
 export function HamburgerMenu()
 {
     const [menuState, setMenuState] = useState<HamburgerMenuState>("hiding");
-    
+
     const headerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() =>
@@ -24,14 +24,14 @@ export function HamburgerMenu()
             if (menuState == "showing")
             {
                 document.body.classList.add(styles.hamMenuOpen);
-           
+
             }
             else 
             {
                 document.body.classList.remove(styles.hamMenuOpen);
-             
+
             }
-        return () =>  document.body.classList.remove(styles.hamMenuOpen); 
+        return () => document.body.classList.remove(styles.hamMenuOpen);
 
 
     }, [menuState]);
@@ -70,6 +70,11 @@ export function HamburgerMenu()
                     {menuItems.map((_, index) =>
                         <HeaderMenuItem key={"#HamItem" + index} index={index} className={styles.hamburgerItem} iconClassName={styles.hamburgerIcon} />
                     )}
+                    <ExpandingLine lineSize={1} animationDuration="0s"/>
+                    <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com" target="_blank">
+                        <img className={`${styles.flagIcon} fadeInAnim`} src="icons/ENG.png" />
+                        <BokHusCom /> 
+                    </a>
                 </nav>}
 
         </>

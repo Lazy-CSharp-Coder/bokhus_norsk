@@ -15,15 +15,15 @@ export function LoginClerkContent()
 
             <Show when="signed-out">
 
-                <SignInButton fallbackRedirectUrl={"/Register"}>
-                    <button className={styles.signInButton}>SIGN IN <span className={styles.signInRegisterSpan}> / </span> REGISTER</button>
+                <SignInButton >
+                    <button className={styles.signInButton}>LOGG INN<span className={styles.signInRegisterSpan}> / </span> REGISTER</button>
                 </SignInButton>
 
             </Show>
 
             <Show when="signed-in">
                 <AccountMenu />
-                <Link className={styles.signInButton} href="/Register">PROFILE</Link>
+                <Link className={styles.signInButton} href="/Register">REDIGER PROFIL</Link>
             </Show>
 
         </div>);
@@ -33,7 +33,7 @@ export function LoginClerkContent()
 export function LoginClerk()
 {
     return (
-        <Suspense fallback={<div className={styles.clerkButtons}><button className={styles.signInButton}>SIGN IN</button></div>}>
+        <Suspense fallback={<div className={styles.clerkButtons}><button className={styles.signInButton}>LOGG INN</button></div>}>
             <LoginClerkContent />
         </Suspense>
     );

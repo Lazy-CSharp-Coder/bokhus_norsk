@@ -16,7 +16,7 @@ export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
         ];
 
     const language: LanguageChosen[] = languageJson;
-    const { heroPage } = language[0];
+    const { heroPage } = language[1];
     const animIncQuotesBottom = 1700;
     const waitForDescription = 800;
 
@@ -34,7 +34,7 @@ export function QuotesBottom({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
 
 export function QuotesWorkWithUs({ fontSize, fontFamily, noAnim }: QuoteBottomProps)
 {
-    const quotesText = ["Remote work.", "Interational projects.", "Flexible collaboration."];
+    const quotesText = ["Jobb hjemmefra.", "Internasjonale prosjekter.", "Fleksibelt samarbeid."];
     const animIncQuotesBottom = 1700;
     const waitForDescription = 800;
     return (

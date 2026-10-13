@@ -87,7 +87,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                     <BookCardSizer key={bookForSizing._id + "#sizerCard#"} availability={bookForSizing.availability} bookInSeries={bookForSizing.bookInSeries} seriesRef={bookForSizing.seriesRef}
                         _id={bookForSizing._id} imageBook={bookForSizing.imageBook} releaseYear={bookForSizing.releaseYear} authorUids={bookForSizing.authorUids}
                         bookTitle={bookForSizing.bookTitle} subTitle={bookForSizing.subTitle} description={bookForSizing.description} seriesName={series.seriesName}
-                        saintyTagLanguage={"ENG"} />
+                        saintyTagLanguage={"ENG"} forLanguagePage={series.forLanguagePage} />
 
                     <div className={styles.bookCardWrapper}>
                         {
@@ -95,7 +95,7 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
                                 <BookCard key={bookToShow._id} availability={bookToShow.availability} bookInSeries={bookToShow.bookInSeries} seriesRef={bookToShow.seriesRef}
                                     _id={bookToShow._id} imageBook={bookToShow.imageBook} releaseYear={bookToShow.releaseYear} authorUids={bookToShow.authorUids}
                                     bookTitle={bookToShow.bookTitle} subTitle={bookToShow.subTitle} description={bookToShow.description} seriesName={series.seriesName}
-                                    saintyTagLanguage={"ENG"} buyLink={bookToShow.buyLink} /> :
+                                    saintyTagLanguage={"ENG"} buyLink={bookToShow.buyLink} forLanguagePage={bookToShow.forLanguagePage} /> :
                                 <SerieDescription seriesName={series.seriesName} authors={authors} seriesFact={series.seriesFact} description={series.description} imageUrl={urlFor(series.imageSeries, 800)} ageGroup={series.ageGroup} />
                         }
                     </div>

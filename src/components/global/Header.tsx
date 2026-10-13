@@ -4,13 +4,14 @@ import { HamburgerMenu } from "./HamburgerMenu";
 import { LoginClerk } from "./LoginClerk";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { HeaderMenuItem } from "./HeaderMenuItem";
-import styles from  "./Header.module.css";
+import styles from "./Header.module.css";
+import { BokHusCom } from "../common/BokHusCom";
 
 
 
-export  function Header()
+export function Header()
 {
-   
+
     return (
 
         <header className={`${styles.headerBokhus} fadeInAnim`} style={{ animationDuration: "0.2s" }} >
@@ -24,17 +25,29 @@ export  function Header()
 
                 <nav className={`${styles.menuItemsContainer} ${styles.desktopMode} fadeInAnim`} style={{ animationDuration: "1s", animationDelay: "0.3s" }}>
                     {menuItems.map((_, index) =>
-                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className={styles.headerMenuItem} iconClassName={styles.headerIcon}/>)
+                        <HeaderMenuItem key={index + "#HeaderMenuItemDesktop#"} index={index} className={styles.headerMenuItem} iconClassName={styles.headerIcon} />)
                     }
                 </nav>
             </div>
             <div className={styles.loginBurgerWrapper}>
                 <LoginClerk />
+                 <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com" target="_blank"> 
+                              <img className={`${styles.flagIcon} fadeInAnim`} src="icons/ENG.png" />
+                <BokHusCom /> </a>
                 <span className={styles.mobileMode}>  <HamburgerMenu /></span>
+   
 
             </div>
-
+        
         </header>
     );
 
 }
+
+
+// attributions 
+/*
+<a href="https://www.flaticon.com/free-icons/norway" title="norway icons">Norway icons created by Magnific - Flaticon</a> 
+<a href="https://www.flaticon.com/free-icons/flag" title="flag icons">Flag icons created by Magnific - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/idea" title="idea icons">Idea icons created by Good Ware - Flaticon</a>
+*/

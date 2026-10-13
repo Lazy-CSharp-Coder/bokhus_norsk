@@ -32,17 +32,17 @@ export default async function Series()
           <article className={styles.seriesPageDescriptionArticle}>
             <div className={styles.seriesPageHeadingLineWrapper}>
 
-              <h1 className={styles.seriesPageHeading}>Series from BokHus </h1>
+              <h1 className={styles.seriesPageHeading}>Bokserier fra BokHus </h1>
               <ExpandingLine key={"AuthorLine"} lineSize={2} color="var(--bokhusRootsColor)" width="100%" animationDuration="2.8s" animationDelay="0.5s" />
             </div>
 
             <div className={styles.seriesPageTextDiv}>
               <p className={styles.seriesPageText}>
 
-                Many BokHus books are built as series, giving readers a world to return to. Characters, places and historical themes can grow from book to book, whether the stories are rooted in fiction, folklore, local history or cultural memory.
+               Mange av bøkene fra BokHus inngår i serier som gir leserne en verden de kan vende tilbake til. Personer, steder og historiske temaer utvikler seg fra bok til bok, enten fortellingene bygger på skjønnlitteratur, folketro, lokalhistorie eller kulturarv.
               </p>   
               <p className={styles.seriesPageText}>
-                Here you can explore current and upcoming BokHus series.
+                Her kan du utforske eksisterende og kommende bokserier fra BokHus.
               </p>
             </div>
 

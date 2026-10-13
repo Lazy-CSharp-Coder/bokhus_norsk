@@ -81,3 +81,19 @@ body.hamMenuOpen {
   color: var(--bokhusRootsColor);
   scale: 1.01;
 }
+
+  .flagIcon {
+    width: 2rem;
+  }
+ 
+  .flagLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 1.8rem;
+    align-items: center;
+    font-size: 1.7rem;
+     padding: 0.5rem 3rem;
+  width: 100%;
+  transition: all 0.3s ease-in;
+  }

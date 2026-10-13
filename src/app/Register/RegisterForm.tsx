@@ -27,7 +27,7 @@ import styles from "./RegisterForm.module.css";
 import { SubmitButton } from "../../components/common/SubmitButton";
 import { submitToClerk } from "./submitToClerk";
 import { sendNewUserAlert } from "../Contact/actions";
-
+import { FaUserEdit, FaUser } from "react-icons/fa";
 type RegisterFormInput = z.input<typeof registerSchema>;
 
 interface RegisterFormProps 
@@ -46,17 +46,17 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
     const userFoundMessage = "Profile at BokHus retrieved from database";
 
 
-    
-    const myResolver : Resolver<RegisterFormInput, object, UserData> = async (values, context, options) => 
-    {
-        const normalized : RegisterFormInput = 
-        {
-            ...values, 
-            arc : values.arcInterest ? values.arc : undefined
 
-        } as RegisterFormInput;
+    const myResolver: Resolver<RegisterFormInput, object, UserData> = async (values, context, options) => 
+    {
+        const normalized: RegisterFormInput =
+            {
+                ...values,
+                arc: values.arcInterest ? values.arc : undefined
+
+            } as RegisterFormInput;
         return zodResolver(registerSchema)(normalized, context, options);
-    } 
+    };
 
     const methods = useForm<RegisterFormInput, object, UserData>(
         {
@@ -71,19 +71,19 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
     const onSubmit = async (data: UserData) =>
     {
- 
-       const result = await submitToClerk(data);
+
+        const result = await submitToClerk(data);
 
         if (result.success)
         {
             alert("Your profile have been submitted to bokhus. Thank you.");
-            
+
             const result = await sendNewUserAlert(data);
-            if(result.success == false)
+            if (result.success == false)
             {
                 console.log("Could not send new/updated user altert.");
             }
-        
+
 
         }
         else alert(`Error : ${result.error}`);
@@ -102,7 +102,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                     <FaUserLarge size="3rem" className="userIcon" />
                     {userInfo != "Display email" ?
                         <div key={userInfo} className={styles.userInfoDiv} >
-                            {userInfo == "No user message" ? <IoMdClose size="1.5rem" className= {`${styles.userInfoIcon} userIconAnim`}/> : <IoCheckmarkSharp size="1.4rem" className={`${styles.userInfoIcon} userIconAnim`} />}
+                            {userInfo == "No user message" ? <IoMdClose size="1.5rem" className={`${styles.userInfoIcon} userIconAnim`} /> : <IoCheckmarkSharp size="1.4rem" className={`${styles.userInfoIcon} userIconAnim`} />}
                             <span className="userTextAnim" onAnimationEnd={() => setUserInfo("Display email")}>{userInfo == "No user message" ? noUserMessage : userFoundMessage}</span>
                         </div> :
                         <div className={styles.mailIconUserEmailWrapper}><IoMailOutline size="1.8rem" className={`${styles.regMailIcon} scaleInAnim`} />  <p key={userInfo + "#userEmail"} className={`${styles.userEmailText} scaleInAnim`} style={{ animationDuration: "2s" }}>{userEmail}</p>
@@ -127,6 +127,13 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                         <div className={styles.regUpperHalfWrapper}>
 
                             <div className={styles.registerDiv}>
+                                <FaUser className={styles.inputRegIcon} size="1.75rem" />
+                                <label>Please enter your name :  {errors.userName && <p className={styles.errorRegisterForm}>{errors.userName.message}</p>} </label>
+                                <input className={styles.registerInput} type="text" {...register("userName")} placeholder="name" />
+
+
+                            </div>
+                            <div className={styles.registerDiv}>
                                 <IoEarthSharp className={styles.inputRegIcon} size="1.9rem" />
                                 <label>Which country are you from (optional) :    {errors.country && <p className={styles.errorRegisterForm}>{errors.country.message}</p>} </label>
                                 <input className={styles.registerInput} type="text" {...register("country")} placeholder="country" />
@@ -146,10 +153,10 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                                 </ul>
                             </div>
-                                  <div className={styles.multipleChoicesDiv}>
-                                 <label className={styles.languagesText}>What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
+                            <div className={styles.multipleChoicesDiv}>
+                                <label className={styles.languagesText}>What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
 
-                                  <ul className={styles.multipleChoicesList}>
+                                <ul className={styles.multipleChoicesList}>
                                     <LiaSwatchbookSolid className={styles.inputRegListIcon} size="2.1rem" />
                                     {genresDef.map((item) => (
                                         <li key={item} className={styles.languagePreferredDiv}>
@@ -199,8 +206,8 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                 </FormProvider>
                 <div className={styles.bokhusComWrapper}>
-                    <span className="scaleInAnim"  style={{animationDelay: "2s"}}>   <BokHusCom fontSize="1.1rem" /></span>
-                 
+                    <span className="scaleInAnim" style={{ animationDelay: "2s" }}>   <BokHusCom fontSize="1.1rem" /></span>
+
                 </div>
             </article>
 

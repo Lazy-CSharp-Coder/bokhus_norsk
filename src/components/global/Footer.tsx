@@ -22,14 +22,14 @@ export function Footer()
 {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
     const router = useRouter();
-    const  mobileMenuRef= useRef<HTMLDivElement>(null);
-    
-    const handleOutsideClick = (e : MouseEvent) =>
+    const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+    const handleOutsideClick = (e: MouseEvent) =>
     {
         let shallClose = false;
         if (mobileMenuRef.current && mobileMenuRef.current.contains(e.target as Node)) shallClose = false;
-        else shallClose = true; 
-        if(shallClose && isMobileMenuOpen) setMobileMenuOpen(false);
+        else shallClose = true;
+        if (shallClose && isMobileMenuOpen) setMobileMenuOpen(false);
     };
 
     useOutsideClick(handleOutsideClick);
@@ -44,42 +44,41 @@ export function Footer()
 
                     <TermsButton />
                     <PrivacyButton />
-                     <AffiliateButton />
+                    <AffiliateButton />
                 </nav>
             </div>
 
             <div className={`${styles.footerEndDiv} ${styles.desktopModeFooter}`}>
-                <div className={styles.contactUsDiv}>   <Link className={styles.contactUsLink} href="/Contact"><IoMailOutline className={styles.mailIcon} size="2rem" aria-label="Contact us" />CONTACT</Link>
-                 
+                <div className={styles.contactUsDiv}>   <Link className={styles.contactUsLink} href="/Contact"><IoMailOutline className={styles.mailIcon} size="2rem" aria-label="Contact us" />KONTAKT</Link>
+
                 </div>
-                <div className={styles.socialMediaDiv}>
+                {/* <div className={styles.socialMediaDiv}>
 
                     <div className={styles.socialMediaGroup}>
 
                         <FaInstagram className={styles.instagramIcon} size={"1.8rem"} />
-                        <FaFacebook className={styles.facebookIcon} size={"1.7rem"} /></div>
+                        <FaFacebook className={styles.facebookIcon} size={"1.7rem"} />
+                    </div>
                     <span className={styles.logoText}>SOCIAL MEDIA BOKHUS </span>
 
-                </div>
+                </div> */}
                 <div className={styles.pageCreditsDiv}>
 
                     <Link className={styles.iconCreditDiv} href="/Credits">
                         {/* <IoIosInformationCircleOutline size="2.0rem" className="iconCreditIcon" /> */}
-                        <IoDocumentTextOutline size="1.9rem" className={styles.iconCreditIcon}/>
-                        <span className={styles.logoText}>CREDITS
+                        <IoDocumentTextOutline size="1.9rem" className={styles.iconCreditIcon} />
+                        <span className={styles.logoText}>KREDITERINGER
                         </span>
 
 
                     </Link>
 
-
                     <div className={styles.logoBPDiv}>
-                          <a href="https://www.bpwebdev.no" target="_blank">
-                          <LogoBPWebDev /> 
-                          </a>
-                
-                        <span className={styles.logoText}>WEBPAGE BY
-                        </span>
+                        <a href="https://www.bpwebdev.no" target="_blank">
+                            <LogoBPWebDev />
+                        </a>
+
+                        <span className={styles.logoText}>WEB-SIDE LAGET AV</span>
 
                     </div>
 
@@ -97,27 +96,27 @@ export function Footer()
                         <Link className={styles.linkMobile} href="/Contact">
                             <IoMailOutline size="2rem" /> <span className={styles.logoTextMobile}>CONTACT</span></Link>
 
-
+{/* 
                         <Link className={styles.linkMobile} href="/">
                             <FaInstagram size="1.8rem" />
                             <span className={styles.logoTextMobile}>INSTAGRAM</span></Link>
 
                         <Link className={styles.linkMobile} href="/">
                             <FaFacebook className={styles.facebookIcon} size="1.7rem" />
-                            <span className={styles.logoTextMobile}>FACEBOOK</span></Link>
+                            <span className={styles.logoTextMobile}>FACEBOOK</span></Link> */}
 
                         <Link href="/Credits" className={styles.linkMobile}>
-                            <IoDocumentTextOutline size="1.8rem" className={styles.iconCreditIcon}/>    
+                            <IoDocumentTextOutline size="1.8rem" className={styles.iconCreditIcon} />
                             <span className={styles.logoTextMobile}>CREDITS</span>     </Link>
 
                         <Link href="https://www.bpwebdev.no" target="_blank" className={styles.linkMobile}>
-                          <LogoBPWebDev />
-                        <span className={styles.logoTextMobile}>WEBPAGE BY</span>  
+                            <LogoBPWebDev />
+                            <span className={styles.logoTextMobile}>WEBPAGE BY</span>
                         </Link>
 
 
 
-                       
+
 
                     </div>}
 

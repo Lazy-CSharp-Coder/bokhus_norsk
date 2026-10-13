@@ -4,10 +4,11 @@ import { useState } from "react";
 
 interface CopyButtonProps 
 {
+    buttonText: string,
     copyString: string
 }
 
-export function CopyButton({copyString} : CopyButtonProps)
+export function CopyButton({buttonText, copyString} : CopyButtonProps)
 {
     const [isCopied, setIsCopied] = useState<boolean>(false);
     const handleCopy = async (textToCopy: string) =>
@@ -25,6 +26,6 @@ export function CopyButton({copyString} : CopyButtonProps)
     };
   return(
     <button className="submitButton" onClick={() => handleCopy(copyString)}>
-        Copy to Clipboard
+        {buttonText}
     </button>);
 }

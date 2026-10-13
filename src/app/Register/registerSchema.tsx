@@ -31,7 +31,7 @@ const preferredLanguageDef =  z.enum(["English", "Norwegian", "German", ""], { e
 const preferredArc = z.enum(["English", "Norwegian", "German"], { error: "You have to select one language" });
 
 export const reviewSitesDef = [
-    "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other", "Don't post reviews yet"
+    "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"
 ] as const;
 
 export const noticeDef = [
@@ -76,16 +76,17 @@ export const registerSchema = z.object(
     {
         // userId: clerkUserId,
         email: emailSchema,
+        userName : z.string().min(1, { message : "Please supply a user name"}),
         country: z.string().optional(),
         preferredLanguage: preferredLanguageDef,
-              
         genresInterestedIn: z.array(z.enum(genresDef))
             .min(1, { error: () => "You have to choose one of the alternatives" }),
         linkProfilePage: z.url({ message: "Invalid URL" }).or(z.literal("")).optional(),
         newsLetter: z.boolean(),
         arcInterest: z.boolean(),
         arc: arcSchema.optional(),
-        recievedBooks: z.array(z.string()).default([])
+        // recievedBooks: z.array(z.string()).default([]),
+        shouldNotReciveARCAnymore: z.boolean().default(false)
         
     }
 );

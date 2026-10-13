@@ -1,37 +1,37 @@
 [
     {
-        "themeHeading": "Cover Designers",
-        "themeDescription": "We are looking for designers who can create professional, commercially appealing book covers for both print and digital editions.",
-        "descriptionHeading": "Project may include :",
+        "themeHeading": "Omslagsdesignere",
+        "themeDescription": "Vi ser etter designere som kan lage profesjonelle, kommersielt tiltalende bokomslag for både trykte og digitale utgaver.",
+        "descriptionHeading": "Prosjekter kan inkludere:",
         "descriptionList": [
-            "Fiction and historical fiction",
-            "Non-fiction",
-            "Local history and genealogy",
-            "Educational books",
-            "Facsimile and restored historical editions",
-            "Series requiring a consistent visual identity"
+            "Skjønnlitteratur og historisk fiksjon",
+            "Sakprosa",
+            "Lokalhistorie og slektsforskning",
+            "Lærebøker",
+            "Faksimiler og restaurerte historiske utgaver",
+            "Serier som krever en konsekvent visuell identitet"
         ],
-        "experience": "Experience with Amazon KDP, print-on-demand publishing or international book markets is an advantage.",
-        "iconNumber" : 0
+        "experience": "Erfaring med Amazon KDP, print-on-demand-publisering eller internasjonale bokmarkeder er en fordel.",
+        "iconNumber": 0
     },
     {
-        "themeHeading": "Book Designers & Adobe InDesign Specialists",
-        "themeDescription": "We regularly need help preparing books for professional publication.",
-        "descriptionHeading": "Typical assignments include :",
+        "themeHeading": "Bokdesignere og Adobe InDesign-spesialister",
+        "themeDescription": "Vi har jevnlig behov for hjelp til å klargjøre bøker for profesjonell utgivelse.",
+        "descriptionHeading": "Typiske oppdrag inkluderer:",
         "descriptionList": [
-            "Adobe InDesign book layout",
-            "Interior book design",
-            "Typography",
-            "Chapter and heading styles",
-            "Image placement",
-            "Tables and illustrations",
-            "Footnotes and references",
-            "Print-ready PDF production",
-            "EPUB preparation",
-            "Reformatting older books for modern editions",
-            "Preparing books for different print-on-demand platforms"
+            "Boklayout i Adobe InDesign",
+            "Innvendig bokdesign",
+            "Typografi",
+            "Kapittel- og overskriftsstiler",
+            "Bildeplassering",
+            "Tabeller og illustrasjoner",
+            "Fotnoter og referanser",
+            "Produksjon av trykklar PDF",
+            "EPUB-klargjøring",
+            "Omformatering av eldre bøker for moderne utgaver",
+            "Klargjøring av bøker for ulike print-on-demand-plattformer"
         ],
-        "experience": "Experience preparing files for Amazon KDP, IngramSpark, BoD or similar publishing platforms is especially useful.",
-        "iconNumber" : 1
-     }
+        "experience": "Erfaring med å klargjøre filer for Amazon KDP, IngramSpark, BoD eller lignende publiseringsplattformer er spesielt nyttig.",
+        "iconNumber": 1
+    }
 ]

@@ -4,7 +4,6 @@ import styles from  "./Register.module.css";
 import { RegisterForm } from "@/app/Register/RegisterForm";
 import {registerSchema, UserData } from "@/app/Register/registerSchema";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { client } from "@/sanity/client";
 import { SignIn } from "./SignIn";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 
@@ -31,6 +30,7 @@ export default async function Register()
     userData ? userData :
       {
        email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
+       userName : user.firstName ? user.fullName ?? "" : "",
         country: "",
         preferredLanguage: "English",
         genresInterestedIn: [],
@@ -38,7 +38,7 @@ export default async function Register()
         newsLetter: true,
         arcInterest: false,
         arc: undefined,
-        recievedBooks : []
+        shouldNotReciveARCAnymore : false
 
       };
 
