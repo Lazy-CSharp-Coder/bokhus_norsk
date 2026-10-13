@@ -1,4 +1,3 @@
-
 .workWithUsThemeDiv {
     display: flex;
     flex-direction: column;
@@ -10,7 +9,9 @@
     border: 2px solid var(--borderIconColor);
     border-radius: var(--borderRadiusReg);
     height: fit-content;
- width: 100%;
+    width: 100%;
+    line-height: 1.4;
+    padding-bottom: 5rem;
 }
 
 .themeHeadingIconWrapper {
@@ -18,7 +19,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding : 2rem 2.8rem ;
+    padding: 2rem 2.8rem;
     font-size: 1.5rem;
     border-bottom: 1px solid var(--borderIconColor);
     background-color: var(--regBackground);
@@ -41,39 +42,53 @@
 }
 
 
-.themeSubjectDiv {
+.themeSubjectDiv, .chapter {
     display: flex;
     flex-direction: column;
-    gap:2.5rem;
+    gap: 2.5rem;
     font-size: 1.2rem;
-    padding : 3rem 3rem ;
+    padding: 3rem 3rem;
+    padding-bottom: 0rem;
 }
 
-.descriptionHeading, .themeSubHeading {
-    font-size:1.2rem;
-    font-weight: 500;
+.descriptionHeading,
+.themeSubHeading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--bokhusRootsColor);
     /* font-style: italic; */
     padding-bottom: 1rem;
     /* margin-left: 1.5rem; */
-    border-bottom : 1px solid var(--myWhiteColor);
+    border-bottom: 1px solid var(--myWhiteColor);
+    width: fit-content;
 }
 
 .descriptionList {
 
     display: flex;
     flex-direction: column;
-    gap:0.7rem;
+    gap: 0.7rem;
     list-style: disc;
     padding: 0rem 0;
-    margin-left:2rem;
-   
+    margin-left: 2rem;
+
 }
+
 .experience {
+    padding-top: 2rem;
     border-top: 1px solid var(--myWhiteColor);
-    padding-top:2rem;
     font-weight: 400;
 
 }
+
+.chapterDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+
+}
+
 
 
 /* 
@@ -91,4 +106,3 @@
 
 }
    */
-

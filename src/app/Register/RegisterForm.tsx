@@ -27,7 +27,7 @@ import styles from "./RegisterForm.module.css";
 import { SubmitButton } from "../../components/common/SubmitButton";
 import { submitToClerk } from "./submitToClerk";
 import { sendNewUserAlert } from "../Contact/actions";
-import { FaUserEdit } from "react-icons/fa";
+import { FaUserEdit, FaUser } from "react-icons/fa";
 type RegisterFormInput = z.input<typeof registerSchema>;
 
 interface RegisterFormProps 
@@ -127,7 +127,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                         <div className={styles.regUpperHalfWrapper}>
 
                             <div className={styles.registerDiv}>
-                                <FaUserEdit className={styles.inputRegIcon} size="1.9rem" />
+                                <FaUser className={styles.inputRegIcon} size="1.75rem" />
                                 <label>Please enter your name :  {errors.userName && <p className={styles.errorRegisterForm}>{errors.userName.message}</p>} </label>
                                 <input className={styles.registerInput} type="text" {...register("userName")} placeholder="name" />
 

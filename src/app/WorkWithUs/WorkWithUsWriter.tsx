@@ -5,6 +5,7 @@ import type { ReactIcons } from "@/types/types";
 import styles from "./WorkWithUsTheme.module.css";
 import { GiBookCover } from "react-icons/gi";
 import { TfiPencilAlt } from "react-icons/tfi";
+import { FaUserEdit } from "react-icons/fa";
 
 const reactIconsArray: ReactIcons[] =
     [
@@ -18,6 +19,11 @@ const reactIconsArray: ReactIcons[] =
         {
             name: "Book Cover",
             icon: GiBookCover,
+            size: "2.1rem"
+        },
+        {
+            name: "Writer",
+            icon:  FaUserEdit,
             size: "2.1rem"
         },
 
@@ -41,7 +47,7 @@ export function WorkWithUsAuthor({ subject }: { subject: WorkWithUsWriter; })
             <div className={styles.themeSubjectDiv}>
                 <h4 className={styles.themeSubHeading}>{themeSubHeading}</h4>
                 {themeDescription
-                    .map((chapter) => <p className={styles.themeDescription}>{chapter}</p>)}
+                    .map((chapter, index) => <p key={"subjectKey" + index} className={styles.themeDescription}>{chapter}</p>)}
                 <p className={styles.descriptionHeading}> {descriptionHeading}</p>
                 <ul className={styles.descriptionList}>
                     {descriptionList.map((item, index) =>
@@ -51,19 +57,20 @@ export function WorkWithUsAuthor({ subject }: { subject: WorkWithUsWriter; })
                 </ul>
                 <p className={styles.listFooter}>{listFooter}</p>
             </div>
-            <div className={styles.themeSubjectDiv}>
-                {endChapters.map((chapter) =>
-                    <>
+       
+                {endChapters.map((chapter, chapterIndex) =>
+                    <div className={styles.chapter} key={`chapterKey` + chapterIndex}>
                         <h4 className={styles.themeSubHeading}>{chapter.heading}</h4>
-                        {chapter.description.map((item, index) =>
-                            <p className={styles.descriptionListItem} key={"themeDescriptionItemKeyAuthor" + index}>{item}</p>
-                        )}
-
-                    </>
+                        <div className={styles.chapterDescription}>
+                            {chapter.description.map((item, index) =>
+                                <p key={`${index} + chapterDescKey + ${chapterIndex} `} className={styles.descriptionListItem} >{item}</p>
+                            )}
+                        </div>
+                    </div>
                 )}
 
 
-            </div>
+
         </article>
 
 
