@@ -9,7 +9,7 @@ import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
 import { WorkWithUsTheme } from "./WorkWithUsTheme";
 import { IoTelescopeOutline } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
-import { WorkWithUsAuthor} from "./WorkWithUsWriter";
+import { WorkWithUsAuthor, WorkWithUsWriter} from "./WorkWithUsWriter";
 
 // export interface WorkWithUs
 // {
@@ -40,6 +40,11 @@ export interface WorkWithUsWriter
     descriptionList: string[],
     experience: string,
     listFooter : string,
+    endChapters : 
+    {
+        heading : string,
+        description : string[]
+    }[],
     iconNumber: number;
 
 }

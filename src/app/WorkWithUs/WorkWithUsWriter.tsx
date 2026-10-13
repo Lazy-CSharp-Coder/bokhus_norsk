@@ -29,7 +29,7 @@ export function WorkWithUsAuthor({ subject }: {subject: WorkWithUsWriter})
 {
     const IconToUse = reactIconsArray[subject.iconNumber].icon;
     const size = reactIconsArray[subject.iconNumber].size;
-    const { themeHeading, themeSubHeading, themeDescription, descriptionHeading, descriptionList, experience, listFooter } = subject;
+    const { themeHeading, themeSubHeading, themeDescription, descriptionHeading, descriptionList, experience, listFooter, endChapters } = subject;
 
     return (
         <article className={`${styles.workWithUsThemeDiv} fadeInFromBelowAnim`} style={{animationDelay: "1.4s"}}>
@@ -50,6 +50,13 @@ export function WorkWithUsAuthor({ subject }: {subject: WorkWithUsWriter})
 
                 </ul>
                 <p className={styles.listFooter}>{listFooter}</p>
+            </div>
+            <div className={styles.themeSubjectDiv}>
+
+
+
+
+
             </div>
         </article>
 
