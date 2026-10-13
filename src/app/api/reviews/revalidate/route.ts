@@ -20,7 +20,7 @@ export async function POST(req : NextRequest)
 
         revalidateTag(body._type, { expire : 0});
         
-        if(body._type === "Author") {
+        if(body._type === "Author" || body._type === "Series") {
             revalidatePath("/Authors");
         }
 
