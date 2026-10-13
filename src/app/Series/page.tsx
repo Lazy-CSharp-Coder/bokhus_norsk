@@ -13,7 +13,7 @@ export default async function Series()
 
   let series : Series[] = [];
   try {
-     series = await client.fetch<Series[]>(SERIES_QUERY);
+     series = await client.fetch<Series[]>(SERIES_QUERY, { }, {next : { tags :["Series"]}});
   }
   catch(error)
   {
