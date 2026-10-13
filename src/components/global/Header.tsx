@@ -49,4 +49,5 @@ export function Header()
 /*
 <a href="https://www.flaticon.com/free-icons/norway" title="norway icons">Norway icons created by Magnific - Flaticon</a> 
 <a href="https://www.flaticon.com/free-icons/flag" title="flag icons">Flag icons created by Magnific - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/idea" title="idea icons">Idea icons created by Good Ware - Flaticon</a>
 */

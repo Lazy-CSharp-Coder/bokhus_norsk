@@ -4,7 +4,6 @@ import styles from  "./Register.module.css";
 import { RegisterForm } from "@/app/Register/RegisterForm";
 import {registerSchema, UserData } from "@/app/Register/registerSchema";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { client } from "@/sanity/client";
 import { SignIn } from "./SignIn";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 

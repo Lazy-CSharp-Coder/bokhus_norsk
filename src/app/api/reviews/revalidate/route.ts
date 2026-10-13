@@ -1,4 +1,4 @@
-import { revalidateTag } from "next/cache";
+import { revalidateTag, revalidatePath } from "next/cache";
 import { type NextRequest, NextResponse } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 
@@ -19,6 +19,10 @@ export async function POST(req : NextRequest)
         }
 
         revalidateTag(body._type, { expire : 0});
+        
+        if(body._type === "Author") {
+            revalidatePath("/Authors");
+        }
 
         return NextResponse.json({
 

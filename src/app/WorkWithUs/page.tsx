@@ -1,5 +1,6 @@
 "use client";
 import worWithUsJson from "@/json//workWithUs.json";
+import workWithUsWriter from "@/json/workWithUsWriter.json";
 import styles from "./WorkWithUs.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
@@ -8,6 +9,7 @@ import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
 import { WorkWithUsTheme } from "./WorkWithUsTheme";
 import { IoTelescopeOutline } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
+import { WorkWithUsAuthor, WorkWithUsWriter} from "./WorkWithUsWriter";
 
 // export interface WorkWithUs
 // {
@@ -29,6 +31,23 @@ export interface WorkWithUs
 
 }
 
+export interface WorkWithUsWriter 
+{
+    themeDescription: string[],
+    themeHeading: string,
+    themeSubHeading: string,
+    descriptionHeading: string,
+    descriptionList: string[],
+    experience: string,
+    listFooter : string,
+    endChapters : 
+    {
+        heading : string,
+        description : string[]
+    }[],
+    iconNumber: number;
+
+}
 
 export default function WorkWithUsPage()
 {
@@ -43,6 +62,7 @@ export default function WorkWithUsPage()
         <main className={styles.workWithUsPage}>
             <BackgroundImage src="/images/backgrounds/workWithUs.webp" className={styles.workWithUsBackground} />
             <section className={styles.workWithUsSection}>
+          
                 <article className={`${styles.workWithUsTextArticle} fadeInAnim`} style={{ animationDelay: "0.5s" }}>
                     <div className={styles.headingLineWrapper}>
 
@@ -75,7 +95,7 @@ export default function WorkWithUsPage()
       <h2 className={styles.whoWeAreLookingForHeading}> HVEM <span className={styles.weSpan}>VI</span> SER ETTER </h2>
                         <FaQuestion size="1.6rem" />
                     </div>
-
+      <WorkWithUsAuthor subject={workWithUsWriter}/>
 
                     {workWithUsArray.map((item, index) =>
                         <WorkWithUsTheme key={index + "workwithusTheme"} subject={item} />
