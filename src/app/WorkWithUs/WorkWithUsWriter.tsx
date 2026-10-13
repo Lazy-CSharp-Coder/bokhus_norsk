@@ -22,26 +22,26 @@ const reactIconsArray: ReactIcons[] =
         },
 
     ];
-    
 
 
-export function WorkWithUsAuthor({ subject }: {subject: WorkWithUsWriter})
+
+export function WorkWithUsAuthor({ subject }: { subject: WorkWithUsWriter; })
 {
     const IconToUse = reactIconsArray[subject.iconNumber].icon;
     const size = reactIconsArray[subject.iconNumber].size;
     const { themeHeading, themeSubHeading, themeDescription, descriptionHeading, descriptionList, experience, listFooter, endChapters } = subject;
 
     return (
-        <article className={`${styles.workWithUsThemeDiv} fadeInFromBelowAnim`} style={{animationDelay: "1.4s"}}>
+        <article className={`${styles.workWithUsThemeDiv} fadeInFromBelowAnim`} style={{ animationDelay: "1.4s" }}>
             <div className={styles.themeHeadingIconWrapper} >
                 <h3 className={styles.themeHeading}>{themeHeading.toUpperCase()}</h3>
                 <IconToUse size={size} />
             </div>
-           
+
             <div className={styles.themeSubjectDiv}>
-                 <h4 className={styles.themeSubHeading}>{themeSubHeading}</h4>
-                { themeDescription
-                .map((chapter) =>  <p className={styles.themeDescription}>{chapter}</p>) }
+                <h4 className={styles.themeSubHeading}>{themeSubHeading}</h4>
+                {themeDescription
+                    .map((chapter) => <p className={styles.themeDescription}>{chapter}</p>)}
                 <p className={styles.descriptionHeading}> {descriptionHeading}</p>
                 <ul className={styles.descriptionList}>
                     {descriptionList.map((item, index) =>
@@ -52,9 +52,15 @@ export function WorkWithUsAuthor({ subject }: {subject: WorkWithUsWriter})
                 <p className={styles.listFooter}>{listFooter}</p>
             </div>
             <div className={styles.themeSubjectDiv}>
+                {endChapters.map((chapter) =>
+                    <>
+                        <h4 className={styles.themeSubHeading}>{chapter.heading}</h4>
+                        {chapter.description.map((item, index) =>
+                            <p className={styles.descriptionListItem} key={"themeDescriptionItemKeyAuthor" + index}>{item}</p>
+                        )}
 
-
-
+                    </>
+                )}
 
 
             </div>
