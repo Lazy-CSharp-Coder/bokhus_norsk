@@ -9,7 +9,7 @@ import { QuotesWorkWithUs } from "@/components/common/QuotesBottom";
 import { WorkWithUsTheme } from "./WorkWithUsTheme";
 import { IoTelescopeOutline } from "react-icons/io5";
 import { FaQuestion } from "react-icons/fa6";
-import { WorkWithUsAuthor, WorkWithUsWriter} from "./WorkWithUsWriter";
+import { WorkWithUsAuthor} from "./WorkWithUsWriter";
 
 // export interface WorkWithUs
 // {
