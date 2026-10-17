@@ -76,7 +76,7 @@ export function ContactUs()
     
             <div className={`${styles.logoHeadingWrapper} flex`}>
                 <h2 className={`${styles.contactHeading} flex`}>
-                    Contact Us
+                    Kontakt oss
                 </h2>
                 <div className={`${styles.logoRegWrapper} flex`}>
                     <Image className={`${styles.logoRegImg} flex rotateInYAnim`} style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />

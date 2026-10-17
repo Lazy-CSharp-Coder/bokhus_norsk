@@ -13,7 +13,7 @@ export interface BookInSeriesTextProps
 
 type Dialect = "Bokmål" | "Nynorsk";
 
-function numberToWordsNorwegian(num : number, dialect? : Dialect)
+export function numberToWordsNorwegian(num : number, dialect? : Dialect)
 {
     const arrayToUse = dialect ? dialect == "Bokmål" ? jsonNumberWordsBokmaal : jsonNumberWordsNynorsk : jsonNumberWordsBokmaal;
     
