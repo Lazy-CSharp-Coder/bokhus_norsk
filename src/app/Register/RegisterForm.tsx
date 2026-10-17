@@ -76,7 +76,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
         if (result.success)
         {
-            alert("Your profile have been submitted to bokhus. Thank you.");
+            alert("Profilen din har blitt registrert hos  BokHus. Takk.");
 
             const result = await sendNewUserAlert(data);
             if (result.success == false)
@@ -114,7 +114,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
             <article className={`${styles.generalInfoArticle} flex fadeInFromBelowAnim`} style={{ animationDelay: "0.5s" }}>
 
                 <div className={styles.headingLogoTextWrapper}>
-                    <h1 className={styles.registerHeading}>YOUR PROFILE </h1>
+                    <h1 className={styles.registerHeading}>PROFILEN DIN </h1>
                     <div className={styles.logoRegWrapper}>
                         <Image className={`${styles.logoRegImg} rotateInYAnim`} style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                     </div>
@@ -128,20 +128,20 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                             <div className={styles.registerDiv}>
                                 <FaUser className={styles.inputRegIcon} size="1.75rem" />
-                                <label>Please enter your name :  {errors.userName && <p className={styles.errorRegisterForm}>{errors.userName.message}</p>} </label>
+                                <label>Ditt navn :  {errors.userName && <p className={styles.errorRegisterForm}>{errors.userName.message}</p>} </label>
                                 <input className={styles.registerInput} type="text" {...register("userName")} placeholder="name" />
 
 
                             </div>
                             <div className={styles.registerDiv}>
                                 <IoEarthSharp className={styles.inputRegIcon} size="1.9rem" />
-                                <label>Which country are you from (optional) :    {errors.country && <p className={styles.errorRegisterForm}>{errors.country.message}</p>} </label>
+                                <label>Hvilket land er du fra (valgfritt) :    {errors.country && <p className={styles.errorRegisterForm}>{errors.country.message}</p>} </label>
                                 <input className={styles.registerInput} type="text" {...register("country")} placeholder="country" />
 
 
                             </div>
                             <div className={styles.multipleChoicesDiv}>
-                                <label className={styles.languagesText}>What languages do you prefer ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
+                                <label className={styles.languagesText}>Hvilket språk foretrekker du ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
                                 <ul className={styles.multipleChoicesList}>
                                     <LuLetterText className={styles.inputRegListIcon} size="2rem" />
                                     {languageOptions.map((item) => (
@@ -154,7 +154,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 </ul>
                             </div>
                             <div className={styles.multipleChoicesDiv}>
-                                <label className={styles.languagesText}>What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
+                                <label className={styles.languagesText}>Hvilke sjangre er du interessert i? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
 
                                 <ul className={styles.multipleChoicesList}>
                                     <LiaSwatchbookSolid className={styles.inputRegListIcon} size="2.1rem" />
@@ -169,7 +169,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                             </div>
                             <div className={styles.registerDiv}>
                                 <TbWorldWww className={styles.inputRegIcon} size="1.85rem" />
-                                <label>Do you have a profile page (optional) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message} />}
+                                <label>Har du en profilside (valgfritt) (Facebook, Instagram, Web side) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message} />}
                                 </label>
                                 <input className={styles.registerInput} type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
 
@@ -180,7 +180,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 <GiNewspaper className={styles.inputRegSingleIcon} size="1.9rem" />
                                 <div className={styles.labelInputWrapperOneLineFirst}>
                                     <input className={styles.registerInput} type="checkbox" {...register("newsLetter")} />
-                                    <label>Do you wanna receive newsletters from us ? </label>
+                                    <label>Har du lyst å motta nyhetsbrev ? </label>
 
                                 </div>
                                 {errors.newsLetter && <RegErrorMessage message={errors.newsLetter.message} />}

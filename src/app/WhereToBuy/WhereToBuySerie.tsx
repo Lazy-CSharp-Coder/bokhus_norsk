@@ -76,7 +76,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
  
       <div key={seriesListState} className={`${styles.buyTextArrowDiv} fadeInAnim`} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s", animationDelay: `${animDelayExtra+200}ms` }}>
-             {seriesListState == "Closed" && "VIS BØKER TILB"}
+             {seriesListState == "Closed" && "VIS BØKER"}
         <PiArrowFatLineDownLight size="2rem" className={styles.buyOpenCloseArrow} /></div>
 
 
