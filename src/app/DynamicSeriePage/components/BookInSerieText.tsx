@@ -1,6 +1,8 @@
 
-import { numberToWords } from "convert-number-to-words";
+// import { numberToWords } from "convert-number-to-words";
 import styles from  "./BookInSerieText.module.css"
+import jsonNumberWordsBokmaal from "@/json/norwegianWordNumbersBokmaal.json";
+import jsonNumberWordsNynorsk from "@/json/norwegianWordNumbersBokmaal.json";
 
 export interface BookInSeriesTextProps 
 {
@@ -9,15 +11,24 @@ export interface BookInSeriesTextProps
 
 }
 
+type Dialect = "Bokmål" | "Nynorsk";
+
+function numberToWordsNorwegian(num : number, dialect? : Dialect)
+{
+    const arrayToUse = dialect ? dialect == "Bokmål" ? jsonNumberWordsBokmaal : jsonNumberWordsNynorsk : jsonNumberWordsBokmaal;
+    
+    return arrayToUse[num];
+}
+
 export function BookInSerieText({ bookInSerie, serieName }: BookInSeriesTextProps)
 {
-    const numTemp = numberToWords(bookInSerie);
+    const numTemp = numberToWordsNorwegian(bookInSerie);
     const numStr = numTemp.charAt(0).toUpperCase() + numTemp.slice(1);
 
     return (   
                 <p className={styles.bookInfoDiv}>
-                   Book <span className={styles.bookNumberText}> {numStr} </span>
-                     of the <span className={styles.bookNumberText}>{serieName} </span> Series
+                  <span className={styles.bookNumberText}> {numStr} </span>
+                    bok i serien <span className={styles.bookNumberText}>{serieName} </span> 
                 </p>
       
     );
