@@ -27,11 +27,11 @@ export function CookieBanner()
     return (
         <div className={`${styles.cookieDialogContainer} fadeInFromBelowAnim`}>
             <div className={styles.cookieDialog}>
-             <p className={styles.cookieText}>   We use necessary cookies to ensure login and security function properly via Clerk.{' '}</p>
+             <p className={styles.cookieText}>   Vi bruker nødvendige informasjonskapsler for å sikre at innlogging og sikkerhet fungerer som de skal via Clerk.{' '}</p>
                 <Link href="/Cookies" className={styles.linkPrivacy}>
-                    Read more in our Cookie Policy.
+                    Les mer i vår Personvernerklæring.
                 </Link>
-                <button className="submitButton" onClick={handleClick}>I understand</button>
+                <button className="submitButton" onClick={handleClick}>Jeg forstår</button>
             </div>
         </div>
     );
