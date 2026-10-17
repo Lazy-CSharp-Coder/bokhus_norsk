@@ -39,7 +39,7 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
 
                 {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
             </div>
-               <span className={styles.bigGoToArrowSpanSerie}>{booksAvailable ? "CLICK FOR MORE" : "NO BOOKS AVAILABLE"}<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className={styles.bigGotToArrowSerie}/></span>
+               <span className={styles.bigGoToArrowSpanSerie}>{booksAvailable ? "LES MER" : "INGEN BØKER TILGJENGELIG"}<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className={styles.bigGotToArrowSerie}/></span>
 
         </Link>
     );

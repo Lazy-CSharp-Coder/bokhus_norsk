@@ -3,7 +3,7 @@ import { RecommendedForProps } from "@/types/booktypes";
 import styles from "./SerieRecommendedFor.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
 
-const recommendedText: string = "Recommende for readers :";
+const recommendedText: string = "Anbefalt for lesere i aldergruppen :";
 export function SerieRecommendedFor({ ageGroup }: RecommendedForProps)
 {
 

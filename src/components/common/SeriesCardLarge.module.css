@@ -218,8 +218,9 @@
     }
 
     .seriesCardLargeHeadingAuthorWrapper {
-        font-size: 2rem;
+        font-size: 1.8rem;
         align-items: center;
+        padding: 0 1.2rem;
 
     }
 

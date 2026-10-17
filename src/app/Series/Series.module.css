@@ -26,8 +26,9 @@
     display: flex;
     flex-direction: column;
     align-items: left;
-    gap: 2.2rem;
+    gap: 2.5rem;
     max-width: 80rem;
+
 }
 
 .seriesPageDescriptionArticle {

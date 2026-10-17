@@ -13,12 +13,11 @@ import styles from "./WhereToBuy.module.css";
 
 export default async function WhereToBuy() 
 {
+    const languagePage = "NO";
 
-  const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
-
+  const SERIES_QUERY = `*[_type == "Series"  && forLanguagePage == $languagePage] | order(seriesName asc)`;
   // fecth all Series
-  const series = await client.fetch<Series[]>(SERIES_QUERY);
-
+  const series = await client.fetch<Series[]>(SERIES_QUERY, {languagePage : languagePage});
   if (!series) return (<h2 className="entiresNotFoundText">No series found in database</h2>);
 
   const buyArray: WhereToBuySeriesProps[] = await getWhereToBuyPropsArray(series);

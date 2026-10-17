@@ -9,19 +9,20 @@ import { ErrorPage } from "@/components/common/ErrorPage";
 export default async function Series() 
 {
   
-  const SERIES_QUERY = `*[_type == "Series"] | order(seriesName asc)`;
+    const languagePage = "NO";
+
+  const SERIES_QUERY = `*[_type == "Series"  && forLanguagePage == $languagePage] | order(seriesName asc)`;
 
   let series : Series[] = [];
   try {
-     series = await client.fetch<Series[]>(SERIES_QUERY);
-  }
+     series = await client.fetch<Series[]>(SERIES_QUERY, {languagePage : languagePage}, {next : { tags :["Series"], revalidate : 0}});
+      }
   catch(error)
   {
      console.error("Error fecthing series : ", error)
      throw error;
 
   }
-
   if (!series) return (<ErrorPage message="No series found in database" />);
   
   return (
