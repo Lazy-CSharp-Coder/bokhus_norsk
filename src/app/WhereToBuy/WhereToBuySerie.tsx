@@ -19,9 +19,8 @@ type SerieListState = "Open" | "Closed";
 export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, animationDelay, setWaitForMainAnim }: WhereToBuySeriesProps)
 {
   const [seriesListState, setSeriesListState] = useState<SerieListState>("Closed");
-
-
   const listHeaderRef = useRef<HTMLDivElement>(null);
+
   const handleHeaderClick = () =>
   {
     setSeriesListState((prev) =>
@@ -54,8 +53,8 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
   };
 
   const animInc = 200;
-  // const animDelayExtra = animationDelay ?? 0;
-const animDelayExtra = 0;
+   const animDelayExtra = animationDelay ?? 0;
+// const animDelayExtra = 0;
   const handleListAnimEnd = () =>
   {
       if(setWaitForMainAnim != undefined) setWaitForMainAnim(0);
@@ -94,7 +93,7 @@ const animDelayExtra = 0;
               <div className={styles.buyTitleBookNumberWrapper}>       <span className={styles.buyTitleBook}> {item.bookTitle} </span>
                 <div className="">Book <span className={styles.buyListBookNumber}>{getBookNumberInString(item.bookInSeries)}</span> of the Series </div>
               </div>
-              <BookAvailableIn availability={item.availability} classNameItem={styles.buyAvailabilityItem} shouldIsbnPopUpShow={false} />
+              <BookAvailableIn availability={item.availability ??  [{ bookType: "not available yet", isbn: "no isbn available yet" }]} classNameItem={styles.buyAvailabilityItem} shouldIsbnPopUpShow={false} />
             </div>
             {item.buyLink != undefined ? <GoLinkExternal className={styles.buyLinkArrow} size="1.9rem" /> : <PiGlobeSimpleXLight className={styles.noLinkArrow} size="2.1rem" />}
             <div className={styles.buyAvailableDiv}>
