@@ -76,7 +76,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
  
       <div key={seriesListState} className={`${styles.buyTextArrowDiv} fadeInAnim`} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s", animationDelay: `${animDelayExtra+200}ms` }}>
-             {seriesListState == "Closed" && "VIS BØKER"}
+             {seriesListState == "Closed" && "VIS BØKER TILB"}
         <PiArrowFatLineDownLight size="2rem" className={styles.buyOpenCloseArrow} /></div>
 
 
@@ -84,7 +84,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
       <ul className={styles.whereToBuyBooksList}>
         {seriesListState == "Open" && bookList.map((item, index, array) =>
-          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index) + animDelayExtra}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
+          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index)}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
           >
             <div className={styles.buyListItemImageDiv}>
               <Image className={styles.buyImageBook} src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
