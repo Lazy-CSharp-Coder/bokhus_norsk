@@ -15,13 +15,15 @@ export default async function Authors()
 {
     const animDelayInc: number = 300;
     const waitForMain: number = 800;
+    const languagePage = "NO";
 
-    const AUTOHRS_QUERY = `*[_type == "Author"] | order(name asc)`;
+    const AUTOHRS_QUERY = `*[_type == "Author" && forLanguagePage == $languagePage] | order(name asc)`;
     let authors : Author[] = [];
     try {
      
-        
-              authors = await client.fetch<Author[]>(AUTOHRS_QUERY,{}, {next : { tags :["Author"]}});
+          
+        authors = await client.fetch<Author[]>(AUTOHRS_QUERY,{languagePage : languagePage}, {next : { tags :["Author"], revalidate : 0} });
+
         
 
     }
