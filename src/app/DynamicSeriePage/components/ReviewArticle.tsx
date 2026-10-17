@@ -189,7 +189,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
 
                     <span style={{ opacity: onFirst ? "0.3" : "1" }} onClick={handleLeftSliderClick} ><IoMdArrowDropleft className={styles.leftSlider} size={"3rem"} /></span>
 
-                    <h4 className={styles.reviewTitle}>READERS REVIEWS OF <span className={styles.reviewHeadingSeriesName}>{bookName.toLocaleUpperCase()}</span></h4>
+                    <h4 className={styles.reviewTitle}>LESERNES MENING OM <span className={styles.reviewHeadingSeriesName}>{bookName.toLocaleUpperCase()}</span></h4>
 
                     <span style={{ opacity: onLast ? "0.3" : "1" }} onClick={handleRightSliderClick} ><IoMdArrowDropright size={"3rem"} className={styles.rightSlider} /></span>
 
@@ -211,7 +211,7 @@ export function ReviewArticle({ bookName, reviewsForBook }: ReviewArticleProps)
                 </div>
             )}
             {arrayToView && lastIndexDisplaying != -1 && reviewDisplayHeight != 0 ?
-                <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName} /> : <h3 className={styles.reviewsNotFoundText}>No reviews found</h3>
+                <ReviewSlideShow array={arrayToView} animationToUse={animationToUse} height={`${reviewDisplayHeight}px`} bookName={bookName} /> : <h3 className={styles.reviewsNotFoundText}>Ingen anmeldelser registrert</h3>
             }
         </article>);
 }

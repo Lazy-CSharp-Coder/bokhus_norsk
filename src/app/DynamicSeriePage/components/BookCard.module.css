@@ -143,6 +143,8 @@
 
 .bookReleaseInfo {
     color: rgba(221, 221, 221, 1);
+    display: flex;
+    gap:0.3rem;
     font-size: 1.1rem;
     font-family: var(--libreFont);
     text-align: center;

@@ -45,7 +45,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
     const currentWidth = useWindowWidth();
     const tabletMode = currentWidth ? currentWidth < 1024 ? true : false : false;
 
-    const availabilityNor : NorBookTypes[] = availability.map((book) =>
+    const availabilityNor : Availability[] = availability.map((book) =>
     {
         let norType: NorBookTypes = "e-bok";
 
@@ -66,7 +66,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
             default: break;
 
         }
-        return norType;
+        return {...book, bookType :  norType };
     });
 
 
@@ -111,7 +111,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                 {
                     availabilityNor.map((item, index) =>
                         <li key={index + "#AV"} className={classNameItem ? classNameItem : styles.availabilityItem} style={{ fontSize: fontSize ? fontSize : "" }} >
-                            {item}
+                            {item.bookType}
 
 
                         </li>
@@ -120,10 +120,10 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                 {(isPopupShowing && showPopup) &&
                     <div className={styles.popUpIsbnDiv} onClick={(e) => e.stopPropagation()}>
                         <div className={styles.isbnDiv}>
-                            <span className={styles.isbnText}>ISBN NUMBERS :</span>
+                            <span className={styles.isbnText}>ISBN NUMRE :</span>
                             <ul className={styles.isbnList}>
 
-                                {availability.map((item, index) =>
+                                {availabilityNor.map((item, index) =>
                                     <li className={styles.isbnListItem} key={`isbnItem#${index}for${bookTitle}`}>{item.bookType} : <span className={styles.isbnNumber}>{item.isbn ? item.isbn : "ISBN er ikke registrert"}</span>
                                         <button className={styles.buttonCopy} onClick={() => handleCopy(item.isbn)}>
 
@@ -136,11 +136,11 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                         </div>
                         <div className={styles.buyLinkDiv}>
                             {buyLink ?
-                                <Link className={styles.buyLink} href={buyLink}>Go to buy page <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className={styles.popUpLink} />  </Link> : <p className={styles.linkNotThereText}>No link to buy page available <PiGlobeSimpleXLight className={styles.notThereLink} size={fontSize ? fontSize : "1.1rem"} /></p>}
+                                <Link className={styles.buyLink} href={buyLink}>Gå til kjøpsside <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className={styles.popUpLink} />  </Link> : <p className={styles.linkNotThereText}>Ingen link til kjøpsside tilgjengelig <PiGlobeSimpleXLight className={styles.notThereLink} size={fontSize ? fontSize : "1.1rem"} /></p>}
 
                         </div>
                         <p className={styles.amazonTextPopup}>
-                            As an Amazon Associate we earn from qualifying purchases.
+                      Som Amazon-partner tjener vi provisjon på kvalifiserende kjøp.
                         </p>
                     </div>
 

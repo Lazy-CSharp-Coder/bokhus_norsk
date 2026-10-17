@@ -14,7 +14,7 @@ export function ReviewScrollButton()
     
     return(
         
-         <button onClick={handleScrollToReviews} className={`${reviewClicker} fadeInAnim desktopModeBlock` } ><span className={clickHereSeries}> CLICK</span> OR 
-                             <span className={scrollSeries}> SCROLL</span> TO READ REVIEWS</button>
+         <button onClick={handleScrollToReviews} className={`${reviewClicker} fadeInAnim desktopModeBlock` } ><span className={clickHereSeries}> KLIKK</span> ELLER 
+                             <span className={scrollSeries}> SCROLL</span> FOR Å LESE ANMELDELSER</button>
     )
 }

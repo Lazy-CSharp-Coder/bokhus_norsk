@@ -83,7 +83,7 @@ export function BookCardSizer({ _id, imageBook, availability, bookInSeries, rele
                     </div>
 
 
-                    <p className={styles.bookReleaseInfo}>ORGINALT UTGITT I<span className={styles.bookReleaseYear}>{releaseYear}</span></p>
+                    <p className={styles.bookReleaseInfo}>ORGINALT UTGITT I <span className={styles.bookReleaseYear}> {releaseYear}</span></p>
                     <p className={styles.bookSynopsisText}>Beskrivelse / sammendrag :</p>
                 </div>
                 <div className={styles.bookDescriptionSubWrapper}>
