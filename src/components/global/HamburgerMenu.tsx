@@ -8,7 +8,7 @@ import { HeaderMenuItem } from "./HeaderMenuItem";
 import { menuItems } from "./HeaderMenuItemsDef";
 import { useOutsideClick } from "@/functions/useOutsideClick";
 import styles from "./HamburgerMenu.module.css";
-import { BokHusCom } from "../common/BokHusCom";
+import {BokHusNo } from "../common/BokHusCom";
 import { ExpandingLine } from "../common/ExpandingLine";
 type HamburgerMenuState = "showing" | "animatingOut" | "hiding";
 
@@ -73,7 +73,7 @@ export function HamburgerMenu()
                     <ExpandingLine lineSize={1} animationDuration="0s"/>
                     <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com" target="_blank">
                         <img className={`${styles.flagIcon} fadeInAnim`} src="icons/ENG.png" />
-                        <BokHusCom /> 
+                        <BokHusNo /> 
                     </a>
                 </nav>}
 
