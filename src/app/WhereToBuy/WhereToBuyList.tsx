@@ -59,12 +59,12 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
     const { mode, direction} = sortHandler;
     return (
         <ul className={styles.buySeriesList}>
-            <div className={`${styles.sortDiv} fadeInFromBelowAnim`} style={{animationDelay: `${waitForMainAnim}ms`}} ><div className={styles.sortHeader}>SORT OPTIONS <span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? styles.sortUp : styles.sortDown} ${styles.sortCollapseIcon} fadeInAnim`}/></span></div>
+            <div className={`${styles.sortDiv} fadeInFromBelowAnim`} style={{animationDelay: `${waitForMainAnim}ms`}} ><div className={styles.sortHeader}>SORTERINGSALTERNATIVER<span onClick={() => setSortMenuOpen((prev) => !prev)}><PiArrowFatLineDownFill size="1.4rem" className={`${isSortMenuOpen ? styles.sortUp : styles.sortDown} ${styles.sortCollapseIcon} fadeInAnim`}/></span></div>
               {isSortMenuOpen &&
                 <div className={styles.sortButtonContainer}>
                     <div className={styles.modeDiv}>
-                        <button className={`${styles.sortButton} ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className={styles.sortIcon}/> by Serie</button>
-                        <button className={`${styles.sortButton} ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className={`${styles.sortIcon}`}/> by Author</button>
+                        <button className={`${styles.sortButton} ${mode == "Serie" && "isActive"}`} onClick={() => mode != "Serie" && handleSortClick("Serie")}><TbBooks size="1.2rem" className={styles.sortIcon}/> etter Serienavn</button>
+                        <button className={`${styles.sortButton} ${mode == "Author" && "isActive"}`} onClick={() => mode != "Author" && handleSortClick("Author")}><BsPersonFill size="1.2rem" className={`${styles.sortIcon}`}/> etter Forfatter</button>
                         </div>
                         <div className={styles.sortStatusDiv}>
                             {/* <span className="sortTag">CURRENT : </span> */}
@@ -74,8 +74,8 @@ export function WhereToBuyList({ buyArray }: WhereToBuyListProps)
 
                         </div>
                     <div className={styles.directionDiv}>
-                        <button className={`${styles.sortButton} ${direction == "Ascending" && styles.isActive}`} onClick={() => direction != "Ascending" && handleSortClick(mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className={styles.sortIcon}/> Ascending</button>
-                        <button className={`${styles.sortButton} ${direction == "Descending" && styles.isActive}`} onClick={() => direction != "Descending" && handleSortClick(mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Descending</button>
+                        <button className={`${styles.sortButton} ${direction == "Ascending" && styles.isActive}`} onClick={() => direction != "Ascending" && handleSortClick(mode, "Ascending")}><AiOutlineSortAscending size="1.2rem" className={styles.sortIcon}/> Stigende</button>
+                        <button className={`${styles.sortButton} ${direction == "Descending" && styles.isActive}`} onClick={() => direction != "Descending" && handleSortClick(mode, "Descending")}><AiOutlineSortDescending size="1.2rem" className="sortIcon"/>Synkende</button>
                     </div>
 
                 </div>

@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import { useState, useRef } from "react";
 import { ContactInfo, ServerResponse } from "./contactSchema";
-import { BokHusCom } from "../../components/common/BokHusCom";
+import { BokHusNo } from "../../components/common/BokHusCom";
 import { sendContactForm } from "./actions";
 
 import ReCAPTCHA from "react-google-recaptcha";
@@ -76,7 +76,7 @@ export function ContactUs()
     
             <div className={`${styles.logoHeadingWrapper} flex`}>
                 <h2 className={`${styles.contactHeading} flex`}>
-                    Contact Us
+                    Kontakt oss
                 </h2>
                 <div className={`${styles.logoRegWrapper} flex`}>
                     <Image className={`${styles.logoRegImg} flex rotateInYAnim`} style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
@@ -84,13 +84,13 @@ export function ContactUs()
 
             </div>
             <p className={`${styles.contactUsText}`}>
-                If you have some questions to Bokhus about future releases, this web page or you wanna work with us, please fill out this contact form and we will get back to you as soon as possible.
+              Hvis du har spørsmål til Bokhus angående fremtidige utgivelser, denne web-siden eller du er interessert i å arbeide med oss, fyll ut dette kontaktskjemaet og vi vil svare deg så fort vi har anledning.
             </p>
 
             <form className={`${styles.contactUsForm} flex` }onSubmit={handleSubmit(onSubmit)}>
 
                 <div className={`${styles.inputDiv}`}>
-                    <label>Your email address : </label>
+                    <label>Din e-post adresse : </label>
                     <IoMailOutline size="1.95rem" className={styles.inputIcon} />
                     <input className={`${styles.contactInput}`} type="email" {...register("email")} />
                     {errors.email && <p className={`${styles.errorRegisterForm}`}>{errors.email.message}</p>}
@@ -99,7 +99,7 @@ export function ContactUs()
                 </div>
 
                 <div className={`${styles.inputDiv}`}>
-                    <label>Subject : </label>
+                    <label>Tema : </label>
                     <MdOutlineSubject className={styles.inputIcon} size="2rem" />
                     <input className={`${styles.contactInput}`} type="text" {...register("subject")} />
                     {errors.subject && <p className={`${styles.errorRegisterForm}`}>{errors.subject.message}</p>}
@@ -109,7 +109,7 @@ export function ContactUs()
 
 
                 <div className={`${styles.inputDiv}`}>
-                    <label>Your comment : </label>
+                    <label>Din melding : </label>
                     <MdOutlineInsertComment className={`${styles.inputIcon}`} size="1.95rem" />
                     <textarea className={`${styles.contactInput}`} {...register("comment")} rows={7} />
                     {errors.comment && <p className={`${styles.errorRegisterForm}`}>{errors.comment.message}</p>}
@@ -125,7 +125,7 @@ export function ContactUs()
                 </div>
 
       
-                <SubmitButton buttonText="Send message" submitMessage="Sending message" isSubmitting={isSubmitting}/>
+                <SubmitButton buttonText="Send beskjed" submitMessage="Sender beskjed" isSubmitting={isSubmitting}/>
 
 
             </form>
@@ -133,7 +133,7 @@ export function ContactUs()
             <div className={`${styles.bokhusComWrapperContact} flex`}>
                 {serverMessage != "nomessage" ?
                     <div className={`${styles.serverMessageDiv} scaleInAnim`}>{serverMessage}</div> :
-                    <span className="scaleInAnim" style={{animationDelay: "1s"}}><BokHusCom fontSize="1.2rem" />  </span>}
+                    <span className="scaleInAnim" style={{animationDelay: "1s"}}><BokHusNo fontSize="1.2rem" />  </span>}
             </div>
 
       

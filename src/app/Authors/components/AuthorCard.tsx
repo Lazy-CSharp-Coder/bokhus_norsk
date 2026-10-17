@@ -34,7 +34,7 @@ export function AuthorCard({ _id, profileImage, name, subTitle, genre, descripti
                 </ul>
                 {/* <BestSellerList bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} /> */}
             </div>{shouldDisplayGuidance &&
-            <span className={`${styles.bigGoToArrowSpan}`}>KLIKK FOR Å LESE MER<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSize)" className={`${styles.bigGotToArrow}`}/></span> }
+            <span className={`${styles.bigGoToArrowSpan}`}>LES MER<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSize)" className={`${styles.bigGotToArrow}`}/></span> }
 
 
         </article>

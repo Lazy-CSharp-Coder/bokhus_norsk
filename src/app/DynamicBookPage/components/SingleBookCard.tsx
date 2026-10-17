@@ -23,7 +23,7 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availab
                         <ByAuthor authors={authorNames} />
                         <span className={styles.singleBookCardAvailabilitySpan}>
 
-                            <BookAvailableIn availability={availability} fontSize="1.25rem"/>
+                            <BookAvailableIn availability={availability} fontSize="1rem"/>
                         </span>
 
                     </div>

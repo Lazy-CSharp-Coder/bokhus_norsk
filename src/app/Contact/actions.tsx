@@ -67,7 +67,7 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
             to: process.env.CONTACT_RECEIVER_EMAIL as string,
             replyTo: email, 
             subject : `Contact Form : ${subject}`,
-            html : `<p>${email} has send the following message from your english Bokhus.com web page.</p>
+            html : `<p>${email} has send the following message from your norwegian Bokhus.no web page.</p>
             <p>Subject is : ${subject}. </p> <br>
             <p>${comment}</p>`
         });
@@ -75,7 +75,7 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
         {
             return { success : false, message: error.message}
         }
-        return { success : true, message : "Your message has been sendt to Bokhus.com"};
+        return { success : true, message : "Your message has been sendt to Bokhus.no"};
     
     }
     catch (err)
@@ -86,24 +86,30 @@ export async function sendContactForm(data : ContactInfo ) : Promise<ServerRespo
 }
 
 
+
 export async function sendNewUserAlert(data : UserData) : Promise<ServerResponse>
 {
-    const { email, arcInterest} = data;
+    const { email, userName, genresInterestedIn, arcInterest, newsLetter} = data;
+    const arcText = arcInterest ?  "User is interested in becoming ARC reader" : "User has not applied for ARC candidacy";
+    const newsLetterText = newsLetter ? "User wants to recieve newsletters" : "User do not want to recieve newsletter";
+    const interests = genresInterestedIn.join(", ");
       try {
         const { error } = await resend.emails.send({
             from : "New User Alert Mail <onboarding@resend.dev>",
             to: process.env.CONTACT_RECEIVER_EMAIL as string,
             replyTo: email, 
-            subject : `User has registered profile information at BokHus.com`,
+            subject : `User ${userName} has registered profile information at BokHus.no`,
             html : `<p>${email} has registered/updated profile information at your web-page.</p>
-            <p>${arcInterest}</p> <br>
+            <p>User has interest in the following genres :  ${interests} </p><br>
+            <p>${newsLetterText}</p> <br>
+            <p>${arcText}</p> <br>
             <p>Please refer to Clerk metadata for more information</p>`
         });
         if(error)
         {
             return { success : false, message: error.message}
         }
-        return { success : true, message : "Your message has been sendt to Bokhus.com"};
+        return { success : true, message : "Your message has been sendt to Bokhus.no"};
     
     }
     catch (err)

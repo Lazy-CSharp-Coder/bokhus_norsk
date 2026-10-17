@@ -38,7 +38,7 @@ export function ReviewCard({ _id, format, bookReviewed, date, country, stars, re
 
 
             </div>
-            <Link className={styles.linkToReview} href={linkReview} target="_blank"><span>Click to see review on <span className={styles.reviewSiteText}>{reviewedOn} </span> </span><GoLinkExternal size="1.2rem" /></Link>
+            <Link className={styles.linkToReview} href={linkReview} target="_blank"><span>Klikk for å se anmeldelse på <span className={styles.reviewSiteText}>{reviewedOn} </span> </span><GoLinkExternal size="1.2rem" /></Link>
 
 
         </div>);

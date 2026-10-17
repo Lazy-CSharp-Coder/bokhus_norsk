@@ -31,15 +31,15 @@ export function AccountMenu()
                 }
             }
         }} ><UserButton.MenuItems>
-            <UserButton.Link label={"Your profile at BokHus"}
+            <UserButton.Link label={"Din profil hos BokHus"}
                 labelIcon={<span className={styles.clerkButtonSpan}><FaUserLarge size="1rem" /></span>} href="/Register" />
 
-            <UserButton.Link label="Delete profile"
+            <UserButton.Link label="Slett profil"
                 labelIcon={<span className={styles.clerkButtonSpan}><RiDeleteBin6Line size="1rem" className={styles.deleteProfileIcon} />
 
                 </span>} href="/DeleteProfile" />
             {isAdmin &&
-                <UserButton.Link label="Newsletters & ARC" href="/Admin" labelIcon={<span className={styles.clerkButtonSpan}><GiNewspaper size="1rem" /> </span>} />
+                <UserButton.Link label="Nyhetsbrev & ARC" href="/Admin" labelIcon={<span className={styles.clerkButtonSpan}><GiNewspaper size="1rem" /> </span>} />
 
             }
         </UserButton.MenuItems>

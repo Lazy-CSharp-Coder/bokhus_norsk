@@ -2,10 +2,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Resolver } from "react-hook-form";
 import { z } from "zod/v4-mini";
-import { registerSchema, UserData } from "./registerSchema";
+import { genresOptions, languageDef, registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
 import { useState } from "react";
-import { BokHusCom } from "../../components/common/BokHusCom";
+import { BokHusNo} from "../../components/common/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 
 import Image from "next/image";
@@ -27,7 +27,7 @@ import styles from "./RegisterForm.module.css";
 import { SubmitButton } from "../../components/common/SubmitButton";
 import { submitToClerk } from "./submitToClerk";
 import { sendNewUserAlert } from "../Contact/actions";
-import { FaUserEdit, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 type RegisterFormInput = z.input<typeof registerSchema>;
 
 interface RegisterFormProps 
@@ -66,7 +66,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
     );
 
 
-    const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting, isValid } } = methods;
+    const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting } } = methods;
     const [userInfo, setUserInfo] = useState<UserInfoHeaderDisplayState>(isNewUser ? "No user message" : "User found message");
 
     const onSubmit = async (data: UserData) =>
@@ -76,7 +76,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
         if (result.success)
         {
-            alert("Your profile have been submitted to bokhus. Thank you.");
+            alert("Profilen din har blitt registrert hos  BokHus. Takk.");
 
             const result = await sendNewUserAlert(data);
             if (result.success == false)
@@ -114,7 +114,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
             <article className={`${styles.generalInfoArticle} flex fadeInFromBelowAnim`} style={{ animationDelay: "0.5s" }}>
 
                 <div className={styles.headingLogoTextWrapper}>
-                    <h1 className={styles.registerHeading}>YOUR PROFILE </h1>
+                    <h1 className={styles.registerHeading}>PROFILEN DIN </h1>
                     <div className={styles.logoRegWrapper}>
                         <Image className={`${styles.logoRegImg} rotateInYAnim`} style={{ animationDelay: "1.3s" }} src="/icons/logohvit.png" alt="bokhus logo" fill={true} sizes="(max-width: 128px) 100vw, 50vw" loading="eager" />
                     </div>
@@ -128,25 +128,25 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                             <div className={styles.registerDiv}>
                                 <FaUser className={styles.inputRegIcon} size="1.75rem" />
-                                <label>Please enter your name :  {errors.userName && <p className={styles.errorRegisterForm}>{errors.userName.message}</p>} </label>
-                                <input className={styles.registerInput} type="text" {...register("userName")} placeholder="name" />
+                                <label>Ditt navn :  {errors.userName && <p className={styles.errorRegisterForm}>{errors.userName.message}</p>} </label>
+                                <input className={styles.registerInput} type="text" {...register("userName")} placeholder="navn" />
 
 
                             </div>
                             <div className={styles.registerDiv}>
                                 <IoEarthSharp className={styles.inputRegIcon} size="1.9rem" />
-                                <label>Which country are you from (optional) :    {errors.country && <p className={styles.errorRegisterForm}>{errors.country.message}</p>} </label>
-                                <input className={styles.registerInput} type="text" {...register("country")} placeholder="country" />
+                                <label>Hvilket land er du fra (valgfritt) :    {errors.country && <p className={styles.errorRegisterForm}>{errors.country.message}</p>} </label>
+                                <input className={styles.registerInput} type="text" {...register("country")} placeholder="land" />
 
 
                             </div>
                             <div className={styles.multipleChoicesDiv}>
-                                <label className={styles.languagesText}>What languages do you prefer ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
+                                <label className={styles.languagesText}>Hvilket språk foretrekker du ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
                                 <ul className={styles.multipleChoicesList}>
                                     <LuLetterText className={styles.inputRegListIcon} size="2rem" />
-                                    {languageOptions.map((item) => (
+                                    {languageOptions.map((item, index) => (
                                         <li key={item} className={styles.languagePreferredDiv}>
-                                            <input type="radio" id={item} value={item} {...register("preferredLanguage")} />
+                                            <input type="radio" id={item} value={languageDef[index]} {...register("preferredLanguage")} />
                                             <label htmlFor={item}>{item}</label>
                                         </li>
                                     ))}
@@ -154,14 +154,14 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 </ul>
                             </div>
                             <div className={styles.multipleChoicesDiv}>
-                                <label className={styles.languagesText}>What genres are you interested in ? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
+                                <label className={styles.languagesText}>Hvilke sjangre er du interessert i? {errors.genresInterestedIn && <RegErrorMessage message={errors.genresInterestedIn.message} />}</label>
 
                                 <ul className={styles.multipleChoicesList}>
                                     <LiaSwatchbookSolid className={styles.inputRegListIcon} size="2.1rem" />
-                                    {genresDef.map((item) => (
+                                    {genresDef.map((item, index) => (
                                         <li key={item} className={styles.languagePreferredDiv}>
                                             <input type="checkbox" id={item} value={item} {...register("genresInterestedIn")} />
-                                            <label htmlFor={item}>{item}</label>
+                                            <label htmlFor={item}>{genresOptions[index]}</label>
                                         </li>
                                     ))}
 
@@ -169,9 +169,9 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                             </div>
                             <div className={styles.registerDiv}>
                                 <TbWorldWww className={styles.inputRegIcon} size="1.85rem" />
-                                <label>Do you have a profile page (optional) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message} />}
+                                <label>Har du en profilside (valgfritt) (Facebook, Instagram, Web side) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message} />}
                                 </label>
-                                <input className={styles.registerInput} type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
+                                <input className={styles.registerInput} type="text" {...register("linkProfilePage")} placeholder="profil url" />
 
                             </div>
                         </div>
@@ -180,7 +180,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 <GiNewspaper className={styles.inputRegSingleIcon} size="1.9rem" />
                                 <div className={styles.labelInputWrapperOneLineFirst}>
                                     <input className={styles.registerInput} type="checkbox" {...register("newsLetter")} />
-                                    <label>Do you wanna receive newsletters from us ? </label>
+                                    <label>Har du lyst å motta nyhetsbrev ? </label>
 
                                 </div>
                                 {errors.newsLetter && <RegErrorMessage message={errors.newsLetter.message} />}
@@ -191,7 +191,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 <FaBookOpenReader className={styles.inputRegSingleIcon} size="1.8rem" />
                                 <div className={styles.labelInputWrapperOneLineSecond}>
                                     <input className="registerInput" type="checkbox" {...register("arcInterest")} />
-                                    <label>Are you intereted in joining or Advanced Readers Team ? </label>
+                                    <label>Er du interessert i å motta forhåndskopier (ARC) ? </label>
 
                                 </div>
                                 {errors.arcInterest && <RegErrorMessage message={errors.arcInterest.message} />}
@@ -206,7 +206,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                 </FormProvider>
                 <div className={styles.bokhusComWrapper}>
-                    <span className="scaleInAnim" style={{ animationDelay: "2s" }}>   <BokHusCom fontSize="1.1rem" /></span>
+                    <span className="scaleInAnim" style={{ animationDelay: "2s" }}>   <BokHusNo fontSize="1.1rem" /></span>
 
                 </div>
             </article>

@@ -13,6 +13,7 @@ import { WhereToBuySeriesProps } from "./WhereToBuyTypes";
 import { PiGlobeSimpleXLight, PiArrowFatLineDownLight } from "react-icons/pi";
 import { GoLinkExternal } from "react-icons/go";
 import styles from "./WhereToBuySerie.module.css";
+import { numberToWordsNorwegian } from "../DynamicSeriePage/components/BookInSerieText";
 
 type SerieListState = "Open" | "Closed";
 
@@ -75,7 +76,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
  
       <div key={seriesListState} className={`${styles.buyTextArrowDiv} fadeInAnim`} style={{ transform: seriesListState == "Open" ? "rotate(180deg)" : "rotate(0deg)", animationDuration: "0.8s", animationDelay: `${animDelayExtra+200}ms` }}>
-             {seriesListState == "Closed" && "CLICK TO EXPAND"}
+             {seriesListState == "Closed" && "VIS BØKER"}
         <PiArrowFatLineDownLight size="2rem" className={styles.buyOpenCloseArrow} /></div>
 
 
@@ -83,7 +84,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
 
       <ul className={styles.whereToBuyBooksList}>
         {seriesListState == "Open" && bookList.map((item, index, array) =>
-          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index) + animDelayExtra}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
+          <li key={item._id + "whereToBuy"} className={`${styles.whereToBuyBookListItem}  fadeInFromBelowAnim`} style={{ animationDelay: `${(animInc * index)}ms` }} onClick={() => handleLinkClick(item.buyLink)} 
           >
             <div className={styles.buyListItemImageDiv}>
               <Image className={styles.buyImageBook} src={urlFor(item.imageBook, 200)} alt="Series Card Image" fill={true} sizes="(max-width: 200px) 100vw, 50vw" />
@@ -91,7 +92,7 @@ export function WhereToBuySerie({ serieSelected, authorsStrArray, bookList, anim
             <div className={styles.buyListBookInfo}>
 
               <div className={styles.buyTitleBookNumberWrapper}>       <span className={styles.buyTitleBook}> {item.bookTitle} </span>
-                <div className="">Book <span className={styles.buyListBookNumber}>{getBookNumberInString(item.bookInSeries)}</span> of the Series </div>
+                <div className=""> <span className={styles.buyListBookNumber}>{numberToWordsNorwegian(item.bookInSeries)}</span> bok i serien </div>
               </div>
               <BookAvailableIn availability={item.availability ??  [{ bookType: "not available yet", isbn: "no isbn available yet" }]} classNameItem={styles.buyAvailabilityItem} shouldIsbnPopUpShow={false} />
             </div>
