@@ -23,7 +23,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Bokhus",
-  description: "Bokhus Web Page English",
+  description: "Bokhus Web Page Norwegian",
   icons: {
     icon: '/icon.png'
   }
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>)
 {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="no" data-scroll-behavior="smooth">
       <body className={`${libreBaskerville.variable} ${roboto.variable}`}>
 
         <ClerkProvider

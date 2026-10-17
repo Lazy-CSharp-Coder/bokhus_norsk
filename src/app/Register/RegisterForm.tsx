@@ -66,7 +66,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
     );
 
 
-    const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting, isValid } } = methods;
+    const { register, handleSubmit, watch, getValues, formState: { errors, isSubmitting } } = methods;
     const [userInfo, setUserInfo] = useState<UserInfoHeaderDisplayState>(isNewUser ? "No user message" : "User found message");
 
     const onSubmit = async (data: UserData) =>
@@ -129,7 +129,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                             <div className={styles.registerDiv}>
                                 <FaUser className={styles.inputRegIcon} size="1.75rem" />
                                 <label>Ditt navn :  {errors.userName && <p className={styles.errorRegisterForm}>{errors.userName.message}</p>} </label>
-                                <input className={styles.registerInput} type="text" {...register("userName")} placeholder="name" />
+                                <input className={styles.registerInput} type="text" {...register("userName")} placeholder="navn" />
 
 
                             </div>
