@@ -32,12 +32,12 @@
         "heroPage": {
             "quotesHeading": [
                 {
-                    "start":"Fortellinger med",
+                    "start":"Fortellinger med ",
                     "end": "Røtter"
                 },
                 {
-                    "start": "Bøker med en",
-                    "end": "Fremtiden"
+                    "start": "Bøker med en ",
+                    "end": "Fremtid"
                 }
             ],
             "descriptionBokhus": [

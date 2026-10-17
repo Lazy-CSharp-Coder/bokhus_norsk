@@ -5,7 +5,7 @@ import { z } from "zod/v4-mini";
 import { registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
 import { useState } from "react";
-import { BokHusCom } from "../../components/common/BokHusCom";
+import { BokHusNo} from "../../components/common/BokHusCom";
 import { RegisterARC } from "./RegisterARC";
 
 import Image from "next/image";
@@ -27,7 +27,7 @@ import styles from "./RegisterForm.module.css";
 import { SubmitButton } from "../../components/common/SubmitButton";
 import { submitToClerk } from "./submitToClerk";
 import { sendNewUserAlert } from "../Contact/actions";
-import { FaUserEdit, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 type RegisterFormInput = z.input<typeof registerSchema>;
 
 interface RegisterFormProps 
@@ -206,7 +206,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                 </FormProvider>
                 <div className={styles.bokhusComWrapper}>
-                    <span className="scaleInAnim" style={{ animationDelay: "2s" }}>   <BokHusCom fontSize="1.1rem" /></span>
+                    <span className="scaleInAnim" style={{ animationDelay: "2s" }}>   <BokHusNo fontSize="1.1rem" /></span>
 
                 </div>
             </article>
