@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Resolver } from "react-hook-form";
 import { z } from "zod/v4-mini";
-import { registerSchema, UserData } from "./registerSchema";
+import { genresOptions, languageDef, registerSchema, UserData } from "./registerSchema";
 import { useForm, FormProvider } from "react-hook-form";
 import { useState } from "react";
 import { BokHusNo} from "../../components/common/BokHusCom";
@@ -136,7 +136,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                             <div className={styles.registerDiv}>
                                 <IoEarthSharp className={styles.inputRegIcon} size="1.9rem" />
                                 <label>Hvilket land er du fra (valgfritt) :    {errors.country && <p className={styles.errorRegisterForm}>{errors.country.message}</p>} </label>
-                                <input className={styles.registerInput} type="text" {...register("country")} placeholder="country" />
+                                <input className={styles.registerInput} type="text" {...register("country")} placeholder="land" />
 
 
                             </div>
@@ -144,9 +144,9 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 <label className={styles.languagesText}>Hvilket språk foretrekker du ?{errors.preferredLanguage && <RegErrorMessage message={errors.preferredLanguage.message} />} </label>
                                 <ul className={styles.multipleChoicesList}>
                                     <LuLetterText className={styles.inputRegListIcon} size="2rem" />
-                                    {languageOptions.map((item) => (
+                                    {languageOptions.map((item, index) => (
                                         <li key={item} className={styles.languagePreferredDiv}>
-                                            <input type="radio" id={item} value={item} {...register("preferredLanguage")} />
+                                            <input type="radio" id={item} value={languageDef[index]} {...register("preferredLanguage")} />
                                             <label htmlFor={item}>{item}</label>
                                         </li>
                                     ))}
@@ -158,10 +158,10 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
 
                                 <ul className={styles.multipleChoicesList}>
                                     <LiaSwatchbookSolid className={styles.inputRegListIcon} size="2.1rem" />
-                                    {genresDef.map((item) => (
+                                    {genresDef.map((item, index) => (
                                         <li key={item} className={styles.languagePreferredDiv}>
                                             <input type="checkbox" id={item} value={item} {...register("genresInterestedIn")} />
-                                            <label htmlFor={item}>{item}</label>
+                                            <label htmlFor={item}>{genresOptions[index]}</label>
                                         </li>
                                     ))}
 
@@ -171,7 +171,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 <TbWorldWww className={styles.inputRegIcon} size="1.85rem" />
                                 <label>Har du en profilside (valgfritt) (Facebook, Instagram, Web side) :  {errors.linkProfilePage && <RegErrorMessage message={errors.linkProfilePage.message} />}
                                 </label>
-                                <input className={styles.registerInput} type="text" {...register("linkProfilePage")} placeholder="profileUrl" />
+                                <input className={styles.registerInput} type="text" {...register("linkProfilePage")} placeholder="profil url" />
 
                             </div>
                         </div>
@@ -191,7 +191,7 @@ export function RegisterForm({ data, isNewUser }: RegisterFormProps,)
                                 <FaBookOpenReader className={styles.inputRegSingleIcon} size="1.8rem" />
                                 <div className={styles.labelInputWrapperOneLineSecond}>
                                     <input className="registerInput" type="checkbox" {...register("arcInterest")} />
-                                    <label>Are you intereted in joining or Advanced Readers Team ? </label>
+                                    <label>Er du interessert i å motta forhåndskopier (ARC) ? </label>
 
                                 </div>
                                 {errors.arcInterest && <RegErrorMessage message={errors.arcInterest.message} />}

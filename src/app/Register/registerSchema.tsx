@@ -8,7 +8,7 @@ import { z } from "zod";
 //     .brand<BrandedClerkUserId>();
 
 const emailSchema = z
-    .email({ message: "Please enter a valid e-mail adress" })
+    .email({ message: "Vennligst legg inn en gyldig e-mail adresse" })
     .toLowerCase()
     .trim();
 
@@ -26,49 +26,60 @@ export const rulesSchema = z.object({
 });
 
 
-export const languageOptions: string[] = ["English", "Norwegian", "German"];
-const preferredLanguageDef =  z.enum(["English", "Norwegian", "German", ""], { error: "You have to select one language" }).refine((val) => val !== "", { message: "You have to select one language"});
-const preferredArc = z.enum(["English", "Norwegian", "German"], { error: "You have to select one language" });
+export const languageOptions: string[] = ["Engelsk", "Norsk", "Tysk"];
+export const languageDef: string[] = ["English", "Norwegian", "German"];
+const preferredLanguageDef = z.enum(languageDef, { error: "Du må velge ett språk" }).refine((val) => val !== "", { message: "Du må velge ett språk" });
 
-export const reviewSitesDef = [
-    "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"
+export const noticeOptions = [
+    "Språk", "Flyt", "Karakterer", "Handling", "Historisk nøyaktighet", "Stemning", "Tempo", "Handlingstråd"
 ] as const;
 
-export const noticeDef = [
-    "Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"
+export const genresOptions = [
+    "Historiske romaner", "Barnebøker", "Ungdomsbøker", "Selvhjelpsbøker"
 ] as const;
 
-export const genresDef = [
-    "Historical novels", "Childrens books", "Young adult books", "Self-help books"
+export const readTimeOptions = [
+    "Innen en uke", "Mindre enn en måned", "2-3 måneder", "4-5 måneder", "Mer enn 6 måneder"
 ] as const;
+
+export const comfortableOptions = ["Ja", "Nei", "Usikker"];
+
+export const reviewSitesOptions = [
+    "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Annet"
+] as const;
+
+export const reviewSitesDef = [ "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"] as const;
+export const noticeDef = ["Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"];
+export const genresDef = ["Historical novels", "Childrens books", "Young adult books", "Self-help books"];
+export const readTimeDef = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
 const reviewSitesEnum = z.enum(reviewSitesDef);
 const noticeEnum = z.enum(noticeDef);
 
 const reviewSitesSchema = z.preprocess(
     (val) => (val == null || val == false) ? [] : val,
-    z.array(reviewSitesEnum).min(1, { message: "You have to chooce at least one of the options" }
+    z.array(reviewSitesEnum).min(1, { message: "Du må krysse av for minst ett av valgene" }
 
 
     ));
 
 const noticeSchema = z.preprocess(
     (val) => (val == null || val == false ? [] : val),
-    z.array(noticeEnum).min(1, { message: "You have to chooce at least one of the options" }
+    z.array(noticeEnum).min(1, { message: "Du må krysse av for minst ett av valgene" }
+
 
     ));
 
 export const arcSchema = z.object(
     {
         // languageArcCopy: preferredArc,
-        format: z.enum(["pdf", "ePub"], { error: () => "You have to choose one of the alternatives" }),
+        format: z.enum(["pdf", "ePub"], { error: () => "Du må krysse av for minst ett av valgene" }),
         why: z.string(),
-        howLong: z.enum(["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"], { error: () => "You have to choose one of the alternatives" }),
-        comfortable: z.enum(["Yes", "No", "Not sure"], { error: () => "You have to choose one of the alternatives" }),
+        howLong: z.enum(readTimeDef, { error: () => "Du må krysse av for minst ett av valgene" }),
+        comfortable: z.enum(["Yes", "No", "Not sure"], { error: () => "Du må krysse av for minst ett av valgene" }),
         reviewSites: reviewSitesSchema,
         notice: noticeSchema,
         rules: rulesSchema
-
     }
 );
 
@@ -76,17 +87,16 @@ export const registerSchema = z.object(
     {
         // userId: clerkUserId,
         email: emailSchema,
-        userName : z.string().min(1, { message : "Please supply a user name"}),
+        userName: z.string().min(1, { message: "Vennligst legg inn et brukernavn" }),
         country: z.string().optional(),
         preferredLanguage: preferredLanguageDef,
-        genresInterestedIn: z.array(z.enum(genresDef))
-            .min(1, { error: () => "You have to choose one of the alternatives" }),
-        linkProfilePage: z.url({ message: "Invalid URL" }).or(z.literal("")).optional(),
+        genresInterestedIn: z.array(z.enum(genresDef)).min(1, { error: () => "Du må krysse av for minst ett av valgene" }),
+        linkProfilePage: z.url({ message: "Ugyldig URL" }).or(z.literal("")).optional(),
         newsLetter: z.boolean(),
         arcInterest: z.boolean(),
         arc: arcSchema.optional(),
         // recievedBooks: z.array(z.string()).default([]),
         shouldNotReciveARCAnymore: z.boolean().default(false)
-        
+
     }
 );
