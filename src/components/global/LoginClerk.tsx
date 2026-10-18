@@ -23,7 +23,7 @@ export function LoginClerkContent()
 
             <Show when="signed-in">
                 <AccountMenu />
-                <Link className={styles.signInButton} href="/Register">REDIGER PROFIL</Link>
+                <Link className={styles.editButton} href="/Register">REDIGER PROFIL</Link>
             </Show>
 
         </div>);

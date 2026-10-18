@@ -8,7 +8,7 @@
 }
 
 
-.signInButton {
+.signInButton, .editButton {
 
   font-family: var(--headerFontFamily);
   font-size: 1.2rem;
@@ -35,4 +35,8 @@
 
 .signInButton:hover .signInRegisterSpan {
   color: var(--bokhusFutureColor);
+}
+
+.editButton {
+  display: none;
 }
