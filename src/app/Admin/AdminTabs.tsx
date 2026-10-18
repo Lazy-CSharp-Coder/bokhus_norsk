@@ -117,7 +117,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
         
         const filterOnIncludeFormer = includeFormer ? (includeFormerSendout == "All" ? users : users.filter((user) => user.arcInterest))  : users.filter((user) => !user.recievedBooks.includes((bookName)));
 
-        const filterOnGenre = filterOnIncludeFormer.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn.includes(genre)));
+        const filterOnGenre = filterOnIncludeFormer.filter((user) => options.genereOfSendout.some((genre) => user.genresInterestedIn?.includes(genre)));
 
         if (filterOnGenre.length == 0) console.log("filter on genre failed");
 
@@ -137,7 +137,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
             const bIndex = howLongArray.findIndex((item) => item == b.howLong);
 
             return aIndex - bIndex;
-        }) : filterOnIncludeFormer;
+        }) : filterOnFormat;
 
 
         const filterOnLanguage = filterOnPrioritySpeed.filter((user) => options.preferredLanguage.includes(user.preferredLanguage));
