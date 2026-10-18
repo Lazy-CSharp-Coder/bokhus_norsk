@@ -32,15 +32,15 @@ export function Header()
             <div className={styles.loginBurgerWrapper}>
                 <LoginClerk />
 
-<a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com" target="_blank">
-                <div className={styles.flagIconWrapper}>
-                    <FaArrowRight size="0.9rem" />
-                    
+                <a className={`${styles.flagLink} fadeInAnim`} href="https://www.bokhus.com" target="_blank">
+                    <div className={styles.flagIconWrapper}>
+                        <FaArrowRight size="0.9rem" />
+
                         <img className={`${styles.flagIcon} fadeInAnim`} src="icons/ENG.png" />
-        
-    </div>
+
+                    </div>
                     <BokHusCom />
-                        </a>
+                </a>
 
                 <span className={styles.mobileMode}>  <HamburgerMenu /></span>
 
