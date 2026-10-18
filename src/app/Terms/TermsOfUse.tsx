@@ -5,20 +5,18 @@ export function TermsOfUse()
     return (
         <section className="legalSection fadeInAnim">
             <h2 className="legalHeadingTop">
-                Terms of Use
+                Brukervilkår
             </h2>
             <article className="legalArticle">
                 <h3 className="legalHeading">
 
-                    Introduction
+                    Introduksjon
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">Welcome to Bokhus.com</p>
-                    <p className="legalText">    These Terms of Use govern your access to and use of the BokHus
-                        website, services, and content.        </p>
+                    <p className="legalText">Velkommen til Bokhus.com</p>
+                    <p className="legalText">Disse brukervilkårene styrer din tilgang til og bruk av BokHus-nettstedet, tjenestene og innholdet.</p>
                     <p className="legalText">
-                        By accessing or using BokHus.com, you agree to comply with
-                        these Terms. If you do not agree, you must not use the website.
+                        Ved å besøke eller bruke BokHus.com, godtar du å overholde disse vilkårene. Hvis du ikke godtar dem, må du ikke bruke nettstedet.
 
                     </p>
                 </div>
@@ -27,155 +25,142 @@ export function TermsOfUse()
 
                 <h3 className="legalHeading">
 
-                    About Bokhus
+                    Om Bokhus
                 </h3>
                 <div className="textDiv">
-                    <p className="legalText">BokHus.com is a digital platform dedicated to books, authors, and
-                        literary content. The website may include :</p>
+                    <p className="legalText">BokHus.com er en digital plattform dedikert til bøker, forfattere og litterært innhold. Nettstedet kan inkludere:</p>
                     <ul className="legalList">
 
-                        <li> book presentations</li>
-                        <li> articles and historical content</li>
-                        <li>digital downloads</li>
-                        <li>newsletters</li>
-                        <li> links to booksellers or third-party platforms</li>
-                        <li>author information and related media</li>
+                        <li> bokpresentasjoner</li>
+                        <li> artikler og historisk innhold</li>
+                        <li>nedlastinger</li>
+                        <li>nyhetsbrev</li>
+                        <li> lenker til bokhandlere eller tredjepartsplattformer</li>
+                        <li>forfatterinformasjon og relatert media</li>
                     </ul>
-                    <p className="legalText">BokHus may update or change services at any time without prior
-                        notice.</p>
+                    <p className="legalText">BokHus kan oppdatere eller endre tjenester når som helst uten forvarsel.</p>
 
 
                 </div>
             </article>
 
-            <article className="legalArticle"> <h3 className="legalHeading">Intellectual Property
+            <article className="legalArticle"> <h3 className="legalHeading">Åndsverk (Intellectual Property)
             </h3>
                 <div className="textDiv">
-                    <p className="legalText">All content on BokHus.com, including but not limited to :</p>
+                    <p className="legalText">Alt innhold på BokHus.com, inkludert men ikke begrenset til:</p>
                     <ul className="legalList">
 
-                        <li> text</li>
-                        <li> images</li>
-                        <li>book covers</li>
-                        <li>graphics</li>
-                        <li>logos</li>
-                        <li>layout and design</li>
-                        <li>downloadable materials</li>
+                        <li> tekst</li>
+                        <li> bilder</li>
+                        <li>bokomslag</li>
+                        <li>grafikk</li>
+                        <li>logoer</li>
+                        <li>layout og design</li>
+                        <li>nedlastbart materiale</li>
                     </ul>
-                    <p className="legalText">is protected by copyright and intellectual property laws.
-                        Unless otherwise stated, the rights belong to BokHus or the
-                        respective authors and creators.</p>
-                    <p className="legalText">You may not : </p>
+                    <p className="legalText">er beskyttet av lover om opphavsrett og åndsverk. Med mindre annet er oppgitt, tilhører rettighetene BokHus eller de respektive forfatterne og skaperne.</p>
+                    <p className="legalText">Du kan ikke:</p>
                     <ul className="legalList">
 
-                        <li> reproduce</li>
-                        <li> distribute</li>
-                        <li>publish</li>
-                        <li>modify</li>
-                        <li>sell</li>
-                        <li>or reuse content</li>
+                        <li> reprodusere</li>
+                        <li> distribuere</li>
+                        <li>publisere</li>
+                        <li>modifisere</li>
+                        <li>selge</li>
+                        <li>eller gjenbruke innhold</li>
 
                     </ul>
-                    <p className="legalText">  without written permission.</p>
-                    <p className="legalText">Short quotations for reviews or academic purposes are permitted
-                        when the source is clearly credited. </p>
+                    <p className="legalText">uten skriftlig tillatelse.</p>
+                    <p className="legalText">Korte sitater for anmeldelser eller akademiske formål er tillatt når kilden er tydelig kreditert.</p>
                 </div>
             </article>
             <article className="legalArticle">
-                <h3 className="legalHeading">User Conduct</h3>
+                <h3 className="legalHeading">Brukeratferd</h3>
 
                 <div className="textDiv">
-                    <p className="legalText">     When using BokHus.com you agree not to:</p>
+                    <p className="legalText">Når du bruker BokHus.com godtar du å ikke:</p>
                     <ul className="legalList">
 
-                        <li>violate any laws or regulations</li>
-                        <li> attempt to hack or disrupt the website</li>
-                        <li>upload malicious software</li>
-                        <li> misuse forms or contact systems</li>
-                        <li>impersonate another person or organisation</li>
+                        <li>bryte lover eller forskrifter</li>
+                        <li>forsøke å hacke eller forstyrre nettstedet</li>
+                        <li>laste opp skadelig programvare</li>
+                        <li>misbruke skjemaer eller kontaktsystemer</li>
+                        <li>utgi deg for å være en annen person eller organisasjon</li>
 
                     </ul>
-                    <p className="legalText">    We reserve the right to block access to users who violate these
-                        rules.</p>
+                    <p className="legalText">Vi forbeholder oss retten til å blokkere tilgang for brukere som bryter disse reglene.</p>
                 </div>
 
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
-                    Third-Party Links
+                    Tredjepartslenker
 
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        BokHus.com may contain links to third-party websites such as:
+                        BokHus.com kan inneholde lenker til tredjeparts nettsteder som:
 
                     </p>
                     <ul className="legalList">
 
-                        <li>online bookstores</li>
-                        <li>  publishing platforms</li>
-                        <li>social media services</li>
+                        <li>nettbokhandlere</li>
+                        <li>publiseringsplattformer</li>
+                        <li>sosiale medier</li>
 
 
                     </ul>
                     <p className="legalText">
-                        BokHus is not responsible for the content, policies, or practices of
-                        external websites.
-                        Users access third-party services at their own risk.
+                        BokHus er ikke ansvarlig for innholdet, retningslinjene eller praksisen til eksterne nettsteder. Brukere besøker tredjepartstjenester på eget ansvar.
                     </p>
                 </div>
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
-                    Digital Content and Downloads
+                    Digitalt innhold og nedlastinger
 
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        If BokHus offers downloadable content such as:
+                        Hvis BokHus tilbyr nedlastbart innhold som:
                     </p>
                     <ul className="legalList">
 
-                        <li>eBook</li>
-                        <li>  sample chapters</li>
-                        <li>articles</li>
-                        <li>research material</li>
+                        <li>e-bøker</li>
+                        <li>prøvekapitler</li>
+                        <li>artikler</li>
+                        <li>forskningsmateriale</li>
 
                     </ul>
                     <p className="legalText">
-                        These are provided for personal, non-commercial use only unless
-
-                        otherwise specified.
-                        Redistribution or resale is not permitted without written consent.
+                        Disse leveres utelukkende for personlig, ikke-kommersiell bruk, med mindre annet er spesifisert. Videredistribusjon eller videresalg er ikke tillatt uten skriftlig samtykke.
 
                     </p>
                 </div>
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
-                    Disclaimer
+                    Ansvarsfraskrivelse
 
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        The information on BokHus.com is provided for informational
-                        and literary purposes only.
+                        Informasjonen på BokHus.com gis kun til informasjons- og litterære formål.
                        
                     </p>
                     <p className="legalText">
-                         While we strive for accuracy, BokHus makes no guarantees
-                        regarding :
+                        Selv om vi streber etter nøyaktighet, gir BokHus ingen garantier angående:
                     </p>
                     <ul className="legalList">
 
-                        <li> completeness</li>
-                        <li>  accuracy</li>
-                        <li> availability</li>
-                        <li>uninterrupted service</li>
+                        <li>fullstendighet</li>
+                        <li>nøyaktighet</li>
+                        <li>tilgjengelighet</li>
+                        <li>uavbrutt tjeneste</li>
 
                     </ul>
                     <p className="legalText">
-                        Use of the website is at your own risk.
+                        Bruk av nettstedet skjer på egen risiko.
 
                     </p>
                 </div>
@@ -184,13 +169,12 @@ export function TermsOfUse()
 
             <article className="legalArticle">
                 <h3 className="legalHeading">
-                    Privacy
+                    Personvern
 
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        Your use of BokHus.com is also governed by our Privacy Policy,
-                        which explains how personal information may be collected and used.
+                        Din bruk av BokHus.com er også underlagt vår personvernerklæring, som forklarer hvordan personopplysninger kan bli samlet inn og brukt.
                     </p>
 
                 </div>
@@ -199,41 +183,38 @@ export function TermsOfUse()
             <article className="legalArticle">
                 <h3 className="legalHeading">
 
-                    Changes to Terms
+                    Endringer av vilkår
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        BokHus may update these Terms of Use at any time.
-                        Updated versions will be published on this page with a revised date.
+                        BokHus kan oppdatere disse brukervilkårene når som helst. Oppdaterte versjoner vil bli publisert på denne siden med en revidert dato.
                     </p>
                     <p className="legalText">
-                        Continued use of the website after changes constitutes acceptance
-                        of the updated terms.
+                        Fortsatt bruk av nettstedet etter endringer utgjør en aksept av de oppdaterte vilkårene.
                     </p>
                 </div>
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
 
-                    Governing Law
+                    Gjeldende lov
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        These Terms shall be governed by the laws of Norway.
+                        Disse vilkårene skal være underlagt norsk lov.
                     </p>
                     <p className="legalText">
-                        Any disputes arising from the use of BokHus.com shall be subject
-                        to the jurisdiction of Norwegian courts.
+                        Eventuelle tvister som oppstår fra bruken av BokHus.com skal være underlagt norske domstolers jurisdiksjon.
                     </p>
                 </div>
             </article>
             <article className="legalArticle">
                 <h3 className="legalHeading">
-                    Contact
+                    Kontakt
                 </h3>
                 <div className="textDiv">
                     <p className="legalText">
-                        For questions regarding these Terms, please contact BokHus. You can use the "Contact Us" form to do this by clicking this <Link className="legalContactLink" href="/Contact">link</Link>.
+                        For spørsmål angående disse vilkårene, vennligst kontakt BokHus. Du kan bruke "Kontakt oss"-skjemaet for å gjøre dette ved å klikke på denne <Link className="legalContactLink" href="/Contact">lenken</Link>.
                     </p>
 
                 </div>

@@ -1,30 +1,29 @@
-
 export function AmazonAffilate()
 {
     return (
         <section className="legalSection fadeInAnim">
             <h2 className="legalHeadingTop">
-                Affiliate Disclosure
+                Affiliate-erklæring
             </h2>
             <article className="legalArticle">
                 {/* <h3 className="legalHeading">
 
-                    Introduction
+                    Introduksjon
                 </h3> */}
                 <div className="textDiv">
                     <p className="legalText">
-                        This website contains links to books published by our company and sold through Amazon.
+                        Dette nettstedet inneholder lenker til bøker utgitt av vårt selskap og solgt gjennom Amazon.
 
                     </p>
-                    <strong>As an Amazon Associate we earn from qualifying purchases.</strong>
+                    <strong>Som Amazon Associate tjener vi på kvalifiserte kjøp.</strong>
                     <p className="legalText">
-                        If you purchase one of our books through an Amazon link on this website, we may receive both the normal proceeds from the sale of the book and an Amazon Associates commission, at no additional cost to you.
+                        Hvis du kjøper en av bøkene våre via en Amazon-lenke på dette nettstedet, kan vi motta både det normale overskuddet fra salget av boken og en Amazon Associates-provisjon, uten ekstra kostnad for deg.
                     </p>
                     <p className="legalText">
-                        We include these links to make it easy for readers to purchase our books through their preferred Amazon marketplace.
+                        Vi inkluderer disse lenkene for å gjøre det enkelt for lesere å kjøpe bøkene våre gjennom deres foretrukne Amazon-markedsplass.
                     </p>
                     <p className="legalText">
-                        Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
+                        Amazon og Amazon-logoen er varemerker som tilhører Amazon.com, Inc. eller deres tilknyttede selskaper.
                     </p>
                 </div>
             </article>

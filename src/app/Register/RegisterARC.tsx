@@ -28,7 +28,7 @@ export function RegisterARC()
     return (
         <article key={"#ARCTeam#"} className={`${styles.arcArticle} flex fadeInFromBelowAnim`}>
             <div className={styles.arcHeadingIconWrapper}>
-                <h2 className={styles.registerARC}>ADVANCED READERS TEAM SPØRSMÅL</h2>
+                <h2 className={styles.registerARC}>ADVANCED READERS COPY SPØRSMÅL</h2>
                 <AiOutlineTeam className={styles.teamIcon} size="2.5rem" />
             </div>
 
