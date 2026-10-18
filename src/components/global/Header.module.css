@@ -106,6 +106,15 @@ display: flex;
   display: none;
 }
 
+.flagIconWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
 .flagLink {
   display: flex;
   flex-direction: column;
