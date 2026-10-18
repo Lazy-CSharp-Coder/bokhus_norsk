@@ -29,8 +29,8 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availab
                     </div>
 
 
-                    <p className={styles.singleBookCardReleaseText}>ORIGINALLY RELEASED IN <span className={styles.sbkReleaseYear}>{releaseYear}</span></p>
-                    <p className={styles.singleBookCardSynopsisText}>Book description / synopsis :</p>
+                    <p className={styles.singleBookCardReleaseText}>ORGINALT UTGITT I <span className={styles.sbkReleaseYear}>{releaseYear}</span></p>
+                    <p className={styles.singleBookCardSynopsisText}>Beskrivelse / sammendrag :</p>
                 </div>
                 <div className={styles.singleBookCardSubDescriptionWrapper}>
 
