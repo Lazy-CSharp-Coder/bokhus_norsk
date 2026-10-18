@@ -3,7 +3,7 @@ import { CopyButton } from "./CopyButton";
 import { useState } from "react";
 import styles from "./AdminTabs.module.css";
 import { type UserInfo } from "./page";
-import { genresDef } from "../Register/registerSchema";
+import { genresDef, languageDef } from "../Register/registerSchema";
 import { BokHusNo } from "@/components/common/BokHusCom";
 import { ErrorBokhus } from "../ErrorBokhus";
 import Select from "react-select";
@@ -80,7 +80,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
 {
     const [tab, setTab] = useState<Tabs>("Newsletters");
     const [options, setOptions] = useState<ARCSendoutOptions>(defaultsSendouts);
-    const [newsLetterOptions, setNewsLetterOptions] = useState<NewsLetterOptions>({ preferredLanguage: defaultsSendouts.preferredLanguage });
+    const [newsLetterOptions, setNewsLetterOptions] = useState<NewsLetterOptions>({ preferredLanguage: ["English"] });
     const [prevSendout, setPrevSendout] = useState<SelectorOption | null>(null);
     const [reminderSendout, setReminderSendout] = useState<SelectorOption | null>(null);
     const [includeFormer, setIncludeFormer] = useState<boolean>(false);
@@ -215,7 +215,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                     <h2 className={styles.newsLetterHeading}>Newsletter subscribers</h2>
                     <div className={styles.languageSelectionInputDiv} style={{ width: "fit-content" }}>
                         <h3 className={styles.selectHeading}>Include users with preferred language :   </h3>
-                        {languageOptions.map((item, index) =>
+                        {languageDef.map((item, index) =>
                             <label className={styles.genreLabel} key={`${item} + ${index} key newsLetterLanguageOptions`}>
                                 <input type="checkbox" checked={newsLetterOptions.preferredLanguage.includes(item)} value={item} onChange={(e) => handleNewsLetterLanguageChange(e, item)} />{item}
                             </label>)
@@ -293,7 +293,7 @@ export function AdminTabs({ users, booksInDatabase }: AdminData)
                                     </div>
                                     <div className={styles.languageSelectionInputDiv}>
                                         <h3 className={styles.selectHeading}>Include users with preferred language :   </h3>
-                                        {languageOptions.map((item, index) =>
+                                        {languageDef.map((item, index) =>
                                             <label className={styles.genreLabel} key={`${item} + ${index} key`}>
                                                 <input type="checkbox" checked={preferredLanguage.includes(item)} value={item} onChange={(e) => handleLanguageChange(e, item)} />{item}
                                             </label>)
