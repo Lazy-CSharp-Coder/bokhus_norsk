@@ -52,17 +52,17 @@ export function DeleteForm()
 
         <form className={styles.deleteForm} action={handleAction}>
             <div className={styles.deleteFormHeadingIconWrapper}>
-                <h3 className={styles.deleteFormHeading}> PLEASE CHOOSE DELETE OPTIONS</h3>
+                <h3 className={styles.deleteFormHeading}> VENNLIGST VELG SLETTINGSALTERNATIVER</h3>
                 <RiDeleteBin6Line className={styles.deleteFormIcon} size="1.5rem" />
             </div>
 
             <label className={styles.deleteLabel} htmlFor="deleteProfile">
-                  <input name="profile" className={styles.deleteCheck} type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} disabled={options.clerk} /> Delete profile information at Bokhus  </label>
+                  <input name="profile" className={styles.deleteCheck} type="checkbox" id="deleteProfile" checked={options.profile} onChange={handleChange} disabled={options.clerk} /> Slett profil på Bokhus  </label>
 
-            <label className={styles.deleteLabel} htmlFor="deleteClerk"><input name="clerk" className={styles.deleteCheck} type="checkbox" id="deleteClerk" checked={options.clerk} onChange={handleChange} />Delete login information at Clerk  </label>
+            <label className={styles.deleteLabel} htmlFor="deleteClerk"><input name="clerk" className={styles.deleteCheck} type="checkbox" id="deleteClerk" checked={options.clerk} onChange={handleChange} />Slett login informasjon hos Clerk  </label>
             <div className={styles.deleteButtonDiv}>
-                <button type="submit" className={`submitButton ${styles.deleteButton} ${noChecked ? styles.disable : ""}`} disabled={noChecked || pending}>{pending ? "Deleting data..." : "Delete"}</button>
-                <button type="button" className={`submitButton ${styles.cancelButton}`} onClick={() => router.back()}>Cancel</button>
+                <button type="submit" className={`submitButton ${styles.deleteButton} ${noChecked ? styles.disable : ""}`} disabled={noChecked || pending}>{pending ? "Sletter data..." : "Slett"}</button>
+                <button type="button" className={`submitButton ${styles.cancelButton}`} onClick={() => router.back()}>Avbryt</button>
             </div>
 
         </form>
