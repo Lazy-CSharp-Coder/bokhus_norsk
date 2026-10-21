@@ -28,7 +28,7 @@
   --defaultBorder: 2px solid var(--borderIconColor);
   --errorTextColor: rgb(175, 92, 76);
   --errorBokhusIconSize : 5rem;
-
+  --postItYellow : #FFF59D;
   --pageHeadingFontSize : 2.5rem;
   --pageDescriptionFontSize : 1.5rem;
 
