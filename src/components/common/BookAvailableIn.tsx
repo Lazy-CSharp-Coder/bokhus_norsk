@@ -112,8 +112,6 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                     availabilityNor.map((item, index) =>
                         <li key={index + "#AV"} className={classNameItem ? classNameItem : styles.availabilityItem} style={{ fontSize: fontSize ? fontSize : "" }} >
                             {item.bookType}
-
-
                         </li>
                     )
                 }
