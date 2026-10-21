@@ -1,41 +1,49 @@
 :root {
 
-    --singleBookDescriptionFontSize: 1.2rem;
     --coverTitleColor: #ecc776;
+
+    /* --marginBookList: 10vw; */
+
 }
-.singleBookCard {
 
-    display: flex;
-    flex-direction: row;
 
-    align-items: stretch;
+.bookCard {
+
+    display: grid;
+    grid-template-columns: 32% 65%;
+    column-gap: 3%;
+
+      
+    justify-self: center;
     font-family: var(--libreFont);
-    gap: 2.6rem;
-    padding: 2rem 2rem;
+
+    padding: 1.5rem 1.6rem;
     color: var(--myWhiteColor);
 
     /* margin-right: var(--marginBookList); */
-
+    align-self: center;
     /* border: 1px solid rgba(221, 221, 221, 0.8); */
     background-color: var(--backgroundBook);
-    align-items: center;
-    height: 100%;
+    min-height: 100%;
+    height: fit-content;
     overflow: auto;
     width: fit-content;
-    margin-right: 1rem;
     border-radius: var(--defaultBorderRadius);
     /* width: 84%; */
     cursor: pointer;
-    position: relative;
+    
 }
 
 /* css classes for image component next.js */
 
-.singleBookCardImage {
+.bookImage {
     position: relative;
-    width: 27.5rem;
+
+    max-width: 70vw;
+
     height: auto;
-    flex: 0 1 auto;
+    align-self: center;
+    flex: 0 0 auto;
     /* object-fit: contain; */
     aspect-ratio: 2/3;
     -webkit-box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.8);
@@ -43,40 +51,36 @@
 
 }
 
-
-.singleBookCardInfoDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem;
-    flex: 2;
+.bookFactsAndDescriptionWrapper {
+    display: grid;
+    /* grid-template-rows: auto fit-content; */
+    width: 100%;
+    justify-items: start;
+    /* background-color: blue; */
+    overflow: auto;
 
 }
 
-
-
-.singleBookCardFactDiv {
+.bookFactsDiv {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
     justify-content: space-evenly;
 
 
 }
 
-
-.singleBookCardHeadingWrapper {
+.bookHeadingWrapper {
     display: flex;
     flex-direction: column;
-    font-size: 1.4rem;
+    font-size: 0.7rem;
     gap: 0.4rem;
+
 
 }
 
-.singleBookCardBookTitle {
+.bookTitle {
     font-size: 2.4rem;
-
     font-weight: 200;
     padding: 0;
     margin: 0;
@@ -85,50 +89,67 @@
     font-family: inherit;
 }
 
-.singleBookCardAvailabilitySpan {
-    padding-top: 0.7rem;
-    padding-left: 0.1rem;
-    /* padding-bottom: 0.5rem; */
-    font-size: 1rem;
+
+.bookInfoDiv {
+    font-size: 1.3rem;
+    font-style: oblique;
+   
+
+    
+
 }
 
-.singleBookCardReleaseText {
-    color: rgba(221, 221, 221, 1);
-    font-size: 1.2rem;
-    font-family: var(--libreFont);
+.bookNumberText {
+    color: lightblue;
+    font-style: italic;
+}
 
+.bookHeadingAvailableSeparator {
+    display: flex;
+    justify-content:flex-start;
+    padding-top: 0.7rem;
+    padding-left: 0.1rem;
+    width:100%;
+}
+
+
+.bookReleaseInfo {
+    color: rgba(221, 221, 221, 1);
+    font-size: 1.1rem;
+    font-family: var(--libreFont);
+    text-align: center;
+    text-wrap: wrap;
+
+     
     /* font-family: var(--descriptionFont); */
 }
 
-.sbkReleaseYear {
-    color: lightblue;
-}
-
-
-.singleBookCardSynopsisText {
+.bookSynopsisText {
     font-style: italic;
     font-family: var(--robotoFont);
 
     color: var(--myWhiteColor);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding-bottom: 0.25rem;
     border-bottom: 1px solid var(--myWhiteColor);
 }
 
+.bookReleaseYear {
+    color: lightblue;
+}
 
-.singleBookCardSubDescriptionWrapper {
+.bookDescriptionSubWrapper {
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
     height: 100%;
+    width: 80%;
 
 }
 
-
-.singleBookCardSubTitle {
-    font-size: calc(var(--singleBookDescriptionFontSize) + 0.08rem);
+.bookSubTitle {
+    font-size: calc(var(--bookDescriptionFontSize) + 0.06rem);
 
     font-weight: bold;
     /* font-style: italic; */
@@ -138,117 +159,135 @@
 
 }
 
+/* .avalableTypes {
+    color: white;
+} */
 
-.singleBookCardDescriptionList {
+.bookDescriptionList {
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: space-evenly;
-    max-width: 90%;
+    max-width: 100%;
     height: max-content;
-    font-size: var(--singleBookDescriptionFontSize);
-    gap: 1rem;
+    /* background-color: blueviolet; */
+    /* font-weight: 100; */
+    font-size: var(--bookDescriptionFontSize);
+    height: 95%;
     color: var(--myWhiteColor);
+    padding-bottom: 1rem;
     font-family: var(--robotoFont);
+
+    /* uten space-evenly */
+
     line-height: 1.3;
-  
-}
-
-
-/* Media queries for SingleBookCard */
-
-
-
-@media (max-width: 199.99em)
-/* usikker */
-    {}
-
-@media (max-width: 159.99em) {}
-
-/* max 1920 */
-@media (max-width: 119.99em) {
-
-    .singleBookCardSection {
-        width: 70%;
-
-    }
+    /*    gap: 12px;
+    */
+    /* margin-top: 20px; */
 
 }
+
+/* Media queries for BookCard */
+
 
 /* 1440px */
 
-@media (max-width: 89.99em) {}
-
-/* max 1280 */
-@media (max-width: 79.99em) {}
-
-
-
 @media (max-width: 63.99em) {
 
-    .singleBookCard {
-        margin: 3rem 0;
+    .bookCard {
 
-        /* background : red; */
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 2.5rem 2rem;
-
-
+        margin: 0;
+        /* padding-top: 2rem; */
+        padding: 3rem 0rem;
         height: max-content;
         gap: 3rem;
-
         position: static;
         align-items: center;
         justify-content: top;
-
+        /* flex: 1; */
+        overflow: hidden;
+        max-width: 94%;
 
     }
 
-
-    .singleBookCardImage {
-        width: 95%;
-        height: auto;
+    .bookImage {
+        max-width: 87%;
+        width: 87%;
+        flex: 0 0 auto;
     }
 
-    .singleBookCardInfoDiv {
+    .bookDivForSizing {
+        display: none;
+    }
+
+    .bookHeadingWrapper {
         align-items: center;
-        gap: 2rem;
+        width: 100%;
+
     }
 
-    .singleBookCardHeadingWrapper {
-        align-items: center;
-        gap: 1rem;
+    .bookTitle {
+        font-size: 2.9rem;
+        text-align: center;
+        max-width: 90%;
     }
 
-    .singleBookCardBookTitle {
+    .bookInfoDiv {
+        font-size: 1.4rem;
         text-align: center;
     }
 
-    .singleBookCardAvailabilitySpan {
+    .bookHeadingAvailableSeparator {
+
+        margin: 1rem;
+        font-size: 1.1rem;
         width: 100%;
+        justify-content: center;
     }
 
-    .singleBookCardFactDiv {
+    .bookFactsAndDescriptionWrapper {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         gap: 1.5rem;
+        /* padding: 0 0.2rem; */
+        /* width: 98%; */
+        flex: 1;
     }
 
-    .singleBookCardReleaseText {
-        font-size: 1.27rem;
-    }
-
-    .singleBookCardSynopsisText {
-        font-size: 1.5rem;
-    }
-
-    .singleBookCardSubDescriptionWrapper {
+    .bookFactsDiv {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
         align-items: center;
     }
 
-    .singleBookCardDescriptionList {
-        max-width: 95%;
+    .bookReleaseInfo {
+        font-size: 1.4rem;
+        text-align: center;
     }
 
+    .bookSynopsisText {
+        font-size: 1.52rem;
+        text-align: center;
+    }
+
+    .bookDescriptionSubWrapper {
+        gap: 2rem;
+        /* padding: 0 1.5rem; */
+        align-items: center;
+    }
+
+    .bookSubTitle {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .bookDescriptionList {
+        font-size: 1.4rem;
+        gap: 1rem;
+
+    }
 }

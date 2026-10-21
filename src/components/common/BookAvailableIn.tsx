@@ -136,7 +136,7 @@ export function BookAvailableIn({ availability, classNameItem, fontSize, buyLink
                         </div>
                         <div className={styles.buyLinkDiv}>
                             {buyLink ?
-                                <Link className={styles.buyLink} href={buyLink}>Gå til kjøpsside <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className={styles.popUpLink} />  </Link> : <p className={styles.linkNotThereText}>Ingen link til kjøpsside tilgjengelig <PiGlobeSimpleXLight className={styles.notThereLink} size={fontSize ? fontSize : "1.1rem"} /></p>}
+                                <Link className={styles.buyLink} href={buyLink}>Gå til kjøpsside <GoLinkExternal size={fontSize ? fontSize : "0.9rem"} className={styles.popUpLink} />  </Link> : <p className={styles.linkNotThereText}>Ikke utgitt. Ingen link tilgjengelig. <PiGlobeSimpleXLight className={styles.notThereLink} size={fontSize ? fontSize : "1.1rem"} /></p>}
 
                         </div>
                         <p className={styles.amazonTextPopup}>

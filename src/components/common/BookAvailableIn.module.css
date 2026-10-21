@@ -159,19 +159,22 @@
 
 }
 
-.buyLink,
-.linkNotThereText {
+.buyLink, .linkNotThereText {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: left;
-    padding-left: 0.1rem;
+    justify-content: space-between;
+    padding-left:0.1rem;
+    padding-right: 0.6rem;
     gap: 0.8rem;
     color: rgba(13, 25, 116);
     width: 100%;
     cursor: pointer;
 
 }
+
+
+
 
 .linkNotThereText {
     gap: 2rem;

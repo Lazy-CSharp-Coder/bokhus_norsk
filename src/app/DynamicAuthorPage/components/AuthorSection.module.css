@@ -1,32 +1,33 @@
 .authorSection {
     display: flex;
     flex-direction: column;
-     margin-top: 3%;
+    margin-top: 3%;
     justify-content: center;
     gap: 2.5rem;
-    align-items:center;
-    padding:0;
+    align-items: center;
+    padding: 0;
     /* width: 74%; */
     max-width: 103.4rem;
-    height:fit-content;
+    height: fit-content;
 
 }
 
 .seriesCardList {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content: space-around;
     width: 70%;
+    gap: 3.2rem;
 
 }
 
 @media (max-width: 63.99em) {
 
-.authorSection {
-    max-width: 88%;
-}
+    .authorSection {
+        max-width: 88%;
+    }
 
-.seriesCardList {
-    width: 100%;
-}
+    .seriesCardList {
+        width: 100%;
+    }
 }

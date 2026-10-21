@@ -105,6 +105,7 @@ export interface SeriesInfoProps
     authors: string[],
     bestSellerIntro?: string,
     bestSellerList?: string[],
+    shouldDisplayDescription? : boolean
 
 
 }

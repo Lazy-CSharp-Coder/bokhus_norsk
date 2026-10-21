@@ -1,51 +1,53 @@
-import { SingleBookCardProps } from "@/types/booktypes";
-import { urlFor } from "@/functions/urlFor";
+import type { BookCardProps } from "@/types/booktypes";
+import { numberToWords } from "convert-number-to-words";
 import Image from "next/image";
-import { BookAvailableIn } from "@/components/common/BookAvailableIn";
-import { ByAuthor } from "@/components/common/ByAuthor";
+import { BookAvailableIn } from "../../../components/common/BookAvailableIn";
+import { urlFor } from "@/functions/urlFor";
+import { BookInSerieText  } from "@/app/DynamicSeriePage/components/BookInSerieText";
 import styles from "./SingleBookCard.module.css";
+import { useWindowWidth } from "@/components/hooks/useWindowWidth";
 
-
-export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availability, releaseYear, subTitle, description }: SingleBookCardProps)
+export function SingleBookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink }: BookCardProps)
 {
-    console.log(authorNames);
+
+    const availabilityArray = !!availability ? availability : [{ bookType: "not available yet", isbn: "no isbn available yet" }];
+    const width = useWindowWidth();
+    const tabletMode = width ? width < 1024 ? true : false : false;
     const imageSrc = urlFor(imageBook, 800);
     return (
-        <div className={`${styles.singleBookCard} fadeInFromBelowAnim`} style={{ animationDuration: "1.2s", animationDelay: "0.8s" }}>
-            <div className={styles.singleBookCardImage} >
-                <Image className="image" src={imageSrc} alt={`book image ${bookTitle}`} fill={true} sizes="(max-width: 800px) 100vw, 50vw" />
+        <div className={`${styles.bookCard} fadeInFromBelowAnim`} style={{ animationDuration: "1.2s" }}>
+            <div className={styles.bookImage}>
+                <Image className="image" src={imageSrc} alt={`book image ${bookTitle}`} fill={true} sizes="(max-width: 800px) 100vw, 50vw" loading="eager" />
             </div>
-            <div className={styles.singleBookCardInfoDiv}>
-                <div className={styles.singleBookCardFactDiv}>
+            <div className={styles.bookFactsAndDescriptionWrapper}>
+                <div className={styles.bookFactsDiv}>
 
-                    <div className={styles.singleBookCardHeadingWrapper}>
-                        <h3 className={styles.singleBookCardBookTitle}>{bookTitle}</h3>
-                        <ByAuthor authors={authorNames} />
-                        <span className={styles.singleBookCardAvailabilitySpan}>
+                    <div className={styles.bookHeadingWrapper}>
+                        <h2 className={styles.bookTitle}>{bookTitle}</h2>
+                        <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
+                        <span className={styles.bookHeadingAvailableSeparator}>
 
-                            <BookAvailableIn availability={availability} fontSize="1rem"/>
+                            <BookAvailableIn availability={availabilityArray} bookTitle={bookTitle} buyLink={buyLink} />
                         </span>
 
                     </div>
 
-
-                    <p className={styles.singleBookCardReleaseText}>ORGINALT UTGITT I <span className={styles.sbkReleaseYear}>{releaseYear}</span></p>
-                    <p className={styles.singleBookCardSynopsisText}>Beskrivelse / sammendrag :</p>
+                    <p className={styles.bookReleaseInfo}>ORGINALT UTGITT I <span className={styles.bookReleaseYear}>{releaseYear}</span></p>
+                    <p className={styles.bookSynopsisText}>Beskrivelse / sammendrag :</p>
                 </div>
-                <div className={styles.singleBookCardSubDescriptionWrapper}>
+                <div className={styles.bookDescriptionSubWrapper}>
 
                     {subTitle &&
-                        <h4 className={styles.singleBookCardSubTitle}>{`${subTitle}`}</h4>
+                        <h4 className={styles.bookSubTitle}>{`${subTitle}`}</h4>
                     }
 
-
-                    <ul className={styles.singleBookCardDescriptionList}>
+                    <div className={styles.bookDescriptionList}>
                         {description.map((item, index) =>
                         (
-                            <p key={`description#single-${_id}-${index}`}>{item}</p>
+                            <p key={`description-${_id}-${index}`}>{item}</p>
 
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
 
@@ -54,4 +56,3 @@ export function SingleBookCard({ _id, imageBook, bookTitle, authorNames, availab
 
     );
 }
-
