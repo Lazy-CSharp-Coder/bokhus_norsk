@@ -1,9 +1,5 @@
 "use client";
-import { urlFor } from "@/functions/urlFor";
-import Image from "next/image";
-import { BookAvailableIn } from "@/components/common/BookAvailableIn";
-import { ByAuthor } from "@/components/common/ByAuthor";
-import { BookAndReviews } from "@/app/DynamicSeriePage/components/BookListAndCard";
+
 import { Book, Series } from "@/types/booktypes";
 import styles from "./SingleBookSection.module.css";
 import { Review } from "@/types/reviewtypes";
@@ -23,7 +19,6 @@ export interface SingleBookSectionProps
 export function SingleBookSection({authors, series, bookToShow, reviewsForBook }: SingleBookSectionProps)
 { 
     const bookForSizing = bookToShow;
-    // console.log("Sanity tag for language is  : " + sanityTag);
 
     return (
         <section className={styles.bookSection}>
