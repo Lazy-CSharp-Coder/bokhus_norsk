@@ -2,13 +2,13 @@ import { client } from "@/sanity/client";
 import type { PageProps } from "@/types/types";
 import type { Author, Book, Series } from "@/types/booktypes";
 import type { Review } from "@/types/reviewtypes";
-import { SingleBookCard } from "./components/SingleBookCard";
+import { SingleBookSection } from "./components/SingleBookSection";
+import { SerieHeader } from "../DynamicSeriePage/components/SerieHeader";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
 import { urlFor } from "@/functions/urlFor";
 import { ErrorBokhus } from "../ErrorBokhus";
-import { ReviewArticle } from "../DynamicSeriePage/components/ReviewArticle";
-import { ReviewScrollButton } from "../DynamicSeriePage/components/ReviewScrollButton";
 import styles from "./SingleBookPage.module.css";
+
 
 
 export default async function DynamicBookPage({ searchParams }: PageProps)
@@ -58,6 +58,8 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
     }
 
     const authorNames: string[] = authors.map((item) => item.name);
+    const bestSellerIntro: string = authors[0].bestSellerIntro ?? "";
+    const bestSellerList: string[] = authors[0].bestSellerList ?? [""];
 
     const serieId = bookToShow.seriesRef._ref;
 
@@ -95,17 +97,22 @@ export default async function DynamicBookPage({ searchParams }: PageProps)
 
     return (
         <main className={styles.singleBookPage}>
+<section className={styles.singleBookCardSection}>
 
-            <BackgroundImage className={styles.singleBookCardBackgroundImaage} src={backgroundImage} />
-            <section className={styles.singleBookCardSection}>
-                <article className={styles.singleBookCardArticle}>
-                    <SingleBookCard _id={bookToShow._id} imageBook={bookToShow.imageBook} bookTitle={bookToShow.bookTitle} authorNames={authorNames} availability={bookToShow.availability} releaseYear={bookToShow.releaseYear} subTitle={bookToShow.subTitle} forLanguagePage={bookToShow.forLanguagePage}
-                        description={bookToShow.description} seriesRef={bookToShow.seriesRef} bookInSeries={bookToShow.bookInSeries} authorUids={bookToShow.authorUids} />
-                    {bookToShow && <ReviewScrollButton />}
-                </article>
-                <ReviewArticle reviewsForBook={reviewsForBook} bookName={bookToShow.bookTitle} />
-            </section>
+            <BackgroundImage className={styles.singleBookPageBackgroundImage} src={backgroundImage} />
 
+                       <SerieHeader key={serieBelonging._id} seriesName={serieBelonging.seriesName} authors={authorNames}
+                           bestSellerIntro={bestSellerIntro} bestSellerList={bestSellerList} shouldDisplayDescription={false} />
+                           <div className={styles.bookSectionWrapper}>
+
+            <SingleBookSection authors={authorNames} series={serieBelonging} bookToShow={bookToShow} reviewsForBook={reviewsForBook}/>
+
+                           </div>
+
+
+</section>
+
+           
         </main>
 
     );
