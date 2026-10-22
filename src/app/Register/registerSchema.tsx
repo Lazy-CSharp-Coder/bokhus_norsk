@@ -28,9 +28,9 @@ export const rulesSchema = z.object({
 // definitions for values in schema
 
 export const languageDef: string[] = ["English", "Norwegian", "German"];
-export const reviewSitesDef = [ "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"] as const;
+export const reviewSitesDef = ["Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"] as const;
 export const noticeDef = ["Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"];
-export const genresDef = ["Historical novels", "Childrens books", "Young adult books", "Self-help books"];
+export const genresDef = ["Historical fiction", "History & Heritage", "Technology & Security", "Educational books", "Literary Classics", "Childrens books"];
 export const readTimeDef = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
 
@@ -43,7 +43,12 @@ export const noticeOptions = [
 ] as const;
 
 export const genresOptions = [
-    "Historiske romaner", "Barnebøker", "Ungdomsbøker", "Selvhjelpsbøker"
+    "Historiske romanar",
+    "Historie og kulturarv",
+    "Teknologi og IT-tryggleik",
+    "Lærebøker og faglitteratur",
+    "Litterære klassikarar",
+    "Barnebøker"
 ] as const;
 
 export const readTimeOptions = [
