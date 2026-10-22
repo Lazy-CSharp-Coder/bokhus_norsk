@@ -66,12 +66,22 @@ const preferredLanguageDef = z.enum(languageDef, { error: "Du må velge ett spr�
 const reviewSitesEnum = z.enum(reviewSitesDef);
 const noticeEnum = z.enum(noticeDef);
 
-const reviewSitesSchema = z.preprocess(
-    (val) => (val == null || val == false) ? [] : val,
-    z.array(reviewSitesEnum).min(1, { message: "Du må krysse av for minst ett av valgene" }
+const reviewSitesObject = z.object({
+    standardSites: z.array(z.enum(reviewSitesDef))
+        .nullish()
+        .transform((val) => val ?? []),
+    userDefinedSite: z.string().optional(),
+}).refine((data) => data.standardSites.length > 0 || !!data.userDefinedSite?.trim(),
+    {
+        message: "Vennligst velg sted eller spesifiser Annet",
+        path: ["standardSites"]
+    }).refine((data) => !data.standardSites.includes("Other") ||
+        (data.userDefinedSite?.trim().length ?? 0) > 1,
+        {
+            message: "Vennligst legg inn hvor det er",
+            path: ["userDefinedSite"]
+        });
 
-
-    ));
 
 const noticeSchema = z.preprocess(
     (val) => (val == null || val == false ? [] : val),
@@ -87,7 +97,7 @@ export const arcSchema = z.object(
         why: z.string(),
         howLong: z.enum(readTimeDef, { error: () => "Du må krysse av for minst ett av valgene" }),
         comfortable: z.enum(["Yes", "No", "Not sure"], { error: () => "Du må krysse av for minst ett av valgene" }),
-        reviewSites: reviewSitesSchema,
+        reviewSites: reviewSitesObject,
         notice: noticeSchema,
         rules: rulesSchema
     }
