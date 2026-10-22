@@ -1,5 +1,6 @@
 "use client";
-import { arcSchema, ARCData, reviewSitesDef, noticeDef, languageOptions, readTimeDef, noticeOptions, readTimeOptions, comfortableOptions, reviewSitesOptions } from "./registerSchema";
+
+import { formatDef, comfortableDef, ARCData, reviewSitesDef, readTimeDef, readTimeOptions, noticeDef, noticeOptions ,  comfortableOptions, reviewSitesOptions } from "./registerSchema";
 import { useFormContext } from "react-hook-form";
 import { FaRegClock } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa6";
@@ -19,9 +20,6 @@ export function RegisterARC()
 {
     const { register, formState: { errors } } = useFormContext<{ arc: ARCData; }>();
 
-    const formatOptions = arcSchema.shape.format.options;
-    const howLongOptions = arcSchema.shape.howLong.options;
-    const comfortableDef = arcSchema.shape.comfortable.options;
 
     console.log("noticeOptions");
     const errorRules: string = "You have to accept this term to continues";
@@ -39,7 +37,7 @@ export function RegisterARC()
                     <FaRegCopy className={styles.inputRegListARCIcon} size="1.7rem" />
                     <label className={styles.languagesText}>Hvilket format foretrekker du å motta ?   {errors.arc?.format && <RegErrorMessage message={errors.arc?.format.message} />}</label>
                     <ul className={styles.multipleChoicesARCList}>
-                        {formatOptions.map((item) => (
+                        {formatDef.map((item) => (
 
                             <li key={item} className={styles.languagePreferredDiv}>
                                 <input type="radio" id={item} value={item} {...register("arc.format")} />

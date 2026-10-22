@@ -105,3 +105,7 @@ export const registerSchema = z.object(
 
     }
 );
+
+
+export const formatDef = arcSchema.shape.format.options;
+export const comfortableDef = arcSchema.shape.comfortable.options;
