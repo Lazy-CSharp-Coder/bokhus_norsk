@@ -388,6 +388,23 @@ textarea {
 } */
 
 
+.reviewLabel {
+    padding-top: 0.3rem;
+    padding-bottom: 0.4rem;
+}
+
+
+.postReviewLabelInput {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.postReviewOtherInput {
+     font-size: var(--regFontSize);
+     padding: 0.2rem;
+}
+
+
 .arcArticle {
     display: flex;
     flex-direction: column;
