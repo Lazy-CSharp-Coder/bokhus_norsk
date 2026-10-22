@@ -14,7 +14,7 @@ export default function Home()
 
   return (
     <>
-      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/hero2.webp" className={styles.heroPageBackground}/>
+      <BackgroundImage key={"#herobackground#"}  src="/images/backgrounds/heroOverlay.webp" className={styles.heroPageBackground}/>
 
       <main className={styles.heroPage}>
 
