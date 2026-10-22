@@ -108,9 +108,9 @@ export function RegisterARC()
                     <ul className={styles.multipleChoicesARCList}>
                         {reviewSitesDef.map((item, index) => (
                             <li key={item} className={styles.languagePreferredDiv}>
-                                <input type="checkbox" id={`#reviewSites#${item}`} value={item} {...register("arc.reviewSites")} />
+                                <input type="checkbox" id={`#reviewSites#${item}`} value={item} {...register("arc.reviewSites.standardSites")} />
                                 <label htmlFor={`#reviewSites#${item}`}>{reviewSitesOptions[index]}</label>
-                                    {(isOtherSelected && item == "Other") && <label className={styles.postReviewLabelInput}> <input className={styles.postReviewOtherInput} type="text" id={`#reviewSites# othertext}`} {...register("arc.reviewSites.userDefinedSite")} placeholder="please specify" />  {errors.arc?.reviewSites?.userDefinedSite && <RegErrorMessage message={errors.arc.reviewSites.userDefinedSite.message}/>} </label>}
+                                    {(isOtherSelected && item == "Other") && <label className={styles.postReviewLabelInput}> <input className={styles.postReviewOtherInput} type="text" id={`#reviewSites# othertext}`} {...register("arc.reviewSites.userDefinedSite")} placeholder="spesifiser" />  {errors.arc?.reviewSites?.userDefinedSite && <RegErrorMessage message={errors.arc.reviewSites.userDefinedSite.message}/>} </label>}
                             </li>
                         ))}
 
