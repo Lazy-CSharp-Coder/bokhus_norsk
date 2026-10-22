@@ -20,14 +20,14 @@ export function ChangeBokhusDomain({ message,linkText, stayText, domainUrl} : Ch
 
     useEffect(() => 
     {
-        const hasAcceptedCookies = localStorage.getItem("cookieConsent");
-        if (hasAcceptedCookies != "true") setShowDialog(true);
+        const hasAcceptedToStay = localStorage.getItem("stayAtThisPage");
+        if (hasAcceptedToStay != "true") setShowDialog(true);
 
     }, []);
 
     const handleClick = () =>
     {
-        localStorage.setItem("cookieConsent", "true");
+        localStorage.setItem("stayAtThisPage", "true");
         setShowDialog(false);
 
     };
