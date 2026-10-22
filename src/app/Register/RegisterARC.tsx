@@ -1,6 +1,7 @@
 "use client";
-import { arcSchema, ARCData, reviewSitesDef, noticeDef, languageOptions, readTimeDef, noticeOptions, readTimeOptions, comfortableOptions, reviewSitesOptions } from "./registerSchema";
-import { useFormContext } from "react-hook-form";
+
+import { formatDef, comfortableDef, ARCData, reviewSitesDef, readTimeDef, readTimeOptions, noticeDef, noticeOptions ,  comfortableOptions, reviewSitesOptions } from "./registerSchema";
+import { useFormContext, useWatch } from "react-hook-form";
 import { FaRegClock } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa6";
 import { TbUserQuestion } from "react-icons/tb";
@@ -17,14 +18,15 @@ import styles from "./RegisterForm.module.css";
 
 export function RegisterARC()
 {
-    const { register, formState: { errors } } = useFormContext<{ arc: ARCData; }>();
-
-    const formatOptions = arcSchema.shape.format.options;
-    const howLongOptions = arcSchema.shape.howLong.options;
-    const comfortableDef = arcSchema.shape.comfortable.options;
-
-    console.log("noticeOptions");
-    const errorRules: string = "You have to accept this term to continues";
+    const { register, control,  formState: { errors } } = useFormContext<{ arc: ARCData; }>();
+  const selectedReviewSites = useWatch({
+        control, 
+        name : "arc.reviewSites.standardSites",
+        defaultValue : []
+    });
+    const isOtherSelected = Array.isArray(selectedReviewSites) &&  selectedReviewSites.includes("Other");
+    
+   const errorRules: string = "Du må akseptere dette for å fortsette";
     return (
         <article key={"#ARCTeam#"} className={`${styles.arcArticle} flex fadeInFromBelowAnim`}>
             <div className={styles.arcHeadingIconWrapper}>
@@ -39,7 +41,7 @@ export function RegisterARC()
                     <FaRegCopy className={styles.inputRegListARCIcon} size="1.7rem" />
                     <label className={styles.languagesText}>Hvilket format foretrekker du å motta ?   {errors.arc?.format && <RegErrorMessage message={errors.arc?.format.message} />}</label>
                     <ul className={styles.multipleChoicesARCList}>
-                        {formatOptions.map((item) => (
+                        {formatDef.map((item) => (
 
                             <li key={item} className={styles.languagePreferredDiv}>
                                 <input type="radio" id={item} value={item} {...register("arc.format")} />
@@ -106,8 +108,9 @@ export function RegisterARC()
                     <ul className={styles.multipleChoicesARCList}>
                         {reviewSitesDef.map((item, index) => (
                             <li key={item} className={styles.languagePreferredDiv}>
-                                <input type="checkbox" id={`#reviewSites#${item}`} value={item} {...register("arc.reviewSites")} />
-                                <label htmlFor={`#reviewSites#${item}`}>{reviewSitesOptions[index]}</label>
+                                <input type="checkbox" id={`#reviewSites#${item}`} value={item} {...register("arc.reviewSites.standardSites")} />
+                                <label className={item == "Other" ? styles.reviewLabel : ""} htmlFor={`#reviewSites#${item}`}>{reviewSitesOptions[index]}</label>
+                                    {(isOtherSelected && item == "Other") && <label className={styles.postReviewLabelInput}> <input className={styles.postReviewOtherInput} type="text" id={`#reviewSites# othertext}`} {...register("arc.reviewSites.userDefinedSite")} placeholder=" vennligst spesifiser" />  {errors.arc?.reviewSites?.userDefinedSite && <RegErrorMessage message={errors.arc.reviewSites.userDefinedSite.message}/>} </label>}
                             </li>
                         ))}
 
