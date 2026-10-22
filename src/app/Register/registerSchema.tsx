@@ -25,10 +25,18 @@ export const rulesSchema = z.object({
 
 });
 
+// definitions for values in schema
+
+export const languageDef: string[] = ["English", "Norwegian", "German"];
+export const reviewSitesDef = [ "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"] as const;
+export const noticeDef = ["Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"];
+export const genresDef = ["Historical novels", "Childrens books", "Young adult books", "Self-help books"];
+export const readTimeDef = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
+
+
+// Options in schema - language dependent
 
 export const languageOptions: string[] = ["Engelsk", "Norsk", "Tysk"];
-export const languageDef: string[] = ["English", "Norwegian", "German"];
-const preferredLanguageDef = z.enum(languageDef, { error: "Du må velge ett språk" }).refine((val) => val !== "", { message: "Du må velge ett språk" });
 
 export const noticeOptions = [
     "Språk", "Flyt", "Karakterer", "Handling", "Historisk nøyaktighet", "Stemning", "Tempo", "Handlingstråd"
@@ -48,11 +56,8 @@ export const reviewSitesOptions = [
     "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Annet"
 ] as const;
 
-export const reviewSitesDef = [ "Amazon", "Goodreads", "Instagram", "Facebook", "Blogg", "Other"] as const;
-export const noticeDef = ["Language", "Flow", "Characters", "Plot", "Historical accuracy", "Mood", "Pace", "Storyline"];
-export const genresDef = ["Historical novels", "Childrens books", "Young adult books", "Self-help books"];
-export const readTimeDef = ["Within a week", "Less than a month", "2-3 months", "4-5 months", "More than 6 months"];
 
+const preferredLanguageDef = z.enum(languageDef, { error: "Du må velge ett språk" }).refine((val) => val !== "", { message: "Du må velge ett språk" });
 const reviewSitesEnum = z.enum(reviewSitesDef);
 const noticeEnum = z.enum(noticeDef);
 
