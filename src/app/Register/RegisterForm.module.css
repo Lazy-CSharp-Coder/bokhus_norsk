@@ -389,8 +389,10 @@ textarea {
 
 
 .reviewLabel {
-    padding: 0.4rem 0;
+    padding-top: 0.3rem;
+    padding-bottom: 0.4rem;
 }
+
 
 .postReviewLabelInput {
     display: flex;
