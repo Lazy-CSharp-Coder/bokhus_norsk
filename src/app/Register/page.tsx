@@ -33,7 +33,7 @@ export default async function Register()
        email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
        userName : user.firstName ? user.fullName ?? "" : "",
         country: "",
-        preferredLanguage: "English",
+        preferredLanguage: "Norwegian",
         genresInterestedIn: [],
         linkProfilePage: "",
         newsLetter: true,
