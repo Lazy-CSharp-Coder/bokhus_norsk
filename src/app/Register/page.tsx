@@ -6,6 +6,7 @@ import {registerSchema, UserData } from "@/app/Register/registerSchema";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { SignIn } from "./SignIn";
 import { BackgroundImage } from "@/components/common/BackgroundImage";
+import { ChangeBokhusDomain } from "@/components/global/ChangeBokhusDomain";
 
 
 export default async function Register() 
@@ -32,7 +33,7 @@ export default async function Register()
        email: user.emailAddresses.find((email) => email.id === user.primaryEmailAddressId)?.emailAddress || "not found",
        userName : user.firstName ? user.fullName ?? "" : "",
         country: "",
-        preferredLanguage: "English",
+        preferredLanguage: "Norwegian",
         genresInterestedIn: [],
         linkProfilePage: "",
         newsLetter: true,
@@ -47,6 +48,8 @@ export default async function Register()
 
     <main className={styles.registerPage}>
       <BackgroundImage className={styles.registerBackground} src="/images/backgrounds/contact.webp"/>
+     
+
       <RegisterForm data={dataToSend} isNewUser={!userData ? true : false} />
     </main>
 
