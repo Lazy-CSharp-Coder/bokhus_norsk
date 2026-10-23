@@ -4,29 +4,30 @@
     font-size: 1rem;
     padding: 0.5rem;
     /* color: var(--myWhiteColor); */
-color: var(--buttonColor);
+    color: var(--buttonColor);
     border-width: 3px;
-    /* border: 2px outset red; */
-    background-color: var(--buttonBackgroundColor);
-    border-top-color:var(--buttonBorderTopLeftColor);
-  border-left-color: var(--buttonBorderTopLeftColor);
-  
-border-radius: 2px;
 
-  /* Shadow on Bottom and Right */
-border-bottom-color: var(--buttonBorderBottomRightColor);
-  border-right-color: var(--buttonBorderBottomRightColor);
+    background-color: var(--buttonBackgroundColor);
+    border-top-color: var(--buttonBorderTopLeftColor);
+    border-left-color: var(--buttonBorderTopLeftColor);
+
+    border-radius: 2px;
+    cursor: pointer;
+
+    /* Shadow on Bottom and Right */
+    border-bottom-color: var(--buttonBorderBottomRightColor);
+    border-right-color: var(--buttonBorderBottomRightColor);
 }
 
-.submitButton:active{
+.submitButton:active {
     /* border: 2px inset var(--borderIconColor); */
     /* Shadow on Top and Left */
-border-top-color:  var(--buttonBorderBottomRightColor);
-  border-left-color:  var(--buttonBorderBottomRightColor);
-  
-  /* Highlight on Bottom and Right */
-  border-bottom-color: var(--buttonBorderTopLeftColor);
-  border-right-color: var(--buttonBorderTopLeftColor);
+    border-top-color: var(--buttonBorderBottomRightColor);
+    border-left-color: var(--buttonBorderBottomRightColor);
+
+    /* Highlight on Bottom and Right */
+    border-bottom-color: var(--buttonBorderTopLeftColor);
+    border-right-color: var(--buttonBorderTopLeftColor);
 }
 
 .submitButton:active span {
@@ -38,10 +39,10 @@ border-top-color:  var(--buttonBorderBottomRightColor);
 .submitMessage {
     display: flex;
     flex-direction: row;
-    gap:1rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
-   
+
 }
 
 .submitIcon {
@@ -53,6 +54,11 @@ border-top-color:  var(--buttonBorderBottomRightColor);
 }
 
 @keyframes submitRotate {
-    0% { transform :rotate(0deg) }
-    100% { transform : rotate(360deg)}
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
 }
