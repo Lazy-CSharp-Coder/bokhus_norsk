@@ -1,0 +1,35 @@
+.routePage {
+    /* position: fixed; */
+
+    width: 100vw;
+    height: 100%;
+ top:0;
+ left:0;
+    /* transform: translate(-50%, -50%); */
+    
+    color: var(--myWhiteColor);
+    z-index: 120;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+ 
+    /* background-color: rgba(20, 20, 20, 0.6); */
+}
+
+
+.backgroundRoutePage {
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8rem;
+    /* margin-top: 10rem; */
+    filter: blur(5px) brightness(40%);
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+

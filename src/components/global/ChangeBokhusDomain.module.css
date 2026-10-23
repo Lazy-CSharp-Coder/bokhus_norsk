@@ -1,0 +1,54 @@
+.cookieDialog {
+    width: 45rem;    
+    gap: 1rem;
+    height:fit-content;
+    padding: 2rem 4rem;
+      background-color: rgb(20, 20, 20, 0.9);
+    border : var(--borderReg);
+    border-radius: var(--borderRadiusReg);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1rem;
+    line-height: 1.4;
+}
+
+.heading {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--myWhiteColor);
+    margin-bottom: 0.5rem;
+}
+
+.cookieText {
+    line-height: 1.4;
+}
+
+.linkPrivacy {
+    color: var(--bokhusFutureColor);
+    cursor: pointer;
+}
+
+/* for ChangeBokhusDomain */
+
+.buttonDiv {
+    display : flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+    width: calc(fit-content + 2rem);
+
+
+}
+
+@media (max-width: 31.99em) {
+
+    .buttonDiv {
+        flex-direction: column;
+        gap:0.5rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+
+    }
+}
