@@ -4,43 +4,74 @@ import Image from "next/image";
 import { ByAuthor } from "@/components/common/ByAuthor";
 
 import { GiBookCover } from "react-icons/gi";
-import styles from  "./SeriesCardLarge.module.css";
+import styles from "./SeriesCardLarge.module.css";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
-export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, fallbackRouteNoBooks, booksAvailable,  animationDelay }: SeriesCardProps)
+export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, booksAvailable, animationDelay }: SeriesCardProps)
 {
 
     const imageSrc = imageUrl.length == 0 ? "/images/placeholderSeriesCard.png" : imageUrl;
     const { seriesName, seriesFact } = seriesSelected;
     return (
-        <Link className={`${styles.seriesCardLarge} flex fadeInFromBelowAnim`} href={booksAvailable ? routeToGo: fallbackRouteNoBooks ?? "/"} style={{ animationDelay: `${animationDelay}ms` }}>
-            <div className={styles.seriesCardLargeImageDiv}>
-                <Image className={styles.seriesCardLargeImage} src={imageSrc} alt={`series card image ${seriesSelected.seriesName}`} fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
-            </div>
+        booksAvailable ?
+            <Link className={`${styles.seriesCardLarge} flex fadeInFromBelowAnim`} href={routeToGo ?? "/"} style={{ animationDelay: `${animationDelay}ms` }}>
+                <div className={styles.seriesCardLargeImageDiv}>
+                    <Image className={styles.seriesCardLargeImage} src={imageSrc} alt={`series card image ${seriesSelected.seriesName}`} fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
+                </div>
 
-            <div className={styles.seriesCardLargeInfoWrapper}>
-                <div className={styles.seriesCardLargeHeadingAuthorWrapper}>
-                    <h3 className={styles.seriesCardLargeHeading}>{seriesName}</h3>
-                    <ByAuthor authors={authors} />
-                    <div className={styles.seriesCardLargeIconFactWrapper}>
-                        <GiBookCover size="var(--seriesCardLargeBookIconSize)" className={styles.seriesCardLargeBookIcon} />
-                        <span className={styles.seriesCardLargeFact}>{seriesFact}</span>
+                <div className={styles.seriesCardLargeInfoWrapper}>
+                    <div className={styles.seriesCardLargeHeadingAuthorWrapper}>
+                        <h3 className={styles.seriesCardLargeHeading}>{seriesName}</h3>
+                        <ByAuthor authors={authors} />
+                        <div className={styles.seriesCardLargeIconFactWrapper}>
+                            <GiBookCover size="var(--seriesCardLargeBookIconSize)" className={styles.seriesCardLargeBookIcon} />
+                            <span className={styles.seriesCardLargeFact}>{seriesFact}</span>
+                        </div>
+
                     </div>
 
+                    <div className={styles.seriesCardLargeTeaserBlurbWrapper}>
+
+                        <span className={styles.seriesCardLargeTeaser}>{seriesSelected.seriesTeaser}</span>
+                        <span className={styles.seriesCardLargeBlurb}>{seriesSelected.seriesBlurb}</span>
+
+                    </div>
+
+
+                    {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
+                </div>
+                <span className={styles.bigGoToArrowSpanSerie}>LES MER<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className={styles.bigGotToArrowSerie} /></span>
+
+            </Link> :
+
+            <div className={`${styles.seriesCardLarge} flex fadeInFromBelowAnim`} style={{ animationDelay: `$  {animationDelay}ms` }}>
+                <div className={styles.seriesCardLargeImageDiv}>
+                    <Image className={styles.seriesCardLargeImage} src={imageSrc} alt={`series card image ${seriesSelected.seriesName}`} fill={true} sizes="(max-width: 400px) 100vw, 50vw" />
                 </div>
 
-                <div className={styles.seriesCardLargeTeaserBlurbWrapper}>
+                <div className={styles.seriesCardLargeInfoWrapper}>
+                    <div className={styles.seriesCardLargeHeadingAuthorWrapper}>
+                        <h3 className={styles.seriesCardLargeHeading}>{seriesName}</h3>
+                        <ByAuthor authors={authors} />
+                        <div className={styles.seriesCardLargeIconFactWrapper}>
+                            <GiBookCover size="var(--seriesCardLargeBookIconSize)" className={styles.seriesCardLargeBookIcon} />
+                            <span className={styles.seriesCardLargeFact}>{seriesFact}</span>
+                        </div>
 
-                    <span className={styles.seriesCardLargeTeaser}>{seriesSelected.seriesTeaser}</span>
-                    <span className={styles.seriesCardLargeBlurb}>{seriesSelected.seriesBlurb}</span>
+                    </div>
 
+                    <div className={styles.seriesCardLargeTeaserBlurbWrapper}>
+
+                        <span className={styles.seriesCardLargeTeaser}>{seriesSelected.seriesTeaser}</span>
+                        <span className={styles.seriesCardLargeBlurb}>{seriesSelected.seriesBlurb}</span>
+
+                    </div>
+
+
+                    {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
                 </div>
+                <span className={styles.bigGoToArrowSpanSerie}>INGEN BØKER TILGJENGELIG<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className={styles.bigGotToArrowSerie} /></span>
 
-
-                {/* <MdOutlineArrowForwardIos size={"7rem"} className="seriesCardLargeArrowIcon" /> */}
             </div>
-               <span className={styles.bigGoToArrowSpanSerie}>{booksAvailable ? "LES MER" : "INGEN BØKER TILGJENGELIG"}<MdOutlineKeyboardDoubleArrowRight size="var(--arrowSizeSerie)" className={styles.bigGotToArrowSerie}/></span>
-
-        </Link>
     );
 }
