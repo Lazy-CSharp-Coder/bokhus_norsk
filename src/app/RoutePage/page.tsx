@@ -32,7 +32,7 @@ export default async function RoutePage()
         <BokHusCom fontSize="14rem" />
       </div>
       <ChangeBokhusDomain onPage="Norske" toPage="Engelsk"
-        domainUrl="https://www.bokhus.no" />
+        domainUrl="https://www.bokhus.com" />
     </main>
   );
 }
