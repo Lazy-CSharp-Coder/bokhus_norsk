@@ -39,6 +39,7 @@
   z-index: -1;
 }
 
+
 .seriesIconHeadingWrapper {
     display: flex;
     flex-direction: row;
@@ -64,6 +65,13 @@
         gap: 0.2rem;
 }
 
+.seriesDialect
+{
+    font-family: var(--robotoFont);
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    color: red;
+}
 
 .seriesName {
     margin: 0;

@@ -23,6 +23,7 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                     <div className={styles.bookHeadingWrapper}>
                         <h2 className={styles.bookTitle}>{bookTitle}</h2>
                         <BookInSerieText bookInSerie={bookInSeries} serieName={seriesName} />
+                         <p className={styles.dialect}>NYNORSK UTGAVE</p>
                         <span className={styles.bookHeadingAvailableSeparator}>
 
                             <BookAvailableIn availability={availability} bookTitle={bookTitle} buyLink={buyLink} />
@@ -31,7 +32,11 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
 
                     </div>
 
-                    <p className={styles.bookReleaseInfo}>ORGINALT UTGITT I <span className={styles.bookReleaseYear}>{releaseYear}</span></p> <p className={styles.dialect}>{dialektNO}</p>
+                    <div className={styles.originalDialectWrapper}>
+                     
+                    </div>
+                       <p className={styles.bookReleaseInfo}>ORGINALT UTGITT I <span className={styles.bookReleaseYear}>{releaseYear}</span>
+                        </p>
                     <p className= {styles.bookSynopsisText}>Beskrivelse / sammendrag :</p>
                 </div>
                 <div className={styles.bookDescriptionSubWrapper}>

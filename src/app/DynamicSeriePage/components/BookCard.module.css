@@ -140,6 +140,21 @@
     width: 100%;
 }
 
+.originalDialectWrapper {
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    
+}
+
+.dialect{
+     font-family: var(--robotoFont);
+    font-size: 1rem;
+font-style: italic;
+    color:lightblue;
+    font-weight: 600;
+}
 
 .bookReleaseInfo {
     color: rgba(221, 221, 221, 1);

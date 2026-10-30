@@ -7,7 +7,7 @@ import styles from "./SerieDescription.module.css";
 
 export function SerieDescription({ seriesName, authors, seriesFact, description, ageGroup, imageUrl,dialectNO }: SerieDescriptionProps)
 {
-    const useDialect = dialectNO ? "Bokmål" : "Nynorsk";
+
     return (
         <div className={`${styles.descriptionSeriesDiv} flex borderFadeInAnim`}style={{ animationDelay: "0.5s", animationDuration: "2s" }}>
             
@@ -20,7 +20,7 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                     <h2 className={styles.seriesName}> {seriesName} </h2>
                     <ByAuthor key={authors + "#Description"} authors={authors} />
                     <p className={styles.seriesDescriptionFact}>{seriesFact}</p>
-                    <p className={styles.seriesDialect}>{useDialect}</p>
+                    <p className={styles.seriesDialect}>{dialectNO}</p>
 
                 </div>
 
