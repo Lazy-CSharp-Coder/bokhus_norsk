@@ -78,8 +78,8 @@ export function BookListAndCard({ authors, series, bookList }: BooksArticleProps
 
     }, [bookToShow]);
 
-    const useDialect = series.dialektNO  ? series.dialektNO == "bokmaal" ? "BOKMÅL UTGAVE" : "NYNORSK UTGAVE" : "";
-    
+    const useDialect = series.dialektNO  ? series.dialektNO == "bokmaal" ? "BOKMÅL" : "NYNORSK" : "";
+
     return (
         <section className={styles.bookSection}>
             <div className={styles.bookArticleReviewButtonWrapper}>

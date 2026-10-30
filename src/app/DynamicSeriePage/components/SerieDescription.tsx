@@ -19,9 +19,10 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                 <div className={`${styles.serieNameFactDiv} fadeInAnim`} style={{ animationDelay: "0.9s", animationDuration: "1.5s" }}>
                     <h2 className={styles.seriesName}> {seriesName} </h2>
                     <ByAuthor key={authors + "#Description"} authors={authors} />
-                    <p className={styles.seriesDescriptionFact}>{seriesFact}</p>
-                    <p className={styles.seriesDialect}>{dialectNO}</p>
+                 
 
+                    <p className={styles.seriesDescriptionFact}>{seriesFact}</p>
+                
                 </div>
 
             </div>
@@ -30,7 +31,7 @@ export function SerieDescription({ seriesName, authors, seriesFact, description,
                 {description.map((item, index) => (
                     <p key={index}>{item}</p>
                 ))}
-
+       {/* <p className={styles.dialect}><span className={styles.utgaveText}>{dialectNO}</span> UTGAVE </p> */}
             </div>
 
             <SerieRecommendedFor ageGroup={ageGroup} />

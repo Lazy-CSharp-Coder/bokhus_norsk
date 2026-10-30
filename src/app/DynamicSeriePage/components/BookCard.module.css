@@ -113,7 +113,7 @@
     font-weight: 200;
     padding: 0;
     margin: 0;
-
+width: 100%;
     color: white;
     font-family: inherit;
 }
@@ -150,10 +150,15 @@
 
 .dialect{
      font-family: var(--robotoFont);
-    font-size: 1rem;
-font-style: italic;
-    color:lightblue;
-    font-weight: 600;
+    font-size: 0.88rem;
+/* font-style: italic; */
+padding-left: 0.2rem;
+    color: var(--coverTitleColor);
+    font-weight: 400;
+}
+
+.utgaveText {
+    color: var(--myWhiteColor);
 }
 
 .bookReleaseInfo {
