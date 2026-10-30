@@ -7,7 +7,7 @@ import { BookInSerieText } from "./BookInSerieText";
 import styles from "./BookCard.module.css";
 import { useWindowWidth } from "@/components/hooks/useWindowWidth";
 
-export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink }: BookCardProps)
+export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYear, bookTitle, subTitle, description, seriesName, buyLink, dialektNO }: BookCardProps)
 {
     const width = useWindowWidth();
     const tabletMode = width ? width < 1024 ? true : false : false;
@@ -26,11 +26,12 @@ export function BookCard({ _id, imageBook, availability, bookInSeries, releaseYe
                         <span className={styles.bookHeadingAvailableSeparator}>
 
                             <BookAvailableIn availability={availability} bookTitle={bookTitle} buyLink={buyLink} />
+                           
                         </span>
 
                     </div>
 
-                    <p className={styles.bookReleaseInfo}>ORGINALT UTGITT I <span className={styles.bookReleaseYear}>{releaseYear}</span></p>
+                    <p className={styles.bookReleaseInfo}>ORGINALT UTGITT I <span className={styles.bookReleaseYear}>{releaseYear}</span></p> <p className={styles.dialect}>{dialektNO}</p>
                     <p className= {styles.bookSynopsisText}>Beskrivelse / sammendrag :</p>
                 </div>
                 <div className={styles.bookDescriptionSubWrapper}>

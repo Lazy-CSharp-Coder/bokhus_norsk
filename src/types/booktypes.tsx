@@ -103,9 +103,10 @@ export interface SeriesInfoProps
 {
     seriesName: string,
     authors: string[],
+
     bestSellerIntro?: string,
     bestSellerList?: string[],
-    shouldDisplayDescription? : boolean
+    shouldDisplayDescription?: boolean;
 
 
 }
@@ -115,6 +116,7 @@ export interface SerieDescriptionProps
     imageUrl: string,
     authors: string[],
     seriesFact: string,
+    dialectNO?: string,
     description: string[],
     ageGroup?: string;
 }
@@ -155,7 +157,8 @@ export interface BookCardProps extends Book
 {
     seriesName: string,
     animationName?: string,
-    saintyTagLanguage: string;
+    saintyTagLanguage: string,
+    dialektNO?: string;
 
 }
 
