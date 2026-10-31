@@ -1,5 +1,6 @@
 :root {
     --arrowSizeSerie: 2.8rem;
+     --coverTitleColor: #ecc776;
 }
 
 .seriesCardLarge {
@@ -20,18 +21,29 @@
     overflow: auto;
 }
 
+.arrowDialectWrapper {
+    position: absolute;
+ top: 8%;
+    right: 3%;
+     display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap:0.1rem;
+}
+
 
 .bigGoToArrowSpanSerie {
+   
+
     font-family: var(--robotoFont);
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: center;
     opacity: 0.4;
-    top: 8%;
-    right: 3%;
+   
     font-size: 1.4rem;
-    position: absolute;
+
     /* height: 100%; */
     /* transform: translateY(-50%); */
 }
@@ -40,6 +52,25 @@
     width: var(--arrowSizeSerie);
     height: var(--arrowSizeSerie);
 
+}
+
+
+.dialect{
+/*  
+    right:3%;
+    top:9%; */
+     font-family: var(--robotoFont);
+    font-size: 0.88rem;
+/* font-style: italic; */
+
+    color: var(--coverTitleColor);
+    font-weight: 400;
+padding-left: 0.05rem;
+    opacity: 0.6;
+}
+
+.utgaveText {
+    color: var(--myWhiteColor);
 }
 
 
@@ -105,10 +136,9 @@
 
 .authorDialectWrapper {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    gap:0.2rem;
 }
 
 
@@ -174,20 +204,6 @@
     transform: translateY(-50%)
 }
 
-
-
-.dialect{
-     font-family: var(--robotoFont);
-    font-size: 0.88rem;
-/* font-style: italic; */
-padding-left: 0.2rem;
-    color: var(--coverTitleColor);
-    font-weight: 400;
-}
-
-.utgaveText {
-    color: var(--myWhiteColor);
-}
 
 @media (max-width: 199.99em) {}
 
