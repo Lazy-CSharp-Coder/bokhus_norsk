@@ -11,7 +11,9 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
 {
 
     const imageSrc = imageUrl.length == 0 ? "/images/placeholderSeriesCard.png" : imageUrl;
-    const { seriesName, seriesFact } = seriesSelected;
+    const { seriesName, seriesFact, dialektNO } = seriesSelected;
+
+       const useDialect = seriesSelected.dialektNO  ? seriesSelected.dialektNO == "bokmaal" ? "BOKMÅL" : "NYNORSK" : "";
     return (
         booksAvailable ?
             <Link className={`${styles.seriesCardLarge} flex fadeInFromBelowAnim`} href={routeToGo ?? "/"} style={{ animationDelay: `${animationDelay}ms` }}>
@@ -22,7 +24,10 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
                 <div className={styles.seriesCardLargeInfoWrapper}>
                     <div className={styles.seriesCardLargeHeadingAuthorWrapper}>
                         <h3 className={styles.seriesCardLargeHeading}>{seriesName}</h3>
-                        <ByAuthor authors={authors} />
+                   <div className={styles.authorDialectWrapper}>
+                           <ByAuthor authors={authors} />
+                              <p className={styles.dialect}>{useDialect} <span className={styles.utgaveText}>UTGAVE</span></p>
+                     </div>
                         <div className={styles.seriesCardLargeIconFactWrapper}>
                             <GiBookCover size="var(--seriesCardLargeBookIconSize)" className={styles.seriesCardLargeBookIcon} />
                             <span className={styles.seriesCardLargeFact}>{seriesFact}</span>
@@ -52,7 +57,11 @@ export function SeriesCardLarge({ seriesSelected, authors, imageUrl, routeToGo, 
                 <div className={styles.seriesCardLargeInfoWrapper}>
                     <div className={styles.seriesCardLargeHeadingAuthorWrapper}>
                         <h3 className={styles.seriesCardLargeHeading}>{seriesName}</h3>
-                        <ByAuthor authors={authors} />
+                    
+                     <div className={styles.authorDialectWrapper}>
+                           <ByAuthor authors={authors} />
+                              <p className={styles.dialect}>{useDialect} <span className={styles.utgaveText}>UTGAVE</span></p>
+                     </div>
                         <div className={styles.seriesCardLargeIconFactWrapper}>
                             <GiBookCover size="var(--seriesCardLargeBookIconSize)" className={styles.seriesCardLargeBookIcon} />
                             <span className={styles.seriesCardLargeFact}>{seriesFact}</span>

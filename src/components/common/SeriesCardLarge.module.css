@@ -103,6 +103,15 @@
 
 }
 
+.authorDialectWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
 .seriesCardLargeBookIcon {
     --seriesCardLargeBookIconSize: 1.7rem;
     color: rgb(141, 141, 141);
@@ -163,6 +172,21 @@
     opacity: 0.1;
     right: 2%;
     transform: translateY(-50%)
+}
+
+
+
+.dialect{
+     font-family: var(--robotoFont);
+    font-size: 0.88rem;
+/* font-style: italic; */
+padding-left: 0.2rem;
+    color: var(--coverTitleColor);
+    font-weight: 400;
+}
+
+.utgaveText {
+    color: var(--myWhiteColor);
 }
 
 @media (max-width: 199.99em) {}
