@@ -1,6 +1,17 @@
 import { clerkMiddleware  } from "@clerk/nextjs/server";
 
-export default clerkMiddleware();
+export default clerkMiddleware((_auth, request) => 
+{
+    const comingSoon = process.env.COMING_SOON !== "false";
+    const pathname = request.nextUrl.pathname;
+    const isApiRoute = pathname === "/api" || pathname.startsWith("/api/");
+    if(comingSoon && isApiRoute) {
+        return new Response("Servic unavailable",{ status : 503});
+    }
+}
+
+
+);
 
 export const config = {
     matcher : [
