@@ -6,6 +6,7 @@ import { Libre_Baskerville, Roboto } from "next/font/google";
 import { Footer } from "@/components/global/Footer";
 import { StateProvider } from "@/globalStates";
 import { CookieBanner } from "@/components/global/CookiesBanner";
+import { ComingSoon } from "./ComingSoon";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--libreFont",
@@ -29,6 +30,8 @@ export const metadata: Metadata = {
   }
 };
 
+const comingSoon = process.env.COMING_SOON !== "false";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +41,8 @@ export default function RootLayout({
   return (
     <html lang="no" data-scroll-behavior="smooth">
       <body className={`${libreBaskerville.variable} ${roboto.variable}`}>
-
+        {comingSoon  ? <ComingSoon/>   :
+            
         <ClerkProvider
           localization={{
 
@@ -54,7 +58,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </StateProvider>
-        </ClerkProvider>
+        </ClerkProvider>}
       </body>
     </html>
   );
