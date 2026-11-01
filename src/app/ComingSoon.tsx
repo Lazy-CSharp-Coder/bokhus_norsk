@@ -1,6 +1,9 @@
 import { BokHusNo } from "@/components/common/BokHusCom";
 import styles from "./ComingSoon.module.css";
 import { ExpandingLine } from "@/components/common/ExpandingLine";
+import { QuotesBottom } from "@/components/common/QuotesBottom";
+import { LiaSwatchbookSolid } from "react-icons/lia";
+
 export function ComingSoon()
 {
     return (
@@ -10,23 +13,29 @@ export function ComingSoon()
 
             </div>
             <div className={`${styles.message} fadeInAnim`}>
-          
 
-                <h1 className="fadeInAnim" >Kommer snart </h1>
-             
-                 <div className={`${styles.comingSoonTextDiv} fadeInAnim`} style={{animationDelay : "2.5s"}}>
- <p> Vi er nå inne i de siste forbredelser for å legge ut denne siden.</p>
-                 <p>Da kommer det norske bøker fra oss her</p>
 
-                 </div>
-                 
-                 <ExpandingLine lineSize={1} animationDuration="2s"/>   
-     <span className="scaleInAnim" style={{ display: "inline-block", animationDelay: "1s", animationDuration: "2s" }}>
-                    <BokHusNo fontSize="2rem" /> 
+                <h1 className={`${styles.heading} fadeInAnim`} >Kommer snart
 
+<LiaSwatchbookSolid size="2.1rem"/>
+                </h1>
+                <ExpandingLine lineSize={1} animationDuration="0s" animationDelay="0s" />
+                <div className={`${styles.comingSoonTextDiv} fadeInAnim`} style={{ animationDuration: "2.2s" }}>
+                    <p> Vi er nå inne i de siste forbredelser for å legge ut denne siden.</p>
+                    <p>Da kommer det norske bøker fra oss på denne adressen.</p>
+
+                </div>
+
+                <QuotesBottom fontSize="1.2rem" />
+                <ExpandingLine lineSize={1} animationDuration="2.5s" animationDelay="5s" />
+                <span className={`${styles.animSpanBokhus} scaleInAnim`} style={{ animationDelay: "7s", animationDuration: "1s" }}>
+
+                    <BokHusNo fontSize="1rem" />
 
                 </span>
-          
+
+
+
             </div>
 
         </main>

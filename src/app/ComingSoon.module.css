@@ -2,7 +2,8 @@
     display: flex;
     flex-grow: 1;
     justify-content: center;
-    align-items: center;
+    align-items:center;
+    padding-bottom:15rem;
   
 }
 .backgroundComingSoonPage {
@@ -20,15 +21,26 @@
     z-index: -1;
 }
 
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 
 .message {
+
     display: flex;
+
     flex-direction: column;
-    gap:2rem;
+    gap:1.2rem;
   padding: 4rem 6rem;
     background-color: var(--commonBackgroundColor);
     border: var(--borderReg);
     border-radius: var(--borderRadiusReg);
+    
 }
 
 .comingSoonTextDiv {
@@ -37,5 +49,20 @@
     gap:1rem;
     align-items: left;
     font-size: 1.2rem;
-    
+
+}
+
+.animSpanBokhus {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-top:0.5rem;
+    width: 100%;
+}
+
+@media (max-width:63.9em) {
+    .message {
+        padding: 2rem 2.5rem;
+    }
 }
