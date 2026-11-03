@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "src/app/no/DynamicBookPage"
+    "src/app/no/(bokmaal)/DynamicBookPage"
   ],
   "exclude": [
     "node_modules"
